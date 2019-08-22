@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 order-md-1">
+                    {{-- <div class="col-md-6 order-md-1">
                         <div class="input-group mb-3">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Nama lengkap" required autocomplete="name">
                             <div class="input-group-append">
@@ -152,7 +152,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="row">

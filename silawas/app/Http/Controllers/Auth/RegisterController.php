@@ -49,15 +49,15 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'username' => ['required', 'string', 'max:255', 'unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255', 'unique:user'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:user'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'name' => ['required', 'string', 'max:255'],
-            'tempat_lahir' => ['required', 'string', 'max:255'],
-            'tanggal_lahir' => ['required', 'string', 'max:255'],
-            'no_hp' => ['required', 'string', 'max:255'],
-            'no_ktp' => ['required', 'string', 'max:255'],
-            'npwp' => ['required', 'string', 'max:255'],
+            // 'name' => ['required', 'string', 'max:255'],
+            // 'tempat_lahir' => ['required', 'string', 'max:255'],
+            // 'tanggal_lahir' => ['required', 'string', 'max:255'],
+            // 'no_hp' => ['required', 'string', 'max:255'],
+            // 'no_ktp' => ['required', 'string', 'max:255'],
+            // 'npwp' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -69,17 +69,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $tanggal_lahir = date('Y-m-d', strtotime($data['tanggal_lahir']));
+        //$tanggal_lahir = date('Y-m-d', strtotime($data['tanggal_lahir']));
         return User::create([
             'username' => $data['username'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'name' => $data['name'],
-            'tempat_lahir' => $data['tempat_lahir'],
-            'tanggal_lahir' => $tanggal_lahir,
-            'no_hp' => $data['no_hp'],
-            'no_ktp' => $data['no_ktp'],
-            'npwp' => $data['npwp'],
+            'passwordHash' => Hash::make($data['password']),
+            'authKey' => '123',
+            'status' => 10,
+            // 'name' => $data['name'],
+            // 'tempat_lahir' => $data['tempat_lahir'],
+            // 'tanggal_lahir' => $tanggal_lahir,
+            // 'no_hp' => $data['no_hp'],
+            // 'no_ktp' => $data['no_ktp'],
+            // 'npwp' => $data['npwp'],
         ]);
     }
 }

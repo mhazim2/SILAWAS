@@ -15,8 +15,15 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    const CREATED_AT = 'dateCreate';
+    const UPDATED_AT = 'dateUpdate';
+
+    protected $table = 'user';
+
     protected $fillable = [
-        'username', 'email', 'password', 'name', 'tempat_lahir', 'tanggal_lahir', 'no_hp', 'no_ktp', 'npwp', 
+        'id','username', 'passwordHash', 'authKey', 'accessToken', 'status', 'passwordResetToken', 'email', 'accessRoleId',
+        'dateCreate','dateUpdate','Orang_idOrang' 
     ];
 
     /**
@@ -25,7 +32,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'passwordHash', 'authKey','accessToken','passwordResetToken'
     ];
 
     /**

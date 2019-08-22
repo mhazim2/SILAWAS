@@ -1,5 +1,6 @@
 @extends('layouts.auth')
 
+@section('title', 'Verifikasi Email')
 @section('content')
 <div class="login-box">
     <div class="login-logo">

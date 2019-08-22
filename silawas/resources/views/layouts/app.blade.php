@@ -10,7 +10,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>{{ config('app.name', 'Silawas') }}</title>
+    <title>
+        @if(View::hasSection('title'))
+            @yield('title') - 
+        @endif
+        {{ config('app.name', 'Silawas') }}
+    </title>
 
     <!-- Assets -->
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
@@ -45,5 +50,6 @@
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

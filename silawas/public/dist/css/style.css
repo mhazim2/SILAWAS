@@ -1,0 +1,52 @@
+.bg-kesmavet  {
+    background-color: #8C0090;
+}
+
+.text-kesmavet {
+    color: #8C0090;
+}
+
+.btn-kesmavet {
+    background-color: #D500F9;
+    color: #fff;
+}
+
+.btn-kesmavet:hover, .btn-kesmavet:focus {
+    background-color: #AA00FF;
+    color: #fff;
+}
+
+.form-control:focus, 
+.input-group .form-control:focus ~ .input-group-append .input-group-text {
+    border-color: #D500F9 !important;
+}
+
+.auth-page {
+    background: #e9ecef;
+}
+
+.register-box {
+    margin: 2% auto;
+}
+
+a {
+    color: #8C0090;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E040FB;
+}
+
+.nav-sidebar .nav-header:not(:first-of-type) {
+    padding: 1.5rem .5rem .5rem .5rem;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, 
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #8C0090;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    color: #8C0090;
+}

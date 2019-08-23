@@ -40,7 +40,7 @@
                     @enderror
                 </div>
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-12 mb-1">
                         <div class="icheck-wisteria">
                             <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                             <label for="remember">
@@ -48,8 +48,9 @@
                             </label>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-12">
                         <button type="submit" class="btn btn-kesmavet btn-block btn-flat">Login</button>
+                        @
                     </div>
                 </div>
             </form>

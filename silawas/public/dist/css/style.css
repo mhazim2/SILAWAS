@@ -17,10 +17,8 @@
     color: #fff;
 }
 
-.btn-kesmavet-block {
-    display: block;
-    width: 100%;
-    border-radius: 0px;
+.btn:disabled {
+    cursor: not-allowed;
 }
 
 .form-control:focus, 
@@ -76,14 +74,35 @@ a:hover {
     padding-right: 5px;
 }
 
+.small-box:hover {
+    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+}
+
+.small-box > .small-box-footer {
+    color: inherit;
+}
+
+.small-box:hover .icon > i {
+    font-size: 95px !important;
+    color: inherit;
+}
+
 @media (min-width: 768px) {
-    .register-box {
-        width: 720px;
+    .small-box > .inner > p {
+        min-height: 72px;
+    }
+}
+
+@media (max-width: 575px) {
+    .nav-pills > .nav-item {
+        display: block;
+        width: 100%;
     }
 
     .btn-kesmavet-block {
-        display: flex;
-        width: auto;
-        float: right;
+        display: block;
+        width: 100%;
     }
 }

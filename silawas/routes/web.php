@@ -27,3 +27,6 @@ Route::get('/petugas', 'PetugassController@index')->name('petugas.show');
 // Halaman Pengajuan
 Route::get('/pengajuan', 'PengajuansController@index')->name('pengajuan.show');
 Route::get('/pengajuan/formulir', 'PengajuansController@formulir')->name('pengajuan.formulir');
+
+// Halaman Formulir
+Route::get('/pengajuan/formulir/9', 'PengajuansController@form9')->name('form9.show');

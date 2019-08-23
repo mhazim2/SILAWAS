@@ -7,14 +7,8 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-12">
                         <h1 class="m-0 text-dark">Profile</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Profile</li>
-                        </ol>
                     </div>
                 </div>
             </div>
@@ -28,7 +22,7 @@
                         <div class="col-md-3">
                             <div class="card-body box-profile">
                                 <div class="text-center">
-                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('dist/img/user2-160x160.jpg') }}" alt="User profile picture">
+                                    <img class="profile-user-img img-fluid img-circle" src="{{ asset('dist/img/user.png') }}" alt="User profile picture">
                                 </div>
                                 <h3 class="profile-username text-center">{{ $user->username }}</h3>
                                 <p class="text-muted text-center">Admin</p>

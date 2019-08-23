@@ -42,15 +42,15 @@
         </li> -->
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle pr-2" data-toggle="dropdown">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
-                <span class="d-none d-md-inline ml-1">{{ Auth::user()->name }} <i class="fas fa-caret-down ml-1"></i></span>
+                <img src="{{ asset('dist/img/user.png') }}" class="user-image img-circle elevation-2" alt="User Image">
+                <span class="d-none d-md-inline ml-1">{{ Auth::user()->username }} <i class="fas fa-caret-down ml-1"></i></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <li class="user-header bg-kesmavet">
-                    <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ asset('dist/img/user.png') }}" class="img-circle elevation-2" alt="User Image">
                     <p>
-                        {{ Auth::user()->name }}
-                        <small>Admin</small>
+                        {{ Auth::user()->username }}
+                        <div>Admin</div>
                     </p>
                 </li>
                 <li class="user-footer">

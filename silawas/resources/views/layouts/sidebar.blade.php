@@ -1,18 +1,17 @@
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link bg-kesmavet text-white">
-        <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="/" class="brand-link bg-kesmavet text-white text-center">
         <span class="brand-text font-weight-bold">Silawas</span>
     </a>
     <div class="sidebar">
         <!-- User Panel -->
         <div class="user-panel mt-2 pb-2 d-flex">
             <div class="image mt-2">
-                <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ asset('dist/img/user.png') }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info pt-0">
                 <a href="#" class="d-block">
-                    {{ Auth::user()->name }}
+                    {{ Auth::user()->username }}
                 </a>
                 <a href="#" class="d-block">
                     <span class="text-kesmavet">Admin</span>

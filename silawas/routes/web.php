@@ -23,10 +23,13 @@ Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edi
 
 // Halaman Petugas
 Route::get('/petugas', 'PetugassController@index')->name('petugas.show');
+Route::get('/petugas/create', 'PetugassController@create')->name('petugas.create');
 
 // Halaman Pengajuan
 Route::get('/pengajuan', 'PengajuansController@index')->name('pengajuan.show');
-Route::get('/pengajuan/formulir', 'PengajuansController@formulir')->name('pengajuan.formulir');
+Route::get('/pengajuan/detail/{pengajuan_id}', 'PengajuansController@detail')->name('pengajuan.detail');
+Route::get('/pengajuan/hapus/{pengajuan_id}', 'PengajuansController@delete')->name('pengajuan.delete');
 
 // Halaman Formulir
+Route::get('/pengajuan/formulir', 'PengajuansController@formulir')->name('pengajuan.formulir');
 Route::get('/pengajuan/formulir/9', 'PengajuansController@form9')->name('form9.show');

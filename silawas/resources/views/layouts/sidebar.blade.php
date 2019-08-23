@@ -23,16 +23,37 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-header">MENU UTAMA</li>
                 <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/profile/{{ Auth::user()->id }}" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Profile</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="/petugas" class="nav-link">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
-                        <p>Petugas</p>
+                        <p>
+                            Petugas
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/petugas" class="nav-link">
+                                <p>Daftar Petugas</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/petugas/create" class="nav-link">
+                                <p>Tambah Petugas</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -44,13 +65,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/pengajuan/formulir" class="nav-link">
-                                <p>Formulir Pengajuan</p>
+                            <a href="/pengajuan" class="nav-link">
+                                <p>Daftar Formulir</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pengajuan" class="nav-link">
-                                <p>Daftar Formulir</p>
+                            <a href="/pengajuan/formulir" class="nav-link">
+                                <p>Formulir Pengajuan</p>
                             </a>
                         </li>
                     </ul>

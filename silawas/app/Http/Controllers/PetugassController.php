@@ -10,4 +10,9 @@ class PetugassController extends Controller
     {
         return view('petugas.index');
     }
+
+    public function create()
+    {
+        return view('petugas.create');
+    }
 }

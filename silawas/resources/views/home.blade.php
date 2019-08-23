@@ -17,8 +17,19 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
-                        Home Page
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center" style="height:200px; padding-top:75px">
+                                <h1>Pedoman</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center" style="height:200px; padding-top:75px">
+                                <h1></h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

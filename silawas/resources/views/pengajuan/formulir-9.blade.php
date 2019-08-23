@@ -200,7 +200,6 @@
                                 <div class="form-group">
                                     <label for="combobox_example">Kategori Usaha</label>
                                     <select class="form-control select2" id="combobox_example" name="combobox_example">
-                                        <option disabled>-- Pilih --</option>
                                         <option value="1">Kecil ( < 20 Ekor )</option>
                                         <option value="2">Sedang (20 - 100 Ekor)</option>
                                         <option value="3">Besar ( > 100 Ekor)</option>
@@ -225,15 +224,14 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="combobox_example">Wilayah Peredaran</label>
-                                    <select class="form-control select2" id="combobox_example" name="combobox_example">
-                                        <option disabled>-- Pilih --</option>
+                                    <label for="combobox_example2">Wilayah Peredaran</label>
+                                    <select class="form-control select2" id="combobox_example2" name="combobox_example2">
                                         <option value="1">Lokal</option>
                                         <option value="2">Lintas Kab-Kota</option>
                                         <option value="3">Lintas Provinsi</option>
                                         <option value="4">Ekspor</option>
                                     </select>
-                                    @error('combobox_example')
+                                    @error('combobox_example2')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

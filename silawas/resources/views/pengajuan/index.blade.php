@@ -33,7 +33,7 @@
                                     <tr>
                                         <td class="text-center">1</td>
                                         <td>Form 9</td>
-                                        <td>Usaha Keren</td>
+                                        <td>CV Jaya Abadi</td>
                                         <td>Super Farm</td>
                                         <td>2019</td>
                                         <td>17 Agustus 2019</td>
@@ -53,7 +53,7 @@
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td>Form 10</td>
-                                        <td>Usaha Jelek</td>
+                                        <td>PT Tani Nasional</td>
                                         <td>Countryside Farm</td>
                                         <td>2019</td>
                                         <td>23 Agustus 2019</td>
@@ -73,7 +73,7 @@
                                     <tr>
                                         <td class="text-center">3</td>
                                         <td>Form 11</td>
-                                        <td>Usaha Sedang</td>
+                                        <td>Vero Tani tbk</td>
                                         <td>Private Farm</td>
                                         <td>2019</td>
                                         <td>20 Agustus 2019</td>

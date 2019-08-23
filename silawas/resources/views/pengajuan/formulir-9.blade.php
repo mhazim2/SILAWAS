@@ -415,12 +415,12 @@
                                     <label>Apakah area peternakan dirancang untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example2" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example2">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example3" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example3">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -433,12 +433,12 @@
                                     <label>Apakah area peternakan memiliki pagar untuk membatasi akses?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example4" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example4">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example4" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example4">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -451,12 +451,12 @@
                                     <label>Apakah dilakukan pemisahan hewan baru dan hewan lama?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example5" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example5">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example6" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example6">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -469,12 +469,12 @@
                                     <label>Apakah ada kandang isolasi untuk hewan yang sakit?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example7" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example7">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example8" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example8">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -487,12 +487,12 @@
                                     <label>Apakah sarana dan prasarana memenuhi/memdai (pemerahan,penyimpanan,pengangukan dan pengiriman susu)</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example9" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example9">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example10" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example10">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -505,12 +505,12 @@
                                     <label>Apakah prosedur pemeliharaan hewan menerapkan prinsip-prinsip kesejahteraan hewan?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example11" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example11">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example12" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example12">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -523,12 +523,12 @@
                                     <label>Apakah metode pemerahan memperhatikan kebersihan ambing?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example13" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example13">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example14" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example14">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -542,12 +542,12 @@
                                         pengobatan dengan menggunakan antibiotik (masitis dan penyakit lainnya)?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example15" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example15">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example16" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example16">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -561,12 +561,12 @@
                                         (sanitasi): (unit usaha budidaya perah dan unit pemerahan susu)</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example17" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example17">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example18" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example18">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -579,12 +579,12 @@
                                     <label>Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example19" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example19">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example20" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example20">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -597,12 +597,12 @@
                                     <label>Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example21" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example21">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example22" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example22">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -615,12 +615,12 @@
                                     <label>Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example23" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example23">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example23" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example23">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -633,12 +633,12 @@
                                     <label>Apakah dilakukan program pengendalian hama dan serangga?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
+                                            <input id="radio_example24" type="radio" name="radio_example">
                                             <label class="font-weight-normal" for="radio_example_1">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example24" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example24">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -651,12 +651,12 @@
                                     <label>Apakah ada prosedur penanganan terhadap hewan yang sakit/mati?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example25" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example25">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example26" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example26">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')
@@ -669,12 +669,12 @@
                                     <label>Apakah dilakukan pengolahan limbah?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_1">Ya</label>
+                                            <input id="radio_example27" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example27">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example_2">Tidak</label>
+                                            <input id="radio_example28" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example28">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')

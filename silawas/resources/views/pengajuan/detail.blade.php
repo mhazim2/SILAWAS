@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Formulir 9 - Usaha Keren</h1>
+                        <h1 class="m-0 text-dark">Formulir 9 - CV Maju Abadi</h1>
                         <small>Formulir dan Panduan Pengisian Ceklis Tempat Budidaya Hewan Perah dan Pemerahan Susu</small>
                     </div>
                 </div>
@@ -33,22 +33,22 @@
                                     <tr>
                                         <td class="detail-label">Nama Unit Usaha</td>
                                         <td>:</td>
-                                        <td>Usaha Keren</td>
+                                        <td>CV Maju Abadi</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Alamat Unit Usaha</td>
                                         <td>:</td>
-                                        <td>Bogor</td>
+                                        <td>JL.Harsono RM Ragunan</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Pemilik Unit Usaha/Nama Kantor Pusat</td>
                                         <td>:</td>
-                                        <td>Super Farm</td>
+                                        <td>Super Farm Abadi Jaya</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Alamat Kantor Pusat</td>
                                         <td>:</td>
-                                        <td>Jakarta</td>
+                                        <td>JL. Harsono RM Ragunan Jakarya Selatan</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">No. Telp Kantor Pusat</td>
@@ -58,7 +58,7 @@
                                     <tr>
                                         <td class="detail-label">Fax Kantor Pusat</td>
                                         <td>:</td>
-                                        <td>1234</td>
+                                        <td>027555561234</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Email Kantor Pusat</td>

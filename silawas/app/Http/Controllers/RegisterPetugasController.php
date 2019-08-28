@@ -1,15 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\User;
 use App\Orang;
+use App\PengawasKesmavet;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+
+class RegisterPetugasController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -24,23 +28,7 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
+    
     /**
      * Get a validator for an incoming registration request.
      *
@@ -62,7 +50,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
     
         $user = User::create([
@@ -71,6 +59,7 @@ class RegisterController extends Controller
             'passwordHash' => Hash::make($data['password']),
             'authKey' => '123',
             'status' => 10,
+            'accessRoleId' => 7
         ]);
         
         $orangID = Orang::create([
@@ -78,11 +67,15 @@ class RegisterController extends Controller
             'NomorHandphone	' => $data['NomorHandphone'],
         ]);
         
-        DB::table('user')->insert(
-            ['Orang_idOrang' => $orangID->idOrang]
-        );
+        $user->Orang_idOrang = $orangID->id;
+        $user->save();
 
-        return dd($user);
-        
+        // $pengawas = PengawasKesmavet::create([
+        //     'idPengawasKesmavet' => $user->id,
+        //     'isActive	' => FALSE,
+        // ]);
+
+        //return dd($pengawas);
+        return view('petugas.index');
     }
 }

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Orang extends Model
 {
+    public $timestamps = false;
+
     protected $table = 'orang';
 
     protected $fillable = [

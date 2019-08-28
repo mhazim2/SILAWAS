@@ -23,31 +23,13 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Pribadi</h3>
                         </div>
-                        <form action="/profile" enctype="multipart/form-data" method="POST">
-                            @csrf
+                        <form action='{{"/profile/".$user->id."/editsubmit"}}' enctype="multipart/form-data" method="POST">
+                            @csrf 
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Nama Lengkap</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('NamaLengkap') }}" autocomplete="name" autofocus>
                                     @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label>Jenis Kelamin</label>
-                                    <div class="d-block">
-                                        <div class="icheck-wisteria d-inline mr-3">
-                                            <input id="jk_1" type="radio" name="jeniskelamin" checked>
-                                            <label class="font-weight-normal" for="jk_1">Laki-laki</label>
-                                        </div>
-                                        <div class="icheck-wisteria d-inline">
-                                            <input id="jk_2" type="radio" name="jeniskelamin">
-                                            <label class="font-weight-normal" for="jk_2">Perempuan</label>
-                                        </div>
-                                    </div>
-                                    @error('jeniskelamin')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -80,38 +62,41 @@
                                     @endpush
                                 </div>
                                 <div class="form-group">
-                                    <label for="website">Website</label>
-                                    <input type="text" class="form-control @error('website') is-invalid @enderror" id="website" name="website" value="{{ old('website') }}" autocomplete="website">
-                                    @error('website')
+                                    <label for="name">Tempat Lahir</label>
+                                    <input type="text" class="form-control @error('TempatLahir') is-invalid @enderror" id="TempatLahir" name="TempatLahir" value="{{ old('TempatLahir') }}" autocomplete="TempatLahir" autofocus>
+                                    @error('TempatLahir')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="lainnya">Informasi Lainnya</label>
-                                    <textarea class="form-control @error('lainnya') is-invalid @enderror" rows="3" id="lainnya" name="lainnya">{{ old('lainnya') }}</textarea>
-                                    @error('lainnya')
+                                    <label for="name">Nomor KTP</label>
+                                    <input type="text" class="form-control @error('NomorKTP') is-invalid @enderror" id="NomorKTP" name="NomorKTP" value="{{ old('NomorKTP') }}" autocomplete="NomorKTP" autofocus>
+                                    @error('NomorKTP')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Unggah Foto</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="user_img" name="user_img">
-                                            <label class="custom-file-label" for="user_img">Choose file</label>
-                                        </div>
-                                    </div>
-                                    @error('user_img')
+                                    <label for="name">Nomor HP</label>
+                                    <input type="text" class="form-control @error('NomorHandphone') is-invalid @enderror" id="NomorHandphone" name="NomorHandphone" value="{{ old('NomorHandphone') }}" autocomplete="NomorHandphone" autofocus>
+                                    @error('NomorHandphone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <label for="name">NPWP</label>
+                                    <input type="text" class="form-control @error('NPWP') is-invalid @enderror" id="NPWP" name="NPWP" value="{{ old('NPWP') }}" autocomplete="NPWP" autofocus>
+                                    @error('NomorHandphone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-kesmavet float-right">Simpan</button>
                                 <div class="clearfix"></div>

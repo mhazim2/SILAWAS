@@ -23,33 +23,19 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Petugas</h3>
                         </div>
-                        <form action="/petugas/create" enctype="multipart/form-data" method="POST">
+                        <form class="mb-3" action="/petugas/store" method="POST">
                             @csrf
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label>Foto Petugas</label>
-                                    <div class="input-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="user_img" name="user_img">
-                                            <label class="custom-file-label" for="user_img">Choose file</label>
-                                        </div>
-                                    </div>
-                                    @error('user_img')
+                                <div class="input-group mb-3">
+                                    <label for="NamaLengkap">Nama Petugas</label>
+                                    <input type="text" class="form-control @error('NamaLengkap') is-invalid @enderror" id="NamaLengkap" name="NamaLengkap" value="{{ old('NamaLengkap') }}">
+                                    @error('NamaLengkap')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="name">Nama Petugas</label>
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
+                                <div class="input-group mb-3">
                                     <label for="email">Email Petugas</label>
                                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
                                     @error('email')
@@ -58,19 +44,32 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="telepon">Nomor Telepon Petugas</label>
-                                    <input type="text" class="form-control @error('telepon') is-invalid @enderror" id="telepon" name="telepon" value="{{ old('telepon') }}">
-                                    @error('telepon')
+                                <div class="input-group mb-3">
+                                    <label for="username">Username Petugas</label>
+                                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}">
+                                    @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="operasi">Operasi Petugas</label>
-                                    <input type="text" class="form-control @error('operasi') is-invalid @enderror" id="operasi" name="operasi" value="{{ old('operasi') }}">
-                                    @error('operasi')
+                                <div class="input-group mb-3">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-lock"></span>
+                                        </div>
+                                    </div>
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label for="NomorHandphone">Nomor Telepon Petugas</label>
+                                    <input type="text" class="form-control @error('NomorHandphone') is-invalid @enderror" id="NomorHandphone" name="NomorHandphone" value="{{ old('NomorHandphone') }}">
+                                    @error('NomorHandphone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

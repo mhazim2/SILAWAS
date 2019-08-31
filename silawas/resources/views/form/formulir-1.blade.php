@@ -208,11 +208,11 @@
                                 <div class="form-group mb-5">
                                     <label>7. Apakah pemberian pengobatan di bawah pengawasan dokter hewan?</label>
                                     <div class="d-block">
-                                        <div class="icheck-wisteria d-inline mr-3">
+                                        <div class="icheck-wisteria d-inline mr-3" onclick="checkValue7()">
                                             <input id="radio_example_1" type="radio" name="radio_example">
                                             <label class="font-weight-normal" for="radio_example_1">Ya</label>
                                         </div>
-                                        <div class="icheck-wisteria d-inline">
+                                        <div class="icheck-wisteria d-inline" onclick="checkValue7()">
                                             <input id="radio_example_2" type="radio" name="radio_example">
                                             <label class="font-weight-normal" for="radio_example_2">Tidak</label>
                                         </div>
@@ -223,6 +223,40 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <div id="hidden7form" class="form-group bg-kesmavet mb-5 p-3" style="display:none"></div>
+                                @push('scripts')
+                                    <script>
+                                        function checkValue7() {
+                                            if(document.getElementById('radio_example_1').checked) {
+                                                document.getElementById('hidden7form').innerHTML = "";
+                                                document.getElementById('hidden7form').style.display="block";
+                                                var inputLabel = document.createElement("label");
+                                                    inputLabel.innerHTML = "Alasan Memilih Ya";
+                                                var inputField = document.createElement("input");
+                                                    inputField.type = "text";
+                                                    inputField.name = "textfield_example";
+                                                    inputField.id = "textfield_example";
+                                                    inputField.value = "{{ old('textfield_example') }}";
+                                                    inputField.classList.add("form-control");
+                                                document.getElementById('hidden7form').appendChild(inputLabel);
+                                                document.getElementById('hidden7form').appendChild(inputField);
+                                            }else if(document.getElementById('radio_example_2').checked) {
+                                                document.getElementById('hidden7form').innerHTML = "";
+                                                document.getElementById('hidden7form').style.display="block";
+                                                var inputLabel = document.createElement("label");
+                                                    inputLabel.innerHTML = "Alasan Memilih Tidak";
+                                                var inputField = document.createElement("input");
+                                                    inputField.type = "text";
+                                                    inputField.name = "textfield_example";
+                                                    inputField.id = "textfield_example";
+                                                    inputField.value = "{{ old('textfield_example') }}";
+                                                    inputField.classList.add("form-control");
+                                                document.getElementById('hidden7form').appendChild(inputLabel);
+                                                document.getElementById('hidden7form').appendChild(inputField);
+                                            }
+                                        }
+                                    </script>
+                                @endpush
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">8. Nomor dan tanggal NKV</label>
                                     <input type="text" 
@@ -305,8 +339,8 @@
                                             <label class="font-weight-normal" for="radio_example4">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline">
-                                            <input id="radio_example4" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio_example4">Tidak</label>
+                                            <input id="radio_example42" type="radio" name="radio_example">
+                                            <label class="font-weight-normal" for="radio_example42">Tidak</label>
                                         </div>
                                     </div>
                                     @error('radio_example')

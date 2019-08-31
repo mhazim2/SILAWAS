@@ -17,7 +17,13 @@ class UnitUsahasController extends Controller
      */
     public function index()
     {
-        return view('unit-usaha.index');
+        $uu = DB::table('unitusaha')
+            ->join('pemilikusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pemilikusaha.idPemilikUsaha')
+            ->join('orang', 'pemilikusaha.idOrang', '=', 'orang.idOrang')
+            ->select('orang.*','unitusaha.*')
+            ->get();
+        $result = $uu->toArray();
+        return view('unit-usaha.index', ['listunitusaha' => $uu]);
     }
 
     /**

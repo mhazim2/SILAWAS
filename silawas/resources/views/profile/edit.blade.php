@@ -24,7 +24,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Pribadi</h3>
                         </div>
-                        <form action='{{"/profile/".$user->id."/editsubmit"}}' enctype="multipart/form-data" method="POST">
+                        <form action='{{"/profile/".$user->id."/update"}}' enctype="multipart/form-data" method="POST">
                             @csrf 
                             <div class="card-body">
                                 <div class="form-group mb-5">

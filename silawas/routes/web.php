@@ -20,15 +20,14 @@ Route::get('/{name}', 'HomeController@index')->name('home')->where('name', '|hom
 // Halaman Profile
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{id}/edit', 'ProfilesController@edit')->name('profile.edit');
-Route::post('/profile/{id}/editsubmit', 'ProfilesController@updateProfile');
+Route::post('/profile/{id}/update', 'ProfilesController@update')->name('profile.update');
 
 // Halaman Petugas
 Route::get('/petugas', 'PetugassController@index')->name('petugas.show');
-Route::get('/petugas/create', 'PetugassController@create')->name('petugas.create');
 Route::get('/petugas/detail/{petugas_id}', 'PetugassController@detail')->name('petugas.detail');
-Route::get('/petugas/hapus/{petugas_id}', 'PetugassController@delete')->name('petugas.delete');
-Route::post('/petugas/store','RegisterPetugasController@create');
-Route::get('/petugas/listpetugas', 'PetugassController@show');
+Route::get('/petugas/hapus/{petugas_id}', 'PetugassController@destroy')->name('petugas.destroy');
+Route::get('/petugas/create', 'PetugassController@create')->name('petugas.create');
+Route::post('/petugas/store','PetugassController@store')->name('petugas.store');
 
 // Halaman Unit Usaha
 Route::get('/unit-usaha', 'UnitUsahasController@index')->name('unitusaha.show');

@@ -120,6 +120,10 @@ a:hover {
     cursor: pointer;
 }
 
+.card-footer {
+    background-color: transparent;
+}
+
 .small-box .icon > i {
     color: rgba(100,100,100,.15);
 }

@@ -38,7 +38,7 @@ class ProfilesController extends Controller
         ]);
     }
 
-    public function updateProfile($id, Request $request) 
+    public function update($id, Request $request) 
     {
         $user = User::findorFail($id);
         $orang = DB::table('orang')->where('idOrang', $user->Orang_idOrang)->get();

@@ -37,9 +37,62 @@
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
+                                    <label for="NoSK">Nomor SK</label>
+                                    <input type="text" class="form-control @error('NoSK') is-invalid @enderror" id="NoSK" name="NoSK" value="{{ old('NoSK') }}">
+                                    @error('NoSK')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                    <label for="NIP">NIP</label>
+                                    <input type="text" class="form-control @error('NIP') is-invalid @enderror" id="NIP" name="NIP" value="{{ old('NIP') }}">
+                                    @error('NIP')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                    <label for="WilayahKerja">Wilayah Kerja</label>
+                                    <select class="form-control select2" id="WilayahKerja" name="WilayahKerja">
+                                        @foreach($listwilayahkerja as $wilayahkerja)
+                                            <option value="{{$wilayahkerja->idWilayahKerja}}">{{$wilayahkerja->Nama}} </option>
+                                        @endforeach
+                                    </select>
+                                    @error('WilayahKerja')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                    <label for="RegencyCity">Kota/Kabupaten</label>
+                                    <select class="form-control select2" id="RegencyCity" name="RegencyCity">
+                                        @foreach($listregencycity as $regencycity)
+                                            <option value="{{$regencycity->idRegencyCity}}">{{$regencycity->RegencyCityNameID}} </option>
+                                        @endforeach
+                                    </select>
+                                    @error('RegencyCity')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group mb-5">
                                     <label for="email">Email Petugas</label>
                                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}" required>
                                     @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                    <label for="NomorHandphone">Nomor Telepon Petugas</label>
+                                    <input type="text" class="form-control @error('NomorHandphone') is-invalid @enderror" id="NomorHandphone" name="NomorHandphone" value="{{ old('NomorHandphone') }}">
+                                    @error('NomorHandphone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -56,17 +109,8 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="password">Password Petugas</label>
-                                    <input type="text" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}" required>
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}" required>
                                     @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group mb-5">
-                                    <label for="NomorHandphone">Nomor Telepon Petugas</label>
-                                    <input type="text" class="form-control @error('NomorHandphone') is-invalid @enderror" id="NomorHandphone" name="NomorHandphone" value="{{ old('NomorHandphone') }}">
-                                    @error('NomorHandphone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

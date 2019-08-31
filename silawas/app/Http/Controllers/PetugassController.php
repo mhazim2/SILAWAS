@@ -13,7 +13,13 @@ class PetugassController extends Controller
 {
     public function index()
     {
-        return view('petugas.index');
+        $petugas = DB::table('user')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->select('user.id','user.email','orang.NamaLengkap','orang.NomorHandphone')
+            ->where('user.accessRoleId','=',7)
+            ->get();
+        $result = $petugas->toArray();
+        return view('petugas.index', ['listpetugas' => $result]);
     }
 
     public function create()
@@ -30,7 +36,7 @@ class PetugassController extends Controller
             ->get();
         $result = $petugas->toArray();
 
-        dd($petugas);
+        dd($result);
         //return view('unit-usaha.create', ['listPemilikUsaha' => $result]);
     }
 }

@@ -30,63 +30,27 @@
                                     <td>Operasi</td>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>CEO</td>
-                                        <td>123456789</td>
-                                        <td>Feby</td>
-                                        <td>Bogor</td>
-                                        <td class="text-center">
-                                            <a href="/petugas/detail/1">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="/petugas/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>Manager</td>
-                                        <td>123456789</td>
-                                        <td>Wira</td>
-                                        <td>Bandung</td>
-                                        <td class="text-center">
-                                            <a href="/petugas/detail/2">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="/petugas/hapus/2" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>CTO</td>
-                                        <td>123456789</td>
-                                        <td>Wawan</td>
-                                        <td>Jakarta</td>
-                                        <td class="text-center">
-                                            <a href="/petugas/detail/3">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="/petugas/hapus/3" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($listpetugas as $key=>$petugas)
+                                        <tr>
+                                            <td class="text-center">{{ ++$key }}</td>
+                                            <td>{{ $petugas->id }}</td>
+                                            <td>{{ $petugas->email }}</td>
+                                            <td>{{ $petugas->NamaLengkap }}</td>
+                                            <td>{{ $petugas->NomorHandphone }}</td>
+                                            <td class="text-center">
+                                                <a href="/petugas/detail/1">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
+                                                        <small><i class="fas fa-eye"></i></small>
+                                                    </button>
+                                                </a>
+                                                <a href="/petugas/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
+                                                    <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
+                                                        <small><i class="fas fa-trash"></i></small>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             @push('scripts')

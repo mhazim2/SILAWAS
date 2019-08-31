@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\UnitUsaha;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+
 
 class UnitUsahasController extends Controller
 {
@@ -24,8 +26,14 @@ class UnitUsahasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('unit-usaha.create');
+    {   
+        $pemilikusaha = DB::table('pemilikusaha')
+            ->join('orang', 'orang.idOrang', '=', 'pemilikusaha.idOrang')
+            ->select('pemilikusaha.idPemilikUsaha','orang.NamaLengkap')
+            ->get();
+        $result = $pemilikusaha->toArray();
+        
+        return view('unit-usaha.create', ['listPemilikUsaha' => $result]);
     }
 
     /**
@@ -34,24 +42,23 @@ class UnitUsahasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        // UnitUsaha::create([
-        //     'PelakuUsaha_idPerusahaan'=> 1,
-        //     'PelakuUsaha_idPemilikUsaha' => 1,
-        //     'AlamatUnitUsaha'=> $request-> input('AlamatUnitUsaha'),
-        //     'AlamatKantorPusat' =>$request-> input('AlamatKantorPusat'),
-        //     'Telepon'=>$request-> input('Telepon'),
-        //     'Fax'=>$request-> input('Fax'),
-        //     'Email'=>$request-> input('Email'),
-        //     'PenangungJawabTeknis'=>$request-> input('PenangungJawabTeknis'),
-        //     'TahunOperasional'=>$request-> input('TahunOperasional'),
-        //     ]);
-        $uu=UnitUsaha::create($request->all());
-        
-        //return redirect()->route('pengajuan.index')->with('success','unit usaha created successfully.');
-        return Redirect::to('/pengajuan/formulir/9#tambahan') ->with('success','The CPE was created succesfully!');
-    }
+    // public function simpan(Request $data)
+    // {
+    //     $uu = UnitUsaha::create([
+    //         'PelakuUsaha_idPemilikUsaha' => $data['PelakuUsaha_idPemilikUsaha'],
+    //         'AlamatUnitUsaha'=> $data['AlamatUnitUsaha'],
+    //         'AlamatKantorPusat' =>$data['AlamatKantorPusat'],
+    //         'Telepon'=>$request->$data['Telepon'],
+    //         'Fax'=>$request-> $data['Fax'],
+    //         'Email'=>$request-> $data['Email'],
+    //         'PenangungJawabTeknis'=>$data['PenangungJawabTeknis'],
+    //         'TahunOperasional'=>$data['TahunOperasional'],
+    //         ]);
+    //     //$uu=UnitUsaha::create($request->all());
+    //     //return dd($uu);
+    //     //return redirect()->route('pengajuan.index')->with('success','unit usaha created successfully.');
+    //     return Redirect::to('/pengajuan/formulir/9#tambahan') ->with('success','The CPE was created succesfully!');
+    // }
 
     /**
      * Display the specified resource.

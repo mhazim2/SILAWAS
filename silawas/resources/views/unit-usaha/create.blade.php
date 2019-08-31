@@ -24,7 +24,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Unit Usaha</h3>
                         </div>
-                        <form class="mb-3" action="/unitusaha" enctype="multipart/form-data" method="POST">
+                        <form class="mb-3" action="/unit-usaha/store" enctype="multipart/form-data" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group mb-5">
@@ -49,6 +49,19 @@
                                               {{ old('AlamatUnitUsaha') }}
                                     </textarea>
                                     @error('AlamatUnitUsaha')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                    <label for="combobox_example">Pemilik Unit Usaha</label>
+                                    <select class="form-control select2" id="PelakuUsaha_idPemilikUsaha" name="PelakuUsaha_idPemilikUsaha">
+                                        @foreach($listPemilikUsaha as $pemilikusaha)
+                                            <option value="{{$pemilikusaha->idPemilikUsaha}}">{{$pemilikusaha->NamaLengkap}} </option>
+                                        @endforeach
+                                    </select>
+                                    @error('combobox_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

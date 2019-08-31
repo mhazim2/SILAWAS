@@ -28,6 +28,7 @@ Route::get('/petugas/create', 'PetugassController@create')->name('petugas.create
 Route::get('/petugas/detail/{petugas_id}', 'PetugassController@detail')->name('petugas.detail');
 Route::get('/petugas/hapus/{petugas_id}', 'PetugassController@delete')->name('petugas.delete');
 Route::post('/petugas/store','RegisterPetugasController@create');
+Route::get('/petugas/listpetugas', 'PetugassController@show');
 
 // Halaman Unit Usaha
 Route::get('/unit-usaha', 'UnitUsahasController@index')->name('unitusaha.show');

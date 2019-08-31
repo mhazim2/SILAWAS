@@ -64,7 +64,7 @@ class RegisterPetugasController extends Controller
         
         $orangID = Orang::create([
             'NamaLengkap' => $data['NamaLengkap'],
-            'NomorHandphone	' => $data['NomorHandphone'],
+            'NomorHandphone' => $data['NomorHandphone'],
         ]);
         
         $user->Orang_idOrang = $orangID->id;

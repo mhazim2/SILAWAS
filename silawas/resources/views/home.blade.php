@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Dashboard')
+@section('Home', 'active')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -16,18 +17,18 @@
         <!-- Page Content -->
         <section class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4">
+                <div class="row resources-list">
+                    <div class="col-md-3">
                         <div class="card">
-                            <div class="card-body text-center" style="height:200px; padding-top:75px">
-                                <h1>Pedoman</h1>
+                            <div class="card-img-container">
+                                <img src="{{ asset('file/Buku_Pedoman_VTRNR_V4.png') }}" class="card-img-top" alt="Buku_Pedoman_VTRNR_V4">
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body text-center" style="height:200px; padding-top:75px">
-                                <h1></h1>
+                            <div class="card-body p-2">
+                                <a href="{{ asset('file/Buku_Pedoman_VTRNR_V4.pdf') }}" target="_blank">
+                                    <button class="btn btn-kesmavet btn-block btn-flat">
+                                        Download <i class="fas fa-external-link-alt ml-1"></i>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>

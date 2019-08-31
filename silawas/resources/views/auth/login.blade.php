@@ -40,26 +40,14 @@
                     @enderror
                 </div>
                 <div class="row">
-                    <div class="col-12 mb-1">
-                        <div class="icheck-wisteria">
-                            <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label for="remember">
-                                Remember Me
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-12">
+                    <div class="col-12 mt-4">
                         <button type="submit" class="btn btn-kesmavet btn-block btn-flat">Login</button>
-                        @
                     </div>
                 </div>
             </form>
 
             <p class="mb-0">
                 <a href="{{ route('password.request') }}">Lupa password?</a>
-            </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}">Belum punya akun?</a>
             </p>
         </div>
     </div>

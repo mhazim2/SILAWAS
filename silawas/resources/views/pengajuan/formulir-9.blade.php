@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Formulir 9')
+@section('title', 'Formulir 1')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -20,187 +20,53 @@
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link active" href="#unit" data-toggle="tab">A.Informasi Unit Usaha</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#tambahan" data-toggle="tab">B.Informasi Tambahan</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#survey" data-toggle="tab">C.Survey</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#catatan" data-toggle="tab">D.Catatan</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="#utama" data-toggle="tab">A. Informasi Utama</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#survey" data-toggle="tab">B. Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#catatan" data-toggle="tab">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="active tab-pane" id="unit">
-                            <form action="/unitusaha" enctype="multipart/form-data" method="POST">
-                                @csrf
-                                
-                                <div class="form-group">
-                                    <label for="NamaUnitUsaha">1.Nama Unit Usaha</label>
-                                    <input type="text" 
-                                           class="form-control @error('NamaUnitUsaha') is-invalid @enderror" 
-                                           id="NamaUnitUsaha" 
-                                           name="NamaUnitUsaha" 
-                                           value="{{ old('NamaUnitUsaha') }}" autofocus>
-                                    @error('NamaUnitUsaha')
+                            <div class="active tab-pane" id="utama">
+                                <div class="form-group mb-5">
+                                    <label for="unit_usaha">1. Nama Unit Usaha</label>
+                                    <select class="form-control select2" id="unit_usaha" name="unit_usaha">
+                                        <option value="1">Superfarm</option>
+                                    </select>
+                                    @error('unit_usaha')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="AlamatUnitUsaha">2.Alamat Unit Usaha</label>
-                                    <textarea class="form-control @error('AlamatUnitUsaha') is-invalid @enderror" 
-                                              rows="3" 
-                                              id="AlamatUnitUsaha" 
-                                              name="AlamatUnitUsaha">
-                                              {{ old('AlamatUnitUsaha') }}
-                                    </textarea>
-                                    @error('AlamatUnitUsaha')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="NamaKantorPusat">3.Pemilik Unit Usaha/Nama Kantor Pusat</label>
-                                    <input type="text" 
-                                           class="form-control @error('NamaKantorPusat') is-invalid @enderror" 
-                                           id="NamaKantorPusat" 
-                                           name="NamaKantorPusat" 
-                                           value="{{ old('NamaKantorPusat') }}" autofocus>
-                                    @error('NamaKantorPusat')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="AlamatKantorPusat">4.Alamat Kantor Pusat</label>
-                                    <textarea class="form-control @error('AlamatKantorPusat') is-invalid @enderror" 
-                                              rows="3" 
-                                              id="AlamatKantorPusat" 
-                                              name="AlamatKantorPusat">
-                                              {{ old('AlamatKantorPusat') }}
-                                    </textarea>
-                                    @error('AlamatKantorPusat')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="Telepon">5.No. Telp Kantor Pusat</label>
-                                    <input type="text" 
-                                           class="form-control @error('Telepon') is-invalid @enderror" 
-                                           id="Telepon" 
-                                           name="Telepon" 
-                                           value="{{ old('Telepon') }}" autofocus>
-                                    @error('Telepon')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="Fax">6.Fax Kantor Pusat</label>
-                                    <input type="text" 
-                                           class="form-control @error('Fax') is-invalid @enderror" 
-                                           id="Fax" 
-                                           name="Fax" 
-                                           value="{{ old('Fax') }}" autofocus>
-                                    @error('Fax')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="Email">7.Email Kantor Pusat</label>
-                                    <input type="text" 
-                                           class="form-control @error('Email') is-invalid @enderror" 
-                                           id="Email" 
-                                           name="Email" 
-                                           value="{{ old('Email') }}" autofocus>
-                                    @error('Email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="PenangungJawabTeknis">8.Penangung Jawab Teknis</label>
-                                    <input type="text" 
-                                           class="form-control @error('PenangungJawabTeknis') is-invalid @enderror" 
-                                           id="PenangungJawabTeknis" 
-                                           name="PenangungJawabTeknis" 
-                                           value="{{ old('PenangungJawabTeknis') }}" autofocus>
-                                    @error('PenangungJawabTeknis')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="KontakPJ">9.No. Telp Penangung Jawab Teknis</label>
-                                    <input type="text" 
-                                           class="form-control @error('KontakPJ') is-invalid @enderror" 
-                                           id="KontakPJ" 
-                                           name="KontakPJ" 
-                                           value="{{ old('KontakPJ') }}" autofocus>
-                                    @error('KontakPJ')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="TahunOperasional">10.Tahun Operasional</label>
-                                    <input type="text" 
-                                           class="form-control @error('TahunOperasional') is-invalid @enderror" 
-                                           id="TahunOperasional" 
-                                           name="TahunOperasional" 
-                                           value="{{ old('TahunOperasional') }}" autofocus>
-                                    @error('TahunOperasional')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mt-4">
-                                        Simpan & Lanjutkan
-                                    </button>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </form>
-                            </div>
-                            <div class="tab-pane" id="tambahan">
-                                <div class="form-group">
-                                    <label for="textfield_example">1.Kapasitas Pemeliharaan</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">2. Kapasitas Pemeliharaan</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">2.Jumlah Populasi Ternak</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">3. Jumlah Populasi Ternak</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="combobox_example">3.Kategori Usaha</label>
+                                <div class="form-group mb-5">
+                                    <label for="combobox_example">4. Kategori Usaha</label>
                                     <select class="form-control select2" id="combobox_example" name="combobox_example">
                                         <option value="1">Kecil ( < 20 Ekor )</option>
                                         <option value="2">Sedang (20 - 100 Ekor)</option>
@@ -212,21 +78,21 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">4.Total Produksi Susu</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">5. Total Produksi Susu</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="combobox_example2">5.Wilayah Peredaran</label>
+                                <div class="form-group mb-5">
+                                    <label for="combobox_example2">6. Wilayah Peredaran</label>
                                     <select class="form-control select2" id="combobox_example2" name="combobox_example2">
                                         <option value="1">Lokal</option>
                                         <option value="2">Lintas Kab-Kota</option>
@@ -239,81 +105,81 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">6.Jumlah Karyawan</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">7. Jumlah Karyawan</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mt-4">
+                                <div class="form-group mb-5">
+                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right">
                                         Simpan & Lanjutkan
                                     </button>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="survey">
-                                <div class="form-group">
-                                    <label for="textfield_example">1.Nomor Izin Usaha</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">1. Nomor Izin Usaha</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">2.NPWP</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">2. NPWP</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">3.SIUP</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">3. SIUP</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">4.NIB</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">4. NIB</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>5.Fotocopy Sertifikat Veteriner</label>
+                                <div class="form-group mb-5">
+                                    <label>5. Fotocopy Sertifikat Veteriner</label>
                                     <div class="input-group">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="file_example" name="file_example">
@@ -326,21 +192,21 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">6.Nama Dokter Hewan Penanungung Jawab Teknis</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">6. Nama Dokter Hewan Penanungung Jawab Teknis</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>7.Apakah pemberian pengobatan di bawah pengawasan dokter hewan?</label>
+                                <div class="form-group mb-5">
+                                    <label>7. Apakah pemberian pengobatan di bawah pengawasan dokter hewan?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example_1" type="radio" name="radio_example">
@@ -357,21 +223,21 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">8.Nomor dan tanggal NKV</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">8. Nomor dan tanggal NKV</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>9.Surveilans terkahir</label>
+                                <div class="form-group mb-5">
+                                    <label>9. Surveilans terkahir</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
@@ -400,21 +266,21 @@
                                         </script>
                                     @endpush
                                 </div>
-                                <div class="form-group">
-                                    <label for="textfield_example">10.Tindak lanjut temuan hasil surveilans</label>
+                                <div class="form-group mb-5">
+                                    <label for="textfield_example">10. Tindak lanjut temuan hasil surveilans</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>11.Apakah area peternakan dirancang untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?</label>
+                                <div class="form-group mb-5">
+                                    <label>11. Apakah area peternakan dirancang untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example2" type="radio" name="radio_example">
@@ -431,8 +297,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>12.Apakah area peternakan memiliki pagar untuk membatasi akses?</label>
+                                <div class="form-group mb-5">
+                                    <label>12. Apakah area peternakan memiliki pagar untuk membatasi akses?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example4" type="radio" name="radio_example">
@@ -449,8 +315,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>13.Apakah dilakukan pemisahan hewan baru dan hewan lama?</label>
+                                <div class="form-group mb-5">
+                                    <label>13. Apakah dilakukan pemisahan hewan baru dan hewan lama?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example5" type="radio" name="radio_example">
@@ -467,8 +333,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>14.Apakah ada kandang isolasi untuk hewan yang sakit?</label>
+                                <div class="form-group mb-5">
+                                    <label>14. Apakah ada kandang isolasi untuk hewan yang sakit?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example7" type="radio" name="radio_example">
@@ -485,8 +351,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>15.Apakah sarana dan prasarana memenuhi/memdai (pemerahan,penyimpanan,pengangukan dan pengiriman susu)</label>
+                                <div class="form-group mb-5">
+                                    <label>15. Apakah sarana dan prasarana memenuhi/memdai (pemerahan,penyimpanan,pengangukan dan pengiriman susu)</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example9" type="radio" name="radio_example">
@@ -503,8 +369,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>16.Apakah prosedur pemeliharaan hewan menerapkan prinsip-prinsip kesejahteraan hewan?</label>
+                                <div class="form-group mb-5">
+                                    <label>16. Apakah prosedur pemeliharaan hewan menerapkan prinsip-prinsip kesejahteraan hewan?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example11" type="radio" name="radio_example">
@@ -521,8 +387,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>17.Apakah metode pemerahan memperhatikan kebersihan ambing?</label>
+                                <div class="form-group mb-5">
+                                    <label>17. Apakah metode pemerahan memperhatikan kebersihan ambing?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example13" type="radio" name="radio_example">
@@ -539,8 +405,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>18.Apakah ada penanganan terhadap susu yang berasal dari hewan yang sedang dalam
+                                <div class="form-group mb-5">
+                                    <label>18. Apakah ada penanganan terhadap susu yang berasal dari hewan yang sedang dalam
                                         pengobatan dengan menggunakan antibiotik (masitis dan penyakit lainnya)?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
@@ -558,8 +424,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>19.Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana
+                                <div class="form-group mb-5">
+                                    <label>19. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana
                                         (sanitasi): (unit usaha budidaya perah dan unit pemerahan susu)</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
@@ -577,8 +443,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>20.Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
+                                <div class="form-group mb-5">
+                                    <label>20. Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example19" type="radio" name="radio_example">
@@ -595,8 +461,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>21.Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
+                                <div class="form-group mb-5">
+                                    <label>21. Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example21" type="radio" name="radio_example">
@@ -613,8 +479,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>22.Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
+                                <div class="form-group mb-5">
+                                    <label>22. Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example23" type="radio" name="radio_example">
@@ -631,8 +497,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>23.Apakah dilakukan program pengendalian hama dan serangga?</label>
+                                <div class="form-group mb-5">
+                                    <label>23. Apakah dilakukan program pengendalian hama dan serangga?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example24" type="radio" name="radio_example">
@@ -649,8 +515,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>24.Apakah ada prosedur penanganan terhadap hewan yang sakit/mati?</label>
+                                <div class="form-group mb-5">
+                                    <label>24. Apakah ada prosedur penanganan terhadap hewan yang sakit/mati?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example25" type="radio" name="radio_example">
@@ -667,8 +533,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label>25.Apakah dilakukan pengolahan limbah?</label>
+                                <div class="form-group mb-5">
+                                    <label>25. Apakah dilakukan pengolahan limbah?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3">
                                             <input id="radio_example27" type="radio" name="radio_example">
@@ -685,8 +551,8 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mt-4">
+                                <div class="form-group mb-5">
+                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right">
                                         Simpan & Lanjutkan
                                     </button>
                                     <div class="clearfix"></div>
@@ -694,7 +560,7 @@
                             </div>
                             
                             <div class="tab-pane" id="catatan">
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label for="textarea_example">1.Catatan</label>
                                     <textarea class="form-control @error('textarea_example') is-invalid @enderror" 
                                               rows="3" 
@@ -708,7 +574,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label for="textarea_example">2.Rekomendasi Tindak Lanjut</label>
                                     <textarea class="form-control @error('textarea_example') is-invalid @enderror" 
                                               rows="3" 
@@ -723,13 +589,13 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label>3.Pengawas 1</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -737,26 +603,26 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label>4.Pengawas 2</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label>5.Pengawas 3</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -764,13 +630,13 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group mb-5">
                                     <label>6.Penangung Jawab Unit Usaha</label>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
                                            name="textfield_example" 
-                                           value="{{ old('textfield_example') }}" autofocus>
+                                           value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -778,8 +644,8 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mt-4">
+                                <div class="form-group mb-5">
+                                    <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right">
                                         Simpan
                                     </button>
                                     <div class="clearfix"></div>

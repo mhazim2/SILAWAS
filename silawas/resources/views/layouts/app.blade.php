@@ -30,7 +30,17 @@
     <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+    <!-- <header class="kop clearfix">
+        <div class="row">
+            <div class="col-sm-2" style="top: 40px;" align="center">
+                <img class="" src="{{ asset('img/backkesmavet3.png') }}" width="50%">
+            </div>
+            <div class="col-sm-3" style="top: 70px;left: -60px;" align="center">
+                <img class="" src="{{ asset('img/backkesmavet2.png') }}" width="175%">
+            </div>
+        </div>
+    </header> -->
     <div class="wrapper">
         @include('layouts.navbar')
         @include('layouts.sidebar')

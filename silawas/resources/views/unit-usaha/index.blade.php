@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Daftar Formulir')
-@section('Daftar Formulir', 'active')
+@section('title', 'Daftar Unit Usaha')
+@section('Daftar Unit Usaha', 'active')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Daftar Formulir</h1>
+                        <h1 class="m-0 text-dark">Daftar Unit Usaha</h1>
                     </div>
                 </div>
             </div>
@@ -20,32 +20,30 @@
                 <div class="card card-primary card-outline">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="formulir-datatable" class="table table-sm table-bordered table-striped">
+                            <table id="unit-usaha-datatable" class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <td>No</td>
-                                    <td>Jenis Form</td>
+                                    <td>Logo</td>
                                     <td>Nama Unit Usaha</td>
-                                    <td>Pemilik Unit Usaha</td>
-                                    <td>Tahun Operasional</td>
-                                    <td>Tanggal Dibuat</td>
+                                    <td>Email</td>
+                                    <td>Nomor Telepon</td>
                                     <td>Operasi</td>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="text-center">1</td>
-                                        <td>Form 9</td>
-                                        <td>CV Jaya Abadi</td>
-                                        <td>Super Farm</td>
-                                        <td>2019</td>
-                                        <td>17 Agustus 2019</td>
+                                        <td class="text-center"><img src="{{ asset('dist/img/user.png') }}" height="50" alt="Example Image"></td>
+                                        <td>Feby</td>
+                                        <td>feby@gmail.com</td>
+                                        <td>0819876543</td>
                                         <td class="text-center">
-                                            <a href="/pengajuan/detail/1">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
+                                            <a href="/unit-usaha/detail/1">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
                                                     <small><i class="fas fa-eye"></i></small>
                                                 </button>
                                             </a>
-                                            <a href="/pengajuan/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Formulir">
+                                            <a href="/unit-usaha/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
                                                     <small><i class="fas fa-trash"></i></small>
                                                 </button>
                                             </a>
@@ -53,19 +51,18 @@
                                     </tr>
                                     <tr>
                                         <td class="text-center">2</td>
-                                        <td>Form 10</td>
-                                        <td>PT Tani Nasional</td>
-                                        <td>Countryside Farm</td>
-                                        <td>2019</td>
-                                        <td>23 Agustus 2019</td>
+                                        <td class="text-center"><img src="{{ asset('dist/img/user.png') }}" height="50" alt="Example Image"></td>
+                                        <td>Wiradani</td>
+                                        <td>wira@superfarm.com</td>
+                                        <td>08123456789</td>
                                         <td class="text-center">
-                                            <a href="/pengajuan/detail/2">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
+                                            <a href="/unit-usaha/detail/2">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
                                                     <small><i class="fas fa-eye"></i></small>
                                                 </button>
                                             </a>
-                                            <a href="/pengajuan/hapus/2" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Formulir">
+                                            <a href="/unit-usaha/hapus/2" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
                                                     <small><i class="fas fa-trash"></i></small>
                                                 </button>
                                             </a>
@@ -73,19 +70,18 @@
                                     </tr>
                                     <tr>
                                         <td class="text-center">3</td>
-                                        <td>Form 11</td>
-                                        <td>Vero Tani tbk</td>
-                                        <td>Private Farm</td>
-                                        <td>2019</td>
-                                        <td>20 Agustus 2019</td>
+                                        <td class="text-center"><img src="{{ asset('dist/img/user.png') }}" height="50" alt="Example Image"></td>
+                                        <td>Wawan</td>
+                                        <td>wawan@apps.ipb.ac.id</td>
+                                        <td>08183126190</td>
                                         <td class="text-center">
-                                            <a href="/pengajuan/detail/3">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
+                                            <a href="/unit-usaha/detail/3">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
                                                     <small><i class="fas fa-eye"></i></small>
                                                 </button>
                                             </a>
-                                            <a href="/pengajuan/hapus/3" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Formulir">
+                                            <a href="/unit-usaha/hapus/3" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
                                                     <small><i class="fas fa-trash"></i></small>
                                                 </button>
                                             </a>
@@ -96,7 +92,7 @@
                             @push('scripts')
                                 <script>
                                     $(function () {
-                                        $('#formulir-datatable').DataTable({
+                                        $('#unit-usaha-datatable').DataTable({
                                             "paging": true,
                                             "lengthChange": true,
                                             "searching": true,

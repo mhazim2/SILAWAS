@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Profile')
+@section('Profile', 'active')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -26,7 +27,7 @@
                                 </div>
                                 <h3 class="profile-username text-center">{{ $user->username }}</h3>
                                 <p class="text-muted text-center">Admin</p>
-                            <a href= '{{"/profile/".$user->id."/edit"}}'class="btn btn-kesmavet btn-block">
+                                <a href= '{{"/profile/".$user->id."/edit"}}'class="btn btn-kesmavet btn-block mt-4">
                                     <b>Edit Profil</b>
                                 </a>
                             </div>
@@ -39,7 +40,7 @@
                             <div class="card-body">
                                 <table class="detail-view">
                                     <tr>
-                                        <td>Nama Lengkap</td>
+                                        <td class="text-nowrap">Nama Lengkap</td>
                                         <td>:</td>
                                         <td>
                                             @foreach ($orang as $orang)
@@ -48,32 +49,32 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Email</td>
+                                        <td class="text-nowrap">Email</td>
                                         <td>:</td>
                                         <td>{{ $user->email }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Tempat Lahir</td>
+                                        <td class="text-nowrap">Tempat Lahir</td>
                                         <td>:</td>
                                         <td>{{ $orang->TempatLahir }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Tanggal Lahir</td>
+                                        <td class="text-nowrap">Tanggal Lahir</td>
                                         <td>:</td>
                                         <td>{{ date('d F Y', strtotime($orang->TanggalLahir)) }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Nomor HP</td>
+                                        <td class="text-nowrap">Nomor HP</td>
                                         <td>:</td>
                                         <td>{{ $orang->NomorHandphone }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Nomor KTP</td>
+                                        <td class="text-nowrap">Nomor KTP</td>
                                         <td>:</td>
                                         <td>{{ $orang->NomorKTP }}</td>
                                     </tr>
                                     <tr>
-                                        <td>NPWP</td>
+                                        <td class="text-nowrap">NPWP</td>
                                         <td>:</td>
                                         <td>{{ $orang->NPWP }}</td>
                                     </tr>

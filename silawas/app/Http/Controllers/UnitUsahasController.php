@@ -6,7 +6,7 @@ use App\UnitUsaha;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-class UnitUsahaController extends Controller
+class UnitUsahasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class UnitUsahaController extends Controller
      */
     public function index()
     {
-        
+        return view('unit-usaha.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class UnitUsahaController extends Controller
      */
     public function create()
     {
-        return view('pengajuan.formulir-9');
+        return view('unit-usaha.create');
     }
 
     /**

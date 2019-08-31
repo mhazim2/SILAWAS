@@ -60,13 +60,26 @@ a:hover {
     padding: 1.5rem .5rem .5rem .5rem;
 }
 
+.layout-navbar-fixed .wrapper .sidebar-light-primary .brand-link {
+    background-color: #8C0090;
+}
+
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, 
 .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
     background-color: #8C0090;
 }
 
-.nav-pills .nav-link:not(.active):hover {
+.page-item.active .page-link {
+    background-color: #8C0090;
+    border-color: #8C0090;
+}
+
+.page-link {
     color: #8C0090;
+}
+
+.page-link:hover {
+    color: #E040FB;
 }
 
 .card-primary.card-outline {
@@ -74,7 +87,14 @@ a:hover {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    background-color: #E040FB;
+    background-color: transparent;
+    color: #8C0090;
+    border-radius: 0px;
+    border-bottom: 3px solid #8C0090;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    color: #8C0090;
 }
 
 .detail-view tr td:nth-of-type(2),
@@ -87,24 +107,54 @@ a:hover {
     font-weight: bold;
 }
 
+.bg-kesmavet-3d  {
+    background-color: #fff;
+    color: #333;
+    border-radius: .5rem;
+    border-right: 5px solid #8C0090;
+    border-bottom: 5px solid #8C0090;
+}
+
 .small-box:hover {
-    -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
 }
 
 .small-box > .small-box-footer {
-    color: inherit;
+    background: #D500F9;
+    color: #fff;
+}
+
+.small-box:hover > .small-box-footer {
+    background: #D500F9;
+    color: #fff;
+    font-weight: bold;
+}
+
+.small-box .icon > i {
+    color: rgba(213,0,249,0.15);
 }
 
 .small-box:hover .icon > i {
-    font-size: 95px !important;
-    color: inherit;
+    font-size: 80px !important;
+    color: rgba(213,0,249,0.15);
+}
+
+.kop {
+    height: 185px;
+    background: #fff;
+    background-image: url(../../img/backkesmavet.png);
+}
+
+.resources-list .card-img-container {
+    height: 150px;
+    overflow-y: hidden;
 }
 
 @media (min-width: 768px) {
     .small-box > .inner > p {
-        min-height: 72px;
+        min-height: 48px;
     }
 }
 
@@ -126,6 +176,10 @@ a:hover {
     div.dataTables_wrapper div.dataTables_paginate ul.pagination {
         justify-content: center;
         margin-bottom: 1rem;
+    }
+
+    .kop {
+        display: none;
     }
 }
 

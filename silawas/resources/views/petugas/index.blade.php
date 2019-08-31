@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Daftar Petugas')
+@section('Daftar Petugas', 'active')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -35,7 +36,18 @@
                                         <td>Feby</td>
                                         <td>feby@gmail.com</td>
                                         <td>0819876543</td>
-                                        <td>Active</td>
+                                        <td class="text-center">
+                                            <a href="/petugas/detail/1">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
+                                                    <small><i class="fas fa-eye"></i></small>
+                                                </button>
+                                            </a>
+                                            <a href="/petugas/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
+                                                    <small><i class="fas fa-trash"></i></small>
+                                                </button>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">2</td>
@@ -43,7 +55,18 @@
                                         <td>Wiradani</td>
                                         <td>wira@superfarm.com</td>
                                         <td>08123456789</td>
-                                        <td>Active</td>
+                                        <td class="text-center">
+                                            <a href="/petugas/detail/2">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
+                                                    <small><i class="fas fa-eye"></i></small>
+                                                </button>
+                                            </a>
+                                            <a href="/petugas/hapus/2" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
+                                                    <small><i class="fas fa-trash"></i></small>
+                                                </button>
+                                            </a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">3</td>
@@ -51,7 +74,18 @@
                                         <td>Wawan</td>
                                         <td>wawan@apps.ipb.ac.id</td>
                                         <td>08183126190</td>
-                                        <td>Active</td>
+                                        <td class="text-center">
+                                            <a href="/petugas/detail/3">
+                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
+                                                    <small><i class="fas fa-eye"></i></small>
+                                                </button>
+                                            </a>
+                                            <a href="/petugas/hapus/3" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
+                                                    <small><i class="fas fa-trash"></i></small>
+                                                </button>
+                                            </a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

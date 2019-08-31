@@ -31,66 +31,28 @@
                                     <td>Operasi</td>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>Supefarm</td>
-                                        <td>Bogor</td>
-                                        <td>cs@superfarm.com</td>
-                                        <td>Feby</td>
-                                        <td>2019</td>
-                                        <td class="text-center">
-                                            <a href="/unit-usaha/detail/1">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="/unit-usaha/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">2</td>
-                                        <td>Megalodon</td>
-                                        <td>Bandung</td>
-                                        <td>wira@megalodon.com</td>
-                                        <td>wiradani</td>
-                                        <td>2019</td>
-                                        <td class="text-center">
-                                            <a href="/unit-usaha/detail/2">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="/unit-usaha/hapus/2" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">3</td>
-                                        <td>Antinite</td>
-                                        <td>Jakarta</td>
-                                        <td>wawan@antinite.com</td>
-                                        <td>Wawan</td>
-                                        <td>2019</td>
-                                        <td class="text-center">
-                                            <a href="/unit-usaha/detail/3">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="/unit-usaha/hapus/3" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach ($listunitusaha as $key=>$unitusaha)
+                                        <tr>
+                                            <td class="text-center">{{ ++$key }}</td>
+                                            <td>{{ $unitusaha->NamaUnitUsaha }}</td>
+                                            <td>{{ $unitusaha->NamaLengkap }}</td>
+                                            <td>{{ $unitusaha->Email }}</td>
+                                            <td>{{ $unitusaha->PenangungJawabTeknis }}</td>
+                                            <td>{{ $unitusaha->TahunOperasional }}</td>
+                                            <td class="text-center">
+                                                <a href="/unit-usaha/detail/1">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
+                                                        <small><i class="fas fa-eye"></i></small>
+                                                    </button>
+                                                </a>
+                                                <a href="/unit-usaha/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
+                                                    <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
+                                                        <small><i class="fas fa-trash"></i></small>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             @push('scripts')

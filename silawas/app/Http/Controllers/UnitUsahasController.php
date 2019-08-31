@@ -23,7 +23,7 @@ class UnitUsahasController extends Controller
             ->select('orang.*','unitusaha.*')
             ->get();
         $result = $uu->toArray();
-        return view('unit-usaha.index', ['listunitusaha' => $uu]);
+        return view('unit-usaha.index', ['listunitusaha' => $result]);
     }
 
     /**

@@ -45,9 +45,7 @@
                                     <textarea class="form-control @error('AlamatUnitUsaha') is-invalid @enderror" 
                                               rows="3" 
                                               id="AlamatUnitUsaha" 
-                                              name="AlamatUnitUsaha">
-                                              {{ old('AlamatUnitUsaha') }}
-                                    </textarea>
+                                              name="AlamatUnitUsaha"></textarea>
                                     @error('AlamatUnitUsaha')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -55,7 +53,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <label for="combobox_example">Pemilik Unit Usaha</label>
+                                    <label for="combobox_example">Pemilik Unit Usaha/Nama Kantor Pusat</label>
                                     <select class="form-control select2" id="PelakuUsaha_idPemilikUsaha" name="PelakuUsaha_idPemilikUsaha">
                                         @foreach($listPemilikUsaha as $pemilikusaha)
                                             <option value="{{$pemilikusaha->idPemilikUsaha}}">{{$pemilikusaha->NamaLengkap}} </option>
@@ -68,26 +66,11 @@
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <label for="NamaKantorPusat">Pemilik Unit Usaha/Nama Kantor Pusat</label>
-                                    <input type="text" 
-                                           class="form-control @error('NamaKantorPusat') is-invalid @enderror" 
-                                           id="NamaKantorPusat" 
-                                           name="NamaKantorPusat" 
-                                           value="{{ old('NamaKantorPusat') }}">
-                                    @error('NamaKantorPusat')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group mb-5">
                                     <label for="AlamatKantorPusat">Alamat Kantor Pusat</label>
                                     <textarea class="form-control @error('AlamatKantorPusat') is-invalid @enderror" 
                                               rows="3" 
                                               id="AlamatKantorPusat" 
-                                              name="AlamatKantorPusat">
-                                              {{ old('AlamatKantorPusat') }}
-                                    </textarea>
+                                              name="AlamatKantorPusat"></textarea>
                                     @error('AlamatKantorPusat')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

@@ -23,19 +23,19 @@
                             <table id="petugas-datatable" class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <td>No</td>
-                                    <td>Foto</td>
+                                    <td>TMT</td>
+                                    <td>No. SK</td>
                                     <td>Nama Petugas</td>
-                                    <td>Email</td>
-                                    <td>Nomor Telepon</td>
+                                    <td>Wilayah Kerja</td>
                                     <td>Operasi</td>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="text-center">1</td>
-                                        <td class="text-center"><img src="{{ asset('dist/img/user.png') }}" height="50" alt="Example Image"></td>
+                                        <td>CEO</td>
+                                        <td>123456789</td>
                                         <td>Feby</td>
-                                        <td>feby@gmail.com</td>
-                                        <td>0819876543</td>
+                                        <td>Bogor</td>
                                         <td class="text-center">
                                             <a href="/petugas/detail/1">
                                                 <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
@@ -51,10 +51,10 @@
                                     </tr>
                                     <tr>
                                         <td class="text-center">2</td>
-                                        <td class="text-center"><img src="{{ asset('dist/img/user.png') }}" height="50" alt="Example Image"></td>
-                                        <td>Wiradani</td>
-                                        <td>wira@superfarm.com</td>
-                                        <td>08123456789</td>
+                                        <td>Manager</td>
+                                        <td>123456789</td>
+                                        <td>Wira</td>
+                                        <td>Bandung</td>
                                         <td class="text-center">
                                             <a href="/petugas/detail/2">
                                                 <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
@@ -70,10 +70,10 @@
                                     </tr>
                                     <tr>
                                         <td class="text-center">3</td>
-                                        <td class="text-center"><img src="{{ asset('dist/img/user.png') }}" height="50" alt="Example Image"></td>
+                                        <td>CTO</td>
+                                        <td>123456789</td>
                                         <td>Wawan</td>
-                                        <td>wawan@apps.ipb.ac.id</td>
-                                        <td>08183126190</td>
+                                        <td>Jakarta</td>
                                         <td class="text-center">
                                             <a href="/petugas/detail/3">
                                                 <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">

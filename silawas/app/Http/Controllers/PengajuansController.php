@@ -25,9 +25,4 @@ class PengajuansController extends Controller
     {
         return back();
     }
-
-    public function form9()
-    {
-        return view('pengajuan.formulir-9');
-    }
 }

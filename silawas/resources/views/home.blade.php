@@ -19,9 +19,9 @@
             <div class="container-fluid">
                 <div class="row resources-list">
                     <div class="col-md-3">
-                        <div class="card">
+                        <div class="card" title="Buku Pedoman Pengawasan Kesehatan Masyarakat Veteriner v4" data-toggle="tooltip" data-placement="bottom">
                             <div class="card-img-container">
-                                <img src="{{ asset('file/Buku_Pedoman_VTRNR_V4.png') }}" class="card-img-top" alt="Buku_Pedoman_VTRNR_V4">
+                                <img src="{{ asset('file/Buku_Pedoman_VTRNR_V4.png') }}" class="card-img-top">
                             </div>
                             <div class="card-body p-2">
                                 <a href="{{ asset('file/Buku_Pedoman_VTRNR_V4.pdf') }}" target="_blank">

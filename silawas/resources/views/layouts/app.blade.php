@@ -65,7 +65,7 @@
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-    <script>$(function () { $('.select2').select2() })</script>
+    <script>$(function () { $('.select2').select2(); $('[data-toggle="tooltip"]').tooltip() })</script>
     @stack('scripts')
 </body>
 </html>

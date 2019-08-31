@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Formulir 1')
+@section('title', 'Formulir 10')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,8 +8,8 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Formulir 1</h1>
-                        <small>Formulir dan Panduan Pengisian Ceklis Tempat Budidaya Hewan Perah dan Pemerahan Susu</small>
+                        <h1 class="m-0 text-dark">Formulir 10</h1>
+                        <small>Formulir dan Panduan Pengisian Ceklis Gudang Penyimpanan Dingin/Beku</small>
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@
         <!-- Page Content -->
         <section class="content">
             <div class="container-fluid">
-                <div class="card">
+                <div class="card formulir">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
                             <li class="nav-item"><a class="nav-link active" href="#utama" data-toggle="tab">A. Informasi Utama</a></li>

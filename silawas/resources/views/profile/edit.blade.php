@@ -28,9 +28,9 @@
                             @csrf 
                             <div class="card-body">
                                 <div class="form-group mb-5">
-                                    <label for="name">Nama Lengkap</label>
+                                    <label for="NamaLengkap">Nama Lengkap</label>
                                     @foreach ($orang as $orang) 
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ $orang->NamaLengkap }}">
+                                        <input type="text" class="form-control @error('NamaLengkap') is-invalid @enderror" id="NamaLengkap" name="NamaLengkap" value="{{ $orang->NamaLengkap }}">
                                     @endforeach
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -62,9 +62,9 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" id="tanggallahir" name="tanggallahir" value="">
+                                        <input type="text" class="form-control" id="TanggalLahir" name="TanggalLahir" value="">
                                     </div>
-                                    @error('tanggallahir')
+                                    @error('TanggalLahir')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -73,7 +73,7 @@
                                         <script>
                                             $(function() {
                                                 var date = new Date("{{ date('m/d/Y', strtotime($orang->TanggalLahir)) }}");
-                                                $('#tanggallahir').val(fancy_date(date));
+                                                $('#TanggalLahir').val(fancy_date(date));
                                                 function addZero(i) {
                                                     if (i < 10) { i = "0" + i };
                                                     return i;
@@ -83,7 +83,7 @@
                                                     '/' + addZero(dateObj.getDate()) + 
                                                     '/' + dateObj.getFullYear();
                                                 }
-                                                $('input[name="tanggallahir"]').daterangepicker({
+                                                $('input[name="TanggalLahir"]').daterangepicker({
                                                     singleDatePicker: true,
                                                     showDropdowns: true,
                                                     minYear: 1901,

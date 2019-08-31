@@ -27,16 +27,4 @@ class PetugassController extends Controller
       
         return view('petugas.create');
     }
-
-    public function show(){
-        $petugas = DB::table('user')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->select('user.id','user.email','orang.NamaLengkap','orang.NomorHandphone')
-            ->where('user.accessRoleId','=',7)
-            ->get();
-        $result = $petugas->toArray();
-
-        dd($result);
-        //return view('unit-usaha.create', ['listPemilikUsaha' => $result]);
-    }
 }

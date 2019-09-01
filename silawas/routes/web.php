@@ -32,7 +32,7 @@ Route::post('/petugas/store','PetugassController@store')->name('petugas.store');
 // Halaman Unit Usaha
 Route::get('/unit-usaha', 'UnitUsahasController@index')->name('unitusaha.show');
 Route::get('/unit-usaha/create', 'UnitUsahasController@create')->name('unitusaha.create');
-Route::post('/unit-usaha/store','RegisterUnitUsahaController@simpan');
+Route::post('/unit-usaha/store', 'UnitUsahasController@store')->name('unitusaha.store');
 
 // Halaman Pengajuan
 Route::get('/pengajuan', 'PengajuansController@index')->name('pengajuan.show');

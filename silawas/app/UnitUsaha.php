@@ -6,22 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class UnitUsaha extends Model
 {   
-    public $timestamps = false; 
+	public $timestamps = false;
+	
     protected $table = 'unitusaha';
 
     protected $fillable = [
-      'id',  
-      'PelakuUsaha_idPerusahaan',
-      'PelakuUsaha_idPemilikUsaha',
-      'NamaUnitUsaha',
-      'AlamatUnitUsaha',
-      'NamaKantorPusat',
-      'AlamatKantorPusat',
-      'Telepon',
-      'Fax',
-      'Email',
-      'PenangungJawabTeknis',
-      'KontakPJ',
-      'TahunOperasional',
-      ];
+		'id',  
+		'PelakuUsaha_idPerusahaan',
+		'PelakuUsaha_idPemilikUsaha',
+		'NamaUnitUsaha',
+		'AlamatUnitUsaha',
+		'AlamatKantorPusat',
+		'Telepon',
+		'Fax',
+		'Email',
+		'PenangungJawabTeknis',
+		'KontakPJ',
+		'TahunOperasional',
+	];
 }

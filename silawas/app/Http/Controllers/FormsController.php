@@ -75,9 +75,4 @@ class FormsController extends Controller
     {
         return view('form.formulir-14');
     }
-
-    public function form15()
-    {
-        return view('form.formulir-15');
-    }
 }

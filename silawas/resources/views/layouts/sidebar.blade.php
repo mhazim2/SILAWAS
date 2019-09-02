@@ -108,7 +108,7 @@
                     <a href="#" class="nav-link {{ $pengajuan_nav_link_class }}">
                         <i class="nav-icon far fa-edit"></i>
                         <p>
-                            Pengajuan
+                            Pengawasan
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -119,11 +119,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pengajuan/formulir" class="nav-link @yield('Formulir Pengajuan')">
-                                <p>Formulir Pengajuan</p>
+                            <a href="/pengajuan/formulir" class="nav-link @yield('Formulir Pengawasan')">
+                                <p>Formulir Pengawasan</p>
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/laporan" class="nav-link @yield('Laporan')">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>Laporan</p>
+                    </a>
                 </li>
                 <li class="nav-header">SISTEM</li>
                 <li class="nav-item">

@@ -95,7 +95,7 @@ a:hover {
     color: #8C0090;
 }
 
-.formulir .nav-pills .nav-link.active {
+.formulir .nav-pills .nav-link.active, .laporan .nav-pills .nav-link.active {
     background-color: transparent;
     color: #8C0090;
     border-radius: 0px;

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Formulir Pengajuan')
-@section('Formulir Pengajuan', 'active')
+@section('title', 'Formulir Pengawasan')
+@section('Formulir Pengawasan', 'active')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -309,34 +309,6 @@
                                                 <div class="inner">
                                                     <h3>Form 14</h3>
                                                     <p class="mb-1">Pengangkutan Produk Hewan</p>
-                                                </div>
-                                                <div class="icon">
-                                                    <i class="fab fa-wpforms"></i>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header px-2 py-1" id="headingNine" data-toggle="collapse" data-target="#collapseNine">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link text-kesmavet text-left" type="button">
-                                    <i class="fab fa-wpforms mr-1"></i> Format Laporan Hasil Pengawasan
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseNine" class="collapse" data-parent="#formulirAccordion">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/15">
-                                            <div class="small-box bg-fuchsia">
-                                                <div class="inner">
-                                                    <h3>Form 15</h3>
-                                                    <p class="mb-1">Laporan Hasil Pengawasan Kesmavet 3 Bulanan</p>
                                                 </div>
                                                 <div class="icon">
                                                     <i class="fab fa-wpforms"></i>

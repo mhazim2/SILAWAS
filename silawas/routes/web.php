@@ -58,4 +58,7 @@ Route::get('/pengajuan/formulir/11', 'FormsController@form11')->name('form11.sho
 Route::get('/pengajuan/formulir/12', 'FormsController@form12')->name('form12.show');
 Route::get('/pengajuan/formulir/13', 'FormsController@form13')->name('form13.show');
 Route::get('/pengajuan/formulir/14', 'FormsController@form14')->name('form14.show');
-Route::get('/pengajuan/formulir/15', 'FormsController@form15')->name('form15.show');
+
+// Halaman Laporan
+Route::get('/laporan', 'LaporansController@index')->name('laporan.show');
+Route::post('/laporan', 'LaporansController@content')->name('laporan.content');

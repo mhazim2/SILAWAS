@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detal Formulir')
+@section('title', 'Detail Formulir')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->

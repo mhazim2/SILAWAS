@@ -29,11 +29,13 @@
                         <div class="tab-content">
                             <div class="active tab-pane" id="utama">
                                 <div class="form-group mb-5">
-                                    <label for="unit_usaha">1. Nama Unit Usaha</label>
-                                    <select class="form-control select2" id="unit_usaha" name="unit_usaha">
-                                        <option value="1">Superfarm</option>
+                                    <label for="combobox_example">1. Nama Unit Usaha</label>
+                                    <select class="form-control select2" id="id" name="NamaUnitUsaha">
+                                        @foreach($listunitusaha as $unitusaha)
+                                            <option value="{{$unitusaha->id}}">{{$unitusaha->NamaUnitUsaha}} </option>
+                                        @endforeach
                                     </select>
-                                    @error('unit_usaha')
+                                    @error('combobox_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -1145,15 +1147,14 @@
                                         </span>
                                     @enderror
                                 </div>
-
                                 <div class="form-group mb-5">
-                                    <label>3.Pengawas 1</label>
-                                    <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
+                                <label for="combobox_example">3. Dokter Hewan Pengawas</label>
+                                    <select class="form-control select2" id="idPengawasKesmavet" name="pengawas1">
+                                        @foreach($listdokter as $pengawas1)
+                                            <option value="{{$pengawas1->idPengawasKesmavet}}">{{$pengawas1->NamaLengkap}} </option>
+                                        @endforeach
+                                    </select>
+                                    @error('combobox_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -1161,30 +1162,33 @@
                                 </div>
 
                                 <div class="form-group mb-5">
-                                    <label>4.Pengawas 2</label>
-                                    <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <label for="combobox_example">3. Dokter Hewan Pengawas/Asisten 1</label>
+                                        <select class="form-control select2" id="idPengawasKesmavet" name="pengawas2">
+                                                <option value="">Tidak Ada</option>
+                                            @foreach($listpengawas as $pengawas2)
+                                                <option value="{{$pengawas2->idPengawasKesmavet}}">{{$pengawas2->NamaLengkap}} </option>
+                                            @endforeach
+                                        </select>
+                                        @error('combobox_example')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
+
                                 <div class="form-group mb-5">
-                                    <label>5.Pengawas 3</label>
-                                    <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <label for="combobox_example">3. Dokter Hewan Pengawas/Asisten 2</label>
+                                        <select class="form-control select2" id="idPengawasKesmavet" name="pengawas3">
+                                                <option value="">Tidak Ada</option>
+                                            @foreach($listpengawas as $pengawas3)
+                                                <option value="{{$pengawas3->idPengawasKesmavet}}">{{$pengawas3->NamaLengkap}} </option>
+                                            @endforeach
+                                        </select>
+                                        @error('combobox_example')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
 
                                 <div class="form-group mb-5">

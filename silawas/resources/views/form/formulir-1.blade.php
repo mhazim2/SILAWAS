@@ -41,6 +41,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">2. Kapasitas Pemeliharaan</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: xxx ekor</small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -54,6 +55,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">3. Jumlah Populasi Ternak</label>
+                                    <small id="idinputHelp1" class="form-text text-muted">Contoh pengisian: xxx ekor</small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -80,6 +82,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">5. Total Produksi Susu</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: xxx liter/hari</small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -107,6 +110,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">7. Jumlah Karyawan</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: xxxx orang</small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -128,6 +132,7 @@
                             <div class="tab-pane" id="survey">
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">1. Nomor Izin Usaha</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: 123/JKT/2017 </small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -141,6 +146,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">2. NPWP</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: 47.222.555.1-017.000 </small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -154,6 +160,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">3. SIUP</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian:  124/SIUP/2017 </small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
@@ -167,6 +174,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">4. NIB</label>
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh pengisian:  321/JSEL/2017 </small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 

@@ -68,7 +68,7 @@
                                     <tr>
                                         <td class="detail-label">Penanungung Jawab Teknis</td>
                                         <td>:</td>
-                                        <td>Kamal</td>
+                                        <td>Kamal Alikorm</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">No. Telp Penanung Jawab Teknis</td>
@@ -296,22 +296,22 @@
                                     <tr>
                                         <td class="detail-label">Pengawas 1</td>
                                         <td>:</td>
-                                        <td>Feby</td>
+                                        <td>Feby Triangara</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Pengawas 2</td>
                                         <td>:</td>
-                                        <td>Alifka</td>
+                                        <td>Alifka Hidayat</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Pengawas 3</td>
                                         <td>:</td>
-                                        <td>Hakim</td>
+                                        <td>Hakim komar</td>
                                     </tr>
                                     <tr>
                                         <td class="detail-label">Penangung Jawab Unit Usaha</td>
                                         <td>:</td>
-                                        <td>Kamal</td>
+                                        <td>Kamal Nasution</td>
                                     </tr>
                                 </table>
                             </div>

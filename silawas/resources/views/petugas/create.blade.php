@@ -44,6 +44,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 0xxx/xxxx/xxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="NIP">NIP</label>
@@ -53,6 +54,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 20xxxxxxxxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="WilayahKerja">Wilayah Kerja</label>
@@ -97,6 +99,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 0xxxxxxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="username">Username Petugas</label>

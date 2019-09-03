@@ -28,7 +28,7 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group mb-5">
-                                    <label for="NamaUnitUsaha">Nama Unit Usaha</label>
+                                    <label for="NamaUnitUsaha"></label>
                                     <input type="text" 
                                            class="form-control @error('NamaUnitUsaha') is-invalid @enderror" 
                                            id="NamaUnitUsaha" 
@@ -39,6 +39,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: PT.xxxx/CV.xxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="AlamatUnitUsaha">Alamat Unit Usaha</label>
@@ -56,7 +57,7 @@
                                     <label for="combobox_example">Pemilik Unit Usaha/Nama Kantor Pusat</label>
                                     <select class="form-control select2" id="PelakuUsaha_idPemilikUsaha" name="PelakuUsaha_idPemilikUsaha">
                                         @foreach($listPemilikUsaha as $pemilikusaha)
-                                            <option value="{{$pemilikusaha->idPemilikUsaha}}">{{$pemilikusaha->NamaLengkap}} </option>
+                                            <option value="{{$pemilikusaha->idPemilikUsaha}}">{{$pemilikusaha->Nama}} </option>
                                         @endforeach
                                     </select>
                                     @error('combobox_example')
@@ -89,6 +90,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="Fax">Fax Kantor Pusat</label>
@@ -102,6 +104,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="Email">Email Kantor Pusat</label>
@@ -141,6 +144,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                    <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="TahunOperasional">Tahun Operasional</label>

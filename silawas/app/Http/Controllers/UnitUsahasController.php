@@ -28,8 +28,8 @@ class UnitUsahasController extends Controller
     public function create()
     {   
         $pemilikusaha = DB::table('pemilikusaha')
-            ->join('orang', 'orang.idOrang', '=', 'pemilikusaha.idOrang')
-            ->select('pemilikusaha.idPemilikUsaha','orang.NamaLengkap')
+            ->join('pelakuusaha', 'pelakuusaha.idPemilikUsaha', '=', 'pemilikusaha.idOrang')
+            ->select('pemilikusaha.idPemilikUsaha','pelakuusaha.Nama')
             ->get();
         $result = $pemilikusaha->toArray();
         return view('unit-usaha.create', ['listPemilikUsaha' => $result]);

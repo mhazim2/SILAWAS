@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Daftar Formulir</h1>
+                        <h1 class="m-0 text-dark">Hasil Pengawasan</h1>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                             <table id="formulir-datatable" class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <td>No</td>
-                                    <td>Jenis Form</td>
+                                    <td>Jenis Unit Usaha</td>
                                     <td>Nama Unit Usaha</td>
                                     <td>Pemilik Unit Usaha</td>
                                     <td>Tahun Operasional</td>
@@ -33,9 +33,9 @@
                                 <tbody>
                                     <tr>
                                         <td class="text-center">1</td>
-                                        <td>Form 9</td>
+                                        <td>Tempat Budidaya Hewan Perah dan Pemerahan Susu</td>
                                         <td>CV Jaya Abadi</td>
-                                        <td>Super Farm</td>
+                                        <td>Imorn Hermadaw</td>
                                         <td>2019</td>
                                         <td>17 Agustus 2019</td>
                                         <td class="text-center">
@@ -53,9 +53,9 @@
                                     </tr>
                                     <tr>
                                         <td class="text-center">2</td>
-                                        <td>Form 10</td>
+                                        <td>Tempat Penampungan Susu</td>
                                         <td>PT Tani Nasional</td>
-                                        <td>Countryside Farm</td>
+                                        <td>Ardiansyah Himan</td>
                                         <td>2019</td>
                                         <td>23 Agustus 2019</td>
                                         <td class="text-center">
@@ -73,9 +73,9 @@
                                     </tr>
                                     <tr>
                                         <td class="text-center">3</td>
-                                        <td>Form 11</td>
+                                        <td>Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi</td>
                                         <td>Vero Tani tbk</td>
-                                        <td>Private Farm</td>
+                                        <td>Buona Gus Kal </td>
                                         <td>2019</td>
                                         <td>20 Agustus 2019</td>
                                         <td class="text-center">

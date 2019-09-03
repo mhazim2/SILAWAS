@@ -27,7 +27,8 @@
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
-                            <div class="active tab-pane" id="utama">
+                            <form class="active tab-pane" id="utama" action="/pengajuan/formulir/1/utama" method="POST">
+                                @csrf
                                 <div class="form-group mb-5">
                                     <label for="combobox_example">1. Nama Unit Usaha</label>
                                     <select class="form-control select2" id="id" name="NamaUnitUsaha">
@@ -45,11 +46,11 @@
                                     <label for="textfield_example">2. Kapasitas Pemeliharaan</label>
                                     <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: xxx ekor</small>
                                     <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
+                                           class="form-control @error('kapasitasPemeliharaan') is-invalid @enderror" 
+                                           id="kapasitasPemeliharaan" 
+                                           name="kapasitasPemeliharaan" 
+                                           value="{{ old('kapasitasPemeliharaan') }}">
+                                    @error('kapasitasPemeliharaan')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -59,11 +60,11 @@
                                     <label for="textfield_example">3. Jumlah Populasi Ternak</label>
                                     <small id="idinputHelp1" class="form-text text-muted">Contoh pengisian: xxx ekor</small>
                                     <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
+                                           class="form-control @error('populasiTernak') is-invalid @enderror" 
+                                           id="populasiTernak" 
+                                           name="populasiTernak" 
+                                           value="{{ old('populasiTernake') }}">
+                                    @error('populasiTernak')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -71,12 +72,12 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="combobox_example">4. Kategori Usaha</label>
-                                    <select class="form-control select2" id="combobox_example" name="combobox_example">
+                                    <select class="form-control select2" id="kategoriUsaha" name="kategoriUsaha">
                                         <option value="1">Kecil ( < 20 Ekor )</option>
                                         <option value="2">Sedang (20 - 100 Ekor)</option>
                                         <option value="3">Besar ( > 100 Ekor)</option>
                                     </select>
-                                    @error('combobox_example')
+                                    @error('kategoriUsaha')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -86,11 +87,11 @@
                                     <label for="textfield_example">5. Total Produksi Susu</label>
                                     <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: xxx liter/hari</small>
                                     <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
+                                           class="form-control @error('totalProduksiSusu') is-invalid @enderror" 
+                                           id="totalProduksiSusu" 
+                                           name="totalProduksiSusu" 
+                                           value="{{ old('totalProduksiSusu') }}">
+                                    @error('totalProduksiSusu')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -98,13 +99,13 @@
                                 </div>
                                 <div class="form-group mb-5">
                                     <label for="combobox_example2">6. Wilayah Peredaran</label>
-                                    <select class="form-control select2" id="combobox_example2" name="combobox_example2">
+                                    <select class="form-control select2" id="wilayahPeredaran" name="wilayahPeredaran">
                                         <option value="1">Lokal</option>
                                         <option value="2">Lintas Kab-Kota</option>
                                         <option value="3">Lintas Provinsi</option>
                                         <option value="4">Ekspor</option>
                                     </select>
-                                    @error('combobox_example2')
+                                    @error('wilayahPeredaran')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -115,9 +116,9 @@
                                     <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: xxxx orang</small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
+                                           id="jumlahKaryawan" 
+                                           name="jumlahKaryawan" 
+                                           value="{{ old('jumlahKaryawan') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -130,16 +131,17 @@
                                     </button>
                                     <div class="clearfix"></div>
                                 </div>
-                            </div>
-                            <div class="tab-pane" id="survey">
+                            </form>
+                            <form class="tab-pane" id="survey" action="/pengajuan/formulir/1/survey" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group mb-5">
                                     <label for="textfield_example">1. Nomor Izin Usaha</label>
                                     <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: 123/JKT/2017 </small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
+                                           id="P1-1" 
+                                           name="P1-1" 
+                                           value="{{ old('P1-1') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -151,9 +153,9 @@
                                     <small id="idinputHelp" class="form-text text-muted">Contoh pengisian: 47.222.555.1-017.000 </small>
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
+                                           id="P1-2" 
+                                           name="P1-2" 
+                                           value="{{ old('P1-2') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -166,7 +168,7 @@
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
-                                           name="textfield_example" 
+                                           name="P1-3" 
                                            value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
@@ -180,7 +182,7 @@
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
-                                           name="textfield_example" 
+                                           name="P1-4" 
                                            value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
@@ -192,38 +194,78 @@
                                     <label>5. Fotocopy Sertifikat Veteriner</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="file_example" name="file_example">
-                                            <label class="custom-file-label" for="file_example">Choose file</label>
+                                            <input type="file"  id="file" name="file">
+                                            {{-- <label class="custom-file-label" for="file">Choose file</label> --}}
                                         </div>
                                     </div>
-                                    @error('file_example')
+                                    @error('file')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
                                 <div class="form-group mb-5">
-                                    <label for="textfield_example">6. Nama Dokter Hewan Penanungung Jawab Teknis</label>
-                                    <input type="text" 
-                                           class="form-control @error('textfield_example') is-invalid @enderror" 
-                                           id="textfield_example" 
-                                           name="textfield_example" 
-                                           value="{{ old('textfield_example') }}">
-                                    @error('textfield_example')
+                                    <label>6. Apakah ada dokter hewan penanggung jawab
+                                        teknis?</label>
+                                    <div class="d-block">
+                                        <div class="icheck-wisteria d-inline mr-3" onclick="checkValue40()">
+                                            <input id="radio40" type="radio" name="P3" value="1">
+                                            <label class="font-weight-normal" for="radio40">Ya</label>
+                                        </div>
+                                        <div class="icheck-wisteria d-inline" onclick="checkValue40()">
+                                            <input id="radio41" type="radio" name="P3" value="0">
+                                            <label class="font-weight-normal" for="radio41">Tidak</label>
+                                        </div>
+                                    </div>
+                                    @error('radio_example')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
+                                <div id="hidden40form" class="form-group bg-kesmavet mb-5 p-3" style="display:none"></div>
+                                @push('scripts')
+                                    <script>
+                                        function checkValue40() {
+                                            if(document.getElementById('radio40').checked) {
+                                                document.getElementById('hidden40form').innerHTML = "";
+                                                document.getElementById('hidden40form').style.display="block";
+                                                var inputLabel = document.createElement("label");
+                                                    inputLabel.innerHTML = "Alasan Memilih Ya";
+                                                var inputField = document.createElement("input");
+                                                    inputField.type = "text";
+                                                    inputField.name = "P3_ket";
+                                                    inputField.id = "textfield_exampl40";
+                                                    inputField.value = "{{ old('textfield_example40') }}";
+                                                    inputField.classList.add("form-control");
+                                                document.getElementById('hidden40form').appendChild(inputLabel);
+                                                document.getElementById('hidden40form').appendChild(inputField);
+                                            }else if(document.getElementById('radio41').checked) {
+                                                document.getElementById('hidden40form').innerHTML = "";
+                                                document.getElementById('hidden40form').style.display="block";
+                                                var inputLabel = document.createElement("label");
+                                                    inputLabel.innerHTML = "Alasan Memilih Tidak";
+                                                var inputField = document.createElement("input");
+                                                    inputField.type = "text";
+                                                    inputField.name = "P3_ket";
+                                                    inputField.id = "textfield_example41";
+                                                    inputField.value = "{{ old('textfield_example41') }}";
+                                                    inputField.classList.add("form-control");
+                                                document.getElementById('hidden40form').appendChild(inputLabel);
+                                                document.getElementById('hidden40form').appendChild(inputField);
+                                            }
+                                        }
+                                    </script>
+                                @endpush
                                 <div class="form-group mb-5">
                                     <label>7. Apakah pemberian pengobatan di bawah pengawasan dokter hewan?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue7()">
-                                            <input id="radio_example_1" type="radio" name="radio_example">
+                                            <input id="radio_example_1" type="radio" name="P4" value="1">
                                             <label class="font-weight-normal" for="radio_example_1">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue7()">
-                                            <input id="radio_example_2" type="radio" name="radio_example">
+                                            <input id="radio_example_2" type="radio" name="P4" value="0">
                                             <label class="font-weight-normal" for="radio_example_2">Tidak</label>
                                         </div>
                                     </div>
@@ -244,7 +286,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example";
+                                                    inputField.name = "P4_ket";
                                                     inputField.id = "textfield_example";
                                                     inputField.value = "{{ old('textfield_example') }}";
                                                     inputField.classList.add("form-control");
@@ -257,7 +299,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example";
+                                                    inputField.name = "P4_ket";
                                                     inputField.id = "textfield_example";
                                                     inputField.value = "{{ old('textfield_example') }}";
                                                     inputField.classList.add("form-control");
@@ -272,7 +314,7 @@
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
-                                           name="textfield_example" 
+                                           name="P5-1" 
                                            value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
@@ -289,7 +331,7 @@
                                         <input type="text" 
                                                class="form-control" 
                                                id="datepicker_example" 
-                                               name="datepicker_example" 
+                                               name="P5-2" 
                                                value="{{ old('datepicker_example') }}">
                                     </div>
                                     @error('datepicker_example')
@@ -315,7 +357,7 @@
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
-                                           name="textfield_example" 
+                                           name="P5-3" 
                                            value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
@@ -329,11 +371,11 @@
                                         atau manusia dari luar?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue8()">
-                                            <input id="radio1" type="radio" name="radio_example">
+                                            <input id="radio1" type="radio" name="P6" value="1">
                                             <label class="font-weight-normal" for="radio1">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue8()">
-                                            <input id="radio2" type="radio" name="radio_example">
+                                            <input id="radio2" type="radio" name="P6" value="0">
                                             <label class="font-weight-normal" for="radio2">Tidak</label>
                                         </div>
                                     </div>
@@ -354,7 +396,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example1";
+                                                    inputField.name = "P6_ket";
                                                     inputField.id = "textfield_example1";
                                                     inputField.value = "{{ old('textfield_example1') }}";
                                                     inputField.classList.add("form-control");
@@ -367,7 +409,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example2";
+                                                    inputField.name = "P6_ket";
                                                     inputField.id = "textfield_exampl2e";
                                                     inputField.value = "{{ old('textfield_example2') }}";
                                                     inputField.classList.add("form-control");
@@ -382,11 +424,11 @@
                                         membatasi akses?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue9()">
-                                            <input id="radio3" type="radio" name="radio_example">
+                                            <input id="radio3" type="radio" name="P7" value="1">
                                             <label class="font-weight-normal" for="radio3">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue9()">
-                                            <input id="radio4" type="radio" name="radio_example">
+                                            <input id="radio4" type="radio" name="P7"  value="0">
                                             <label class="font-weight-normal" for="radio4">Tidak</label>
                                         </div>
                                     </div>
@@ -407,7 +449,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya,bagaimana keadaan pagar?";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example3";
+                                                    inputField.name = "P7_ket";
                                                     inputField.id = "textfield_example3";
                                                     inputField.value = "{{ old('textfield_example3') }}";
                                                     inputField.classList.add("form-control");
@@ -420,7 +462,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example4";
+                                                    inputField.name = "P7_ket";
                                                     inputField.id = "textfield_example4";
                                                     inputField.value = "{{ old('textfield_example4') }}";
                                                     inputField.classList.add("form-control");
@@ -435,11 +477,11 @@
                                         hewan lama?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue10()">
-                                            <input id="radio5" type="radio" name="radio_example">
+                                            <input id="radio5" type="radio" name="P8" value="1">
                                             <label class="font-weight-normal" for="radio5">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue10()">
-                                            <input id="radio6" type="radio" name="radio_example">
+                                            <input id="radio6" type="radio" name="P8" value="0">
                                             <label class="font-weight-normal" for="radio6">Tidak</label>
                                         </div>
                                     </div>
@@ -460,7 +502,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya,bagaimana keadaan kandang?";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example5";
+                                                    inputField.name = "P8_ket";
                                                     inputField.id = "textfield_example5";
                                                     inputField.value = "{{ old('textfield_example5') }}";
                                                     inputField.classList.add("form-control");
@@ -473,7 +515,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example6";
+                                                    inputField.name = "P8_ket";
                                                     inputField.id = "textfield_example6";
                                                     inputField.value = "{{ old('textfield_example6') }}";
                                                     inputField.classList.add("form-control");
@@ -487,11 +529,11 @@
                                     <label>14. Apakah ada kandang isolasi untuk hewan yang sakit?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue11()">
-                                            <input id="radio7" type="radio" name="radio_example">
+                                            <input id="radio7" type="radio" name="P9" value="1">
                                             <label class="font-weight-normal" for="radio7">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue11()">
-                                            <input id="radio8" type="radio" name="radio_example">
+                                            <input id="radio8" type="radio" name="P9" value="0">
                                             <label class="font-weight-normal" for="radio8">Tidak</label>
                                         </div>
                                     </div>
@@ -512,7 +554,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya,bagaimana keadaan kandang?";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example7";
+                                                    inputField.name = "P9_ket";
                                                     inputField.id = "textfield_example7";
                                                     inputField.value = "{{ old('textfield_example7') }}";
                                                     inputField.classList.add("form-control");
@@ -525,7 +567,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example8";
+                                                    inputField.name = "P9_ket";
                                                     inputField.id = "textfield_example8";
                                                     inputField.value = "{{ old('textfield_example8') }}";
                                                     inputField.classList.add("form-control");
@@ -536,14 +578,67 @@
                                     </script>
                                 @endpush
                                 <div class="form-group mb-5">
+                                    <label>14. Apakah sarana dan prasarana pemeliharaan
+                                        memenuhi/ memadai sesuai jumlah ternak?</label>
+                                    <div class="d-block">
+                                        <div class="icheck-wisteria d-inline mr-3" onclick="checkValue110()">
+                                            <input id="radio70" type="radio" name="P10" value="1">
+                                            <label class="font-weight-normal" for="radio70">Ya</label>
+                                        </div>
+                                        <div class="icheck-wisteria d-inline" onclick="checkValue110()">
+                                            <input id="radio80" type="radio" name="P10" value="0">
+                                            <label class="font-weight-normal" for="radio80">Tidak</label>
+                                        </div>
+                                    </div>
+                                    @error('radio_example')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div id="hidden101form" class="form-group bg-kesmavet mb-5 p-3" style="display:none"></div>
+                                @push('scripts')
+                                    <script>
+                                        function checkValue110() {
+                                            if(document.getElementById('radio70').checked) {
+                                                document.getElementById('hidden110form').innerHTML = "";
+                                                document.getElementById('hidden110form').style.display="block";
+                                                var inputLabel = document.createElement("label");
+                                                    inputLabel.innerHTML = "Alasan Memilih Ya,bagaimana keadaan kandang?";
+                                                var inputField = document.createElement("input");
+                                                    inputField.type = "text";
+                                                    inputField.name = "P10_ket";
+                                                    inputField.id = "textfield_example70";
+                                                    inputField.value = "{{ old('textfield_example7') }}";
+                                                    inputField.classList.add("form-control");
+                                                document.getElementById('hidden110form').appendChild(inputLabel);
+                                                document.getElementById('hidden110form').appendChild(inputField);
+                                            }else if(document.getElementById('radio80').checked) {
+                                                document.getElementById('hidden110form').innerHTML = "";
+                                                document.getElementById('hidden110form').style.display="block";
+                                                var inputLabel = document.createElement("label");
+                                                    inputLabel.innerHTML = "Alasan Memilih Tidak";
+                                                var inputField = document.createElement("input");
+                                                    inputField.type = "text";
+                                                    inputField.name = "P10_ket";
+                                                    inputField.id = "textfield_example80";
+                                                    inputField.value = "{{ old('textfield_example8') }}";
+                                                    inputField.classList.add("form-control");
+                                                document.getElementById('hidden110form').appendChild(inputLabel);
+                                                document.getElementById('hidden110form').appendChild(inputField);
+                                            }
+                                        }
+                                    </script>
+                                @endpush
+                                <div class="form-group mb-5">
                                     <label>15. Apakah sarana dan prasarana memenuhi/memdai (pemerahan,penyimpanan,pengangukan dan pengiriman susu)</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue12()">
-                                            <input id="radio9" type="radio" name="radio_example">
+                                            <input id="radio9" type="radio" name="P11" value="1">
                                             <label class="font-weight-normal" for="radio9">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue12()">
-                                            <input id="radio10" type="radio" name="radio_example">
+                                            <input id="radio10" type="radio" name="P11" value="0">
                                             <label class="font-weight-normal" for="radio10">Tidak</label>
                                         </div>
                                     </div>
@@ -564,7 +659,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example9";
+                                                    inputField.name = "P11_ket";
                                                     inputField.id = "textfield_example9";
                                                     inputField.value = "{{ old('textfield_example9') }}";
                                                     inputField.classList.add("form-control");
@@ -577,7 +672,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example10";
+                                                    inputField.name = "P11_ket";
                                                     inputField.id = "textfield_example10";
                                                     inputField.value = "{{ old('textfield_example10') }}";
                                                     inputField.classList.add("form-control");
@@ -593,11 +688,11 @@
                                         hewan</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue13()">
-                                            <input id="radio11" type="radio" name="radio_example">
+                                            <input id="radio11" type="radio" name="P12" value="1">
                                             <label class="font-weight-normal" for="radio11">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue13()">
-                                            <input id="radio12" type="radio" name="radio_example">
+                                            <input id="radio12" type="radio" name="P12" value="0">
                                             <label class="font-weight-normal" for="radio12">Tidak</label>
                                         </div>
                                     </div>
@@ -618,7 +713,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example11";
+                                                    inputField.name = "P12_ket";
                                                     inputField.id = "textfield_example11";
                                                     inputField.value = "{{ old('textfield_example11') }}";
                                                     inputField.classList.add("form-control");
@@ -631,7 +726,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example12";
+                                                    inputField.name = "P12_ket";
                                                     inputField.id = "textfield_example12";
                                                     inputField.value = "{{ old('textfield_example12') }}";
                                                     inputField.classList.add("form-control");
@@ -646,11 +741,11 @@
                                         kebersihan ambing?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue14()">
-                                            <input id="radio13" type="radio" name="radio_example">
+                                            <input id="radio13" type="radio" name="P13" value="1">
                                             <label class="font-weight-normal" for="radio13">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue14()">
-                                            <input id="radio14" type="radio" name="radio_example">
+                                            <input id="radio14" type="radio" name="P13" value="0">
                                             <label class="font-weight-normal" for="radio14">Tidak</label>
                                         </div>
                                     </div>
@@ -671,7 +766,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example13";
+                                                    inputField.name = "P13_ket";
                                                     inputField.id = "textfield_example13";
                                                     inputField.value = "{{ old('textfield_example13') }}";
                                                     inputField.classList.add("form-control");
@@ -684,7 +779,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example14";
+                                                    inputField.name = "P13_ket";
                                                     inputField.id = "textfield_example14";
                                                     inputField.value = "{{ old('textfield_example14') }}";
                                                     inputField.classList.add("form-control");
@@ -698,11 +793,11 @@
                                     <label>18. Apakah ada penanganan terhadap susu yang berasal dari hewan yang sedang dalam pengobatan dengan menggunakan antibiotik (masitis dan penyakit lainnya)?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue15()">
-                                            <input id="radio15" type="radio" name="radio_example">
+                                            <input id="radio15" type="radio" name="P14" value="1">
                                             <label class="font-weight-normal" for="radio15">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue15()">
-                                            <input id="radio16" type="radio" name="radio_example">
+                                            <input id="radio16" type="radio" name="P14" value="0">
                                             <label class="font-weight-normal" for="radio16">Tidak</label>
                                         </div>
                                     </div>
@@ -723,7 +818,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example15";
+                                                    inputField.name = "P14_ket";
                                                     inputField.id = "textfield_example15";
                                                     inputField.value = "{{ old('textfield_example15') }}";
                                                     inputField.classList.add("form-control");
@@ -736,7 +831,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example16";
+                                                    inputField.name = "P14_ket";
                                                     inputField.id = "textfield_example16";
                                                     inputField.value = "{{ old('textfield_example16') }}";
                                                     inputField.classList.add("form-control");
@@ -750,11 +845,11 @@
                                     <label>19. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi): (unit usaha budidaya perah dan unit pemerahan susu)</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue16()">
-                                            <input id="radio17" type="radio" name="radio_example">
+                                            <input id="radio17" type="radio" name="P15" value="1">
                                             <label class="font-weight-normal" for="radio17">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue16()">
-                                            <input id="radio18" type="radio" name="radio_example">
+                                            <input id="radio18" type="radio" name="P15" value="0">
                                             <label class="font-weight-normal" for="radio18">Tidak</label>
                                         </div>
                                     </div>
@@ -775,7 +870,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example17";
+                                                    inputField.name = "P15_ket";
                                                     inputField.id = "textfield_example17";
                                                     inputField.value = "{{ old('textfield_example17') }}";
                                                     inputField.classList.add("form-control");
@@ -788,7 +883,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example18";
+                                                    inputField.name = "P15_ket";
                                                     inputField.id = "textfield_example18";
                                                     inputField.value = "{{ old('textfield_example18') }}";
                                                     inputField.classList.add("form-control");
@@ -802,11 +897,11 @@
                                     <label>20. Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue17()">
-                                            <input id="radio19" type="radio" name="radio_example">
+                                            <input id="radio19" type="radio" name="P16" value="1">
                                             <label class="font-weight-normal" for="radio19">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue17()">
-                                            <input id="radio20" type="radio" name="radio_example">
+                                            <input id="radio20" type="radio" name="P16" value="0">
                                             <label class="font-weight-normal" for="radio20">Tidak</label>
                                         </div>
                                     </div>
@@ -827,7 +922,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example19";
+                                                    inputField.name = "P16_ket";
                                                     inputField.id = "textfield_example19";
                                                     inputField.value = "{{ old('textfield_example19') }}";
                                                     inputField.classList.add("form-control");
@@ -840,7 +935,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example20";
+                                                    inputField.name = "P16_ket";
                                                     inputField.id = "textfield_example20";
                                                     inputField.value = "{{ old('textfield_example20') }}";
                                                     inputField.classList.add("form-control");
@@ -851,14 +946,15 @@
                                     </script>
                                 @endpush
                                 <div class="form-group mb-5">
-                                    <label>21. Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
+                                    <label>21. Apakah dilakukan program pengendalian
+                                        hama dan serangga?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue18()">
-                                            <input id="radio21" type="radio" name="radio_example">
+                                            <input id="radio21" type="radio" name="P17" value="1">
                                             <label class="font-weight-normal" for="radio21">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue18()">
-                                            <input id="radio22" type="radio" name="radio_example">
+                                            <input id="radio22" type="radio" name="P17" value="0">
                                             <label class="font-weight-normal" for="radio22">Tidak</label>
                                         </div>
                                     </div>
@@ -879,7 +975,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example21";
+                                                    inputField.name = "P17_ket";
                                                     inputField.id = "textfield_example21";
                                                     inputField.value = "{{ old('textfield_example21') }}";
                                                     inputField.classList.add("form-control");
@@ -892,7 +988,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example22";
+                                                    inputField.name = "P17_ket";
                                                     inputField.id = "textfield_example22";
                                                     inputField.value = "{{ old('textfield_example22') }}";
                                                     inputField.classList.add("form-control");
@@ -902,67 +998,16 @@
                                         }
                                     </script>
                                 @endpush
+                                
                                 <div class="form-group mb-5">
-                                    <label>22. Apakah sarana dan prasarana untuk kebersihan personal memadai?</label>
-                                    <div class="d-block">
-                                        <div class="icheck-wisteria d-inline mr-3" onclick="checkValue19()">
-                                            <input id="radio23" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio23">Ya</label>
-                                        </div>
-                                        <div class="icheck-wisteria d-inline" onclick="checkValue19()">
-                                            <input id="radio24" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio24">Tidak</label>
-                                        </div>
-                                    </div>
-                                    @error('radio_example')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div id="hidden19form" class="form-group bg-kesmavet mb-5 p-3" style="display:none"></div>
-                                @push('scripts')
-                                    <script>
-                                        function checkValue19() {
-                                            if(document.getElementById('radio23').checked) {
-                                                document.getElementById('hidden19form').innerHTML = "";
-                                                document.getElementById('hidden19form').style.display="block";
-                                                var inputLabel = document.createElement("label");
-                                                    inputLabel.innerHTML = "Alasan Memilih Ya";
-                                                var inputField = document.createElement("input");
-                                                    inputField.type = "text";
-                                                    inputField.name = "textfield_example23";
-                                                    inputField.id = "textfield_example23";
-                                                    inputField.value = "{{ old('textfield_example23') }}";
-                                                    inputField.classList.add("form-control");
-                                                document.getElementById('hidden19form').appendChild(inputLabel);
-                                                document.getElementById('hidden19form').appendChild(inputField);
-                                            }else if(document.getElementById('radio24').checked) {
-                                                document.getElementById('hidden19form').innerHTML = "";
-                                                document.getElementById('hidden19form').style.display="block";
-                                                var inputLabel = document.createElement("label");
-                                                    inputLabel.innerHTML = "Alasan Memilih Tidak";
-                                                var inputField = document.createElement("input");
-                                                    inputField.type = "text";
-                                                    inputField.name = "textfield_example24";
-                                                    inputField.id = "textfield_example24";
-                                                    inputField.value = "{{ old('textfield_example24') }}";
-                                                    inputField.classList.add("form-control");
-                                                document.getElementById('hidden19form').appendChild(inputLabel);
-                                                document.getElementById('hidden19form').appendChild(inputField);
-                                            }
-                                        }
-                                    </script>
-                                @endpush
-                                <div class="form-group mb-5">
-                                    <label>23.  Apakah dilakukan program pengendalian hama dan serangga?</label>
+                                    <label>22.  Apakah ada prosedur penganganan terhadap hewan yang sakit/mati?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue20()">
-                                            <input id="radio25" type="radio" name="radio_example">
+                                            <input id="radio25" type="radio" name="P18" value="1">
                                             <label class="font-weight-normal" for="radio25">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue20()">
-                                            <input id="radio26" type="radio" name="radio_example">
+                                            <input id="radio26" type="radio" name="P18" value="0">
                                             <label class="font-weight-normal" for="radio26">Tidak</label>
                                         </div>
                                     </div>
@@ -983,7 +1028,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example25";
+                                                    inputField.name = "P18_ket";
                                                     inputField.id = "textfield_example25";
                                                     inputField.value = "{{ old('textfield_example25') }}";
                                                     inputField.classList.add("form-control");
@@ -996,7 +1041,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example26";
+                                                    inputField.name = "P18_ket";
                                                     inputField.id = "textfield_example26";
                                                     inputField.value = "{{ old('textfield_example26') }}";
                                                     inputField.classList.add("form-control");
@@ -1006,67 +1051,16 @@
                                         }
                                     </script>
                                 @endpush
+                                
                                 <div class="form-group mb-5">
-                                    <label>24.   Apakah ada prosedur penanganan terhadap hewan yang sakit/mati?</label>
-                                    <div class="d-block">
-                                        <div class="icheck-wisteria d-inline mr-3" onclick="checkValue21()">
-                                            <input id="radio27" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio27">Ya</label>
-                                        </div>
-                                        <div class="icheck-wisteria d-inline" onclick="checkValue21()">
-                                            <input id="radio28" type="radio" name="radio_example">
-                                            <label class="font-weight-normal" for="radio28">Tidak</label>
-                                        </div>
-                                    </div>
-                                    @error('radio_example')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div id="hidden21form" class="form-group bg-kesmavet mb-5 p-3" style="display:none"></div>
-                                @push('scripts')
-                                    <script>
-                                        function checkValue21() {
-                                            if(document.getElementById('radio27').checked) {
-                                                document.getElementById('hidden21form').innerHTML = "";
-                                                document.getElementById('hidden21form').style.display="block";
-                                                var inputLabel = document.createElement("label");
-                                                    inputLabel.innerHTML = "Alasan Memilih Ya";
-                                                var inputField = document.createElement("input");
-                                                    inputField.type = "text";
-                                                    inputField.name = "textfield_example27";
-                                                    inputField.id = "textfield_example27";
-                                                    inputField.value = "{{ old('textfield_example27') }}";
-                                                    inputField.classList.add("form-control");
-                                                document.getElementById('hidden21form').appendChild(inputLabel);
-                                                document.getElementById('hidden21form').appendChild(inputField);
-                                            }else if(document.getElementById('radio28').checked) {
-                                                document.getElementById('hidden21form').innerHTML = "";
-                                                document.getElementById('hidden21form').style.display="block";
-                                                var inputLabel = document.createElement("label");
-                                                    inputLabel.innerHTML = "Alasan Memilih Tidak";
-                                                var inputField = document.createElement("input");
-                                                    inputField.type = "text";
-                                                    inputField.name = "textfield_example28";
-                                                    inputField.id = "textfield_example28";
-                                                    inputField.value = "{{ old('textfield_example28') }}";
-                                                    inputField.classList.add("form-control");
-                                                document.getElementById('hidden21form').appendChild(inputLabel);
-                                                document.getElementById('hidden21form').appendChild(inputField);
-                                            }
-                                        }
-                                    </script>
-                                @endpush
-                                <div class="form-group mb-5">
-                                    <label>25.   Apakah dilakukan pengolahan limbah?</label>
+                                    <label>23.   Apakah dilakukan pengolahan limbah?</label>
                                     <div class="d-block">
                                         <div class="icheck-wisteria d-inline mr-3" onclick="checkValue22()">
-                                            <input id="radio29" type="radio" name="radio_example">
+                                            <input id="radio29" type="radio" name="P19" value="1">
                                             <label class="font-weight-normal" for="radio29">Ya</label>
                                         </div>
                                         <div class="icheck-wisteria d-inline" onclick="checkValue22()">
-                                            <input id="radio30" type="radio" name="radio_example">
+                                            <input id="radio30" type="radio" name="P19" value="0">
                                             <label class="font-weight-normal" for="radio30">Tidak</label>
                                         </div>
                                     </div>
@@ -1087,7 +1081,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Ya";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example29";
+                                                    inputField.name = "P19_ket";
                                                     inputField.id = "textfield_example29";
                                                     inputField.value = "{{ old('textfield_example29') }}";
                                                     inputField.classList.add("form-control");
@@ -1100,7 +1094,7 @@
                                                     inputLabel.innerHTML = "Alasan Memilih Tidak";
                                                 var inputField = document.createElement("input");
                                                     inputField.type = "text";
-                                                    inputField.name = "textfield_example30";
+                                                    inputField.name = "P19_ket";
                                                     inputField.id = "textfield_example30";
                                                     inputField.value = "{{ old('textfield_example30') }}";
                                                     inputField.classList.add("form-control");
@@ -1116,7 +1110,7 @@
                                     </button>
                                     <div class="clearfix"></div>
                                 </div>
-                            </div>
+                            </form>
                             
                             <div class="tab-pane" id="catatan">
                                 <div class="form-group mb-5">

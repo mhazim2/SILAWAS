@@ -30,6 +30,8 @@ class CreateForm1Table extends Migration
             $table->string("P4")->nullable();
             $table->string("P5-1")->nullable();
             $table->string("P5-2")->nullable();
+            $table->string("P5-3")->nullable();
+            $table->string("P6")->nullable();
             $table->string("P7")->nullable();
             $table->string("P8")->nullable();
             $table->string("P9")->nullable();
@@ -43,15 +45,9 @@ class CreateForm1Table extends Migration
             $table->string("P17")->nullable();
             $table->string("P18")->nullable();
             $table->string("P19")->nullable();
-            $table->boolean("P1-1_ket")->nullable();
-            $table->boolean("P1-2_ket")->nullable();
-            $table->boolean("P1-3_ket")->nullable();
-            $table->boolean("P1-4_ket")->nullable();
-            $table->boolean("P2_ket")->nullable();
             $table->boolean("P3_ket")->nullable();
             $table->boolean("P4_ket")->nullable();
-            $table->boolean("P5-1_ket")->nullable();
-            $table->boolean("P5-2_ket")->nullable();
+            $table->boolean("P6_ket")->nullable();
             $table->boolean("P7_ket")->nullable();
             $table->boolean("P8_ket")->nullable();
             $table->boolean("P9_ket")->nullable();

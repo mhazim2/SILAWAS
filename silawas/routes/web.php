@@ -58,6 +58,8 @@ Route::get('/pengajuan/formulir/11', 'FormsController@form11')->name('form11.sho
 Route::get('/pengajuan/formulir/12', 'FormsController@form12')->name('form12.show');
 Route::get('/pengajuan/formulir/13', 'FormsController@form13')->name('form13.show');
 Route::get('/pengajuan/formulir/14', 'FormsController@form14')->name('form14.show');
+Route::post('/pengajuan/formulir/1/utama', 'FormsController@storeUtamaForm1');
+Route::post('/pengajuan/formulir/1/survey', 'FormsController@storeSurveyForm1');
 
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');

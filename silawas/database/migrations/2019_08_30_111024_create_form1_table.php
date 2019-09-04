@@ -45,22 +45,22 @@ class CreateForm1Table extends Migration
             $table->string("P17")->nullable();
             $table->string("P18")->nullable();
             $table->string("P19")->nullable();
-            $table->boolean("P3_ket")->nullable();
-            $table->boolean("P4_ket")->nullable();
-            $table->boolean("P6_ket")->nullable();
-            $table->boolean("P7_ket")->nullable();
-            $table->boolean("P8_ket")->nullable();
-            $table->boolean("P9_ket")->nullable();
-            $table->boolean("P10_ket")->nullable();
-            $table->boolean("P11_ket")->nullable();
-            $table->boolean("P12_ket")->nullable();
-            $table->boolean("P13_ket")->nullable();
-            $table->boolean("P14_ket")->nullable();
-            $table->boolean("P15_ket")->nullable();
-            $table->boolean("P16_ket")->nullable();
-            $table->boolean("P17_ket")->nullable();
-            $table->boolean("P18_ket")->nullable();
-            $table->boolean("P19_ket")->nullable();
+            $table->string("P3_ket")->nullable();
+            $table->string("P4_ket")->nullable();
+            $table->string("P6_ket")->nullable();
+            $table->string("P7_ket")->nullable();
+            $table->string("P8_ket")->nullable();
+            $table->string("P9_ket")->nullable();
+            $table->string("P10_ket")->nullable();
+            $table->string("P11_ket")->nullable();
+            $table->string("P12_ket")->nullable();
+            $table->string("P13_ket")->nullable();
+            $table->string("P14_ket")->nullable();
+            $table->string("P15_ket")->nullable();
+            $table->string("P16_ket")->nullable();
+            $table->string("P17_ket")->nullable();
+            $table->string("P18_ket")->nullable();
+            $table->string("P19_ket")->nullable();
         });
     }
 

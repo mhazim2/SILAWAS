@@ -1112,13 +1112,14 @@
                                 </div>
                             </form>
                             
-                            <div class="tab-pane" id="catatan">
+                            <form class="tab-pane" id="catatan"action="/pengajuan/formulir/1/tambahan" method="POST" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group mb-5">
                                     <label for="textarea_example">1.Catatan</label>
                                     <textarea class="form-control @error('textarea_example') is-invalid @enderror" 
                                               rows="3" 
                                               id="textarea_example" 
-                                              name="textarea_example">
+                                              name="catatan">
                                               {{ old('textarea_example') }}
                                     </textarea>
                                     @error('textarea_example')
@@ -1132,7 +1133,7 @@
                                     <textarea class="form-control @error('textarea_example') is-invalid @enderror" 
                                               rows="3" 
                                               id="textarea_example" 
-                                              name="textarea_example">
+                                              name="rekomendasi">
                                               {{ old('textarea_example') }}
                                     </textarea>
                                     @error('textarea_example')
@@ -1143,7 +1144,7 @@
                                 </div>
                                 <div class="form-group mb-5">
                                 <label for="combobox_example">3. Dokter Hewan Pengawas</label>
-                                    <select class="form-control select2" id="idPengawasKesmavet" name="pengawas1">
+                                    <select class="form-control select2" id="idPengawasKesmavet" name="idPengawas">
                                         @foreach($listdokter as $pengawas1)
                                             <option value="{{$pengawas1->idPengawasKesmavet}}">{{$pengawas1->NamaLengkap}} </option>
                                         @endforeach
@@ -1156,8 +1157,8 @@
                                 </div>
 
                                 <div class="form-group mb-5">
-                                    <label for="combobox_example">3. Dokter Hewan Pengawas/Asisten 1</label>
-                                        <select class="form-control select2" id="idPengawasKesmavet" name="pengawas2">
+                                    <label for="combobox_example">4. Dokter Hewan Pengawas/Asisten 1</label>
+                                        <select class="form-control select2" id="idPengawasKesmavet" name="idPengawas2">
                                                 <option value="">Tidak Ada</option>
                                             @foreach($listpengawas as $pengawas2)
                                                 <option value="{{$pengawas2->idPengawasKesmavet}}">{{$pengawas2->NamaLengkap}} </option>
@@ -1171,8 +1172,8 @@
                                 </div>
 
                                 <div class="form-group mb-5">
-                                    <label for="combobox_example">3. Dokter Hewan Pengawas/Asisten 2</label>
-                                        <select class="form-control select2" id="idPengawasKesmavet" name="pengawas3">
+                                    <label for="combobox_example">5. Dokter Hewan Pengawas/Asisten 2</label>
+                                        <select class="form-control select2" id="idPengawasKesmavet" name="idPengawas3">
                                                 <option value="">Tidak Ada</option>
                                             @foreach($listpengawas as $pengawas3)
                                                 <option value="{{$pengawas3->idPengawasKesmavet}}">{{$pengawas3->NamaLengkap}} </option>
@@ -1190,7 +1191,7 @@
                                     <input type="text" 
                                            class="form-control @error('textfield_example') is-invalid @enderror" 
                                            id="textfield_example" 
-                                           name="textfield_example" 
+                                           name="pjUnitUsaha" 
                                            value="{{ old('textfield_example') }}">
                                     @error('textfield_example')
                                         <span class="invalid-feedback" role="alert">
@@ -1205,7 +1206,7 @@
                                     </button>
                                     <div class="clearfix"></div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

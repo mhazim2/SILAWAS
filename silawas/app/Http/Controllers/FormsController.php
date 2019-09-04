@@ -2,29 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\UnitUsaha;
 use App\SurveyUnitUsaha;
+use App\PengawasKesmavet;
+use App\Form1;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
-use App\Form1;
-use Illuminate\Http\UploadedFile;
 
 class FormsController extends Controller
 {
     public function form1()
     {   
         $uu = DB::table('unitusaha')
-        ->select('unitusaha.*')
-        ->get();
-        $listuu = $uu->toArray();
-
-        $pengawas = DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->select('orang.NamaLengkap','pengawaskesmavet.*')
+            ->select('unitusaha.*')
             ->get();
-        $listpengawas = $pengawas->toArray();
+        $listuu = $uu->toArray();
 
         $pengawas = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
@@ -36,7 +32,7 @@ class FormsController extends Controller
         $DokterPengawas = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('isDokter', '=', 1)
+            // ->where('isDokter', '=', 1)
             ->select('orang.NamaLengkap','pengawaskesmavet.*')
             ->get();
         $listdokter = $DokterPengawas->toArray();
@@ -160,7 +156,28 @@ class FormsController extends Controller
 
     public function form6()
     {
-        return view('form.formulir-6');
+        $list_uu = UnitUsaha::all();
+
+        $pengawas = DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->select('orang.NamaLengkap','pengawaskesmavet.*')
+            ->get();
+        $listpengawas = $pengawas->toArray();
+
+        $DokterPengawas = DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            // ->where('isDokter', '=', 1)
+            ->select('orang.NamaLengkap','pengawaskesmavet.*')
+            ->get();
+        $listdokter = $DokterPengawas->toArray();
+
+        return view('form.formulir-6', [
+            'list_uu' => $list_uu,
+            'listpengawas'=> $listpengawas,
+            'listdokter'=>$listdokter
+        ]);
     }
 
     public function form7()

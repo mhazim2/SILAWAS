@@ -49,7 +49,6 @@ Route::get('/pengajuan/formulir/2', 'FormsController@form2')->name('form2.show')
 Route::get('/pengajuan/formulir/3', 'FormsController@form3')->name('form3.show');
 Route::get('/pengajuan/formulir/4', 'FormsController@form4')->name('form4.show');
 Route::get('/pengajuan/formulir/5', 'FormsController@form5')->name('form5.show');
-Route::get('/pengajuan/formulir/6', 'FormsController@form6')->name('form6.show');
 Route::get('/pengajuan/formulir/7', 'FormsController@form7')->name('form7.show');
 Route::get('/pengajuan/formulir/8', 'FormsController@form8')->name('form8.show');
 Route::get('/pengajuan/formulir/9', 'FormsController@form9')->name('form9.show');
@@ -60,6 +59,13 @@ Route::get('/pengajuan/formulir/13', 'FormsController@form13')->name('form13.sho
 Route::get('/pengajuan/formulir/14', 'FormsController@form14')->name('form14.show');
 Route::post('/pengajuan/formulir/1/utama', 'FormsController@storeUtamaForm1');
 Route::post('/pengajuan/formulir/1/survey', 'FormsController@storeSurveyForm1');
+
+// Halaman Checklist 6 (RPHU)
+Route::redirect('/pengawasan/checklist/6', '/pengawasan/checklist/6/umum')->name('checklist6.show');
+Route::get('/pengawasan/checklist/6/umum', 'Checklists6Controller@umum')->name('checklist6.umum');
+Route::get('/pengawasan/checklist/6/survey', 'Checklists6Controller@survey')->name('checklist6.survey');
+Route::get('/pengawasan/checklist/6/catatan', 'Checklists6Controller@catatan')->name('checklist6.catatan');
+Route::post('/pengawasan/checklist/6/umum', 'Checklists6Controller@umum')->name('checklist6.umum');
 
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');

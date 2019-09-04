@@ -115,7 +115,7 @@
                                         <a href="/pengajuan/formulir/5">
                                             <div class="small-box bg-fuchsia">
                                                 <div class="inner">
-                                                    <h3>Form 5</h3>
+                                                    <h3>RPH-R</h3>
                                                     <p class="mb-1">Rumah Potong Hewan Ruminansia</p>
                                                 </div>
                                                 <div class="icon">
@@ -125,10 +125,10 @@
                                         </a>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/6">
+                                        <a href="{{ route('checklist6.show') }}">
                                             <div class="small-box bg-fuchsia">
                                                 <div class="inner">
-                                                    <h3>Form 6</h3>
+                                                    <h3>RPH-U</h3>
                                                     <p class="mb-1">Rumah Potong Hewan Unggas</p>
                                                 </div>
                                                 <div class="icon">
@@ -141,7 +141,7 @@
                                         <a href="/pengajuan/formulir/7">
                                             <div class="small-box bg-fuchsia">
                                                 <div class="inner">
-                                                    <h3>Form 7</h3>
+                                                    <h3>RPH-B</h3>
                                                     <p class="mb-1">Rumah Potong Hewan Babi</p>
                                                 </div>
                                                 <div class="icon">

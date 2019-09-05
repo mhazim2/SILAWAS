@@ -46,33 +46,35 @@ function check_b1_pks() {
 // Form Survey B2
 // ==============
 
+var b2_count_id = document.getElementById("b2_count");
+var hidden_b2_id = document.getElementById("hidden_b2");
+var hidden_b2_detail_id = document.getElementById("hidden_b2_detail");
+
 function check_b2() {
     var b2_count_value = 0;
     if(document.getElementById('b2_1').checked) {
         b2_count_value = 1;
-        document.getElementById('b2_count').value = b2_count_value;
         b2_detail_init(b2_count_value);
-        document.getElementById('hidden_b2').style.display="block";
+        hidden_b2_id.style.display="block";
     } 
     else if(document.getElementById('b2_2').checked) {
         b2_count_value = 0;
-        document.getElementById('b2_count').value = b2_count_value;
         b2_detail_init(b2_count_value);
-        document.getElementById('hidden_b2').style.display="none";
+        hidden_b2_id.style.display="none";
     }
 }
 
-var b2_count_id = document.getElementById("b2_count");
 function b2_plus(){
     var b2_count = b2_count_id.value;
-    b2_count_id.value = ++b2_count;
-    b2_detail_init(document.getElementById('b2_count').value);
+    b2_count++;
+    b2_detail_init(b2_count);
 }
+
 function b2_minus(){
     var b2_count = b2_count_id.value;
     if (b2_count > 1) {
-        b2_count_id.value = --b2_count;
-        b2_detail_init(document.getElementById('b2_count').value);
+        b2_count--;
+        b2_detail_init(b2_count);
     } 
     else if (b2_count == 1) {
         document.getElementById('b2_2').checked = true;
@@ -112,12 +114,26 @@ document.getElementById('b2_count').addEventListener('change', function(event) {
 });
 
 function b2_detail_init(val){
-    document.getElementById('hidden_b2_detail').innerHTML = '';
+    var b2_count = b2_count_id.value;
     if (val != 0) {
-        for (i=0; i<val; i++) {
-            document.getElementById('hidden_b2_detail').innerHTML += b2_detail_html;
+        if (val>b2_count) {
+            for (i=0; i<(val-b2_count); i++) {
+                hidden_b2_detail_id.insertAdjacentHTML('beforeend', b2_detail_html);
+            }
+        } else if (val<b2_count) {
+            for (i=0; i<(b2_count-val); i++) {
+                hidden_b2_detail_id.removeChild(hidden_b2_detail_id.lastElementChild);
+            }
+        } else {
+            hidden_b2_detail_id.innerHTML = '';
+            for (i=0; i<val; i++) {
+                hidden_b2_detail_id.innerHTML += b2_detail_html;
+            }
         }
+    } else {
+        hidden_b2_detail_id.innerHTML = '';
     }
+    b2_count_id.value = val;
 }
 
 // ==============
@@ -147,7 +163,7 @@ function check_b4() {
 document.getElementById('b4_file').addEventListener('change', function(event) {
     event.preventDefault();
     var fileName = this.files[0].name;
-    b4_label.innerHTML = fileName;
+    document.getElementById('b4_label').innerHTML = fileName;
 });
 
 // ==============
@@ -449,36 +465,36 @@ function check_b30() {
 // Form Survey B31
 // ==============
 
+var b31_count_id = document.getElementById("b31_count");
+var hidden_b31_id = document.getElementById("hidden_b31");
+var hidden_b31_detail_id = document.getElementById("hidden_b31_detail");
+
 function check_b31() {
+    var b31_count_value = 0;
     if(document.getElementById('b31_1').checked) {
         b31_count_value = 1;
-        document.getElementById('b31_count').value = b31_count_value;
         b31_detail_init(b31_count_value);
-        document.getElementById('hidden_b31').style.display="block";
+        hidden_b31_id.style.display="block";
     } 
     else if(document.getElementById('b31_2').checked) {
         b31_count_value = 1;
-        document.getElementById('b31_count').value = b31_count_value;
         b31_detail_init(b31_count_value);
-        document.getElementById('hidden_b31').style.display="block";
-    }
+        hidden_b31_id.style.display="block";
+    } 
     else if(document.getElementById('b31_3').checked) {
         b31_count_value = 1;
-        document.getElementById('b31_count').value = b31_count_value;
         b31_detail_init(b31_count_value);
-        document.getElementById('hidden_b31').style.display="block";
-    }
+        hidden_b31_id.style.display="block";
+    } 
     else if(document.getElementById('b31_4').checked) {
         b31_count_value = 1;
-        document.getElementById('b31_count').value = b31_count_value;
         b31_detail_init(b31_count_value);
-        document.getElementById('hidden_b31').style.display="block";
+        hidden_b31_id.style.display="block";
     }
     else {
         b31_count_value = 0;
-        document.getElementById('b31_count').value = b31_count_value;
         b31_detail_init(b31_count_value);
-        document.getElementById('hidden_b31').style.display="none";
+        hidden_b31_id.style.display="none";
     }
 }
 
@@ -489,18 +505,18 @@ function clear_b31(){
     document.getElementById('b31_4').checked = false;
 }
 
-var b31_count_id = document.getElementById("b31_count");
 function b31_plus(){
     var b31_count = b31_count_id.value;
-    b31_count_id.value = ++b31_count;
-    b31_detail_init(document.getElementById('b31_count').value);
+    b31_count++;
+    b31_detail_init(b31_count);
 }
+
 function b31_minus(){
     var b31_count = b31_count_id.value;
     if (b31_count > 1) {
-        b31_count_id.value = --b31_count;
-        b31_detail_init(document.getElementById('b31_count').value);
-    }
+        b31_count--;
+        b31_detail_init(b31_count);
+    } 
     else if (b31_count == 1) {
         clear_b31();
         check_b31();
@@ -542,10 +558,26 @@ var b31_detail_html = '\
 ';
 
 function b31_detail_init(val){
-    document.getElementById('hidden_b31_detail').innerHTML = '';
-    for (i=0; i<val; i++) {
-        document.getElementById('hidden_b31_detail').innerHTML += b31_detail_html;
+    var b31_count = b31_count_id.value;
+    if (val != 0) {
+        if (val>b31_count) {
+            for (i=0; i<(val-b31_count); i++) {
+                hidden_b31_detail_id.insertAdjacentHTML('beforeend', b31_detail_html);
+            }
+        } else if (val<b31_count) {
+            for (i=0; i<(b31_count-val); i++) {
+                hidden_b31_detail_id.removeChild(hidden_b31_detail_id.lastElementChild);
+            }
+        } else {
+            hidden_b31_detail_id.innerHTML = '';
+            for (i=0; i<val; i++) {
+                hidden_b31_detail_id.innerHTML += b31_detail_html;
+            }
+        }
+    } else {
+        hidden_b31_detail_id.innerHTML = '';
     }
+    b31_count_id.value = val;
 }
 
 // ==============

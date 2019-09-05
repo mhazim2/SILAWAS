@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Rumah Potong Hewan Unggas')
+@section('title', 'Ceklis Gudang Penyimpanan Dingin/Beku')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Rumah Potong Hewan Unggas</h1>
+                        <h1 class="m-0 text-dark">Ceklis Gudang Penyimpanan Dingin/Beku</h1>
                     </div>
                 </div>
             </div>
@@ -19,15 +19,15 @@
                 <div class="card checklist">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist6.umum') }}">A. Informasi Umum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist6.survey') }}">B. Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist10.umum') }}">A. Informasi Umum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist10.survey') }}">B. Survey</a></li>
                             <li class="nav-item"><a class="nav-link active" href="#catatan" data-toggle="tab">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="catatan">
-                                <form action="{{ route('checklist6.store') }}" method="POST">
+                                <form action="{{ route('checklist10.survey') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
@@ -102,6 +102,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist6.js') }}"></script>
+        <script src="{{ asset('js/checklist10.js') }}"></script>
     @endpush
 @endsection

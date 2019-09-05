@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Rumah Potong Hewan Unggas')
+@section('title', 'Ceklis Tempat Budidaya Hewan Perah dan Pemerahan Susu')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Rumah Potong Hewan Unggas</h1>
+                        <h1 class="m-0 text-dark">Ceklis Tempat Budidaya Hewan Perah dan Pemerahan Susu</h1>
                     </div>
                 </div>
             </div>
@@ -19,15 +19,15 @@
                 <div class="card checklist">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist6.umum') }}">A. Informasi Umum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist6.survey') }}">B. Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist1.umum') }}">A. Informasi Umum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist1.survey') }}">B. Survey</a></li>
                             <li class="nav-item"><a class="nav-link active" href="#catatan" data-toggle="tab">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="catatan">
-                                <form action="{{ route('checklist6.store') }}" method="POST">
+                                <form action="{{ route('checklist1.survey') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
@@ -43,8 +43,9 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
-                                            <label for="pengawas1">3. Dokter Hewan Pengawas</label>
-                                            <select class="form-control select2" id="pengawas1" name="pengawas1">
+                                            <label for="idPengawas">3. Dokter Hewan Pengawas</label>
+                                            <select class="form-control select2" id="idPengawas" name="idPengawas">
+                                                <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_dokter as $pengawas1)
                                                     <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->NamaLengkap }}</option>
                                                 @endforeach
@@ -53,8 +54,8 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
-                                            <label for="pengawas2">4. Dokter Hewan Pengawas/Asisten 1</label>
-                                            <select class="form-control select2" id="pengawas2" name="pengawas2">
+                                            <label for="idPengawas2">4. Dokter Hewan Pengawas/Asisten 1</label>
+                                            <select class="form-control select2" id="idPengawas2" name="idPengawas2">
                                                 <option value="">Tidak Ada</option>
                                                 @foreach($list_pengawas as $pengawas2)
                                                     <option value="{{ $pengawas2->idPengawasKesmavet }}">{{ $pengawas2->NamaLengkap }}</option>
@@ -64,8 +65,8 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
-                                            <label for="pengawas3">5. Dokter Hewan Pengawas/Asisten 2</label>
-                                            <select class="form-control select2" id="pengawas3" name="pengawas3">
+                                            <label for="idPengawas3">5. Dokter Hewan Pengawas/Asisten 2</label>
+                                            <select class="form-control select2" id="idPengawas3" name="idPengawas3">
                                                 <option value="">Tidak Ada</option>
                                                 @foreach($list_pengawas as $pengawas3)
                                                     <option value="{{ $pengawas3->idPengawasKesmavet }}">{{ $pengawas3->NamaLengkap }}</option>
@@ -75,17 +76,8 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
-                                            <label>6. Penangung Jawab Unit Usaha</label>
-                                            <input type="text" 
-                                                   class="form-control @error('pj_unitusaha') is-invalid @enderror" 
-                                                   id="pj_unitusaha" 
-                                                   name="pj_unitusaha" 
-                                                   value="{{ old('pj_unitusaha') }}">
-                                            @error('pj_unitusaha')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                            <label for="pjUnitUsaha">6. Penangung Jawab Unit Usaha</label>
+                                            <input type="text" class="form-control" id="pjUnitUsaha" name="pjUnitUsaha">
                                         </div>
                                     </div>
                                     <div class="form-group mb-5">
@@ -102,6 +94,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist6.js') }}"></script>
+        <script src="{{ asset('js/checklist1.js') }}"></script>
     @endpush
 @endsection

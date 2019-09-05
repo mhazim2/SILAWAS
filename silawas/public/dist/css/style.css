@@ -130,16 +130,19 @@ a:hover {
     background-color: transparent;
 }
 
-.small-box .icon > i {
-    color: rgba(100,100,100,.15);
+.accordion-switch i {
+    position: absolute;
+    right: 8px;
+    font-size: 1.5rem;
 }
 
-.small-box:hover .icon > i {
-    font-size: 80px !important;
-    color: rgba(100,100,100,.15);
+.info-box .info-box-icon {
+    font-size: 3rem;
+    width: 60px;
 }
 
-.small-box .inner p {
+.info-box .info-box-text {
+    white-space: normal;
     font-weight: bold;
 }
 
@@ -152,12 +155,6 @@ a:hover {
 .resources-list .card-img-container {
     height: 150px;
     overflow-y: hidden;
-}
-
-@media (min-width: 768px) {
-    .small-box > .inner > p {
-        min-height: 48px;
-    }
 }
 
 @media (max-width: 767px) {

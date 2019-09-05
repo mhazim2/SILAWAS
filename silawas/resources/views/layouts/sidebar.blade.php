@@ -96,16 +96,16 @@
                     </ul>
                 </li>
                 <?php 
-                    if(View::hasSection('Daftar Formulir') || View::hasSection('Formulir Pengajuan')) {
-                        $pengajuan_treeview_class = 'menu-open';
-                        $pengajuan_nav_link_class = 'active';
+                    if(View::hasSection('Daftar Formulir') || View::hasSection('Formulir Pengawasan')) {
+                        $pengawasan_treeview_class = 'menu-open';
+                        $pengawasan_nav_link_class = 'active';
                     } else {
-                        $pengajuan_treeview_class = '';
-                        $pengajuan_nav_link_class = '';
+                        $pengawasan_treeview_class = '';
+                        $pengawasan_nav_link_class = '';
                     }
                 ?>
-                <li class="nav-item has-treeview {{ $pengajuan_treeview_class }}">
-                    <a href="#" class="nav-link {{ $pengajuan_nav_link_class }}">
+                <li class="nav-item has-treeview {{ $pengawasan_treeview_class }}">
+                    <a href="#" class="nav-link {{ $pengawasan_nav_link_class }}">
                         <i class="nav-icon far fa-edit"></i>
                         <p>
                             Pengawasan

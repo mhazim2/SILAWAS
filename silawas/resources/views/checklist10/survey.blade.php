@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Rumah Potong Hewan Unggas')
+@section('title', 'Ceklis Gudang Penyimpanan Dingin/Beku')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Rumah Potong Hewan Unggas</h1>
+                        <h1 class="m-0 text-dark">Ceklis Gudang Penyimpanan Dingin/Beku</h1>
                     </div>
                 </div>
             </div>
@@ -19,15 +19,15 @@
                 <div class="card checklist">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist6.umum') }}">A. Informasi Umum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist10.umum') }}">A. Informasi Umum</a></li>
                             <li class="nav-item"><a class="nav-link active" href="#survey" data-toggle="tab">B. Survey</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist6.catatan') }}">C. Catatan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist10.catatan') }}">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="survey">
-                                <form action="{{ route('checklist6.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
+                                <form action="{{ route('checklist10.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
@@ -243,8 +243,8 @@
                                                                 <label>Scan Sertifikat Veteriner Terakhir</label>
                                                                 <div class="input-group">
                                                                     <div class="custom-file">
-                                                                        <input type="file" id="b4_file" name="file" class="custom-file-input">
-                                                                        <label id="b4_label" class="custom-file-label" for="file">Pilih file...</label>
+                                                                        <input type="file" id="b4_file" name="b4_file" class="custom-file-input">
+                                                                        <label id="b4_label" class="custom-file-label" for="b4_file">Pilih file...</label>
                                                                     </div>
                                                                 </div>
                                                                 <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
@@ -1253,6 +1253,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist6.js') }}"></script>
+        <script src="{{ asset('js/checklist10.js') }}"></script>
     @endpush
 @endsection

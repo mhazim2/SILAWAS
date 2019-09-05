@@ -120,17 +120,81 @@ class FormsController extends Controller
 
     public function storeTambahanForm1(Request $data){
 
-        $surveyUtama = [
-            'idUnitUsaha'=>$data['NamaUnitUsaha'],
-            'kapasitasPemeliharaan'=> $data['kapasitasPemeliharaan'],
-            'populasiTernak' => $data['populasiTernak'],
-            'kategoriUsaha' => $data['kategoriUsaha'],
-            'totalProduksiSusu' => $data['totalProduksiSusu'],
-            'wilayahPeredaran' => $data['wilayahPeredaran'],
-            'jumlahKaryawan' => $data['jumlahKaryawan'],
+        $surveyTambahan = [
+            'catatan'=>$data['catatan'],
+            'rekomendasi'=> $data['rekomendasi'],
+            'idPengawas' => $data['idPengawas'],
+            'idPengawas2' => $data['idPengawas2'],
+            'idPengawas3' => $data['idPengawas3'],
+            'pjUnitUsaha' => $data['pjUnitUsaha'],
         ];
-        session()->put('utama', $surveyUtama);
-        //return dd($stor);
+        session()->put('tambahan', $surveyTambahan);
+        
+        $utama = session('utama');
+        $survey = session('survey');
+        $tambahan = session('tambahan');
+        
+        $form1 = Form1::create([
+            'kapasitasPemeliharaan'=> $utama['kapasitasPemeliharaan'],
+            'populasiTernak'=>$utama['populasiTernak'],
+            'kategoriUsaha'=>$utama['kategoriUsaha'],
+            'totalProduksiSusu'=>$utama['totalProduksiSusu'],
+            'wilayahPeredaran'=>$utama['wilayahPeredaran'],
+            'jumlahKaryawan'=>$utama['jumlahKaryawan'],
+            'P1-1'=>$survey['P1-1'],
+            'P1-2'=>$survey['P1-2'],
+            'P1-3'=>$survey['P1-3'],
+            'P1-4'=>$survey['P1-4'],
+            'P2'=>$survey['P2'],
+            'P3'=>$survey['P3'],
+            'P3_ket'=>$survey['P3_ket'],
+            'P4'=>$survey['P4'],
+            'P4_ket'=>$survey['P4_ket'],
+            'P5-1'=>$survey['P5-1'],
+            'P5-2'=>$survey['P5-2'],
+            'P5-3'=>$survey['P5-3'],
+            'P6'=>$survey['P6'],
+            'P6_ket'=>$survey['P6_ket'],
+            'P7'=>$survey['P7'],
+            'P7_ket'=>$survey['P7_ket'],
+            'P8'=>$survey['P8'],
+            'P8_ket'=>$survey['P8_ket'],
+            'P9'=>$survey['P9'],
+            'P9_ket'=>$survey['P9_ket'],
+            'P10'=>$survey['P10'],
+            'P10_ket'=>$survey['P10_ket'],
+            'P11'=>$survey['P11'],
+            'P11_ket'=>$survey['P11_ket'],
+            'P12'=>$survey['P12'],
+            'P12_ket'=>$survey['P12_ket'],
+            'P13'=>$survey['P13'],
+            'P13_ket'=>$survey['P13_ket'],
+            'P14'=>$survey['P14'],
+            'P14_ket'=>$survey['P14_ket'],
+            'P15'=>$survey['P15'],
+            'P15_ket'=>$survey['P15_ket'],
+            'P16'=>$survey['P16'],
+            'P16_ket'=>$survey['P16_ket'],
+            'P17'=>$survey['P17'],
+            'P17_ket'=>$survey['P17_ket'],
+            'P18'=>$survey['P18'],
+            'P18_ket'=>$survey['P18_ket'],
+            'P19'=>$survey['P19'],
+            'P19_ket'=>$survey['P19_ket'],
+        ]);
+
+        $survey = SurveyUnitUsaha::create([
+        'idUnitUsaha'=>$utama['idUnitUsaha'],
+        'idForm1'=> $form1->id,
+        'catatan'=>$tambahan['catatan'],
+        'rekomendasi'=> $tambahan['rekomendasi'],
+        'idPengawas' => $tambahan['idPengawas'],
+        'idPengawas2' => $tambahan['idPengawas2'],
+        'idPengawas3' => $tambahan['idPengawas3'],
+        'pjUnitUsaha' => $tambahan['pjUnitUsaha'],
+        ]);
+        
+       
         return redirect()->action('FormsController@form1');
     }
 

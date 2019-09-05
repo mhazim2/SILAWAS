@@ -59,6 +59,7 @@ Route::get('/pengajuan/formulir/13', 'FormsController@form13')->name('form13.sho
 Route::get('/pengajuan/formulir/14', 'FormsController@form14')->name('form14.show');
 Route::post('/pengajuan/formulir/1/utama', 'FormsController@storeUtamaForm1');
 Route::post('/pengajuan/formulir/1/survey', 'FormsController@storeSurveyForm1');
+Route::post('/pengajuan/formulir/1/tambahan', 'FormsController@storeTambahanForm1');
 
 // Halaman Checklist 6 (RPHU)
 Route::redirect('/pengawasan/checklist/6', '/pengawasan/checklist/6/umum')->name('checklist6.show');

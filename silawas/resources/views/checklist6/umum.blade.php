@@ -69,7 +69,7 @@
                                     <label>4. Jumlah Karyawan</label>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12 mb-3">
-                                            <label>Produksi</label>
+                                            <label class="font-weight-normal">Produksi</label>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
@@ -90,7 +90,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label>Administrasi</label>
+                                            <label class="font-weight-normal">Administrasi</label>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
@@ -111,7 +111,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label>Petugas AMPM</label>
+                                            <label class="font-weight-normal">Petugas AMPM</label>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
@@ -124,7 +124,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label>Petugas AWO</label>
+                                            <label class="font-weight-normal">Petugas AWO</label>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
@@ -137,7 +137,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label>Juru Sembelih Halal</label>
+                                            <label class="font-weight-normal">Juru Sembelih Halal</label>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
@@ -150,7 +150,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                            <label>Operator Stunning</label>
+                                            <label class="font-weight-normal">Operator Stunning</label>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">

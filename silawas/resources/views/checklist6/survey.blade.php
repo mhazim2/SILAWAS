@@ -243,8 +243,8 @@
                                                                 <label>Scan Sertifikat Veteriner Terakhir</label>
                                                                 <div class="input-group">
                                                                     <div class="custom-file">
-                                                                        <input type="file" id="b4_file" name="b4_file" class="custom-file-input">
-                                                                        <label id="b4_label" class="custom-file-label" for="b4_file">Pilih file...</label>
+                                                                        <input type="file" id="b4_file" name="file" class="custom-file-input">
+                                                                        <label id="b4_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                     </div>
                                                                 </div>
                                                                 <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>

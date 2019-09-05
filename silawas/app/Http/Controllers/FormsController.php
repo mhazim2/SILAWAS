@@ -32,7 +32,7 @@ class FormsController extends Controller
         $DokterPengawas = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            // ->where('isDokter', '=', 1)
+            ->where('isDokter', '=', 1)
             ->select('orang.NamaLengkap','pengawaskesmavet.*')
             ->get();
         $listdokter = $DokterPengawas->toArray();
@@ -168,7 +168,7 @@ class FormsController extends Controller
         $DokterPengawas = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            // ->where('isDokter', '=', 1)
+            ->where('isDokter', '=', 1)
             ->select('orang.NamaLengkap','pengawaskesmavet.*')
             ->get();
         $listdokter = $DokterPengawas->toArray();

@@ -61,29 +61,106 @@
                                             <label for="JenisProduk">3. Jenis Produk (Daging Unggas)</label>
                                             <select class="form-control select2" id="JenisProduk" name="JenisProduk">
                                                 <option disabled selected>-- Pilih --</option>
-                                                <option value="Segar">Segar</option>
-                                                <option value="Beku">Beku</option>
+                                                <option value="Hangat/Segar">Hangat/Segar</option>
+                                                <option value="Dingin/Beku">Dingin/Beku</option>
                                             </select>
                                         </div>
                                     </div>
+                                    <label>4. Jumlah Karyawan</label>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-3">
-                                            <label for="JumlahKaryawan">4. Jumlah Karyawan</label>
-                                            <div class="input-group mb-3">
-                                                <input type="text" 
-                                                    class="form-control @error('JumlahKaryawan') is-invalid @enderror""
-                                                    id="JumlahKaryawan"
-                                                    name="JumlahKaryawan"
-                                                    value="{{ old('JumlahKaryawan') }}">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">orang</span>
+                                        <div class="col-md-12 mb-3">
+                                            <label>Produksi</label>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanProdL">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">laki-laki</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanProdP">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">perempuan</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            @error('JumlahKaryawan')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label>Administrasi</label>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanAdminL">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">laki-laki</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanAdminP">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">perempuan</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label>Petugas AMPM</label>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanAMPM">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">orang</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label>Petugas AWO</label>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanAWO">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">orang</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label>Juru Sembelih Halal</label>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanHalal">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">orang</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label>Operator Stunning</label>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="input-group mb-3">
+                                                        <input type="text" class="form-control" name="KaryawanStunning">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">orang</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group mb-5">

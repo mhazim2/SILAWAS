@@ -66,6 +66,8 @@ Route::get('/pengawasan/checklist/6/umum', 'Checklists6Controller@umum')->name('
 Route::get('/pengawasan/checklist/6/survey', 'Checklists6Controller@survey')->name('checklist6.survey');
 Route::get('/pengawasan/checklist/6/catatan', 'Checklists6Controller@catatan')->name('checklist6.catatan');
 Route::post('/pengawasan/checklist/6/umum', 'Checklists6Controller@umum')->name('checklist6.umum');
+Route::post('/pengawasan/checklist/6/survey', 'Checklists6Controller@survey')->name('checklist6.survey');
+Route::post('/pengawasan/checklist/6/catatan', 'Checklists6Controller@catatan')->name('checklist6.catatan');
 
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');

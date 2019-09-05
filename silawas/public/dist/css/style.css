@@ -43,6 +43,10 @@ table > tbody > tr > td {
     box-shadow: none;
 }
 
+.custom-file-input ~ .custom-file-label::after {
+    content: "Unggah" !important;
+}
+
 .auth-page {
     background: #e9ecef;
 }

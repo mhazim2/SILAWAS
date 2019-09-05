@@ -30,6 +30,7 @@ class Checklists6Controller extends Controller
     {
         $method = $request->method();
         if ($request->isMethod('post')) {
+            dd($request);
             return redirect()->action('Checklists6Controller@catatan');
         }
 
@@ -38,15 +39,10 @@ class Checklists6Controller extends Controller
 
     public function catatan(Request $request)
     {
-        $method = $request->method();
-        if ($request->isMethod('post')) {
-            return redirect()->action('Checklists6Controller@store');
-        }
-
         $list_dokter = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            // ->where('isDokter', '=', 1)
+            ->where('isDokter', '=', 1)
             ->select('orang.NamaLengkap','pengawaskesmavet.*')
             ->get();
         $list_pengawas = DB::table('pengawaskesmavet')
@@ -59,5 +55,10 @@ class Checklists6Controller extends Controller
             'list_dokter' => $list_dokter,
             'list_pengawas' => $list_pengawas
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        return redirect()->action('PengajuansController@formulir');
     }
 }

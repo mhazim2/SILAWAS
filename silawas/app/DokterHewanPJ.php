@@ -8,7 +8,7 @@ class DokterHewanPJ extends Model
 {
     public $timestamps = false;
 
-    protected $table = 'dokter_hewan_penanung_jawab_';
+    protected $table = 'dokterhewanpenanggungjawab';
 
     protected $fillable = [
             'namaLengkap',

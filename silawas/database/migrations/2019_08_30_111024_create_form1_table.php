@@ -14,7 +14,7 @@ class CreateForm1Table extends Migration
     public function up()
     {
         Schema::create('form1', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('kapasitasPemeliharaan')->nullable();
             $table->string('populasiTernak')->nullable();
             $table->string("kategoriUsaha")->nullable();

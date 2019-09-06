@@ -13,14 +13,14 @@ class CreatePenerimaProdukDistribusiTable extends Migration
      */
     public function up()
     {
-        Schema::create('penerima__produk_distribusi_', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('penerimaprodukdistribusi', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('NamaPenerima')->nullable();
             $table->string('JenisProduk')->nullable();
             $table->string('JumlahProduk')->nullable();
             $table->string('AlamatPenerima')->nullable();
-            $table->string('surveyUnitUsaha_idsurveyUnitusaha')->nullable();
-            $table->string('surveyUnitUsaha_UnitUsaha_idUnitUsaha')->nullable();
+            $table->integer('surveyUnitUsaha_idsurveyUnitusaha')->nullable();
+            $table->integer('surveyUnitUsaha_UnitUsaha_idUnitUsaha')->nullable();
         });
     }
 
@@ -31,6 +31,6 @@ class CreatePenerimaProdukDistribusiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penerima__produk_distribusi_');
+        Schema::dropIfExists('penerimaprodukdistribusi');
     }
 }

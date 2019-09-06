@@ -15,6 +15,9 @@ class AddColumnPengawaskesmavet extends Migration
     {
         Schema::table('pengawaskesmavet', function (Blueprint $table) {
             $table->boolean('isActive');
+            $table->boolean('isDokter');
+            $table->integer('idUser');
+
         });
     }
 

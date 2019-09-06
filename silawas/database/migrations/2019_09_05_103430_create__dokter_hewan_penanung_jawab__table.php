@@ -13,8 +13,8 @@ class CreateDokterHewanPenanungJawabTable extends Migration
      */
     public function up()
     {
-        Schema::create('dokter_hewan_penanung_jawab_', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('dokterhewanpenanggung jawab', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('namaLengkap')->nullable();
             $table->string('status')->nullable();
             $table->string('notlp')->nullable();
@@ -30,6 +30,6 @@ class CreateDokterHewanPenanungJawabTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_dokter_hewan_penanung_jawab_');
+        Schema::dropIfExists('dokterhewanpenanggung jawab_');
     }
 }

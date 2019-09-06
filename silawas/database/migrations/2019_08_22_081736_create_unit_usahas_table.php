@@ -14,19 +14,19 @@ class CreateUnitUsahasTable extends Migration
     public function up()
     {
         Schema::create('unitUsaha', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('PelakuUsaha_idPerusahaan')->nullable();
             $table->integer('PelakuUsaha_idPemilikUsaha')->nullable();
-            $table->string("NamaUnitUsaha");
-            $table->text("AlamatUnitUsaha");
-            $table->string("NamaKantorPusat");
-            $table->text("AlamatKantorPusat");
-            $table->string("Telepon");
-            $table->string("Fax");
-            $table->string("Email");
-            $table->string("PenangungJawabTeknis");
-            $table->string("KontakPJ");
-            $table->string("TahunOperasional");
+            $table->string("NamaUnitUsaha")->nullable();;
+            $table->text("AlamatUnitUsaha")->nullable();;
+            $table->string("NamaKantorPusat")->nullable();;
+            $table->text("AlamatKantorPusat")->nullable();;
+            $table->string("Telepon")->nullable();;
+            $table->string("Fax")->nullable();;
+            $table->string("Email")->nullable();;
+            $table->string("PenangungJawabTeknis")->nullable();;
+            $table->string("KontakPJ")->nullable();;
+            $table->string("TahunOperasional")->nullable();;
         });
     }
 

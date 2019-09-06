@@ -1,6 +1,9 @@
 <?php
 
 namespace App;
+use App\SurveyUnitUsaha;
+use App\PengawasKesmavet;
+use App\UnitUsaha;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -56,4 +59,16 @@ class Form1 extends Model
         'P19',
         'P19_ket',
       ];
+
+    public function finalForm1($id){
+      $form1 = SurveyUnitUsaha::findorFail($id)->get();
+
+      $forms = DB::table('surveyunitusaha')
+        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', $form1->id)
+        ->select('surveyunitusaha.*','unitusaha.*')
+        ->get();
+        $listpengawas = $pengawas->toArray();
+
+        return $form1;
+    }
 }

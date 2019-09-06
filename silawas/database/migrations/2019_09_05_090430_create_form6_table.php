@@ -14,7 +14,7 @@ class CreateForm6Table extends Migration
     public function up()
     {
         Schema::create('form6', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('tipeUnitUsaha')->nullable();
             $table->string('jenisProduk')->nullable();
             $table->integer('karyawanProduksi_L')->nullable();

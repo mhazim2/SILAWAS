@@ -14,14 +14,17 @@ class CreateSurveyUnitUsahaTable extends Migration
     public function up()
     {
         Schema::create('surveyunitusaha', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('idUnitUsaha');
-            $table->integer('idPerusahaan');
-            $table->integer("idPemilikUsaha");
-            $table->integer("idPengawas");
-            $table->text("catatan")->nullable();;
+            $table->string('kecamatanUU');
+            $table->integer('idPerusahaan')->nullable();
+            $table->integer("idPemilikUsaha")->nullable();
+            $table->integer("idPengawas")->nullable();
+            $table->integer("idPengawas2")->nullable();
+            $table->integer("idPengawas3")->nullable();
+            $table->text("catatan")->nullable();
             $table->text("rekomendasi")->nullable();
-            $table->string('buktiFile');
+            $table->string('buktiFile')->nullable();
             $table->integer("idForm1")->nullable();
             $table->integer("idForm2")->nullable();
             $table->integer("idForm3")->nullable();
@@ -37,7 +40,7 @@ class CreateSurveyUnitUsahaTable extends Migration
             $table->integer("idForm13")->nullable();
             $table->integer("idForm14")->nullable();
             $table->integer("idForm15")->nullable();
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 

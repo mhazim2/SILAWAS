@@ -13,20 +13,19 @@ class ChangePengawaskesmavetTable extends Migration
      */
     public function up()
     {
-        DB::statement("ALTER TABLE pengawaskesmavet MODIFY idPengawasKesmavet INT NOT NULL PRIMARY KEY AUTO_INCREMENT");
-        
-        Schema::table('pengawaskesmavet', function (Blueprint $table) {
-            $table->integer('idUser');
-        });
+        DB::statement("ALTER TABLE pengawaskesmavet MODIFY idPengawasKesmavet INT NOT NULL  AUTO_INCREMENT");   
+         
     }
 
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * @return voidPengawasKesmavet
      */
     public function down()
     {
-        //
+        DB::statement("ALTER TABLE pengawaskesmavet MODIFY idPengawasKesmavet INT NOT NULL");
+        DB::statement("ALTER TABLE pengawaskesmavet DROP PRIMARY KEY");
+        DB::statement("ALTER TABLE pengawaskesmavet MODIFY idPengawasKesmavet INT NULL");
     }
 }

@@ -57,8 +57,8 @@ class Checklists10Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
-            // $data_catatan = $request->all();
-            // session()->put('catatan', $data_catatan);
+            $data_catatan = $request->all();
+            session()->put('catatan', $data_catatan);
             return redirect()->action('Checklists1Controller@store');
         }
 

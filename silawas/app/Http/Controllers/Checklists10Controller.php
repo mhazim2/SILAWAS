@@ -23,8 +23,9 @@ class Checklists10Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
-            $data_umum = $request->all();
-            session()->put('umum', $data_umum);
+            dd($request);
+            // $data_umum = $request->all();
+            // session()->put('umum', $data_umum);
             return redirect()->action('Checklists1Controller@survey');
         }
 
@@ -57,8 +58,9 @@ class Checklists10Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
-            $data_catatan = $request->all();
-            session()->put('catatan', $data_catatan);
+            dd($request);
+            // $data_catatan = $request->all();
+            // session()->put('catatan', $data_catatan);
             return redirect()->action('Checklists1Controller@store');
         }
 

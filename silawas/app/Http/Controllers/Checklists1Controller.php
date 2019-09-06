@@ -83,7 +83,7 @@ class Checklists1Controller extends Controller
         $survey = session('survey');
         $catatan = session('catatan');
 
-        // Create Form
+        // Insert to Database
         $form = Form1::create([
             'kapasitasPemeliharaan' => $umum['kapasitasPemeliharaan'],
             'populasiTernak' => $umum['populasiTernak'],
@@ -132,8 +132,6 @@ class Checklists1Controller extends Controller
             'P19' => $survey['P19'],
             'P19_ket' => $survey['P19_ket'],
         ]);
-
-        // Insert to Survey
         $survey = SurveyUnitUsaha::create([
             'idUnitUsaha' => $umum['idUnitUsaha'],
             'idForm1' => $form->id,

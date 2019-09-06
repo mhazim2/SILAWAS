@@ -60,6 +60,11 @@ table > tbody > tr > td {
     border: none;
 }
 
+.icheck-white > input:first-child:checked + input[type="hidden"] + label::after, 
+.icheck-white > input:first-child:checked + label::after {
+    border-color: #8C0090;
+}
+
 .auth-page {
     background: #e9ecef;
 }

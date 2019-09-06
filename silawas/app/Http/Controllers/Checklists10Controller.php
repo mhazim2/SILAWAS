@@ -74,9 +74,12 @@ class Checklists10Controller extends Controller
     public function store(Request $request)
     {
         // Get All Data
-        // $umum = session('umum');
-        // $survey = session('survey');
-        // $catatan = session('catatan');
+        $umum = session('umum');
+        $survey = session('survey');
+        $catatan = session('catatan');
+
+        // Insert to Database
+        
 
         // Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');

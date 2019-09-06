@@ -85,7 +85,7 @@ function check_p4() {
 }
 
 // ==============
-// Form Survey p5
+// Form Survey P5
 // ==============
 
 function check_p5() {

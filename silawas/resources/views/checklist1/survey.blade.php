@@ -179,7 +179,7 @@
                                             <div id="hidden_p3" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P3_ket"></textarea>
                                                         </div>
@@ -208,7 +208,7 @@
                                             <div id="hidden_p4" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P4_ket"></textarea>
                                                         </div>
@@ -285,7 +285,7 @@
                                             <div id="hidden_p6" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P6_ket"></textarea>
                                                         </div>
@@ -314,7 +314,7 @@
                                             <div id="hidden_p7" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P7_ket"></textarea>
                                                         </div>
@@ -343,7 +343,7 @@
                                             <div id="hidden_p8" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P8_ket"></textarea>
                                                         </div>
@@ -372,7 +372,7 @@
                                             <div id="hidden_p9" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P9_ket"></textarea>
                                                         </div>
@@ -401,7 +401,7 @@
                                             <div id="hidden_p10" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P10_ket"></textarea>
                                                         </div>
@@ -431,7 +431,7 @@
                                             <div id="hidden_p11" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P11_ket"></textarea>
                                                         </div>
@@ -460,7 +460,7 @@
                                             <div id="hidden_p12" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P12_ket"></textarea>
                                                         </div>
@@ -489,7 +489,7 @@
                                             <div id="hidden_p13" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P13_ket"></textarea>
                                                         </div>
@@ -519,7 +519,7 @@
                                             <div id="hidden_p14" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P14_ket"></textarea>
                                                         </div>
@@ -549,7 +549,7 @@
                                             <div id="hidden_p15" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P15_ket"></textarea>
                                                         </div>
@@ -578,7 +578,7 @@
                                             <div id="hidden_p16" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P16_ket"></textarea>
                                                         </div>
@@ -607,7 +607,7 @@
                                             <div id="hidden_p17" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P17_ket"></textarea>
                                                         </div>
@@ -636,7 +636,7 @@
                                             <div id="hidden_p18" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P18_ket"></textarea>
                                                         </div>
@@ -665,7 +665,7 @@
                                             <div id="hidden_p19" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-0">
+                                                        <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P19_ket"></textarea>
                                                         </div>

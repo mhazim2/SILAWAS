@@ -66,10 +66,10 @@ Route::redirect('/pengawasan/checklist/1', '/pengawasan/checklist/1/umum')->name
 Route::get('/pengawasan/checklist/1/umum', 'Checklists1Controller@umum')->name('checklist1.umum');
 Route::get('/pengawasan/checklist/1/survey', 'Checklists1Controller@survey')->name('checklist1.survey');
 Route::get('/pengawasan/checklist/1/catatan', 'Checklists1Controller@catatan')->name('checklist1.catatan');
+Route::get('/pengawasan/checklist/1/store', 'Checklists1Controller@store')->name('checklist1.store');
 Route::post('/pengawasan/checklist/1/umum', 'Checklists1Controller@umum')->name('checklist1.umum');
 Route::post('/pengawasan/checklist/1/survey', 'Checklists1Controller@survey')->name('checklist1.survey');
 Route::post('/pengawasan/checklist/1/catatan', 'Checklists1Controller@catatan')->name('checklist1.catatan');
-Route::post('/pengawasan/checklist/1/store', 'Checklists1Controller@store')->name('checklist1.store');
 
 // Halaman Checklist 6
 Route::redirect('/pengawasan/checklist/6', '/pengawasan/checklist/6/umum')->name('checklist6.show');

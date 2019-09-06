@@ -32,7 +32,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
-                                            <select class="form-control select2" id="NamaUnitUsaha" name="NamaUnitUsaha">
+                                            <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_uu as $uu)
                                                     <option value="{{ $uu->id }}">{{ $uu->NamaUnitUsaha }} </option>

@@ -9,6 +9,7 @@ class PengawasKesmavet extends Model
 	public $timestamps = false;
 	
 	protected $table = 'pengawaskesmavet';
+	protected $primaryKey = 'idPengawasKesmavet';
 	
     protected $fillable = [
 		'idUser',  
@@ -18,5 +19,10 @@ class PengawasKesmavet extends Model
 		'idWilayahKerja',
 		'idRegencyCity',
 		'isActive',
-    ];      
+	];
+	
+	public function user()
+    {
+        return $this->hasOne('App\User', 'id', 'idUser');
+    }
 }

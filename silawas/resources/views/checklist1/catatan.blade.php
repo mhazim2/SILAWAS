@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="catatan">
-                                <form action="{{ route('checklist1.survey') }}" method="POST">
+                                <form action="{{ route('checklist1.catatan') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
@@ -47,7 +47,7 @@
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_dokter as $pengawas1)
-                                                    <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->NamaLengkap }}</option>
+                                                    <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->user->orang->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -58,7 +58,7 @@
                                             <select class="form-control select2" id="idPengawas2" name="idPengawas2">
                                                 <option value="">Tidak Ada</option>
                                                 @foreach($list_pengawas as $pengawas2)
-                                                    <option value="{{ $pengawas2->idPengawasKesmavet }}">{{ $pengawas2->NamaLengkap }}</option>
+                                                    <option value="{{ $pengawas2->idPengawasKesmavet }}">{{ $pengawas2->user->orang->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -69,7 +69,7 @@
                                             <select class="form-control select2" id="idPengawas3" name="idPengawas3">
                                                 <option value="">Tidak Ada</option>
                                                 @foreach($list_pengawas as $pengawas3)
-                                                    <option value="{{ $pengawas3->idPengawasKesmavet }}">{{ $pengawas3->NamaLengkap }}</option>
+                                                    <option value="{{ $pengawas3->idPengawasKesmavet }}">{{ $pengawas3->user->orang->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

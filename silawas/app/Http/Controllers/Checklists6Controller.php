@@ -20,6 +20,21 @@ class Checklists6Controller extends Controller
     {
         $method = $request->method();
         if ($request->isMethod('post')) {
+
+            request()->validate([
+                
+                'NamaUnitUsaha' => 'required',
+                'KaryawanProdL'=> 'nullable|numeric',
+                'KaryawanProdP'=> 'nullable|numeric',
+                'KaryawanAdminL'=> 'nullable|numeric',
+                'KaryawanAdminP'=> 'nullable|numeric',
+                'KaryawanAMPM'=> 'nullable|numeric',
+                'KaryawanAWO'=> 'nullable|numeric',
+                'KaryawanHalal'=> 'nullable|numeric',
+                'KaryawanStunning'=> 'nullable|numeric',
+    
+            ]);
+
             $temp1 = $request->all();
             session()->put('umum', $temp1);
            
@@ -37,7 +52,10 @@ class Checklists6Controller extends Controller
         $method = $request->method();
             
         if ($request->isMethod('post')) {
-            
+            $this->validate($request,[
+                'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+
+            ]);
             
             $path = '';
             
@@ -53,6 +71,7 @@ class Checklists6Controller extends Controller
                     $request['check_b31'] = implode( ", ", $request['check_b31'] );
                 }
                 if($request->hasFile('file')){
+                
                     $name = Storage::disk('local')->put('files', $request->file);
                     $path = $name;     
                 }

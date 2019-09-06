@@ -29,6 +29,15 @@
                             <div class="active tab-pane" id="catatan">
                                 <form action="{{ route('checklist6.store') }}" method="POST">
                                     @csrf
+                                    <div class="form-group">
+                                        @if(count($errors)>0)
+                                            @foreach($errors->all() as $error)
+                                                <div class="alert alert-dismissible alert-danger">
+                                                  {{$error}}
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        <div class="form-group">
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label for="catatan">1. Catatan</label>

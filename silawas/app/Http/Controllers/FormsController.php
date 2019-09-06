@@ -14,7 +14,39 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
 class FormsController extends Controller
-{
+{   
+
+
+    public function getAllForm(){
+        
+        $forms = DB::table('surveyunitusaha')
+        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+        ->select('surveyunitusaha.*','unitusaha.*')
+        ->get();
+        $listpengawas = $pengawas->toArray();
+
+        return view('pengajuan.index', [
+            'listForms' => $froms
+        ]);
+    }
+
+    public function getFormUserHas($id){
+        $user = User::findorFail($id);
+        $petugas = PengawasKesmavet::where('idUser', $id)->get();
+        $forms = DB::table('surveyunitusaha')
+                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+                ->where('idPengawas', '=', $petugas->idPengawasKesmavet)
+                ->orWhere('idPengawas2', '=', $petugas->idPengawasKesmavet)
+                ->orWhere('idPengawas3', '=', $petugas->idPengawasKesmavet)
+                ->select('surveyunitusaha.*','unitusaha.*')
+                ->get();
+  
+        return view('pengajuan.index', [
+            'listForms' => $froms
+        ]);
+
+    }
+
     public function form1()
     {   
         $uu = DB::table('unitusaha')

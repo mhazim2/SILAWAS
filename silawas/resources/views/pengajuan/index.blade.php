@@ -23,7 +23,7 @@
                             <table id="formulir-datatable" class="table table-sm table-bordered table-striped">
                                 <thead>
                                     <td>No</td>
-                                    <td>Jenis Unit Usaha</td>
+                                    <td>Jenis Cheklist</td>
                                     <td>Nama Unit Usaha</td>
                                     <td>Pemilik Unit Usaha</td>
                                     <td>Tahun Operasional</td>

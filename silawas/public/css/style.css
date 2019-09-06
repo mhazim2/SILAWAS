@@ -47,6 +47,19 @@ table > tbody > tr > td {
     content: "Unggah" !important;
 }
 
+.select2-container .select2-search--inline .select2-search__field {
+    padding: 0px 6px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #8C0090;
+    border-color: #8C0090;
+}
+
+.select2-dropdown .select2-search__field:focus, .select2-search--inline .select2-search__field:focus {
+    border: none;
+}
+
 .auth-page {
     background: #e9ecef;
 }

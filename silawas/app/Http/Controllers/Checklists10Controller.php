@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
+
 use App\UnitUsaha;
 use App\PengawasKesmavet;
+use App\SurveyUnitUsaha;
+// use App\Form10;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -15,11 +19,16 @@ class Checklists10Controller extends Controller
 {
     public function umum(Request $request)
     {
+        // POST Request
         $method = $request->method();
-        if ($request->isMethod('post')) {
-            return redirect()->action('Checklists10Controller@survey');
+        if ($request->isMethod('post')) 
+        {
+            $data_umum = $request->all();
+            session()->put('umum', $data_umum);
+            return redirect()->action('Checklists1Controller@survey');
         }
 
+        // GET Request
         $list_uu = UnitUsaha::all();
         return view('checklist10.umum', [
             'list_uu' => $list_uu
@@ -28,29 +37,34 @@ class Checklists10Controller extends Controller
 
     public function survey(Request $request)
     {
+        // POST Request
         $method = $request->method();
-        if ($request->isMethod('post')) {
+        if ($request->isMethod('post')) 
+        {
             dd($request);
-            return redirect()->action('Checklists10Controller@catatan');
+            // $data_survey = $request->all();
+            // session()->put('survey', $data_survey);
+            return redirect()->action('Checklists1Controller@catatan');
         }
 
+        // GET Request
         return view('checklist10.survey');
     }
 
     public function catatan(Request $request)
     {
-        $list_dokter = DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('isDokter', '=', 1)
-            ->select('orang.NamaLengkap','pengawaskesmavet.*')
-            ->get();
-        $list_pengawas = DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->select('orang.NamaLengkap','pengawaskesmavet.*')
-            ->get();
-            
+        // POST Request
+        $method = $request->method();
+        if ($request->isMethod('post')) 
+        {
+            // $data_catatan = $request->all();
+            // session()->put('catatan', $data_catatan);
+            return redirect()->action('Checklists1Controller@store');
+        }
+
+        // GET Request
+        $list_dokter = PengawasKesmavet::with(['user', 'user.orang'])->where('isDokter', '=', 1)->get();
+        $list_pengawas = PengawasKesmavet::with(['user', 'user.orang'])->get();
         return view('checklist10.catatan', [
             'list_dokter' => $list_dokter,
             'list_pengawas' => $list_pengawas
@@ -59,6 +73,13 @@ class Checklists10Controller extends Controller
 
     public function store(Request $request)
     {
-        return redirect()->action('PengajuansController@formulir');
+        // Get All Data
+        // $umum = session('umum');
+        // $survey = session('survey');
+        // $catatan = session('catatan');
+
+        // Form Complete Redirect
+        Alert::success('Ceklis Berhasil Disimpan');
+        return redirect()->route('pengajuan.show');
     }
 }

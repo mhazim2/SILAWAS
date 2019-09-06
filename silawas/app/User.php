@@ -31,4 +31,14 @@ class User extends Authenticatable
     {
         return $this->passwordHash;
     }
+
+    public function orang()
+    {
+        return $this->hasOne('App\Orang', 'idOrang', 'Orang_idOrang');
+    }
+
+    public function pengawasKesmavet()
+    {
+        return $this->belongsTo('App\PengawasKesmavet', 'id', 'idUser');
+    }
 }

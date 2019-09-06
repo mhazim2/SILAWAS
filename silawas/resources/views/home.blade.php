@@ -21,10 +21,10 @@
                     <div class="col-md-3">
                         <div class="card" title="Buku Pedoman Pengawasan Kesehatan Masyarakat Veteriner v4" data-toggle="tooltip" data-placement="bottom">
                             <div class="card-img-container">
-                                <img src="{{ asset('file/Buku_Pedoman_VTRNR_V4.png') }}" class="card-img-top">
+                                <img src="{{ asset('files/panduan/Buku_Pedoman_VTRNR_V4.png') }}" class="card-img-top">
                             </div>
                             <div class="card-body p-2">
-                                <a href="{{ asset('file/Buku_Pedoman_VTRNR_V4.pdf') }}" target="_blank">
+                                <a href="{{ asset('files/panduan/Buku_Pedoman_VTRNR_V4.pdf') }}" target="_blank">
                                     <button class="btn btn-kesmavet btn-block btn-flat">
                                         Download <i class="fas fa-external-link-alt ml-1"></i>
                                     </button>

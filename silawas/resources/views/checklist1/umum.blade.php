@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Tempat Budidaya Hewan Perah dan Pemerahan Susu')
+@section('title', 'Ceklis Pengawasan Tempat Budidaya Hewan Perah dan Pemerahan Susu')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Tempat Budidaya Hewan Perah dan Pemerahan Susu</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengawasan Tempat Budidaya Hewan Perah dan Pemerahan Susu</h1>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
-                                            <select class="form-control select2" id="NamaUnitUsaha" name="NamaUnitUsaha">
+                                            <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_uu as $uu)
                                                     <option value="{{ $uu->id }}">{{ $uu->NamaUnitUsaha }} </option>
@@ -80,9 +80,9 @@
                                             <label for="kategoriUsaha">4. Kategori Usaha</label>
                                             <select class="form-control select2" id="kategoriUsaha" name="kategoriUsaha">
                                                 <option disabled selected>-- Pilih --</option>
-                                                <option value="1">Kecil ( < 20 Ekor )</option>
-                                                <option value="2">Sedang (20 - 100 Ekor)</option>
-                                                <option value="3">Besar ( > 100 Ekor)</option>
+                                                <option value="Kecil">Kecil ( < 20 Ekor )</option>
+                                                <option value="Sedang">Sedang (20 - 100 Ekor)</option>
+                                                <option value="Besar">Besar ( > 100 Ekor)</option>
                                             </select>
                                         </div>
                                     </div>
@@ -106,10 +106,10 @@
                                             <label for="wilayahPeredaran">6. Wilayah Peredaran</label>
                                             <select class="form-control select2" id="wilayahPeredaran" name="wilayahPeredaran">
                                                 <option disabled selected>-- Pilih --</option>
-                                                <option value="1">Lokal</option>
-                                                <option value="2">Lintas Kab-Kota</option>
-                                                <option value="3">Lintas Provinsi</option>
-                                                <option value="4">Ekspor</option>
+                                                <option value="Lokal">Lokal</option>
+                                                <option value="Lintas Kab-Kota">Lintas Kab-Kota</option>
+                                                <option value="Lintas Provinsi">Lintas Provinsi</option>
+                                                <option value="Ekspor">Ekspor</option>
                                             </select>
                                         </div>
                                     </div>

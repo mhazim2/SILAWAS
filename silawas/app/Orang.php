@@ -18,5 +18,10 @@ class Orang extends Model
         'NomorKTP',
         'NomorHandphone',
         'NPWP'
-      ];
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'idOrang', 'Orang_idOrang');
+    }
 }

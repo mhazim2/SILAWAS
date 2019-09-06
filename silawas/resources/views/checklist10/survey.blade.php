@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Gudang Penyimpanan Dingin/Beku')
+@section('title', 'Ceklis Pengawasan Gudang Penyimpanan Dingin/Beku')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Gudang Penyimpanan Dingin/Beku</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengawasan Gudang Penyimpanan Dingin/Beku</h1>
                     </div>
                 </div>
             </div>

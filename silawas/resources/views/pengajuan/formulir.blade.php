@@ -30,7 +30,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/1">
+                                        <a href="{{ route('checklist1.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -213,13 +213,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/10">
+                                        <a href="{{ route('checklist10.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
                                                 </span>
                                                 <div class="info-box-content">
-                                                    <span class="info-box-text">Penyimpanan Dingin/Beku</span>
+                                                    <span class="info-box-text">Gudang Penyimpanan Dingin/Beku</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -231,7 +231,7 @@
                                                     <i class="fab fa-wpforms"></i>
                                                 </span>
                                                 <div class="info-box-content">
-                                                    <span class="info-box-text">Penyimpanan Kering</span>
+                                                    <span class="info-box-text">Gudang Penyimpanan Kering</span>
                                                 </div>
                                             </div>
                                         </a>

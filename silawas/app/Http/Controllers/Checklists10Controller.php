@@ -49,6 +49,7 @@ class Checklists10Controller extends Controller
         }
 
         // GET Request
+        
         return view('checklist10.survey');
     }
 

@@ -1,0 +1,195 @@
+table > tbody > tr > td {
+    vertical-align: middle !important;
+}
+
+.select2-container {
+    display: block;
+}
+
+.bg-kesmavet  {
+    background-color: #8C0090;
+    color: #fff;
+}
+
+.text-kesmavet {
+    color: #8C0090;
+}
+
+.btn-kesmavet {
+    background-color: #D500F9;
+    color: #fff;
+}
+
+.btn-kesmavet:hover, .btn-kesmavet:focus {
+    background-color: #E040FB;
+    color: #fff;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+.btn-link:hover {
+    color: #8C0090;
+}
+
+.form-control:focus, 
+.input-group .form-control:focus ~ .input-group-append .input-group-text {
+    border-color: #D500F9 !important;
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    border-color: #D500F9;
+    box-shadow: none;
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "Unggah" !important;
+}
+
+.auth-page {
+    background: #e9ecef;
+}
+
+.register-box {
+    margin: 2% auto;
+}
+
+a {
+    color: #8C0090;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E040FB;
+}
+
+.nav-sidebar .nav-header:not(:first-of-type) {
+    padding: 1.5rem .5rem .5rem .5rem;
+}
+
+.layout-navbar-fixed .wrapper .sidebar-light-primary .brand-link {
+    background-color: #8C0090;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, 
+.sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #8C0090;
+}
+
+.page-item.active .page-link {
+    background-color: #8C0090;
+    border-color: #8C0090;
+}
+
+.page-link {
+    color: #8C0090;
+}
+
+.page-link:hover {
+    color: #E040FB;
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid #8C0090;
+}
+
+[class*="sidebar-light-"] .nav-treeview > .nav-item > .nav-link.active, 
+[class*="sidebar-light-"] .nav-treeview > .nav-item > .nav-link.active:hover {
+    color: #8C0090;
+}
+
+.formulir .nav-pills .nav-link.active, 
+.checklist .nav-pills .nav-link.active,
+.laporan .nav-pills .nav-link.active {
+    background-color: transparent;
+    color: #8C0090;
+    border-radius: 0px;
+    border-bottom: 3px solid #8C0090;
+}
+
+.nav-pills .nav-link:not(.active):hover {
+    color: #8C0090;
+}
+
+.detail-view tr td:nth-of-type(2),
+.detail-view2 tr td:nth-of-type(2) {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.detail-view2 tr td.detail-label {
+    font-weight: bold;
+}
+
+.accordion .card-header {
+    cursor: pointer;
+}
+
+.card-footer {
+    background-color: transparent;
+}
+
+.accordion-switch i {
+    position: absolute;
+    right: 8px;
+    font-size: 1.5rem;
+}
+
+.info-box .info-box-icon {
+    font-size: 3rem;
+    width: 60px;
+}
+
+.info-box .info-box-text {
+    white-space: normal;
+    font-weight: bold;
+}
+
+.kop {
+    height: 185px;
+    background: #fff;
+    background-image: url(../../img/backkesmavet.png);
+}
+
+.resources-list .card-img-container {
+    height: 150px;
+    overflow-y: hidden;
+}
+
+@media (max-width: 767px) {
+    .dataTables_length, .dataTables_filter {
+        text-align: left !important;
+    }
+
+    div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:nth-child(2),
+    div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+        padding-left: 0px;
+    }
+
+    div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:nth-child(2), 
+    div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+        padding-right: 0px;
+    }
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .kop {
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .nav-pills > .nav-item {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-kesmavet-block {
+        display: block;
+        width: 100%;
+    }
+}

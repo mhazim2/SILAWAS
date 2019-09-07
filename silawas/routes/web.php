@@ -94,3 +94,6 @@ Route::post('/pengawasan/checklist/10/catatan', 'Checklists10Controller@catatan'
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');
 Route::post('/laporan', 'LaporansController@content')->name('laporan.content');
+
+// Halaman Export
+Route::get('/export/checklist6/{unitusaha_id}', 'ExportsController@checklist6')->name('export.checklist6');

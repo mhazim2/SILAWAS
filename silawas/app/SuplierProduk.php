@@ -15,7 +15,6 @@ class SuplierProduk extends Model
 		'surveyUnitUsaha_idsurveyUnitusaha',  
 		'namaSuplier',
 		'negara',
-		'AlamatPenerima',
 		'tanggal',
 		'jumlah',
 	];

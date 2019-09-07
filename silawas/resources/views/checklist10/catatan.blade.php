@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="catatan">
-                                <form action="{{ route('checklist10.catatan') }}" method="POST">
+                                <form action="{{ route('checklist10.store') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">

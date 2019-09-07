@@ -86,7 +86,7 @@ Route::redirect('/pengawasan/checklist/10', '/pengawasan/checklist/10/umum')->na
 Route::get('/pengawasan/checklist/10/umum', 'Checklists10Controller@umum')->name('checklist10.umum');
 Route::get('/pengawasan/checklist/10/survey', 'Checklists10Controller@survey')->name('checklist10.survey');
 Route::get('/pengawasan/checklist/10/catatan', 'Checklists10Controller@catatan')->name('checklist10.catatan');
-Route::get('/pengawasan/checklist/10/store', 'Checklists10Controller@store')->name('checklist10.store');
+Route::post('/pengawasan/checklist/10/store', 'Checklists10Controller@store')->name('checklist10.store');
 Route::post('/pengawasan/checklist/10/umum', 'Checklists10Controller@umum')->name('checklist10.umum');
 Route::post('/pengawasan/checklist/10/survey', 'Checklists10Controller@survey')->name('checklist10.survey');
 Route::post('/pengawasan/checklist/10/catatan', 'Checklists10Controller@catatan')->name('checklist10.catatan');

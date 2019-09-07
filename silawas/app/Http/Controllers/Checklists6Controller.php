@@ -281,7 +281,7 @@ class Checklists6Controller extends Controller
         
         $survey1 = SurveyUnitUsaha::create([
             'idUnitUsaha'=>$umum['NamaUnitUsaha'],
-            'idForm1'=> $form->id,
+            'idForm6'=> $form->id,
             'catatan'=>$request['catatan'],
             'rekomendasi'=> $request['rekomendasi'],
             'idPengawas' => $request['idPengawas'],

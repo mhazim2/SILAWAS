@@ -396,19 +396,19 @@
                                                     <div class="col-md-12">
                                                         <div class="d-block">
                                                             <div class="icheck-white d-block" onclick="check_p8()">
-                                                                <input id="p8_1_ket" type="checkbox" name="P8-1" value="1">
+                                                                <input id="p8_1_ket" type="checkbox" name="P8-1" value="Pemisahan ruangan antar produk">
                                                                 <label class="font-weight-normal" for="p8_1_ket">Pemisahan ruangan antar produk</label>
                                                             </div>
                                                             <div class="icheck-white d-block" onclick="check_p8()">
-                                                                <input id="p8_2_ket" type="checkbox" name="P8-2" value="1">
+                                                                <input id="p8_2_ket" type="checkbox" name="P8-2" value="Lokasi antar produk terpisah">
                                                                 <label class="font-weight-normal" for="p8_2_ket">Lokasi antar produk terpisah</label>
                                                             </div>
                                                             <div class="icheck-white d-block" onclick="check_p8()">
-                                                                <input id="p8_3_ket" type="checkbox" name="P8-3" value="1">
+                                                                <input id="p8_3_ket" type="checkbox" name="P8-3" value="Partisi antar produk">
                                                                 <label class="font-weight-normal" for="p8_3_ket">Partisi antar produk</label>
                                                             </div>
                                                             <div class="icheck-white d-block" onclick="check_p8()">
-                                                                <input id="p8_4_ket" type="checkbox" name="P8-4" value="1">
+                                                                <input id="p8_4_ket" type="checkbox" name="P8-4" value="Perlatan terpisah">
                                                                 <label class="font-weight-normal" for="p8_4_ket">Perlatan terpisah</label>
                                                             </div>
                                                         </div>

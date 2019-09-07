@@ -8,7 +8,7 @@ class PenerimaProdukDistribusi extends Model
 {
     public $timestamps = false;
 
-    protected $table = 'penerima__produk_distribusi_';
+    protected $table = 'penerimaprodukdistribusi';
 
     protected $fillable = [
             'NamaPenerima',

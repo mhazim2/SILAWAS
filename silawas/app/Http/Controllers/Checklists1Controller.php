@@ -57,7 +57,8 @@ class Checklists1Controller extends Controller
     }
 
     public function catatan(Request $request)
-    {
+    {   
+        
         // POST Request
         $method = $request->method();
         if ($request->isMethod('post')) 
@@ -82,6 +83,227 @@ class Checklists1Controller extends Controller
         $umum = session('umum');
         $survey = session('survey');
         $catatan = session('catatan');
+
+
+
+        //chek if exisit
+        //catatan
+        if (array_key_exists('catatan', $umum)) { 
+           
+        } 
+        else{ 
+            $catatan['catatan'] = null;
+        } 
+
+        if (array_key_exists('rekomendasi', $umum)) { 
+           
+        } 
+        else{ 
+            $catatan['rekomendasi'] = null;
+        } 
+
+        if (array_key_exists('pjUnitUsaha', $umum)) { 
+           
+        } 
+        else{ 
+            $catatan['pjUnitUsaha'] = null;
+        } 
+
+        //survey
+        if (array_key_exists('P1-1', $survey)) { } 
+        else{ 
+            $survey['P1-1'] = null;
+        } 
+
+        if (array_key_exists('P1-2', $survey)) { } 
+        else{ 
+            $survey['P1-2'] = null;
+        } 
+
+        if (array_key_exists('P1-3', $survey)) { } 
+        else{ 
+            $survey['P1-3'] = null;
+        } 
+
+        if (array_key_exists('P1-4', $survey)) { } 
+        else{ 
+            $survey['P1-4'] = null;
+        } 
+
+        if (array_key_exists('P2', $survey)) { } 
+        else{ 
+            $survey['P2'] = null;
+        } 
+
+        if (array_key_exists('P3', $survey)) { } 
+        else{ 
+            $survey['P3'] = null;
+        } 
+
+        if (array_key_exists('P3_ket', $survey)) { } 
+        else{ 
+            $survey['P3_ket'] = null;
+        } 
+
+        if (array_key_exists('P4', $survey)) { } 
+        else{ 
+            $survey['P4'] = null;
+        } 
+
+        if (array_key_exists('P4_ket', $survey)) { } 
+        else{ 
+            $survey['P4_ket'] = null;
+        } 
+
+        if (array_key_exists('P5', $survey)) { } 
+        else{ 
+            $survey['P5'] = null;
+        } 
+
+        if (array_key_exists('P5_ket', $survey)) { } 
+        else{ 
+            $survey['P5_ket'] = null;
+        } 
+
+        if (array_key_exists('P6', $survey)) { } 
+        else{ 
+            $survey['P6'] = null;
+        } 
+
+        if (array_key_exists('P6_ket', $survey)) { } 
+        else{ 
+            $survey['P6_ket'] = null;
+        } 
+
+        if (array_key_exists('P7', $survey)) { } 
+        else{ 
+            $survey['P7'] = null;
+        } 
+
+        if (array_key_exists('P7_ket', $survey)) { } 
+        else{ 
+            $survey['P7_ket'] = null;
+        } 
+
+        if (array_key_exists('P8', $survey)) { } 
+        else{ 
+            $survey['P8'] = null;
+        } 
+
+        if (array_key_exists('P8_ket', $survey)) { } 
+        else{ 
+            $survey['P8_ket'] = null;
+        } 
+
+        if (array_key_exists('P9', $survey)) { } 
+        else{ 
+            $survey['P9'] = null;
+        } 
+
+        if (array_key_exists('P9_ket', $survey)) { } 
+        else{ 
+            $survey['P9_ket'] = null;
+        } 
+
+        if (array_key_exists('P10', $survey)) { } 
+        else{ 
+            $survey['P10'] = null;
+        } 
+
+        if (array_key_exists('P10_ket', $survey)) { } 
+        else{ 
+            $survey['P10_ket'] = null;
+        } 
+
+        if (array_key_exists('P11', $survey)) { } 
+        else{ 
+            $survey['P11'] = null;
+        } 
+
+        if (array_key_exists('P11_ket', $survey)) { } 
+        else{ 
+            $survey['P11_ket'] = null;
+        } 
+
+        if (array_key_exists('P12', $survey)) { } 
+        else{ 
+            $survey['P12'] = null;
+        } 
+
+        if (array_key_exists('P12_ket', $survey)) { } 
+        else{ 
+            $survey['P12_ket'] = null;
+        } 
+
+        if (array_key_exists('P13', $survey)) { } 
+        else{ 
+            $survey['P13'] = null;
+        } 
+
+        if (array_key_exists('P13_ket', $survey)) { } 
+        else{ 
+            $survey['P13_ket'] = null;
+        } 
+
+        if (array_key_exists('P14', $survey)) { } 
+        else{ 
+            $survey['P14'] = null;
+        } 
+
+        if (array_key_exists('P14_ket', $survey)) { } 
+        else{ 
+            $survey['P14_ket'] = null;
+        } 
+
+        if (array_key_exists('P15', $survey)) { } 
+        else{ 
+            $survey['P15'] = null;
+        } 
+
+        if (array_key_exists('P15_ket', $survey)) { } 
+        else{ 
+            $survey['P15_ket'] = null;
+        } 
+
+        if (array_key_exists('P16', $survey)) { } 
+        else{ 
+            $survey['P16'] = null;
+        } 
+
+        if (array_key_exists('P16_ket', $survey)) { } 
+        else{ 
+            $survey['P16_ket'] = null;
+        } 
+
+        if (array_key_exists('P17', $survey)) { } 
+        else{ 
+            $survey['P17'] = null;
+        } 
+
+        if (array_key_exists('P17_ket', $survey)) { } 
+        else{ 
+            $survey['P17_ket'] = null;
+        } 
+
+        if (array_key_exists('P18', $survey)) { } 
+        else{ 
+            $survey['P18'] = null;
+        } 
+
+        if (array_key_exists('P18_ket', $survey)) { } 
+        else{ 
+            $survey['P18_ket'] = null;
+        } 
+
+        if (array_key_exists('P19', $survey)) { } 
+        else{ 
+            $survey['P19'] = null;
+        } 
+
+        if (array_key_exists('P19_ket', $survey)) { } 
+        else{ 
+            $survey['P19_ket'] = null;
+        } 
 
         // Insert to Database
         $form = Form1::create([

@@ -29,15 +29,7 @@
                             <div class="active tab-pane" id="umum">
                                 <form action="{{ route('checklist6.umum') }}" method="POST">
                                     @csrf
-                                    <div class="form-group">
-                                        @if(count($errors)>0)
-                                            @foreach($errors->all() as $error)
-                                                <div class="alert alert-dismissible alert-danger">
-                                                  {{$error}}
-                                                </div>
-                                            @endforeach
-                                        @endif
-                                        <div class="form-group">
+                                   
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
@@ -82,18 +74,28 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanProdL">
+                                                        <input type="text" class="form-control @error('KaryawanProdL') is-invalid @enderror" name="KaryawanProdL">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">laki-laki</span>
                                                         </div>
+                                                        @error('KaryawanProdL')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanProdP">
+                                                        <input type="text" class="form-control @error('KaryawanProdP') is-invalid @enderror " name="KaryawanProdP">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">perempuan</span>
                                                         </div>
+                                                        @error('KaryawanProdP')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,18 +105,28 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanAdminL">
+                                                        <input type="text" class="form-control @error('KaryawanAdminL') is-invalid @enderror " name="KaryawanAdminL">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">laki-laki</span>
                                                         </div>
+                                                        @error('KaryawanAdminL')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanAdminP">
+                                                        <input type="text" class="form-control @error('KaryawanAdminP') is-invalid @enderror" name="KaryawanAdminP">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">perempuan</span>
                                                         </div>
+                                                        @error('KaryawanAdminP')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,10 +136,15 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanAMPM">
+                                                        <input type="text" class="form-control @error('KaryawanAMPM') is-invalid @enderror" name="KaryawanAMPM">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">orang</span>
                                                         </div>
+                                                        @error('KaryawanAMPM')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -137,10 +154,15 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanAWO">
+                                                        <input type="text" class="form-control @error('KaryawanAWO') is-invalid @enderror" name="KaryawanAWO">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">orang</span>
                                                         </div>
+                                                        @error('KaryawanAWO')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -150,10 +172,15 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanHalal">
+                                                        <input type="text" class="form-control  @error('KaryawanHalal') is-invalid @enderror" name="KaryawanHalal">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">orang</span>
                                                         </div>
+                                                        @error('KaryawanHalal')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                             </div>
@@ -163,10 +190,15 @@
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="KaryawanStunning">
+                                                        <input type="text" class="form-control @error('KaryawanStunning') is-invalid @enderror" name="KaryawanStunning">
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">orang</span>
                                                         </div>
+                                                        @error('KaryawanStunning')
+                                                        <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                        </span>
+                                                         @enderror
                                                     </div>
                                                 </div>
                                             </div>

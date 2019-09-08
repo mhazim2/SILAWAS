@@ -102,3 +102,6 @@ Route::get('/export/checklist6/{unitusaha_id}', 'ExportsController@checklist6')-
 Route::get('/detail/formulir1/{id}', 'FormsController@getDetailForm1');
 Route::get('/detail/formulir6/{id}', 'FormsController@getDetailForm6');
 Route::get('/detail/formulir10/{id}', 'FormsController@getDetailForm10');
+
+//export
+Route::get('/export/formulir6/{id}', 'ExportController@cetakForm6');

@@ -22,18 +22,36 @@ class ExportController extends Controller
     }
 
     public function cetakForm6($id){
+        set_time_limit(300);
         
         $survey = SurveyUnitUsaha::findorFail($id);
+
         $formDetail = DB::table('surveyunitusaha')
-                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-                ->join('dokterhewanpenanungjawab_','surveyunitusaha.id', '=', 'dokterhewanpenanungjawab_.surveyUnitUsaha_idsurveyUnitusaha')
-                ->join('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
-                ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
-                ->where('surveyunitusaha.id', '=', $survey->id)
-                ->select('surveyunitusaha.*','unitusaha.*','form6.*','dokterhewanpenanungjawab_.*','penerimaprodukdistribusi.*')
-                ->get();
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*')
+            ->get();
         
-        $pdf = PDF::loadView('export.checklist6', $formDetail);
+        $dokterPJ = 
+        DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('dokterhewanpenanggungjawab','surveyunitusaha.id', '=', 'dokterhewanpenanggungjawab.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('dokterhewanpenanggungjawab.*')
+            ->get();
+
+        $penerimaProduksi = 
+        DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('penerimaprodukdistribusi.*')
+            ->get();
+        
+        
+        
+        $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
     
     	return $pdf->download('form6.pdf');
     }

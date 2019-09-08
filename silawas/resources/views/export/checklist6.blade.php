@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-@foreach($formDetail as $f)
+@foreach($form as $f)
     <table width="100%">
         <tr>
             <td colspan="2" align="center">
@@ -58,80 +58,80 @@
                 <table class="umum" width="100%">
                     <tr>
                         <td>Nama Unit Usaha</td><td>:</td>
-                        <td>RPU Unggas Hidup</td>
+                        <td>{{$f->NamaUnitUsaha}}</td>
                     </tr>
                     <tr>
                         <td>Alamat Unit Usaha</td><td>:</td>
-                        <td>Jl. Sejahtera chicken No.2</td>
+                        <td>{{$f->AlamatUnitUsaha}}</td>
                     </tr>
                     <tr>
                         <td>Titik Koordinat Lokasi</td><td>:</td>
-                        <td>-6.297685; 106.822880</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>No. Telp / Fax / Email Unit Usaha</td><td>:</td>
-                        <td>021-7770000</td>
+                        <td>{{$f->Telepon}} / {{$f->Fax}} / {{$f->Email}}</td>
                     </tr>
                     <tr>
                         <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                        <td>Bpk. DEF/ PT. Maju aya</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Alamat Kantor Pusat</td><td>:</td>
-                        <td>Jl. Pusat Kota</td>
+                        <td>{{$f->AlamatKantorPusat}}</td>
                     </tr>
                     <tr>
                         <td>No. Telp / Fax / Email Kantor Pusat</td><td>:</td>
-                        <td>031-88888888</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Status Kepemilikan</td><td>:</td>
-                        <td>Sewa</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Unit Usaha / No.Telp</td><td>:</td>
-                        <td>Drh. Asep / 08111111111</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Teknis / No.Telp</td><td>:</td>
-                        <td>Drh. Asep / 08111111111</td>
+                        <td>{{$f->PenangungJawabTeknis}} / {{$f->KontakPJ}}</td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Produksi / No.Telp</td><td>:</td>
-                        <td>Drh. Asep / 08111111111</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Mutu / No.Telp</td><td>:</td>
-                        <td>Drh. Asep / 08111111111</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Higiene Sanitasi / No.Telp</td><td>:</td>
-                        <td>Drh. Asep / 08111111111</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Tahun Berdiri dan Tahun Operasional</td><td>:</td>
-                        <td>2001, 2002</td>
+                        <td>, {{$f->TahunOperasional}}</td>
                     </tr>
                     <tr>
                         <td>Tipe Unit Usaha</td><td>:</td>
-                        <td>Modern</td>
+                        <td>{{$f->tipeUnitUsaha}}</td>
                     </tr>
                     <tr>
                         <td>Jenis Produk (Daging Unggas)</td><td>:</td>
-                        <td>Beku</td>
+                        <td>{{$f->jenisProduk}}</td>
                     </tr>
                     <tr>
                         <td>Jumlah Karyawan</td><td>:</td>
                         <td>
                             <table>
                                 <tr><td colspan="3">Produksi</td></tr>
-                                <tr><td>Laki-laki = 10, Perempuan = 5</td></tr>
+                                <tr><td>Laki-laki = {{$f->karyawanProduksi_L}}, Perempuan = {{$f->karyawanProduksi_P}}</td></tr>
                                 <tr><td colspan="3">Administrasi</td></tr>
-                                <tr><td>Laki-laki = 2, Perempuan = 8</td></tr>
-                                <tr><td>Petugas AMPM</td><td>=</td><td>2</td></tr>
-                                <tr><td>Petugas AWO</td><td>=</td><td>2</td></tr>
-                                <tr><td>Juru Sembelih Halal</td><td>=</td><td>2</td></tr>
-                                <tr><td>Operator Stunning</td><td>=</td><td>2</td></tr>
+                                <tr><td>Laki-laki = {{$f->karyawanAdm_L}}, Perempuan = {{$f->karyawanAdm_P}}</td></tr>
+                                <tr><td>Petugas AMPM</td><td>=</td><td>{{$f->karyawanAMPM}}</td></tr>
+                                <tr><td>Petugas AWO</td><td>=</td><td>{{$f->karyawanAWO}}</td></tr>
+                                <tr><td>Juru Sembelih Halal</td><td>=</td><td>{{$f->juruSembelih}}</td></tr>
+                                <tr><td>Operator Stunning</td><td>=</td><td>{{$f->operatorStunning}}</td></tr>
                             </table>
                         </td>
                     </tr>
@@ -169,11 +169,11 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            <br>No: 123/JKT/2017, 12 Juli 2018
-                            <br>No: 47.222.555.1-017.000, 12 Juli 2018
-                            <br>No: 124/SIUP/2017, 12 Juli 2018
-                            <br>No: 321/JSEL/2017, 12 Juli 2018
-                            <br>Perjanjian Sewa, 5 Januari 2018
+                            <br>No: {{$f->b1_niu_id}}, {{$f->b1_niu_date}}
+                            <br>No: {{$f->b1_npwp_id}}, {{$f->b1_npwp_date}}
+                            <br>No: {{$f->b1_siup_id}}, {{$f->b1_siup_date}}
+                            <br>No: {{$f->b1_nib_date}}, {{$f->operatorStunning}}
+                            <br>{{$f->operatorStunning}}, {{$f->b1_pks_date}}
                         </td>
                     </tr>
                     <tr>
@@ -202,8 +202,8 @@
                         <td align="center"></td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>No: 098765478891, 12 Juli 2018</li>
-                                <li>Masa berlaku: 2 Tahun</li>
+                                <li>No: {{$f->b3_1}}, {{$f->b3_2}}</li>
+                                <li>Masa berlaku: {{$f->b3_3}} Tahun</li>
                             </ul>
                         </td>
                     </tr>
@@ -216,7 +216,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Terlampir, No SKKH 888/JBr/20/08/2018
+                            Terlampir
                         </td>
                     </tr>
                     <tr>
@@ -244,9 +244,9 @@
                         <td align="center"></td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>No: RPHU-327601-012, 12 Juli 2018</li>
-                                <li>Surveilans terakhir: 8 Juli 2018</li>
-                                <li>Tindak lanjut temuan: Tidak ada program pengendalian serangga yang efektif</li>
+                                <li>No: {{$f->b6_1}}, {{$f->b6_2}}</li>
+                                <li>Surveilans terakhir: {{$f->b6_3}}</li>
+                                <li>Tindak lanjut temuan: {{$f->b6_4}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -260,8 +260,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Terdapat SOP pengambilan sampel dan pengujian, pengujian dilakukan oleh Lab. XYZ (akreditasi no 1267/2017), 
-                            pengujian terakhir 1 maret 2017
+                            {{$f->b7}}
                         </td>
                     </tr>
                     <tr>
@@ -274,8 +273,8 @@
                         <td align="center"></td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>Metode pemingsanan : electric stunning via water bath</li>
-                                <li>Waktu pemingsanan sampai ke penyembelihan: 10 detik</li>
+                                <li>Metode pemingsanan : {{$f->b8_1}}</li>
+                                <li>Waktu pemingsanan sampai ke penyembelihan: {{$f->b8_2}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -288,7 +287,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Terdapat 2 orang juru sembelih halal tersertifikasi dengan no sertifikat No.456980 tahun 2015
+                            {{$f->b9}}
                         </td>
                     </tr>
                     <tr>
@@ -300,7 +299,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Ada petugas PJ Kesrawan sebanyak 3 orang tersertifikasi oleh lembaga XYZ, tertanggal 3 Agustus 2017
+                                {{$f->b10}}
                         </td>
                     </tr>
                     <tr>
@@ -312,7 +311,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Pemeriksaan Karkas dan jeroan ayam dilakukan oleh PJ Bpk ABC
+                                {{$f->b11}}
                         </td>
                     </tr>
                     <tr>
@@ -324,10 +323,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            SOP pengambilan sampeldan pengujian, dilakukan setiap batch pemotongan, 
-                            uji cemaran mikroba dan patogen, diuji oleh lab XYZ (akreditasi No. 123456), 
-                            terdapat dokumen hasil uji setiap hasil pengujian, dengan uji terakhir 
-                            tanggal 25 Maret 2018
+                                {{$f->b12}}
                         </td>
                     </tr>
                     <tr>
@@ -339,7 +335,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Untuk produk TOP dengan label bebas salmonella
+                                {{$f->b13}}
                         </td>
                     </tr>
                     <tr>
@@ -351,8 +347,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Terdapat SOP pemeliharaan kebersihan sarpras, dan kondisi kebersihan terjaga baik, 
-                            terdapat QC setiap minggu dengan laporan terakhir 12 April 2017
+                                {{$f->b14}}
                         </td>
                     </tr>
                     <tr>
@@ -364,8 +359,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            SOP pengendalian hama dan serangga, sub kontrak dengan PT. Seranggadel. 
-                            Bukti kontrak, jadwal inspeksi dan metode pengendalian terdokumentasi dengan baik
+                                {{$f->b15}}
                         </td>
                     </tr>
                     <tr>
@@ -377,7 +371,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Terdapat prosedur penanganan bangkai
+                                {{$f->b16}}
                         </td>
                     </tr>
                     <tr>
@@ -389,7 +383,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            SOP pengolahan limbah
+                                {{$f->b17}}
                         </td>
                     </tr>
                     <tr>
@@ -401,7 +395,7 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            Untuk pakan ikan, dikoleksi oleh CV. Pakan ikan makmur, distribusi lokal
+                                {{$f->b18}}
                         </td>
                     </tr>
                 </table>
@@ -422,7 +416,7 @@
                             19. Berapa lama waktu antara penyembelihan sampai perebusan?
                         </td>
                         <td>
-                            15 menit
+                                {{$f->b19}}
                         </td>
                     </tr>
                     <tr>
@@ -430,7 +424,7 @@
                             20. Berasal dari manakah sumber air bersih yang digunakan?
                         </td>
                         <td>
-                            PDAM, Air Tanah, dan Air Sungai
+                                {{$f->b20}}
                         </td>
                     </tr>
                     <tr>
@@ -438,7 +432,7 @@
                             21. Berasal dari manakah sumber es yang digunakan? Berapa kebutuhan es rata-rata per/hari?
                         </td>
                         <td>
-                            Es balok, 20 ton/hari
+                                {{$f->b21_1}},  {{$f->b21_2}} ton/hari
                         </td>
                     </tr>
                     <tr>
@@ -446,7 +440,7 @@
                             22. Berasal dari manakah sumber listrik yang digunakan?
                         </td>
                         <td>
-                            Listrik PLN dan Genset
+                                {{$f->b22}}
                         </td>
                     </tr>
                     <tr>
@@ -457,8 +451,8 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>10.000 ekor/jam</li>
-                                <li>60.000 ekor/jam</li>
+                                <li> {{$f->b23_1}} ekor/jam</li>
+                                <li> {{$f->b23_2}} ekor/jam</li>
                             </ul>
                         </td>
                     </tr>
@@ -467,7 +461,7 @@
                             24. Berapakah persentase pemotongan unggas jantan?
                         </td>
                         <td>
-                            30%
+                                {{$f->b24}}%
                         </td>
                     </tr>
                     <tr>
@@ -478,8 +472,8 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>6 jam/hari</li>
-                                <li>5 hari/minggu</li>
+                                <li>{{$f->b25_1}} jam/hari</li>
+                                <li>{{$f->b25_2}} hari/minggu</li>
                             </ul>
                         </td>
                     </tr>
@@ -491,8 +485,8 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>7.000 ekor/hari</li>
-                                <li>35.000 ekor/minggu</li>
+                                <li>{{$f->b26_1}} ekor/hari</li>
+                                <li>{{$f->b27_1}} ekor/minggu</li>
                             </ul>
                         </td>
                     </tr>
@@ -503,9 +497,9 @@
                         <td>
                             Berat Hidup (Persentase)
                             <ul style="margin:0px; padding-left:18px">
-                                <li>Ukuran Kecil (< 1kg): 20 %</li>
-                                <li>Ukuran Sedang (1 - 1,5kg): 60 %</li>
-                                <li>Ukuran Besar (> 1,5kg): 20%</li>
+                                <li>Ukuran Kecil (< 1kg): {{$f->b27_1}} %</li>
+                                <li>Ukuran Sedang (1 - 1,5kg): {{$f->b27_2}} %</li>
+                                <li>Ukuran Besar (> 1,5kg): {{$f->b27_3}} %</li>
                             </ul>
                         </td>
                     </tr>
@@ -527,7 +521,7 @@
                             29. Jika produk akhir karkas dingin, apakah memiliki sarana penyimpanan dingin (Chiller)?
                         </td>
                         <td>
-                            Chiller 2 unit, kapasitas masing-masing 10 ton, realisasi 5 ton
+                            Chiller {{$f->b29_1}} unit, kapasitas masing-masing {{$f->b29_2}} ton, realisasi {{$f->b29_3}} ton
                         </td>
                     </tr>
                     <tr>
@@ -535,7 +529,7 @@
                             30. Jika produk akhir karkas beku, apakah memiliki sarana penyimpanan dingin (Cold Storage)?
                         </td>
                         <td>
-                            Cold Storage 2 unit, apasitas masing-masing 25 ton, realisasi 15 ton, rata-rata penyimpanan 2 minggu
+                            Cold Storage {{$f->b30_1}} unit, apasitas masing-masing {{$f->b30_2}} ton, realisasi {{$f->b30_3}} ton, rata-rata penyimpanan {{$f->b30_4}} minggu
                         </td>
                     </tr>
                     <tr>
@@ -543,7 +537,7 @@
                             31. Kemanakah tujuan distribusi karkas? 
                         </td>
                         <td>
-                            Antar provinsi:
+                            {{$f->b31}}:
                             <ol style="margin:0px; padding-left:18px">
                                 <li>Karkas beku dada fillet, 20 ton, distribusi ke PT. OLahpangan, Alamat Jl. Reksabumi No. 88 Provinsi Jatim</li>
                                 <li>Karkas beku dada fillet, 20 ton, distribusi ke PT. OLahpangan, Alamat Jl. Reksabumi No. 88 Provinsi Jatim</li>
@@ -555,7 +549,7 @@
                             32. Apakah jenis sarana/alat angkut untuk distribusi karkas?
                         </td>
                         <td>
-                            Mobil Box berpendingin, 5 unit, kapasitas masing-masing 1 ton
+                                {{$f->b32_jenis}}, {{$f->b32_jenisAlat}}, {{$f->b32_jumlahAlat}},{{$f->b32_kapasitas}}
                         </td>
                     </tr>
                     <tr>
@@ -563,7 +557,7 @@
                             33. Jika memiliki unit pengolahan produk unggas, berapa persentase produksi RPH-U yang digunakan sebagai bahan baku produk olahan unggas?
                         </td>
                         <td>
-                            Ya, 15 % kebutuhan produksi
+                                {{$f->check_b33}},  {{$f->b33}}
                         </td>
                     </tr>
                 </table>

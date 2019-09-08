@@ -195,6 +195,8 @@ class Checklists6Controller extends Controller
         $umum = session('umum');
         $survey = session('survey');
 
+        
+
         $form = form6::create([
             'tipeUnitUsaha'=> $umum['TipeUnitUsaha'],
             'jenisProduk'=> $umum['JenisProduk'],
@@ -285,9 +287,9 @@ class Checklists6Controller extends Controller
             'idForm6'=> $form->id,
             'catatan'=>$request['catatan'],
             'rekomendasi'=> $request['rekomendasi'],
-            'idPengawas' => $request['idPengawas'],
-            'idPengawas2' => $request['idPengawas2'],
-            'idPengawas3' => $request['idPengawas3'],
+            'idPengawas' => $request['pengawas1'],
+            'idPengawas2' => $request['pengawas2'],
+            'idPengawas3' => $request['pengawas3'],
             'pjUnitUsaha' => $request['pjUnitUsaha'],
             ]);
         

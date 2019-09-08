@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+@foreach($formDetail as $f)
     <table width="100%">
         <tr>
             <td colspan="2" align="center">
@@ -51,7 +52,9 @@
             </td>
         </tr>
         <tr>
+            
             <td colspan="2">
+                
                 <table class="umum" width="100%">
                     <tr>
                         <td>Nama Unit Usaha</td><td>:</td>
@@ -606,5 +609,7 @@
             </td>
         </tr>
     </table>
-</body>
+
+
+    @endforeach</body>
 </html>

@@ -61,29 +61,59 @@ class FormsController extends Controller
 
     public function getDetailForm6($id){
         $survey = SurveyUnitUsaha::findorFail($id);
+
         $formDetail = DB::table('surveyunitusaha')
-                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-                ->join('dokterhewanpenanungjawab_','surveyunitusaha.id', '=', 'dokterhewanpenanungjawab_.surveyUnitUsaha_idsurveyUnitusaha')
-                ->join('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
-                ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
-                ->where('surveyunitusaha.id', '=', $survey->id)
-                ->select('surveyunitusaha.*','unitusaha.*','form6.*','dokterhewanpenanungjawab_.*','penerimaprodukdistribusi.*')
-                ->get();
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*')
+            ->get();
+        
+        $dokterPJ = 
+        DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('dokterhewanpenanggungjawab','surveyunitusaha.id', '=', 'dokterhewanpenanggungjawab.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('dokterhewanpenanggungjawab.*')
+            ->get();
+
+        $penerimaProduksi = 
+        DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('penerimaprodukdistribusi.*')
+            ->get();
+        
+        $data['detail']=$formDetail; 
+        $data['dokter']=$dokterPJ;
+        $data['penerima']=$penerimaProduksi;
+      
   
-       return dd($formDetail);
+       return dd($data);
     }
 
     public function getDetailForm10($id){
         $survey = SurveyUnitUsaha::findorFail($id);
         $formDetail = DB::table('surveyunitusaha')
                 ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-                ->join('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
                 ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
                 ->where('surveyunitusaha.id', '=', $survey->id)
-                ->select('surveyunitusaha.*','unitusaha.*','form10.*','suplierproduk.*')
+                ->select('surveyunitusaha.*','unitusaha.*','form10.*')
                 ->get();
-  
-       return dd($formDetail);
+        
+        $suplier = 
+        DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('suplierproduk.*')
+            ->get();
+        
+        $data['detail']=$formDetail;
+        $data['suplierproduk']=$suplier;
+
+        return dd($data);
     }
 
     

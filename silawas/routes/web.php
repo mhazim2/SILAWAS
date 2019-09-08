@@ -97,3 +97,8 @@ Route::post('/laporan', 'LaporansController@content')->name('laporan.content');
 
 // Halaman Export
 Route::get('/export/checklist6/{unitusaha_id}', 'ExportsController@checklist6')->name('export.checklist6');
+
+//detailForm
+Route::get('/detail/formulir1/{id}', 'FormsController@getDetailForm1');
+Route::get('/detail/formulir6/{id}', 'FormsController@getDetailForm6');
+Route::get('/detail/formulir10/{id}', 'FormsController@getDetailForm10');

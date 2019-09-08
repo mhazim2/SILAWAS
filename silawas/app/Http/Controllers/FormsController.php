@@ -47,6 +47,47 @@ class FormsController extends Controller
 
     }
 
+    public function getDetailForm1($id){
+        $survey = SurveyUnitUsaha::findorFail($id);
+        $formDetail = DB::table('surveyunitusaha')
+                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+                ->join('form1','surveyunitusaha.idForm1', '=', 'form1.id')
+                ->where('surveyunitusaha.id', '=', $survey->id)
+                ->select('surveyunitusaha.*','unitusaha.*','form1.*')
+                ->get();
+  
+       return dd($formDetail);
+    }
+
+    public function getDetailForm6($id){
+        $survey = SurveyUnitUsaha::findorFail($id);
+        $formDetail = DB::table('surveyunitusaha')
+                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+                ->join('dokterhewanpenanungjawab_','surveyunitusaha.id', '=', 'dokterhewanpenanungjawab_.surveyUnitUsaha_idsurveyUnitusaha')
+                ->join('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
+                ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+                ->where('surveyunitusaha.id', '=', $survey->id)
+                ->select('surveyunitusaha.*','unitusaha.*','form6.*','dokterhewanpenanungjawab_.*','penerimaprodukdistribusi.*')
+                ->get();
+  
+       return dd($formDetail);
+    }
+
+    public function getDetailForm10($id){
+        $survey = SurveyUnitUsaha::findorFail($id);
+        $formDetail = DB::table('surveyunitusaha')
+                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+                ->join('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+                ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
+                ->where('surveyunitusaha.id', '=', $survey->id)
+                ->select('surveyunitusaha.*','unitusaha.*','form10.*','suplierproduk.*')
+                ->get();
+  
+       return dd($formDetail);
+    }
+
+    
+
     public function form1()
     {   
         $uu = DB::table('unitusaha')

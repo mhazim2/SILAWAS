@@ -80,6 +80,7 @@ Route::post('/pengawasan/checklist/6/umum', 'Checklists6Controller@umum')->name(
 Route::post('/pengawasan/checklist/6/survey', 'Checklists6Controller@survey')->name('checklist6.survey');
 Route::post('/pengawasan/checklist/6/catatan', 'Checklists6Controller@catatan')->name('checklist6.catatan');
 Route::post('/pengawasan/checklist/6/store', 'Checklists6Controller@store')->name('checklist6.store');
+Route::get('/pengawasan/checklist/6/detail/{id}', 'Checklists6Controller@detail')->name('checklist6.detail');
 
 // Halaman Checklist 10
 Route::redirect('/pengawasan/checklist/10', '/pengawasan/checklist/10/umum')->name('checklist10.show');

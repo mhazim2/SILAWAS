@@ -1,5 +1,42 @@
-table > tbody > tr > td {
-    vertical-align: middle !important;
+.table.umum > tbody > tr > td {
+    white-space: nowrap;
+}
+
+.table.umum > tbody > tr > td:first-child {
+    width: 320px;
+}
+
+.table.survey > tbody > tr > td:first-child {
+    width: 400px;
+}
+
+.table.survey2 > tbody > tr > td:first-child {
+    width: 475px;
+}
+
+.table.catatan > tbody > tr > td:first-child {
+    width: 250px;
+}
+
+.table.survey > tbody > tr > td ol, 
+.table.survey > tbody > tr > td ul,
+.table.survey2 > tbody > tr > td ol, 
+.table.survey2 > tbody > tr > td ul {
+    margin: 0px; 
+    padding-left: 18px
+}
+
+.table-inner > tbody > tr > td {
+    padding: 0;
+}
+
+.table-inner > tbody > tr > td:first-child,
+.table-inner > tbody > tr > td:last-child {
+    white-space: nowrap;
+}
+
+.table-inner > tbody > tr > td:nth-child(2) {
+    padding: 0 10px;
 }
 
 .select2-container {

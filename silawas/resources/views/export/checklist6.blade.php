@@ -5,9 +5,11 @@
     <title>Checklist 6 Export PDF</title>
     <style>
         body {
-            padding: 60px 20px;
+            /* padding: 60px 20px;
             width: 100%;
-            margin: auto;
+            margin: auto; */
+            size: 21cm 29.7cm;
+            margin: 0;
         }
         .umum td {
             vertical-align: top;
@@ -20,6 +22,10 @@
             vertical-align: top;
             padding: 5px 10px;
         }
+        .page-break {
+            page-break-after: always;
+        }
+        
     </style>
 </head>
 <body>
@@ -32,7 +38,8 @@
         </tr>
         <tr>
             <td rowspan="5" align="center" width="15%">
-                <img src="{{ asset('img/backkesmavet3.png') }}" width="100" height="100" style="margin-top:8px">
+               
+                <img src="{{ public_path('img/backkesmavet3.png') }}" width="100" height="100" style="margin-top:8px">
             </td>
             <td>Jalan.</td>
         </tr>
@@ -143,7 +150,8 @@
         </tr>
         <tr>
             <td colspan="2">
-                <table class="survey" width="100%" border="1">
+                <table class="survey" width="100%" border="1" >
+                
                     <tr>
                         <td align="center"><strong>Aspek parameter</strong></td>
                         <td align="center"><strong>Ya</strong></td>
@@ -301,7 +309,7 @@
                         <td>
                             9. Apakah penyembelihan dilakukan oleh juru sembelih halal yang kompeten?
                         </td>
-                        <<td align="center">
+                        <td align="center">
                             {{$f->check_b9  ? 'V':' '}}
                         </td>
                         <td align="center">
@@ -437,6 +445,7 @@
                                 {{$f->b18}}
                         </td>
                     </tr>
+                
                 </table>
             </td>
         </tr>
@@ -560,7 +569,7 @@
                             29. Jika produk akhir karkas dingin, apakah memiliki sarana penyimpanan dingin (Chiller)?
                         </td>
                         <td>
-                            Chiller {{$f->b29_1}} unit, kapasitas masing-masing {{$f->b29_2}} ton, realisasi {{$f->b29_3}} ton
+                            Chiller {{$f->b29_unit}} unit, kapasitas masing-masing {{$f->b29_kapasitas}} ton, realisasi {{$f->b29_realisasi}} ton
                         </td>
                     </tr>
                     <tr>
@@ -568,7 +577,7 @@
                             30. Jika produk akhir karkas beku, apakah memiliki sarana penyimpanan dingin (Cold Storage)?
                         </td>
                         <td>
-                            Cold Storage {{$f->b30_1}} unit, apasitas masing-masing {{$f->b30_2}} ton, realisasi {{$f->b30_3}} ton, rata-rata penyimpanan {{$f->b30_4}} minggu
+                            Cold Storage {{$f->b30_unit}} unit, apasitas masing-masing {{$f->b30_kapasitas}} ton, realisasi {{$f->b30_realisasi}} ton, rata-rata penyimpanan {{$f->b30_waktu}} minggu
                         </td>
                     </tr>
                     <tr>

@@ -50,10 +50,11 @@ class ExportController extends Controller
             ->get();
         
         
-        
-       // $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
-        return view('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
-        //return $pdf->stream('whateveryourviewname.pdf');
+            PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+            
+       $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
+        //return view('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
+        return $pdf->stream('whateveryourviewname.pdf');
 
     	//return $pdf->download('form6.pdf');
     }

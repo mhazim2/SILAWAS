@@ -6,7 +6,7 @@
     <style>
         body {
             padding: 60px 20px;
-            width: 60%;
+            width: 100%;
             margin: auto;
         }
         .umum td {
@@ -181,12 +181,16 @@
                             2. Apakah ada dokter hewan penanggung jawab teknis?
                         </td>
                         <td align="center">
-                            V
+                        {{$f->b2  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                        {{$f->b2 ? ' ':"V"}}
+                        </td>
                         <td>
                             Jumlah: 2 Orang
-                            <ol style="margin:0px; padding-left:18px">
+                            <ol style="margi
+                            n:0px; padding-left:18px">
+                                {{-- looping --}}
                                 <li>Drh. Asep (swasta) 082222222</li>
                                 <li>Drh. Ujang (swasta) 081111111</li>
                             </ol>
@@ -197,11 +201,13 @@
                             3. Apakah RPH-U memiliki sertifikat halal?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b3  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b3 ? ' ':"V"}}
+                        </td>
                         <td>
-                            <ul style="margin:0px; padding-left:18px">
+                        <ul style="margin:0px; padding-left:18px">
                                 <li>No: {{$f->b3_1}}, {{$f->b3_2}}</li>
                                 <li>Masa berlaku: {{$f->b3_3}} Tahun</li>
                             </ul>
@@ -212,9 +218,12 @@
                             4. Apakah unggas yang akan dipotong dilengkapi dengan Sertifikat Veteriner?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b4  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b4 ? ' ':"V"}}
+                        </td>
+                        <td>
                         <td>
                             Terlampir
                         </td>
@@ -224,9 +233,11 @@
                             5. Apakah ada pendataan sumber unggas?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b5_1  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b5_1 ? ' ':"V"}}
+                        </td>
                         <td>
                             <ol style="margin:0px; padding-left:18px">
                                 <li>Sumber: perusahaan sendiri<br>No: 1678/PKH/08/2017</li>
@@ -239,9 +250,11 @@
                             6. Apakah sudah memiliki sertifikat NKV?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b6  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b6 ? ' ':"V"}}
+                        </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
                                 <li>No: {{$f->b6_1}}, {{$f->b6_2}}</li>
@@ -256,9 +269,11 @@
                             apakah ada pemeriksaan/pengujian laboratorium terakreditasi secara berkala terhadap daging unggas?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b7  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b7 ? ' ':"V"}}
+                        </td> 
                         <td>
                             {{$f->b7}}
                         </td>
@@ -268,9 +283,11 @@
                             8. Apakah dilakukan pemingsanan terhadap unggas sebelum dipotong? Apakah pemingsanan dilakukan oleh petugas yang kompeten?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b8  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b8 ? ' ':"V"}}
+                        </td> 
                         <td>
                             <ul style="margin:0px; padding-left:18px">
                                 <li>Metode pemingsanan : {{$f->b8_1}}</li>
@@ -282,10 +299,12 @@
                         <td>
                             9. Apakah penyembelihan dilakukan oleh juru sembelih halal yang kompeten?
                         </td>
-                        <td align="center">
-                            V
+                        <<td align="center">
+                            {{$f->check_b9  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b9 ? ' ':"V"}}
+                        </td> 
                         <td>
                             {{$f->b9}}
                         </td>
@@ -295,9 +314,11 @@
                             10. Apakah ada petugas yang bertanggung jawab dalam penerapan kesejahteraan hewan?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b10  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b10 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b10}}
                         </td>
@@ -307,9 +328,11 @@
                             11. Apakah dilakukan pemeriksaan karkas dan jeroan setelah dipotong?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b11  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b11 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b11}}
                         </td>
@@ -319,9 +342,11 @@
                             12. Apakah ada pemeriksaan/pengujian terhadap produk secara berkala?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b12  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b12 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b12}}
                         </td>
@@ -331,9 +356,11 @@
                             13. Apakah karkas unggas memiliki label/informasi?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b13  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b13 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b13}}
                         </td>
@@ -343,9 +370,11 @@
                             14. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b14  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b14 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b14}}
                         </td>
@@ -355,9 +384,11 @@
                             15. Apakah dilakukan program pengendalian hama dan serangga?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b15  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b14 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b15}}
                         </td>
@@ -367,9 +398,11 @@
                             16. Apakah ada prosedur penanganan terhadap unggas yang mati sebelum dipotong (bangkai)?
                         </td>
                         <td align="center">
-                            V
+                            {{$f->check_b16  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b16 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b16}}
                         </td>
@@ -378,10 +411,12 @@
                         <td>
                             17. Apakah dilakukan pengolahan limbah?
                         </td>
-                        <td align="center">
-                            V
+                        <<td align="center">
+                            {{$f->check_b17  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b17 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b17}}
                         </td>
@@ -390,10 +425,12 @@
                         <td>
                             18. Apakah ada penanganan terhadap bulu dan jeroan usus dari unggas yang dipotong?
                         </td>
-                        <td align="center">
-                            V
+                        <<td align="center">
+                            {{$f->check_b18  ? 'V':' '}}
                         </td>
-                        <td align="center"></td>
+                        <td align="center">
+                            {{$f->check_b18 ? ' ':"V"}}
+                        </td> 
                         <td>
                                 {{$f->b18}}
                         </td>

@@ -51,8 +51,8 @@ class ExportController extends Controller
         
         
         
-        $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
-    
-    	return $pdf->download('form6.pdf');
+       // $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
+        return view('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
+    	//return $pdf->download('form6.pdf');
     }
 }

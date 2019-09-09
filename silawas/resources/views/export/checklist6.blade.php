@@ -181,19 +181,22 @@
                             2. Apakah ada dokter hewan penanggung jawab teknis?
                         </td>
                         <td align="center">
-                        {{$f->b2  ? 'V':' '}}
+                        {{$f->check_b2  ? 'V':' '}}
                         </td>
                         <td align="center">
-                        {{$f->b2 ? ' ':"V"}}
+                        {{$f->check_b2 ? ' ':"V"}}
                         </td>
                         <td>
-                            Jumlah: 2 Orang
-                            <ol style="margi
-                            n:0px; padding-left:18px">
-                                {{-- looping --}}
-                                <li>Drh. Asep (swasta) 082222222</li>
-                                <li>Drh. Ujang (swasta) 081111111</li>
+                        @if ($f->check_b2)
+                            @foreach ($dokter as $dokter)
+                            <ol style="margin:0px; padding-left:18px">
+
+                                <li>{{$dokter->namaLengkap}} ({{$dokter->status}})  {{$dokter->notlp}}</li>
                             </ol>
+                            @endforeach
+                        @else
+                            -
+                        @endif
                         </td>
                     </tr>
                     <tr>
@@ -224,8 +227,7 @@
                             {{$f->check_b4 ? ' ':"V"}}
                         </td>
                         <td>
-                        <td>
-                            Terlampir
+                            {{$f->check_b4  ? 'Terlampir':' '}}
                         </td>
                     </tr>
                     <tr>
@@ -546,10 +548,10 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>Unit: Air Blast Freezer</li>
-                                <li>Jumlah: 5 unit</li>
-                                <li>Kapasitas: 10 ton</li>
-                                <li>Total realisasi saat ini: 6 ton</li>
+                                <li>Unit: {{$f->b28}}</li>
+                                <li>Jumlah: {{$f->b28_1}} unit</li>
+                                <li>Kapasitas: {{$f->b28_2}} ton</li>
+                                <li>Total realisasi saat ini: {{$f->b28_3}} ton</li>
                             </ul>
                         </td>
                     </tr>
@@ -574,11 +576,16 @@
                             31. Kemanakah tujuan distribusi karkas? 
                         </td>
                         <td>
-                            {{$f->b31}}:
+                            @if ($f->b31)
+                            
                             <ol style="margin:0px; padding-left:18px">
-                                <li>Karkas beku dada fillet, 20 ton, distribusi ke PT. OLahpangan, Alamat Jl. Reksabumi No. 88 Provinsi Jatim</li>
-                                <li>Karkas beku dada fillet, 20 ton, distribusi ke PT. OLahpangan, Alamat Jl. Reksabumi No. 88 Provinsi Jatim</li>
+                                @foreach ($produksi as $produksi)
+                                <li>{{ $produksi->NamaPenerima}}, {{ $produksi->JumlahProduk}} ton, {{ $produksi->JenisProduk}}, Alamat {{ $produksi->AlamatPenerima}}</li>
+                                @endforeach
                             </ol>
+                            @else 
+                            - 
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -610,11 +617,11 @@
                         <td colspan="2">
                             1. Catatan :<br>
                             <div style="min-height:150px; padding-left:18px">
-                                <br>Isi catatan
+                                <br> {{$f->catatan}}
                             </div>
                             2. Rekomendasi/Tindak Lanjut :<br>
                             <div style="min-height:150px; padding-left:18px">
-                                <br>Isi rekomendasi
+                                <br>{{$f->rekomendasi}}
                             </div>
                             Cap Unit Usaha<br>
                             <div style="min-height:150px; padding-left:18px; text-align:center">
@@ -626,9 +633,9 @@
                         <td width="50%">
                             <center>Tim Pengawas</center>
                             <ol style="padding-left:18px">
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>{{$f->idPengawas  ? 'V':' '}}</li>
+                                <li>{{$f->idPengawas  ? 'V':' '}}</li>
+                                <li>{{$f->idPengawas  ? 'V':' '}}</li>
                             </ol>
                         </td>
                         <td align="center" width="50%">

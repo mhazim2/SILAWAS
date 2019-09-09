@@ -66,6 +66,35 @@
                                         </span>
                                     @enderror
                                 </div>
+
+                                <div class="form-group mb-5">
+                                        <label for="koordinat">koordinat</label>
+                                        <input type="text" 
+                                               class="form-control @error('koordinat') is-invalid @enderror" 
+                                               id="koordinat" 
+                                               name="koordinat" 
+                                               value="{{ old('koordinat') }}">
+                                        @error('koordinat')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+
+                                <div class="form-group mb-5">
+                                        <label for="StatusKepemilikan">Status Kepemilikan</label>
+                                        <input type="text" 
+                                               class="form-control @error('StatusKepemilikan') is-invalid @enderror" 
+                                               id="StatusKepemilikan" 
+                                               name="StatusKepemilikan" 
+                                               value="{{ old('StatusKepemilikan') }}">
+                                        @error('StatusKepemilikan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+
                                 <div class="form-group mb-5">
                                     <label for="AlamatKantorPusat">Alamat Kantor Pusat</label>
                                     <textarea class="form-control @error('AlamatKantorPusat') is-invalid @enderror" 
@@ -147,6 +176,121 @@
                                     <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
+                                        <label for="pjUnitUsaha">Penanggung Jawab Unit Usaha</label>
+                                        <input type="text" 
+                                               class="form-control @error('pjUnitUsaha') is-invalid @enderror" 
+                                               id="pjUnitUsaha" 
+                                               name="pjUnitUsaha" 
+                                               value="{{ old('pjUnitUsaha') }}">
+                                        @error('pjUnitUsaha')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                        <label for="pjUnitUsahaKontak">No. Telp Penangung Jawab  Unit Usaha</label>
+                                        <input type="text" 
+                                               class="form-control @error('pjUnitUsahaKontak') is-invalid @enderror" 
+                                               id="pjUnitUsahaKontak" 
+                                               name="pjUnitUsahaKontak" 
+                                               value="{{ old('pjUnitUsahaKontak') }}">
+                                        @error('pjUnitUsahaKontak')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
+                                    </div>
+                                
+                                <div class="form-group mb-5">
+                                        <label for="pjProduksi">Penanggung Jawab Produksi</label>
+                                        <input type="text" 
+                                               class="form-control @error('pjProduksi') is-invalid @enderror" 
+                                               id="pjProduksi" 
+                                               name="pjProduksi" 
+                                               value="{{ old('pjProduksi') }}">
+                                        @error('pjProduksi')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+                                <div class="form-group mb-5">
+                                        <label for="pjProduksiKontak">No. Telp Penangung Jawab  Produksi</label>
+                                        <input type="text" 
+                                               class="form-control @error('pjProduksiKontak') is-invalid @enderror" 
+                                               id="pjProduksiKontak" 
+                                               name="pjProduksiKontak" 
+                                               value="{{ old('pjProduksiKontak') }}">
+                                        @error('pjProduksiKontak')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
+                                    </div>
+
+                                
+                                <div class="form-group mb-5">
+                                        <label for="pjMutu">Penanggung Jawab Mutu</label>
+                                        <input type="text" 
+                                               class="form-control @error('pjMutu') is-invalid @enderror" 
+                                               id="pjMutu" 
+                                               name="pjMutu" 
+                                               value="{{ old('pjMutu') }}">
+                                        @error('pjMutu')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+
+                                <div class="form-group mb-5">
+                                        <label for="pjMutuKontak">No. Telp Penangung Jawab  Mutu</label>
+                                        <input type="text" 
+                                               class="form-control @error('pjMutuKontak') is-invalid @enderror" 
+                                               id="pjMutuKontak" 
+                                               name="pjMutuKontak" 
+                                               value="{{ old('pjMutuKontak') }}">
+                                        @error('pjMutuKontak')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
+                                    </div>
+                                
+                                    <div class="form-group mb-5">
+                                            <label for="pjHigiene">Penanggung Jawab Higiene Sanitasi</label>
+                                            <input type="text" 
+                                                   class="form-control @error('pjHigiene') is-invalid @enderror" 
+                                                   id="pjHigiene" 
+                                                   name="pjHigiene" 
+                                                   value="{{ old('pjHigiene') }}">
+                                            @error('pjHigiene')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+
+                                    <div class="form-group mb-5">
+                                            <label for="pjHigieneKontak">No. Telp Penangung Jawab  Higiene Sanitasi</label>
+                                            <input type="text" 
+                                                   class="form-control @error('pjHigieneKontak') is-invalid @enderror" 
+                                                   id="pjHigieneKontak" 
+                                                   name="pjHigieneKontak" 
+                                                   value="{{ old('pjHigieneKontak') }}">
+                                            @error('pjHigieneKontak')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 08xxxxxxx</small>
+                                        </div>
+
+                                <div class="form-group mb-5">
                                     <label for="TahunOperasional">Tahun Operasional</label>
                                     <input type="text" 
                                            class="form-control @error('TahunOperasional') is-invalid @enderror" 
@@ -159,6 +303,19 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <div class="form-group mb-5">
+                                        <label for="TahunBerdiri">Tahun Berdiri</label>
+                                        <input type="text" 
+                                               class="form-control @error('TahunBerdiri') is-invalid @enderror" 
+                                               id="TahunBerdiri" 
+                                               name="TahunBerdiri" 
+                                               value="{{ old('TahunBerdiri') }}">
+                                        @error('TahunBerdiri')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mb-5">

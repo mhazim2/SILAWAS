@@ -49,6 +49,17 @@ class UnitUsahasController extends Controller
             'PenangungJawabTeknis'=>$data['PenangungJawabTeknis'],
             'TahunOperasional'=>$data['TahunOperasional'],
             'KontakPJ' => $data['KontakPJ'],
+		    'TahunBerdiri'=> $data['TahunBerdiri'],
+            'koordinat'=> $data['koordinat'],
+            'pjUnitUsaha'=> $data['pjUnitUsaha'],
+            'pjUnitUsahaKontak'=> $data['pjUnitUsahaKontak'],
+            'pjProduksi'=> $data['pjProduksi'],
+            'pjProduksiKontak'=> $data['pjProduksiKontak'],
+            'pjMutu'=> $data['pjMutu'],
+            'pjMutuKontak'=> $data['pjMutuKontak'],
+            'pjHigiene'=> $data['pjHigiene'],
+            'pjHigieneKontak'=> $data['pjHigieneKontak'],
+            'StatusKepemilikan'=> $data['StatusKepemilikan'],
         ]);
         return Redirect::to('/unit-usaha');
     }

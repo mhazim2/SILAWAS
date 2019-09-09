@@ -23,5 +23,16 @@ class UnitUsaha extends Model
 		'PenangungJawabTeknis',
 		'KontakPJ',
 		'TahunOperasional',
+		'TahunBerdiri',
+		'koordinat',
+		'pjUnitUsaha',
+		'pjUnitUsahaKontak',
+		'pjProduksi',
+		'pjProduksiKontak',
+		'pjMutu',
+		'pjMutuKontak',
+		'pjHigiene',
+		'pjHigieneKontak',
+		'StatusKepemilikan',
 	];
 }

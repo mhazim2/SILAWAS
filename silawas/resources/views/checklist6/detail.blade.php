@@ -232,7 +232,11 @@
                                                 <td>
                                                     @if ($data->check_b4)
                                                         <div><b>No:</b> {{ $data->b4_id ? $data->b4_id : '-' }}</div>
-                                                        <div>Terlampir</div>
+                                                        <div>
+                                                            <a href="{{ asset($data->b4_file) }}">
+                                                                <img src="{{ asset($data->b4_file) }}" alt="Scan Sertifikat Veteriner">
+                                                            </a>
+                                                        </div>
                                                     @else
                                                         -
                                                     @endif

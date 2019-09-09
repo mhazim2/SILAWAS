@@ -26,6 +26,11 @@
     padding-left: 18px
 }
 
+.table.survey img {
+    max-width: 100%;
+    padding: 10px;
+}
+
 .table-inner > tbody > tr > td {
     padding: 0;
 }

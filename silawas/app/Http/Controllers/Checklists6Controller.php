@@ -17,6 +17,35 @@ use Illuminate\Support\Facades\Redirect;
 
 class Checklists6Controller extends Controller
 {
+    public function detail($id)
+    {
+        $survey = SurveyUnitUsaha::findorFail($id);
+        $formDetail = DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*')
+            ->first();
+        $dokterPJ = DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('dokterhewanpenanggungjawab','surveyunitusaha.id', '=', 'dokterhewanpenanggungjawab.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('dokterhewanpenanggungjawab.*')
+            ->get();
+        $penerimaProduksi = DB::table('surveyunitusaha')
+            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->leftJoin('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('penerimaprodukdistribusi.*')
+            ->get();
+
+        return view('checklist6.detail', [
+            'data' => $formDetail,
+            'dokter_pj' => $dokterPJ,
+            'list_distribusi' => $penerimaProduksi
+        ]);
+    }
+
     public function umum(Request $request)
     {
         $method = $request->method();

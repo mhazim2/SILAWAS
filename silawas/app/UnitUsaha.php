@@ -34,5 +34,9 @@ class UnitUsaha extends Model
 		'pjHigiene',
 		'pjHigieneKontak',
 		'StatusKepemilikan',
+		'telpUU',
+		'faxUU',
+		'emailUU',
+
 	];
 }

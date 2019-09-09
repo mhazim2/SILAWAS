@@ -59,7 +59,10 @@ class UnitUsahasController extends Controller
             'pjMutuKontak'=> $data['pjMutuKontak'],
             'pjHigiene'=> $data['pjHigiene'],
             'pjHigieneKontak'=> $data['pjHigieneKontak'],
-            'StatusKepemilikan'=> $data['StatusKepemilikan'],
+            'telepUU'=> $data['telepUU'],
+            'emailUU'=> $data['emailUU'],
+            'faxUU'=> $data['faxUU'],
+            
         ]);
         return Redirect::to('/unit-usaha');
     }

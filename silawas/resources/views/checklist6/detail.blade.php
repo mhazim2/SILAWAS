@@ -6,10 +6,22 @@
         <!-- Page Header -->
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-12">
+                <div class="row justify-content-between mb-2">
+                    <div class="col-md-8">
                         <h1 class="m-0 text-dark">{{ $data->NamaUnitUsaha }}</h1>
                         <small>Ceklis Rumah Potong Hewan Unggas</small>
+                    </div>
+                    <div class="col-md-4 text-md-right pt-3 pt-md-2">
+                        <a href="#" class="d-inline-block">
+                            <button type="button" class="btn btn-warning">
+                                <i class="fas fa-edit mr-1"></i> Edit
+                            </button>
+                        </a>
+                        <a href="#" class="d-inline-block">
+                            <button type="button" class="btn btn-primary">
+                                <i class="fas fa-file-download mr-1"></i> Export
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

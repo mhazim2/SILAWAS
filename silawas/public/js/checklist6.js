@@ -589,14 +589,14 @@ var b32_hidden_html = '\
         <div class="col-md-4">\
             <div class="form-group">\
                 <label>Jenis Alat</label>\
-                <input type="text" class="form-control" name="b32_jenis">\
+                <input type="text" class="form-control" name="b32_jenisAlat">\
             </div>\
         </div>\
         <div class="col-md-4">\
             <div class="form-group">\
                 <label>Jumlah Alat</label>\
                 <div class="input-group mb-3">\
-                    <input type="text" class="form-control" name="b32_unit">\
+                    <input type="text" class="form-control" name="b32_jumlahAlat">\
                     <div class="input-group-append">\
                         <span class="input-group-text">unit</span>\
                     </div>\

@@ -99,9 +99,6 @@ class Checklists6Controller extends Controller
                     $request['b22'] = implode( ", ", $request['b22'] );
                 }
                 
-                if (isset($request['check_b31'])){
-                    $request['check_b31'] = implode( ", ", $request['check_b31'] );
-                }
                 if($request->hasFile('file')){
                 
                     $name = Storage::disk('local')->put('files', $request->file);
@@ -120,6 +117,7 @@ class Checklists6Controller extends Controller
                 "b1_pks_id" => $request['b1_pks_id'],
                 "b1_pks_date" => $request['b1_pks_date'],
                 "check_b2" => $request['check_b2'],
+                "check_b3" => $request['check_b3'],
                 "b3_1" => $request['b3_1'],
                 "b3_2" => $request['b3_2'],
                 "b3_3" => $request['b3_3'],
@@ -168,8 +166,10 @@ class Checklists6Controller extends Controller
                 "check_b18" => $request['check_b18'],
                 "b18" => $request['b18'],
                 "b19" => $request['b19'],
+                "b20" => $request['b20'],
                 "b21_1" => $request['b21_1'],
                 "b21_2" => $request['b21_2'],
+                "b22" => $request['b22'],
                 "b23_1" => $request['b23_1'],
                 "b23_2" => $request['b23_2'],
                 "b24" => $request['b24'],
@@ -195,10 +195,8 @@ class Checklists6Controller extends Controller
                 "b30_realisasi" => $request['b30_realisasi'],
                 "b30_waktu" => $request['b30_waktu'],
                 "b30_alamat" => $request['b30_alamat'],
-                "check_b31" => $request['check_b31'],
                 "b31" => $request['check_b31'],
                 "check_b32" => $request['check_b32'],
-                "b32_jenis" => $request['b32_jenis'],
                 "b32_jenisAlat" => $request['b32_jenisAlat'],
                 "b32_jumlahAlat" => $request['b32_jumlahAlat'],
                 "b32_kapasitas" => $request['b32_kapasitas'],
@@ -275,6 +273,7 @@ class Checklists6Controller extends Controller
             "b1_pks_id" => $survey['b1_pks_id'],
             "b1_pks_date" => $survey['b1_pks_date'],
             "check_b2" => $survey['check_b2'],
+            "check_b3" => $survey['check_b3'],
             "b3_1" => $survey['b3_1'],
             "b3_2" => $survey['b3_2'],
             "b3_3" => $survey['b3_3'],
@@ -323,8 +322,10 @@ class Checklists6Controller extends Controller
             "check_b18" => $survey['check_b18'],
             "b18" => $survey['b18'],
             "b19" => $survey['b19'],
+            "b20" => $survey['b20'],
             "b21_1" => $survey['b21_1'],
             "b21_2" => $survey['b21_2'],
+            "b22" => $survey['b22'],
             "b23_1" => $survey['b23_1'],
             "b23_2" => $survey['b23_2'],
             "b24" => $survey['b24'],
@@ -350,10 +351,8 @@ class Checklists6Controller extends Controller
             "b30_realisasi" => $survey['b30_realisasi'],
             "b30_waktu" => $survey['b30_waktu'],
             "b30_alamat" => $survey['b30_alamat'],
-            "check_b31" => $survey['check_b31'],
-            "b31" => $survey['check_b31'],
+            "b31" => $survey['b31'],
             "check_b32" => $survey['check_b32'],
-            "b32_jenis" => $survey['b32_jenis'],
             "b32_jenisAlat" => $survey['b32_jenisAlat'],
             "b32_jumlahAlat" => $survey['b32_jumlahAlat'],
             "b32_kapasitas" => $survey['b32_kapasitas'],

@@ -50,17 +50,17 @@
                                             <td>Alamat Unit Usaha</td><td>:</td>
                                             <td>{{ $data->AlamatUnitUsaha }}</td>
                                         </tr>
-                                        <!-- <tr>
+                                        <tr>
                                             <td>Titik Koordinat Lokasi</td><td>:</td>
-                                            <td></td>
-                                        </tr> -->
+                                            <td>{{ $data->koordinat }}</td>
+                                        </tr>
                                         <tr>
                                             <td>No. Telp / Fax / Email Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->Telepon }} / {{ $data->Fax }} / {{ $data->Email }}</td>
+                                            <td>{{ $data->telpUU }} / {{ $data->faxUU }} / {{ $data->emailUU }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->PelakuUsaha_idPemilikUsaha }}</td>
                                         </tr>
                                         <tr>
                                             <td>Alamat Kantor Pusat</td><td>:</td>
@@ -68,15 +68,15 @@
                                         </tr>
                                         <tr>
                                             <td>No. Telp / Fax / Email Kantor Pusat</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->Telepon }} / {{ $data->Fax }} / {{ $data->Email }}</td>
                                         </tr>
                                         <tr>
                                             <td>Status Kepemilikan</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->StatusKepemilikan }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Unit Usaha / No.Telp</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->pjUnitUsaha }} / {{ $data->pjUnitUsahaKontak }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Teknis / No.Telp</td><td>:</td>
@@ -84,19 +84,19 @@
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Produksi / No.Telp</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->pjProduksi }} / {{ $data->pjProduksiKontak }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Mutu / No.Telp</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->pjMutu }} / {{ $data->pjMutuKontak }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Higiene Sanitasi / No.Telp</td><td>:</td>
-                                            <td></td>
+                                            <td>{{ $data->pjHigiene }} / {{ $data->pjHigieneKontak }}</td>
                                         </tr>
                                         <tr>
                                             <td>Tahun Berdiri dan Tahun Operasional</td><td>:</td>
-                                            <td>-, {{ $data->TahunOperasional }}</td>
+                                            <td>{{ $data->TahunBerdiri }}, {{ $data->TahunOperasional }}</td>
                                         </tr>
                                         <tr>
                                             <td>Tipe Unit Usaha</td><td>:</td>
@@ -181,13 +181,13 @@
                                                     2. Apakah ada dokter hewan penanggung jawab teknis?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->b2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_b2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->b2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_b2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->b2)
+                                                    @if ($data->check_b2)
                                                         <b>Jumlah:</b> {{ $dokter_pj->count() }} Orang
                                                         <ol>
                                                             @foreach($dokter_pj as $dokter)
@@ -424,13 +424,13 @@
                                                     15. Apakah dilakukan program pengendalian hama dan serangga?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->b15 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_b15 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->b15 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_b15 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->b15 ? $data->b15 : '-' }}
+                                                    {{ $data->check_b15 ? $data->b15 : '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -598,10 +598,10 @@
                                                 </td>
                                                 <td>
                                                     <br>
-                                                    @if ($data->b26_1 || $data->b26_1)
+                                                    @if ($data->b26_1 || $data->b26_2)
                                                         <ul>
                                                             <li>{{ $data->b26_1 ? $data->b26_1.' jam/hari' : '-' }}</li>
-                                                            <li>{{ $data->b26_1 ? $data->b26_1.' hari/minggu' : '-' }}</li>
+                                                            <li>{{ $data->b26_2 ? $data->b26_2.' hari/minggu' : '-' }}</li>
                                                         </ul>
                                                     @else
                                                         -
@@ -633,10 +633,14 @@
                                                     28. Apakah sarana pembekuan cepat yang digunakan?
                                                 </td>
                                                 <td>
-                                                    <div><b>Unit:</b> Air Blast Freezer</div>
-                                                    <div><b>Jumlah:</b> 5 unit</div>
-                                                    <div><b>Kapasitas:</b> 10 ton</div>
-                                                    <div><b>Total realisasi saat ini:</b> 6 ton</div>
+                                                    @if ($data->check_b28)
+                                                        <div><b>Unit:</b> {{ $data->check_b28 ? $data->check_b28 : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->b28_1 ? $data->b28_1 : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->b28_2 ? $data->b28_2 : '-' }}</div>
+                                                        <div><b>Total realisasi saat ini:</b> {{ $data->b28_3 ? $data->b28_3 : '-' }}</div>
+                                                    @else
+                                                        -
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -644,13 +648,13 @@
                                                     29. Jika produk akhir karkas dingin, apakah memiliki sarana penyimpanan dingin (Chiller)?
                                                 </td>
                                                 <td>
-                                                    @if ($data->b29_1 || $data->b29_2 || $data->b29_3)
+                                                    @if ($data->check_b29)
                                                         Chiller
-                                                        <div><b>Jumlah:</b> {{ $data->b29_1 ? $data->b29_1.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->b29_2 ? $data->b29_2.' ton' : '-' }}</div>
-                                                        <div><b>Realisasi:</b> {{ $data->b29_3 ? $data->b29_3.' ton' : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->b29_unit ? $data->b29_unit.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->b29_kapasitas ? $data->b29_kapasitas.' ton' : '-' }}</div>
+                                                        <div><b>Realisasi:</b> {{ $data->b29_realisasi ? $data->b29_realisasi.' ton' : '-' }}</div>
                                                     @else
-                                                        -
+                                                        <div><b>Metode:</b> {{ $data->b29_metode ? $data->b29_metode.' ton' : '-' }}</div>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -659,14 +663,14 @@
                                                     30. Jika produk akhir karkas beku, apakah memiliki sarana penyimpanan dingin (Cold Storage)?
                                                 </td>
                                                 <td>
-                                                    @if ($data->b30_1 || $data->b30_2 || $data->b30_3 || $data->b30_4)
+                                                    @if ($data->check_b30)
                                                         Cold Storage
-                                                        <div><b>Jumlah:</b> {{ $data->b30_1 ? $data->b30_1.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->b30_2 ? $data->b30_2.' ton' : '-' }}</div>
-                                                        <div><b>Realisasi:</b> {{ $data->b30_3 ? $data->b30_3.' ton' : '-' }}</div>
-                                                        <div><b>Rata-rata penyimpanan:</b> {{ $data->b30_4 ? $data->b30_4.' minggu' : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->b30_unit ? $data->b30_unit.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->b30_kapasitas ? $data->b30_kapasitas.' ton' : '-' }}</div>
+                                                        <div><b>Realisasi:</b> {{ $data->b30_realisasi ? $data->b30_realisasi.' ton' : '-' }}</div>
+                                                        <div><b>Rata-rata penyimpanan:</b> {{ $data->b30_waktu ? $data->b30_waktu.' minggu' : '-' }}</div>
                                                     @else
-                                                        -
+                                                        <div><b>Alamat:</b> {{ $data->b30_alamat ? $data->b30_alamat : '-' }}</div>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -676,7 +680,7 @@
                                                 </td>
                                                 <td>
                                                     @if ($data->b31)
-                                                        <B>Tujuan distribusi:</b>
+                                                        <B>Tujuan distribusi:</b> {{ $data->b31 }}
                                                         <ol>
                                                             @foreach($list_distribusi as $penerima)
                                                                 <li>{{ $penerima->JenisProduk }}, {{ $penerima->JumlahProduk }} Ton, distribusi ke {{ $penerima->NamaPenerima }}, {{ $penerima->AlamatPenerima }}</li>
@@ -692,11 +696,11 @@
                                                     32. Apakah jenis sarana/alat angkut untuk distribusi karkas?
                                                 </td>
                                                 <td>
-                                                    @if ($data->b32_jenis)
-                                                        {{ $data->b32_jenis }}
-                                                        <div><b>Jenis:</b> {{ $data->b32_jenis }}</div>
-                                                        <div><b>Jumlah:</b> {{ $data->b32_jumlahAlat }} unit</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->b32_kapasitas }} ton</div>
+                                                    @if ($data->check_b32)
+                                                        {{ $data->check_b32 }}
+                                                        <div><b>Jenis:</b> {{ $data->b32_jenisAlat ? $data->b32_jenisAlat : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->b32_jumlahAlat ? $data->b32_jumlahAlat.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->b32_kapasitas ? $data->b32_kapasitas.' ton' : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif

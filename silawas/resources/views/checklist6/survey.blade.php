@@ -224,8 +224,12 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label>Masa Berlaku</label>
-                                                                <input type="text" class="form-control" name="b3_3">
-                                                                <small class="form-text"><b>Contoh:</b> 2 Tahun</small>
+                                                                <div class="input-group mb-3">
+                                                                    <input type="text" class="form-control" name="b3_3">
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text">tahun</span>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -965,43 +969,6 @@
                                                 </div>
                                                 <div id="hidden_b28_5" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none"></div>
                                             </div>
-                                            <div id="hidden_b28" class="bg-kesmavet p-2 mb-5" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label>Jumlah Unit</label>
-                                                            <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" name="b28_1">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">unit</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label>Total Kapasitas</label>
-                                                            <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" name="b28_2">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">ton</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <div class="form-group">
-                                                            <label>Total Realisasi</label>
-                                                            <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" name="b28_3">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">ton</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
@@ -1162,19 +1129,19 @@
                                             <label>31. Kemanakah tujuan distribusi karkas?</label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-block" onclick="check_b31()">
-                                                    <input id="b31_1" type="checkbox" name="check_b31[]" value="Dalam Kabupaten/Kota">
+                                                    <input id="b31_1" type="radio" name="check_b31" value="Dalam Kabupaten/Kota">
                                                     <label class="font-weight-normal" for="b31_1">Dalam Kabupaten/Kota</label>
                                                 </div>
                                                 <div class="icheck-wisteria d-block" onclick="check_b31()">
-                                                    <input id="b31_2" type="checkbox" name="check_b31[]" value="Antar Kabupaten/Kota">
+                                                    <input id="b31_2" type="radio" name="check_b31" value="Antar Kabupaten/Kota">
                                                     <label class="font-weight-normal" for="b31_2">Antar Kabupaten/Kota</label>
                                                 </div>
                                                 <div class="icheck-wisteria d-block" onclick="check_b31()">
-                                                    <input id="b31_3" type="checkbox" name="check_b31[]" value="Dalam Provinsi">
+                                                    <input id="b31_3" type="radio" name="check_b31" value="Dalam Provinsi">
                                                     <label class="font-weight-normal" for="b31_3">Dalam Provinsi</label>
                                                 </div>
                                                 <div class="icheck-wisteria d-block" onclick="check_b31()">
-                                                    <input id="b31_4" type="checkbox" name="check_b31[]" value="Antar Provinsi">
+                                                    <input id="b31_4" type="radio" name="check_b31" value="Antar Provinsi">
                                                     <label class="font-weight-normal" for="b31_4">Antar Provinsi</label>
                                                 </div>
                                                 <div id="hidden_b31" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">

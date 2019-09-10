@@ -88,8 +88,9 @@ class FormsController extends Controller
         $formDetail = DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form6.*','unitusaha.*')
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
             ->get();
         
         $dokterPJ = 
@@ -143,15 +144,16 @@ class FormsController extends Controller
     public function getDetailForm10($id){
         $survey = SurveyUnitUsaha::findorFail($id);
         $formDetail = DB::table('surveyunitusaha')
-                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-                ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
-                ->where('surveyunitusaha.id', '=', $survey->id)
-                ->select('surveyunitusaha.*','unitusaha.*','form10.*')
-                ->get();
+        ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
+        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+        ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
+        ->where('surveyunitusaha.id', '=', $survey->id)
+        ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+        ->get();
         
         $suplier = 
         DB::table('surveyunitusaha')
-            ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
+            ->join('form10','surveyunitusaha.idform10', '=', 'form10.id')
             ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('suplierproduk.*')

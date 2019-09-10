@@ -29,8 +29,9 @@ class ExportController extends Controller
         $formDetail = DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form6.*','unitusaha.*')
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
             ->get();
         
         $dokterPJ = 
@@ -80,9 +81,64 @@ class ExportController extends Controller
                 'pengawas2'=>$pengawas2,
                 'pengawas3'=>$pengawas3,
                 ]);
-        //return view('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
-        return $pdf->stream('whateveryourviewname.pdf');
-
+       
+        return $pdf->stream('cheklist6.pdf');
     	//return $pdf->download('form6.pdf');
+    }
+
+    public function cetakForm10($id){
+        set_time_limit(300);
+        
+        $survey = SurveyUnitUsaha::findorFail($id);
+        $formDetail = DB::table('surveyunitusaha')
+        ->join('form10','surveyunitusaha.idForm6', '=', 'form10.id')
+        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+        ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
+        ->where('surveyunitusaha.id', '=', $survey->id)
+        ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+        ->get();
+        
+        $suplier = 
+        DB::table('surveyunitusaha')
+            ->join('form10','surveyunitusaha.idform10', '=', 'form10.id')
+            ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('suplierproduk.*')
+            ->get();
+        
+        $pengawas1 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('orang.NamaLengkap')
+            ->get()->toArray();
+
+        $pengawas2 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('orang.NamaLengkap')
+            ->get()->toArray();
+
+        $pengawas3 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('orang.NamaLengkap')
+            ->get()->toArray();
+       
+        
+        PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+            
+        $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,
+                'suplier'=>$suplier,
+                'produksi'=>$penerimaProduksi,
+                'pengawas1'=>$pengawas1,
+                'pengawas2'=>$pengawas2,
+                'pengawas3'=>$pengawas3,
+                ]);
+       
+        return $pdf->stream('cheklist10.pdf');
+    	//return $pdf->download('form10.pdf');
     }
 }

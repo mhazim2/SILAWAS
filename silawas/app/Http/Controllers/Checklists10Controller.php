@@ -94,6 +94,9 @@ class Checklists10Controller extends Controller
                 'P9'=> $request['P9'],
                 'P9_ket'=> $request['P9_ket'],
                 'P10'=> $request['P10'],
+                'P10-1'=> $request['P10-1'],
+                'P10-2'=> $request['P10-2'],
+                'P10-3'=> $request['P10-3'],
                 'P10-4'=> $request['P10-4'],
                 'P11'=> $request['P11'],
                 'P11-1'=> $request['P11-1'],
@@ -102,19 +105,26 @@ class Checklists10Controller extends Controller
                 'P11-4'=> $request['P11-4'],
                 'P11-5'=> $request['P11-5'],
                 'P12'=> $request['P12'],
+                'P12-1'=> $request['P12-1'],
                 'P12-2'=> $request['P12-2'],
                 'P12-3'=> $request['P12-3'],
+                'P12-4'=> $request['P12-4'],
                 'P13'=> $request['P13'],
                 'P13_ket'=> $request['P13_ket'],
                 'P14'=> $request['P14'],
+                'P14-1'=> $request['P14-1'],
+                'P14-2'=> $request['P14-2'],
                 'P14-3'=> $request['P14-3'],
                 'P14-4'=> $request['P14-4'],
+                'P14-5'=> $request['P14-5'],
                 'P15'=> $request['P15'],
-                'P15-2'=> $request[''],
+                'P15-1'=> $request['P15-1'],
+                'P15-2'=> $request['P15-2'],
                 'P3-1'=> $request['P3-1'],
                 'P3-2'=> $request['P3-2'],
                 'P3-3'=> $request['P3-3'],
                 'P3-4'=> $request['P3-4'],
+                
 
             ];
             session()->put('survey', $data_survey);
@@ -133,9 +143,9 @@ class Checklists10Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
-            dd($request);
-            // $data_catatan = $request->all();
-            // session()->put('catatan', $data_catatan);
+            //dd($request);
+            $data_catatan = $request->all();
+             session()->put('catatan', $data_catatan);
             return redirect()->action('Checklists10ontroller@store');
         }
 
@@ -199,6 +209,9 @@ class Checklists10Controller extends Controller
                 'P9'=> $survey['P9'],
                 'P9_ket'=> $survey['P9_ket'],
                 'P10'=> $survey['P10'],
+                'P10-1'=> $survey['P10-1'],
+                'P10-2'=> $survey['P10-2'],
+                'P10-3'=> $survey['P10-3'],
                 'P10-4'=> $survey['P10-4'],
                 'P11'=> $survey['P11'],
                 'P11-1'=> $survey['P11-1'],
@@ -207,14 +220,20 @@ class Checklists10Controller extends Controller
                 'P11-4'=> $survey['P11-4'],
                 'P11-5'=> $survey['P11-5'],
                 'P12'=> $survey['P12'],
+                'P12-1'=> $survey['P12-1'],
                 'P12-2'=> $survey['P12-2'],
                 'P12-3'=> $survey['P12-3'],
+                'P12-4'=> $survey['P12-4'],
                 'P13'=> $survey['P13'],
                 'P13_ket'=> $survey['P13_ket'],
                 'P14'=> $survey['P14'],
+                'P14-1'=> $survey['P14-1'],
+                'P14-2'=> $survey['P14-2'],
                 'P14-3'=> $survey['P14-3'],
                 'P14-4'=> $survey['P14-4'],
+                'P14-5'=> $survey['P14-5'],
                 'P15'=> $survey['P15'],
+                'P15-1'=> $survey['P15-1'],
                 'P15-2'=> $survey['P15-2'],
         ]);
 

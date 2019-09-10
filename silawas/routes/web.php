@@ -106,3 +106,4 @@ Route::get('/detail/formulir10/{id}', 'FormsController@getDetailForm10');
 
 //export
 Route::get('/export/formulir6/{id}', 'ExportController@cetakForm6');
+Route::get('/export/formulir10/{id}', 'ExportController@cetakForm10');

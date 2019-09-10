@@ -33,7 +33,8 @@
     <table width="100%">
         <tr>
             <td colspan="2" align="center">
-                <h3 style="margin-top:0px"><strong>DINAS............ KABUPATEN/KOTA............</strong></h3>
+                <h3 style="margin-top:0px"><strong>KEMENTRIAN PERTANIAN</strong></h3>
+                <h3 style="margin-top:0px"><strong>DIREKTORAT JENDRAL PETERNAKAN DAN KESEHATAN HEWAN</strong></h3>
             </td>
         </tr>
         <tr>
@@ -73,15 +74,15 @@
                     </tr>
                     <tr>
                         <td>Titik Koordinat Lokasi</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->koordinat}}</td>
                     </tr>
                     <tr>
                         <td>No. Telp / Fax / Email Unit Usaha</td><td>:</td>
-                        <td>{{$f->Telepon}} / {{$f->Fax}} / {{$f->Email}}</td>
+                        <td>{{$f->telpUU}} / {{$f->faxUU}} / {{$f->emailUU}}</td>
                     </tr>
                     <tr>
                         <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->Nama}}</td>
                     </tr>
                     <tr>
                         <td>Alamat Kantor Pusat</td><td>:</td>
@@ -89,15 +90,15 @@
                     </tr>
                     <tr>
                         <td>No. Telp / Fax / Email Kantor Pusat</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->Telepon}} / {{$f->Fax}} / {{$f->Email}}</td>
                     </tr>
                     <tr>
                         <td>Status Kepemilikan</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->StatusKepemilikan}}</td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Unit Usaha / No.Telp</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->pjUnitUsaha}} / {{$f->pjUnitUsahaKontak}}</td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Teknis / No.Telp</td><td>:</td>
@@ -105,19 +106,19 @@
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Produksi / No.Telp</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->pjProduksi}} / {{$f->pjProduksiKontak}}</td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Mutu / No.Telp</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->pjMutu}} / {{$f->pjMutuKontak}}</td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Higiene Sanitasi / No.Telp</td><td>:</td>
-                        <td></td>
+                        <td>{{$f->pjHigiene}} / {{$f->pjHigieneKontak}}</td>
                     </tr>
                     <tr>
                         <td>Tahun Berdiri dan Tahun Operasional</td><td>:</td>
-                        <td>, {{$f->TahunOperasional}}</td>
+                        <td>{{$f->TahunBerdiri}}, {{$f->TahunOperasional}}</td>
                     </tr>
                     <tr>
                         <td>Tipe Unit Usaha</td><td>:</td>
@@ -169,11 +170,11 @@
                             <span style="margin-left:27px">(jika Sewa RPH-U)</span>
                         </td>
                         <td align="center">
-                            <br>V
-                            <br>V
-                            <br>V
-                            <br>V
-                            <br>V
+                            <br>{{$f->b1_niu_id  ? 'V':' '}}
+                            <br>{{$f->b1_npwp_id  ? 'V':' '}}
+                            <br>{{$f->b1_siup_id  ? 'V':' '}}
+                            <br>{{$f->b1_nib_id  ? 'V':' '}}
+                            <br>{{$f->b1_pks_id  ? 'V':' '}}
                         </td>
                         <td align="center"></td>
                         <td>
@@ -562,15 +563,12 @@
                             27. Berapakah rata-rata berat hidup unggas yang dipotong per hari?
                         </td>
                         <td>
-                           
                             Berat Hidup (Persentase)
                             <ul style="margin:0px; padding-left:18px">
-                              
                                 <li>Ukuran kecil (> 1kg): {{$f->b27_1}} %</li>
                                 <li>Ukuran Sedang (1 - 1,5kg): {{$f->b27_2}} %</li>
                                 <li>Ukuran Besar (> 1,5kg): {{$f->b27_3}} %</li>
                             </ul>
-                           
                         </td>
                     </tr>
                     <tr>
@@ -601,6 +599,16 @@
                              -   
                             @endif
                         </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <table class="survey" width="100%" border="1">
+                    <tr>
+                        <td align="center"><strong>Aspek parameter</strong></td>
+                        <td align="center"><strong>Keterangan</strong></td>
                     </tr>
                     <tr>
                         <td>
@@ -662,13 +670,19 @@
                         <td colspan="2">
                             1. Catatan :<br>
                             <div style="min-height:150px; padding-left:18px">
-                                <br> {{$f->catatan}}
+                                 {{$f->catatan}}
                             </div>
+                            <br>
+                            <br>
                             2. Rekomendasi/Tindak Lanjut :<br>
                             <div style="min-height:150px; padding-left:18px">
-                                <br>{{$f->rekomendasi}}
+                                {{$f->rekomendasi}}
                             </div>
-                            Cap Unit Usaha<br>
+                            <br> 
+                            <br>
+                            <div style="min-height:150px; padding-left:18px; text-align:center">
+                            Cap Unit Usaha<br><br><br>
+                            </div>
                             <div style="min-height:150px; padding-left:18px; text-align:center">
                                 <br>..............., ...................................
                             </div>

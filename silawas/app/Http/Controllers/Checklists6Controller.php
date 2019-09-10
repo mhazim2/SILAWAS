@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\UnitUsaha;
 use App\PengawasKesmavet;
 use App\form6;
@@ -398,7 +398,7 @@ class Checklists6Controller extends Controller
         };
 
         
-        
+        Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->action('PengajuansController@formulir');
     }
 

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use PDF;
 use App\PengawasKesmavet;
 use App\form6;
+use App\form10;
 use App\SurveyUnitUsaha;
 
 use Illuminate\Http\Request;
@@ -91,12 +92,13 @@ class ExportController extends Controller
         
         $survey = SurveyUnitUsaha::findorFail($id);
         $formDetail = DB::table('surveyunitusaha')
-        ->join('form10','surveyunitusaha.idForm6', '=', 'form10.id')
+        ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
         ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
         ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
         ->where('surveyunitusaha.id', '=', $survey->id)
         ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
         ->get();
+        
         
         $suplier = 
         DB::table('surveyunitusaha')
@@ -130,14 +132,14 @@ class ExportController extends Controller
         
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
             
-        $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,
+        $pdf = PDF::loadView('export.checklist10', ['form'=>$formDetail,
                 'suplier'=>$suplier,
-                'produksi'=>$penerimaProduksi,
                 'pengawas1'=>$pengawas1,
                 'pengawas2'=>$pengawas2,
                 'pengawas3'=>$pengawas3,
                 ]);
-       
+        
+      
         return $pdf->stream('cheklist10.pdf');
     	//return $pdf->download('form10.pdf');
     }

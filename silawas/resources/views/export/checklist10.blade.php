@@ -61,7 +61,6 @@
             </td>
         </tr>
         <tr>
-            
             <td colspan="2">
                 
                 <table class="umum" width="100%">
@@ -156,11 +155,11 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            <br>No: {{$f->P1-1}}
-                            <br>No: {{$f->P1-2}}
-                            <br>No: {{$f->P1-3}}
-                            <br>No: {{$f->P1-4}}
-                            <br>No: {{$f->P1-5}}
+                            <br>No: {{$f->P1_1}}
+                            <br>No: {{$f->P1_2}}
+                            <br>No: {{$f->P1_3}}
+                            <br>No: {{$f->P1_4}}
+                            <br>No: {{$f->P1_5}}
                         </td>
                     </tr>
                     <tr>
@@ -175,10 +174,10 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>{{$f->P2-1}}</li>
-                                <li>{{$f->P2-2}}</li>
-                                <li>{{$f->P2-3}}</li>
-                                <li>{{$f->P2-4}}</li>
+                                <li>{{$f->P2_1}}</li>
+                                <li>{{$f->P2_2}}</li>
+                                <li>{{$f->P2_3}}</li>
+                                <li>{{$f->P2_4}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -218,9 +217,9 @@
                         </td>
                         <td>
                             <ol style="margin:0px; padding-left:18px">
-                                <li>{{$f->P4-1  ? 'V':' '}}</li>
-                                <li>{{$f->P4-2  ? 'V':' '}}</li>
-                                <li>{{$f->P4-3  ? 'V':' '}}</li>
+                                <li>{{$f->P4_1 }}</li>
+                                <li>{{$f->P4_2 }}</li>
+                                <li>{{$f->P4_3 }}</li>
                             </ol>
                         </td>
                     </tr>
@@ -255,8 +254,8 @@
                         </td> 
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P6-1}}</li>
-                                <li> {{$f->P6-2}}</li>
+                                <li> {{$f->P6_1}}</li>
+                                <li> {{$f->P6_2}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -272,8 +271,8 @@
                         </td> 
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P7-1}}</li>
-                                <li> {{$f->P7-2}}</li>
+                                <li> {{$f->P7_1}}</li>
+                                <li> {{$f->P7_2}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -290,8 +289,8 @@
                         </td> 
                         <td>
                              <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P8-1}}</li>
-                                <li> {{$f->P8-2}}</li>
+                                <li> {{$f->P8_1}}</li>
+                                <li> {{$f->P8_2}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -325,10 +324,10 @@
                         </td> 
                         <td>
                              <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P10-1}}</li>
-                                <li> {{$f->P10-2}}</li>
-                                <li> {{$f->P10-3}}</li>
-                                <li> {{$f->P10-4}}</li>
+                                <li> {{$f->P10_1}}</li>
+                                <li> {{$f->P10_2}}</li>
+                                <li> {{$f->P10_3}}</li>
+                                <li> {{$f->P10_4}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -361,11 +360,11 @@
                             </td> 
                             <td>
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P11-1}}</li>
-                                    <li> {{$f->P11-2}}</li>
-                                    <li> {{$f->P11-3}}</li>
-                                    <li> {{$f->P11-4}}</li>
-                                    <li> {{$f->P11-5}}</li>
+                                    <li> {{$f->P11_1}}</li>
+                                    <li> {{$f->P11_2}}</li>
+                                    <li> {{$f->P11_3}}</li>
+                                    <li> {{$f->P11_4}}</li>
+                                    <li> {{$f->P11_5}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -381,10 +380,10 @@
                             </td> 
                             <td>
                                   <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P12-1}}</li>
-                                    <li> {{$f->P12-2}}</li>
-                                    <li> {{$f->P12-3}}</li>
-                                    <li> {{$f->P12-4}}</li>
+                                    <li> {{$f->P12_1}}</li>
+                                    <li> {{$f->P12_2}}</li>
+                                    <li> {{$f->P12_3}}</li>
+                                    <li> {{$f->P12_4}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -414,11 +413,11 @@
                             </td> 
                             <td>
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P14-1}}</li>
-                                    <li> {{$f->P14-2}}</li>
-                                    <li> {{$f->P14-3}}</li>
-                                    <li> {{$f->P14-4}}</li>
-                                    <li> {{$f->P14-5}}</li>
+                                    <li> {{$f->P14_1}}</li>
+                                    <li> {{$f->P14_2}}</li>
+                                    <li> {{$f->P14_3}}</li>
+                                    <li> {{$f->P14_4}}</li>
+                                    <li> {{$f->P14_5}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -434,8 +433,8 @@
                             </td> 
                             <td>
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P15-1}}</li>
-                                    <li> {{$f->P15-2}}</li>
+                                    <li> {{$f->P15_1}}</li>
+                                    <li> {{$f->P15_2}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -493,7 +492,6 @@
             </td>
         </tr>
     </table>
-
-
-    @endforeach</body>
+    @endforeach
+</body>
 </html>

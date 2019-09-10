@@ -40,7 +40,30 @@ class FormsController extends Controller
                 ->orWhere('idPengawas3', '=', $petugas->idPengawasKesmavet)
                 ->select('surveyunitusaha.*','unitusaha.*')
                 ->get();
-  
+
+        if (array_key_exists('idForm1', $forms)) {
+            $tipeForm = 1 ; 
+            foreach ($forms as $forms) {
+                 $idForm =  $forms->idForm1;
+            } 
+         } 
+        else if (array_key_exists('idForm6', $forms)) {
+            $tipeForm = 6 ; 
+            foreach ($forms as $forms) {
+                 $idForm =  $forms->idForm6;
+            } 
+         } 
+
+        else if (array_key_exists('idForm10', $forms)) {
+            $tipeForm = 10 ; 
+            foreach ($forms as $forms) {
+                 $idForm =  $forms->idForm10;
+            } 
+         } 
+
+        $forms['tipeForm'] = $tipeForm;
+        $forms['idForm'] = $idForm;
+
         return view('pengajuan.index', [
             'listForms' => $froms
         ]);
@@ -84,10 +107,34 @@ class FormsController extends Controller
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('penerimaprodukdistribusi.*')
             ->get();
+
+        $pengawas1 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('orang.NamaLengkap')
+            ->get();
+
+        $pengawas2 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('orang.NamaLengkap')
+            ->get();
+
+        $pengawas3 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('orang.NamaLengkap')
+            ->get();
         
         $data['detail']=$formDetail; 
         $data['dokter']=$dokterPJ;
         $data['penerima']=$penerimaProduksi;
+        $data['pengawas1']=$pengawas1;
+        $data['pengawas2']=$pengawas2;
+        $data['pengawas3']=$pengawas3;
       
   
        return dd($data);
@@ -109,9 +156,35 @@ class FormsController extends Controller
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('suplierproduk.*')
             ->get();
-        
+
+         $pengawas1 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('orang.NamaLengkap')
+            ->get();
+
+        $pengawas2 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('orang.NamaLengkap')
+            ->get();
+
+        $pengawas3 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('orang.NamaLengkap')
+            ->get();
+
+
         $data['detail']=$formDetail;
         $data['suplierproduk']=$suplier;
+        $data['pengawas1']=$pengawas1;
+        $data['pengawas2']=$pengawas2;
+        $data['pengawas3']=$pengawas3;
+      
 
         return dd($data);
     }

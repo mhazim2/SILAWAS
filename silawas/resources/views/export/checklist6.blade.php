@@ -319,6 +319,7 @@
                             {{$f->b9}}
                         </td>
                     </tr>
+                   
                     <tr>
                         <td>
                             10. Apakah ada petugas yang bertanggung jawab dalam penerapan kesejahteraan hewan?
@@ -333,124 +334,142 @@
                                 {{$f->b10}}
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            11. Apakah dilakukan pemeriksaan karkas dan jeroan setelah dipotong?
-                        </td>
-                        <td align="center">
-                            {{$f->check_b11  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b11 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b11}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            12. Apakah ada pemeriksaan/pengujian terhadap produk secara berkala?
-                        </td>
-                        <td align="center">
-                            {{$f->check_b12  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b12 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b12}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            13. Apakah karkas unggas memiliki label/informasi?
-                        </td>
-                        <td align="center">
-                            {{$f->check_b13  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b13 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b13}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            14. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
-                        </td>
-                        <td align="center">
-                            {{$f->check_b14  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b14 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b14}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            15. Apakah dilakukan program pengendalian hama dan serangga?
-                        </td>
-                        <td align="center">
-                            {{$f->check_b15  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b14 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b15}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            16. Apakah ada prosedur penanganan terhadap unggas yang mati sebelum dipotong (bangkai)?
-                        </td>
-                        <td align="center">
-                            {{$f->check_b16  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b16 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b16}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            17. Apakah dilakukan pengolahan limbah?
-                        </td>
-                        <<td align="center">
-                            {{$f->check_b17  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b17 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b17}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            18. Apakah ada penanganan terhadap bulu dan jeroan usus dari unggas yang dipotong?
-                        </td>
-                        <<td align="center">
-                            {{$f->check_b18  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_b18 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                                {{$f->b18}}
-                        </td>
-                    </tr>
+                   
                 
                 </table>
             </td>
         </tr>
+
         <tr>
-            <td colspan="2"><h3></h3></td>
+                <td colspan="2">
+                    <table class="survey" width="100%" border="1" >
+                    
+                        <tr>
+                            <td align="center"><strong>Aspek parameter</strong></td>
+                            <td align="center"><strong>Ya</strong></td>
+                            <td align="center"><strong>Tidak</strong></td>
+                            <td align="center"><strong>Keterangan</strong></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>
+                                11. Apakah dilakukan pemeriksaan karkas dan jeroan setelah dipotong?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b11  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b11 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b11}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                12. Apakah ada pemeriksaan/pengujian terhadap produk secara berkala?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b12  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b12 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b12}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                13. Apakah karkas unggas memiliki label/informasi?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b13  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b13 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b13}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                14. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b14  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b14 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b14}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                15. Apakah dilakukan program pengendalian hama dan serangga?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b15  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b15 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b15}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                16. Apakah ada prosedur penanganan terhadap unggas yang mati sebelum dipotong (bangkai)?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b16  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b16 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b16}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                17. Apakah dilakukan pengolahan limbah?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b17  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b17 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b17}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                18. Apakah ada penanganan terhadap bulu dan jeroan usus dari unggas yang dipotong?
+                            </td>
+                            <td align="center">
+                                {{$f->check_b18  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_b18 ? ' ':"V"}}
+                            </td> 
+                            <td>
+                                    {{$f->b18}}
+                            </td>
+                        </tr>
+                    
+                    </table>
+                </td>
+            </tr>
+
+        <tr>
+        <td colspan="2"><h3></h3></td>
         </tr>
         <tr>
             <td colspan="2">
@@ -543,12 +562,15 @@
                             27. Berapakah rata-rata berat hidup unggas yang dipotong per hari?
                         </td>
                         <td>
+                           
                             Berat Hidup (Persentase)
                             <ul style="margin:0px; padding-left:18px">
-                                <li>Ukuran Kecil (< 1kg): {{$f->b27_1}} %</li>
+                              
+                                <li>Ukuran kecil (> 1kg): {{$f->b27_1}} %</li>
                                 <li>Ukuran Sedang (1 - 1,5kg): {{$f->b27_2}} %</li>
                                 <li>Ukuran Besar (> 1,5kg): {{$f->b27_3}} %</li>
                             </ul>
+                           
                         </td>
                     </tr>
                     <tr>
@@ -556,12 +578,16 @@
                             28. Apakah sarana pembekuan cepat yang digunakan?
                         </td>
                         <td>
+                            @if ($f->check_b28)
                             <ul style="margin:0px; padding-left:18px">
                                 <li>Unit: {{$f->b28}}</li>
                                 <li>Jumlah: {{$f->b28_1}} unit</li>
                                 <li>Kapasitas: {{$f->b28_2}} ton</li>
                                 <li>Total realisasi saat ini: {{$f->b28_3}} ton</li>
                             </ul>
+                            @else  
+                              -   
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -569,7 +595,11 @@
                             29. Jika produk akhir karkas dingin, apakah memiliki sarana penyimpanan dingin (Chiller)?
                         </td>
                         <td>
+                            @if ($f->check_b29)
                             Chiller {{$f->b29_unit}} unit, kapasitas masing-masing {{$f->b29_kapasitas}} ton, realisasi {{$f->b29_realisasi}} ton
+                            @else  
+                             -   
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -577,7 +607,11 @@
                             30. Jika produk akhir karkas beku, apakah memiliki sarana penyimpanan dingin (Cold Storage)?
                         </td>
                         <td>
+                            @if($f->check_b30)
                             Cold Storage {{$f->b30_unit}} unit, apasitas masing-masing {{$f->b30_kapasitas}} ton, realisasi {{$f->b30_realisasi}} ton, rata-rata penyimpanan {{$f->b30_waktu}} minggu
+                            @else 
+                             - 
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -602,15 +636,17 @@
                             32. Apakah jenis sarana/alat angkut untuk distribusi karkas?
                         </td>
                         <td>
-                                {{$f->b32_jenis}}, {{$f->b32_jenisAlat}}, {{$f->b32_jumlahAlat}},{{$f->b32_kapasitas}}
+                            {!! $f->check_b32 ? '<b>Jenis:</b> '.$f->b32_jenisAlat.', <b>Jumlah:</b> '.$f->b32_jumlahAlat.', <b>kapasitas:</b> '.$f->b32_kapasitas.'' : '-' !!}
+                
                         </td>
                     </tr>
                     <tr>
                         <td>
                             33. Jika memiliki unit pengolahan produk unggas, berapa persentase produksi RPH-U yang digunakan sebagai bahan baku produk olahan unggas?
                         </td>
-                        <td>
-                                {{$f->check_b33}},  {{$f->b33}}
+                        <td>    
+                                {{$f->check_b33  ? $f->b33:'-'}}
+                                
                         </td>
                     </tr>
                 </table>
@@ -640,12 +676,20 @@
                     </tr>
                     <tr>
                         <td width="50%">
+                            
                             <center>Tim Pengawas</center>
                             <ol style="padding-left:18px">
-                                <li>{{$f->idPengawas  ? 'V':' '}}</li>
-                                <li>{{$f->idPengawas  ? 'V':' '}}</li>
-                                <li>{{$f->idPengawas  ? 'V':' '}}</li>
+                                @foreach($pengawas1 as $pe1)
+                                <li>{{$f->idPengawas  ? $pe1->NamaLengkap:'-'}}</li>
+                                @endforeach
+                                @foreach($pengawas2 as $pe2)
+                                <li>{{$f->idPengawas2  ? $pe2->NamaLengkap:'-'}}</li>
+                                @endforeach
+                                @foreach($pengawas3 as $pe3)
+                                <li>{{$f->idPengawas3  ? $pe3->NamaLengkap:'-'}}</li>
+                                @endforeach
                             </ol>
+                            
                         </td>
                         <td align="center" width="50%">
                             Penanggung Jawab Unit Usaha

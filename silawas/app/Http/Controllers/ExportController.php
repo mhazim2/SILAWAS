@@ -49,10 +49,37 @@ class ExportController extends Controller
             ->select('penerimaprodukdistribusi.*')
             ->get();
         
+        $pengawas1 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('orang.NamaLengkap')
+            ->get()->toArray();
+
+        $pengawas2 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('orang.NamaLengkap')
+            ->get()->toArray();
+
+        $pengawas3 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('orang.NamaLengkap')
+            ->get()->toArray();
+       
         
-            PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
+        PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
             
-       $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
+        $pdf = PDF::loadView('export.checklist6', ['form'=>$formDetail,
+                'dokter'=>$dokterPJ,
+                'produksi'=>$penerimaProduksi,
+                'pengawas1'=>$pengawas1,
+                'pengawas2'=>$pengawas2,
+                'pengawas3'=>$pengawas3,
+                ]);
         //return view('export.checklist6', ['form'=>$formDetail,'dokter'=>$dokterPJ,'produksi'=>$penerimaProduksi]);
         return $pdf->stream('whateveryourviewname.pdf');
 

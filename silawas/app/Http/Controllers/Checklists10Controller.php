@@ -176,7 +176,7 @@ class Checklists10Controller extends Controller
                 
 
             ];
-            
+            session()->put('survey', $data_survey);
             
             return redirect()->action('Checklists10Controller@catatan');
         }
@@ -306,13 +306,13 @@ class Checklists10Controller extends Controller
                 'negara'=>$survey['P3_2'][$i],
                 'tanggal'=>$survey['P3_3'][$i],
                 'jumlah'=>$survey['P3_4'][$i],
-                'surveyUnitUsaha_idsurveyUnitusaha'=>$formff->id,
+                'surveyUnitUsaha_idsurveyUnitusaha'=>$surveyform->id,
               ]);
             }
         };
 
         //Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');
-        return redirect()->route('pengajuan.show');
+        return redirect()->route('pengawasan.show');
     }
 }

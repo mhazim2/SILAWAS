@@ -22,14 +22,14 @@ class FormsController extends Controller
     public function getAllForm(){
         
         $forms = DB::table('surveyunitusaha')
-        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-        ->select('surveyunitusaha.*','unitusaha.*')
-        ->get();
+            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->select('surveyunitusaha.*','unitusaha.*')
+            ->get();
         $idSurvey = DB::table('surveyunitusaha')->select('surveyunitusaha.id')->first();
-        $listpengawas = $pengawas->toArray();
+        
 
         return view('pengajuan.index', [
-            'listForms' => $froms
+            'listForms' => $forms
         ]);
     }
 
@@ -132,10 +132,7 @@ class FormsController extends Controller
             ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
             ->select('orang.NamaLengkap')
             ->get();
-        
-        
-        
-       
+            
 
         $data['detail']=$formDetail; 
         $data['dokter']=$dokterPJ;

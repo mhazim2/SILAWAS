@@ -165,15 +165,10 @@
                                                                         <div class="row">
                                                                             <div class="col-md-6">
                                                                                 <input type="text" 
-                                                                                    class="form-control @error('NamaUnitUsaha') is-invalid @enderror" 
+                                                                                    class="form-control" 
                                                                                     id="NamaUnitUsaha" 
                                                                                     name="NamaUnitUsaha" 
                                                                                     value="{{ $unitusaha->NamaUnitUsaha }}" autofocus>
-                                                                                @error('NamaUnitUsaha')
-                                                                                    <span class="invalid-feedback" role="alert">
-                                                                                        <strong>{{ $message }}</strong>
-                                                                                    </span>
-                                                                                @enderror
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -182,15 +177,10 @@
                                                                         <div class="row">
                                                                             <div class="col-md-6">
                                                                                 <input type="text" 
-                                                                                        class="form-control @error('koordinat') is-invalid @enderror" 
+                                                                                        class="form-control" 
                                                                                         id="koordinat" 
                                                                                         name="koordinat" 
                                                                                         value="{{ $unitusaha->koordinat }}">
-                                                                                @error('koordinat')
-                                                                                    <span class="invalid-feedback" role="alert">
-                                                                                        <strong>{{ $message }}</strong>
-                                                                                    </span>
-                                                                                @enderror
                                                                                 <small class="form-text text-muted"><b>Contoh:</b> -6.2XXXXX; 106.82XXXX</small>
                                                                             </div>
                                                                         </div>
@@ -202,60 +192,40 @@
                                                                                 <div class="col-md-12">
                                                                                     <div class="form-group">
                                                                                         <label for="AlamatUnitUsaha">Alamat</label>
-                                                                                        <textarea class="form-control @error('AlamatUnitUsaha') is-invalid @enderror" 
+                                                                                        <textarea class="form-control" 
                                                                                                 rows="3" 
                                                                                                 id="AlamatUnitUsaha" 
                                                                                                 name="AlamatUnitUsaha">{{ $unitusaha->AlamatUnitUsaha }}</textarea>
-                                                                                        @error('AlamatUnitUsaha')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group">
                                                                                         <label for="telpUU">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('telpUU') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="telpUU" 
                                                                                             name="telpUU" 
                                                                                             value="{{ $unitusaha->telpUU }}">
-                                                                                        @error('telpUU')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group">
                                                                                         <label for="faxUU">Fax</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('faxUU') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="faxUU" 
                                                                                             name="faxUU" 
                                                                                             value="{{ $unitusaha->faxUU }}">
-                                                                                        @error('faxUU')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group">
                                                                                         <label for="emailUU">Email</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('emailUU') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="emailUU" 
                                                                                             name="emailUU" 
                                                                                             value="{{ $unitusaha->emailUU }}">
-                                                                                        @error('emailUU')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -266,15 +236,10 @@
                                                                         <div class="row">
                                                                             <div class="col-md-3">
                                                                                 <input type="text" 
-                                                                                        class="form-control @error('TahunBerdiri') is-invalid @enderror" 
+                                                                                        class="form-control" 
                                                                                         id="TahunBerdiri" 
                                                                                         name="TahunBerdiri" 
                                                                                         value="{{ $unitusaha->TahunBerdiri }}">
-                                                                                @error('TahunBerdiri')
-                                                                                    <span class="invalid-feedback" role="alert">
-                                                                                        <strong>{{ $message }}</strong>
-                                                                                    </span>
-                                                                                @enderror
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -283,15 +248,10 @@
                                                                         <div class="row">
                                                                             <div class="col-md-3">
                                                                                 <input type="text" 
-                                                                                    class="form-control @error('TahunOperasional') is-invalid @enderror" 
+                                                                                    class="form-control" 
                                                                                     id="TahunOperasional" 
                                                                                     name="TahunOperasional" 
                                                                                     value="{{ $unitusaha->TahunOperasional }}">
-                                                                                @error('TahunOperasional')
-                                                                                    <span class="invalid-feedback" role="alert">
-                                                                                        <strong>{{ $message }}</strong>
-                                                                                    </span>
-                                                                                @enderror
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -314,15 +274,10 @@
                                                                             <div class="row">
                                                                                 <div class="col-md-6">
                                                                                     <input type="text" 
-                                                                                        class="form-control @error('namaPemilikUsaha') is-invalid @enderror" 
+                                                                                        class="form-control" 
                                                                                         id="namaPemilikUsaha" 
                                                                                         name="namaPemilikUsaha" 
                                                                                         value="{{ $unitusaha->namaPemilikUsaha }}">
-                                                                                    @error('namaPemilikUsaha')
-                                                                                        <span class="invalid-feedback" role="alert">
-                                                                                            <strong>{{ $message }}</strong>
-                                                                                        </span>
-                                                                                    @enderror
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -333,60 +288,40 @@
                                                                                 <div class="col-md-12">
                                                                                     <div class="form-group">
                                                                                         <label for="AlamatKantorPusat">Alamat</label>
-                                                                                        <textarea class="form-control @error('AlamatKantorPusat') is-invalid @enderror" 
+                                                                                        <textarea class="form-control" 
                                                                                                 rows="3" 
                                                                                                 id="AlamatKantorPusat" 
                                                                                                 name="AlamatKantorPusat">{{ $unitusaha->AlamatKantorPusat }}</textarea>
-                                                                                        @error('AlamatKantorPusat')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group">
                                                                                         <label for="Telepon">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('Telepon') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="Telepon" 
                                                                                             name="Telepon" 
                                                                                             value="{{ $unitusaha->Telepon }}">
-                                                                                        @error('Telepon')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group">
                                                                                         <label for="Fax">Fax</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('Fax') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="Fax" 
                                                                                             name="Fax" 
                                                                                             value="{{ $unitusaha->Fax }}">
-                                                                                        @error('Fax')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-4">
                                                                                     <div class="form-group">
                                                                                         <label for="Email">Email</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('Email') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="Email" 
                                                                                             name="Email" 
                                                                                             value="{{ $unitusaha->Email }}">
-                                                                                        @error('Email')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -400,30 +335,20 @@
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjUnitUsaha">Nama</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjUnitUsaha') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjUnitUsaha" 
                                                                                                 name="pjUnitUsaha" 
                                                                                                 value="{{ $unitusaha->pjUnitUsaha }}">
-                                                                                        @error('pjUnitUsaha')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjUnitUsahaKontak">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjUnitUsahaKontak') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjUnitUsahaKontak" 
                                                                                                 name="pjUnitUsahaKontak" 
                                                                                                 value="{{ $unitusaha->pjUnitUsahaKontak }}">
-                                                                                        @error('pjUnitUsahaKontak')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -437,30 +362,20 @@
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="PenangungJawabTeknis">Nama</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('PenangungJawabTeknis') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="PenangungJawabTeknis" 
                                                                                             name="PenangungJawabTeknis" 
                                                                                             value="{{ $unitusaha->PenangungJawabTeknis }}">
-                                                                                        @error('PenangungJawabTeknis')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="KontakPJ">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                            class="form-control @error('KontakPJ') is-invalid @enderror" 
+                                                                                            class="form-control" 
                                                                                             id="KontakPJ" 
                                                                                             name="KontakPJ" 
                                                                                             value="{{ $unitusaha->KontakPJ }}">
-                                                                                        @error('KontakPJ')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -474,30 +389,20 @@
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjProduksi">Nama</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjProduksi') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjProduksi" 
                                                                                                 name="pjProduksi" 
                                                                                                 value="{{ $unitusaha->pjProduksi }}">
-                                                                                        @error('pjProduksi')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjProduksiKontak">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjProduksiKontak') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjProduksiKontak" 
                                                                                                 name="pjProduksiKontak" 
                                                                                                 value="{{ $unitusaha->pjProduksiKontak }}">
-                                                                                        @error('pjProduksiKontak')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -511,30 +416,20 @@
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjMutu">Nama</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjMutu') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjMutu" 
                                                                                                 name="pjMutu" 
                                                                                                 value="{{ $unitusaha->pjMutu }}">
-                                                                                        @error('pjMutu')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjMutuKontak">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjMutuKontak') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjMutuKontak" 
                                                                                                 name="pjMutuKontak" 
                                                                                                 value="{{ $unitusaha->pjMutuKontak }}">
-                                                                                        @error('pjMutuKontak')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -548,30 +443,20 @@
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjHigiene">Nama</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjHigiene') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjHigiene" 
                                                                                                 name="pjHigiene" 
                                                                                                 value="{{ $unitusaha->pjHigiene }}">
-                                                                                        @error('pjHigiene')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-md-6">
                                                                                     <div class="form-group">
                                                                                         <label class="font-weight-normal" for="pjHigieneKontak">No. Telp</label>
                                                                                         <input type="text" 
-                                                                                                class="form-control @error('pjHigieneKontak') is-invalid @enderror" 
+                                                                                                class="form-control" 
                                                                                                 id="pjHigieneKontak" 
                                                                                                 name="pjHigieneKontak" 
                                                                                                 value="{{ $unitusaha->pjHigieneKontak }}">
-                                                                                        @error('pjHigieneKontak')
-                                                                                            <span class="invalid-feedback" role="alert">
-                                                                                                <strong>{{ $message }}</strong>
-                                                                                            </span>
-                                                                                        @enderror
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -585,7 +470,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a href="/unit-usaha/delete/{{ $unitusaha->id }}" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
+                                                <a href="/unit-usaha/hapus/{{ $unitusaha->id }}" onclick="return confirm('Apakah Anda yakin ingin menghapus unit usaha ini?')">
                                                     <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
                                                         <small><i class="fas fa-trash"></i></small>
                                                     </button>

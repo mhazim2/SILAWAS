@@ -24,18 +24,17 @@ Route::post('/profile/{id}/update', 'ProfilesController@update')->name('profile.
 
 // Halaman Petugas
 Route::get('/petugas', 'PetugassController@index')->name('petugas.show');
-Route::get('/petugas/detail/{petugas_id}', 'PetugassController@detail')->name('petugas.detail');
-Route::get('/petugas/hapus/{petugas_id}', 'PetugassController@destroy')->name('petugas.destroy');
 Route::get('/petugas/create', 'PetugassController@create')->name('petugas.create');
 Route::post('/petugas/store','PetugassController@store')->name('petugas.store');
-Route::get('/petugas/delete/{idUser}', 'PetugassController@deletePetugas');
+Route::post('/petugas/update/{idUser}', 'PetugassController@update')->name('petugas.update');
+Route::get('/petugas/hapus/{idUser}', 'PetugassController@deletePetugas')->name('petugas.delete');
 
 // Halaman Unit Usaha
 Route::get('/unit-usaha', 'UnitUsahasController@index')->name('unitusaha.show');
 Route::get('/unit-usaha/create', 'UnitUsahasController@create')->name('unitusaha.create');
 Route::post('/unit-usaha/store', 'UnitUsahasController@store')->name('unitusaha.store');
 Route::post('/unit-usaha/update/{idUnitUsaha}', 'UnitUsahasController@updateUnitUsaha')->name('unitusaha.update');
-Route::get('/unit-usaha/delete/{idUnitUsaha}', 'UnitUsahasController@deleteUnitUsaha')->name('unitusaha.delete');
+Route::get('/unit-usaha/hapus/{idUnitUsaha}', 'UnitUsahasController@deleteUnitUsaha')->name('unitusaha.delete');
 
 // Halaman Pengajuan
 Route::get('/pengajuan', 'FormsController@getAllForm')->name('pengajuan.show');

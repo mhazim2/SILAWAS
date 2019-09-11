@@ -217,15 +217,15 @@ a:hover {
     overflow-y: hidden;
 }
 
-.detail-uu tr {
+.detail-uu tr, .detail-petugas tr {
     background-color: transparent !important;
 }
 
-.detail-uu td {
+.detail-uu td, .detail-petugas td {
     border: none !important;
 }
 
-.detail-uu td:first-of-type {
+.detail-uu td:first-of-type, .detail-petugas td:first-of-type {
     white-space: nowrap !important;
 }
 

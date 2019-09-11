@@ -20,6 +20,8 @@ class PetugassController extends Controller
 
     public function index()
     {
+        $wilayahkerja = DB::table('wilayahkerja')->select('idWilayahKerja','Nama')->get();
+        $listwilayahkerja = $wilayahkerja->toArray();
         $petugas = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
@@ -28,8 +30,10 @@ class PetugassController extends Controller
             ->select('*')
             ->where('user.accessRoleId', '=', 7)
             ->get();
-        $result = $petugas->toArray();
-        return view('petugas.index', ['listpetugas' => $result]);
+        return view('petugas.index', [
+            'listpetugas' => $petugas,
+            'listwilayahkerja' => $listwilayahkerja,
+        ]);
     }
 
     public function create()
@@ -115,24 +119,20 @@ class PetugassController extends Controller
     }
     public function update(Request $request,$id)
 	{
-		
-		$pengawas = DB::table('pengawaskesmavet')->where('idUser',$id)->update([
+		$pengawas = DB::table('pengawaskesmavet')->where('idPengawasKesmavet', $id)->update([
 			'NoSK' => $request['NoSK'],
             'PNS_idPegawai' => $request['NIP'],
             'idWilayahKerja' => $request['WilayahKerja'],
-            'idRegencyCity' => $request['RegencyCity'],
-            'isActive' => $request['isActive'],
             'isDokter' => $request['isDokter'],
             'unitKerja' => $request['unitKerja'],
 		    'jabatan' => $request['jabatan'],
-            'kewenangan' => $request['kewenangan'],
             'NoRegistrasi'=> $request['NoRegistrasi'],
             'alamatKantor'=> $request['alamatKantor'],
 		]);
         if($pengawas ){
             Alert::success('Data berhasil diubah');
             return redirect()->route('petugas.show');
-            }
+        }
         Alert::error('Data gagal diubah');
 		return redirect()->route('petugas.show');
 	}

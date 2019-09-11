@@ -17,8 +17,8 @@
                                 <i class="fas fa-edit mr-1"></i> Edit
                             </button>
                         </a>
-                        <a href="#" class="d-inline-block">
-                            <button type="button" class="btn btn-primary">
+                        <a href="/export/formulir6/{{$surveyID}}" class="d-inline-block" >
+                            <button type="button" class="btn btn-primary" >
                                 <i class="fas fa-file-download mr-1"></i> Export
                             </button>
                         </a>
@@ -738,7 +738,7 @@
                                         <tr>
                                             <td>Pengawas 1</td>
                                             <td>:</td>
-                                            <td>{{ $data->idPengawas ? $data->idPengawas : '-' }}</td>
+                                            <td>{{ $pengawas1->NamaLengkap ? $pengawas1->NamaLengkap : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 2</td>

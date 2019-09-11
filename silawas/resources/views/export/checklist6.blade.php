@@ -24,7 +24,16 @@
         }
         .page-break {
             page-break-after: always;
-        }
+        }   
+        footer {
+                position: fixed; 
+                bottom: 0cm; 
+                left: 0cm; 
+                right: 0cm;
+                height: 2cm;
+
+               
+         }
         
     </style>
 </head>
@@ -335,22 +344,19 @@
                                 {{$f->b10}}
                         </td>
                     </tr>
-                   
-                
                 </table>
             </td>
         </tr>
 
         <tr>
-                <td colspan="2">
-                    <table class="survey" width="100%" border="1" >
-                    
-                        <tr>
-                            <td align="center"><strong>Aspek parameter</strong></td>
-                            <td align="center"><strong>Ya</strong></td>
-                            <td align="center"><strong>Tidak</strong></td>
-                            <td align="center"><strong>Keterangan</strong></td>
-                        </tr>
+            <td colspan="2">
+                <table class="survey" width="100%" border="1" >
+                     <tr>
+                        <td align="center"><strong>Aspek parameter</strong></td>
+                         <td align="center"><strong>Ya</strong></td>
+                        <td align="center"><strong>Tidak</strong></td>
+                        <td align="center"><strong>Keterangan</strong></td>
+                    </tr>
                         
                         <tr>
                             <td>
@@ -465,7 +471,7 @@
                             </td>
                         </tr>
                     
-                    </table>
+                </table>
                 </td>
             </tr>
 
@@ -655,66 +661,11 @@
                         <td>    
                                 {{$f->check_b33  ? $f->b33:'-'}}
                                 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
                 </table>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2"><h3></h3></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <table class="catatan" width="100%" border="1">
-                    <tr>
-                        <td colspan="2">
-                            1. Catatan :<br>
-                            <div style="min-height:150px; padding-left:18px">
-                                 {{$f->catatan}}
-                            </div>
-                            <br>
-                            <br>
-                            2. Rekomendasi/Tindak Lanjut :<br>
-                            <div style="min-height:150px; padding-left:18px">
-                                {{$f->rekomendasi}}
-                            </div>
-                            <br> 
-                            <br>
-                            <div style="min-height:150px; padding-left:18px; text-align:center">
-                            Cap Unit Usaha<br><br><br>
-                            </div>
-                            <div style="min-height:150px; padding-left:18px; text-align:center">
-                                <br>..............., ...................................
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="50%">
-                            
-                            <center>Tim Pengawas</center>
-                            <ol style="padding-left:18px">
-                                @foreach($pengawas1 as $pe1)
-                                <li>{{$f->idPengawas  ? $pe1->NamaLengkap:'-'}}</li>
-                                @endforeach
-                                @foreach($pengawas2 as $pe2)
-                                <li>{{$f->idPengawas2  ? $pe2->NamaLengkap:'-'}}</li>
-                                @endforeach
-                                @foreach($pengawas3 as $pe3)
-                                <li>{{$f->idPengawas3  ? $pe3->NamaLengkap:'-'}}</li>
-                                @endforeach
-                            </ol>
-                            
-                        </td>
-                        <td align="center" width="50%">
-                            Penanggung Jawab Unit Usaha
-                            <br><br><br><br><br>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-
-
-    @endforeach</body>
+                </td>
+            </tr>
+    @endforeach
+</body>
 </html>

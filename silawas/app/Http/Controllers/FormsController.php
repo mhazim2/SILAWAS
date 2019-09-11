@@ -6,7 +6,7 @@ use App\UnitUsaha;
 use App\SurveyUnitUsaha;
 use App\PengawasKesmavet;
 use App\Form1;
-
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
@@ -23,6 +23,7 @@ class FormsController extends Controller
         ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
         ->select('surveyunitusaha.*','unitusaha.*')
         ->get();
+        $idSurvey = DB::table('surveyunitusaha')->select('surveyunitusaha.id')->first();
         $listpengawas = $pengawas->toArray();
 
         return view('pengajuan.index', [
@@ -130,6 +131,10 @@ class FormsController extends Controller
             ->select('orang.NamaLengkap')
             ->get();
         
+        
+        
+       
+
         $data['detail']=$formDetail; 
         $data['dokter']=$dokterPJ;
         $data['penerima']=$penerimaProduksi;

@@ -369,4 +369,12 @@ class Checklists1Controller extends Controller
         Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->route('pengajuan.show');
     }
+
+    public function deleteForm1 ($id){
+        $survey = SurveyUnitUsaha::where('id', $id)->delete();
+        
+
+        $survey = SurveyUnitUsaha::where('id', $id)->get();
+        $form = 
+    }
 }

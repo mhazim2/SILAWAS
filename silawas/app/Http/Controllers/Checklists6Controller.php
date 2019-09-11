@@ -20,29 +20,64 @@ class Checklists6Controller extends Controller
     public function detail($id)
     {
         $survey = SurveyUnitUsaha::findorFail($id);
+        $surveyID = $survey->id;
+
         $formDetail = DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form6.*','unitusaha.*')
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
             ->first();
-        $dokterPJ = DB::table('surveyunitusaha')
+        
+        $dokterPJ = 
+        DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->leftJoin('dokterhewanpenanggungjawab','surveyunitusaha.id', '=', 'dokterhewanpenanggungjawab.surveyUnitUsaha_idsurveyUnitusaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('dokterhewanpenanggungjawab.*')
             ->get();
-        $penerimaProduksi = DB::table('surveyunitusaha')
+
+        $penerimaProduksi = 
+        DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->leftJoin('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('penerimaprodukdistribusi.*')
             ->get();
 
+        $pengawas1 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('orang.NamaLengkap')
+            ->first();
+
+        $pengawas2 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('orang.NamaLengkap')
+            ->first();
+
+        $pengawas3 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('orang.NamaLengkap')
+            ->first();
+
+       
+
         return view('checklist6.detail', [
             'data' => $formDetail,
             'dokter_pj' => $dokterPJ,
-            'list_distribusi' => $penerimaProduksi
+            'list_distribusi' => $penerimaProduksi,
+            'pengawas1'=>$pengawas1,
+            'pengawas2'=>$pengawas2,
+            'pengawas3'=>$pengawas3,
+            'surveyID'=>$surveyID,
+            
         ]);
     }
 
@@ -397,9 +432,13 @@ class Checklists6Controller extends Controller
             };
         };
 
-        
+       
         Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->action('PengajuansController@formulir');
+    }
+
+    public function update(Request $request, $id){
+
     }
 
     

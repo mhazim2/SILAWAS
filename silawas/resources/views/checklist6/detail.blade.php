@@ -12,7 +12,7 @@
                         <small>Ceklis Rumah Potong Hewan Unggas</small>
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">
-                        <a href="#" class="d-inline-block">
+                        <a href="#" class="d-inline-block" data-toggle="modal" data-target="#upload-pengesahan">
                             <button type="button" class="btn btn-danger">
                                 <i class="fas fa-file-upload mr-1"></i> Upload File
                             </button>
@@ -28,6 +28,30 @@
                             </button>
                         </a>
                     </div>
+                    <div class="modal fade" id="upload-pengesahan" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <form action="/uploadBukti/{{$surveyID}}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Unggah Bukti Pengesahan</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="file" id="file" name="file">
+                                                <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-kesmavet">Unggah</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

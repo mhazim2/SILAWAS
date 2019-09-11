@@ -16,6 +16,7 @@ class PengawasansController extends Controller
     {
         $listForms = DB::table('surveyunitusaha')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->where('surveyunitusaha.idForm1','=',null)
             ->select('surveyunitusaha.*','unitusaha.NamaUnitUsaha','unitusaha.PelakuUsaha_idPemilikUsaha', 'unitusaha.TahunOperasional')
             ->get();
         foreach ($listForms as $key=>$form) {

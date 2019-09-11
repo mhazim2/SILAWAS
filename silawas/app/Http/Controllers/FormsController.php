@@ -501,4 +501,38 @@ class FormsController extends Controller
         return redirect()->route('pengawasan.show');
        
     }
+
+    public function uploadBukti(Request $request,$id){
+
+        $this->validate($request,[
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+
+        ]);
+        
+        $path = '';
+        
+            if( isset($request['b20'])){
+                $request['b20']= implode( ", ", $request['b20'] );
+            }
+
+            if( isset($request['b22'])){
+                $request['b22'] = implode( ", ", $request['b22'] );
+            }
+            
+            if($request->hasFile('file')){
+            
+                $name = Storage::disk('local')->put('files', $request->file);
+                $path = $name;     
+            }
+
+        $form = SurveyUnitUsaha::find($id);
+
+        $form->buktiFile = $path;
+
+        $form->save();
+
+        Alert::success('Data Berhasil Diupload ');
+        
+        return redirect()->route('pengawasan.show');
+    }
 }

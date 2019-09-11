@@ -101,6 +101,21 @@
                                     @enderror
                                     <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 0xxxxxxxxx</small>
                                 </div>
+                                <div class=" form-group mb-5">
+                                            <label>
+                                                Apakah petugas merupakan dokter hewan?
+                                            </label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-inline mr-3" >
+                                                    <input id="isDokter_1" type="radio" name="isDokter" value="1">
+                                                    <label class="font-weight-normal" for="isDokter_1">Ya</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-inline" >
+                                                    <input id="isDokter_2" type="radio" name="isDokter" value="0">
+                                                    <label class="font-weight-normal" for="isDokter_2">Tidak</label>
+                                                </div>                                            
+                                        </div>
+                                    </div>
                                 <div class="form-group mb-5">
                                     <label for="username">Username Petugas</label>
                                     <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" required>

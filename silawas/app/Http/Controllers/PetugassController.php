@@ -72,6 +72,7 @@ class PetugassController extends Controller
             'idWilayahKerja' => $data['WilayahKerja'],
             'idRegencyCity' => $data['RegencyCity'],
             'isActive' => FALSE,
+            'isDokter' => $data['isDokter'],
         ]);
 
         return redirect()->route('petugas.show');

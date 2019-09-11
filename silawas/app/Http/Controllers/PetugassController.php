@@ -87,4 +87,50 @@ class PetugassController extends Controller
 
         return redirect()->route('petugas.show');
     }
+
+    public function deletePetugas ($id){
+        $user = User::where('id', $id)->first();
+        $orang = Orang::where('idOrang', $user->Orang_idOrang)->first();
+        $petugas = PengawasKesmavet::where('idUser', $user->id)->delete();
+        $orang = Orang::where('idOrang', $user->Orang_idOrang)->delete();
+        $user = User::where('id', $id)->delete();
+
+        if($orang && $user &&$petugas ){
+            Alert::success('Data berhasil dihapus');
+            return redirect()->route('petugas.show');
+            }
+        Alert::error('Data gagal dihapus');
+        return redirect()->route('petugas.show');
+       
+    }
+    
+    public function editPetugas($id){
+            
+		$pengawas = DB::table('pengawaskesmavet')->where('idUser',$id)->get();
+
+		return view('edit',['pengawaskesmavet' => $pengawas]);
+    }
+    public function update(Request $request,$id)
+	{
+		
+		$pengawas = DB::table('pengawaskesmavet')->where('idUser',$id)->update([
+			'NoSK' => $request['NoSK'],
+            'PNS_idPegawai' => $request['NIP'],
+            'idWilayahKerja' => $request['WilayahKerja'],
+            'idRegencyCity' => $request['RegencyCity'],
+            'isActive' => $request['isActive'],
+            'isDokter' => $request['isDokter'],
+            'unitKerja' => $request['unitKerja'],
+		    'jabatan' => $request['jabatan'],
+            'kewenangan' => $request['kewenangan'],
+            'NoRegistrasi'=> $request['NoRegistrasi'],
+            'alamatKantor'=> $request['alamatKantor'],
+		]);
+        if($pengawas ){
+            Alert::success('Data berhasil diubah');
+            return redirect()->route('petugas.show');
+            }
+        Alert::error('Data gagal diubah');
+		return redirect()->route('petugas.show');
+	}
 }

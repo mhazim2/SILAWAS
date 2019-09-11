@@ -70,6 +70,51 @@ class UnitUsahasController extends Controller
         return Redirect::to('/unit-usaha');
     }
 
+    public function deleteUnitUsaha($id){
+        $unit = App\UnitUsaha::find($id);
+        $unit->delete();  
+        if($unit){
+            Alert::success('Data Berhasil dihapus');
+        }
+        else Alert::success('Data gagal dihapus');
+        return Redirect::to('/unit-usaha');
+    }
+
+    public function updateUnitUsaha(Request $request,$id){
+        $unit = App\UnitUsaha::find($id);
+        
+            $unit->NamaUnitUsaha = $request['NamaUnitUsaha'];
+            $unit->AlamatUnitUsaha = $request['NamaUnitUsaha'];
+            $unit->AlamatKantorPusat = $request['NamaUnitUsaha'];
+            $unit->Telepon = $request['NamaUnitUsaha'];
+            $unit->Fax = $request['NamaUnitUsaha'];
+            $unit->Email = $request['NamaUnitUsaha'];
+            $unit->PenangungJawabTeknis = $request['NamaUnitUsaha'];
+            $unit->KontakPJ = $request['NamaUnitUsaha'];
+            $unit->TahunOperasional = $request['NamaUnitUsaha'];
+            $unit->TahunBerdiri = $request['NamaUnitUsaha'];
+            $unit->koordinat = $request['NamaUnitUsaha'];
+            $unit->pjUnitUsaha = $request['NamaUnitUsaha'];
+            $unit->pjUnitUsahaKontak = $request['NamaUnitUsaha'];
+            $unit->pjProduksi = $request['NamaUnitUsaha'];
+            $unit->pjProduksiKontak = $request['NamaUnitUsaha'];
+            $unit->pjMutu = $request['NamaUnitUsaha'];
+            $unit->pjMutuKontak = $request['NamaUnitUsaha'];
+            $unit->pjHigiene = $request['NamaUnitUsaha'];
+            $unit->pjHigieneKontak = $request['NamaUnitUsaha']; 
+            $unit->StatusKepemilikan = $request['NamaUnitUsaha'];
+            $unit->telpUU = $request['NamaUnitUsaha'];
+            $unit->faxUU = $request['NamaUnitUsaha'];
+            $unit->emailUU = $request['NamaUnitUsaha'];
+
+        $unit->save();
+        if($unit){
+            Alert::success('Data Berhasil dihapus');
+        }
+        else Alert::success('Data gagal dihapus');
+        return Redirect::to('/unit-usaha');
+    }
+
     /**
      * Display the specified resource.
      *

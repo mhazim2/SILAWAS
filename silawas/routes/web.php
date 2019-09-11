@@ -28,11 +28,14 @@ Route::get('/petugas/detail/{petugas_id}', 'PetugassController@detail')->name('p
 Route::get('/petugas/hapus/{petugas_id}', 'PetugassController@destroy')->name('petugas.destroy');
 Route::get('/petugas/create', 'PetugassController@create')->name('petugas.create');
 Route::post('/petugas/store','PetugassController@store')->name('petugas.store');
+Route::get('/petugas/delete/{idUser}', 'PetugassController@deletePetugas');
 
 // Halaman Unit Usaha
 Route::get('/unit-usaha', 'UnitUsahasController@index')->name('unitusaha.show');
 Route::get('/unit-usaha/create', 'UnitUsahasController@create')->name('unitusaha.create');
 Route::post('/unit-usaha/store', 'UnitUsahasController@store')->name('unitusaha.store');
+Route::post('/unit-usaha/store', 'UnitUsahasController@store')->name('unitusaha.store');
+Route::get('/unit-usaha/delete/{idUnitUsaha}', 'UnitUsahasController@deleteUnitUsaha');
 
 // Halaman Pengajuan
 Route::get('/pengajuan', 'FormsController@getAllForm')->name('pengajuan.show');

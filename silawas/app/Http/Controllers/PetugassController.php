@@ -45,12 +45,15 @@ class PetugassController extends Controller
     }
 
     public function store(Request $data)
-    {
+    {   
+
+        $newstring = substr($data['NIP'], -7);
+        
         $tmt = date('Y-m-d');
         $user = User::create([
-            'username' => $data['username'],
+            'username' => $data['email'],
             'email' => $data['email'],
-            'passwordHash' => Hash::make($data['password']),
+            'passwordHash' => Hash::make($newstring),
             'authKey' => '123',
             'status' => 10,
             'accessRoleId' => 7

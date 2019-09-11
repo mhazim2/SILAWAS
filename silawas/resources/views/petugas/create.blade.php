@@ -161,24 +161,6 @@
                                                 </div>                                            
                                         </div>
                                     </div>
-                                <div class="form-group mb-5">
-                                    <label for="username">Username Petugas</label>
-                                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" value="{{ old('username') }}" required>
-                                    @error('username')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group mb-5">
-                                    <label for="password">Password Petugas</label>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}" required>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mb-5">

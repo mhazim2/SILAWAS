@@ -19,8 +19,7 @@ class UnitUsahasController extends Controller
         $uu = DB::table('unitusaha')
             ->select('unitusaha.*')
             ->get();
-        $result = $uu->toArray();
-        return view('unit-usaha.index', ['listunitusaha' => $result]);
+        return view('unit-usaha.index', ['listunitusaha' => $uu]);
     }
 
     public function create()
@@ -71,7 +70,7 @@ class UnitUsahasController extends Controller
     }
 
     public function deleteUnitUsaha($id){
-        $unit = App\UnitUsaha::find($id);
+        $unit = UnitUsaha::find($id);
         $unit->delete();  
         if($unit){
             Alert::success('Data Berhasil dihapus');
@@ -81,7 +80,7 @@ class UnitUsahasController extends Controller
     }
 
     public function updateUnitUsaha(Request $request,$id){
-        $unit = App\UnitUsaha::find($id);
+        $unit = UnitUsaha::find($id);
         
             $unit->NamaUnitUsaha = $request['NamaUnitUsaha'];
             $unit->AlamatUnitUsaha = $request['NamaUnitUsaha'];

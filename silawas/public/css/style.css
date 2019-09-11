@@ -217,6 +217,18 @@ a:hover {
     overflow-y: hidden;
 }
 
+.detail-uu tr {
+    background-color: transparent !important;
+}
+
+.detail-uu td {
+    border: none !important;
+}
+
+.detail-uu td:first-of-type {
+    white-space: nowrap !important;
+}
+
 @media (max-width: 767px) {
     .dataTables_length, .dataTables_filter {
         text-align: left !important;

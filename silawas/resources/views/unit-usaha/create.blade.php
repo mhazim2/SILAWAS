@@ -82,13 +82,13 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="telepUU">No. Telp</label>
+                                                    <label for="telpUU">No. Telp</label>
                                                     <input type="text" 
-                                                        class="form-control @error('telepUU') is-invalid @enderror" 
-                                                        id="telepUU" 
-                                                        name="telepUU" 
-                                                        value="{{ old('telepUU') }}">
-                                                    @error('telepUU')
+                                                        class="form-control @error('telpUU') is-invalid @enderror" 
+                                                        id="telpUU" 
+                                                        name="telpUU" 
+                                                        value="{{ old('telpUU') }}">
+                                                    @error('telpUU')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>

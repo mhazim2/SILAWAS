@@ -19,7 +19,7 @@ class PetugassController extends Controller
     }
 
     public function index()
-    {
+    {   
         $wilayahkerja = DB::table('wilayahkerja')->select('idWilayahKerja','Nama')->get();
         $listwilayahkerja = $wilayahkerja->toArray();
         $petugas = DB::table('pengawaskesmavet')
@@ -30,10 +30,8 @@ class PetugassController extends Controller
             ->select('*')
             ->where('user.accessRoleId', '=', 7)
             ->get();
-        return view('petugas.index', [
-            'listpetugas' => $petugas,
-            'listwilayahkerja' => $listwilayahkerja,
-        ]);
+        $result = $petugas->toArray();
+        return view('petugas.index', ['listpetugas' => $result,'listwilayahkerja' => $listwilayahkerja,]);
     }
 
     public function create()
@@ -52,7 +50,7 @@ class PetugassController extends Controller
     {   
 
         $newstring = substr($data['NIP'], -7);
-        
+       
         $tmt = date('Y-m-d');
         $user = User::create([
             'username' => $data['email'],
@@ -96,11 +94,14 @@ class PetugassController extends Controller
     }
 
     public function deletePetugas ($id){
-        $user = User::where('id', $id)->first();
-        $orang = Orang::where('idOrang', $user->Orang_idOrang)->first();
-        $petugas = PengawasKesmavet::where('idUser', $user->id)->delete();
-        $orang = Orang::where('idOrang', $user->Orang_idOrang)->delete();
-        $user = User::where('id', $id)->delete();
+        $petugas = PengawasKesmavet::find($id);
+        $user = User::where('id', $petugas['idUser'])->first();
+        $orang = Orang::where('idOrang', $user['Orang_idOrang'])->first();
+        
+        $petugas->delete();
+        $orang=DB::table('orang')->where('idOrang', '=', $user['Orang_idOrang'])->delete();
+        $user->delete();
+    
 
         if($orang && $user &&$petugas ){
             Alert::success('Data berhasil dihapus');
@@ -119,20 +120,24 @@ class PetugassController extends Controller
     }
     public function update(Request $request,$id)
 	{
-		$pengawas = DB::table('pengawaskesmavet')->where('idPengawasKesmavet', $id)->update([
+		
+		$pengawas = DB::table('pengawaskesmavet')->where('idUser',$id)->update([
 			'NoSK' => $request['NoSK'],
             'PNS_idPegawai' => $request['NIP'],
             'idWilayahKerja' => $request['WilayahKerja'],
+            'idRegencyCity' => $request['RegencyCity'],
+            'isActive' => $request['isActive'],
             'isDokter' => $request['isDokter'],
             'unitKerja' => $request['unitKerja'],
 		    'jabatan' => $request['jabatan'],
+            'kewenangan' => $request['kewenangan'],
             'NoRegistrasi'=> $request['NoRegistrasi'],
             'alamatKantor'=> $request['alamatKantor'],
 		]);
         if($pengawas ){
             Alert::success('Data berhasil diubah');
             return redirect()->route('petugas.show');
-        }
+            }
         Alert::error('Data gagal diubah');
 		return redirect()->route('petugas.show');
 	}

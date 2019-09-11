@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\UnitUsaha;
 use App\SurveyUnitUsaha;
 use App\PengawasKesmavet;
@@ -471,29 +471,34 @@ class FormsController extends Controller
 
     public function deleteForm ($id){
         $survey = SurveyUnitUsaha::where('id', $id)->first();
+       
         
         if (isset($survey['idForm1'])){
             $f=Form1::where('id',$survey->idForm1)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
             if($f && $survey){
-                return Alert::success('Data Berhasil Dihapus');
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
                 }
         }
         else if (isset($survey['idForm6'])){
             form6::where('id',$survey->idForm6)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
             if($f && $survey){
-                return Alert::success('Data Berhasil Dihapus');
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
                 }
         }
         else if (isset($survey['idForm10'])){
             Form10::where('id',$survey->idForm10)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
             if($f && $survey){
-                return Alert::success('Data Berhasil Dihapus');
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
                 }
         }
-        return Alert::error('Data gagal dihapus');
+        Alert::error('Data gagal dihapus');
+        return redirect()->route('pengawasan.show');
        
     }
 }

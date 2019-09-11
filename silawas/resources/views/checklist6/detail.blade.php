@@ -13,6 +13,11 @@
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">
                         <a href="#" class="d-inline-block">
+                            <button type="button" class="btn btn-danger">
+                                <i class="fas fa-file-upload mr-1"></i> Upload File
+                            </button>
+                        </a>
+                        <a href="#" class="d-inline-block">
                             <button type="button" class="btn btn-warning">
                                 <i class="fas fa-edit mr-1"></i> Edit
                             </button>
@@ -44,78 +49,80 @@
                                     <table class="table table-borderless table-sm umum">
                                         <tr>
                                             <td>Nama Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->NamaUnitUsaha }}</td>
+                                            <td>{{ $data->NamaUnitUsaha ? $data->NamaUnitUsaha : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Alamat Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->AlamatUnitUsaha }}</td>
+                                            
+                                            <td>{{ $data->AlamatUnitUsaha ? $data->AlamatUnitUsaha : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Titik Koordinat Lokasi</td><td>:</td>
-                                            <td>{{ $data->koordinat }}</td>
+                                            
+                                            <td>{{ $data->koordinat ? $data->koordinat : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>No. Telp / Fax / Email Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->telpUU }} / {{ $data->faxUU }} / {{ $data->emailUU }}</td>
+                                            <td>{{ $data->telpUU ? $data->telpUU : '-' }}/ {{ $data->faxUU ? $data->faxUU : '-' }} /{{ $data->emailUU ? $data->emailUU : '-' }} </td>
                                         </tr>
                                         <tr>
                                             <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                                            <td>{{ $data->PelakuUsaha_idPemilikUsaha }}</td>
+                                            <td>{{ $data->PelakuUsaha_idPemilikUsaha ? $pemilikUsaha->Nama : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Alamat Kantor Pusat</td><td>:</td>
-                                            <td>{{ $data->AlamatKantorPusat }}</td>
+                                            <td>{{ $data->AlamatKantorPusat ? $data->AlamatKantorPusat : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>No. Telp / Fax / Email Kantor Pusat</td><td>:</td>
-                                            <td>{{ $data->Telepon }} / {{ $data->Fax }} / {{ $data->Email }}</td>
+                                            <td>{{ $data->Telepon ? $data->Telepon : '-'}} / {{ $data->Fax ? $data->Fax : '-'}} / {{ $data->Email ? $data->Email : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>Status Kepemilikan</td><td>:</td>
-                                            <td>{{ $data->StatusKepemilikan }}</td>
+                                            <td>{{ $data->StatusKepemilikan ? $data->StatusKepemilikan : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Unit Usaha / No.Telp</td><td>:</td>
-                                            <td>{{ $data->pjUnitUsaha }} / {{ $data->pjUnitUsahaKontak }}</td>
+                                            <td>{{ $data->pjUnitUsaha ? $data->pjUnitUsaha : '-' }} / {{ $data->pjUnitUsahaKontak ? $data->pjUnitUsahaKontak : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Teknis / No.Telp</td><td>:</td>
-                                            <td>{{ $data->PenangungJawabTeknis }} / {{ $data->KontakPJ }}</td>
+                                            <td>{{ $data->PenangungJawabTeknis ? $data->PenangungJawabTeknis : '-' }} / {{ $data->KontakPJ? $data->KontakPJ : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Produksi / No.Telp</td><td>:</td>
-                                            <td>{{ $data->pjProduksi }} / {{ $data->pjProduksiKontak }}</td>
+                                            <td>{{ $data->pjProduksi ? $data->pjProduksi : '-' }} / {{ $data->pjProduksiKontak ? $data->pjProduksiKontak : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Mutu / No.Telp</td><td>:</td>
-                                            <td>{{ $data->pjMutu }} / {{ $data->pjMutuKontak }}</td>
+                                            <td>{{ $data->pjMutu ? $data->pjMutu : '-'}} / {{ $data->pjMutuKontak? $data->pjMutuKontak : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Higiene Sanitasi / No.Telp</td><td>:</td>
-                                            <td>{{ $data->pjHigiene }} / {{ $data->pjHigieneKontak }}</td>
+                                            <td>{{ $data->pjHigiene ? $data->pjHigiene : '-'}} / {{ $data->pjHigieneKontak ? $data->pjHigieneKontak : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>Tahun Berdiri dan Tahun Operasional</td><td>:</td>
-                                            <td>{{ $data->TahunBerdiri }}, {{ $data->TahunOperasional }}</td>
+                                            <td>{{ $data->TahunBerdiri ? $data->TahunBerdiri : '-' }}, {{ $data->TahunOperasional ? $data->TahunOperasional : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Tipe Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->tipeUnitUsaha }}</td>
+                                            <td>{{ $data->tipeUnitUsaha ? $data->tipeUnitUsaha : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>Jenis Produk (Daging Unggas)</td><td>:</td>
-                                            <td>{{ $data->jenisProduk }}</td>
+                                            <td>{{ $data->jenisProduk ? $data->jenisProduk : '-'}}</td>
                                         </tr>
                                         <tr>
                                             <td>Jumlah Karyawan</td><td>:</td>
                                             <td>
                                                 <table class="table-inner">
-                                                    <tr><td>Produksi</td><td>=</td><td>{{ $data->karyawanProduksi_L }} Laki-laki, {{ $data->karyawanProduksi_P }} Perempuan</td></tr>
-                                                    <tr><td>Administrasi</td><td>=</td><td>{{ $data->karyawanAdm_L }} Laki-laki, {{ $data->karyawanAdm_P }} Perempuan</td></tr>
-                                                    <tr><td>Petugas AMPM</td><td>=</td><td>{{ $data->karyawanAMPM }}</td></tr>
-                                                    <tr><td>Petugas AWO</td><td>=</td><td>{{ $data->karyawanAWO }}</td></tr>
-                                                    <tr><td>Juru Sembelih Halal</td><td>=</td><td>{{ $data->juruSembelih }}</td></tr>
-                                                    <tr><td>Operator Stunning</td><td>=</td><td>{{ $data->operatorStunning }}</td></tr>
+                                                    <tr><td>Produksi</td><td>=</td><td>{{ $data->karyawanProduksi_L ? $data->karyawanProduksi_L : '-' }} Laki-laki, {{ $data->karyawanProduksi_P  ? $data->karyawanProduksi_P : '-'}} Perempuan</td></tr>
+                                                    <tr><td>Administrasi</td><td>=</td><td>{{ $data->karyawanAdm_L ? $data->karyawanAdm_L : '-' }} Laki-laki, {{ $data->karyawanAdm_P ? $data->karyawanAdm_P : '-' }} Perempuan</td></tr>
+                                                    <tr><td>Petugas AMPM</td><td>=</td><td>{{ $data->karyawanAMPM ? $data->karyawanAMPM : '-' }}</td></tr>
+                                                    <tr><td>Petugas AWO</td><td>=</td><td>{{ $data->karyawanAWO ? $data->karyawanAWO : '-' }}</td></tr>
+                                                    <tr><td>Juru Sembelih Halal</td><td>=</td><td>{{ $data->juruSembelih ? $data->juruSembelih : '-' }}</td></tr>
+                                                    <tr><td>Operator Stunning</td><td>=</td><td>{{ $data->operatorStunning ? $data->operatorStunning : '-'}}</td></tr>
                                                 </table>
                                             </td>
                                         </tr>
@@ -738,17 +745,17 @@
                                         <tr>
                                             <td>Pengawas 1</td>
                                             <td>:</td>
-                                            <td>{{ $pengawas1->NamaLengkap ? $pengawas1->NamaLengkap : '-' }}</td>
+                                            <td>{{ $data->idPengawas ? $pengawas1->NamaLengkap : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 2</td>
                                             <td>:</td>
-                                            <td>{{ $data->idPengawas2 ? $data->idPengawas2 : '-' }}</td>
+                                            <td>{{ $data->idPengawas2 ? $pengawas2->NamaLengkap : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 3</td>
                                             <td>:</td>
-                                            <td>{{ $data->idPengawas3 ? $data->idPengawas3 : '-' }}</td>
+                                            <td>{{ $data->idPengawas3 ? $pengawas3->NamaLengkap : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Unit Usaha</td>

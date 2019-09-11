@@ -46,6 +46,11 @@ class Checklists6Controller extends Controller
             ->select('penerimaprodukdistribusi.*')
             ->get();
 
+        $pemilikUsaha =  DB::table('unitusaha')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPerusahaan')
+            ->select('pelakuusaha.Nama')
+            ->first();
+
         $pengawas1 =  DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
@@ -77,6 +82,7 @@ class Checklists6Controller extends Controller
             'pengawas2'=>$pengawas2,
             'pengawas3'=>$pengawas3,
             'surveyID'=>$surveyID,
+            'pemilikUsaha'=>$pemilikUsaha,
             
         ]);
     }

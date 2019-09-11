@@ -59,7 +59,7 @@
                                                         </button>
                                                     </a>
                                                 @endif
-                                                <a href="/pengajuan/hapus/1" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')">
+                                                <a href="/pengajuan/hapus/{{$form->id}}" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')">
                                                     <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Formulir">
                                                         <small><i class="fas fa-trash"></i></small>
                                                     </button>

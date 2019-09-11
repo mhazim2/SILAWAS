@@ -26,7 +26,7 @@
                                     <td>Nama Unit Usaha</td>
                                     <td>Alamat Unit Usaha</td>
                                     <td>Email</td>
-                                    <td>Pemilik</td>
+                                    <td>Penanggung Jawab</td>
                                     <td>Tahun Operasional</td>
                                     <td>Operasi</td>
                                 </thead>

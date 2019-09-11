@@ -35,7 +35,7 @@ Route::get('/unit-usaha/create', 'UnitUsahasController@create')->name('unitusaha
 Route::post('/unit-usaha/store', 'UnitUsahasController@store')->name('unitusaha.store');
 
 // Halaman Pengajuan
-Route::get('/pengajuan', 'PengajuansController@index')->name('pengajuan.show');
+Route::get('/pengajuan', 'FormsController@getAllForm')->name('pengajuan.show');
 Route::get('/pengajuan/detail/{pengajuan_id}', 'PengajuansController@detail')->name('pengajuan.detail');
 Route::get('/pengajuan/hapus/{pengajuan_id}', 'PengajuansController@delete')->name('pengajuan.delete');
 
@@ -60,6 +60,11 @@ Route::get('/pengajuan/formulir/14', 'FormsController@form14')->name('form14.sho
 Route::post('/pengajuan/formulir/1/utama', 'FormsController@storeUtamaForm1');
 Route::post('/pengajuan/formulir/1/survey', 'FormsController@storeSurveyForm1');
 Route::post('/pengajuan/formulir/1/tambahan', 'FormsController@storeTambahanForm1');
+
+// Halaman Pengajuan
+Route::get('/pengawasan', 'PengawasansController@index')->name('pengawasan.show');
+Route::get('/pengawasan/ceklis', 'PengawasansController@checklists')->name('pengawasan.ceklis');
+Route::get('/pengawasan/hapus/{pengajuan_id}', 'PengawasansController@delete')->name('pengajuan.delete');
 
 // Halaman Checklist 1
 Route::redirect('/pengawasan/checklist/1', '/pengawasan/checklist/1/umum')->name('checklist1.show');
@@ -91,6 +96,7 @@ Route::post('/pengawasan/checklist/10/store', 'Checklists10Controller@store')->n
 Route::post('/pengawasan/checklist/10/umum', 'Checklists10Controller@umum')->name('checklist10.umum');
 Route::post('/pengawasan/checklist/10/survey', 'Checklists10Controller@survey')->name('checklist10.survey');
 Route::post('/pengawasan/checklist/10/catatan', 'Checklists10Controller@catatan')->name('checklist10.catatan');
+Route::get('/pengawasan/checklist/10/detail/{id}', 'Checklists10Controller@detail')->name('checklist10.detail');
 
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');

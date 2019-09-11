@@ -35,66 +35,68 @@
                         <p>Profile</p>
                     </a>
                 </li>
-                <?php 
-                    if(View::hasSection('Daftar Petugas') || View::hasSection('Tambah Petugas')) {
-                        $petugas_treeview_class = 'menu-open';
-                        $petugas_nav_link_class = 'active';
-                    } else {
-                        $petugas_treeview_class = '';
-                        $petugas_nav_link_class = '';
-                    }
-                ?>
-                <li class="nav-item has-treeview {{ $petugas_treeview_class }}">
-                    <a href="#" class="nav-link {{ $petugas_nav_link_class }}">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            Petugas
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/petugas" class="nav-link @yield('Daftar Petugas')">
-                                <p>Daftar Petugas</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/petugas/create" class="nav-link @yield('Tambah Petugas')">
-                                <p>Tambah Petugas</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <?php 
-                    if(View::hasSection('Daftar Unit Usaha') || View::hasSection('Tambah Unit Usaha')) {
-                        $unitusaha_treeview_class = 'menu-open';
-                        $unitusaha_nav_link_class = 'active';
-                    } else {
-                        $unitusaha_treeview_class = '';
-                        $unitusaha_nav_link_class = '';
-                    }
-                ?>
-                <li class="nav-item has-treeview {{ $unitusaha_treeview_class }}">
-                    <a href="#" class="nav-link {{ $unitusaha_nav_link_class }}">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>
-                            Unit Usaha
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/unit-usaha" class="nav-link @yield('Daftar Unit Usaha')">
-                                <p>Daftar Unit Usaha</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/unit-usaha/create" class="nav-link @yield('Tambah Unit Usaha')">
-                                <p>Tambah Unit Usaha</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                @if (Auth::user()->accessRoleId == 1)
+                    <?php 
+                        if(View::hasSection('Daftar Petugas') || View::hasSection('Tambah Petugas')) {
+                            $petugas_treeview_class = 'menu-open';
+                            $petugas_nav_link_class = 'active';
+                        } else {
+                            $petugas_treeview_class = '';
+                            $petugas_nav_link_class = '';
+                        }
+                    ?>
+                    <li class="nav-item has-treeview {{ $petugas_treeview_class }}">
+                        <a href="#" class="nav-link {{ $petugas_nav_link_class }}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Petugas
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/petugas" class="nav-link @yield('Daftar Petugas')">
+                                    <p>Daftar Petugas</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/petugas/create" class="nav-link @yield('Tambah Petugas')">
+                                    <p>Tambah Petugas</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <?php 
+                        if(View::hasSection('Daftar Unit Usaha') || View::hasSection('Tambah Unit Usaha')) {
+                            $unitusaha_treeview_class = 'menu-open';
+                            $unitusaha_nav_link_class = 'active';
+                        } else {
+                            $unitusaha_treeview_class = '';
+                            $unitusaha_nav_link_class = '';
+                        }
+                    ?>
+                    <li class="nav-item has-treeview {{ $unitusaha_treeview_class }}">
+                        <a href="#" class="nav-link {{ $unitusaha_nav_link_class }}">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>
+                                Unit Usaha
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/unit-usaha" class="nav-link @yield('Daftar Unit Usaha')">
+                                    <p>Daftar Unit Usaha</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/unit-usaha/create" class="nav-link @yield('Tambah Unit Usaha')">
+                                    <p>Tambah Unit Usaha</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
                 <?php 
                     if(View::hasSection('Daftar Formulir') || View::hasSection('Formulir Pengawasan')) {
                         $pengawasan_treeview_class = 'menu-open';
@@ -114,23 +116,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/pengajuan" class="nav-link @yield('Daftar Formulir')">
-                                <p>Daftar Formulir</p>
+                            <a href="/pengawasan" class="nav-link @yield('Daftar Ceklis')">
+                                <p>Daftar Ceklis</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/pengajuan/formulir" class="nav-link @yield('Formulir Pengawasan')">
-                                <p>Formulir Pengawasan</p>
+                            <a href="/pengawasan/ceklis" class="nav-link @yield('Ceklis Pengawasan')">
+                                <p>Ceklis Pengawasan</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="/laporan" class="nav-link @yield('Laporan')">
-                        <i class="nav-icon fas fa-chart-pie"></i>
-                        <p>Laporan</p>
-                    </a>
-                </li>
+                @if (Auth::user()->accessRoleId == 1)
+                    <li class="nav-item">
+                        <a href="/laporan" class="nav-link @yield('Laporan')">
+                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <p>Laporan</p>
+                        </a>
+                    </li>
+                @endif
                 <li class="nav-header">SISTEM</li>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

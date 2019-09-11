@@ -174,12 +174,12 @@
                                                                         <label>Status Petugas</label>
                                                                         <div class="d-block">
                                                                             <div class="icheck-wisteria d-inline mr-3" >
-                                                                                <input id="isDokter_1" type="radio" name="isDokter" value="1" {{ $petugas->isDokter ? 'checked' : '' }}>
-                                                                                <label class="font-weight-normal" for="isDokter_1">Dokter Hewan</label>
+                                                                                <input id="isDokter_1{{ $key }}" type="radio" name="isDokter" value="1" {{ $petugas->isDokter ? 'checked' : '' }}>
+                                                                                <label class="font-weight-normal" for="isDokter_1{{ $key }}">Dokter Hewan</label>
                                                                             </div>
                                                                             <div class="icheck-wisteria d-inline" >
-                                                                                <input id="isDokter_2" type="radio" name="isDokter" value="0" {{ $petugas->isDokter ? '' : 'checked' }}>
-                                                                                <label class="font-weight-normal" for="isDokter_2">Asisten</label>
+                                                                                <input id="isDokter_2_{{ $key }}" type="radio" name="isDokter" value="0" {{ $petugas->isDokter ? '' : 'checked' }}>
+                                                                                <label class="font-weight-normal" for="isDokter_2_{{ $key }}">Asisten</label>
                                                                             </div>                                            
                                                                         </div>
                                                                     </div>

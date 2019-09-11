@@ -22,7 +22,7 @@
                                 <i class="fas fa-edit mr-1"></i> Edit
                             </button>
                         </a>
-                        <a href="/export/formulir6/{{ $surveyID }}" class="d-inline-block">
+                        <a href="/export/formulir10/{{ $surveyID }}" class="d-inline-block">
                             <button type="button" class="btn btn-primary">
                                 <i class="fas fa-file-download mr-1"></i> Export
                             </button>

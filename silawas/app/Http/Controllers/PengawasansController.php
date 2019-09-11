@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\UnitUsaha;
 use App\SurveyUnitUsaha;
-
+use App\PengawasKesmavet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -22,7 +22,8 @@ class PengawasansController extends Controller
                 ->select('surveyunitusaha.*', 'unitusaha.NamaUnitUsaha', 'unitusaha.namaPemilikUsaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', 'unitusaha.TahunOperasional')
                 ->get();
         } else if (Auth::user()->accessRoleId == 7) {
-            $petugas = PengawasKesmavet::where('idUser', Auth::user()->id)->get();
+            $petugas = PengawasKesmavet::where('idUser', Auth::user()->id)->first();
+            dd($petugas);
             $listForms = DB::table('surveyunitusaha')
                 ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
                 ->where('idPengawas', '=', $petugas->idPengawasKesmavet)

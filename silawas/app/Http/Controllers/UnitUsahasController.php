@@ -109,9 +109,9 @@ class UnitUsahasController extends Controller
 
         $unit->save();
         if($unit){
-            Alert::success('Data Berhasil dihapus');
+            Alert::success('Data Berhasil Diubah');
         }
-        else Alert::success('Data gagal dihapus');
+        else Alert::success('Data gagal Diubah');
         return Redirect::to('/unit-usaha');
     }
 

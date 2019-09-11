@@ -19,6 +19,7 @@ class PengawasKesmavet extends Model
 		'idWilayahKerja',
 		'idRegencyCity',
 		'isActive',
+		'isDokter',
 		'unitKerja',
 		'jabatan',
 		'kewenangan',

@@ -30,9 +30,8 @@ class ExportController extends Controller
         $formDetail = DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha')
             ->get();
         
         $dokterPJ = 
@@ -72,11 +71,6 @@ class ExportController extends Controller
             ->select('orang.NamaLengkap')
             ->get()->toArray();
 
-        $pemilikUsaha =  DB::table('unitusaha')
-            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPerusahaan')
-            ->select('pelakuusaha.Nama')
-            ->first();
-
         
         
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
@@ -87,7 +81,6 @@ class ExportController extends Controller
                 'pengawas1'=>$pengawas1,
                 'pengawas2'=>$pengawas2,
                 'pengawas3'=>$pengawas3,
-                'pemilikUsaha'=>$pemilikUsaha,
                 ]);
        
         return $pdf->stream('cheklist6.pdf');
@@ -101,9 +94,8 @@ class ExportController extends Controller
         $formDetail = DB::table('surveyunitusaha')
             ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+            ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha')
             ->get();
         
         

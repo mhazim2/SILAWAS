@@ -25,9 +25,8 @@ class Checklists6Controller extends Controller
         $formDetail = DB::table('surveyunitusaha')
             ->join('form6','surveyunitusaha.idForm6', '=', 'form6.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+            ->select('surveyunitusaha.*','form6.*','unitusaha.*','unitusaha.pjUnitUsaha')
             ->first();
         
         $dokterPJ = 
@@ -46,10 +45,6 @@ class Checklists6Controller extends Controller
             ->select('penerimaprodukdistribusi.*')
             ->get();
 
-        $pemilikUsaha =  DB::table('unitusaha')
-            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPerusahaan')
-            ->select('pelakuusaha.Nama')
-            ->first();
 
         $pengawas1 =  DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
@@ -82,7 +77,6 @@ class Checklists6Controller extends Controller
             'pengawas2'=>$pengawas2,
             'pengawas3'=>$pengawas3,
             'surveyID'=>$surveyID,
-            'pemilikUsaha'=>$pemilikUsaha,
             
         ]);
     }

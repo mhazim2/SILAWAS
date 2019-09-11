@@ -479,7 +479,7 @@ class FormsController extends Controller
                 }
         }
         else if (isset($survey['idForm6'])){
-            form6::where('id',$survey->idForm6)->delete();
+            $f=form6::where('id',$survey->idForm6)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
             if($f && $survey){
                 Alert::success('Data Berhasil Dihapus');
@@ -487,7 +487,7 @@ class FormsController extends Controller
                 }
         }
         else if (isset($survey['idForm10'])){
-            Form10::where('id',$survey->idForm10)->delete();
+            $f= Form10::where('id',$survey->idForm10)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
             if($f && $survey){
                 Alert::success('Data Berhasil Dihapus');

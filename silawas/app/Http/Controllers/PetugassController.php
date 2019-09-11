@@ -26,7 +26,6 @@ class PetugassController extends Controller
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
             ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
             ->join('wilayahkerja', 'pengawaskesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
-            ->join('regencycity', 'pengawaskesmavet.idRegencyCity', '=', 'regencycity.idRegencyCity')
             ->select('*')
             ->where('user.accessRoleId', '=', 7)
             ->get();
@@ -50,7 +49,7 @@ class PetugassController extends Controller
     {   
 
         $newstring = substr($data['NIP'], -7);
-       
+        
         $tmt = date('Y-m-d');
         $user = User::create([
             'username' => $data['email'],
@@ -84,7 +83,7 @@ class PetugassController extends Controller
             'NoRegistrasi'=> $data['NoRegistrasi'],
             'alamatKantor'=> $data['alamatKantor'],
         ]);
-
+        
         if($pengawas){
             Alert::success('Data Berhasil Disimpan');
         }
@@ -121,7 +120,7 @@ class PetugassController extends Controller
     public function update(Request $request,$id)
 	{
 		
-		$pengawas = DB::table('pengawaskesmavet')->where('idUser',$id)->update([
+		$pengawas = DB::table('pengawaskesmavet')->where('idPengawasKesmavet',$id)->update([
 			'NoSK' => $request['NoSK'],
             'PNS_idPegawai' => $request['NIP'],
             'idWilayahKerja' => $request['WilayahKerja'],

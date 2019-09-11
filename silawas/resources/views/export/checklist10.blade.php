@@ -78,7 +78,7 @@
                     </tr>
                     <tr>
                         <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                        <td>{{$f->Nama ? $f->Nama : '-'}}</td>
+                        <td>{{$f->namaPemilikUsaha ? $f->namaPemilikUsaha : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Alamat Kantor Pusat</td><td>:</td>

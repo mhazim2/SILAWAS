@@ -26,9 +26,8 @@ class Checklists10Controller extends Controller
         $formDetail = DB::table('surveyunitusaha')
             ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+            ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha')
             ->first();
         $supliers = DB::table('surveyunitusaha')
             ->join('form10','surveyunitusaha.idform10', '=', 'form10.id')

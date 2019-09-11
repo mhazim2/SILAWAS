@@ -19,6 +19,11 @@ class PengawasKesmavet extends Model
 		'idWilayahKerja',
 		'idRegencyCity',
 		'isActive',
+		'unitKerja',
+		'jabatan',
+		'kewenangan',
+		'NoRegistrasi',
+		'alamatKantor',
 	];
 	
 	public function user()

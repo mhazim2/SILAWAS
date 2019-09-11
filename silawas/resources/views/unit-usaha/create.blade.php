@@ -177,18 +177,22 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-5">
-                                    <label for="PelakuUsaha_idPemilikUsaha">Pemilik Unit Usaha/Nama Kantor Pusat</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <select class="form-control select2" id="PelakuUsaha_idPemilikUsaha" name="PelakuUsaha_idPemilikUsaha">
-                                                <option disabled selected>-- Pilih --</option>
-                                                @foreach($listPemilikUsaha as $pemilikusaha)
-                                                    <option value="{{$pemilikusaha->idPemilikUsaha}}">{{$pemilikusaha->Nama}} </option>
-                                                @endforeach
-                                            </select>
+                                        <label for="namaPemilikUsaha">Nama Pemilik Usaha/ Nama Kantor Pusat</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" 
+                                                    class="form-control @error('namaPemilikUsaha') is-invalid @enderror" 
+                                                    id="namaPemilikUsaha" 
+                                                    name="namaPemilikUsaha" 
+                                                    value="{{ old('namaPemilikUsaha') }}" autofocus>
+                                                @error('namaPemilikUsaha')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <div class="form-group mb-5">
                                     <label>Kontak Kantor Pusat</label>
                                     <div class="bg-kesmavet p-2 mt-2 mb-4">

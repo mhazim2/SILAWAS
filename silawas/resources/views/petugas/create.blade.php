@@ -47,6 +47,16 @@
                                     <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 0xxx/xxxx/xxxxx</small>
                                 </div>
                                 <div class="form-group mb-5">
+                                        <label for="NoRegistrasi">Nomor Registrasi</label>
+                                        <input type="text" class="form-control @error('NoRegistrasi') is-invalid @enderror" id="NoRegistrasi" name="NoRegistrasi" value="{{ old('NoRegistrasi') }}">
+                                        @error('NoRegistrasi')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: 0xxx/xxxx/xxxxx</small>
+                                </div>
+                                <div class="form-group mb-5">
                                     <label for="NIP">NIP</label>
                                     <input type="text" class="form-control @error('NIP') is-invalid @enderror" id="NIP" name="NIP" value="{{ old('NIP') }}">
                                     @error('NIP')
@@ -69,6 +79,41 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <div class="form-group mb-5">
+                                        <label for="jabatan">Jabatan Petugas</label>
+                                        <input type="text" class="form-control @error('jabatan') is-invalid @enderror" id="jabatan" name="jabatan" value="{{ old('jabatan') }}">
+                                        @error('jabatan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: Kepala Sub Direktorat Pengawasan Keamanan Produk Hewan</small>
+                                </div>
+                                <div class="form-group mb-5">
+                                        <label for="unitKerja">Unit Kerja Petugas</label>
+                                        <input type="text" class="form-control @error('unitKerja') is-invalid @enderror" id="unitKerja" name="unitKerja" value="{{ old('unitKerja') }}">
+                                        @error('unitKerja')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                        <small id="idinputHelp" class="form-text text-muted">Contoh Pengisian: Kementerian Pertanian, Direktorat Jenderal Peternakan dan Kesehatan Hewan</small>
+                                </div>
+                                <div class="form-group mb-5">
+                                        <label for="kewenangan">kewenangan Petugas</label>
+                                        <input type="text" class="form-control @error('kewenangan') is-invalid @enderror" id="kewenangan" name="kewenangan" value="{{ old('kewenangan') }}">
+                                        @error('kewenangan')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                </div>
+                                <div class=" form-group mb-5">
+                                        <div class="col-md-12">
+                                            <label for="alamatKantor">Alamat Kantor</label>
+                                            <textarea class="form-control" rows="3" name="alamatKantor"></textarea>
+                                        </div>
+                                    </div>
                                 <div class="form-group mb-5">
                                     <label for="RegencyCity">Kota/Kabupaten</label>
                                     <select class="form-control select2" id="RegencyCity" name="RegencyCity">
@@ -103,16 +148,16 @@
                                 </div>
                                 <div class=" form-group mb-5">
                                             <label>
-                                                Apakah petugas merupakan dokter hewan?
+                                                Status Petugas
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" >
                                                     <input id="isDokter_1" type="radio" name="isDokter" value="1">
-                                                    <label class="font-weight-normal" for="isDokter_1">Ya</label>
+                                                    <label class="font-weight-normal" for="isDokter_1">Dokter Hewan</label>
                                                 </div>
                                                 <div class="icheck-wisteria d-inline" >
                                                     <input id="isDokter_2" type="radio" name="isDokter" value="0">
-                                                    <label class="font-weight-normal" for="isDokter_2">Tidak</label>
+                                                    <label class="font-weight-normal" for="isDokter_2">Asisten</label>
                                                 </div>                                            
                                         </div>
                                     </div>

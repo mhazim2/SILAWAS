@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\UnitUsaha;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -17,9 +17,7 @@ class UnitUsahasController extends Controller
     public function index()
     {
         $uu = DB::table('unitusaha')
-            ->join('pemilikusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pemilikusaha.idPemilikUsaha')
-            ->join('orang', 'pemilikusaha.idOrang', '=', 'orang.idOrang')
-            ->select('orang.*','unitusaha.*')
+            ->select('unitusaha.*')
             ->get();
         $result = $uu->toArray();
         return view('unit-usaha.index', ['listunitusaha' => $result]);
@@ -63,7 +61,12 @@ class UnitUsahasController extends Controller
             'telpUU'=> $data['telepUU'],
             'emailUU'=> $data['emailUU'],
             'faxUU'=> $data['faxUU'],
+            'namaPemilikUsaha'=> $data['namaPemilikUsaha'],
         ]);
+        if($uu){
+            Alert::success('Data Berhasil Disimpan');
+        }
+        else Alert::success('Data gagal disimpan');
         return Redirect::to('/unit-usaha');
     }
 

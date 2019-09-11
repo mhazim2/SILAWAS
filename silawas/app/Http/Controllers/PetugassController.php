@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
 use App\User;
 use App\Orang;
 use App\PengawasKesmavet;
@@ -73,7 +73,17 @@ class PetugassController extends Controller
             'idRegencyCity' => $data['RegencyCity'],
             'isActive' => FALSE,
             'isDokter' => $data['isDokter'],
+            'unitKerja' => $data['unitKerja'],
+		    'jabatan' => $data['jabatan'],
+            'kewenangan' => $data['kewenangan'],
+            'NoRegistrasi'=> $data['NoRegistrasi'],
+            'alamatKantor'=> $data['alamatKantor'],
         ]);
+
+        if($pengawas){
+            Alert::success('Data Berhasil Disimpan');
+        }
+        else Alert::success('Data gagal disimpan');
 
         return redirect()->route('petugas.show');
     }

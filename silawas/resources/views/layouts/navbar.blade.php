@@ -50,7 +50,23 @@
                     <img src="{{ asset('dist/img/user.png') }}" class="img-circle elevation-2" alt="User Image">
                     <p>
                         {{ Auth::user()->username }}
-                        <div>Admin</div>
+                        <div>
+                            @if (Auth::user()->accessRoleId == 1)
+                                Administrator
+                            @elseif (Auth::user()->accessRoleId == 2)
+                                Admin Kesmavet
+                            @elseif (Auth::user()->accessRoleId == 3)
+                                Admin Dinas Prov
+                            @elseif (Auth::user()->accessRoleId == 4)
+                                Admin Dinas Kab/Kota
+                            @elseif (Auth::user()->accessRoleId == 5)
+                                Otovet
+                            @elseif (Auth::user()->accessRoleId == 6)
+                                Pelaku Usaha
+                            @elseif (Auth::user()->accessRoleId == 7)
+                                Petugas Kesmavet
+                            @endif
+                        </div>
                     </p>
                 </li>
                 <li class="user-footer">

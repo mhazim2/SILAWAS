@@ -15,7 +15,23 @@
                     {{ Auth::user()->username }}
                 </a>
                 <a href="#" class="d-block">
-                    <span class="text-kesmavet">Admin</span>
+                    <span class="text-kesmavet">
+                        @if (Auth::user()->accessRoleId == 1)
+                            Administrator
+                        @elseif (Auth::user()->accessRoleId == 2)
+                            Admin Kesmavet
+                        @elseif (Auth::user()->accessRoleId == 3)
+                            Admin Dinas Prov
+                        @elseif (Auth::user()->accessRoleId == 4)
+                            Admin Dinas Kab/Kota
+                        @elseif (Auth::user()->accessRoleId == 5)
+                            Otovet
+                        @elseif (Auth::user()->accessRoleId == 6)
+                            Pelaku Usaha
+                        @elseif (Auth::user()->accessRoleId == 7)
+                            Petugas Kesmavet
+                        @endif
+                    </span>
                 </a>
             </div>
         </div>

@@ -71,7 +71,13 @@ class ExportController extends Controller
             ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
             ->select('orang.NamaLengkap')
             ->get()->toArray();
-       
+
+        $pemilikUsaha =  DB::table('unitusaha')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPerusahaan')
+            ->select('pelakuusaha.Nama')
+            ->first();
+
+        
         
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
             
@@ -81,6 +87,7 @@ class ExportController extends Controller
                 'pengawas1'=>$pengawas1,
                 'pengawas2'=>$pengawas2,
                 'pengawas3'=>$pengawas3,
+                'pemilikUsaha'=>$pemilikUsaha,
                 ]);
        
         return $pdf->stream('cheklist6.pdf');
@@ -89,15 +96,15 @@ class ExportController extends Controller
 
     public function cetakForm10($id){
         set_time_limit(300);
-        
         $survey = SurveyUnitUsaha::findorFail($id);
+
         $formDetail = DB::table('surveyunitusaha')
-        ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
-        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-        ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
-        ->where('surveyunitusaha.id', '=', $survey->id)
-        ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
-        ->get();
+            ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
+            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+            ->get();
         
         
         $suplier = 

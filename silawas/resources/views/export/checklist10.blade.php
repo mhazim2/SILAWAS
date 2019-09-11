@@ -66,59 +66,59 @@
                 <table class="umum" width="100%">
                     <tr>
                         <td>Nama Unit Usaha</td><td>:</td>
-                        <td>{{$f->NamaUnitUsaha}}</td>
+                        <td>{{$f->NamaUnitUsaha ? $f->NamaUnitUsaha : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Alamat Unit Usaha</td><td>:</td>
-                        <td>{{$f->AlamatUnitUsaha}}</td>
+                        <td>{{$f->AlamatUnitUsaha ? $f->AlamatUnitUsaha : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Titik Koordinat Lokasi</td><td>:</td>
-                        <td>{{$f->koordinat}}</td>
+                        <td>{{$f->koordinat ? $f->koordinat : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                        <td>{{$f->Nama}}</td>
+                        <td>{{$f->Nama ? $f->Nama : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Alamat Kantor Pusat</td><td>:</td>
-                        <td>{{$f->AlamatKantorPusat}}</td>
+                        <td>{{$f->AlamatKantorPusat ? $f->AlamatKantorPusat : '-'}}</td>
                     </tr>
                     <tr>
                         <td>No. Telp / Fax / Email Kantor Pusat</td><td>:</td>
-                        <td>{{$f->Telepon}} / {{$f->Fax}} / {{$f->Email}}</td>
+                        <td>{{$f->Telepon ? $f->Telepon : '-'}} / {{$f->Fax ? $f->Fax : '-'}} / {{$f->Email ? $f->Email : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Penanggung Jawab Teknis </td><td>:</td>
-                        <td>{{$f->PenangungJawabTeknis}} </td>
+                        <td>{{$f->PenangungJawabTeknis ? $f->PenangungJawabTeknis : '-'}} </td>
                     </tr>
                     <tr>
                         <td>No. Telp Penanggung Jawab Teknis</td><td>:</td>
-                        <td>{{$f->KontakPJ}}</td>
+                        <td>{{$f->KontakPJ ? $f->KontakPJ : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Tahun Operasional</td><td>:</td>
-                        <td> {{$f->TahunOperasional}}</td>
+                        <td> {{$f->TahunOperasional ? $f->TahunOperasional : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Komoditas</td><td>:</td>
-                        <td>{{$f->komoditas}}</td>
+                        <td>{{$f->komoditas ? $f->komoditas : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Kapasitas Gudang</td><td>:</td>
-                        <td>{{$f->kapasitasGudang}} Kg</td>
+                        <td>{{$f->kapasitasGudang ? $f->kapasitasGudang : '-'}} Kg</td>
                     </tr>
                     <tr>
                         <td>Realisasi Penyimpanan</td><td>:</td>
-                        <td>{{$f->realisasiPenyimpanan}} Kg</td>
+                        <td>{{$f->realisasiPenyimpanan ? $f->realisasiPenyimpanan : '-'}} Kg</td>
                     </tr>
                     <tr>
                         <td>Wilayah Peredaran</td><td>:</td>
-                        <td>{{$f->wilayahPeredaran}} </td>
+                        <td>{{$f->wilayahPeredaran ? $f->wilayahPeredaran : '-'}} </td>
                     </tr>
                     <tr>
                         <td>Jumlah Karyawan</td><td>:</td>
-                        <td>{{$f->jumlahKaryawan}} Orang</td>
+                        <td>{{$f->jumlahKaryawan ? $f->jumlahKaryawan : '-'}} Orang</td>
                     </tr>
                 </table>
             </td>
@@ -155,11 +155,11 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            <br>No: {{$f->P1_1}}
-                            <br>No: {{$f->P1_2}}
-                            <br>No: {{$f->P1_3}}
-                            <br>No: {{$f->P1_4}}
-                            <br>No: {{$f->P1_5}}
+                            <br>No: {{$f->P1_1 ? $f->P1_1 : '-'}}
+                            <br>No: {{$f->P1_2 ? $f->P1_2 : '-'}}
+                            <br>No: {{$f->P1_3 ? $f->P1_3 : '-'}}
+                            <br>No: {{$f->P1_4 ? $f->P1_4 : '-'}}
+                            <br>No: {{$f->P1_5 ? $f->P1_5 : '-'}}
                         </td>
                     </tr>
                     <tr>
@@ -174,10 +174,10 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li>{{$f->P2_1}}</li>
-                                <li>{{$f->P2_2}}</li>
-                                <li>{{$f->P2_3}}</li>
-                                <li>{{$f->P2_4}}</li>
+                                <li>{{$f->P2_1  ? $f->P2_1 : '-'}}</li>
+                                <li>{{$f->P2_2  ? $f->P2_2 : '-'}}</li>
+                                <li>{{$f->P2_3 ? $f->P2_3 : '-'}}</li>
+                                <li>{{$f->P2_4 ? $f->P2_2 : '-'}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -217,9 +217,9 @@
                         </td>
                         <td>
                             <ol style="margin:0px; padding-left:18px">
-                                <li>{{$f->P4_1 }}</li>
-                                <li>{{$f->P4_2 }}</li>
-                                <li>{{$f->P4_3 }}</li>
+                                <li>{{$f->P4_1 ? $f->P4_1 : '-'}}</li>
+                                <li>{{$f->P4_2 ? $f->P4_2 : '-' }}</li>
+                                <li>{{$f->P4_3  ? $f->P4_3 : '-'}}</li>
                             </ol>
                         </td>
                     </tr>
@@ -237,7 +237,7 @@
                         </td>
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P5_ket}}</li>
+                                <li> {{$f->P5_ket ? $f->P5_ket : '-'}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -254,8 +254,8 @@
                         </td> 
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P6_1}}</li>
-                                <li> {{$f->P6_2}}</li>
+                                <li> {{$f->P6_1 ? $f->P6_1 : '-'}}</li>
+                                <li> {{$f->P6_2 ? $f->P6_2 : '-'}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -271,8 +271,8 @@
                         </td> 
                         <td>
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P7_1}}</li>
-                                <li> {{$f->P7_2}}</li>
+                                <li> {{$f->P7_1 ? $f->P7_1 : '-'}}</li>
+                                <li> {{$f->P7_2  ? $f->P7_2 : '-'}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -289,8 +289,10 @@
                         </td> 
                         <td>
                              <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P8_1}}</li>
-                                <li> {{$f->P8_2}}</li>
+                                <li> {{$f->P8_1 ? $f->P8_1 : '-'}}</li>
+                                <li> {{$f->P8_2 ? $f->P8_2 : '-'}}</li>
+                                <li> {{$f->P8_3 ? $f->P8_3 : '-'}}</li>
+                                <li> {{$f->P8_4 ? $f->P8_4 : '-'}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -307,7 +309,7 @@
                             {{$f->P9 ? ' ':"V"}}
                         </td> 
                         <td>
-                                {{$f->P9_ket}}
+                                {{$f->P9_ket ? $f->P9_ket : '-'}}
                         </td>
                     </tr>
 
@@ -324,10 +326,10 @@
                         </td> 
                         <td>
                              <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P10_1}}</li>
-                                <li> {{$f->P10_2}}</li>
-                                <li> {{$f->P10_3}}</li>
-                                <li> {{$f->P10_4}}</li>
+                                <li> {{$f->P10_1 ? $f->P10_1 : '-'}}</li>
+                                <li> {{$f->P10_2 ? $f->P10_2 : '-'}}</li>
+                                <li> {{$f->P10_3 ? $f->P10_3 : '-'}}</li>
+                                <li> {{$f->P10_4 ? $f->P10_4 : '-'}}</li>
                             </ul>
                         </td>
                     </tr>
@@ -360,11 +362,11 @@
                             </td> 
                             <td>
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P11_1}}</li>
-                                    <li> {{$f->P11_2}}</li>
-                                    <li> {{$f->P11_3}}</li>
-                                    <li> {{$f->P11_4}}</li>
-                                    <li> {{$f->P11_5}}</li>
+                                    <li> {{$f->P11_1 ? $f->P11_1 : '-'}}</li>
+                                    <li> {{$f->P11_2 ? $f->P11_2 : '-'}}</li>
+                                    <li> {{$f->P11_3 ? $f->P11_3 : '-'}}</li>
+                                    <li> {{$f->P11_4 ? $f->P11_4 : '-'}}</li>
+                                    <li> {{$f->P11_5 ? $f->P11_5 : '-'}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -380,10 +382,10 @@
                             </td> 
                             <td>
                                   <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P12_1}}</li>
-                                    <li> {{$f->P12_2}}</li>
-                                    <li> {{$f->P12_3}}</li>
-                                    <li> {{$f->P12_4}}</li>
+                                    <li> {{$f->P12_1 ? $f->P12_1 : '-'}}</li>
+                                    <li> {{$f->P12_2 ? $f->P12_2 : '-'}}</li>
+                                    <li> {{$f->P12_3 ? $f->P12_3 : '-'}}</li>
+                                    <li> {{$f->P12_4 ? $f->P12_4 : '-'}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -398,7 +400,7 @@
                                 {{$f->P13 ? ' ':"V"}}
                             </td> 
                             <td>
-                                    {{$f->P13_ket}}
+                                    {{$f->P13_ket ? $f->P13_ket : '-'}}
                             </td>
                         </tr>
                         <tr>
@@ -413,11 +415,11 @@
                             </td> 
                             <td>
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P14_1}}</li>
-                                    <li> {{$f->P14_2}}</li>
-                                    <li> {{$f->P14_3}}</li>
-                                    <li> {{$f->P14_4}}</li>
-                                    <li> {{$f->P14_5}}</li>
+                                    <li> {{$f->P14_1 ? $f->P14_1 : '-'}}</li>
+                                    <li> {{$f->P14_2 ? $f->P14_2 : '-'}}</li>
+                                    <li> {{$f->P14_3 ? $f->P14_3 : '-'}}</li>
+                                    <li> {{$f->P14_4 ? $f->P14_4 : '-'}}</li>
+                                    <li> {{$f->P14_5 ? $f->P14_5 : '-'}}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -433,8 +435,8 @@
                             </td> 
                             <td>
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P15_1}}</li>
-                                    <li> {{$f->P15_2}}</li>
+                                    <li> {{$f->P15_1 ? $f->P15_1 : '-'}}</li>
+                                    <li> {{$f->P15_2 ? $f->P15_2 : '-' }}</li>
                                 </ul>
                             </td>
                         </tr>
@@ -448,13 +450,13 @@
                         <td colspan="2">
                             1. Catatan :<br>
                             <div style="min-height:150px; padding-left:18px">
-                                 {{$f->catatan}}
+                                 {{$f->catatan ? $f->catatan : '-'}}
                             </div>
                             <br>
                             <br>
                             2. Rekomendasi/Tindak Lanjut :<br>
                             <div style="min-height:150px; padding-left:18px">
-                                {{$f->rekomendasi}}
+                                {{$f->rekomendasi  ? $f->rekomendasi : '-'}}
                             </div>
                             <br> 
                             <br>

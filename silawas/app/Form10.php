@@ -49,6 +49,8 @@ class Form10 extends Model
         'P8',
         'P8_1',
         'P8_2',
+        'P8_3',
+        'P8_4',
         'P9',
         'P9_ket',
         'P10',

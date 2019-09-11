@@ -21,6 +21,8 @@ class Checklists10Controller extends Controller
     public function detail($id)
     {
         $survey = SurveyUnitUsaha::findorFail($id);
+        $surveyID = $survey->id;
+
         $formDetail = DB::table('surveyunitusaha')
             ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
             ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
@@ -28,7 +30,7 @@ class Checklists10Controller extends Controller
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
             ->first();
-        $suplier = DB::table('surveyunitusaha')
+        $supliers = DB::table('surveyunitusaha')
             ->join('form10','surveyunitusaha.idform10', '=', 'form10.id')
             ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
             ->where('surveyunitusaha.id', '=', $survey->id)
@@ -52,15 +54,17 @@ class Checklists10Controller extends Controller
             ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
             ->select('orang.NamaLengkap')
             ->first();
-        dd($formDetail);
 
         return view('checklist10.detail', [
             'data' => $formDetail,
-            'dokter_pj' => $dokterPJ,
-            'list_distribusi' => $penerimaProduksi
+            'supliers' => $supliers,
+            'surveyID' => $surveyID,
+            'pengawas1' => $pengawas1,
+            'pengawas2' => $pengawas2,
+            'pengawas3' => $pengawas3,
         ]);
     }
-    
+
     public function umum(Request $request)
     {
         // POST Request

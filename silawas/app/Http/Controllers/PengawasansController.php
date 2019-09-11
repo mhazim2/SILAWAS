@@ -23,7 +23,7 @@ class PengawasansController extends Controller
                 ->get();
         } else if (Auth::user()->accessRoleId == 7) {
             $petugas = PengawasKesmavet::where('idUser', Auth::user()->id)->first();
-            dd($petugas);
+            
             $listForms = DB::table('surveyunitusaha')
                 ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
                 ->where('idPengawas', '=', $petugas->idPengawasKesmavet)

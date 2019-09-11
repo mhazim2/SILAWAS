@@ -187,11 +187,11 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            <br>No: {{$f->b1_niu_id}}, {{$f->b1_niu_date}}
-                            <br>No: {{$f->b1_npwp_id}}, {{$f->b1_npwp_date}}
-                            <br>No: {{$f->b1_siup_id}}, {{$f->b1_siup_date}}
-                            <br>No: {{$f->b1_nib_date}}, {{$f->operatorStunning}}
-                            <br>{{$f->operatorStunning}}, {{$f->b1_pks_date}}
+                            <br>No: {{$f->b1_niu_id ? $f->b1_niu_id : '-'}}, {{$f->b1_niu_date ? $f->b1_niu_date : '-'}}
+                            <br>No: {{$f->b1_npwp_id ? $f->b1_npwp_id : '-'}}, {{$f->b1_npwp_date ? $f->b1_npwp_id : '-'}}
+                            <br>No: {{$f->b1_siup_id ? $f->b1_siup_id : '-'}}, {{$f->b1_siup_date ? $f->b1_siup_date : '-'}}
+                            <br>No: {{$f->b1_nib_id ? $f->b1_nib_id : '-'}}, {{$f->b1_nib_date ? $f->b1_nib_date : '-'}}
+                            <br>{{$f->b1_pks_id ? $f->b1_pks_id : '-'}}, {{$f->b1_pks_date ? $f->b1_pks_date : '-'}}
                         </td>
                     </tr>
                     <tr>
@@ -265,8 +265,9 @@
                         <td>
                             @if ($f->check_b5_1)
                             <ol style="margin:0px; padding-left:18px">
-                                <li>Sumber: {{$f->b5_1_nama }}<br>No: {{$f->b5_1_alamat }}</li>
-                                <li>Alamat : {{$f->b5_1_sertifikat }}</li>
+                                <li>Sumber: {{$f->b5_1_nama }}<br>No: {{$f->b5_1_alamat }},Alamat : {{$f->b5_1_sertifikat }}</li>
+                                <li>Sumber: {{$f->b5_2_nama }}<br>No: {{$f->b5_2_alamat }},Alamat : {{$f->b5_2_sertifikat }}</li>
+                                <li>Sumber: {{$f->b5_3_nama }}<br>No: {{$f->b5_3_alamat }},Alamat : {{$f->b5_3_sertifikat }}</li>
                             </ol>
                             @else    
                               -  

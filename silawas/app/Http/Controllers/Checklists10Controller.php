@@ -18,6 +18,49 @@ use Illuminate\Support\Facades\Redirect;
 
 class Checklists10Controller extends Controller
 {
+    public function detail($id)
+    {
+        $survey = SurveyUnitUsaha::findorFail($id);
+        $formDetail = DB::table('surveyunitusaha')
+            ->join('form10','surveyunitusaha.idForm10', '=', 'form10.id')
+            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->join('pelakuusaha', 'unitusaha.PelakuUsaha_idPemilikUsaha', '=', 'pelakuusaha.idPemilikUsaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('surveyunitusaha.*','form10.*','unitusaha.*','unitusaha.pjUnitUsaha','pelakuusaha.Nama')
+            ->first();
+        $suplier = DB::table('surveyunitusaha')
+            ->join('form10','surveyunitusaha.idform10', '=', 'form10.id')
+            ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('suplierproduk.*')
+            ->get();
+        $pengawas1 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('orang.NamaLengkap')
+            ->first();
+        $pengawas2 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('orang.NamaLengkap')
+            ->first();
+        $pengawas3 =  DB::table('pengawaskesmavet')
+            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('orang.NamaLengkap')
+            ->first();
+        dd($formDetail);
+
+        return view('checklist10.detail', [
+            'data' => $formDetail,
+            'dokter_pj' => $dokterPJ,
+            'list_distribusi' => $penerimaProduksi
+        ]);
+    }
+    
     public function umum(Request $request)
     {
         // POST Request

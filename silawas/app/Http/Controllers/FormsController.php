@@ -6,6 +6,8 @@ use App\UnitUsaha;
 use App\SurveyUnitUsaha;
 use App\PengawasKesmavet;
 use App\Form1;
+use App\form6;
+use App\Form10;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -465,5 +467,33 @@ class FormsController extends Controller
     public function form14()
     {
         return view('form.formulir-14');
+    }
+
+    public function deleteForm ($id){
+        $survey = SurveyUnitUsaha::where('id', $id)->first();
+        
+        if (isset($survey['idForm1'])){
+            $f=Form1::where('id',$survey->idForm1)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                return Alert::success('Data Berhasil Dihapus');
+                }
+        }
+        else if (isset($survey['idForm6'])){
+            form6::where('id',$survey->idForm6)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                return Alert::success('Data Berhasil Dihapus');
+                }
+        }
+        else if (isset($survey['idForm10'])){
+            Form10::where('id',$survey->idForm10)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                return Alert::success('Data Berhasil Dihapus');
+                }
+        }
+        return Alert::error('Data gagal dihapus');
+       
     }
 }

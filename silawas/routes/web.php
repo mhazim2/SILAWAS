@@ -37,7 +37,7 @@ Route::post('/unit-usaha/store', 'UnitUsahasController@store')->name('unitusaha.
 // Halaman Pengajuan
 Route::get('/pengajuan', 'PengajuansController@index')->name('pengajuan.show');
 Route::get('/pengajuan/detail/{pengajuan_id}', 'PengajuansController@detail')->name('pengajuan.detail');
-Route::get('/pengajuan/hapus/{pengajuan_id}', 'PengajuansController@delete')->name('pengajuan.delete');
+Route::get('/pengajuan/hapus/{pengajuan_id}', 'FormsController@deleteForm')->name('pengajuan.delete');
 
 // Halaman Pengajuan
 Route::get('/pengajuan/formulir', 'PengajuansController@formulir')->name('pengajuan.formulir');

@@ -396,7 +396,7 @@
                                                 <td>
                                                     @if ($data->P12)
                                                         <div><b>SOP pemeliharaan kebersihan:</b> {{ $data->P12_1 ? 'Ada' : 'Tidak ada' }}</div>
-                                                        <div><b>Frekuensi pemeliharaan kebersihan:</b> {{ $data->P12_2 ? $data->P12_2.' Kg' : '-' }}</div>
+                                                        <div><b>Frekuensi pemeliharaan kebersihan:</b> {{ $data->P12_2 ? $data->P12_2 : '-' }}</div>
                                                         <div><b>Metode:</b> {{ $data->P12_3 ? $data->P12_3 : '-' }}</div>
                                                         <div><b>Catatan pemeliharaan kebersihan:</b> {{ $data->P12_4 ? 'Ada' : 'Tidak ada' }}</div>
                                                     @else

@@ -173,12 +173,16 @@
                             {{$f->check_p2 ? ' ':"V"}}
                         </td>
                         <td>
+                            @if ($f->check_p2)
                             <ul style="margin:0px; padding-left:18px">
-                                <li>{{$f->P2_1  ? $f->P2_1 : '-'}}</li>
-                                <li>{{$f->P2_2  ? $f->P2_2 : '-'}}</li>
-                                <li>{{$f->P2_3 ? $f->P2_3 : '-'}}</li>
-                                <li>{{$f->P2_4 ? $f->P2_2 : '-'}}</li>
+                                <li>No: {{$f->P2_1  ? $f->P2_1 : '-'}}</li>
+                                <li>Tanggal Penerbitan: {{$f->P2_2  ? $f->P2_2 : '-'}}</li>
+                                <li>Surveilans Terakhir {{$f->P2_3 ? $f->P2_3 : '-'}}</li>
+                                <li>Tindak lanjut temuan: {{$f->P2_4 ? $f->P2_2 : '-'}}</li>
                             </ul>
+                            @else 
+                             - 
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -216,11 +220,16 @@
                             {{$f->check_p4 ? ' ':"V"}}
                         </td>
                         <td>
+                            @if($f->check_p4)
                             <ol style="margin:0px; padding-left:18px">
-                                <li>{{$f->P4_1 ? $f->P4_1 : '-'}}</li>
-                                <li>{{$f->P4_2 ? $f->P4_2 : '-' }}</li>
-                                <li>{{$f->P4_3  ? $f->P4_3 : '-'}}</li>
+                                <li>No: {{$f->P4_1 ? $f->P4_1 : '-'}}</li>
+                                <li>Tanggal: {{$f->P4_2 ? $f->P4_2 : '-' }}</li>
+                                <li>Masa berlaku: {{$f->P4_3  ? $f->P4_3.' Tahun' : '-'}}</li>
                             </ol>
+                            @else 
+                            -
+                            @endif 
+
                         </td>
                     </tr>
                     <tr>
@@ -253,10 +262,14 @@
                             {{$f->P6 ? ' ':"V"}}
                         </td> 
                         <td>
+                            @if ($f->P6)
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P6_1 ? $f->P6_1 : '-'}}</li>
-                                <li> {{$f->P6_2 ? $f->P6_2 : '-'}}</li>
+                                <li> {{$f->P6_1 ? $f->P6_1.' Unit' : '-'}}</li>
+                                <li> {{$f->P6_2 ? $f->P6_2.' Ton/unit' : '-'}}</li>
                             </ul>
+                            @else 
+                            - 
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -270,10 +283,14 @@
                             {{$f->P7 ? ' ':"V"}}
                         </td> 
                         <td>
+                            @if($f->P7)
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P7_1 ? $f->P7_1 : '-'}}</li>
-                                <li> {{$f->P7_2  ? $f->P7_2 : '-'}}</li>
+                                <li>Jumlah:  {{$f->P7_1 ? $f->P7_1 : '-'}}</li>
+                                <li>Kapasitas: {{$f->P7_2  ? $f->P7_2 : '-'}}</li>
                             </ul>
+                            @else 
+                             - 
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -288,12 +305,16 @@
                             {{$f->P8 ? ' ':"V"}}
                         </td> 
                         <td>
+                            @if($f->P8)
                              <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P8_1 ? $f->P8_1 : '-'}}</li>
+                                <li> {{$f->P8_1 ? $f->P8_1 : '-'}} </li>
                                 <li> {{$f->P8_2 ? $f->P8_2 : '-'}}</li>
                                 <li> {{$f->P8_3 ? $f->P8_3 : '-'}}</li>
                                 <li> {{$f->P8_4 ? $f->P8_4 : '-'}}</li>
                             </ul>
+                            @else 
+                            - 
+                            @endif
                         </td>
                     </tr>
     
@@ -325,12 +346,16 @@
                             {{$f->P10 ? ' ':"V"}}
                         </td> 
                         <td>
+                            @if($f->P10)
                              <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P10_1 ? $f->P10_1 : '-'}}</li>
-                                <li> {{$f->P10_2 ? $f->P10_2 : '-'}}</li>
-                                <li> {{$f->P10_3 ? $f->P10_3 : '-'}}</li>
-                                <li> {{$f->P10_4 ? $f->P10_4 : '-'}}</li>
+                                <li>SOP pennanganan produk: {{$f->P10_1 ? 'Ada' : 'Tidak ada'}}</li>
+                                <li>FIFO: {{$f->P10_2 ? 'Ada' : 'Tidak ada'}}</li>
+                                <li>Rak palet:{{$f->P10_3 ? 'Ada' : 'Tidak ada'}}</li>
+                                <li>Jenis palet: {{$f->P10_4 ? $f->P10_4 : '-'}}</li>
                             </ul>
+                            @else  
+                            -  
+                            @endif
                         </td>
                     </tr>
                    
@@ -361,13 +386,17 @@
                                 {{$f->P11 ? ' ':"V"}}
                             </td> 
                             <td>
+                                @if ($f->P11)
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P11_1 ? $f->P11_1 : '-'}}</li>
-                                    <li> {{$f->P11_2 ? $f->P11_2 : '-'}}</li>
-                                    <li> {{$f->P11_3 ? $f->P11_3 : '-'}}</li>
-                                    <li> {{$f->P11_4 ? $f->P11_4 : '-'}}</li>
-                                    <li> {{$f->P11_5 ? $f->P11_5 : '-'}}</li>
+                                    <li>Jenis produk: {{$f->P11_1 ? $f->P11_1 : '-'}}</li>
+                                    <li>Berat produk: {{$f->P11_2 ? $f->P11_2 : '-'}}</li>
+                                    <li>Est no: {{$f->P11_3 ? $f->P11_3 : '-'}}</li>
+                                    <li>Tanggal produksi: {{$f->P11_4 ? $f->P11_4 : '-'}}</li>
+                                    <li>Expired: {{$f->P11_5 ? $f->P11_5 : '-'}}</li>
                                 </ul>
+                                @else 
+                                 -  
+                                @endif
                             </td>
                         </tr>
                         <tr>
@@ -381,12 +410,16 @@
                                 {{$f->P12 ? ' ':"V"}}
                             </td> 
                             <td>
+                                @if($f->P12)
                                   <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P12_1 ? $f->P12_1 : '-'}}</li>
-                                    <li> {{$f->P12_2 ? $f->P12_2 : '-'}}</li>
-                                    <li> {{$f->P12_3 ? $f->P12_3 : '-'}}</li>
-                                    <li> {{$f->P12_4 ? $f->P12_4 : '-'}}</li>
+                                    <li>SOP pemeliharaan kebersihan: {{$f->P12_1 ? 'Ada' : 'Tidak ada'}}</li>
+                                    <li>Frekuensi pemeliharaan kebersihan: {{$f->P12_2 ? $f->P12_2 : '-'}}</li>
+                                    <li>Metode: {{$f->P12_3 ? $f->P12_3 : '-'}}</li>
+                                    <li>Catatan pemeliharaan kebersihan: {{$f->P12_4 ? 'Ada' : 'Tidak ada'}}</li>
                                 </ul>
+                                @else 
+                                 - 
+                                @endif
                             </td>
                         </tr>
                         <tr>
@@ -414,13 +447,17 @@
                                 {{$f->P14 ? ' ':"V"}}
                             </td> 
                             <td>
+                                @if ($f->P14)
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P14_1 ? $f->P14_1 : '-'}}</li>
-                                    <li> {{$f->P14_2 ? $f->P14_2 : '-'}}</li>
-                                    <li> {{$f->P14_3 ? $f->P14_3 : '-'}}</li>
-                                    <li> {{$f->P14_4 ? $f->P14_4 : '-'}}</li>
-                                    <li> {{$f->P14_5 ? $f->P14_5 : '-'}}</li>
+                                    <li>SOP pengendalian serangga: {{$f->P14_1 ? 'Ada' : 'Tidak ada'}}</li>
+                                    <li>Dilakukan subkontrak: {{$f->P14_2 ? 'Ya' : 'Tidak'}}</li>
+                                    <li>Jenis pengendalian serangga: {{$f->P14_3 ? $f->P14_3 : '-'}}</li>
+                                    <li>Jadwal pengecekan: {{$f->P14_4 ? $f->P14_4 : '-'}}</li>
+                                    <li>Bukti kontrak: {{$f->P14_5 ?'Ada' : 'Tidak ada'}}</li>
                                 </ul>
+                                @else 
+                                -  
+                                @endif
                             </td>
                         </tr>
                         <tr>
@@ -434,10 +471,14 @@
                                 {{$f->P15 ? ' ':"V"}}
                             </td> 
                             <td>
+                                @if ($f->P15)
                                 <ul style="margin:0px; padding-left:18px">
-                                    <li> {{$f->P15_1 ? $f->P15_1 : '-'}}</li>
-                                    <li> {{$f->P15_2 ? $f->P15_2 : '-' }}</li>
+                                    <li>SOP pengolahan limbah: {{$f->P15_1 ? 'Ada' : 'Tidak ada'}}</li>
+                                    <li>Metode pelaksanaan: {{$f->P15_2 ? $f->P15_2 : '-' }}</li>
                                 </ul>
+                                @else 
+                                - 
+                                @endif
                             </td>
                         </tr>
                     </table>

@@ -48,6 +48,7 @@ class PetugassController extends Controller
     public function store(Request $data)
     {   
 
+        
         $newstring = substr($data['NIP'], -7);
         
         $tmt = date('Y-m-d');
@@ -83,6 +84,8 @@ class PetugassController extends Controller
             'NoRegistrasi'=> $data['NoRegistrasi'],
             'alamatKantor'=> $data['alamatKantor'],
         ]);
+
+       
         
         if($pengawas){
             Alert::success('Data Berhasil Disimpan');

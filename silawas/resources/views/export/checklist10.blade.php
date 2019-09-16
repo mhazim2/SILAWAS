@@ -147,11 +147,11 @@
                             <span style="margin-left:27px">(jika Sewa RPH-U)</span>
                         </td>
                         <td align="center">
-                            <br>{{$f->check_p1_niu  ? 'V':' '}}
-                            <br>{{$f->check_p1_npwp  ? 'V':' '}}
-                            <br>{{$f->check_p1_siup  ? 'V':' '}}
-                            <br>{{$f->check_p1_nib  ? 'V':' '}}
-                            <br>{{$f->check_p1_pks  ? 'V':' '}}
+                            <br>{{$f->P1_1  ? 'V':' '}}
+                            <br>{{$f->P1_2  ? 'V':' '}}
+                            <br>{{$f->P1_3  ? 'V':' '}}
+                            <br>{{$f->P1_4  ? 'V':' '}}
+                            <br>{{$f->P1_5  ? 'V':' '}}
                         </td>
                         <td align="center"></td>
                         <td>

@@ -229,6 +229,10 @@ a:hover {
     white-space: nowrap !important;
 }
 
+.dropdown-menu .dropdown-item:hover {
+    background-color: #e9ecef;
+}
+
 @media (max-width: 767px) {
     .dataTables_length, .dataTables_filter {
         text-align: left !important;

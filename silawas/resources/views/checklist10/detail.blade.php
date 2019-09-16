@@ -22,11 +22,15 @@
                                 <i class="fas fa-edit mr-1"></i> Edit
                             </button>
                         </a>
-                        <a href="/export/formulir10/{{ $surveyID }}" class="d-inline-block">
-                            <button type="button" class="btn btn-primary">
-                                <i class="fas fa-file-download mr-1"></i> Export
+                        <div class="btn-group" role="group">
+                            <button id="btnGroupExport" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <i class="fas fa-file-download mr-1"></i> Ekspor
                             </button>
-                        </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/export/formulir10/{{ $surveyID }}">Ceklis Hasil Survey</a>
+                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal fade" id="upload-pengesahan" tabindex="-1" role="dialog">
                         <div class="modal-dialog modal-dialog-centered" role="document">

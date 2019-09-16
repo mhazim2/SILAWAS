@@ -438,7 +438,152 @@ class Checklists6Controller extends Controller
     }
 
     public function update(Request $request, $id){
+        $survey = SurveyUnitUsaha::find($id);
+        $form = form6::where('id', $survey->idForm6)->first();
 
+        if ($request->isMethod('post')) {
+            
+            $this->validate($request,[
+                'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+
+            ]);
+            
+            $path = '';    
+                if($request->hasFile('file')){
+                
+                    $name = Storage::disk('local')->put('files', $request->file);
+                    $path = $name;     
+                }
+        }
+
+        //update tabel survey
+            $survey->NamaUnitUsaha = $request['NamaUnitUsaha'];
+            $survey->idUnitUsaha =  $request['idUnitUsaha']; 
+            $survey->idPengawas =  $request['idPengawas']; 
+            $survey->idPengawas2 =  $request['idPengawas2']; 
+            $survey->idPengawas3 =  $request['idPengawas3']; 
+            $survey->catatan =  $request['catatan']; 
+            $survey->rekomendasi =  $request['rekomendasi']; 
+        
+        //update tabel form 6
+        $form->kapasitasPemeliharaan = $request['kapasitasPemeliharaan'];
+        $form->tipeUnitUsaha = $request['tipeUnitUsaha'];
+        $form->jenisProduk = $request['jenisProduk'];
+        $form->karyawanProduksi_L = $request['karyawanProduksi_L'];
+        $form->karyawanProduksi_P = $request['karyawanProduksi_P'];
+        $form->karyawanAdm_L = $request['karyawanAdm_L'];
+        $form->karyawanAdm_P = $request['karyawanAdm_P'];
+        $form->karyawanAMPM = $request['karyawanAMPM'];
+        $form->karyawanAWO = $request['karyawanAWO'];
+        $form->juruSembelih = $request['juruSembelih'];
+        $form->operatorStunning = $request['operatorStunning'];
+        $form->b1_niu_id = $request['b1_niu_id'];
+        $form->b1_niu_date = $request['b1_niu_date'];
+        $form->b1_npwp_id = $request['b1_npwp_id'];
+        $form->b1_npwp_date= $request['b1_npwp_date'];
+        $form->b1_siup_id= $request['b1_siup_id'];
+        $form->b1_siup_date= $request['b1_siup_date'];
+        $form->b1_nib_id= $request['b1_nib_id'];
+        $form->b1_nib_date= $request['b1_nib_date'];
+        $form->b1_pks_id= $request['b1_pks_id'];
+        $form->b1_pks_date= $request['b1_pks_date'];
+        $form->check_b2 = $request['check_b2'];
+        $form->check_b3 = $request['check_b3'];
+        $form->b3_1 = $request['b3_1'];
+        $form->b3_2 = $request['b3_2'];
+        $form->b3_3 = $request['b3_3'];
+        $form->check_b4 = $request['check_b4'];
+        $form->b4_id = $request['b4_id'];
+        $form->check_b5_1 = $request['check_b5_1'];
+        $form->b5_1_nama = $request['b5_1_nama'];
+        $form->b5_1_alamat = $request['b5_1_alamat'];
+        $form->b5_1_sertifikat = $request['b5_1_sertifikat'];
+        $form->check_b5_2 = $request['check_b5_2'];
+        $form->b5_2_nama = $request['b5_2_nama'];
+        $form->b5_2_alamat = $request['b5_2_alamat'];
+        $form->b5_2_sertifikat = $request['b5_2_sertifikat'];
+        $form->check_b5_3 = $request['check_b5_3'];
+        $form->b5_3_nama = $request['b5_3_nama'];
+        $form->b5_3_alamat = $request['b5_3_alamat'];
+        $form->b5_3_sertifikat = $request['b5_3_sertifikat'];
+        $form->check_b6 = $request['check_b6'];
+        $form->b6_1= $request['b6_1'];
+        $form->b6_2= $request['b6_2'];
+        $form->b6_3= $request['b6_3'];
+        $form->b6_4= $request['b6_4'];
+        $form->check_b7= $request['check_b7'];
+        $form->b7= $request['b7'];
+        $form->check_b8= $request['check_b8'];
+        $form->b8_1= $request['b8_1'];
+        $form->b8_2= $request['b8_2'];
+        $form->check_b9= $request['check_b9'];
+        $form->b9= $request['b9'];
+        $form->check_b10= $request['check_b10'];
+        $form->b10= $request['b10'];
+        $form->check_b11= $request['check_b11'];
+        $form->b11= $request['b11'];
+        $form->check_b12= $request['check_b12'];
+        $form->b12= $request['b12'];
+        $form->check_b13= $request['check_b13'];
+        $form->b13= $request['b13'];
+        $form->check_b14= $request['check_b14'];
+        $form->b14= $request['b14'];
+        $form->check_b15= $request['check_b15'];
+        $form->b15= $request['b15'];
+        $form->check_b16= $request['check_b16'];
+        $form->b16= $request['b16'];
+        $form->check_b17= $request['check_b17'];
+        $form->b17= $request['b17'];
+        $form->check_b18= $request['check_b18'];
+        $form->b18= $request['b18'];
+        $form->b19= $request['b19'];
+        $form->b20= $request['b20'];
+        $form->b21_1= $request['b21_1'];
+        $form->b21_2= $request['b21_2'];
+        $form->b22= $request['b22'];
+        $form->b23_1= $request['b23_1'];
+        $form->b23_2= $request['b23_2'];
+        $form->b24= $request['b24'];
+        $form->b25_1= $request['b25_1'];
+        $form->b25_2= $request['b25_2'];
+        $form->b26_1= $request['b26_1'];
+        $form->b26_2= $request['b26_2'];
+        $form->b27_1= $request['b27_1'];
+        $form->b27_2= $request['b27_2'];
+        $form->b27_3= $request['b27_3'];
+        $form->check_b28= $request['check_b28'];
+        $form->b28_1= $request['b28_1'];
+        $form->b28_2= $request['b28_2'];
+        $form->b28_3= $request['b28_3'];
+        $form->check_b29= $request['check_b29'];
+        $form->b29_unit= $request['b29_unit'];
+        $form->b29_kapasitas= $request['b29_kapasitas'];
+        $form->b29_realisasi= $request['b29_realisasi'];
+        $form->b29_metode= $request['b29_metode'];
+        $form->check_b30= $request['check_b30'];
+        $form->b30_unit= $request['b30_unit'];
+        $form->b30_kapasitas= $request['b30_kapasitas'];
+        $form->b30_realisasi= $request['b30_realisasi'];
+        $form->b30_waktu= $request['b30_waktu'];
+        $form->b30_alamat= $request['b30_alamat'];
+        $form->check_b31= $request['check_b31'];
+        $form->b31= $request['b31'];
+        $form->check_b32= $request['check_b32'];
+        $form->b32_jenisAlat= $request['b32_jenisAlat'];
+        $form->b32_jumlahAlat= $request['b32_jumlahAlat'];
+        $form->b32_kapasitas= $request['b32_kapasitas'];
+        $form->check_b33= $request['check_b33'];
+        $form->b33= $request['b33'];
+        $form->b4_file= $path;
+
+        //simpan model ke db
+        $form->save();
+        $survey->save();
+        if($form && $survey){
+            Alert::success('Data Berhasil Diubah');
+        }
+        else Alert::success('Data gagal Diubah');
+        return Redirect::to('/unit-usaha');
     }
 
     

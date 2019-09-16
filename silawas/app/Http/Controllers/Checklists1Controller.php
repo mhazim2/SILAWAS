@@ -313,18 +313,18 @@ class Checklists1Controller extends Controller
             'totalProduksiSusu' => $umum['totalProduksiSusu'],
             'wilayahPeredaran' => $umum['wilayahPeredaran'],
             'jumlahKaryawan' => $umum['jumlahKaryawan'],
-            'P1-1' => $survey['P1-1'],
-            'P1-2' => $survey['P1-2'],
-            'P1-3' => $survey['P1-3'],
-            'P1-4' => $survey['P1-4'],
+            'P1_1' => $survey['P1-1'],
+            'P1_2' => $survey['P1-2'],
+            'P1_3' => $survey['P1-3'],
+            'P1_4' => $survey['P1-4'],
             'P2' => $survey['P2'],
             'P3' => $survey['P3'],
             'P3_ket' => $survey['P3_ket'],
             'P4' => $survey['P4'],
             'P4_ket' => $survey['P4_ket'],
-            'P5-1' => $survey['P5-1'],
-            'P5-2' => $survey['P5-2'],
-            'P5-3' => $survey['P5-3'],
+            'P5_1' => $survey['P5-1'],
+            'P5_2' => $survey['P5-2'],
+            'P5_3' => $survey['P5-3'],
             'P6' => $survey['P6'],
             'P6_ket' => $survey['P6_ket'],
             'P7' => $survey['P7'],
@@ -368,6 +368,92 @@ class Checklists1Controller extends Controller
         // Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->route('pengajuan.show');
+    }
+
+    public function update(Request $request,$id){
+        $survey = SurveyUnitUsaha::find($id);
+        $form = Form1::where('id', $survey->idForm1)->first();
+
+        if ($request->isMethod('post')) {
+            
+            $this->validate($request,[
+                'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+
+            ]);
+            
+            $path = '';    
+                if($request->hasFile('file')){
+                
+                    $name = Storage::disk('local')->put('files', $request->file);
+                    $path = $name;     
+                }
+        }
+
+        //update tabel survey
+            $survey->NamaUnitUsaha = $request['NamaUnitUsaha'];
+            $survey->idUnitUsaha =  $request['idUnitUsaha']; 
+            $survey->idPengawas =  $request['idPengawas']; 
+            $survey->idPengawas2 =  $request['idPengawas2']; 
+            $survey->idPengawas3 =  $request['idPengawas3']; 
+            $survey->catatan =  $request['catatan']; 
+            $survey->rekomendasi =  $request['rekomendasi']; 
+        
+        //update tabel form 1
+        $form->kapasitasPemeliharaan= $request['NamaUnitUsaha'];
+        $form->populasiTernak= $request['populasiTernak'];
+        $form->kategoriUsaha= $request['kategoriUsaha'];
+        $form->totalProduksiSusu= $request['totalProduksiSusu'];
+        $form->wilayahPeredaran= $request['wilayahPeredaran'];
+        $form->jumlahKaryawan= $request['jumlahKaryawan'];
+        $form->P1_1 = $request['P1_1'];
+        $form->P1_2 = $request['P1_2'];
+        $form->P1_3 = $request['P1_3'];
+        $form->P1_4 = $request['P1_4'];
+        $form->P2 = $path;
+        $form->P3 = $request['P3'];
+        $form->P3_ket = $request['P3_ket'];
+        $form->P4 = $request['P4'];
+        $form->P4_ket = $request['P4_ket'];
+        $form->P5_1 = $request['P5_1'];
+        $form->P5_2 = $request['P5_2'];
+        $form->P5_3 = $request['P5_3'];
+        $form->P6 = $request['P6'];
+        $form->P6_ket = $request['P6_ket'];
+        $form->P7 = $request['P7'];
+        $form->P7_ket = $request['P7_ket'];
+        $form->P8 = $request['P8'];
+        $form->P8_ket = $request['P8_ket'];
+        $form->P9 = $request['P9'];
+        $form->P9_ket = $request['P9_ket'];
+        $form->P10 = $request['P10'];
+        $form->P10_ket = $request['P10_ket'];
+        $form->P11 = $request['P11'];
+        $form->P11_ket = $request['P11_ket'];
+        $form->P12 = $request['P12'];
+        $form->P12_ket = $request['P12_ket'];
+        $form->P13 = $request['P13'];
+        $form->P13_ket = $request['P13_ket'];
+        $form->P14 = $request['P14'];
+        $form->P14_ket = $request['P14_ket'];
+        $form->P15 = $request['P15'];
+        $form->P15_ket = $request['P15_ket'];
+        $form->P16 = $request['P16'];
+        $form->P16_ket = $request['P16_ket'];
+        $form->P17 = $request['P17'];
+        $form->P17_ket = $request['P17_ket'];
+        $form->P18 = $request['P18'];
+        $form->P18_ket = $request['P18_ket'];
+        $form->P19 = $request['P19'];
+        $form->P19_ket = $request['P19_ket'];
+
+        //simpan model ke db
+        $form->save();
+        $survey->save();
+        if($form && $survey){
+            Alert::success('Data Berhasil Diubah');
+        }
+        else Alert::success('Data gagal Diubah');
+        return Redirect::to('/unit-usaha');
     }
 
     

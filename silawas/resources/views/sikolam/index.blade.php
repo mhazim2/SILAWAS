@@ -3,7 +3,7 @@
 @section('content')
     <div class="jumbotron jumbotron-fluid bg-kesmavet text-center mb-0">
         <div class="container">
-            <h1 class="display-5">Kolom Laporan Kesmavet</h1>
+            <h1 class="display-5">Kolom Laporan Masyarakat - Kesmavet</h1>
             <p class="lead">Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang.</p>
             <hr class="jumbotron-divider">
         </div>

@@ -269,3 +269,76 @@ a:hover {
         width: 100%;
     }
 }
+
+
+/*============
+ *  SIKOLAM  *
+ *===========*/
+
+.bg-sikolam-body {
+    background-color: #F4F6F9;
+}
+
+.jumbotron-divider {
+    border: 2px solid #fff;
+    width: 10%;
+    margin: 30px auto 0;
+}
+
+.jumbotron-extra {
+    background-color: #8C0090;
+    height: 100px;
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+.jumbotron-extra::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 200px;
+    background-color: #F4F6F9;
+    border-radius: 50%;
+}
+
+.sikolam-tabs .tab-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-top: none;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.edumat-list .card-img-container {
+    height: 150px;
+    overflow-y: hidden;
+}
+
+.img-thumbnail {
+    border: 2px solid #8C0090;
+    border-radius: 5px;
+    max-height: 150px;
+    max-width: 50%;
+    margin: 5px 5px 5px 0px;
+}
+
+.detail-laporan {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.laporan-cover {
+    display: block;
+    margin: 30px auto;
+    border: 2px solid #8C0090;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+@media (max-width: 575px) {
+    .sikolam-tabs .nav-tabs > .nav-item {
+        display: block;
+        width: 100%;
+    }
+}

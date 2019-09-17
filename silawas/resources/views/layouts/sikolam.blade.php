@@ -11,7 +11,7 @@
 
     <!-- Title -->
     <title>
-        SIKOLAM | KESMAVET
+        KOLAM | KESMAVET
     </title>
 
     <!-- Assets -->
@@ -32,7 +32,7 @@
         <div class="container">
             <a class="navbar-brand" href="{{ route('sikolam.show') }}">
                 <img src="{{ asset('img/backkesmavet3.png') }}" width="30" height="30" class="d-inline-block align-top" alt="logo kesmavet">
-                <b>SIKOLAM</b>
+                <b>KOLAM</b>
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
@@ -66,9 +66,14 @@
     <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
     <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-    <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-    <script>$(function () { $('.select2').select2(); $('[data-toggle="tooltip"]').tooltip() })</script>
+    <script>
+        $(function () { 
+            $("body").overlayScrollbars({});
+            $('.select2').select2(); 
+            $('[data-toggle="tooltip"]').tooltip() 
+        });
+    </script>
     @include('sweetalert::alert')
     @stack('scripts')
 </body>

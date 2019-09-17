@@ -63,9 +63,14 @@
     <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
     <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
-    <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-    <script>$(function () { $('.select2').select2(); $('[data-toggle="tooltip"]').tooltip() })</script>
+    <script>
+        $(function () { 
+            $("body").overlayScrollbars({});
+            $('.select2').select2(); 
+            $('[data-toggle="tooltip"]').tooltip() 
+        });
+    </script>
     @include('sweetalert::alert')
     @stack('scripts')
 </body>

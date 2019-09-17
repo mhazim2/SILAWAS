@@ -101,6 +101,17 @@ Route::post('/pengawasan/checklist/10/survey', 'Checklists10Controller@survey')-
 Route::post('/pengawasan/checklist/10/catatan', 'Checklists10Controller@catatan')->name('checklist10.catatan');
 Route::get('/pengawasan/checklist/10/detail/{id}', 'Checklists10Controller@detail')->name('checklist10.detail');
 
+// Halaman Checklist 11
+Route::redirect('/pengawasan/checklist/11', '/pengawasan/checklist/11/umum')->name('checklist11.show');
+Route::get('/pengawasan/checklist/11/umum', 'Checklists11Controller@umum')->name('checklist11.umum');
+Route::get('/pengawasan/checklist/11/survey', 'Checklists11Controller@survey')->name('checklist11.survey');
+Route::get('/pengawasan/checklist/11/catatan', 'Checklists11Controller@catatan')->name('checklist11.catatan');
+Route::post('/pengawasan/checklist/11/store', 'Checklists11Controller@store')->name('checklist11.store');
+Route::post('/pengawasan/checklist/11/umum', 'Checklists11Controller@umum')->name('checklist11.umum');
+Route::post('/pengawasan/checklist/11/survey', 'Checklists11Controller@survey')->name('checklist11.survey');
+Route::post('/pengawasan/checklist/11/catatan', 'Checklists11Controller@catatan')->name('checklist11.catatan');
+Route::get('/pengawasan/checklist/11/detail/{id}', 'Checklists11Controller@detail')->name('checklist11.detail');
+
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');
 Route::post('/laporan', 'LaporansController@content')->name('laporan.content');
@@ -122,6 +133,6 @@ Route::get('/export/blank/formulir6/{id}', 'ExportController@cetakBlank6');
 Route::get('/export/blank/formulir10/{id}', 'ExportController@cetakBlank10');
 
 // SIKOLAM
-Route::get('/sikolam', 'SikolamController@index')->name('sikolam.show');
-Route::get('/sikolam/laporan', 'SikolamController@laporan')->name('sikolam.laporan');
-Route::get('/sikolam/login', 'SikolamController@login')->name('sikolam.login');
+Route::get('/kolam', 'SikolamController@index')->name('sikolam.show');
+Route::get('/kolam/laporan', 'SikolamController@laporan')->name('sikolam.laporan');
+Route::get('/kolam/login', 'SikolamController@login')->name('sikolam.login');

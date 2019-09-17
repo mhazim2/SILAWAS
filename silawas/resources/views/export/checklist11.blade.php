@@ -195,8 +195,13 @@
                         @if ($f->check_p3)
                             @foreach ($suplier as $suplier)
                             <ol style="margin:0px; padding-left:18px">
-
-                                <li>{{$suplier->namaSuplier}} ({{$suplier->negara}})  {{$suplier->tanggal}} {{$suplier->jumlah}} </li>
+                                <li>
+                                    {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
+                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}
+                                    {{ $suplier->jenis ? $suplier->jenis.', ' : '' }}
+                                    {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
+                                    {{ $suplier->jumlah ? $suplier->jumlah.' MT' : '' }}
+                                </li>
                             </ol>
                             @endforeach
                         @else
@@ -215,15 +220,7 @@
                             {{$f->check_p4 ? ' ':"V"}}
                         </td>
                         <td>
-                            @if($f->check_p4)
-                            <ol style="margin:0px; padding-left:18px">
-                                <li>Jenis Pagar: {{$f->P4_1 ? $f->P4_1 : '-'}}</li>
-                                <li>Ket: {{$f->P4_2 ? $f->P4_2 : '-' }}</li>
-                            </ol>
-                            @else 
-                            -
-                            @endif 
-
+                            {{ $f->P4 ? $f->P4 : '-' }}
                         </td>
                     </tr>
                     <tr>
@@ -239,8 +236,8 @@
                         <td>
                             @if($f->check_p5)
                             <ol style="margin:0px; padding-left:18px">
-                                <li>Jumlah/Unit ruang penyimpanan: {{$f->P5_1 ? $f->P5_1 : '-'}}</li>
-                                <li>Kapasitas ruang penyimpanan: {{$f->P5_2 ? $f->P5_2 : '-' }}</li>
+                                <li>Jumlah: {{$f->P5_1 ? $f->P5_1 : '-'}}</li>
+                                <li>Kapasitas: {{$f->P5_2 ? $f->P5_2 : '-' }}</li>
                             </ol>
                             @else 
                             -
@@ -258,7 +255,7 @@
                             {{$f->check_p6 ? ' ':"V"}}
                         </td> 
                         <td>
-                                {{$f->P6 ? $f->P6 : '-'}}
+                            {{$f->P6 ? $f->P6 : '-'}}
                         </td>
                     </tr>
                     <tr>
@@ -278,7 +275,7 @@
                                 <li>Pemisah ruangan atar produk:  {{$f->P7_1 ? 'Ya' : 'Tidak'}}</li>
                                 <li>Lokasi antar produk terpisah: {{$f->P7_2  ? 'Ya' : 'Tidak'}}</li>
                                 <li>Partisi antar produk: {{$f->P7_3  ? 'Ya' : 'Tidak'}}</li>
-                                <li>Peralatan terpisah: {{$f->P7_4  ? 'Ya' : 'Tidak'}}</li>
+                                <li>Perlatan terpisah: {{$f->P7_4  ? 'Ya' : 'Tidak'}}</li>
                             </ul>
                             @else 
                              - 

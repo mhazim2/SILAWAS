@@ -54,7 +54,7 @@ class Checklists11Controller extends Controller
             ->select('orang.NamaLengkap')
             ->first();
 
-        return view('checklist10.detail', [
+        return view('checklist11.detail', [
             'data' => $formDetail,
             'surveyID' => $surveyID,
             'suplier' => $supliers,
@@ -71,7 +71,6 @@ class Checklists11Controller extends Controller
         if ($request->isMethod('post')) 
         {
             request()->validate([
-                
                 'idUnitUsaha' => 'required',
                 'wilayahPeredaran'=> 'required',
                 'kapasitasGudang'=> 'nullable|numeric',
@@ -82,9 +81,14 @@ class Checklists11Controller extends Controller
             if( isset($request['komoditas'])){
                 $request['komoditas']= implode( ", ", $request['komoditas'] );
             }
-    
-            $temp1 = $request->all();
-            session()->put('umum', $temp1);
+            if( isset($request['komoditas_lainnya'])){
+                $request['komoditas'] = str_replace("Lainnya", $request['komoditas_lainnya'], $request['komoditas']);
+            }
+            if( isset($request['wilayahPeredaran'])){
+                $request['wilayahPeredaran']= implode( ", ", $request['wilayahPeredaran'] );
+            }
+            $temp = $request->all();
+            session()->put('umum', $temp);
             
             return redirect()->action('Checklists11Controller@survey');
         }
@@ -102,7 +106,6 @@ class Checklists11Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
-           
             $data_survey = [
                 'check_p1_niu'=> $request['check_p1_niu'],
                 'P1_1'=> $request['P1_1'],
@@ -122,8 +125,7 @@ class Checklists11Controller extends Controller
                 'check_p3'=> $request['check_p3'],
                 'p3_count'=> $request['p3_count'],
                 'check_p4'=> $request['check_p4'],
-                'P4_1'=> $request['P4_1'],
-                'P4_2'=> $request['P4_2'],
+                'P4'=> $request['P4'],
                 'check_p5'=> $request['check_p5'],
                 'P5_1'=> $request['P5_1'],
                 'P5_2'=> $request['P5_2'],
@@ -167,15 +169,13 @@ class Checklists11Controller extends Controller
                 'P3_2'=> $request['P3_2'],
                 'P3_3'=> $request['P3_3'],
                 'P3_4'=> $request['P3_4'],
-                
+                'P3_5'=> $request['P3_5'],
             ];
             session()->put('survey', $data_survey);
-            
             return redirect()->action('Checklists11Controller@catatan');
         }
 
         // GET Request
-        
         return view('checklist11.survey');
     }
 

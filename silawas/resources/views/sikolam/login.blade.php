@@ -3,7 +3,7 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>SIKOLAM</b> Login</a>
+        <a href="#"><b>KOLAM</b> Login</a>
     </div>
     
     <div class="card">

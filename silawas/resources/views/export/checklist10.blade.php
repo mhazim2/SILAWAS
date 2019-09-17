@@ -199,8 +199,12 @@
                         @if ($f->check_p3)
                             @foreach ($suplier as $suplier)
                             <ol style="margin:0px; padding-left:18px">
-
-                                <li>{{$suplier->namaSuplier}} ({{$suplier->negara}})  {{$suplier->tanggal}} {{$suplier->jumlah}} </li>
+                                <li>
+                                    {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
+                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}
+                                    {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
+                                    {{ $suplier->jumlah ? $suplier->jumlah.' MT' : '' }}
+                                </li>
                             </ol>
                             @endforeach
                         @else
@@ -264,8 +268,8 @@
                         <td>
                             @if ($f->P6)
                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P6_1 ? $f->P6_1.' Unit' : '-'}}</li>
-                                <li> {{$f->P6_2 ? $f->P6_2.' Ton/unit' : '-'}}</li>
+                                <li>Jumlah:  {{$f->P6_1 ? $f->P6_1.' Unit' : '-'}}</li>
+                                <li>Kapasitas: {{$f->P6_2 ? $f->P6_2.' Ton/unit' : '-'}}</li>
                             </ul>
                             @else 
                             - 
@@ -285,8 +289,8 @@
                         <td>
                             @if($f->P7)
                             <ul style="margin:0px; padding-left:18px">
-                                <li>Jumlah:  {{$f->P7_1 ? $f->P7_1 : '-'}}</li>
-                                <li>Kapasitas: {{$f->P7_2  ? $f->P7_2 : '-'}}</li>
+                                <li>Pencatatan Suhu:  {{$f->P7_1 ? $f->P7_1 : '-'}}</li>
+                                <li>Kalibrasi: {{$f->P7_2  ? $f->P7_2 : '-'}}</li>
                             </ul>
                             @else 
                              - 
@@ -306,11 +310,11 @@
                         </td> 
                         <td>
                             @if($f->P8)
-                             <ul style="margin:0px; padding-left:18px">
-                                <li> {{$f->P8_1 ? $f->P8_1 : '-'}} </li>
-                                <li> {{$f->P8_2 ? $f->P8_2 : '-'}}</li>
-                                <li> {{$f->P8_3 ? $f->P8_3 : '-'}}</li>
-                                <li> {{$f->P8_4 ? $f->P8_4 : '-'}}</li>
+                            <ul style="margin:0px; padding-left:18px">
+                                <li>Pemisahan ruangan antar produk: {{$f->P8_1 ? 'Ya' : 'Tidak' }} </li>
+                                <li>Lokasi antar produk terpisah: {{$f->P8_2 ? 'Ya' : 'Tidak' }}</li>
+                                <li>Partisi antar produk: {{$f->P8_3 ? 'Ya' : 'Tidak' }}</li>
+                                <li>Perlatan terpisah: {{$f->P8_4 ? 'Ya' : 'Tidak' }}</li>
                             </ul>
                             @else 
                             - 

@@ -9,7 +9,7 @@
                 <div class="row justify-content-between mb-2">
                     <div class="col-md-8">
                         <h1 class="m-0 text-dark">{{ $data->NamaUnitUsaha }}</h1>
-                        <small>Ceklis Pengawasan Gudang Penyimpanan Dingin/Beku</small>
+                        <small>Ceklis Pengawasan Gudang Penyimpanan Kering</small>
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">
                         <a href="#" class="d-inline-block" data-toggle="modal" data-target="#upload-pengesahan">
@@ -27,8 +27,8 @@
                                 <i class="fas fa-file-download mr-1"></i> Ekspor
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="/export/formulir10/{{ $surveyID }}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="/export/blank/formulir10/{{$surveyID}}">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/export/formulir11/{{ $surveyID }}">Ceklis Hasil Survey</a>
+                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>
@@ -112,10 +112,6 @@
                                         <tr>
                                             <td>Tahun Operasional</td><td>:</td>
                                             <td>{{ $data->TahunOperasional ? $data->TahunOperasional : '-' }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jenis Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->jenisUnitUsaha ? $data->jenisUnitUsaha : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Komoditas</td><td>:</td>
@@ -230,10 +226,11 @@
                                                         <ul>
                                                             @foreach($supliers as $suplier)
                                                                 <li>
-                                                                    {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
-                                                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}
-                                                                    {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
-                                                                    {{ $suplier->jumlah ? $suplier->jumlah.' MT' : '' }}
+                                                                    {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}, 
+                                                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}, 
+                                                                    {{ $suplier->jenis ? $suplier->jenis.', ' : '' }}, 
+                                                                    {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}, 
+                                                                    {{ $suplier->jumlah ? $suplier->jumlah.' MT' : '' }}, 
                                                                 </li>
                                                             @endforeach
                                                         </ul>
@@ -244,7 +241,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    4. Apakah dilengkapi dengan sertifikat halal? (Khusus Gelatine Pangan)
+                                                    4. Apakah area khusus penyimpanan didesain untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?
                                                 </td>
                                                 <td class="text-center text-success">
                                                     {!! $data->check_p4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
@@ -253,10 +250,23 @@
                                                     {!! $data->check_p4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->check_p4)
-                                                        <div><b>No:</b> {{ $data->P4_1 ? $data->P4_1 : '-' }}</div>
-                                                        <div><b>Tanggal:</b> {{ $data->P4_2 ? $data->P4_2 : '-' }}</div>
-                                                        <div><b>Masa berlaku:</b> {{ $data->P4_3 ? $data->P4_3.' Tahun' : '-' }}</div>
+                                                    {{ $data->P4 ? $data->P4 : '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    5. Apakah sarana dan prasarana penyimpanan memenuhi/memadai sesuai kapasitas?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->check_p5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->check_p5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    @if ($data->check_p5)
+                                                        <div><b>Jumlah:</b> {{ $data->P5_1 ? $data->P5_1.' Unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->P5_2 ? $data->P5_2.' MT' : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -264,32 +274,34 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    5. Apakah area khusus penyimpanan didesain untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?
+                                                    6. Apakah sirkulasi udara, kelembaban dan suhu dikelola dengan baik? 
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p6 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p6 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->P5_ket ? $data->P5_ket : '-' }}
+                                                    {{ $data->P6 ? $data->P6 : '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    6. Apakah sarana dan prasarana penyimpanan memenuhi/memadai?
+                                                    7. Apakah terdapat pemisahan ruangan antar produk?  
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P6 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p7 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P6 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p7 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->P6)
-                                                        <div><b>Jumlah:</b> {{ $data->P6_1 ? $data->P6_1.' Unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->P6_2 ? $data->P6_2.' Ton/unit' : '-' }}</div>
+                                                    @if ($data->check_p7)
+                                                        <div><b>Pemisahan ruangan antar produk:</b> {{ $data->P7_1 ? 'Ya' : 'Tidak' }}</div>
+                                                        <div><b>Lokasi antar produk terpisah:</b> {{ $data->P7_2 ? 'Ya' : 'Tidak' }}</div>
+                                                        <div><b>Partisi antar produk:</b> {{ $data->P7_3 ? 'Ya' : 'Tidak' }}</div>
+                                                        <div><b>Perlatan terpisah:</b> {{ $data->P7_4 ? 'Ya' : 'Tidak' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -297,18 +309,34 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    7. Apakah sarana penyimpanan dingin dikelola dengan baik? 
+                                                    8. Apakah terdapat pemisahan ruangan antar produk halal dan non-halal?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P7 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p8 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P7 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p8 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->P7)
-                                                        <div><b>Pencatatan Suhu:</b> {{ $data->P7_1 ? $data->P7_1 : '-' }}</div>
-                                                        <div><b>Kalibrasi:</b> {{ $data->P7_2 ? $data->P7_2 : '-' }}</div>
+                                                    {{ $data->P8 ? $data->P8 : '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    9. Apakah penanganan produk dilakukan dengan baik?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->check_p9 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->check_p9 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    @if ($data->check_p9)
+                                                        <div><b>SOP pennanganan produk:</b> {{ $data->P9_1 ? 'Ada' : 'Tidak ada' }}</div>
+                                                        <div><b>FIFO:</b> {{ $data->P9_2 ? 'Ya' : 'Tidak' }}</div>
+                                                        <div><b>Rak palet:</b> {{ $data->P9_3 ? 'Ada' : 'Tidak ada' }}</div>
+                                                        <div><b>Jenis palet:</b> {{ $data->P9_4 ? $data->P9_4 : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -316,20 +344,21 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    8. Apakah terdapat pemisahan ruangan antar produk?  
+                                                    10. Apakah produk hewan memiliki label/informasi? 
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P8 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p10 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P8 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p10 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->P8)
-                                                        <div><b>Pemisahan ruangan antar produk:</b> {{ $data->P8_1 ? 'Ya' : 'Tidak' }}</div>
-                                                        <div><b>Lokasi antar produk terpisah:</b> {{ $data->P8_2 ? 'Ya' : 'Tidak' }}</div>
-                                                        <div><b>Partisi antar produk:</b> {{ $data->P8_3 ? 'Ya' : 'Tidak' }}</div>
-                                                        <div><b>Perlatan terpisah:</b> {{ $data->P8_4 ? 'Ya' : 'Tidak' }}</div>
+                                                    @if ($data->check_p10)
+                                                        <div><b>Jenis produk:</b> {{ $data->P10_1 ? $data->P10_1 : '-' }}</div>
+                                                        <div><b>Berat produk:</b> {{ $data->P10_2 ? $data->P10_2.' Kg' : '-' }}</div>
+                                                        <div><b>Est no:</b> {{ $data->P10_3 ? $data->P10_3 : '-' }}</div>
+                                                        <div><b>Tanggal produksi:</b> {{ $data->P10_4 ? $data->P10_4 : '-' }}</div>
+                                                        <div><b>Expired:</b> {{ $data->P10_5 ? $data->P10_5 : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -337,34 +366,20 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    9. Apakah terdapat pemisahan ruangan antar produk halal dan non-halal?
+                                                    11. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P9 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p11 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P9 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p11 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->P9_ket ? $data->P9_ket : '-' }}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    10. Apakah penanganan produk dilakukan dengan baik?
-                                                </td>
-                                                <td class="text-center text-success">
-                                                    {!! $data->P10 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
-                                                </td>
-                                                <td class="text-center text-danger">
-                                                    {!! $data->P10 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
-                                                </td>
-                                                <td>
-                                                    @if ($data->P10)
-                                                        <div><b>SOP pennanganan produk:</b> {{ $data->P10_1 ? 'Ada' : 'Tidak ada' }}</div>
-                                                        <div><b>FIFO:</b> {{ $data->P10_2 ? 'Ya' : 'Tidak' }}</div>
-                                                        <div><b>Rak palet:</b> {{ $data->P10_3 ? 'Ada' : 'Tidak ada' }}</div>
-                                                        <div><b>Jenis palet:</b> {{ $data->P10_4 ? $data->P10_4 : '-' }}</div>
+                                                    @if ($data->check_p11)
+                                                        <div><b>SOP pemeliharaan kebersihan:</b> {{ $data->P11_1 ? 'Ada' : 'Tidak ada' }}</div>
+                                                        <div><b>Frekuensi pemeliharaan kebersihan:</b> {{ $data->P11_2 ? $data->P11_2 : '-' }}</div>
+                                                        <div><b>Metode:</b> {{ $data->P11_3 ? $data->P11_3 : '-' }}</div>
+                                                        <div><b>Catatan pemeliharaan kebersihan:</b> {{ $data->P11_4 ? 'Ada' : 'Tidak ada' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -372,21 +387,35 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    11. Apakah produk hewan memiliki label/informasi? 
+                                                    12. Apakah sarana dan prasarana kebersihan personal (higiene) memadai? 
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P11 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p12 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P11 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p12 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->P11)
-                                                        <div><b>Jenis produk:</b> {{ $data->P11_1 ? $data->P11_1 : '-' }}</div>
-                                                        <div><b>Berat produk:</b> {{ $data->P11_2 ? $data->P11_2.' Kg' : '-' }}</div>
-                                                        <div><b>Est no:</b> {{ $data->P11_3 ? $data->P11_3 : '-' }}</div>
-                                                        <div><b>Tanggal produksi:</b> {{ $data->P11_4 ? $data->P11_4 : '-' }}</div>
-                                                        <div><b>Expired:</b> {{ $data->P11_5 ? $data->P11_5 : '-' }}</div>
+                                                    {{ $data->P12 ? $data->P12 : '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    13. Apakah dilakukan program pengendalian hama dan serangga?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->check_p13 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->check_p13 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    @if ($data->check_p13)
+                                                        <div><b>SOP pengendalian serangga:</b> {{ $data->P13_1 ? 'Ada' : 'Tidak ada' }}</div>
+                                                        <div><b>Dilakukan subkontrak:</b> {{ $data->P13_2 ? 'Ya' : 'Tidak' }}</div>
+                                                        <div><b>Jenis pengendalian serangga:</b> {{ $data->P13_3 ? $data->P13_3 : '-' }}</div>
+                                                        <div><b>Jadwal pengecekan:</b> {{ $data->P13_4 ? $data->P13_4 : '-' }}</div>
+                                                        <div><b>Bukti kontrak:</b> {{ $data->P13_5 ? 'Ada' : 'Tidak ada' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -394,75 +423,18 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    12. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
+                                                    14. Apakah dilakukan pengolahan limbah? 
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->P12 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p14 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->P12 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p14 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->P12)
-                                                        <div><b>SOP pemeliharaan kebersihan:</b> {{ $data->P12_1 ? 'Ada' : 'Tidak ada' }}</div>
-                                                        <div><b>Frekuensi pemeliharaan kebersihan:</b> {{ $data->P12_2 ? $data->P12_2 : '-' }}</div>
-                                                        <div><b>Metode:</b> {{ $data->P12_3 ? $data->P12_3 : '-' }}</div>
-                                                        <div><b>Catatan pemeliharaan kebersihan:</b> {{ $data->P12_4 ? 'Ada' : 'Tidak ada' }}</div>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    13. Apakah sarana dan prasarana kebersihan personal (higiene) memadai? 
-                                                </td>
-                                                <td class="text-center text-success">
-                                                    {!! $data->P13 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
-                                                </td>
-                                                <td class="text-center text-danger">
-                                                    {!! $data->P13 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
-                                                </td>
-                                                <td>
-                                                    {{ $data->P13_ket ? $data->P13_ket : '-' }}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    14. Apakah dilakukan program pengendalian hama dan serangga?
-                                                </td>
-                                                <td class="text-center text-success">
-                                                    {!! $data->P14 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
-                                                </td>
-                                                <td class="text-center text-danger">
-                                                    {!! $data->P14 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
-                                                </td>
-                                                <td>
-                                                    @if ($data->P14)
-                                                        <div><b>SOP pengendalian serangga:</b> {{ $data->P14_1 ? 'Ada' : 'Tidak ada' }}</div>
-                                                        <div><b>Dilakukan subkontrak:</b> {{ $data->P14_2 ? 'Ya' : 'Tidak' }}</div>
-                                                        <div><b>Jenis pengendalian serangga:</b> {{ $data->P14_3 ? $data->P14_3 : '-' }}</div>
-                                                        <div><b>Jadwal pengecekan:</b> {{ $data->P14_4 ? $data->P14_4 : '-' }}</div>
-                                                        <div><b>Bukti kontrak:</b> {{ $data->P14_5 ? 'Ada' : 'Tidak ada' }}</div>
-                                                    @else
-                                                        -
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    15. Apakah dilakukan pengolahan limbah? 
-                                                </td>
-                                                <td class="text-center text-success">
-                                                    {!! $data->P15 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
-                                                </td>
-                                                <td class="text-center text-danger">
-                                                    {!! $data->P15 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
-                                                </td>
-                                                <td>
-                                                    @if ($data->P15)
-                                                        <div><b>SOP pengolahan limbah:</b> {{ $data->P15_1 ? 'Ada' : 'Tidak ada' }}</div>
-                                                        <div><b>Metode pelaksanaan:</b> {{ $data->P15_2 ? $data->P15_2 : '-' }}</div>
+                                                    @if ($data->check_p14)
+                                                        <div><b>SOP pengolahan limbah:</b> {{ $data->P14_1 ? 'Ada' : 'Tidak ada' }}</div>
+                                                        <div><b>Metode pelaksanaan:</b> {{ $data->P14_2 ? $data->P14_2 : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif

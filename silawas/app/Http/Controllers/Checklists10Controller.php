@@ -53,7 +53,7 @@ class Checklists10Controller extends Controller
             ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
             ->select('orang.NamaLengkap')
             ->first();
-
+        
         return view('checklist10.detail', [
             'data' => $formDetail,
             'supliers' => $supliers,

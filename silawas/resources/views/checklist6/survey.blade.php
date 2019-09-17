@@ -29,15 +29,17 @@
                             <div class="active tab-pane" id="survey">
                                 <form action="{{ route('checklist6.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
                                     @csrf
-                                    <div class="form-group">
-                                        @if(count($errors)>0)
-                                            @foreach($errors->all() as $error)
-                                                <div class="alert alert-dismissible alert-danger">
-                                                  {{$error}}
-                                                </div>
-                                            @endforeach
-                                        @endif
-                                        <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @if(count($errors)>0)
+                                                @foreach($errors->all() as $error)
+                                                    <div class="alert alert-dismissible alert-danger mb-3">
+                                                        {{$error}}
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>1. Apakah memiliki:</label>

@@ -95,7 +95,7 @@
                                         </tr>
                                         <tr>
                                             <td>Pemilik Unit Usaha / Nama Kantor Pusat</td><td>:</td>
-                                            <td>{{ $data->PelakuUsaha_idPemilikUsaha ? $pemilikUsaha->Nama : '-' }}</td>
+                                            <td>{{ $data->PelakuUsaha_idPemilikUsaha ? $data->PelakuUsaha_idPemilikUsaha : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Alamat Kantor Pusat</td><td>:</td>
@@ -689,7 +689,7 @@
                                                         <div><b>Kapasitas:</b> {{ $data->b29_kapasitas ? $data->b29_kapasitas.' ton' : '-' }}</div>
                                                         <div><b>Realisasi:</b> {{ $data->b29_realisasi ? $data->b29_realisasi.' ton' : '-' }}</div>
                                                     @else
-                                                        <div><b>Metode:</b> {{ $data->b29_metode ? $data->b29_metode.' ton' : '-' }}</div>
+                                                        <div><b>Metode:</b> {{ $data->b29_metode ? $data->b29_metode : '-' }}</div>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -703,7 +703,7 @@
                                                         <div><b>Jumlah:</b> {{ $data->b30_unit ? $data->b30_unit.' unit' : '-' }}</div>
                                                         <div><b>Kapasitas:</b> {{ $data->b30_kapasitas ? $data->b30_kapasitas.' ton' : '-' }}</div>
                                                         <div><b>Realisasi:</b> {{ $data->b30_realisasi ? $data->b30_realisasi.' ton' : '-' }}</div>
-                                                        <div><b>Rata-rata penyimpanan:</b> {{ $data->b30_waktu ? $data->b30_waktu.' minggu' : '-' }}</div>
+                                                        <div><b>Rata-rata penyimpanan:</b> {{ $data->b30_waktu ? $data->b30_waktu.' bulan' : '-' }}</div>
                                                     @else
                                                         <div><b>Alamat:</b> {{ $data->b30_alamat ? $data->b30_alamat : '-' }}</div>
                                                     @endif

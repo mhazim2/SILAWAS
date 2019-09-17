@@ -117,6 +117,10 @@ Route::get('/detail/formulir10/{id}', 'FormsController@getDetailForm10');
 Route::get('/export/formulir6/{id}', 'ExportController@cetakForm6');
 Route::get('/export/formulir10/{id}', 'ExportController@cetakForm10');
 
+//export blank
+Route::get('/export/blank/formulir6/{id}', 'ExportController@cetakBlank6');
+Route::get('/export/blank/formulir10/{id}', 'ExportController@cetakBlank10');
+
 // SIKOLAM
 Route::get('/sikolam', 'SikolamController@index')->name('sikolam.show');
 Route::get('/sikolam/laporan', 'SikolamController@laporan')->name('sikolam.laporan');

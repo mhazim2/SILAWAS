@@ -28,7 +28,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/formulir10/{{ $surveyID }}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/export/blank/formulir10/{{$surveyID}}">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>

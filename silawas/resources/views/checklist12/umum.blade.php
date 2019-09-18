@@ -48,7 +48,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
                                             <label for="komoditas">2. Komoditas</label>
-                                            <select class="form-control select2" id="komoditas" name="komoditas[]" multiple="multiple" data-placeholder="Pilih Komoditas" onchange="check_komoditas()">
+                                            <select class="form-control select2" id="komoditas" name="komoditas[]" multiple="multiple" data-placeholder="Pilih Komoditas">
                                                 <option value="Daging Unggas">Daging Unggas</option>
                                                 <option value="Daging Sapi">Daging Sapi</option>
                                                 <option value="Daging Kerbau">Daging Kerbau</option>
@@ -57,18 +57,9 @@
                                                 <option value="Daging Babi">Daging Babi</option>
                                                 <option value="Susu">Susu</option>
                                                 <option value="Telur">Telur</option>
-                                                <option value="Bulu">Bulu</option>
-                                                <option value="Kulit">Kulit</option>
                                                 <option value="Madu">Madu</option>
-                                                <option id="option_komoditas_lainnya" value="Lainnya">Lainnya</option>
+                                                <option value="Produk Hewan Segar Lainnya">Produk Hewan Segar Lainnya</option>
                                             </select>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_komoditas_lainnya" class="mt-3 mt-md-0" style="display:none">
-                                                <label for="komoditas_lainnya">Jenis Komoditas Lainnya</label>
-                                                <input id="komoditas_lainnya" type="text" class="form-control" name="komoditas_lainnya">
-                                                <small class="form-text text-muted"><b>Hint:</b> Jika lebih dari satu pisahkan dengan tanda koma (, )</small>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">

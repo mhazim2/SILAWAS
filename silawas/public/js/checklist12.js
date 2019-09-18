@@ -1,16 +1,3 @@
-// ===================
-// Form Umum Komoditas
-// ===================
-
-function check_komoditas() {
-    if(document.getElementById('option_komoditas_lainnya').selected) {
-        document.getElementById('hidden_komoditas_lainnya').style.display="block";
-    } else {
-        document.getElementById('hidden_komoditas_lainnya').style.display="none";
-        document.getElementById('hidden_komoditas_lainnya').getElementsByTagName('input')[0].value=null;
-    }
-}
-
 // ==============
 // Form Survey P1
 // ==============
@@ -61,7 +48,7 @@ function check_p1_pks() {
 }
 
 // ==============
-// Form Survey p2
+// Form Survey P2
 // ==============
 
 function check_p2() {
@@ -190,10 +177,10 @@ function check_p4() {
 // ==============
 
 function clear_p5(){
-    document.getElementById('p5_1_ket').checked = false;
-    document.getElementById('p5_2_ket').checked = false;
-    document.getElementById('p5_3_ket').checked = false;
-    document.getElementById('p5_4_ket').checked = false;
+    document.getElementById('p5_ket_1').checked = false;
+    document.getElementById('p5_ket_2').checked = false;
+    document.getElementById('p5_ket_3').checked = false;
+    document.getElementById('p5_ket_4').checked = false;
 }
 
 function check_p5() {

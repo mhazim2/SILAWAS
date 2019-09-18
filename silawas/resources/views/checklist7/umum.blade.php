@@ -30,7 +30,7 @@
                                 <form action="{{ route('checklist7.umum') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="NamaUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="TipeUnitUsaha">2. Tipe Unit Usaha</label>
                                             <select class="form-control select2" id="TipeUnitUsaha" name="TipeUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
@@ -60,7 +60,7 @@
                                         <div class="col-md-12">
                                             <label for="kapasitasPemotongan">3. Kapasitas Pemotongan</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="kapasitasPemotongan">
                                                         <div class="input-group-append">
@@ -75,7 +75,7 @@
                                         <div class="col-md-12">
                                             <label for="realisasiPemotongan">4. Realisasi Pemotongan Saat Ini</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="realisasiPemotongan">
                                                         <div class="input-group-append">
@@ -90,7 +90,7 @@
                                         <div class="col-md-12">
                                             <label for="operasionalPemotongan">5. Operasional Pemotongan</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="operasionalPemotongan">
                                                         <div class="input-group-append">
@@ -102,7 +102,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label>6. Asal Sumber Ternak</label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-block" onclick="check_sumber_lokal()">
@@ -129,7 +129,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label>7. Distribusi Karkas/Daging</label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-block">

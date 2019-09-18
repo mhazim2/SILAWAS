@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class Checklists7Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function detail($id)
     {
         $survey = SurveyUnitUsaha::findorFail($id);

@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class PengawasansController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         if (Auth::user()->accessRoleId == 1) {

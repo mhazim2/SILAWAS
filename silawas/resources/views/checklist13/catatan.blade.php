@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="idPengawas">3. Dokter Hewan Pengawas</label>
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
                                                 <option disabled selected>-- Pilih --</option>
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="idPengawas2">4. Dokter Hewan Pengawas/Asisten 1</label>
                                             <select class="form-control select2" id="idPengawas2" name="idPengawas2">
                                                 <option value="">Tidak Ada</option>
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="idPengawas3">5. Dokter Hewan Pengawas/Asisten 2</label>
                                             <select class="form-control select2" id="idPengawas3" name="idPengawas3">
                                                 <option value="">Tidak Ada</option>
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="pjUnitUsaha">6. Penangung Jawab Unit Usaha</label>
                                             <input type="text" class="form-control" id="pjUnitUsaha" name="pjUnitUsaha">
                                         </div>

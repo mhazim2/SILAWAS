@@ -30,7 +30,7 @@
                                 <form action="{{ route('checklist13.umum') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
@@ -43,6 +43,102 @@
                                                 <a href="{{ route('unitusaha.create') }}"><u>tambah unit usaha</u></a> 
                                                 terlebih dahulu.
                                             </small>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-6">
+                                            <label for="jenisPengolahan">2. Jenis Pengolahan</label>
+                                            <select class="form-control select2" id="jenisPengolahan" name="jenisPengolahan[]" multiple="multiple" data-placeholder="Pilih Jenis Pengolahan">
+                                                <option value="Daging Unggas">Daging Unggas</option>
+                                                <option value="Daging Sapi">Daging Sapi</option>
+                                                <option value="Daging Kerbau">Daging Kerbau</option>
+                                                <option value="Daging Kambing">Daging Kambing</option>
+                                                <option value="Daging Domba">Daging Domba</option>
+                                                <option value="Daging Babi">Daging Babi</option>
+                                                <option value="Susu">Susu</option>
+                                                <option value="Telur">Telur</option>
+                                                <option value="Produk Hewan Segar Lainnya">Produk Hewan Segar Lainnya</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-md-12">
+                                            <label for="kapasitasProduksi">3. Kapasitas Produksi</label>
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="kapasitasProduksi">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">Kg</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-md-12">
+                                            <label for="realisasi">4. Realisasi</label>
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" name="realisasi">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">Kg</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-6">
+                                            <label>5. Asal Sumber Bahan Baku</label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-block" onclick="check_sumber_lokal()">
+                                                    <input id="check_sumber_lokal" type="checkbox" name="check_sumber_lokal" value="1">
+                                                    <label class="font-weight-normal" for="check_sumber_lokal">Lokal</label>
+                                                </div>
+                                                <div id="hidden_sumber_lokal" class="bg-kesmavet p-2 mb-5" style="display:none">
+                                                    <div class="form-group">
+                                                        <label>Sumber</label>
+                                                        <input type="text" class="form-control" name="sumber_lokal">
+                                                    </div>
+                                                </div>
+                                                <div class="icheck-wisteria d-block" onclick="check_sumber_impor()">
+                                                    <input id="check_sumber_impor" type="checkbox" name="check_sumber_impor" value="1">
+                                                    <label class="font-weight-normal" for="check_sumber_impor">Ex-impor</label>
+                                                </div>
+                                                <div id="hidden_sumber_impor" class="bg-kesmavet p-2 mb-5" style="display:none">
+                                                    <div class="form-group">
+                                                        <label>Sumber</label>
+                                                        <input type="text" class="form-control" name="sumber_impor">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-6">
+                                            <label>6. Wilayah Peredaran</label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_1" type="checkbox" name="wilayahPeredaran[]" value="Lokal">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_1">Lokal</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_2" type="checkbox" name="wilayahPeredaran[]" value="Lintas Kab-kota">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_2">Lintas Kab-Kota</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_3" type="checkbox" name="wilayahPeredaran[]" value="Lintas Provinsi">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_3">Lintas Provinsi</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_4" type="checkbox" name="wilayahPeredaran[]" value="Ekspor">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_4">Ekspor</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group mb-5">

@@ -267,20 +267,20 @@
                                                     <div class="col-md-12">
                                                         <div class="d-block">
                                                             <div class="icheck-white d-block">
-                                                                <input id="p5_1_ket" type="checkbox" name="P5_1" value="1">
-                                                                <label class="font-weight-normal" for="p5_1_ket">SOP penanganan produk hewan</label>
+                                                                <input id="p5_ket_1" type="checkbox" name="P5_1" value="1">
+                                                                <label class="font-weight-normal" for="p5_ket_1">SOP penanganan produk hewan</label>
                                                             </div>
                                                             <div class="icheck-white d-block">
-                                                                <input id="p5_2_ket" type="checkbox" name="P5_2" value="1">
-                                                                <label class="font-weight-normal" for="p5_2_ket">Produk ditempatkan di tempat tertutup dengan suhu dingin/beku</label>
+                                                                <input id="p5_ket_2" type="checkbox" name="P5_2" value="1">
+                                                                <label class="font-weight-normal" for="p5_ket_2">Produk ditempatkan di tempat tertutup dengan suhu dingin/beku</label>
                                                             </div>
                                                             <div class="icheck-white d-block">
-                                                                <input id="p5_3_ket" type="checkbox" name="P5_3" value="1">
-                                                                <label class="font-weight-normal" for="p5_3_ket">Produk ditempatkan di rak, tidak bersentuhan langsung dengan lantai</label>
+                                                                <input id="p5_ket_3" type="checkbox" name="P5_3" value="1">
+                                                                <label class="font-weight-normal" for="p5_ket_3">Produk ditempatkan di rak, tidak bersentuhan langsung dengan lantai</label>
                                                             </div>
                                                             <div class="icheck-white d-block">
-                                                                <input id="p5_4_ket" type="checkbox" name="P5_4" value="1">
-                                                                <label class="font-weight-normal" for="p5_4_ket">Diterapkan prinsip First In First Out</label>
+                                                                <input id="p5_ket_4" type="checkbox" name="P5_4" value="1">
+                                                                <label class="font-weight-normal" for="p5_ket_4">Diterapkan prinsip First In First Out</label>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Redirect;
 
 class Checklists1Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function umum(Request $request)
     {
         // POST Request

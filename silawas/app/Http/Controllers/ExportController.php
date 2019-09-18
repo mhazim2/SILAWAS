@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\DB;
 
 class ExportController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function cetakform1($id){
         
         $form = SurveyUnitUsaha::all();

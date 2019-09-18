@@ -52,6 +52,12 @@
                                                             <small><i class="fas fa-eye"></i></small>
                                                         </button>
                                                     </a>
+                                                 @elseif ($form->idForm7)
+                                                    <a href="/pengawasan/checklist/7/detail/{{ $form->id }}">
+                                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
+                                                            <small><i class="fas fa-eye"></i></small>
+                                                        </button>
+                                                    </a>
                                                 @elseif ($form->idForm10)
                                                     <a href="/pengawasan/checklist/10/detail/{{ $form->id }}">
                                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">

@@ -57,7 +57,7 @@ class Checklists11Controller extends Controller
         return view('checklist11.detail', [
             'data' => $formDetail,
             'surveyID' => $surveyID,
-            'suplier' => $supliers,
+            'supliers' => $supliers,
             'pengawas1' => $pengawas1,
             'pengawas2' => $pengawas2,
             'pengawas3' => $pengawas3,
@@ -69,7 +69,8 @@ class Checklists11Controller extends Controller
         // POST Request
         $method = $request->method();
         if ($request->isMethod('post')) 
-        {
+        {   
+            
             request()->validate([
                 'idUnitUsaha' => 'required',
                 'wilayahPeredaran'=> 'required',
@@ -209,7 +210,6 @@ class Checklists11Controller extends Controller
 
         // Insert to Database
         $formff = Form11::create([
-                'jenisUnitUsaha'=> $umum['jenisUsaha'],
                 'komoditas'=> $umum['komoditas'],
                 'kapasitasGudang'=> $umum['kapasitasGudang'],
                 'realisasiPenyimpanan'=> $umum['realisasiPenyimpanan'],
@@ -233,8 +233,7 @@ class Checklists11Controller extends Controller
                 'check_p3'=> $survey['check_p3'],
                 'p3_count'=> $survey['p3_count'],
                 'check_p4'=> $survey['check_p4'],
-                'P4_1'=> $survey['P4_1'],
-                'P4_2'=> $survey['P4_2'],
+                'P4'=> $survey['P4'],
                 'check_p5'=> $survey['check_p5'],
                 'P5_1'=> $survey['P5_1'],
                 'P5_2'=> $survey['P5_2'],
@@ -296,6 +295,7 @@ class Checklists11Controller extends Controller
                 'negara'=>$survey['P3_2'][$i],
                 'tanggal'=>$survey['P3_3'][$i],
                 'jumlah'=>$survey['P3_4'][$i],
+                'jenis'=>$survey['P3_5'][$i],
                 'surveyUnitUsaha_idsurveyUnitusaha'=>$surveyform->id,
               ]);
             }

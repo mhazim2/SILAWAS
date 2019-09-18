@@ -58,6 +58,12 @@
                                                             <small><i class="fas fa-eye"></i></small>
                                                         </button>
                                                     </a>
+                                                @elseif ($form->idForm11)
+                                                    <a href="/pengawasan/checklist/11/detail/{{ $form->id }}">
+                                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
+                                                            <small><i class="fas fa-eye"></i></small>
+                                                        </button>
+                                                    </a>
                                                 @endif
                                                 <a href="/pengajuan/hapus/{{$form->id}}" onclick="return confirm('Apakah Anda yakin ingin menghapus pengajuan ini?')">
                                                     <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Formulir">

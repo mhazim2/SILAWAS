@@ -138,10 +138,13 @@ Route::get('/detail/formulir10/{id}', 'FormsController@getDetailForm10');
 //export
 Route::get('/export/formulir6/{id}', 'ExportController@cetakForm6');
 Route::get('/export/formulir10/{id}', 'ExportController@cetakForm10');
+Route::get('/export/formulir11/{id}', 'ExportController@cetakForm11');
 
 //export blank
 Route::get('/export/blank/formulir6/{id}', 'ExportController@cetakBlank6');
 Route::get('/export/blank/formulir10/{id}', 'ExportController@cetakBlank10');
+Route::get('/export/blank/formulir11/{id}', 'ExportController@cetakBlank11');
+
 
 // SIKOLAM
 Route::get('/kolam', 'SikolamController@index')->name('sikolam.show');

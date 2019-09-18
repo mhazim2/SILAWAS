@@ -39,6 +39,8 @@ class PengawasansController extends Controller
                 $listForms[$key]->tipeForm = 'Rumah Potong Hewan Unggas';
             } else if ($form->idForm10) {
                 $listForms[$key]->tipeForm = 'Gudang Penyimpanan Dingin/Beku';
+            } else if ($form->idForm11) {
+                $listForms[$key]->tipeForm = 'Gudang Penyimpanan Kering';
             }
         }
 

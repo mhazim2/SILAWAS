@@ -17,5 +17,6 @@ class SuplierProduk extends Model
 		'negara',
 		'tanggal',
 		'jumlah',
+		'jenis',
 	];
 }

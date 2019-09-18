@@ -64,6 +64,13 @@ class FormsController extends Controller
             } 
          } 
 
+         else if (array_key_exists('idForm11', $forms)) {
+            $tipeForm = 11 ; 
+            foreach ($forms as $forms) {
+                 $idForm =  $forms->idForm11;
+            } 
+         } 
+
         $forms['tipeForm'] = $tipeForm;
         $forms['idForm'] = $idForm;
 

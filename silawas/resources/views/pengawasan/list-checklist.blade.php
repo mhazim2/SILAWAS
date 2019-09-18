@@ -237,7 +237,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/12">
+                                        <a href="{{ route('checklist12.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -264,7 +264,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/13">
+                                        <a href="{{ route('checklist13.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -291,7 +291,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/14">
+                                        <a href="{{ route('checklist14.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>

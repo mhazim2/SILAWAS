@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Pengawasan Gudang Penyimpanan Kering')
+@section('title', 'Ceklis Pengangkutan Produk Hewan')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Pengawasan Gudang Penyimpanan Kering</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengangkutan Produk Hewan</h1>
                     </div>
                 </div>
             </div>
@@ -19,15 +19,15 @@
                 <div class="card checklist">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist11.umum') }}">A. Informasi Umum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist11.survey') }}">B. Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist14.umum') }}">A. Informasi Umum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist14.survey') }}">B. Survey</a></li>
                             <li class="nav-item"><a class="nav-link active" href="#catatan" data-toggle="tab">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="catatan">
-                                <form action="{{ route('checklist11.store') }}" method="POST">
+                                <form action="{{ route('checklist14.store') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
@@ -42,7 +42,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <label for="idPengawas">3. Dokter Hewan Pengawas</label>
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
                                                 <option disabled selected>-- Pilih --</option>
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <label for="idPengawas2">4. Dokter Hewan Pengawas/Asisten 1</label>
                                             <select class="form-control select2" id="idPengawas2" name="idPengawas2">
                                                 <option value="">Tidak Ada</option>
@@ -64,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <label for="idPengawas3">5. Dokter Hewan Pengawas/Asisten 2</label>
                                             <select class="form-control select2" id="idPengawas3" name="idPengawas3">
                                                 <option value="">Tidak Ada</option>
@@ -75,9 +75,9 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
-                                            <label for="pjUnitUsaha">6. Penangung Jawab Unit Usaha</label>
-                                            <input type="text" class="form-control" id="pjUnitUsaha" name="pjUnitUsaha">
+                                        <div class="col-md-6">
+                                            <label for="pjAlatAngkut">6. Penangung Jawab Alat Angkut/Pengemudi</label>
+                                            <input type="text" class="form-control" id="pjAlatAngkut" name="pjAlatAngkut">
                                         </div>
                                     </div>
                                     <div class="form-group mb-5">
@@ -94,6 +94,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist11.js') }}"></script>
+        <script src="{{ asset('js/checklist14.js') }}"></script>
     @endpush
 @endsection

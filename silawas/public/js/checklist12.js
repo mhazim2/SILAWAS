@@ -1,3 +1,16 @@
+// ===================
+// Form Umum Komoditas
+// ===================
+
+function check_komoditas() {
+    if(document.getElementById('option_komoditas_lainnya').selected) {
+        document.getElementById('hidden_komoditas_lainnya').style.display="block";
+    } else {
+        document.getElementById('hidden_komoditas_lainnya').style.display="none";
+        document.getElementById('hidden_komoditas_lainnya').getElementsByTagName('input')[0].value=null;
+    }
+}
+
 // ==============
 // Form Survey P1
 // ==============
@@ -107,28 +120,28 @@ var p3_detail_html = '\
         <div class="col-lg-3">\
             <div class="form-group">\
                 <label>Nama Suplier</label>\
-                <input type="text" class="form-control" name="P3-1[]">\
+                <input type="text" class="form-control" name="P3_1[]">\
             </div>\
         </div>\
-        <div class="col-lg-3">\
+        <div class="col-lg-4">\
             <div class="form-group">\
-                <label>Asal (Negara)</label>\
-                <input type="text" class="form-control" name="P3-2[]">\
+                <label>Alamat</label>\
+                <input type="text" class="form-control" name="P3_2[]">\
             </div>\
         </div>\
         <div class="col-lg-3">\
             <div class="form-group">\
                 <label>Tanggal</label>\
-                <input type="text" class="form-control" name="P3-3[]">\
+                <input type="text" class="form-control" name="P3_3[]">\
             </div>\
         </div>\
-        <div class="col-lg-3">\
+        <div class="col-lg-2">\
             <div class="form-group">\
                 <label>Jumlah</label>\
                 <div class="input-group mb-3">\
-                    <input type="text" class="form-control" name="P3-4[]">\
+                    <input type="text" class="form-control" name="P3_4[]">\
                     <div class="input-group-append">\
-                        <span class="input-group-text">MT</span>\
+                        <span class="input-group-text">Kg</span>\
                     </div>\
                 </div>\
             </div>\
@@ -168,8 +181,7 @@ function check_p4() {
         document.getElementById('hidden_p4').style.display="block";
     } else if(document.getElementById('p4_2').checked) {
         document.getElementById('hidden_p4').style.display="none";
-        var count_input = document.getElementById('hidden_p4').getElementsByTagName('input').length;
-        for (var i=0; i<count_input; i++) document.getElementById('hidden_p4').getElementsByTagName('input')[i].value=null;
+        document.getElementById('hidden_p4').getElementsByTagName('textarea')[0].value=null;
     }
 }
 
@@ -177,12 +189,19 @@ function check_p4() {
 // Form Survey P5
 // ==============
 
+function clear_p5(){
+    document.getElementById('p5_1_ket').checked = false;
+    document.getElementById('p5_2_ket').checked = false;
+    document.getElementById('p5_3_ket').checked = false;
+    document.getElementById('p5_4_ket').checked = false;
+}
+
 function check_p5() {
     if(document.getElementById('p5_1').checked) {
         document.getElementById('hidden_p5').style.display="block";
     } else if(document.getElementById('p5_2').checked) {
         document.getElementById('hidden_p5').style.display="none";
-        document.getElementById('hidden_p5').getElementsByTagName('textarea')[0].value=null;
+        clear_p5();
     }
 }
 
@@ -195,8 +214,7 @@ function check_p6() {
         document.getElementById('hidden_p6').style.display="block";
     } else if(document.getElementById('p6_2').checked) {
         document.getElementById('hidden_p6').style.display="none";
-        var count_input = document.getElementById('hidden_p6').getElementsByTagName('input').length;
-        for (var i=0; i<count_input; i++) document.getElementById('hidden_p6').getElementsByTagName('input')[i].value=null;
+        document.getElementById('hidden_p6').getElementsByTagName('textarea')[0].value=null;
     }
 }
 
@@ -204,13 +222,41 @@ function check_p6() {
 // Form Survey P7
 // ==============
 
+function clear_p7() {
+    document.getElementById('p7_ket_1').checked = false;
+    document.getElementById('p7_ket_2').checked = false;
+    document.getElementById('p7_ket_1_1').value = null;
+    document.getElementById('p7_ket_1_2').value = null;
+    document.getElementById('p7_ket_2_1').value = null;
+}
+
 function check_p7() {
     if(document.getElementById('p7_1').checked) {
         document.getElementById('hidden_p7').style.display="block";
     } else if(document.getElementById('p7_2').checked) {
         document.getElementById('hidden_p7').style.display="none";
-        var count_input = document.getElementById('hidden_p7').getElementsByTagName('input').length;
-        for (var i=0; i<count_input; i++) document.getElementById('hidden_p7').getElementsByTagName('input')[i].value=null;
+        document.getElementById('hidden_p7_ket_1').style.display="none";
+        document.getElementById('hidden_p7_ket_2').style.display="none";
+        clear_p7();
+    }
+}
+
+function check_p7_ket_1() {
+    if(document.getElementById('p7_ket_1').checked) {
+        document.getElementById('hidden_p7_ket_1').style.display="block";
+    } else {
+        document.getElementById('hidden_p7_ket_1').style.display="none";
+        document.getElementById('p7_ket_1_1').value = null;
+        document.getElementById('p7_ket_1_2').value = null;
+    }
+}
+
+function check_p7_ket_2() {
+    if(document.getElementById('p7_ket_2').checked) {
+        document.getElementById('hidden_p7_ket_2').style.display="block";
+    } else {
+        document.getElementById('hidden_p7_ket_2').style.display="none";
+        document.getElementById('p7_ket_2_1').value = null;
     }
 }
 
@@ -219,10 +265,9 @@ function check_p7() {
 // ==============
 
 function clear_p8(){
-    document.getElementById('p8_1_ket').checked = false;
-    document.getElementById('p8_2_ket').checked = false;
-    document.getElementById('p8_3_ket').checked = false;
-    document.getElementById('p8_4_ket').checked = false;
+    document.getElementById('p8_ket_1').value = null;
+    document.getElementById('p8_ket_2_1').checked = false;
+    document.getElementById('p8_ket_2_2').checked = false;
 }
 
 function check_p8() {
@@ -238,12 +283,17 @@ function check_p8() {
 // Form Survey P9
 // ==============
 
+function clear_p9(){
+    document.getElementById('p9_ket_1').checked = false;
+    document.getElementById('p9_ket_2').checked = false;
+}
+
 function check_p9() {
     if(document.getElementById('p9_1').checked) {
         document.getElementById('hidden_p9').style.display="block";
     } else if(document.getElementById('p9_2').checked) {
         document.getElementById('hidden_p9').style.display="none";
-        document.getElementById('hidden_p9').getElementsByTagName('textarea')[0].value=null;
+        clear_p9();
     }
 }
 
@@ -254,11 +304,8 @@ function check_p9() {
 function clear_p10(){
     document.getElementById('p10_ket_1_1').checked = false;
     document.getElementById('p10_ket_1_2').checked = false;
-    document.getElementById('p10_ket_2_1').checked = false;
-    document.getElementById('p10_ket_2_2').checked = false;
-    document.getElementById('p10_ket_3_1').checked = false;
-    document.getElementById('p10_ket_3_2').checked = false;
-    document.getElementById('p10_ket_4').value = null;
+    document.getElementById('p10_ket_2').value = null;
+    document.getElementById('p10_ket_3').value = null;
 }
 
 function check_p10() {
@@ -279,85 +326,6 @@ function check_p11() {
         document.getElementById('hidden_p11').style.display="block";
     } else if(document.getElementById('p11_2').checked) {
         document.getElementById('hidden_p11').style.display="none";
-        var count_input = document.getElementById('hidden_p11').getElementsByTagName('input').length;
-        for (var i=0; i<count_input; i++) document.getElementById('hidden_p11').getElementsByTagName('input')[i].value=null;
-    }
-}
-
-// ==============
-// Form Survey P12
-// ==============
-
-function clear_p12(){
-    document.getElementById('p12_ket_1_1').checked = false;
-    document.getElementById('p12_ket_1_2').checked = false;
-    document.getElementById('p12_ket_2').value = null;
-    document.getElementById('p12_ket_3').value = null;
-    document.getElementById('p12_ket_4_1').checked = false;
-    document.getElementById('p12_ket_4_2').checked = false;
-}
-
-function check_p12() {
-    if(document.getElementById('p12_1').checked) {
-        document.getElementById('hidden_p12').style.display="block";
-    } else if(document.getElementById('p12_2').checked) {
-        document.getElementById('hidden_p12').style.display="none";
-        clear_p12();
-    }
-}
-
-// ==============
-// Form Survey P13
-// ==============
-
-function check_p13() {
-    if(document.getElementById('p13_1').checked) {
-        document.getElementById('hidden_p13').style.display="block";
-    } else if(document.getElementById('p13_2').checked) {
-        document.getElementById('hidden_p13').style.display="none";
-        document.getElementById('hidden_p13').getElementsByTagName('textarea')[0].value=null;
-    }
-}
-
-// ==============
-// Form Survey P14
-// ==============
-
-function clear_p14(){
-    document.getElementById('p14_ket_1_1').checked = false;
-    document.getElementById('p14_ket_1_2').checked = false;
-    document.getElementById('p14_ket_2_1').checked = false;
-    document.getElementById('p14_ket_2_2').checked = false;
-    document.getElementById('p14_ket_3').value = null;
-    document.getElementById('p14_ket_4').value = null;
-    document.getElementById('p14_ket_5_1').checked = false;
-    document.getElementById('p14_ket_5_2').checked = false;
-}
-
-function check_p14() {
-    if(document.getElementById('p14_1').checked) {
-        document.getElementById('hidden_p14').style.display="block";
-    } else if(document.getElementById('p14_2').checked) {
-        document.getElementById('hidden_p14').style.display="none";
-        clear_p14();
-    }
-}
-
-// ==============
-// Form Survey P15
-// ==============
-
-function clear_p15(){
-    document.getElementById('p15_ket_1_1').checked = false;
-    document.getElementById('p15_ket_1_2').checked = false;
-    document.getElementById('p15_ket_2').value = null;
-}
-
-function check_p15() {
-    if(document.getElementById('p15_1').checked) {
-        document.getElementById('hidden_p15').style.display="block";
-    } else if(document.getElementById('p15_2').checked) {
-        document.getElementById('hidden_p15').style.display="none";
-        clear_p15();
+        document.getElementById('hidden_p11').getElementsByTagName('textarea')[0].value=null;
     }
 }

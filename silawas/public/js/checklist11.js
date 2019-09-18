@@ -117,31 +117,31 @@ function p3_minus(){
 
 var p3_detail_html = '\
     <div class="row bg-light p-2 mb-2">\
-        <div class="col-md-3">\
+        <div class="col-lg-3">\
             <div class="form-group">\
                 <label>Nama Suplier</label>\
                 <input type="text" class="form-control" name="P3_1[]">\
             </div>\
         </div>\
-        <div class="col-md-2">\
+        <div class="col-lg-2">\
             <div class="form-group">\
                 <label>Asal (Negara)</label>\
                 <input type="text" class="form-control" name="P3_2[]">\
             </div>\
         </div>\
-        <div class="col-md-3">\
+        <div class="col-lg-3">\
             <div class="form-group">\
                 <label>Jenis Produk</label>\
                 <input type="text" class="form-control" name="P3_3[]">\
             </div>\
         </div>\
-        <div class="col-md-2">\
+        <div class="col-lg-2">\
             <div class="form-group">\
                 <label>Tanggal</label>\
                 <input type="text" class="form-control" name="P3_4[]">\
             </div>\
         </div>\
-        <div class="col-md-2">\
+        <div class="col-lg-2">\
             <div class="form-group">\
                 <label>Jumlah</label>\
                 <div class="input-group mb-3">\

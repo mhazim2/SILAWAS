@@ -30,7 +30,7 @@
                                 <form action="{{ route('checklist10.umum') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="jenisUsaha">2. Jenis Unit Usaha</label>
                                             <select class="form-control select2" id="jenisUsaha" name="jenisUsaha">
                                                 <option disabled selected>-- Pilih --</option>
@@ -56,7 +56,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="komoditas">3. Komoditas</label>
                                             <select class="form-control select2" id="komoditas" name="komoditas[]" multiple="multiple" data-placeholder="Pilih Komoditas">
                                                 <option value="Daging ayam">Daging ayam</option>
@@ -77,7 +77,7 @@
                                         <div class="col-md-12">
                                             <label for="kapasitasGudang">4. Kapasitas Gudang</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="kapasitasGudang">
                                                         <div class="input-group-append">
@@ -92,7 +92,7 @@
                                         <div class="col-md-12">
                                             <label for="realisasiPenyimpanan">5. Realisasi Penyimpanan</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="realisasiPenyimpanan">
                                                         <div class="input-group-append">
@@ -104,7 +104,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="wilayahPeredaran">6. Wilayah Peredaran</label>
                                             <select class="form-control select2" id="wilayahPeredaran" name="wilayahPeredaran">
                                                 <option disabled selected>-- Pilih --</option>
@@ -119,7 +119,7 @@
                                         <div class="col-md-12">
                                             <label for="jumlahKaryawan">7. Jumlah Karyawan</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="jumlahKaryawan">
                                                         <div class="input-group-append">

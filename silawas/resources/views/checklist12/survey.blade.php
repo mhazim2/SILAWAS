@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Pengawasan Gudang Penyimpanan Kering')
+@section('title', 'Ceklis Pengawasan Tempat Penjualan')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Pengawasan Gudang Penyimpanan Kering</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengawasan Tempat Penjualan</h1>
                     </div>
                 </div>
             </div>
@@ -19,15 +19,15 @@
                 <div class="card checklist">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist11.umum') }}">A. Informasi Umum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist12.umum') }}">A. Informasi Umum</a></li>
                             <li class="nav-item"><a class="nav-link active" href="#survey" data-toggle="tab">B. Survey</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist11.catatan') }}">C. Catatan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist12.catatan') }}">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="survey">
-                                <form action="{{ route('checklist11.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
+                                <form action="{{ route('checklist12.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
@@ -189,7 +189,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                3. Apakah ada pendataan sumber produk?
+                                                3. Apakah ada pendataan sumber produk hewan?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p3()">
@@ -219,8 +219,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                4. Apakah area khusus penyimpanan didesain untuk mencegah/membatasi 
-                                                akses masuk hewan atau manusia dari luar?
+                                                4. Apakah sarana dan prasarana penjajaan memenuhi/memadai?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p4()">
@@ -233,7 +232,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p4" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -249,7 +248,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                5. Apakah sarana dan prasarana penyimpanan memenuhi/memadai sesuai kapasitas?
+                                                5. Apakah penanganan barang dilakukan dengan baik di tempat penjajaan?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p5()">
@@ -262,28 +261,26 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-8">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p5" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group mb-0">
-                                                            <label>Jumlah Unit/Ruang Penyimpanan</label>
-                                                            <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" name="P5_1">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">unit</span>
-                                                                </div>
+                                                    <div class="col-md-12">
+                                                        <div class="d-block">
+                                                            <div class="icheck-white d-block">
+                                                                <input id="p5_1_ket" type="checkbox" name="P5_1" value="1">
+                                                                <label class="font-weight-normal" for="p5_1_ket">SOP penanganan produk hewan</label>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group mb-0">
-                                                            <label>Kapasitas</label>
-                                                            <div class="input-group mb-3">
-                                                                <input type="text" class="form-control" name="P5_2">
-                                                                <div class="input-group-append">
-                                                                    <span class="input-group-text">MT</span>
-                                                                </div>
+                                                            <div class="icheck-white d-block">
+                                                                <input id="p5_2_ket" type="checkbox" name="P5_2" value="1">
+                                                                <label class="font-weight-normal" for="p5_2_ket">Produk ditempatkan di tempat tertutup dengan suhu dingin/beku</label>
+                                                            </div>
+                                                            <div class="icheck-white d-block">
+                                                                <input id="p5_3_ket" type="checkbox" name="P5_3" value="1">
+                                                                <label class="font-weight-normal" for="p5_3_ket">Produk ditempatkan di rak, tidak bersentuhan langsung dengan lantai</label>
+                                                            </div>
+                                                            <div class="icheck-white d-block">
+                                                                <input id="p5_4_ket" type="checkbox" name="P5_4" value="1">
+                                                                <label class="font-weight-normal" for="p5_4_ket">Diterapkan prinsip First In First Out</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -294,7 +291,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                6. Apakah sirkulasi udara, kelembaban dan suhu dikelola dengan baik?
+                                                6. Apakah terdapat pemisahaan antar produk di tempat penjajaan?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p6()">
@@ -323,7 +320,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                7. Apakah terdapat pemisahan ruangan antar produk?
+                                                7. Jika produk hewan yang dijajakan berupa produk dingin/beku, apakah memiliki sarana rantai dingin?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p7()">
@@ -336,26 +333,44 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p7" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="d-block">
-                                                            <div class="icheck-white d-block">
-                                                                <input id="p7_1_ket" type="checkbox" name="P7_1" value="Pemisahan ruangan antar produk">
-                                                                <label class="font-weight-normal" for="p7_1_ket">Pemisahan ruangan antar produk</label>
+                                                            <div class="icheck-white d-block" onclick="check_p7_ket_1()">
+                                                                <input id="p7_ket_1" type="checkbox" name="P7_1" value="1">
+                                                                <label class="font-weight-normal" for="p7_ket_1">Memiliki regulator suhu</label>
                                                             </div>
-                                                            <div class="icheck-white d-block">
-                                                                <input id="p7_2_ket" type="checkbox" name="P7_2" value="Lokasi antar produk terpisah">
-                                                                <label class="font-weight-normal" for="p7_2_ket">Lokasi antar produk terpisah</label>
+                                                            <div id="hidden_p7_ket_1" class="px-2 mb-5" style="display:none">
+                                                                <div class="row bg-light p-2 mb-2">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label>Jenis Unit Penyimpanan</label>
+                                                                            <input id="p7_ket_1_1" type="text" class="form-control" name="P7_1_jenis">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label>Merk</label>
+                                                                            <input id="p7_ket_1_2" type="text" class="form-control" name="P7_1_merk">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="icheck-white d-block">
-                                                                <input id="p7_3_ket" type="checkbox" name="P7_3" value="Partisi antar produk">
-                                                                <label class="font-weight-normal" for="p7_3_ket">Partisi antar produk</label>
+                                                            <div class="icheck-white d-block" onclick="check_p7_ket_2()">
+                                                                <input id="p7_ket_2" type="checkbox" name="P7_2" value="1">
+                                                                <label class="font-weight-normal" for="p7_ket_2">Regulator suhu rutin dikalibrasi</label>
                                                             </div>
-                                                            <div class="icheck-white d-block">
-                                                                <input id="p7_4_ket" type="checkbox" name="P7_4" value="Perlatan terpisah">
-                                                                <label class="font-weight-normal" for="p7_4_ket">Perlatan terpisah</label>
+                                                            <div id="hidden_p7_ket_2" class="px-2" style="display:none">
+                                                                <div class="row bg-light p-2 mb-2">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label>Tanggal Kalibrasi Terakhir</label>
+                                                                            <input id="p7_ket_2_1" type="text" class="form-control" name="P7_2_tanggal">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -366,7 +381,8 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                8. Apakah terdapat pemisahan ruangan antar produk halal dan non-halal?
+                                                8. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana 
+                                                penyimpanan dan produksi (sanitasi)?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p8()">
@@ -379,13 +395,28 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-lg-5">
                                             <div id="hidden_p8" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
+                                                    <div class="col-md-8">
+                                                        <div class="form-group">
+                                                            <label>Frekuensi pemeliharaan kebersihan</label>
+                                                            <input id="p8_ket_1" type="text" class="form-control" name="P8_1">
+                                                        </div>
+                                                    </div>
                                                     <div class="col-md-12">
-                                                        <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P8"></textarea>
+                                                        <div class="form-group">
+                                                            <label>Terdapat bukti laporan hasil sanitasi (QC record)</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_ket_2_1" type="radio" name="P8_2" value="1">
+                                                                    <label class="font-weight-normal" for="p8_ket_2_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_ket_2_2" type="radio" name="P8_2" value="0">
+                                                                    <label class="font-weight-normal" for="p8_ket_2_2">Tidak</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -395,7 +426,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                9. Apakah penanganan produk dilakukan dengan baik?
+                                                9. Apakah sarana dan prasarana untuk kebersihan personal (higiene) memadai?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p9()">
@@ -412,54 +443,15 @@
                                             <div id="hidden_p9" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>SOP pennanganan produk</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p9_ket_1_1" type="radio" name="P9_1" value="1">
-                                                                    <label class="font-weight-normal" for="p9_ket_1_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p9_ket_1_2" type="radio" name="P9_1" value="0">
-                                                                    <label class="font-weight-normal" for="p9_ket_1_2">Tidak</label>
-                                                                </div>
+                                                        <div class="d-block">
+                                                            <div class="icheck-white d-block">
+                                                                <input id="p9_ket_1" type="checkbox" name="P9_1" value="1">
+                                                                <label class="font-weight-normal" for="p9_ket_1">Terdapat bak cuci tangan dilengkapi dengan sabun dan air mengalir</label>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>FIFO</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p9_ket_2_1" type="radio" name="P9_2" value="1">
-                                                                    <label class="font-weight-normal" for="p9_ket_2_1">Ya</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p9_ket_2_2" type="radio" name="P9_2" value="0">
-                                                                    <label class="font-weight-normal" for="p9_ket_2_2">Tidak</label>
-                                                                </div>
+                                                            <div class="icheck-white d-block">
+                                                                <input id="p9_ket_2" type="checkbox" name="P9_2" value="1">
+                                                                <label class="font-weight-normal" for="p9_ket_2">Menggunakan alat pelindung diri</label>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Rak Palet</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p9_ket_3_1" type="radio" name="P9_3" value="1">
-                                                                    <label class="font-weight-normal" for="p9_ket_3_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p9_ket_3_2" type="radio" name="P9_3" value="0">
-                                                                    <label class="font-weight-normal" for="p9_ket_3_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Jenis Palet</label>
-                                                            <input id="p9_ket_4" type="text" class="form-control" name="P9_4">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -469,7 +461,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                10. Apakah produk hewan memiliki label/informasi?
+                                                10. Apakah dilakukan program pengendalian hama dan serangga?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p10()">
@@ -482,37 +474,34 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-5">
                                             <div id="hidden_p10" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label>Jenis Produk</label>
-                                                            <input type="text" class="form-control" name="P10_1">
+                                                            <label>Memiliki SOP pengendalian hama dan serangga</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p10_ket_1_1" type="radio" name="P10_1" value="1">
+                                                                    <label class="font-weight-normal" for="p10_ket_1_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p10_ket_1_2" type="radio" name="P10_1" value="0">
+                                                                    <label class="font-weight-normal" for="p10_ket_1_2">Tidak</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label>Asal Produk</label>
-                                                            <input type="text" class="form-control" name="P10_2">
+                                                            <label>Jadwal pelaksanaan kegiatan</label>
+                                                            <input id="p10_ket_2" type="text" class="form-control" name="P10_2">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label>Est no</label>
-                                                            <input type="text" class="form-control" name="P10_3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Tanggal Produksi</label>
-                                                            <input type="text" class="form-control" name="P10_4">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Tanggal Kadaluarsa</label>
-                                                            <input type="text" class="form-control" name="P10_5">
+                                                            <label>Kontrak dengan pihak ketiga</label>
+                                                            <input id="p10_ket_3" type="text" class="form-control" name="P10_3">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -522,7 +511,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label>
-                                                11. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
+                                                11. Apakah dilakukan pengolahan limbah?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p11()">
@@ -535,202 +524,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p11" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>SOP pemeliharaan kebersihan</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p11_ket_1_1" type="radio" name="P11_1" value="1">
-                                                                    <label class="font-weight-normal" for="p11_ket_1_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p11_ket_1_2" type="radio" name="P11_1" value="0">
-                                                                    <label class="font-weight-normal" for="p11_ket_1_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Frekuensi pemeliharaan kebersihan</label>
-                                                            <input id="p11_ket_2" type="text" class="form-control" name="P11_2">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Metode</label>
-                                                            <input id="p11_ket_3" type="text" class="form-control" name="P11_3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Catatan pemeliharaan kebersihan</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p11_ket_4_1" type="radio" name="P11_4" value="1">
-                                                                    <label class="font-weight-normal" for="p11_ket_4_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p11_ket_4_2" type="radio" name="P11_4" value="0">
-                                                                    <label class="font-weight-normal" for="p11_ket_4_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label>
-                                                12. Apakah sarana dan prasarana kebersihan personal (higiene) memadai?
-                                            </label>
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p12()">
-                                                    <input id="p12_1" type="radio" name="check_p12" value="1">
-                                                    <label class="font-weight-normal" for="p12_1">Ya</label>
-                                                </div>
-                                                <div class="icheck-wisteria d-inline" onclick="check_p12()">
-                                                    <input id="p12_2" type="radio" name="check_p12" value="0">
-                                                    <label class="font-weight-normal" for="p12_2">Tidak</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div id="hidden_p12" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P12"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label>
-                                                13. Apakah dilakukan program pengendalian hama dan serangga?
-                                            </label>
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p13()">
-                                                    <input id="p13_1" type="radio" name="check_p13" value="1">
-                                                    <label class="font-weight-normal" for="p13_1">Ya</label>
-                                                </div>
-                                                <div class="icheck-wisteria d-inline" onclick="check_p13()">
-                                                    <input id="p13_2" type="radio" name="check_p13" value="0">
-                                                    <label class="font-weight-normal" for="p13_2">Tidak</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div id="hidden_p13" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>SOP pengendalian serangga</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p13_ket_1_1" type="radio" name="P13_1" value="1">
-                                                                    <label class="font-weight-normal" for="p13_ket_1_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p13_ket_1_2" type="radio" name="P13_1" value="0">
-                                                                    <label class="font-weight-normal" for="p13_ket_1_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Dilakukan Subkontrak</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p13_ket_2_1" type="radio" name="P13_2" value="1">
-                                                                    <label class="font-weight-normal" for="p13_ket_2_1">Ya</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p13_ket_2_2" type="radio" name="P13_2" value="0">
-                                                                    <label class="font-weight-normal" for="p13_ket_2_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Jenis pengendalian serangga</label>
-                                                            <input id="p13_ket_3" type="text" class="form-control" name="P13_3">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Jadwal Pengecekan</label>
-                                                            <input id="p13_ket_4" type="text" class="form-control" name="P13_4">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Bukti Kontrak</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p13_ket_5_1" type="radio" name="P13_5" value="1">
-                                                                    <label class="font-weight-normal" for="p13_ket_5_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p13_ket_5_2" type="radio" name="P13_5" value="0">
-                                                                    <label class="font-weight-normal" for="p13_ket_5_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label>
-                                                14. Apakah dilakukan pengolahan limbah?
-                                            </label>
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p14()">
-                                                    <input id="p14_1" type="radio" name="check_p14" value="1">
-                                                    <label class="font-weight-normal" for="p14_1">Ya</label>
-                                                </div>
-                                                <div class="icheck-wisteria d-inline" onclick="check_p14()">
-                                                    <input id="p14_2" type="radio" name="check_p14" value="0">
-                                                    <label class="font-weight-normal" for="p14_2">Tidak</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div id="hidden_p14" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>SOP Pengolahan Limbah</label>
-                                                            <div class="d-block">
-                                                                <div class="icheck-white d-inline mr-3">
-                                                                    <input id="p14_ket_1_1" type="radio" name="P14_1" value="1">
-                                                                    <label class="font-weight-normal" for="p14_ket_1_1">Ada</label>
-                                                                </div>
-                                                                <div class="icheck-white d-inline">
-                                                                    <input id="p14_ket_1_2" type="radio" name="P14_1" value="0">
-                                                                    <label class="font-weight-normal" for="p14_ket_1_2">Tidak</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>Metode Pelaksanaan</label>
-                                                            <input id="p14_ket_2" type="text" class="form-control" name="P14_2">
+                                                            <textarea class="form-control" rows="2" name="P11"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -751,6 +551,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist11.js') }}"></script>
+        <script src="{{ asset('js/checklist12.js') }}"></script>
     @endpush
 @endsection

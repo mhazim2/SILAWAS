@@ -41,7 +41,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p1_niu" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -62,7 +62,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p1_npwp" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -83,7 +83,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p1_siup" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -104,7 +104,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p1_nib" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -125,7 +125,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p1_pks" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -158,25 +158,25 @@
                                         <div class="col-md-12">
                                             <div id="hidden_p2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label>Nomor</label>
                                                             <input type="text" class="form-control" name="P2-1">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label>Tanggal Penerbitan</label>
                                                             <input type="text" class="form-control" name="P2-2">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label>Tanggal Surveilans Terakhir</label>
                                                             <input type="text" class="form-control" name="P2-3">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-lg-12">
                                                         <div class="form-group">
                                                             <label>Tindak Lanjut Temuan</label>
                                                             <textarea class="form-control" rows="2" name="P2-4"></textarea>
@@ -235,19 +235,19 @@
                                         <div class="col-md-12">
                                             <div id="hidden_p4" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label>Nomor Sertifikat</label>
                                                             <input type="text" class="form-control" name="P4-1">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label>Tanggal Sertifikat</label>
                                                             <input type="text" class="form-control" name="P4-2">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4">
+                                                    <div class="col-lg-4">
                                                         <div class="form-group">
                                                             <label>Masa Berlaku</label>
                                                             <div class="input-group mb-3">
@@ -282,7 +282,7 @@
                                         <div class="col-md-12">
                                             <div id="hidden_p5" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-md-12">
+                                                    <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
                                                             <textarea class="form-control" rows="2" name="P5_ket"></textarea>
@@ -308,10 +308,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p6" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group mb-0">
                                                             <label>Jumlah Unit/Ruang Penyimpanan</label>
                                                             <div class="input-group mb-3">
@@ -322,7 +322,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group mb-0">
                                                             <label>Kapasitas</label>
                                                             <div class="input-group mb-3">
@@ -353,17 +353,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p7" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group mb-2">
                                                             <label>Pencatatan Suhu</label>
                                                             <input type="text" class="form-control" name="P7-1">
                                                             <small class="form-text"><b>Contoh:</b> setiap hari</small>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group mb-2">
                                                             <label>Kalibrasi</label>
                                                             <input type="text" class="form-control" name="P7-2">
@@ -390,24 +390,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4">
                                             <div id="hidden_p8" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="d-block">
-                                                            <div class="icheck-white d-block" onclick="check_p8()">
+                                                            <div class="icheck-white d-block">
                                                                 <input id="p8_1_ket" type="checkbox" name="P8-1" value="Pemisahan ruangan antar produk">
                                                                 <label class="font-weight-normal" for="p8_1_ket">Pemisahan ruangan antar produk</label>
                                                             </div>
-                                                            <div class="icheck-white d-block" onclick="check_p8()">
+                                                            <div class="icheck-white d-block">
                                                                 <input id="p8_2_ket" type="checkbox" name="P8-2" value="Lokasi antar produk terpisah">
                                                                 <label class="font-weight-normal" for="p8_2_ket">Lokasi antar produk terpisah</label>
                                                             </div>
-                                                            <div class="icheck-white d-block" onclick="check_p8()">
+                                                            <div class="icheck-white d-block">
                                                                 <input id="p8_3_ket" type="checkbox" name="P8-3" value="Partisi antar produk">
                                                                 <label class="font-weight-normal" for="p8_3_ket">Partisi antar produk</label>
                                                             </div>
-                                                            <div class="icheck-white d-block" onclick="check_p8()">
+                                                            <div class="icheck-white d-block">
                                                                 <input id="p8_4_ket" type="checkbox" name="P8-4" value="Perlatan terpisah">
                                                                 <label class="font-weight-normal" for="p8_4_ket">Perlatan terpisah</label>
                                                             </div>
@@ -462,7 +462,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p10" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -536,7 +536,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4">
                                             <div id="hidden_p11" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -594,7 +594,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4">
                                             <div id="hidden_p12" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -688,7 +688,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4">
                                             <div id="hidden_p14" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">
@@ -768,7 +768,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-lg-4">
                                             <div id="hidden_p15" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-md-12">

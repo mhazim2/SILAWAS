@@ -28,7 +28,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/formulir7/{{$surveyID}}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/export/blank/formulir7/{{$surveyID}}">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>
@@ -217,10 +217,10 @@
                                                 </td>
                                                 <td>
                                                     @if ($data->check_p2)
-                                                        <div><b>No:</b> {{ $data->p2_1 ? $data->p2_1 : '-' }}</div>
-                                                        <div><b>Tanggal Penerbitan:</b> {{ $data->p2_2 ? $data->p2_2 : '-' }}</div>
-                                                        <div><b>Surveilans terakhir:</b> {{ $data->p2_3 ? $data->p2_3 : '-' }}</div>
-                                                        <div><b>Tindak lanjut temuan:</b> {{ $data->p2_4 ? $data->p2_4 : '-' }}</div>
+                                                        <div><b>No:</b> {{ $data->P2_1 ? $data->P2_1 : '-' }}</div>
+                                                        <div><b>Tanggal Penerbitan:</b> {{ $data->P2_2 ? $data->P2_2 : '-' }}</div>
+                                                        <div><b>Surveilans terakhir:</b> {{ $data->P2_3 ? $data->P2_3 : '-' }}</div>
+                                                        <div><b>Tindak lanjut temuan:</b> {{ $data->P2_4 ? $data->P2_4 : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif
@@ -231,13 +231,13 @@
                                                     3. Apakah ada dokter hewan penanggung jawab teknis?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->check_p2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->check_p3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->check_p2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->check_p3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->check_p2)
+                                                    @if ($data->check_p3)
                                                         <b>Jumlah:</b> {{ $dokter_pj->count() }} Orang
                                                         <ol>
                                                             @foreach($dokter_pj as $dokter)
@@ -277,8 +277,8 @@
                                                     @if ($data->check_p5)
                                                         <div><b>No:</b> {{ $data->P5_id ? $data->P5_id : '-' }}</div>
                                                         <div>
-                                                            <a href="{{ asset($data->P5_file) }}">
-                                                                <img src="{{ asset($data->P5_file) }}" alt="Scan Sertifikat Veteriner">
+                                                            <a href="{{ asset($data->P5) }}">
+                                                                <img src="{{ asset($data->P5) }}" alt="Scan Sertifikat Veteriner">
                                                             </a>
                                                         </div>
                                                     @else
@@ -547,11 +547,11 @@
                                                 <td>
                                                     @if ($data->check_p23)
                                                         Chiller
-                                                        <div><b>Jumlah:</b> {{ $data->P23_unit ? $data->P23_unit.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->P23_kapasitas ? $data->P23_kapasitas.' ton' : '-' }}</div>
-                                                        <div><b>Realisasi:</b> {{ $data->P23_realisasi ? $data->P23_realisasi.' ton' : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->P23_1 ? $data->P23_1.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->P23_2 ? $data->P23_2.' ton' : '-' }}</div>
+                                                        <div><b>Realisasi:</b> {{ $data->P23_3 ? $data->P23_3.' ton' : '-' }}</div>
                                                     @else
-                                                        <div><b>Metode:</b> {{ $data->P23_metode ? $data->P23_metode : '-' }}</div>
+                                                        <div><b>Metode:</b> {{ $data->P23_4 ? $data->P23_4 : '-' }}</div>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -562,12 +562,12 @@
                                                 <td>
                                                     @if ($data->check_p24)
                                                         Cold Storage
-                                                        <div><b>Jumlah:</b> {{ $data->P24_unit ? $data->P24_unit.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->P24_kapasitas ? $data->P24_kapasitas.' ton' : '-' }}</div>
-                                                        <div><b>Realisasi:</b> {{ $data->P24_realisasi ? $data->P24_realisasi.' ton' : '-' }}</div>
-                                                        <div><b>Rata-rata penyimpanan:</b> {{ $data->P24_waktu ? $data->P24_waktu.' bulan' : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->P24_1 ? $data->P24_1.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->P24_2 ? $data->P24_2.' ton' : '-' }}</div>
+                                                        <div><b>Realisasi:</b> {{ $data->P24_3 ? $data->P24_3.' ton' : '-' }}</div>
+                                                        <div><b>Rata-rata penyimpanan:</b> {{ $data->P24_4 ? $data->P24_4.' bulan' : '-' }}</div>
                                                     @else
-                                                        <div><b>Alamat:</b> {{ $data->P24_alamat ? $data->P24_alamat : '-' }}</div>
+                                                        <div><b>Alamat:</b> {{ $data->P24_5 ? $data->P24_5 : '-' }}</div>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -578,9 +578,9 @@
                                                 <td>
                                                     @if ($data->check_p25)
                                                         {{ $data->check_p25 }}
-                                                        <div><b>Jenis:</b> {{ $data->P25_jenisAlat ? $data->P25_jenisAlat : '-' }}</div>
-                                                        <div><b>Jumlah:</b> {{ $data->P25_jumlahAlat ? $data->P25_jumlahAlat.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->P25_kapasitas ? $data->P25_kapasitas.' ton' : '-' }}</div>
+                                                        <div><b>Jenis:</b> {{ $data->P25_1 ? $data->P25_1 : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->P25_2 ? $data->P25_2.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->P25_3 ? $data->P25_3.' ton' : '-' }}</div>
                                                     @else
                                                         -
                                                     @endif

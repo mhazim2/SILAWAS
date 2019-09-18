@@ -52,7 +52,11 @@
                                                             <small><i class="fas fa-eye"></i></small>
                                                         </button>
                                                     </a>
+<<<<<<< HEAD
                                                 @elseif ($form->idForm7)
+=======
+                                                 @elseif ($form->idForm7)
+>>>>>>> 708fa1b2fc65b940423f4619b4cdac2bf7468112
                                                     <a href="/pengawasan/checklist/7/detail/{{ $form->id }}">
                                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                                             <small><i class="fas fa-eye"></i></small>

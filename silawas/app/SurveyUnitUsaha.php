@@ -15,6 +15,7 @@ class SurveyUnitUsaha extends Model
 		'idPengawas',
 		'idPengawas2',
 		'idPengawas3',
+		'pjUnitUsaha',
         'catatan',
         'rekomendasi',
         'buktiFile',
@@ -33,5 +34,15 @@ class SurveyUnitUsaha extends Model
         'idForm13',
         'idForm14',
         'idForm15',
-    ];      
+    ];
+
+    public function unitUsaha()
+    {
+        return $this->belongsTo('App\UnitUsaha', 'idUnitUsaha', 'id');
+    }
+
+    public function form1()
+    {
+        return $this->hasOne('App\Form1', 'id', 'idForm1');
+    }
 }

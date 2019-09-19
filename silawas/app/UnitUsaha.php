@@ -38,6 +38,10 @@ class UnitUsaha extends Model
 		'telpUU',
 		'faxUU',
 		'emailUU',
-
 	];
+
+	public function surveyUnitUsaha()
+	{
+		return $this->hasMany('App\SurveyUnitUsaha', 'idUnitUsaha', 'id');
+	}
 }

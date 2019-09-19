@@ -9,66 +9,72 @@ use Illuminate\Database\Eloquent\Model;
 
 class Form1 extends Model
 {
-    protected $table = 'form1';
     public $timestamps = false;
+    
+    protected $table = 'form1';
+    
     protected $fillable = [
+        'jenisUnitUsaha',
         'kapasitasPemeliharaan',
         'populasiTernak',
         'kategoriUsaha',
         'totalProduksiSusu',
         'wilayahPeredaran',
         'jumlahKaryawan',
+        'check_p1_1',
         'P1_1',
+        'check_p1_2',
         'P1_2',
+        'check_p1_3',
         'P1_3',
+        'check_p1_4',
         'P1_4',
+        'check_p1_5',
+        'P1_5',
+        'check_p2',
         'P2',
+        'check_p3',
         'P3',
-        'P3_ket',
+        'check_p4',
         'P4',
-        'P4_ket',
+        'check_p5',
         'P5_1',
         'P5_2',
         'P5_3',
+        'P5_4',
+        'P5_5',
+        'check_p6',
         'P6',
-        'P6_ket',
+        'check_p7',
         'P7',
-        'P7_ket',
+        'check_p8',
         'P8',
-        'P8_ket',
+        'check_p9',
         'P9',
-        'P9_ket',
+        'check_p10',
         'P10',
-        'P10_ket',
+        'check_p11',
         'P11',
-        'P11_ket',
+        'check_p12',
         'P12',
-        'P12_ket',
+        'check_p13',
         'P13',
-        'P13_ket',
+        'check_p14',
         'P14',
-        'P14_ket',
+        'check_p15',
         'P15',
-        'P15_ket',
+        'check_p16',
         'P16',
-        'P16_ket',
+        'check_p17',
         'P17',
-        'P17_ket',
+        'check_p18',
         'P18',
-        'P18_ket',
+        'check_p19',
         'P19',
-        'P19_ket',
-      ];
+	];
 
-    public function finalForm1($id){
-      $form1 = SurveyUnitUsaha::findorFail($id)->get();
-
-      $forms = DB::table('surveyunitusaha')
-        ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', $form1->id)
-        ->select('surveyunitusaha.*','unitusaha.*')
-        ->get();
-        $listpengawas = $pengawas->toArray();
-
-        return $form1;
-    }
+	public function surveyUnitUsaha()
+	{
+		return $this->belongsTo('App\SurveyUnitUsaha', 'id', 'idForm1');
+	}
 }

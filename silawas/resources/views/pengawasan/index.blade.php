@@ -35,13 +35,13 @@
                                         <tr>
                                             <td class="text-center">{{ $key+1 }}</td>
                                             <td>{{ $form->tipeForm }}</td>
-                                            <td>{{ $form->NamaUnitUsaha }}</td>
-                                            <td>{{ $form->PelakuUsaha_idPemilikUsaha }}</td>
-                                            <td>{{ $form->TahunOperasional }}</td>
+                                            <td>{{ $form->unitUsaha ? $form->unitUsaha->NamaUnitUsaha ?: '-' : '-' }}</td>
+                                            <td>{{ $form->unitUsaha ? $form->unitUsaha->namaPemilikUsaha ?: '-' : '-' }}</td>
+                                            <td>{{ $form->unitUsaha ? $form->unitUsaha->TahunOperasional ?: '-' : '-' }}</td>
                                             <td>{{ $form->created_at }}</td>
                                             <td class="text-center">
                                                 @if ($form->idForm1)
-                                                    <a href="/detail/formulir1/{{ $form->id }}">
+                                                    <a href="/pengawasan/checklist/1/detail/{{ $form->id }}">
                                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                                             <small><i class="fas fa-eye"></i></small>
                                                         </button>

@@ -30,7 +30,7 @@
                                 <form action="{{ route('checklist1.umum') }}" method="POST">
                                     @csrf
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
@@ -46,10 +46,21 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label for="kapasitasPemeliharaan">2. Kapasitas Pemeliharaan</label>
+                                        <div class="col-lg-6">
+                                            <label for="jenisUnitUsaha">2. Jenis Unit Usaha</label>
+                                            <select class="form-control select2" id="jenisUnitUsaha" name="jenisUnitUsaha">
+                                                <option disabled selected>-- Pilih --</option>
+                                                <option value="Perorangan">Perorangan</option>
+                                                <option value="Perusahaan">Perusahaan</option>
+                                                <option value="Koperasi">Koperasi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-12">
+                                            <label for="kapasitasPemeliharaan">3. Kapasitas Pemeliharaan</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="kapasitasPemeliharaan">
                                                         <div class="input-group-append">
@@ -61,10 +72,10 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label for="populasiTernak">3. Jumlah Populasi Ternak</label>
+                                        <div class="col-lg-12">
+                                            <label for="populasiTernak">4. Jumlah Populasi Ternak</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="populasiTernak">
                                                         <div class="input-group-append">
@@ -76,8 +87,8 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
-                                            <label for="kategoriUsaha">4. Kategori Usaha</label>
+                                        <div class="col-lg-6">
+                                            <label for="kategoriUsaha">5. Kategori Usaha</label>
                                             <select class="form-control select2" id="kategoriUsaha" name="kategoriUsaha">
                                                 <option disabled selected>-- Pilih --</option>
                                                 <option value="Kecil">Kecil ( < 20 Ekor )</option>
@@ -87,10 +98,10 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label for="totalProduksiSusu">5. Total Produksi Susu</label>
+                                        <div class="col-lg-12">
+                                            <label for="totalProduksiSusu">6. Total Produksi Susu</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="totalProduksiSusu">
                                                         <div class="input-group-append">
@@ -102,22 +113,33 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
-                                            <label for="wilayahPeredaran">6. Wilayah Peredaran</label>
-                                            <select class="form-control select2" id="wilayahPeredaran" name="wilayahPeredaran">
-                                                <option disabled selected>-- Pilih --</option>
-                                                <option value="Lokal">Lokal</option>
-                                                <option value="Lintas Kab-Kota">Lintas Kab-Kota</option>
-                                                <option value="Lintas Provinsi">Lintas Provinsi</option>
-                                                <option value="Ekspor">Ekspor</option>
-                                            </select>
+                                        <div class="col-lg-6">
+                                            <label>7. Wilayah Peredaran</label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_1" type="checkbox" name="wilayahPeredaran[]" value="Lokal">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_1">Lokal</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_2" type="checkbox" name="wilayahPeredaran[]" value="Lintas Kab-kota">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_2">Lintas Kab-Kota</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_3" type="checkbox" name="wilayahPeredaran[]" value="Lintas Provinsi">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_3">Lintas Provinsi</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-block">
+                                                    <input id="wilayahPeredaran_4" type="checkbox" name="wilayahPeredaran[]" value="Ekspor">
+                                                    <label class="font-weight-normal" for="wilayahPeredaran_4">Ekspor</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-12">
-                                            <label for="jumlahKaryawan">7. Jumlah Karyawan</label>
+                                        <div class="col-lg-12">
+                                            <label for="jumlahKaryawan">8. Jumlah Karyawan</label>
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="jumlahKaryawan">
                                                         <div class="input-group-append">

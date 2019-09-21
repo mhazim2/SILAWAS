@@ -42,7 +42,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/2">
+                                        <a href="{{ route('checklist2.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>

@@ -80,6 +80,17 @@ Route::post('/pengawasan/checklist/1/catatan', 'Checklists1Controller@catatan')-
 Route::get('/pengawasan/checklist/1/store', 'Checklists1Controller@store')->name('checklist1.store');
 Route::get('/pengawasan/checklist/1/detail/{id}', 'Checklists1Controller@detail')->name('checklist1.detail');
 
+// Halaman Checklist 2
+Route::redirect('/pengawasan/checklist/2', '/pengawasan/checklist/2/umum')->name('checklist2.show');
+Route::get('/pengawasan/checklist/2/umum', 'Checklists2Controller@umum')->name('checklist2.umum');
+Route::get('/pengawasan/checklist/2/survey', 'Checklists2Controller@survey')->name('checklist2.survey');
+Route::get('/pengawasan/checklist/2/catatan', 'Checklists2Controller@catatan')->name('checklist2.catatan');
+Route::post('/pengawasan/checklist/2/umum', 'Checklists2Controller@umum')->name('checklist2.umum');
+Route::post('/pengawasan/checklist/2/survey', 'Checklists2Controller@survey')->name('checklist2.survey');
+Route::post('/pengawasan/checklist/2/catatan', 'Checklists2Controller@catatan')->name('checklist2.catatan');
+Route::get('/pengawasan/checklist/2/store', 'Checklists2Controller@store')->name('checklist2.store');
+Route::get('/pengawasan/checklist/2/detail/{id}', 'Checklists2Controller@detail')->name('checklist2.detail');
+
 // Halaman Checklist 6
 Route::redirect('/pengawasan/checklist/6', '/pengawasan/checklist/6/umum')->name('checklist6.show');
 Route::get('/pengawasan/checklist/6/umum', 'Checklists6Controller@umum')->name('checklist6.umum');

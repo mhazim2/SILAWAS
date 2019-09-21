@@ -45,4 +45,9 @@ class SurveyUnitUsaha extends Model
     {
         return $this->hasOne('App\Form1', 'id', 'idForm1');
     }
+
+    public function form2()
+    {
+        return $this->hasOne('App\Form2', 'id', 'idForm2');
+    }
 }

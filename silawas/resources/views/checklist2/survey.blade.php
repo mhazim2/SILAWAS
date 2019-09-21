@@ -327,7 +327,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                6. Apakah sarana dan prasarana memenuhi/ memadai sesuai kapasitas penampungan susu?
+                                                6. Apakah sarana dan prasarana memenuhi/memadai sesuai kapasitas penampungan susu?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p6()">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Checklist 11 Export PDF</title>
+    <title>Checklist 12 Export PDF</title>
     <style>
         body {
             /* padding: 60px 20px;
@@ -57,7 +57,7 @@
         <tr>
             <td colspan="2" align="center">
                 <h3 style="margin-top:0px"><strong>Pengawasan Unit Usaha Produk Hewan </strong></h3>
-                <h3 ><strong>(Gudang Penyimpanan Kering) </strong></h3>
+                <h3 ><strong>(Tempat Penjualan) </strong></h3>
             </td>
         </tr>
         <tr>
@@ -94,27 +94,25 @@
                     </tr>
                     <tr>
                         <td>Tahun Operasional</td><td>:</td>
-                        <td> {{$f->TahunOperasional ? $f->TahunOperasional : '-'}}</td>
+                        <td>{{$f->TahunOperasional ? $f->TahunOperasional : '-'}} </td>
                     </tr>
                     <tr>
                         <td>Komoditas</td><td>:</td>
                         <td>{{$f->komoditas ? $f->komoditas : '-'}}</td>
                     </tr>
                     <tr>
-                        <td>Kapasitas Gudang</td><td>:</td>
-                        <td>{{$f->kapasitasGudang ? $f->kapasitasGudang : '-'}} Kg</td>
+                        <td>Kapasitas Tempat Penjajaan</td><td>:</td>
+                        <td>{{$f->kapasitasTempat ? $f->kapasitasTempat : '-'}}</td>
                     </tr>
                     <tr>
-                        <td>Realisasi Penyimpanan</td><td>:</td>
-                        <td>{{$f->realisasiPenyimpanan ? $f->realisasiPenyimpanan : '-'}} Kg</td>
-                    </tr>
-                    <tr>
-                        <td>Wilayah Peredaran</td><td>:</td>
-                        <td>{{$f->wilayahPeredaran ? $f->wilayahPeredaran : '-'}} </td>
+                        <td>Realisasi </td><td>:</td>
+                        <td>{{$f->realisasi ? $f->realisasi : '-'}}</td>
                     </tr>
                     <tr>
                         <td>Jumlah Karyawan</td><td>:</td>
-                        <td>{{$f->jumlahKaryawan ? $f->jumlahKaryawan : '-'}} Orang</td>
+                        <td>
+                            {{$f->jumlahKaryawan ? $f->jumlahKaryawan : '-'}} Orang
+                        </td>
                     </tr>
                 </table>
             </td>
@@ -183,16 +181,16 @@
                     </tr>
                     <tr>
                         <td>
-                            3. Apakah ada pendataan sumber produk?
+                            3. Apakah ada pendataan sumber produk hewan?
                         </td>
                         <td align="center">
-                        {{$f->check_p3  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                        {{$f->check_p3 ? ' ':"V"}}
-                        </td>
+                            {{$f->check_p3  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                            {{$f->check_p3 ? ' ':"V"}}
+                            </td>
                         <td>
-                        @if ($f->check_p3)
+                            @if ($f->check_p3)
                             @foreach ($suplier as $suplier)
                             <ol style="margin:0px; padding-left:18px">
                                 <li>
@@ -210,7 +208,7 @@
                     </tr>
                     <tr>
                         <td>
-                            4. Apakah area khusus penyimpanan didesain untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?
+                            4.	Apakah sarana dan prasarana di tempat penjajaan memenuhi/memadai 
                         </td>
                         <td align="center">
                             {{$f->check_p4  ? 'V':' '}}
@@ -219,12 +217,12 @@
                             {{$f->check_p4 ? ' ':"V"}}
                         </td>
                         <td>
-                                {{$f->P4 ? $f->P4 : '-'}}
+                            {{$f->P4 ? $f->P4 : '-'}}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            5. Apakah sarana dan prasarana penyimpanan memenuhi/ memadai sesuai kapasitas?
+                            5. Apakah penanganan barang dilakukan dengan baik di tempat penjajaan?
                         </td>
                         <td align="center">
                             {{$f->check_p5  ? 'V':' '}}
@@ -234,218 +232,161 @@
                         </td>
                         <td>
                             @if ($f->check_p5)
-                            <ul style="margin:0px; padding-left:18px">
-                                <li>Jumlah: {{$f->P5_1 ? $f->P5_1 : '-'}}</li>
-                                <li>Kapasitas: {{$f->P5_2 ? $f->P5_2 : '-'}}</li>
-                            </ul>
-                            @else 
-                            -  
+                                <div><b>SOP penanganan produk hewan:</b> {{ $f->P5_1 ? 'Ya' : 'Tidak' }}</div>
+                                <div><b>Produk ditempatkan di tempat tertutup dengan suhu dingin/beku:</b> {{ $f->P5_2 ? 'Ya' : 'Tidak' }}</div>
+                                <div><b>Produk ditempatkan di rak, tidak bersentuhan langsung dengan lantai:</b> {{ $f->P5_3 ? 'Ya' : 'Tidak' }}</div>
+                                <div><b>Diterapkan prinsip First In First Out:</b> {{ $f->P5_4 ? 'Ya' : 'Tidak' }}</div>
+                            @else
+                            -
                             @endif
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            6. Apakah sirkulasi udara, kelembaban dan suhu dikelola dengan baik?
+                            6. Apakah terdapat pemisahaan antar produk di tempat penjajaan?
                         </td>
                         <td align="center">
                             {{$f->check_p6  ? 'V':' '}}
                         </td>
                         <td align="center">
                             {{$f->check_p6 ? ' ':"V"}}
-                        </td> 
+                        </td>
                         <td>
-                              {{$f->P6 ? $f->P6 : '-'}}
+                            {{ $f->P6 ? $f->P6 : '-' }}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            7. Apakah terdapat pemisahan ruangan antar produk?
+                            7. Jika produk hewan yang dijajakan berupa produk dingin/beku, apakah memiliki sarana rantai dingin?
                         </td>
                         <td align="center">
                             {{$f->check_p7  ? 'V':' '}}
                         </td>
                         <td align="center">
                             {{$f->check_p7 ? ' ':"V"}}
-                        </td> 
+                        </td>
                         <td>
-                            @if($f->check_p7)
-                            <ul style="margin:0px; padding-left:18px">
-                                <li>Pemisahan ruangan antar produk: {{$f->P7_1 ? $f->P7_1 : '-'}}</li>
-                                <li>Lokasi antar produk terpisah: {{$f->P7_2  ? $f->P7_2 : '-'}}</li>
-                                <li>Partisi antar produk: {{$f->P7_3  ? $f->P7_3 : '-'}}</li>
-                                <li>Perlatan terpisah: {{$f->P7_4  ? $f->P7_4 : '-'}}</li>
+                            @if ($f->check_p7)
+                            <ul>
+                                @if ($f->P7_1)
+                                    <li>
+                                        Memiliki regulator suhu 
+                                        @if ($f->P7_1_jenis || $f->P7_1_merk)
+                                            (
+                                                {{ $f->P7_1_jenis ? $f->P7_1_jenis : '' }}
+                                                {{ $f->P7_1_merk ? $f->P7_1_merk : '' }}
+                                            )
+                                        @endif
+                                    </li>
+                                @endif
+                                @if ($f->P7_2)
+                                    <li>
+                                        Regulator suhu rutin dikalibrasi
+                                        {{ $f->P7_2_tanggal ? '( '.$f->P7_2_tanggal.' )' : '' }}
+                                    </li>
+                                @endif
                             </ul>
-                            @else 
-                             - 
-                            @endif
+                        @else
+                            -
+                        @endif
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            8. Apakah terdapat pemisahan ruangan antar produk halal dan non halal?
+                            8. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana penyimpanan dan produksi (sanitasi)?
                         </td>
                         <td align="center">
                             {{$f->check_p8  ? 'V':' '}}
                         </td>
                         <td align="center">
                             {{$f->check_p8 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                               {{$f->P8 ? $f->P8 : '-' }} 
                         </td>
-                    </tr>
-    
-                    <tr>
                         <td>
-                            9. Apakah penanganan produk dilakukan dengan baik?
-                        </td>
-                        <td align="center">
-                            {{$f->check_p9  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_p9 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                            @if($f->check_p9)
-                            <ul style="margin:0px; padding-left:18px">
-                                <li>SOP pennanganan produk: {{$f->P9_1 ? $f->P9_1 : '-'}}</li>
-                                <li>FIFO: {{$f->P9_2  ? $f->P9_2 : '-'}}</li>
-                                <li>Rak palet: {{$f->P9_3  ? $f->P9_3 : '-'}}</li>
-                                <li>Jenis palet: {{$f->P9_4  ? $f->P9_4 : '-'}}</li>
-                            </ul>
-                            @else 
-                             - 
+                            @if ($f->check_p8)
+                                <ol>
+                                {!! $f->P8_1 ? '<li>Frekuensi pemeliharaan kebersihan '.$f->P8_1.'</li>' : '' !!}
+                                {!! $f->P8_2 ? '<li>Terdapat bukti laporan hasil sanitasi (QC record)</li>' : '' !!}
+                                </ol>
+                            @else
+                            -
                             @endif
                         </td>
                     </tr>
-
-                    <tr>
-                        <td>
-                            10. Apakah produk hewan memiliki label/informasi?
-                        </td>
-                        <td align="center">
-                            {{$f->check_p10  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_p10 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                            @if($f->check_p10)
-                             <ul style="margin:0px; padding-left:18px">
-                                <li>Jenis produk: {{$f->P10_1 ? $f->P10_1 : '-'}}</li>
-                                <li>Berat produk: {{$f->P10_2 ? $f->P10_2 : '-'}}</li>
-                                <li>Est no: {{$f->P10_3 ? $f->P10_3 : '-'}}</li>
-                                <li>Tanggal produksi: {{$f->P10_4 ? $f->P10_4 : '-'}}</li>
-                                <li>Expired: {{$f->P10_5 ? $f->P10_5 : '-'}}</li>
-                            </ul>
-                            @else  
-                            -  
-                            @endif
-                        </td>
-                    </tr>
-                   
-                
                 </table>
             </td>
         </tr>
 
         <tr>
-            <td colspan="2">
-                <table class="survey" width="100%" border="1" >
-                
-                    <tr>
-                        <td align="center"><strong>Aspek Yang Dinilai</strong></td>
-                        <td align="center"><strong>Ya</strong></td>
-                        <td align="center"><strong>Tidak</strong></td>
-                        <td align="center"><strong>Keterangan</strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            11.	Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
-                        </td>
-                        <td align="center">
-                            {{$f->check_p11  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_p11 ? ' ':"V"}}
-                        </td>
-                        <td>
-                            @if ($f->check_p11)
-                            <ul style="margin:0px; padding-left:18px">
-                                <li>SOP pemeliharaan kebersihan: {{$f->P11_1  ? $f->P11_1 : '-'}}</li>
-                                <li>Frekuensi pemeliharaan kebersihan: {{$f->P11_2  ? $f->P11_2 : '-'}}</li>
-                                <li>Metode: {{$f->P11_3 ? $f->P11_3 : '-'}}</li>
-                                <li>Catatan pemeliharaan kebersihan: {{$f->P11_4 ? $f->P11_4 : '-'}}</li>
-                            </ul>
-                            @else 
-                             - 
+                <td colspan="2">
+                    <table class="survey" width="100%" border="1" >
+                    
+                        <tr>
+                            <td align="center"><strong>Aspek parameter</strong></td>
+                            <td align="center"><strong>Ya</strong></td>
+                            <td align="center"><strong>Tidak</strong></td>
+                            <td align="center"><strong>Keterangan</strong></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                9. Apakah sarana dan prasarana untuk kebersihan personal (higiene) memadai?
+                            </td>
+                            <td align="center">
+                                {{$f->check_p9  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_p9 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($f->check_p9)
+                                <ol>
+                                    {!! $f->P9_1 ? '<li>Terdapat bak cuci tangan dilengkapi dengan sabun dan air mengalir</li>' : '' !!}
+                                    {!! $f->P9_2 ? '<li>Menggunakan alat pelindung diri</li>' : '' !!}
+                                </ol>
+                            @else
+                                -
                             @endif
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
     
-                    <tr>
-                        <td>
-                            12.	Apakah sarana dan prasarana kebersihan personal (higiene) memadai?
-                        </td>
-                        <td align="center">
-                            {{$f->check_p12  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_p12 ? ' ':"V"}}
-                        </td>
-                        <td>
-                                {{$f->P12 ? $f->P12 : '-'}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            13.	Apakah dilakukan program pengendalian hama dan serangga?
-                        </td>
-                        <td align="center">
-                            {{$f->check_p13  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_p13 ? ' ':"V"}}
-                        </td>
-                        <td>
-                            @if($f->check_p13)
-                            <ul style="margin:0px; padding-left:18px">
-                                <li>SOP pengendalian serangga: {{$f->P13_1 ? $f->P13_1 : '-'}}</li>
-                                <li>Dilakukan subkontrak: {{$f->P13_2 ? $f->P13_2 : '-'}}</li>
-                                <li>Jenis pengendalian serangga: {{$f->P13_3 ? $f->P13_3 : '-'}}</li>
-                                <li>Jadwal pengecekan: {{$f->P13_4 ? $f->P13_4 : '-'}}</li>
-                                <li>Bukti kontrak: {{$f->P13_5 ? $f->P13_5 : '-'}}</li>
-                            </ul>
-                            @else 
-                             - 
+                        <tr>
+                            <td>
+                                10.	Apakah dilakukan program pengendalian hama dan serangga?
+                            </td>
+                            <td align="center">
+                                {{$f->check_p10  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_p10 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($f->check_p10)
+                                <ol>
+                                    {!! $f->P10_1 ? '<li>Memiliki SOP pengendalian hama dan serangga</li>' : '' !!}
+                                    {!! $f->P10_2 ? '<li>Jadwal pelaksanaan kegiatan dilakukan '.$f->P10_2.'</li>' : '' !!}
+                                    {!! $f->P10_3 ? '<li>Kontrak dengan pihak ketiga '.$f->P10_3.'</li>' : '' !!}
+                                </ol>
+                            @else
+                                -
                             @endif
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            14.	Apakah dilakukan pengolahan limbah?
-                        </td>
-                        <td align="center">
-                            {{$f->check_p14  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$f->check_p14 ? ' ':"V"}}
-                        </td> 
-                        <td>
-                            @if ($f->check_p14)
-                            <ul style="margin:0px; padding-left:18px">
-                                <li>SOP pengolahan limbah: {{$f->P14_1 ? $f->P14_1 : '-'}}</li>
-                                <li>Metode pelaksanaan: {{$f->P14_2 ? $f->P14_2 : '-'}}</li>
-                            </ul>
-                            @else 
-                             - 
-                            @endif
-                        </td>
-                    </tr>        
-                </table>
-            </td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                11. Apakah produk hewan memiliki label/informasi?
+                            </td>
+                            <td align="center">
+                                {{$f->check_p11  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$f->check_p11 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                {{ $f->P11 ? $f->P11 : '-' }}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
         </tr>
-
         <tr>
             <td colspan="2">
                 <table class="catatan" width="100%" border="1">

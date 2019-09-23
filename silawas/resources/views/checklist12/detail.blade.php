@@ -28,7 +28,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/formulir12/{{ $surveyID }}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/export/blank/formulir12/{{ $surveyID }}">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>
@@ -223,7 +223,7 @@
                                                             @foreach($supliers as $suplier)
                                                                 <li>
                                                                     {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
-                                                                    {{ $suplier->alamat ? $suplier->alamat.', ' : '' }}
+                                                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}
                                                                     {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
                                                                     {{ $suplier->jumlah ? $suplier->jumlah.' Kg' : '' }} 
                                                                 </li>

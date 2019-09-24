@@ -405,17 +405,17 @@
                                         <tr>
                                             <td>Pengawas 1</td>
                                             <td>:</td>
-                                            <td>{{ $pengawas['1']->user->orang->NamaLengkap ?: '-' }}</td>
+                                            <td>{{ $pengawas['1'] ? $pengawas['1']->user->orang->NamaLengkap ?: '-' : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 2</td>
                                             <td>:</td>
-                                            <td>{{ $pengawas['2']->user->orang->NamaLengkap ?: '-' }}</td>
+                                            <td>{{ $pengawas['2'] ? $pengawas['2']->user->orang->NamaLengkap ?: '-' : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 3</td>
                                             <td>:</td>
-                                            <td>{{ $pengawas['3']->user->orang->NamaLengkap ?: '-' }}</td>
+                                            <td>{{ $pengawas['3'] ? $pengawas['3']->user->orang->NamaLengkap ?: '-' : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Penanggung Jawab Unit Usaha</td>

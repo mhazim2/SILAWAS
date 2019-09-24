@@ -55,6 +55,8 @@ class Checklists2Controller extends Controller
             ]);
             if (isset($request['wilayahPeredaran'])) {
                 $request['wilayahPeredaran'] = implode(', ', $request['wilayahPeredaran']);
+            } else {
+                $request['wilayahPeredaran'] = '';
             }
 
             // Save Data in Session
@@ -77,8 +79,27 @@ class Checklists2Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
-            // Save Data in Session
+            // Upload File and Parsing Data
             $data_survey = $request->all();
+            if (!isset($data_survey['check_p1_1'])) $data_survey['check_p1_1'] = '0';
+            if (!isset($data_survey['check_p1_2'])) $data_survey['check_p1_2'] = '0';
+            if (!isset($data_survey['check_p1_3'])) $data_survey['check_p1_3'] = '0';
+            if (!isset($data_survey['check_p1_4'])) $data_survey['check_p1_4'] = '0';
+            if (!isset($data_survey['check_p1_5'])) $data_survey['check_p1_5'] = '0';
+            if (!isset($data_survey['check_p2'])) $data_survey['check_p2'] = '0';
+            if (!isset($data_survey['check_p3'])) $data_survey['check_p3'] = '0';
+            if (!isset($data_survey['check_p4'])) $data_survey['check_p4'] = '0';
+            if (!isset($data_survey['check_p5'])) $data_survey['check_p5'] = '0';
+            if (!isset($data_survey['check_p6'])) $data_survey['check_p6'] = '0';
+            if (!isset($data_survey['check_p7'])) $data_survey['check_p7'] = '0';
+            if (!isset($data_survey['check_p8'])) $data_survey['check_p8'] = '0';
+            if (!isset($data_survey['check_p9'])) $data_survey['check_p9'] = '0';
+            if (!isset($data_survey['check_p10'])) $data_survey['check_p10'] = '0';
+            if (!isset($data_survey['check_p11'])) $data_survey['check_p11'] = '0';
+            if (!isset($data_survey['check_p12'])) $data_survey['check_p12'] = '0';
+            if (!isset($data_survey['check_p13'])) $data_survey['check_p13'] = '0';
+            
+            // Save Data in Session
             session()->put('survey', $data_survey);
             return redirect()->action('Checklists2Controller@catatan');
         }
@@ -94,6 +115,11 @@ class Checklists2Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
+            // Validate and Parsing Data
+            request()->validate([
+                'idPengawas' => 'required',
+            ]);
+            
             // Save Data in Session
             $data_catatan = $request->all();
             session()->put('catatan', $data_catatan);
@@ -124,47 +150,47 @@ class Checklists2Controller extends Controller
             'realisasiPemanfaatan' => $umum['realisasiPemanfaatan'],
             'wilayahPeredaran' => $umum['wilayahPeredaran'],
             'jumlahKaryawan' => $umum['jumlahKaryawan'],
-            'check_p1_1' => $survey['check_p1_1'] ?: '0',
+            'check_p1_1' => $survey['check_p1_1'],
             'P1_1' => $survey['P1_1'],
-            'check_p1_2' => $survey['check_p1_2'] ?: '0',
+            'check_p1_2' => $survey['check_p1_2'],
             'P1_2' => $survey['P1_2'],
-            'check_p1_3' => $survey['check_p1_3'] ?: '0',
+            'check_p1_3' => $survey['check_p1_3'],
             'P1_3' => $survey['P1_3'],
-            'check_p1_4' => $survey['check_p1_4'] ?: '0',
+            'check_p1_4' => $survey['check_p1_4'],
             'P1_4' => $survey['P1_4'],
-            'check_p1_5' => $survey['check_p1_5'] ?: '0',
+            'check_p1_5' => $survey['check_p1_5'],
             'P1_5' => $survey['P1_5'],
-            'check_p2' => $survey['check_p2'] ?: '0',
+            'check_p2' => $survey['check_p2'],
             'P2_1' => $survey['P2_1'],
             'P2_2' => $survey['P2_2'],
             'P2_3' => $survey['P2_3'],
             'P2_4' => $survey['P2_4'],
             'P2_5' => $survey['P2_5'],
-            'check_p3' => $survey['check_p3'] ?: '0',
+            'check_p3' => $survey['check_p3'],
             'P3_1' => $survey['P3_1'],
             'P3_2' => $survey['P3_2'],
             'P3_3' => $survey['P3_3'],
             'P3_4' => $survey['P3_4'],
-            'check_p4' => $survey['check_p4'] ?: '0',
+            'check_p4' => $survey['check_p4'],
             'P4_1' => $survey['P4_1'],
             'P4_2' => $survey['P4_2'],
-            'check_p5' => $survey['check_p5'] ?: '0',
+            'check_p5' => $survey['check_p5'],
             'P5' => $survey['P5'],
-            'check_p6' => $survey['check_p6'] ?: '0',
+            'check_p6' => $survey['check_p6'],
             'P6' => $survey['P6'],
-            'check_p7' => $survey['check_p7'] ?: '0',
+            'check_p7' => $survey['check_p7'],
             'P7' => $survey['P7'],
-            'check_p8' => $survey['check_p8'] ?: '0',
+            'check_p8' => $survey['check_p8'],
             'P8' => $survey['P8'],
-            'check_p9' => $survey['check_p9'] ?: '0',
+            'check_p9' => $survey['check_p9'],
             'P9' => $survey['P9'],
-            'check_p10' => $survey['check_p10'] ?: '0',
+            'check_p10' => $survey['check_p10'],
             'P10' => $survey['P10'],
-            'check_p11' => $survey['check_p11'] ?: '0',
+            'check_p11' => $survey['check_p11'],
             'P11' => $survey['P11'],
-            'check_p12' => $survey['check_p12'] ?: '0',
+            'check_p12' => $survey['check_p12'],
             'P12' => $survey['P12'],
-            'check_p13' => $survey['check_p13'] ?: '0',
+            'check_p13' => $survey['check_p13'],
             'P13' => $survey['P13'],
         ]);
         $input_survey = SurveyUnitUsaha::create([

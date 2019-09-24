@@ -29,11 +29,22 @@
                             <div class="active tab-pane" id="umum">
                                 <form action="{{ route('checklist2.umum') }}" method="POST">
                                     @csrf
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @if(count($errors)>0)
+                                                @foreach($errors->all() as $error)
+                                                    <div class="alert alert-dismissible alert-danger mb-3">
+                                                        {{$error}}
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
-                                                <option disabled selected>-- Pilih --</option>
+                                                <option value="" selected>-- Pilih --</option>
                                                 @foreach($list_uu as $uu)
                                                     <option value="{{ $uu->id }}">{{ $uu->NamaUnitUsaha }} </option>
                                                 @endforeach
@@ -49,7 +60,7 @@
                                         <div class="col-lg-6">
                                             <label for="jenisUnitUsaha">2. Jenis Unit Usaha</label>
                                             <select class="form-control select2" id="jenisUnitUsaha" name="jenisUnitUsaha">
-                                                <option disabled selected>-- Pilih --</option>
+                                                <option value="" selected>-- Pilih --</option>
                                                 <option value="Perorangan">Perorangan</option>
                                                 <option value="Perusahaan">Perusahaan</option>
                                                 <option value="Koperasi">Koperasi</option>

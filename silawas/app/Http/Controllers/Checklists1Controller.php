@@ -233,7 +233,7 @@ class Checklists1Controller extends Controller
     }
 
     // Update Ceklis Data
-    public function update(Request $request,$id){
+    public function update(Request $request, $id){
         Alert::error('Fungsi Update Belum Diimplementasi');
         return redirect()->route('pengawasan.show');
     }

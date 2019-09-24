@@ -123,6 +123,10 @@
                                             <td>{{ $data->form2->kapasitasPenampungan ? $data->form2->kapasitasPenampungan.' liter' : '-' }}</td>
                                         </tr>
                                         <tr>
+                                            <td>Kategori Usaha</td><td>:</td>
+                                            <td>{{ $data->form2->kategoriUsaha ? $data->form2->kategoriUsaha : '-' }}</td>
+                                        </tr>
+                                        <tr>
                                             <td>Realisasi Pemanfaatan Saat Ini</td><td>:</td>
                                             <td>{{ $data->form2->realisasiPemanfaatan ? $data->form2->realisasiPemanfaatan.' liter' : '-' }}</td>
                                         </tr>
@@ -237,13 +241,13 @@
                                                     4. Apakah ada pendataan sumber susu?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! ($data->check_p4) ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! ($data->form2->check_p4) ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! ($data->check_p4) ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! ($data->form2->check_p4) ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->check_p4)
+                                                    @if ($data->form2->check_p4)
                                                         <ul>
                                                             @foreach($supliers as $suplier)
                                                                 <li>

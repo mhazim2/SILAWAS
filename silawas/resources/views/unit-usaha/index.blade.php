@@ -24,21 +24,31 @@
                                 <thead>
                                     <td class="align-middle">No</td>
                                     <td class="align-middle">Nama Unit Usaha</td>
-                                    <td class="align-middle">Alamat</td>
-                                    <td class="align-middle">Email</td>
+                                    <td class="align-middle">Nama Pemilik</td>
                                     <td class="align-middle">Tahun Operasional</td>
-                                    <td class="align-middle">Penanggung Jawab Teknis</td>
+                                    <td class="align-middle">No. Telp</td>
+                                    <td class="align-middle">Email</td>
+                                    <td class="align-middle">Penanggung Jawab</td>
                                     <td class="align-middle">Operasi</td>
                                 </thead>
                                 <tbody>
                                     @foreach ($listunitusaha as $key=>$unitusaha)
                                         <tr>
                                             <td class="text-center">{{ ++$key }}</td>
-                                            <td>{{ $unitusaha->NamaUnitUsaha ? $unitusaha->NamaUnitUsaha : '-' }}</td>
-                                            <td>{{ $unitusaha->AlamatUnitUsaha ? $unitusaha->AlamatUnitUsaha : '-' }}</td>
-                                            <td>{{ $unitusaha->Email ? $unitusaha->Email : '-' }}</td>
-                                            <td>{{ $unitusaha->TahunOperasional ? $unitusaha->TahunOperasional : '-' }}</td>
-                                            <td>{{ $unitusaha->PenangungJawabTeknis ? $unitusaha->PenangungJawabTeknis : '-' }}</td>
+                                            <td>{{ $unitusaha->NamaUnitUsaha ?: '-' }}</td>
+                                            <td>{{ $unitusaha->namaPemilikUsaha ?: '-' }}</td>
+                                            <td>{{ $unitusaha->TahunOperasional ?: '-' }}</td>
+                                            <td>{{ $unitusaha->Telepon ?: '-' }}</td>
+                                            <td>{{ $unitusaha->Email ?: '-' }}</td>
+                                            <td>
+                                                @if ($unitusaha->PenangungJawabTeknis)
+                                                    {{ $unitusaha->PenangungJawabTeknis }}
+                                                @elseif ($unitusaha->pjUnitUsaha)
+                                                    {{ $unitusaha->pjUnitUsaha }}
+                                                @else
+                                                    -
+                                                @endif
+                                            </td>
                                             <td class="text-center text-nowrap">
                                                 <a href="#" data-toggle="modal" data-target="#detailUU-{{ $key }}">
                                                     <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Unit Usaha">
@@ -58,84 +68,129 @@
                                                                 <table class="detail-uu text-left text-wrap">
                                                                     <tr>
                                                                         <td>Nama Unit Usaha</td><td>:</td>
-                                                                        <td>{{ $unitusaha->NamaUnitUsaha ? $unitusaha->NamaUnitUsaha : '-' }}</td>
+                                                                        <td>{{ $unitusaha->NamaUnitUsaha ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Alamat</td><td>:</td>
-                                                                        <td>{{ $unitusaha->AlamatUnitUsaha ? $unitusaha->AlamatUnitUsaha : '-' }}</td>
+                                                                        <td>{{ $unitusaha->AlamatUnitUsaha ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Titik Koordinat Lokasi</td><td>:</td>
-                                                                        <td>{{ $unitusaha->koordinat ? $unitusaha->koordinat : '-' }}</td>
+                                                                        <td>{{ $unitusaha->koordinat ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>No. Telp / Fax / Email</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->telpUU ? $unitusaha->telpUU : '-' }} /
-                                                                            {{ $unitusaha->faxUU ? $unitusaha->faxUU : '-' }} /
-                                                                            {{ $unitusaha->emailUU ? $unitusaha->emailUU : '-' }}
+                                                                            @if ($unitusaha->telpUU && !$unitusaha->faxUU && !$unitusaha->emailUU)
+                                                                                {{ $unitusaha->telpUU.' (Telp)' }}
+                                                                            @elseif (!$unitusaha->telpUU && $unitusaha->faxUU && !$unitusaha->emailUU)
+                                                                                {{ $unitusaha->faxUU.' (Fax)' }}
+                                                                            @elseif (!$unitusaha->telpUU && !$unitusaha->faxUU && $unitusaha->emailUU)
+                                                                                {{ $unitusaha->emailUU.' (Email)' }}
+                                                                            @elseif ($unitusaha->telpUU || $unitusaha->faxUU || $unitusaha->emailUU)
+                                                                                {!! $unitusaha->telpUU ? '<div>'.$unitusaha->Telepon.' (Telp)</div>' : '' !!}
+                                                                                {!! $unitusaha->faxUU ? '<div>'.$unitusaha->faxUU.' (Fax)</div>' : '' !!}
+                                                                                {!! $unitusaha->emailUU ? '<div>'.$unitusaha->emailUU.' (Email)</div>' : '' !!}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td>Tahun Berdiri, Tahun Operasional</td><td>:</td>
+                                                                        <td>Tahun Berdiri</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->TahunBerdiri  ? $unitusaha->TahunBerdiri  : '-' }},
-                                                                            {{ $unitusaha->TahunOperasional  ? $unitusaha->TahunOperasional  : '-' }}
+                                                                            {{ $unitusaha->TahunBerdiri ?: '-' }}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Tahun Operasional</td><td>:</td>
+                                                                        <td>
+                                                                            {{ $unitusaha->TahunOperasional ?: '-' }}
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Status Kepemilikan</td><td>:</td>
-                                                                        <td>{{ $unitusaha->StatusKepemilikan   ? $unitusaha->StatusKepemilikan   : '-' }}</td>
+                                                                        <td>{{ $unitusaha->StatusKepemilikan ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Nama Pemilik Usaha / Nama Kantor Pusat</td><td>:</td>
-                                                                        <td>{{ $unitusaha->namaPemilikUsaha ? $unitusaha->namaPemilikUsaha : '-' }}</td>
+                                                                        <td>{{ $unitusaha->namaPemilikUsaha ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Alamat Kantor Pusat</td><td>:</td>
-                                                                        <td>{{ $unitusaha->AlamatKantorPusat ? $unitusaha->AlamatKantorPusat : '-' }}</td>
+                                                                        <td>{{ $unitusaha->AlamatKantorPusat ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>No. Telp / Fax / Email Kantor Pusat</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->Telepon ? $unitusaha->Telepon : '-' }} /
-                                                                            {{ $unitusaha->Fax ? $unitusaha->Fax : '-' }} /
-                                                                            {{ $unitusaha->Email ? $unitusaha->Email : '-' }}
+                                                                            @if ($unitusaha->Telepon && !$unitusaha->Fax && !$unitusaha->Email)
+                                                                                {{ $unitusaha->Telepon.' (Telp)' }}
+                                                                            @elseif (!$unitusaha->Telepon && $unitusaha->Fax && !$unitusaha->Email)
+                                                                                {{ $unitusaha->Fax.' (Fax)' }}
+                                                                            @elseif (!$unitusaha->Telepon && !$unitusaha->Fax && $unitusaha->Email)
+                                                                                {{ $unitusaha->Email.' (Email)' }}
+                                                                            @elseif ($unitusaha->Telepon || $unitusaha->Fax || $unitusaha->Email)
+                                                                                {!! $unitusaha->Telepon ? '<div>'.$unitusaha->Telepon.' (Telp)</div>' : '' !!}
+                                                                                {!! $unitusaha->Fax ? '<div>'.$unitusaha->Fax.' (Fax)</div>' : '' !!}
+                                                                                {!! $unitusaha->Email ? '<div>'.$unitusaha->Email.' (Email)</div>' : '' !!}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Penanggung Jawab Unit Usaha (No. Telp)</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->pjUnitUsaha ? $unitusaha->pjUnitUsaha : '-' }} 
-                                                                            ({{ $unitusaha->pjUnitUsahaKontak ? $unitusaha->pjUnitUsahaKontak : '-' }})
+                                                                            @if ($unitusaha->pjUnitUsaha)
+                                                                                {{ $unitusaha->pjUnitUsaha }}
+                                                                                {{ $unitusaha->pjUnitUsahaKontak ? '('.$unitusaha->pjUnitUsahaKontak.')' : '' }}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Penanggung Jawab Teknis (No. Telp)</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->PenangungJawabTeknis ? $unitusaha->PenangungJawabTeknis : '-' }} 
-                                                                            ({{ $unitusaha->KontakPJ ? $unitusaha->KontakPJ : '-' }})
+                                                                            @if ($unitusaha->PenangungJawabTeknis)
+                                                                                {{ $unitusaha->PenangungJawabTeknis }}
+                                                                                {{ $unitusaha->KontakPJ ? '('.$unitusaha->KontakPJ.')' : '' }}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Penanggung Jawab Produksi (No. Telp)</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->pjProduksi ? $unitusaha->pjProduksi : '-' }} 
-                                                                            ({{ $unitusaha->pjProduksiKontak ? $unitusaha->pjProduksiKontak : '-' }})
+                                                                            @if ($unitusaha->pjProduksi)
+                                                                                {{ $unitusaha->pjProduksi }}
+                                                                                {{ $unitusaha->pjProduksiKontak ? '('.$unitusaha->pjProduksiKontak.')' : '' }}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Penanggung Jawab Mutu (No. Telp)</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->pjMutu ? $unitusaha->pjMutu : '-' }} 
-                                                                            ({{ $unitusaha->pjMutuKontak ? $unitusaha->pjMutuKontak : '-' }})
+                                                                            @if ($unitusaha->pjMutu)
+                                                                                {{ $unitusaha->pjMutu }}
+                                                                                {{ $unitusaha->pjMutuKontak ? '('.$unitusaha->pjMutuKontak.')' : '' }}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Penanggung Jawab Higiene (No. Telp)</td><td>:</td>
                                                                         <td>
-                                                                            {{ $unitusaha->pjHigiene ? $unitusaha->pjHigiene : '-' }} 
-                                                                            ({{ $unitusaha->pjHigieneKontak ? $unitusaha->pjHigieneKontak : '-' }})
+                                                                            @if ($unitusaha->pjHigiene)
+                                                                                {{ $unitusaha->pjHigiene }}
+                                                                                {{ $unitusaha->pjHigieneKontak ? '('.$unitusaha->pjHigieneKontak.')' : '' }}
+                                                                            @else
+                                                                                -
+                                                                            @endif
                                                                         </td>
                                                                     </tr>
                                                                 </table>
@@ -490,6 +545,9 @@
                                             "ordering": true,
                                             "info": true,
                                             "autoWidth": false,
+                                            "language": {
+                                                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                                            }
                                         });
                                     });
                                 </script>

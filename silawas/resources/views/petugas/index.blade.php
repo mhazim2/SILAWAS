@@ -25,10 +25,8 @@
                                     <td>No</td>
                                     <td>Nama Petugas</td>
                                     <td>NIP</td>
-                                    <td>Nomor Registrasi</td>
                                     <td>Jabatan</td>
                                     <td>Unit Kerja</td>
-                                    <td>Alamat Kantor</td>
                                     <td>No. Telp</td>
                                     <td>Email</td>
                                     <td>Operasi</td>
@@ -37,14 +35,12 @@
                                     @foreach ($listpetugas as $key=>$petugas)
                                         <tr>
                                             <td class="text-center">{{ ++$key }}</td>
-                                            <td>{{ $petugas->NamaLengkap ? $petugas->NamaLengkap : '-' }}</td>
-                                            <td>{{ $petugas->PNS_idPegawai ? $petugas->PNS_idPegawai : '-' }}</td>
-                                            <td>{{ $petugas->NoRegistrasi ? $petugas->NoRegistrasi : '-' }}</td>
-                                            <td>{{ $petugas->jabatan ? $petugas->jabatan : '-' }}</td>
-                                            <td>{{ $petugas->unitKerja ? $petugas->unitKerja : '-' }}</td>
-                                            <td>{{ $petugas->alamatKantor ? $petugas->alamatKantor : '-' }}</td>
-                                            <td>{{ $petugas->NomorHandphone ? $petugas->NomorHandphone : '-' }}</td>
-                                            <td>{{ $petugas->email ? $petugas->email : '-' }}</td>
+                                            <td>{{ $petugas->NamaLengkap ?: '-' }}</td>
+                                            <td>{{ $petugas->PNS_idPegawai ?: '-' }}</td>
+                                            <td>{{ $petugas->jabatan ?: '-' }}</td>
+                                            <td>{{ $petugas->unitKerja ?: '-' }}</td>
+                                            <td>{{ $petugas->NomorHandphone ?: '-' }}</td>
+                                            <td>{{ $petugas->email ?: '-' }}</td>
                                             <td class="text-center text-nowrap">
                                                 <a href="#" data-toggle="modal" data-target="#detailPetugas-{{ $key }}">
                                                     <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Petugas">
@@ -64,39 +60,39 @@
                                                                 <table class="detail-petugas text-left text-wrap">
                                                                     <tr>
                                                                         <td>Nama Petugas</td><td>:</td>
-                                                                        <td>{{ $petugas->NamaLengkap ? $petugas->NamaLengkap : '-' }}</td>
+                                                                        <td>{{ $petugas->NamaLengkap ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Nomor SK</td><td>:</td>
-                                                                        <td>{{ $petugas->NoSK ? $petugas->NoSK : '-' }}</td>
+                                                                        <td>{{ $petugas->NoSK ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>NIP</td><td>:</td>
-                                                                        <td>{{ $petugas->PNS_idPegawai ? $petugas->PNS_idPegawai : '-' }}</td>
+                                                                        <td>{{ $petugas->PNS_idPegawai ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Nomor Registrasi</td><td>:</td>
-                                                                        <td>{{ $petugas->NoRegistrasi ? $petugas->NoRegistrasi : '-' }}</td>
+                                                                        <td>{{ $petugas->NoRegistrasi ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Jabatan</td><td>:</td>
-                                                                        <td>{{ $petugas->jabatan ? $petugas->jabatan : '-' }}</td>
+                                                                        <td>{{ $petugas->jabatan ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Unit Kerja</td><td>:</td>
-                                                                        <td>{{ $petugas->unitKerja ? $petugas->unitKerja : '-' }}</td>
+                                                                        <td>{{ $petugas->unitKerja ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Alamat Kantor</td><td>:</td>
-                                                                        <td>{{ $petugas->alamatKantor ? $petugas->alamatKantor : '-' }}</td>
+                                                                        <td>{{ $petugas->alamatKantor ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>No. Telp Petugas</td><td>:</td>
-                                                                        <td>{{ $petugas->NomorHandphone ? $petugas->NomorHandphone : '-' }}</td>
+                                                                        <td>{{ $petugas->NomorHandphone ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Email Petugas</td><td>:</td>
-                                                                        <td>{{ $petugas->email ? $petugas->email : '-' }}</td>
+                                                                        <td>{{ $petugas->email ?: '-' }}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Status Petugas</td><td>:</td>
@@ -104,7 +100,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Wilayah Kerja / Kewenangan</td><td>:</td>
-                                                                        <td>{{ $petugas->Nama ? $petugas->Nama : '-' }}</td>
+                                                                        <td>{{ $petugas->Nama ?: '-' }}</td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -219,6 +215,9 @@
                                             "ordering": true,
                                             "info": true,
                                             "autoWidth": false,
+                                            "language": {
+                                                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                                            }
                                         });
                                     });
                                 </script>

@@ -109,6 +109,9 @@
                                             "ordering": true,
                                             "info": true,
                                             "autoWidth": false,
+                                            "language": {
+                                                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Indonesian.json"
+                                            }
                                         });
                                     });
                                 </script>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Pengawasan Tempat Penampungan Susu')
+@section('title', 'Ceklis Pengawasan Tempat Pengepul Telur')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Pengawasan Tempat Penampungan Susu</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengawasan Tempat Pengepul Telur</h1>
                     </div>
                 </div>
             </div>
@@ -20,14 +20,14 @@
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
                             <li class="nav-item"><a class="nav-link active" href="#umum" data-toggle="tab">A. Informasi Umum</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist2.survey') }}">B. Survey</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist2.catatan') }}">C. Catatan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist4.survey') }}">B. Survey</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist4.catatan') }}">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="umum">
-                                <form action="{{ route('checklist2.umum') }}" method="POST">
+                                <form action="{{ route('checklist4.umum') }}" method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-12">
@@ -57,25 +57,14 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-3">
-                                            <label for="jenisUnitUsaha">2. Jenis Unit Usaha</label>
-                                            <select class="form-control select2" id="jenisUnitUsaha" name="jenisUnitUsaha">
-                                                <option value="" selected>-- Pilih --</option>
-                                                <option value="Perorangan">Perorangan</option>
-                                                <option value="Perusahaan">Perusahaan</option>
-                                                <option value="Koperasi">Koperasi</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="row form-group mb-5">
                                         <div class="col-lg-12">
-                                            <label for="kapasitasPenampungan">3. Kapasitas Penampungan</label>
+                                            <label for="kapasitasGudang">2. Kapasitas Gudang</label>
                                             <div class="row">
                                                 <div class="col-lg-3">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="kapasitasPenampungan">
+                                                        <input type="text" class="form-control" name="kapasitasGudang">
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text">liter</span>
+                                                            <span class="input-group-text">MT</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -84,25 +73,54 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-3">
-                                            <label for="kategoriUsaha">4. Kategori Usaha</label>
+                                            <label for="kategoriUsaha">3. Kategori Usaha</label>
                                             <select class="form-control select2" id="kategoriUsaha" name="kategoriUsaha">
                                                 <option value="" selected>-- Pilih --</option>
                                                 <option value="Kecil">Kecil</option>
                                                 <option value="Sedang">Sedang</option>
-                                                <option value="Menengah">Menengah</option>
+                                                <option value="Besar">Besar</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
-                                            <label for="realisasiPemanfaatan">5. Realisasi Pemanfaatan Saat Ini</label>
+                                            <label for="realisasiPemanfaatan">4. Realisasi Pemanfaatan Gudang</label>
                                             <div class="row">
                                                 <div class="col-lg-3">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" name="realisasiPemanfaatan">
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text">liter</span>
+                                                            <span class="input-group-text">MT</span>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-6">
+                                            <label>5. Asal Sumber Bahan Baku</label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-block" onclick="check_sumber_lokal()">
+                                                    <input id="check_sumber_lokal" type="checkbox" name="check_sumber_lokal" value="1">
+                                                    <label class="font-weight-normal" for="check_sumber_lokal">Lokal</label>
+                                                </div>
+                                                <div id="hidden_sumber_lokal" class="bg-kesmavet p-2 mb-5" style="display:none">
+                                                    <div class="form-group">
+                                                        <label>Sumber</label>
+                                                        <input type="text" class="form-control" name="sumber_lokal">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-block" onclick="check_sumber_impor()">
+                                                    <input id="check_sumber_impor" type="checkbox" name="check_sumber_impor" value="1">
+                                                    <label class="font-weight-normal" for="check_sumber_impor">Ex-impor</label>
+                                                </div>
+                                                <div id="hidden_sumber_impor" class="bg-kesmavet p-2 mb-5" style="display:none">
+                                                    <div class="form-group">
+                                                        <label>Sumber</label>
+                                                        <input type="text" class="form-control" name="sumber_impor">
                                                     </div>
                                                 </div>
                                             </div>
@@ -160,6 +178,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist2.js') }}"></script>
+        <script src="{{ asset('js/checklist4.js') }}"></script>
     @endpush
 @endsection

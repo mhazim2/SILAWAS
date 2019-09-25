@@ -41,7 +41,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-5">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option value="" selected>-- Pilih --</option>
@@ -110,7 +110,7 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-4">
                                             <label for="kategoriUsaha">5. Kategori Usaha</label>
                                             <select class="form-control select2" id="kategoriUsaha" name="kategoriUsaha">
                                                 <option value="" selected>-- Pilih --</option>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Checklist 1 Export PDF</title>
+    <title>Checklist 2 Export PDF</title>
     <style>
         body {
             /* padding: 60px 20px;
@@ -66,7 +66,7 @@
         <tr>
             <td colspan="2" align="center">
                 <h3 style="margin-top:0px"><strong>Pengawasan Unit Usaha Produk Hewan </strong></h3>
-                <h3 ><strong>(Tempat Budidaya Hewan Perah dan Pemerahan Susu) </strong></h3>
+                <h3 ><strong>(Tempat Penampungan Susu) </strong></h3>
             </td>
         </tr>
         <tr>
@@ -111,20 +111,12 @@
                         
                     </tr>
                     <tr>
-                        <td>Kapasitas Pemeliharaan</td><td>:</td>
+                        <td>Kapasitas Penampungan</td><td>:</td>
                         
                     </tr>
                     <tr>
-                        <td>Populasi Ternak</td><td>:</td>
+                        <td>Realisasi Pemanfaatan Saat ini</td><td>:</td>
                         
-                    </tr>
-                    <tr>
-                        <td>Kategori usaha</td><td>:</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>Total Produksi Susu</td><td>:</td>
-                       
                     </tr>
                     <tr>
                         <td>Wilayah Peredaran</td><td>:</td>
@@ -175,7 +167,7 @@
                     </tr>
                     <tr>
                         <td>
-                            2.	Apakah lalu lintas hewan (masuk dan keluar peternakan) dilengkapi dengan Sertifikat Veteriner?
+                            2.	Apakah sudah memiliki sertifikat NKV?
                         </td>
                         <td align="center">
                             <br> 
@@ -192,7 +184,7 @@
                     </tr>
                     <tr>
                         <td>
-                            3.	Apakah ada dokter hewan penanggung jawab teknis? 
+                            3.	Apakah sudah memiliki sertifikat halal?
                         </td>
                         <td align="center">
                             
@@ -209,7 +201,7 @@
                     </tr>
                     <tr>
                         <td>
-                            4.	Apakah pemberian pengobatan di bawah pengawasan dokter hewan?
+                            4.	Apakah ada pendataan sumber susu?
                         </td>
                         <td align="center">
                            
@@ -226,7 +218,7 @@
                     </tr>
                     <tr>
                         <td>
-                            5.	Apakah sudah memiliki sertifikat NKV?
+                            5.	Apakah area penampungan didesain untuk mencegah/ membatasi  akses masuk hewan atau manusia dari luar?
                         </td>
                         <td align="center">
                            
@@ -243,7 +235,7 @@
                     </tr>
                     <tr>
                         <td>
-                            6.	Apakah area peternakan dirancang untuk mencegah/membatasi akses masuk hewan atau manusia dari luar?
+                            6.	Apakah sarana dan prasarana memenuhi/ memadai sesuai kapasitas penampungan susu?
                         </td>
                         <td align="center">
                             <br> 
@@ -260,7 +252,7 @@
                     </tr>
                     <tr>
                         <td>
-                            7.	Apakah area peternakan memiliki pagar untuk membatasi akses?
+                            7.	Apakah memiliki sarana pendingin untuk penyimpanan susu?
                         </td>
                         <td align="center">
                            
@@ -277,7 +269,7 @@
                     </tr>
                     <tr>
                         <td>
-                            8.	Apakah dilakukan pemisahan hewan baru dan hewan lama?
+                            8.	Apakah ada pemeriksaan/pengujian laboratorium terhadap susu  secara berkala?
                         </td>
                         <td align="center">
                            
@@ -294,7 +286,7 @@
                     </tr>
                     <tr>
                         <td>
-                            9.	Apakah ada kandang isolasi untuk hewan yang sakit?
+                            9.	Apakah instrumen uji dikalibrasi secara berkala?
                         </td>
                         <td align="center">
                            
@@ -312,7 +304,7 @@
                    
                     <tr>
                         <td>
-                            10.	Apakah sarana dan prasarana pemeliharaan memenuhi/ memadai sesuai jumlah ternak?
+                            10.	Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
                         </td>
                         <td align="center">
                         
@@ -343,10 +335,7 @@
                         
                         <tr>
                             <td>
-                                11.	Apakah sarana dan prasarana  memenuhi/ memadai :
-                                <div>a)	pemerahan,</div>
-                                <div>b)	penyimpanan,</div>
-                                <div>c) pengangkutan/pengiriman susu </div>
+                                11.	Apakah sarana dan prasarana higiene personal memadai?
                             </td>
                             <td align="center">
                                
@@ -364,7 +353,7 @@
                         </tr>
                         <tr>
                             <td>
-                                12.	Apakah prosedur pemeliharaan hewan menerapkan prinsip-prinsip kesejahteraan hewan
+                                12.	Apakah dilakukan program pengendalian hama dan serangga?
                             </td>
                             <td align="center">
                                
@@ -382,7 +371,7 @@
                         </tr>
                         <tr>
                             <td>
-                                13.	Apakah metode pemerahan memperhatikan kebersihan ambing?
+                                13.	Apakah dilakukan pengolahan limbah?
                             </td>
                             <td align="center">
                                
@@ -397,139 +386,10 @@
                             <td>
                                    
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                14.	Apakah ada penanganan terhadap susu yang berasal dari hewan yang sedang dalam pengobatan dengan menggunakan antibiotik (mastitis dan penyakit lainnya)?
-                            </td>
-                            <td align="center">
-                               
-                            </td>
-                            <td align="center">
-                                <br> 
-                                <br> 
-                                <br> 
-                                <br> 
-                                <br>
-                            </td> 
-                            <td>
-                                    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                15.	Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi):
-                                <div>a)	unit usaha budidaya perah </div>
-                                <br>
-                                <div>b)	unit pemerahan susu</div>
-                            </td>
-                            <td align="center">
-                               
-                            </td>
-                            <td align="center">
-                                <br> 
-                                <br> 
-                                <br> 
-                                <br> 
-                                <br>
-                            </td> 
-                            <td>
-                                    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                16.	Apakah sarana dan prasarana untuk kebersihan personal (higiene) memadai?
-                            </td>
-                            <td align="center">
-                               
-                            </td>
-                            <td align="center">
-                                <br> 
-                                <br> 
-                                <br> 
-                                <br> 
-                                <br>
-                            </td> 
-                            <td>
-                                   
-                            </td>
-                        </tr>
-                        
-                    
+                        </tr>                    
                 </table>
                 </td>
             </tr>
-
-        <tr>
-        <td colspan="2"><h3></h3></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <table class="survey" width="100%" border="1">
-                    <tr>
-                        <td align="center"><strong>Aspek parameter</strong></td>
-                         <td align="center"><strong>Ya</strong></td>
-                        <td align="center"><strong>Tidak</strong></td>
-                        <td align="center"><strong>Keterangan</strong></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            17.	Apakah dilakukan program pengendalian hama dan serangga?
-                        </td>
-                        <td align="center">
-                           
-                        </td>
-                        <td align="center">
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br>
-                        </td> 
-                        <td>
-                                
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            18.	Apakah ada prosedur penanganan terhadap hewan yang sakit/mati?
-                        </td>
-                        <td align="center">
-                            
-                        </td>
-                        <td align="center">
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br>
-                        </td> 
-                        <td>
-                                
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>
-                            19.	Apakah dilakukan pengolahan limbah?
-                        </td>
-                        <td align="center">
-                            
-                        </td>
-                        <td align="center">
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br> 
-                            <br>
-                        </td> 
-                        <td>
-                                
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
         <tr>
             <td colspan="2">
                 <table class="catatan" width="100%" border="1">

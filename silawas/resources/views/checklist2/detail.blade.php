@@ -27,7 +27,7 @@
                                 <i class="fas fa-file-download mr-1"></i> Ekspor
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Ceklis Kosong</a>
+                                <a class="dropdown-item" href="/export/blank/formulir2/{{ $data->id }}">Ceklis Kosong</a>
                                 <a class="dropdown-item" href="/export/formulir2/{{ $data->id }}">Ceklis Hasil Survey</a>
                                 <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
                             </div>
@@ -121,10 +121,6 @@
                                         <tr>
                                             <td>Kapasitas Penampungan</td><td>:</td>
                                             <td>{{ $data->form2->kapasitasPenampungan ? $data->form2->kapasitasPenampungan.' liter' : '-' }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kategori Usaha</td><td>:</td>
-                                            <td>{{ $data->form2->kategoriUsaha ? $data->form2->kategoriUsaha : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Realisasi Pemanfaatan Saat Ini</td><td>:</td>

@@ -8,6 +8,7 @@ use App\UnitUsaha;
 use App\PengawasKesmavet;
 use App\SurveyUnitUsaha;
 use App\Form2;
+use App\SuplierProduk;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -32,10 +33,17 @@ class Checklists2Controller extends Controller
             '2' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas2)->first(),
             '3' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas3)->first()
         ];
+        $supliers = DB::table('surveyunitusaha')
+        ->join('form2','surveyunitusaha.idform2', '=', 'form2.id')
+        ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+        ->where('surveyunitusaha.id', '=', $survey->id)
+        ->select('suplierproduk.*')
+        ->get();
         
         return view('checklist2.detail', [
             'data' => $survey,
             'pengawas' => $pengawas,
+            'supliers' => $supliers,
         ]);
     }
     
@@ -45,7 +53,8 @@ class Checklists2Controller extends Controller
         // POST Request
         $method = $request->method();
         if ($request->isMethod('post')) 
-        {
+        {   
+           
             // Validate and Parsing Data
             request()->validate([
                 'idUnitUsaha' => 'required',
@@ -79,6 +88,7 @@ class Checklists2Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
+            
             // Parsing Data
             $data_survey = $request->all();
             if (!isset($data_survey['check_p1_1'])) $data_survey['check_p1_1'] = '0';
@@ -205,12 +215,16 @@ class Checklists2Controller extends Controller
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
         ]);
         // Input ke Tabel Suplier
-        // ===========================
-        // jumlah : $survey['P4_1']
-        // nama : $survey['P4_1_1']
-        // tanggal : $survey['P4_1_2']
-        // jumlah : $survey['P4_1_3']
-        // ===========================
+        if (isset($survey['P4_1'])){
+            for($i=0;$i<$survey['P4_1'];$i++){
+                SuplierProduk::create([
+                'namaSuplier'=>$survey['P4_1_1'][$i],
+                'tanggal'=>$survey['P4_1_2'][$i],
+                'jumlah'=>$survey['P4_1_3'][$i],
+                'surveyUnitUsaha_idsurveyUnitusaha'=>$input_survey->id,
+              ]);
+            }
+        };
         
         // Redirect to Pengawasan Index
         Alert::success('Ceklis Berhasil Disimpan');

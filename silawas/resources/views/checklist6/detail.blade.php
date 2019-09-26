@@ -715,7 +715,7 @@
                                                 </td>
                                                 <td>
                                                     @if ($data->b31)
-                                                        <B>Tujuan distribusi:</b> {{ $data->b31 }}
+                                                        <b>Tujuan distribusi:</b> {{ $data->b31 }}
                                                         <ol>
                                                             @foreach($list_distribusi as $penerima)
                                                                 <li>{{ $penerima->JenisProduk }}, {{ $penerima->JumlahProduk }} Ton, distribusi ke {{ $penerima->NamaPenerima }}, {{ $penerima->AlamatPenerima }}</li>

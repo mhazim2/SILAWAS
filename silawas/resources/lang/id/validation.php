@@ -147,7 +147,16 @@ return [
 
     'attributes' => [
         'idUnitUsaha' => 'nama unit usaha',
-        'idPengawas' => 'dokter hewan pengawas'
+        'idPengawas' => 'dokter hewan pengawas',
+        'karyawanProdL' => 'jumlah karyawan produksi laki-laki',
+        'karyawanProdP' => 'jumlah karyawan produksi perempuan',
+        'karyawanAdmL' => 'jumlah karyawan Administrasi laki-laki',
+        'karyawanAdmP' => 'jumlah karyawan Administrasi perempuan',
+        'karyawanAMPM' => 'jumlah petugas AMPM',
+        'karyawanAWO' => 'jumlah petugas AWO',
+        'karyawanHalal' => 'jumlah juru sembelih halal',
+        'karyawanButcher' => 'jumlah butcher',
+        'karyawanStunning' => 'jumlah operator stunning',
     ],
 
 ];

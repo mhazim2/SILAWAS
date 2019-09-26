@@ -214,7 +214,7 @@
                                                 Sertifikat Veteriner?
                                             </label>
                                             <div class="d-block">
-                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p2()">
+                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p3()">
                                                     <input id="p3_1" type="radio" name="check_p3" value="1">
                                                     <label class="font-weight-normal" for="p3_1">Ya</label>
                                                 </div>

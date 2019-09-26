@@ -7,7 +7,7 @@ use Alert;
 use App\UnitUsaha;
 use App\PengawasKesmavet;
 use App\SurveyUnitUsaha;
-use App\Form2;
+use App\Form3;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
-class Checklists2Controller extends Controller
+class Checklists3Controller extends Controller
 {
     // Must Login
     public function __construct()
@@ -23,23 +23,23 @@ class Checklists2Controller extends Controller
         $this->middleware('auth');
     }
     
-    // Show Detail Data Ceklis 2
+    // Show Detail Data Ceklis 3
     public function detail($id)
     {
-        $survey = SurveyUnitUsaha::with(['unitUsaha', 'form2'])->where('id', $id)->firstOrFail();
+        $survey = SurveyUnitUsaha::with(['unitUsaha', 'form3'])->where('id', $id)->firstOrFail();
         $pengawas = [
             '1' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas)->first(),
             '2' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas2)->first(),
             '3' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas3)->first()
         ];
         
-        return view('checklist2.detail', [
+        return view('checklist3.detail', [
             'data' => $survey,
             'pengawas' => $pengawas,
         ]);
     }
     
-    // Open Tab Informasi Umum in Ceklis 2
+    // Open Tab Informasi Umum in Ceklis 3
     public function umum(Request $request)
     {
         // POST Request
@@ -49,9 +49,13 @@ class Checklists2Controller extends Controller
             // Validate and Parsing Data
             request()->validate([
                 'idUnitUsaha' => 'required',
-                'kapasitasPenampungan'=> 'nullable|numeric',
+                'kapasitasPemeliharaan'=> 'nullable|numeric',
+                'jumlahPopulasi'=> 'nullable|numeric',
+                'produksiTelurPerHari'=> 'nullable|numeric',
+                'produksiTelurPerBulan'=> 'nullable|numeric',
+                'kapasitasGudangTelur'=> 'nullable|numeric',
                 'realisasiPemanfaatan'=> 'nullable|numeric',
-                'jumlahKaryawan'=> 'nullable|numeric',
+                'jumlahSDM'=> 'nullable|numeric',
             ]);
             if (isset($request['wilayahPeredaran'])) {
                 $request['wilayahPeredaran'] = implode(', ', $request['wilayahPeredaran']);
@@ -62,17 +66,17 @@ class Checklists2Controller extends Controller
             // Save Data in Session
             $data_umum = $request->all();
             session()->put('umum', $data_umum);
-            return redirect()->action('Checklists2Controller@survey');
+            return redirect()->action('Checklists3Controller@survey');
         }
 
         // GET Request
         $list_uu = UnitUsaha::all();
-        return view('checklist2.umum', [
+        return view('checklist3.umum', [
             'list_uu' => $list_uu
         ]);
     }
 
-    // Open Tab Survey in Ceklis 2
+    // Open Tab Survey in Ceklis 3
     public function survey(Request $request)
     {
         // POST Request
@@ -98,17 +102,26 @@ class Checklists2Controller extends Controller
             if (!isset($data_survey['check_p11'])) $data_survey['check_p11'] = '0';
             if (!isset($data_survey['check_p12'])) $data_survey['check_p12'] = '0';
             if (!isset($data_survey['check_p13'])) $data_survey['check_p13'] = '0';
+            if (!isset($data_survey['check_p14'])) $data_survey['check_p14'] = '0';
+            if (!isset($data_survey['check_p15'])) $data_survey['check_p15'] = '0';
+            if (!isset($data_survey['check_p16'])) $data_survey['check_p16'] = '0';
+            if (!isset($data_survey['check_p17'])) $data_survey['check_p17'] = '0';
+            if (!isset($data_survey['check_p18'])) $data_survey['check_p18'] = '0';
+            if (!isset($data_survey['check_p19'])) $data_survey['check_p19'] = '0';
+            if (!isset($data_survey['check_p20'])) $data_survey['check_p20'] = '0';
+            if (!isset($data_survey['check_p21'])) $data_survey['check_p21'] = '0';
+            if (!isset($data_survey['check_p22'])) $data_survey['check_p22'] = '0';
             
             // Save Data in Session
             session()->put('survey', $data_survey);
-            return redirect()->action('Checklists2Controller@catatan');
+            return redirect()->action('Checklists3Controller@catatan');
         }
 
         // GET Request
-        return view('checklist2.survey');
+        return view('checklist3.survey');
     }
 
-    // Open Tab Catatan in Ceklis 2
+    // Open Tab Catatan in Ceklis 3
     public function catatan(Request $request)
     {   
         // POST Request
@@ -123,13 +136,13 @@ class Checklists2Controller extends Controller
             // Save Data in Session
             $data_catatan = $request->all();
             session()->put('catatan', $data_catatan);
-            return redirect()->action('Checklists2Controller@store');
+            return redirect()->action('Checklists3Controller@store');
         }
 
         // GET Request
         $list_dokter = PengawasKesmavet::with(['user', 'user.orang'])->where('isDokter', '=', 1)->get();
         $list_pengawas = PengawasKesmavet::with(['user', 'user.orang'])->get();
-        return view('checklist2.catatan', [
+        return view('checklist3.catatan', [
             'list_dokter' => $list_dokter,
             'list_pengawas' => $list_pengawas
         ]);
@@ -144,13 +157,17 @@ class Checklists2Controller extends Controller
         $catatan = session('catatan');
 
         // Insert to Database
-        $input_ceklis = Form2::create([
+        $input_ceklis = Form3::create([
             'jenisUnitUsaha' => $umum['jenisUnitUsaha'],
-            'kapasitasPenampungan' => $umum['kapasitasPenampungan'],
+            'kapasitasPemeliharaan' => $umum['kapasitasPemeliharaan'],
+            'jumlahPopulasi' => $umum['jumlahPopulasi'],
+            'produksiTelurPerHari' => $umum['produksiTelurPerHari'],
+            'produksiTelurPerBulan' => $umum['produksiTelurPerBulan'],
             'kategoriUsaha' => $umum['kategoriUsaha'],
+            'kapasitasGudangTelur' => $umum['kapasitasGudangTelur'],
             'realisasiPemanfaatan' => $umum['realisasiPemanfaatan'],
             'wilayahPeredaran' => $umum['wilayahPeredaran'],
-            'jumlahKaryawan' => $umum['jumlahKaryawan'],
+            'jumlahSDM' => $umum['jumlahSDM'],
             'check_p1_1' => $survey['check_p1_1'],
             'P1_1' => $survey['P1_1'],
             'check_p1_2' => $survey['check_p1_2'],
@@ -175,10 +192,15 @@ class Checklists2Controller extends Controller
             'check_p4' => $survey['check_p4'],
             'P4_1' => $survey['P4_1'],
             'P4_2' => $survey['P4_2'],
+            'P4_3' => $survey['P4_3'],
+            'P4_4' => $survey['P4_4'],
+            'P4_5' => $survey['P4_5'],
             'check_p5' => $survey['check_p5'],
-            'P5' => $survey['P5'],
+            'P5_1' => $survey['P5_1'],
+            'P5_2' => $survey['P5_2'],
             'check_p6' => $survey['check_p6'],
-            'P6' => $survey['P6'],
+            'P6_1' => $survey['P6_1'],
+            'P6_2' => $survey['P6_2'],
             'check_p7' => $survey['check_p7'],
             'P7' => $survey['P7'],
             'check_p8' => $survey['check_p8'],
@@ -193,10 +215,28 @@ class Checklists2Controller extends Controller
             'P12' => $survey['P12'],
             'check_p13' => $survey['check_p13'],
             'P13' => $survey['P13'],
+            'check_p14' => $survey['check_p14'],
+            'P14' => $survey['P14'],
+            'check_p15' => $survey['check_p15'],
+            'P15' => $survey['P15'],
+            'check_p16' => $survey['check_p16'],
+            'P16' => $survey['P16'],
+            'check_p17' => $survey['check_p17'],
+            'P17' => $survey['P17'],
+            'check_p18' => $survey['check_p18'],
+            'P18' => $survey['P18'],
+            'check_p19' => $survey['check_p19'],
+            'P19' => $survey['P19'],
+            'check_p20' => $survey['check_p20'],
+            'P20' => $survey['P20'],
+            'check_p21' => $survey['check_p21'],
+            'P21' => $survey['P21'],
+            'check_p22' => $survey['check_p22'],
+            'P22' => $survey['P22'],
         ]);
         $input_survey = SurveyUnitUsaha::create([
             'idUnitUsaha' => $umum['idUnitUsaha'],
-            'idForm2' => $input_ceklis->id,
+            'idForm3' => $input_ceklis->id,
             'catatan' => $catatan['catatan'],
             'rekomendasi' => $catatan['rekomendasi'],
             'idPengawas' => $catatan['idPengawas'],
@@ -204,13 +244,6 @@ class Checklists2Controller extends Controller
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
         ]);
-        // Input ke Tabel Suplier
-        // ===========================
-        // jumlah : $survey['P4_1']
-        // nama : $survey['P4_1_1']
-        // tanggal : $survey['P4_1_2']
-        // jumlah : $survey['P4_1_3']
-        // ===========================
         
         // Redirect to Pengawasan Index
         Alert::success('Ceklis Berhasil Disimpan');

@@ -35,11 +35,29 @@ class PengawasansController extends Controller
             if ($form->idForm1) {
                 $listForms[$key]->tipeForm = 'Tempat Budidaya Hewan Perah dan Pemerahan Susu';
             }
+            else if ($form->idForm2) {
+                $listForms[$key]->tipeForm = 'Tempat Penampungan Susu';
+            }
+            else if ($form->idForm3) {
+                $listForms[$key]->tipeForm = 'Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi';
+            }
+            else if ($form->idForm4) {
+                $listForms[$key]->tipeForm = 'Tempat Pengepul Telur';
+            }
+            else if ($form->idForm5) {
+                $listForms[$key]->tipeForm = 'Rumah Potong Hewan Ruminansia';
+            }
             else if ($form->idForm6) {
                 $listForms[$key]->tipeForm = 'Rumah Potong Hewan Unggas';
             }
             else if ($form->idForm7) {
                 $listForms[$key]->tipeForm = 'Rumah Potong Hewan Babi';
+            }
+            else if ($form->idForm8) {
+                $listForms[$key]->tipeForm = 'Tempat Pengolahan Pangan Asal Hewan';
+            }
+            else if ($form->idForm9) {
+                $listForms[$key]->tipeForm = 'Tempat Produksi Produk Hewan Non Pangan';
             }
             else if ($form->idForm10) {
                 $listForms[$key]->tipeForm = 'Gudang Penyimpanan Dingin/Beku';

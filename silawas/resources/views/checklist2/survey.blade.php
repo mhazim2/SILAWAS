@@ -29,6 +29,17 @@
                             <div class="active tab-pane" id="survey">
                                 <form action="{{ route('checklist2.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
                                     @csrf
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @if(count($errors)>0)
+                                                @foreach($errors->all() as $error)
+                                                    <div class="alert alert-dismissible alert-danger mb-3">
+                                                        {{$error}}
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
@@ -212,24 +223,26 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p3_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-4">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label>Nomor Sertifikat</label>
                                                             <input type="text" class="form-control" name="P3_1">
                                                             <small class="form-text"><b>Contoh:</b> 99999999999999</small>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label>Tanggal Sertifikat</label>
                                                             <input type="text" class="form-control" name="P3_2">
                                                             <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4">
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label>Masa Berlaku</label>
                                                             <div class="input-group mb-3">

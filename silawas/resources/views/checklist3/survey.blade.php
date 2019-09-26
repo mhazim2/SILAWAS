@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Pengawasan Tempat Budidaya Hewan Perah dan Pemerahan Susu')
+@section('title', 'Ceklis Pengawasan Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Pengawasan Tempat Budidaya Hewan Perah dan Pemerahan Susu</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengawasan Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi</h1>
                     </div>
                 </div>
             </div>
@@ -19,15 +19,15 @@
                 <div class="card checklist">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist1.umum') }}">A. Informasi Umum</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist3.umum') }}">A. Informasi Umum</a></li>
                             <li class="nav-item"><a class="nav-link active" href="#survey" data-toggle="tab">B. Survey</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist1.catatan') }}">C. Catatan</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('checklist3.catatan') }}">C. Catatan</a></li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="survey">
-                                <form action="{{ route('checklist1.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
+                                <form action="{{ route('checklist3.survey') }}" method="POST" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-12">
@@ -153,8 +153,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                2. Apakah lalu lintas hewan (masuk dan keluar peternakan) dilengkapi 
-                                                dengan Sertifikat Veteriner?
+                                                2. Apakah sudah memiliki sertifikat NKV?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p2()">
@@ -167,19 +166,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p2_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label>Nomor</label>
+                                                            <input type="text" class="form-control" name="P2_1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P2_2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group">
+                                                            <label>Tanggal Surveilans Terakhir</label>
+                                                            <input type="text" class="form-control" name="P2_3">
+                                                        </div>
+                                                    </div>
                                                     <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
-                                                            <label>Scan Sertifikat Veteriner</label>
-                                                            <div class="input-group">
-                                                                <div class="custom-file">
-                                                                    <input type="file" id="p2_1_file" name="P2" class="custom-file-input">
-                                                                    <label id="p2_1_label" class="custom-file-label" for="file">Pilih file...</label>
-                                                                </div>
-                                                            </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                        <div class="form-group">
+                                                            <label>Tindak Lanjut Temuan</label>
+                                                            <textarea class="form-control" rows="2" name="P2_4"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -189,7 +200,7 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P2"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P2_5"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -199,7 +210,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                3. Apakah ada dokter hewan penanggung jawab teknis?
+                                                3. Apakah sudah memiliki sertifikat kompartemen?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p3()">
@@ -212,13 +223,44 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p3" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p3_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Nomor Sertifikat</label>
+                                                            <input type="text" class="form-control" name="P3_1">
+                                                            <small class="form-text"><b>Contoh:</b> 99999999999999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Tanggal Sertifikat</label>
+                                                            <input type="text" class="form-control" name="P3_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Masa Berlaku</label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="text" class="form-control" name="P3_3">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">tahun</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p3_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P3"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P3_4"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -228,7 +270,8 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                4. Apakah pemberian pengobatan di bawah pengawasan dokter hewan?
+                                                4. Apakah sudah memiliki sertifikat produk telur (bebas salmonella, bebas residu 
+                                                antibiotik, dll)?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p4()">
@@ -241,13 +284,52 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p4" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p4_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Nomor Sertifikat</label>
+                                                            <input type="text" class="form-control" name="P4_1">
+                                                            <small class="form-text"><b>Contoh:</b> 99999999999999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Tanggal Sertifikat</label>
+                                                            <input type="text" class="form-control" name="P4_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Masa Berlaku</label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="text" class="form-control" name="P4_3">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">tahun</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>Lembaga Sertifikasi</label>
+                                                            <input type="text" class="form-control" name="P4_4">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p4_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P4"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P4_5"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -257,7 +339,9 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                5. Apakah sudah memiliki sertifikat NKV?
+                                                5. Jika perusahaan menyatakan produknya bebas salmonella, residu antibiotik, dll, 
+                                                Apakah ada pemeriksaan/pengujian laboratorium terakreditasi secara berkala terhadap 
+                                                telur?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p5()">
@@ -270,31 +354,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-6">
                                             <div id="hidden_p5_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <div class="form-group">
-                                                            <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P5_1">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="form-group">
-                                                            <label>Tanggal Penerbitan</label>
-                                                            <input type="text" class="form-control" name="P5_2">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <div class="form-group">
-                                                            <label>Tanggal Surveilans Terakhir</label>
-                                                            <input type="text" class="form-control" name="P5_3">
-                                                        </div>
-                                                    </div>
                                                     <div class="col-lg-12">
                                                         <div class="form-group">
-                                                            <label>Tindak Lanjut Temuan</label>
-                                                            <textarea class="form-control" rows="2" name="P5_4"></textarea>
+                                                            <label>Jangka waktu pengujian berkala</label>
+                                                            <input type="text" class="form-control" name="P5_1">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -304,7 +370,7 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P5_5"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P5_2"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -314,8 +380,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                6. Apakah area peternakan dirancang untuk mencegah/membatasi 
-                                                akses masuk hewan atau manusia dari luar?
+                                                6. Apakah ada dokter hewan penanggung jawab teknis?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p6()">
@@ -329,12 +394,22 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <div id="hidden_p6" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                            <div id="hidden_p6_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group">
+                                                            <label>Status Kepegawaian</label>
+                                                            <input type="text" class="form-control" name="P6_1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p6_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P6"></textarea>
+                                                            <label>Siapa yang bertanggung jawab terhadap kesehatan ternak?</label>
+                                                            <input type="text" class="form-control" name="P6_2">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -344,7 +419,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                7. Apakah area peternakan memiliki pagar untuk membatasi akses?
+                                                7. Apakah pemberian pengobatan di bawah pengawasan dokter hewan?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p7()">
@@ -362,8 +437,8 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P7"></textarea>
+                                                            <label>Siapa yang mengatur pemberian obat?</label>
+                                                            <input type="text" class="form-control" name="P7">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -373,7 +448,8 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                8. Apakah dilakukan pemisahan hewan baru dan hewan lama?
+                                                8. Apakah area peternakan dirancang untuk mencegah/membatasi akses masuk 
+                                                hewan atau manusia dari luar?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p8()">
@@ -402,7 +478,8 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                9. Apakah ada kandang isolasi untuk hewan yang sakit?
+                                                9. Apakah dilakukan prosedur biosekuriti terhadap manusia, kendaraan, dan 
+                                                ternak yang masuk?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p9()">
@@ -431,7 +508,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                10. Apakah sarana dan prasarana pemeliharaan memenuhi/memadai sesuai jumlah ternak?
+                                                10. Apakah terdapat pemisahan antara hewan lama dan hewan baru?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p10()">
@@ -460,8 +537,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                11. Apakah sarana dan prasarana memenuhi/memadai: (pemerahan, penyimpanan, 
-                                                dan pengangukan/pengiriman susu)
+                                                11. Apakah terdapat kandang isolasi untuk unggas sakit?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p11()">
@@ -490,7 +566,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                12. Apakah prosedur pemeliharaan hewan menerapkan prinsip-prinsip kesejahteraan hewan?
+                                                12. Apakah sarana dan prasarana pemeliharaan memenuhi/memadai sesuai kapasitas?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p12()">
@@ -519,7 +595,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                13. Apakah metode pemerahan memperhatikan kebersihan ambing?
+                                                13. Apakah sarana dan prasarana penyimpanan telur memenuhi/memadai?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p13()">
@@ -548,8 +624,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                14. Apakah ada penanganan terhadap susu yang berasal dari hewan yang sedang dalam 
-                                                pengobatan dengan menggunakan antibiotik (mastitis dan penyakit lainnya)?
+                                                14. Apakah prosedur pemeliharaan hewan menerapkan prinsip-prinsip kesejahteraan hewan?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p14()">
@@ -578,8 +653,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                15. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi):
-                                                (unit usaha budidaya perah dan unit pemerahan susu)
+                                                15. Apakah penanganan telur dilakukan dengan baik?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p15()">
@@ -608,7 +682,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                16. Apakah sarana dan prasarana untuk kebersihan personal (higiene) memadai?
+                                                16. Apakah ada penanganan telur afkir/rusak?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p16()">
@@ -637,7 +711,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                17. Apakah dilakukan program pengendalian hama dan serangga?
+                                                17. Apakah telur dicap atau memiliki label/informasi?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p17()">
@@ -666,7 +740,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                18. Apakah ada prosedur penanganan terhadap hewan yang sakit/mati?
+                                                18. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p18()">
@@ -695,7 +769,7 @@
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
                                             <label>
-                                                19. Apakah dilakukan pengolahan limbah?
+                                                19. Apakah sarana dan prasarana untuk higiene personal memadai?
                                             </label>
                                             <div class="d-block">
                                                 <div class="icheck-wisteria d-inline mr-3" onclick="check_p19()">
@@ -721,6 +795,93 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-12">
+                                            <label>
+                                                20. Apakah dilakukan program pengendalian hama dan serangga?
+                                            </label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p20()">
+                                                    <input id="p20_1" type="radio" name="check_p20" value="1">
+                                                    <label class="font-weight-normal" for="p20_1">Ya</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-inline" onclick="check_p20()">
+                                                    <input id="p20_2" type="radio" name="check_p20" value="0">
+                                                    <label class="font-weight-normal" for="p20_2">Tidak</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="hidden_p20" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Keterangan</label>
+                                                            <textarea class="form-control" rows="2" name="P20"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-12">
+                                            <label>
+                                                21. Apakah ada prosedur penanganan terhadap unggas yang mati?
+                                            </label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p21()">
+                                                    <input id="p21_1" type="radio" name="check_p21" value="1">
+                                                    <label class="font-weight-normal" for="p21_1">Ya</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-inline" onclick="check_p21()">
+                                                    <input id="p21_2" type="radio" name="check_p21" value="0">
+                                                    <label class="font-weight-normal" for="p21_2">Tidak</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="hidden_p21" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Keterangan</label>
+                                                            <textarea class="form-control" rows="2" name="P21"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-12">
+                                            <label>
+                                                22. Apakah dilakukan pengolahan limbah?
+                                            </label>
+                                            <div class="d-block">
+                                                <div class="icheck-wisteria d-inline mr-3" onclick="check_p22()">
+                                                    <input id="p22_1" type="radio" name="check_p22" value="1">
+                                                    <label class="font-weight-normal" for="p22_1">Ya</label>
+                                                </div>
+                                                <div class="icheck-wisteria d-inline" onclick="check_p22()">
+                                                    <input id="p22_2" type="radio" name="check_p22" value="0">
+                                                    <label class="font-weight-normal" for="p22_2">Tidak</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="hidden_p22" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Keterangan</label>
+                                                            <textarea class="form-control" rows="2" name="P22"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group mb-5">
                                         <button type="submit" class="btn btn-kesmavet">
                                             Simpan & Lanjutkan
@@ -735,6 +896,6 @@
         </section>
     </div>
     @push('scripts')
-        <script src="{{ asset('js/checklist1.js') }}"></script>
+        <script src="{{ asset('js/checklist3.js') }}"></script>
     @endpush
 @endsection

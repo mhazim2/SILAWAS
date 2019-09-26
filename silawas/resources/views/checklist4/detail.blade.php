@@ -9,7 +9,7 @@
                 <div class="row justify-content-between mb-2">
                     <div class="col-md-8">
                         <h1 class="m-0 text-dark">{{ $data->unitUsaha->NamaUnitUsaha }}</h1>
-                        <small>Ceklis Pengawasan Tempat Penampungan Susu</small>
+                        <small>Ceklis Pengawasan Tempat Pengepul Telur</small>
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">
                         <a href="#" class="d-inline-block" data-toggle="modal" data-target="#upload-pengesahan">
@@ -28,7 +28,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="#">Ceklis Kosong</a>
-                                <a class="dropdown-item" href="/export/formulir2/{{ $data->id }}">Ceklis Hasil Survey</a>
+                                <a class="dropdown-item" href="/export/formulir4/{{ $data->id }}">Ceklis Hasil Survey</a>
                                 <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
@@ -77,10 +77,6 @@
                                 <div class="table-responsive">
                                     <table class="table table-borderless table-sm umum">
                                         <tr>
-                                            <td>Jenis Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->form2->jenisUnitUsaha ?: '-' }}</td>
-                                        </tr>
-                                        <tr>
                                             <td>Nama Unit Usaha</td><td>:</td>
                                             <td>{{ $data->unitUsaha->NamaUnitUsaha ?: '-' }}</td>
                                         </tr>
@@ -119,24 +115,39 @@
                                             <td>{{ $data->unitUsaha->TahunOperasional ?: '-' }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Kapasitas Penampungan</td><td>:</td>
-                                            <td>{{ $data->form2->kapasitasPenampungan ? $data->form2->kapasitasPenampungan.' liter' : '-' }}</td>
+                                            <td>Kapasitas Gudang</td><td>:</td>
+                                            <td>{{ $data->form4->kapasitasGudang ? $data->form4->kapasitasGudang.' MT' : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Kategori Usaha</td><td>:</td>
-                                            <td>{{ $data->form2->kategoriUsaha ? $data->form2->kategoriUsaha : '-' }}</td>
+                                            <td>{{ $data->form4->kategoriUsaha ? $data->form4->kategoriUsaha : '-' }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Realisasi Pemanfaatan Saat Ini</td><td>:</td>
-                                            <td>{{ $data->form2->realisasiPemanfaatan ? $data->form2->realisasiPemanfaatan.' liter' : '-' }}</td>
+                                            <td>Realisasi Pemanfaatan Gudang</td><td>:</td>
+                                            <td>{{ $data->form4->realisasiPemanfaatan ? $data->form4->realisasiPemanfaatan.' MT' : '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Asal Sumber Produk</td><td>:</td>
+                                            <td>
+                                                @if ($data->form4->check_sumber_lokal || $data->form4->check_sumber_impor)
+                                                    @if ($data->form4->check_sumber_lokal)
+                                                        <div>Lokal {{ $data->form4->sumber_lokal ? '( '.$data->form4->sumber_lokal.' )' : '' }}</div>
+                                                    @endif
+                                                    @if ($data->form4->check_sumber_impor)
+                                                        <div>Ex-impor {{ $data->form4->sumber_impor ? '( '.$data->form4->sumber_impor.' )' : '' }}</div>
+                                                    @endif
+                                                @else
+                                                    -
+                                                @endif
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Wilayah Peredaran</td><td>:</td>
-                                            <td>{{ $data->form2->wilayahPeredaran ?: '-' }}</td>
+                                            <td>{{ $data->form4->wilayahPeredaran ?: '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Jumlah Karyawan</td><td>:</td>
-                                            <td>{{ $data->form2->jumlahKaryawan ? $data->form2->jumlahKaryawan.' orang' : '-' }}</td>
+                                            <td>{{ $data->form4->jumlahKaryawan ? $data->form4->jumlahKaryawan.' orang' : '-' }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -167,31 +178,31 @@
                                                 <td class="text-center text-success">
                                                     <br>
                                                     <table class="table table-inner table-borderless table-sm mb-0">
-                                                        <tr><td>{!! $data->form2->check_p1_1 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_1 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td class="text-center text-danger">
                                                     <br>
                                                     <table class="table table-inner table-borderless table-sm mb-0">
-                                                        <tr><td>{!! $data->form2->check_p1_1 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_1 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
+                                                        <tr><td>{!! $data->form4->check_p1_5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td>
                                                     <br>
                                                     <table class="table table-inner table-borderless table-sm mb-0">
-                                                        <tr>{!! $data->form2->P1_1 ? '<td><b>No:</b> '.$data->form2->P1_1.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_2 ? '<td><b>No:</b> '.$data->form2->P1_2.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_3 ? '<td><b>No:</b> '.$data->form2->P1_3.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_4 ? '<td><b>No:</b> '.$data->form2->P1_4.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_5 ? '<td><b>No:</b> '.$data->form2->P1_5.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form4->P1_1 ? '<td><b>No:</b> '.$data->form4->P1_1.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form4->P1_2 ? '<td><b>No:</b> '.$data->form4->P1_2.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form4->P1_3 ? '<td><b>No:</b> '.$data->form4->P1_3.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form4->P1_4 ? '<td><b>No:</b> '.$data->form4->P1_4.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form4->P1_5 ? '<td><b>No:</b> '.$data->form4->P1_5.'</td>' : '<td>-</td>' !!}</tr>
                                                     </table>
                                                 </td>
                                             </tr>
@@ -200,137 +211,129 @@
                                                     2. Apakah sudah memiliki sertifikat NKV?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->form2->check_p2)
-                                                        <div><b>No:</b> {{ $data->form2->P2_1 ?: '-' }}</div>
-                                                        <div><b>Tanggal Penerbitan:</b> {{ $data->form2->P2_2 ?: '-' }}</div>
-                                                        <div><b>Surveilans terakhir:</b> {{ $data->form2->P2_3 ?: '-' }}</div>
-                                                        <div><b>Tindak lanjut temuan:</b> {{ $data->form2->P2_4 ?: '-' }}</div>
+                                                    @if ($data->form4->check_p2)
+                                                        <div><b>No:</b> {{ $data->form4->P2_1 ?: '-' }}</div>
+                                                        <div><b>Tanggal Penerbitan:</b> {{ $data->form4->P2_2 ?: '-' }}</div>
+                                                        <div><b>Surveilans terakhir:</b> {{ $data->form4->P2_3 ?: '-' }}</div>
+                                                        <div><b>Tindak lanjut temuan:</b> {{ $data->form4->P2_4 ?: '-' }}</div>
                                                     @else
-                                                        {{ $data->form2->P2_5 ?: '-' }}
+                                                        {{ $data->form4->P2_5 ?: '-' }}
                                                     @endif
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    3. Apakah sudah memiliki sertifikat halal?
+                                                    3. Jika telur berasal dari kabupaten/kota/provinsi lain, apakah disertai 
+                                                    Sertifikat Veteriner?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->form2->check_p3)
-                                                        <div><b>No:</b> {{ $data->form2->P3_1 ?: '-' }}</div>
-                                                        <div><b>Tanggal Penerbitan:</b> {{ $data->form2->P3_2 ?: '-' }}</div>
-                                                        <div><b>Masa Berlaku:</b> {{ $data->form2->P3_3 ? $data->form2->P3_3.' tahun' : '-' }}</div>
+                                                    @if ($data->form4->check_p3)
+                                                        <div>
+                                                            <a href="{{ asset($data->form4->P3) }}">
+                                                                <img src="{{ asset($data->form4->P3) }}" alt="Scan Sertifikat Veteriner">
+                                                            </a>
+                                                        </div>
                                                     @else
-                                                        {{ $data->form2->P3_4 ?: '-' }}
+                                                        {{ $data->form4->P3 ?: '-' }}
                                                     @endif
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    4. Apakah ada pendataan sumber susu?
+                                                    4. Jika telur dilalu lintaskan antar provinsi, apakah disertai izin 
+                                                    pengeluaran/pemasukan?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! ($data->form2->check_p4) ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! ($data->form2->check_p4) ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->form2->check_p4)
-                                                        <ul>
-                                                            @foreach($supliers as $suplier)
-                                                                <li>
-                                                                    {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
-                                                                    {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
-                                                                    {{ $suplier->jumlah ? $suplier->jumlah.' liter' : '' }}
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
-                                                    @else
-                                                        {{ $data->form2->P4_2 ?: '-' }}
-                                                    @endif
+                                                    {{ $data->form4->P4 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    5. Apakah area penampungan didesain untuk mencegah/membatasi akses masuk hewan 
+                                                    5. Apakah ada pendataan sumber telur?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form4->check_p5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form4->check_p5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    {{ $data->form4->P5 ?: '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    6. Apakah bangunan didesain untuk mencegah/membatasi akses masuk hewan 
                                                     atau manusia dari luar?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p6 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p6 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P5 ?: '-' }}
+                                                    {{ $data->form4->P6 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    6. Apakah sarana dan prasarana memenuhi/memadai sesuai kapasitas penampungan susu?
+                                                    7. Apakah sarana dan prasarana memenuhi/memadai sesuai kapasitas penampungan telur?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p6 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p7 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p6 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p7 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P6 ?: '-' }}
+                                                    {{ $data->form4->P7 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    7. Apakah memiliki sarana pendingin untuk penyimpanan susu?
+                                                    8. Apakah penanganan telur dilakukan dengan baik?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p7 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p8 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p7 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p8 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P7 ?: '-' }}
+                                                    {{ $data->form4->P8 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    8. Apakah ada pemeriksaan/pengujian laboratorium terhadap susu secara berkala?
+                                                    9. Apakah ada pemisahan telur utuh dengan telur retak/pecah?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p8 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p9 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p8 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p9 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P8 ?: '-' }}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    9. Apakah instrumen uji dikalibrasi secara berkala?
-                                                </td>
-                                                <td class="text-center text-success">
-                                                    {!! $data->form2->check_p9 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
-                                                </td>
-                                                <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p9 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
-                                                </td>
-                                                <td>
-                                                    {{ $data->form2->P9 ?: '-' }}
+                                                    {{ $data->form4->P9 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -338,13 +341,13 @@
                                                     10. Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi)?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p10 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p10 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p10 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p10 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P10 ?: '-' }}
+                                                    {{ $data->form4->P10 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -352,13 +355,13 @@
                                                     11. Apakah sarana dan prasarana higiene personal memadai?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p11 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p11 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p11 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p11 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P11 ?: '-' }}
+                                                    {{ $data->form4->P11 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -366,13 +369,13 @@
                                                     12. Apakah dilakukan program pengendalian hama dan serangga?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p12 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p12 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p12 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p12 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P12 ?: '-' }}
+                                                    {{ $data->form4->P12 ?: '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -380,13 +383,13 @@
                                                     13. Apakah dilakukan pengolahan limbah?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form2->check_p13 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form4->check_p13 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form2->check_p13 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form4->check_p13 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P13 ?: '-' }}
+                                                    {{ $data->form4->P13 ?: '-' }}
                                                 </td>
                                             </tr>
                                         </tbody>

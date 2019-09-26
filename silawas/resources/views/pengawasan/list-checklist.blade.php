@@ -69,7 +69,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/3">
+                                        <a href="{{ route('checklist3.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -81,7 +81,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/4">
+                                        <a href="{{ route('checklist4.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -108,7 +108,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/5">
+                                        <a href="{{ route('checklist5.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -159,7 +159,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/8">
+                                        <a href="{{ route('checklist8.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>
@@ -186,7 +186,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <a href="/pengajuan/formulir/9">
+                                        <a href="{{ route('checklist9.show') }}">
                                             <div class="info-box bg-fuchsia">
                                                 <span class="info-box-icon bg-light">
                                                     <i class="fab fa-wpforms"></i>

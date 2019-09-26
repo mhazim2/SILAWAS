@@ -7,17 +7,21 @@ use App\UnitUsaha;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Form2 extends Model
+class Form4 extends Model
 {
     public $timestamps = false;
     
-    protected $table = 'form2';
+    protected $table = 'form4';
     
     protected $fillable = [
         'jenisUnitUsaha',
-        'kapasitasPenampungan',
+        'kapasitasGudang',
         'kategoriUsaha',
         'realisasiPemanfaatan',
+        'check_sumber_lokal',
+        'sumber_lokal',
+        'check_sumber_impor',
+        'sumber_impor',
         'wilayahPeredaran',
         'jumlahKaryawan',
         'check_p1_1',
@@ -37,13 +41,9 @@ class Form2 extends Model
         'P2_4',
         'P2_5',
         'check_p3',
-        'P3_1',
-        'P3_2',
-        'P3_3',
-        'P3_4',
+        'P3',
         'check_p4',
-        'P4_1',
-        'P4_2',
+        'P4',
         'check_p5',
         'P5',
         'check_p6',
@@ -66,6 +66,6 @@ class Form2 extends Model
 
 	public function surveyUnitUsaha()
 	{
-		return $this->belongsTo('App\SurveyUnitUsaha', 'id', 'idForm2');
+		return $this->belongsTo('App\SurveyUnitUsaha', 'id', 'idForm4');
 	}
 }

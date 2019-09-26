@@ -236,6 +236,7 @@ Route::get('/detail/formulir6/{id}', 'FormsController@getDetailForm6');
 Route::get('/detail/formulir10/{id}', 'FormsController@getDetailForm10');
 
 //export
+Route::get('/export/formulir1/{id}', 'ExportController@cetakForm1');
 Route::get('/export/formulir6/{id}', 'ExportController@cetakForm6');
 Route::get('/export/formulir7/{id}', 'ExportController@cetakForm7');
 Route::get('/export/formulir10/{id}', 'ExportController@cetakForm10');
@@ -244,6 +245,7 @@ Route::get('/export/formulir12/{id}', 'ExportController@cetakForm12');
 Route::get('/export/formulir13/{id}', 'ExportController@cetakForm13');
 
 //export blank
+Route::get('/export/blank/formulir1/{id}', 'ExportController@cetakBlank1');
 Route::get('/export/blank/formulir6/{id}', 'ExportController@cetakBlank6');
 Route::get('/export/blank/formulir7/{id}', 'ExportController@cetakBlank7');
 Route::get('/export/blank/formulir10/{id}', 'ExportController@cetakBlank10');

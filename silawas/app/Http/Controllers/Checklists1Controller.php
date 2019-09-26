@@ -158,7 +158,6 @@ class Checklists1Controller extends Controller
 
         // Insert to Database
         $input_ceklis = Form1::create([
-            'jenisUnitUsaha' => $umum['jenisUnitUsaha'],
             'kapasitasPemeliharaan' => $umum['kapasitasPemeliharaan'],
             'populasiTernak' => $umum['populasiTernak'],
             'kategoriUsaha' => $umum['kategoriUsaha'],

@@ -102,8 +102,7 @@ class Checklists12Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
-            
-
+        
             $data_survey = [
                 'check_p1_niu'=> $request['check_p1_niu'],
                 'P1_1'=> $request['P1_1'],
@@ -192,7 +191,7 @@ class Checklists12Controller extends Controller
                 'kapasitasTempat'=> $umum['kapasitasTempat'],
                 'realisasi'=> $umum['realisasi'],
                 'jumlahKaryawan'=> $umum['jumlahKaryawan'],
-                'check_p1_niu'=> $request['check_p1_niu'],
+                'check_p1_niu'=> $survey['check_p1_niu'],
                 'P1_1'=> $survey['P1_1'],
                 'check_p1_npwp'=> $survey['check_p1_npwp'], 
                 'P1_2'=> $survey['P1_2'],

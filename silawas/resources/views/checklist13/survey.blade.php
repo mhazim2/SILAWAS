@@ -96,48 +96,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-block" onclick="check_p1_nib()">
-                                                    <input id="check_p1_nib" type="checkbox" name="check_p1_nib" value="1">
-                                                    <label class="font-weight-normal" for="check_p1_nib">NIB</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p1_nib" class="bg-kesmavet p-2 mb-5" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group mb-0">
-                                                            <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_4">
-                                                            <small class="form-text"><b>Contoh:</b> 9999999999999</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-block" onclick="check_p1_pks()">
-                                                    <input id="check_p1_pks" type="checkbox" name="check_p1_pks" value="1">
-                                                    <label class="font-weight-normal" for="check_p1_pks">Perjanjian Kerja Sama (jika Sewa Unit Usaha)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p1_pks" class="bg-kesmavet p-2 mb-5" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group mb-0">
-                                                            <label>Nama Perjanjian</label>
-                                                            <input type="text" class="form-control" name="P1_5">
-                                                            <small class="form-text"><b>Contoh:</b> Perjanjian Sewa</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">

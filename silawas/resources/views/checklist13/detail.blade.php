@@ -28,7 +28,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/formulir13/{{ $surveyID }}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/export/blank/formulir13/{{ $surveyID }}">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>
@@ -166,8 +166,6 @@
                                                         <li>Nomor izin usaha</li>
                                                         <li>NPWP</li>
                                                         <li>SIUP</li>
-                                                        <li>NIB</li>
-                                                        <li>Perjanjian Kerja sama (jika Sewa RPH-U)</li>
                                                     </ul>
                                                 </td>
                                                 <td class="text-center text-success">
@@ -176,8 +174,6 @@
                                                         <tr><td>{!! $data->P1_1 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->P1_2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->P1_3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->P1_4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->P1_5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td class="text-center text-danger">
@@ -186,8 +182,6 @@
                                                         <tr><td>{!! $data->P1_1 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->P1_2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->P1_3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->P1_4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->P1_5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td>
@@ -196,8 +190,6 @@
                                                         <tr>{!! $data->P1_1 ? '<td><b>No:</b> '.$data->P1_1.'</td>' : '<td>-</td>' !!}</tr>
                                                         <tr>{!! $data->P1_2 ? '<td><b>No:</b> '.$data->P1_2.'</td>' : '<td>-</td>' !!}</tr>
                                                         <tr>{!! $data->P1_3 ? '<td><b>No:</b> '.$data->P1_3.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->P1_4 ? '<td><b>No:</b> '.$data->P1_4.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->P1_5 ? '<td><b>No:</b> '.$data->P1_5.'</td>' : '<td>-</td>' !!}</tr>
                                                     </table>
                                                 </td>
                                             </tr>
@@ -295,7 +287,7 @@
                                                             @foreach($supliers as $suplier)
                                                                 <li>
                                                                     {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
-                                                                    {{ $suplier->alamat ? $suplier->alamat.', ' : '' }}
+                                                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}
                                                                     {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
                                                                     {{ $suplier->jumlah ? $suplier->jumlah.' Kg' : '' }} 
                                                                 </li>

@@ -7,6 +7,7 @@ use App\UnitUsaha;
 use App\PengawasKesmavet;
 use App\SurveyUnitUsaha;
 use App\Form13;
+use App\SuplierProduk;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -50,6 +51,12 @@ class Checklists13Controller extends Controller
             ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
             ->select('orang.NamaLengkap')
             ->first();
+        $supliers = DB::table('surveyunitusaha')
+            ->join('form13','surveyunitusaha.idform13', '=', 'form13.id')
+            ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('suplierproduk.*')
+            ->get();
 
         return view('checklist13.detail', [
             'data' => $formDetail,
@@ -57,6 +64,7 @@ class Checklists13Controller extends Controller
             'pengawas1' => $pengawas1,
             'pengawas2' => $pengawas2,
             'pengawas3' => $pengawas3,
+            'supliers' => $supliers,
         ]);
     }
 
@@ -66,6 +74,23 @@ class Checklists13Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            request()->validate([
+                'idUnitUsaha' => 'required',
+                'jenisPengolahan'=> 'required',
+                'wilayahPeredaran'=> 'required',
+            ]);
+
+            if( isset($request['jenisPengolahan'])){
+                $request['jenisPengolahan']= implode( ", ", $request['jenisPengolahan'] );
+            }
+
+            if( isset($request['wilayahPeredaran'])){
+                $request['wilayahPeredaran']= implode( ", ", $request['wilayahPeredaran'] );
+            }
+           
+            $temp = $request->all();
+            session()->put('umum', $temp);
+            
             return redirect()->action('Checklists13Controller@survey');
         }
 
@@ -82,6 +107,61 @@ class Checklists13Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            $data_survey = [
+                'check_p1_niu'=> $request['check_p1_niu'],
+                'check_p1_niu' => $request['check_p1_niu'],
+                'P1_1' => $request['P1_1'],
+                'check_p1_npwp' => $request['check_p1_npwp'],
+                'P1_2' => $request['P1_2'],
+                'check_p1_siup' => $request['check_p1_siup'],
+                'P1_3' => $request['P1_3'],
+                'check_p1_nib' => $request['check_p1_nib'],
+                'P1_4' => $request['P1_4'],
+                'check_p1_pks' => $request['check_p1_pks'],
+                'P1_5' => $request['P1_5'],
+                'check_p2' => $request['check_p2'],
+                'P2_1' => $request['P2_1'],
+                'P2_2' => $request['P2_2'],
+                'P2_3' => $request['P2_3'],
+                'P2_4' => $request['P2_4'],
+                'check_p3_1' => $request['check_p3_1'],
+                'P3_1' => $request['P3_1'],
+                'check_p3_2' => $request['check_p3_2'],
+                'P3_2_1' => $request['P3_2_1'],
+                'P3_2_2' => $request['P3_2_2'],
+                'P3_2_3' => $request['P3_2_3'],
+                'P3_2_4' => $request['P3_2_4'],
+                'check_p4' => $request['check_p4'],
+                'P4_1' => $request['P4_1'],
+                'P4_2' => $request['P4_2'],
+                'P4_3' => $request['P4_3'],
+                'check_p5' => $request['check_p5'],
+                'p5_count' => $request['p5_count'],
+                'check_p6' => $request['check_p6'],
+                'P6' => $request['P6'],
+                'check_p7' => $request['check_p7'],
+                'P7_1' => $request['P7_1'],
+                'P7_2' => $request['P7_2'],
+                'check_p8' => $request['check_p8'],
+                'P8_1' => $request['P8_1'],
+                'P8_2' => $request['P8_2'],
+                'check_p9' => $request['check_p9'],
+                'P9_1' => $request['P9_1'],
+                'P9_2' => $request['P9_2'],
+                'check_p10' => $request['check_p10'],
+                'P10_1' => $request['P10_1'],
+                'P10_2' => $request['P10_2'],
+                'P10_3' => $request['P10_3'],
+                'check_p11' => $request['check_p11'],
+                'P11' => $request['P11'],
+                'check_p12' => $request['check_p12'],
+                'P12' => $request['P12'],
+                'P5_1' => $request['P5_1'],
+                'P5_2' => $request['P5_2'],
+                'P5_3' => $request['P5_3'],
+                'P5_4' => $request['P5_4'],
+            ];
+            session()->put('survey', $data_survey);
             return redirect()->action('Checklists13Controller@catatan');
         }
 
@@ -110,10 +190,92 @@ class Checklists13Controller extends Controller
     public function store(Request $request)
     {
         // Get All Data
-        // $umum = session('umum');
-        // $survey = session('survey');
-
+         $umum = session('umum');
+         $survey = session('survey');
+       
         // Insert to Database
+        $formff = Form13::create([
+            'jenisPengolahan'=> $umum['jenisPengolahan'], 
+            'kapasitasProduksi'=> $umum['kapasitasProduksi'], 
+            'realisasi'=> $umum['realisasi'], 
+            'check_sumber_lokal'=> $umum['check_sumber_lokal'], 
+            'sumber_lokal'=> $umum['sumber_lokal'], 
+            'check_sumber_impor'=> $umum['check_sumber_impor'], 
+            'sumber_impor'=> $umum['sumber_impor'], 
+            'wilayahPeredaran'=> $umum['wilayahPeredaran'],
+            'check_p1_niu'=> $survey['check_p1_niu'],
+            'check_p1_niu' => $survey['check_p1_niu'],
+            'P1_1' => $survey['P1_1'],
+            'check_p1_npwp' => $survey['check_p1_npwp'],
+            'P1_2' => $survey['P1_2'],
+            'check_p1_siup' => $survey['check_p1_siup'],
+            'P1_3' => $survey['P1_3'],
+            'check_p1_nib' => $survey['check_p1_nib'],
+            'P1_4' => $survey['P1_4'],
+            'check_p1_pks' => $survey['check_p1_pks'],
+            'P1_5' => $survey['P1_5'],
+            'check_p2' => $survey['check_p2'],
+            'P2_1' => $survey['P2_1'],
+            'P2_2' => $survey['P2_2'],
+            'P2_3' => $survey['P2_3'],
+            'P2_4' => $survey['P2_4'],
+            'check_p3_1' => $survey['check_p3_1'],
+            'P3_1' => $survey['P3_1'],
+            'check_p3_2' => $survey['check_p3_2'],
+            'P3_2_1' => $survey['P3_2_1'],
+            'P3_2_2' => $survey['P3_2_2'],
+            'P3_2_3' => $survey['P3_2_3'],
+            'P3_2_4' => $survey['P3_2_4'],
+            'check_p4' => $survey['check_p4'],
+            'P4_1' => $survey['P4_1'],
+            'P4_2' => $survey['P4_2'],
+            'P4_3' => $survey['P4_3'],
+            'check_p5' => $survey['check_p5'],
+            'p5_count' => $survey['p5_count'],
+            'check_p6' => $survey['check_p6'],
+            'P6' => $survey['P6'],
+            'check_p7' => $survey['check_p7'],
+            'P7_1' => $survey['P7_1'],
+            'P7_2' => $survey['P7_2'],
+            'check_p8' => $survey['check_p8'],
+            'P8_1' => $survey['P8_1'],
+            'P8_2' => $survey['P8_2'],
+            'check_p9' => $survey['check_p9'],
+            'P9_1' => $survey['P9_1'],
+            'P9_2' => $survey['P9_2'],
+            'check_p10' => $survey['check_p10'],
+            'P10_1' => $survey['P10_1'],
+            'P10_2' => $survey['P10_2'],
+            'P10_3' => $survey['P10_3'],
+            'check_p11' => $survey['check_p11'],
+            'P11' => $survey['P11'],
+            'check_p12' => $survey['check_p12'],
+            'P12' => $survey['P12'],
+        ]);
+
+
+    $surveyform = SurveyUnitUsaha::create([
+        'idUnitUsaha'=>$umum['idUnitUsaha'],
+        'idForm13'=> $formff->id,
+        'catatan'=>$request['catatan'],
+        'rekomendasi'=> $request['rekomendasi'],
+        'idPengawas' => $request['idPengawas'],
+        'idPengawas2' => $request['idPengawas2'],
+        'idPengawas3' => $request['idPengawas3'],
+        'pjUnitUsaha' => $request['pjUnitUsaha'],
+    ]);
+
+    if (isset($survey['p5_count'])){
+        for($i=0;$i<$survey['p5_count'];$i++){
+             SuplierProduk::create([
+                'namaSuplier'=>$survey['P5_1'][$i],
+                'negara'=>$survey['P5_2'][$i],
+                'tanggal'=>$survey['P5_3'][$i],
+                'jumlah'=>$survey['P5_4'][$i],
+                'surveyUnitUsaha_idsurveyUnitusaha'=>$surveyform->id,
+            ]);
+        }
+    };              
 
         // Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');

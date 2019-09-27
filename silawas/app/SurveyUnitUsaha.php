@@ -55,8 +55,6 @@ class SurveyUnitUsaha extends Model
     {
         return $this->hasOne('App\Form3', 'id', 'idForm3');
     }
-<<<<<<< HEAD
-=======
 
     public function form4()
     {
@@ -112,5 +110,4 @@ class SurveyUnitUsaha extends Model
     {
         return $this->hasOne('App\Form14', 'id', 'idForm14');
     }
->>>>>>> 8f547f8928f76dbf971c9e953272087accffc0af
 }

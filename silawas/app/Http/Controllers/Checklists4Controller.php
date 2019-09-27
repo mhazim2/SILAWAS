@@ -153,14 +153,13 @@ class Checklists4Controller extends Controller
 
         // Insert to Database
         $input_ceklis = Form4::create([
-            'jenisUnitUsaha' => $umum['jenisUnitUsaha'],
             'kapasitasGudang' => $umum['kapasitasGudang'],
             'kategoriUsaha' => $umum['kategoriUsaha'],
             'realisasiPemanfaatan' => $umum['realisasiPemanfaatan'],
-            'check_sumber_lokal' => $survey['check_sumber_lokal'],
-            'sumber_lokal' => $survey['sumber_lokal'],
-            'check_sumber_impor' => $survey['check_sumber_impor'],
-            'sumber_impor' => $survey['sumber_impor'],
+            'check_sumber_lokal' => $umum['check_sumber_lokal'],
+            'sumber_lokal' => $umum['sumber_lokal'],
+            'check_sumber_impor' => $umum['check_sumber_impor'],
+            'sumber_impor' => $umum['sumber_impor'],
             'wilayahPeredaran' => $umum['wilayahPeredaran'],
             'jumlahKaryawan' => $umum['jumlahKaryawan'],
             'check_p1_1' => $survey['check_p1_1'],

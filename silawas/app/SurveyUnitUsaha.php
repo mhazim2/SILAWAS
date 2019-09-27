@@ -55,4 +55,62 @@ class SurveyUnitUsaha extends Model
     {
         return $this->hasOne('App\Form3', 'id', 'idForm3');
     }
+<<<<<<< HEAD
+=======
+
+    public function form4()
+    {
+        return $this->hasOne('App\Form4', 'id', 'idForm4');
+    }
+
+    public function form5()
+    {
+        return $this->hasOne('App\Form5', 'id', 'idForm5');
+    }
+
+    public function form6()
+    {
+        return $this->hasOne('App\Form6', 'id', 'idForm6');
+    }
+
+    public function form7()
+    {
+        return $this->hasOne('App\Form7', 'id', 'idForm7');
+    }
+
+    public function form8()
+    {
+        return $this->hasOne('App\Form8', 'id', 'idForm8');
+    }
+
+    public function form9()
+    {
+        return $this->hasOne('App\Form9', 'id', 'idForm9');
+    }
+
+    public function form10()
+    {
+        return $this->hasOne('App\Form10', 'id', 'idForm10');
+    }
+
+    public function form11()
+    {
+        return $this->hasOne('App\Form11', 'id', 'idForm11');
+    }
+
+    public function form12()
+    {
+        return $this->hasOne('App\Form12', 'id', 'idForm12');
+    }
+
+    public function form13()
+    {
+        return $this->hasOne('App\Form13', 'id', 'idForm13');
+    }
+
+    public function form14()
+    {
+        return $this->hasOne('App\Form14', 'id', 'idForm14');
+    }
+>>>>>>> 8f547f8928f76dbf971c9e953272087accffc0af
 }

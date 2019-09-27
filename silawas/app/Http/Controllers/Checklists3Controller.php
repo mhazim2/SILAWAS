@@ -46,6 +46,7 @@ class Checklists3Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
+           
             // Validate and Parsing Data
             request()->validate([
                 'idUnitUsaha' => 'required',
@@ -158,7 +159,6 @@ class Checklists3Controller extends Controller
 
         // Insert to Database
         $input_ceklis = Form3::create([
-            'jenisUnitUsaha' => $umum['jenisUnitUsaha'],
             'kapasitasPemeliharaan' => $umum['kapasitasPemeliharaan'],
             'jumlahPopulasi' => $umum['jumlahPopulasi'],
             'produksiTelurPerHari' => $umum['produksiTelurPerHari'],

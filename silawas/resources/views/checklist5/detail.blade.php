@@ -27,7 +27,7 @@
                                 <i class="fas fa-file-download mr-1"></i> Ekspor
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Ceklis Kosong</a>
+                                <a class="dropdown-item" href="/export/blank/formulir5/{{ $data->id }}">Ceklis Kosong</a>
                                 <a class="dropdown-item" href="/export/formulir5/{{ $data->id }}">Ceklis Hasil Survey</a>
                                 <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
                             </div>
@@ -94,7 +94,7 @@
                                                 <table class="table-inner">
                                                     <tr><td>No. Telp</td><td>=</td><td>{{ $data->unitUsaha->telpUU ?: '-' }}</td></tr>
                                                     <tr><td>Fax</td><td>=</td><td>{{ $data->unitUsaha->faxUU ?: '-' }}</td></tr>
-                                                    <tr><td>Email</td><td>=</td><td>{{ $data->unitUsaha->emailUU ?: '-' }}</td></tr>
+                                                    <tr><td>Email</td><td>=</td><td>{{ $data->unitUsaha->faxUU ?: '-' }}</td></tr>
                                                 </table>
                                             </td>
                                         </tr>
@@ -164,13 +164,13 @@
                                             <td>Jumlah Karyawan</td><td>:</td>
                                             <td>
                                                 <table class="table-inner">
-                                                    <tr><td>Produksi</td><td>=</td><td>{{ $data->karyawanProdL ?: '-' }} Laki-laki, {{ $data->karyawanProdP ?: '-'}} Perempuan</td></tr>
-                                                    <tr><td>Administrasi</td><td>=</td><td>{{ $data->karyawanAdmL ?: '-' }} Laki-laki, {{ $data->karyawanAdmP ?: '-'}} Perempuan</td></tr>
-                                                    <tr><td>Petugas AMPM</td><td>=</td><td>{{ $data->karyawanAMPM ?: '-' }}</td></tr>
-                                                    <tr><td>Petugas AWO</td><td>=</td><td>{{ $data->karyawanAWO ?: '-' }}</td></tr>
-                                                    <tr><td>Juru Sembelih Halal</td><td>=</td><td>{{ $data->karyawanHalal ?: '-' }}</td></tr>
-                                                    <tr><td>Butcher</td><td>=</td><td>{{ $data->karyawanButcher ?: '-'}}</td></tr>
-                                                    <tr><td>Operator Stunning</td><td>=</td><td>{{ $data->karyawanStunning ?: '-'}}</td></tr>
+                                                    <tr><td>Produksi</td><td>=</td><td>{{ $data->form5->karyawanProdL ?: '-' }} Laki-laki, {{ $data->form5->karyawanProdP ?: '-'}} Perempuan</td></tr>
+                                                    <tr><td>Administrasi</td><td>=</td><td>{{ $data->form5->karyawanAdmL ?: '-' }} Laki-laki, {{ $data->form5->karyawanAdmP ?: '-'}} Perempuan</td></tr>
+                                                    <tr><td>Petugas AMPM</td><td>=</td><td>{{ $data->form5->karyawanAMPM ?: '-' }}</td></tr>
+                                                    <tr><td>Petugas AWO</td><td>=</td><td>{{ $data->form5->karyawanAWO ?: '-' }}</td></tr>
+                                                    <tr><td>Juru Sembelih Halal</td><td>=</td><td>{{ $data->form5->karyawanHalal ?: '-' }}</td></tr>
+                                                    <tr><td>Butcher</td><td>=</td><td>{{ $data->form5->karyawanButcher ?: '-'}}</td></tr>
+                                                    <tr><td>Operator Stunning</td><td>=</td><td>{{ $data->form5->karyawanStunning ?: '-'}}</td></tr>
                                                 </table>
                                             </td>
                                         </tr>
@@ -676,11 +676,11 @@
                                                     (Chiller)?
                                                 </td>
                                                 <td>
-                                                    @if ($data->check_p29)
+                                                    @if ($data->form5->check_p29)
                                                         Chiller
-                                                        <div><b>Jumlah:</b> {{ $data->P29_1 ? $data->P29_1.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->P29_2 ? $data->P29_2.' ton' : '-' }}</div>
-                                                        <div><b>Realisasi Pemakaian Saat Ini:</b> {{ $data->P29_3 ? $data->P29_3.' ton' : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->form5->P29_1 ? $data->form5->P29_1.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->form5->P29_2 ? $data->form5->P29_2.' ton' : '-' }}</div>
+                                                        <div><b>Realisasi Pemakaian Saat Ini:</b> {{ $data->form5->P29_3 ? $data->form5->P29_3.' ton' : '-' }}</div>
                                                     @else
                                                         <div><b>Metode Pendinginan Karkas:</b> {{ $data->P29_4 ? $data->P29_4 : '-' }}</div>
                                                     @endif
@@ -692,14 +692,14 @@
                                                     (Cold Storage)?
                                                 </td>
                                                 <td>
-                                                    @if ($data->check_p30)
+                                                    @if ($data->form5->check_p30)
                                                         Cold Storage
-                                                        <div><b>Jumlah:</b> {{ $data->P30_1 ? $data->P30_1.' unit' : '-' }}</div>
-                                                        <div><b>Kapasitas:</b> {{ $data->P30_2 ? $data->P30_2.' ton' : '-' }}</div>
-                                                        <div><b>Rata-Rata Jumlah Produk Yang Disimpan:</b> {{ $data->P30_3 ? $data->P30_3.' ton' : '-' }}</div>
-                                                        <div><b>Rata-Rata Waktu Penyimpanan:</b> {{ $data->P30_4 ? $data->P30_4.' bulan' : '-' }}</div>
+                                                        <div><b>Jumlah:</b> {{ $data->form5->P30_1 ? $data->form5->P30_1.' unit' : '-' }}</div>
+                                                        <div><b>Kapasitas:</b> {{ $data->form5->P30_2 ? $data->form5->P30_2.' ton' : '-' }}</div>
+                                                        <div><b>Rata-Rata Jumlah Produk Yang Disimpan:</b> {{ $data->form5->P30_3 ? $data->form5->P30_3.' ton' : '-' }}</div>
+                                                        <div><b>Rata-Rata Waktu Penyimpanan:</b> {{ $data->form5->P30_4 ? $data->form5->P30_4.' bulan' : '-' }}</div>
                                                     @else
-                                                        <div><b>Alamat:</b> {{ $data->P30_5 ? $data->P30_5 : '-' }}</div>
+                                                        <div><b>Alamat:</b> {{ $data->form5->P30_5 ? $data->form5->P30_5 : '-' }}</div>
                                                     @endif
                                                 </td>
                                             </tr>
@@ -716,29 +716,16 @@
                                                     32. Kemanakah tujuan distribusi karkas?
                                                 </td>
                                                 <td>
-                                                    @if ($data->check_p32)
-                                                        <b>Tujuan distribusi:</b> {{ $data->check_p32 }}
-                                                        <ol>
-                                                            @foreach($distribusi as $distribusi)
-                                                                @if ($distribusi->JenisProduk || $distribusi->NamaPenerima || $distribusi->AlamatPenerima)
-                                                                    <li>
-                                                                        @if ($distribusi->JenisProduk && $distribusi->JumlahProduk)
-                                                                            <div>{{ $distribusi->JenisProduk.', '.$distribusi->JumlahProduk.' ton' }}</div>
-                                                                        @else
-                                                                            <div>{{ $distribusi->JenisProduk ?: '' }}</div>
-                                                                        @endif
-                                                                        @if ($distribusi->AlamatPenerima)
-                                                                            <div>{{ $distribusi->NamaPenerima ? $distribusi->NamaPenerima.', '.$distribusi->AlamatPenerima : $distribusi->AlamatPenerima }}</div>
-                                                                        @else
-                                                                            <div>{{ $distribusi->NamaPenerima ?: '' }}</div>
-                                                                        @endif
-                                                                    </li>
-                                                                @endif
-                                                            @endforeach
-                                                        </ol>
-                                                    @else
-                                                        -
-                                                    @endif
+                                                    @if ($data->form5->check_p26)
+                                                    <B>Tujuan distribusi:</b> {{ $data->form5->check_p32 }}
+                                                    <ol>
+                                                        @foreach($distribusi as $penerima)
+                                                            <li>{{ $penerima->JenisProduk }}, {{ $penerima->JumlahProduk }} Ton, distribusi ke {{ $penerima->NamaPenerima }}, {{ $penerima->AlamatPenerima }}</li>
+                                                        @endforeach
+                                                    </ol>
+                                                @else
+                                                    -
+                                                @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -776,8 +763,8 @@
                                                 <td>
                                                     <br>
                                                     <ul>
-                                                        {{ $data->form5->P36_1 ? '<li>'.$data->form5->P36_1.' jam/hari</li>' : '' }}
-                                                        {{ $data->form5->P36_2 ? '<li>'.$data->form5->P36_2.' jam/minggu</li>' : '' }}
+                                                        <li>{{ $data->form5->P36_1 ? $data->form5->P36_1.' jam/hari' : '' }}</li>
+                                                        <li>{{ $data->form5->P36_2 ? $data->form5->P36_2.' jam/minggu' : '' }}</li>
                                                     </ul>
                                                 </td>
                                             </tr>
@@ -792,8 +779,8 @@
                                                 <td>
                                                     <br>
                                                     <ul>
-                                                        {{ $data->form5->P37_1 ? '<li>'.$data->form5->P37_1.' ekor/hari</li>' : '' }}
-                                                        {{ $data->form5->P37_2 ? '<li>'.$data->form5->P37_2.' ekor/minggu</li>' : '' }}
+                                                       <li>{{ $data->form5->P37_1 ? $data->form5->P37_1.' ekor/hari' : '' }}</li>
+                                                        <li>{{ $data->form5->P37_2 ? $data->form5->P37_2.' ekor/minggu' : '' }}</li>
                                                     </ul>
                                                 </td>
                                             </tr>

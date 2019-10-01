@@ -34,12 +34,17 @@ class Checklists5Controller extends Controller
             '3' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas3)->first()
         ];
         // Get Tabel PenerimaProdukDistribusi
-        // $distribusi = ...
+        $penerimaProduksi = DB::table('surveyunitusaha')
+            ->join('form5','surveyunitusaha.idForm5', '=', 'form5.id')
+            ->leftJoin('penerimaprodukdistribusi','surveyunitusaha.id', '=', 'penerimaprodukdistribusi.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('penerimaprodukdistribusi.*')
+            ->get();
         
         return view('checklist5.detail', [
             'data' => $survey,
             'pengawas' => $pengawas,
-            // 'distribusi' => $distribusi,
+            'distribusi' => $penerimaProduksi,
         ]);
     }
     
@@ -194,10 +199,10 @@ class Checklists5Controller extends Controller
             'karyawanProdL' => $umum['karyawanProdL'],
             'karyawanProdP' => $umum['karyawanProdP'],
             'karyawanAdmL' => $umum['karyawanAdmL'],
-            'karyawanAdmP' => $survey['karyawanAdmP'],
-            'karyawanAMPM' => $survey['karyawanAMPM'],
-            'karyawanAWO' => $survey['karyawanAWO'],
-            'karyawanHalal' => $survey['karyawanHalal'],
+            'karyawanAdmP' => $umum['karyawanAdmP'],
+            'karyawanAMPM' => $umum['karyawanAMPM'],
+            'karyawanAWO' => $umum['karyawanAWO'],
+            'karyawanHalal' => $umum['karyawanHalal'],
             'karyawanButcher' => $umum['karyawanButcher'],
             'karyawanStunning' => $umum['karyawanStunning'],
             'check_p1_1' => $survey['check_p1_1'],

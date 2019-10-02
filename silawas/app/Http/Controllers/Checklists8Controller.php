@@ -34,12 +34,19 @@ class Checklists8Controller extends Controller
             '3' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas3)->first()
         ];
         // Get Table DokterHewanPJ
+        $dokterPJ = 
+        DB::table('surveyunitusaha')
+            ->join('form8','surveyunitusaha.idForm8', '=', 'form8.id')
+            ->leftJoin('dokterhewanpenanggungjawab','surveyunitusaha.id', '=', 'dokterhewanpenanggungjawab.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('dokterhewanpenanggungjawab.*')
+            ->get();
         // $dokterPJ = ...
         
         return view('checklist8.detail', [
             'data' => $survey,
             'pengawas' => $pengawas,
-            // 'dokterPJ' => $dokterPJ,
+            'dokterPJ' => $dokterPJ,
         ]);
     }
     

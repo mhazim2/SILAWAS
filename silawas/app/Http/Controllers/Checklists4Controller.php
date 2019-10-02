@@ -81,6 +81,13 @@ class Checklists4Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
+            //validasi
+            request()->validate([
+
+                'P3' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    
+            ]);
+
             // Parsing Data
             $data_survey = $request->all();
             if ($request->hasFile('P3')) {

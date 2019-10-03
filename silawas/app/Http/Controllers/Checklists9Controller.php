@@ -183,7 +183,7 @@ class Checklists9Controller extends Controller
         $survey = session('survey');
         $catatan = session('catatan');
 
-        dd($survey);
+        
 
         // Insert to Database
         $input_ceklis = Form9::create([

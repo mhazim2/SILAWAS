@@ -23,40 +23,16 @@ class Checklists14Controller extends Controller
     
     public function detail($id)
     {
-        $survey = SurveyUnitUsaha::findorFail($id);
-        $surveyID = $survey->id;
-
-        $formDetail = DB::table('surveyunitusaha')
-            ->join('form14','surveyunitusaha.idForm14', '=', 'form14.id')
-            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-            ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('surveyunitusaha.*','form14.*','unitusaha.*','unitusaha.pjUnitUsaha')
-            ->first();
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
-            ->first();
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
-            ->first();
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
-            ->first();
+        $survey = SurveyUnitUsaha::with(['unitUsaha', 'form14'])->where('id', $id)->firstOrFail();
+        $pengawas = [
+            '1' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas)->first(),
+            '2' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas2)->first(),
+            '3' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas3)->first()
+        ];
 
         return view('checklist14.detail', [
-            'data' => $formDetail,
-            'surveyID' => $surveyID,
-            'pengawas1' => $pengawas1,
-            'pengawas2' => $pengawas2,
-            'pengawas3' => $pengawas3,
+            'data' => $survey,
+            'pengawas' => $pengawas,
         ]);
     }
 
@@ -66,6 +42,28 @@ class Checklists14Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            // Validate and Parsing Data
+            request()->validate([
+                'namaPemilikProduk' => 'required',
+                'telpPusat'=> 'nullable|numeric',
+                'faxPusat'=> 'nullable|numeric',
+                'emailPusat'=> 'nullable|email',
+                'telpPengemudi'=> 'nullable|numeric',
+                'kapasitasAlatAngkut'=> 'nullable|numeric',
+                'jumlahProdukAngkut'=> 'nullable|numeric',
+            ]);
+            if (isset($request['jenisProduk'])) {
+                $request['jenisProduk'] = implode( ", ", $request['jenisProduk'] );
+            }
+            if (isset($request['jenisProduk_lainnya'])) {
+                $request['jenisProduk'] = str_replace("Lainnya", $request['jenisProduk_lainnya'], $request['jenisProduk']);
+            }
+            if (!isset($request['check_sumber_lokal'])) $request['check_sumber_lokal'] = '0';
+            if (!isset($request['check_sumber_impor'])) $request['check_sumber_impor'] = '0';
+            
+            // Save Data in Session
+            $data_umum = $request->all();
+            session()->put('umum', $data_umum);
             return redirect()->action('Checklists14Controller@survey');
         }
 
@@ -82,6 +80,20 @@ class Checklists14Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            // Parsing Data
+            $data_survey = $request->all();
+            if (!isset($data_survey['check_p1'])) $data_survey['check_p1'] = '0';
+            if (!isset($data_survey['check_p2'])) $data_survey['check_p2'] = '0';
+            if (!isset($data_survey['check_p3'])) $data_survey['check_p3'] = '0';
+            if (!isset($data_survey['check_p4'])) $data_survey['check_p4'] = '0';
+            if (!isset($data_survey['check_p5'])) $data_survey['check_p5'] = '0';
+            if (!isset($data_survey['check_p6'])) $data_survey['check_p6'] = '0';
+            if (!isset($data_survey['check_p7'])) $data_survey['check_p7'] = '0';
+            if (!isset($data_survey['check_p8'])) $data_survey['check_p8'] = '0';
+            if (!isset($data_survey['check_p9'])) $data_survey['check_p9'] = '0';
+            
+            // Save Data in Session
+            session()->put('survey', $data_survey);
             return redirect()->action('Checklists14Controller@catatan');
         }
 
@@ -95,6 +107,14 @@ class Checklists14Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
+            // Validate and Parsing Data
+            request()->validate([
+                'idPengawas' => 'required',
+            ]);
+
+            // Save Data in Session
+            $data_catatan = $request->all();
+            session()->put('catatan', $data_catatan);
             return redirect()->action('Checklists14ontroller@store');
         }
 
@@ -110,10 +130,66 @@ class Checklists14Controller extends Controller
     public function store(Request $request)
     {
         // Get All Data
-        // $umum = session('umum');
-        // $survey = session('survey');
+        $umum = session('umum');
+        $survey = session('survey');
+        $catatan = session('catatan');
 
         // Insert to Database
+        $input_ceklis = Form14::create([
+            'namaPemilikProduk' => $umum['namaPemilikProduk'],
+            'alamatPemilikProduk' => $umum['alamatPemilikProduk'],
+            'telpPusat' => $umum['telpPusat'],
+            'faxPusat' => $umum['faxPusat'],
+            'emailPusat' => $umum['emailPusat'],
+            'jenisAlatAngkut' => $umum['jenisAlatAngkut'],
+            'statusKepemilikan' => $umum['statusKepemilikan'],
+            'nomorPolisi' => $umum['nomorPolisi'],
+            'namaPengemudi' => $umum['namaPengemudi'],
+            'telpPengemudi' => $umum['telpPengemudi'],
+            'kapasitasAlatAngkut' => $umum['kapasitasAlatAngkut'],
+            'jumlahProdukAngkut' => $umum['jumlahProdukAngkut'],
+            'jenisProduk' => $umum['jenisProduk'],
+            'check_sumber_lokal' => $umum['check_sumber_lokal'],
+            'sumber_lokal' => $umum['sumber_lokal'],
+            'check_sumber_impor' => $umum['check_sumber_impor'],
+            'sumber_impor' => $umum['sumber_impor'],
+            'tujuanPengiriman' => $umum['tujuanPengiriman'],
+            'check_p1' => $survey['check_p1'],
+            'P1_1' => $survey['P1_1'],
+            'P1_2' => $survey['P1_2'],
+            'check_p2' => $survey['check_p2'],
+            'P2_1' => $survey['P2_1'],
+            'P2_2' => $survey['P2_2'],
+            'check_p3' => $survey['check_p3'],
+            'P3_1' => $survey['P3_1'],
+            'P3_2' => $survey['P3_2'],
+            'check_p4' => $survey['check_p4'],
+            'P4_1' => $survey['P4_1'],
+            'P4_2' => $survey['P4_2'],
+            'check_p5' => $survey['check_p5'],
+            'P5' => $survey['P5'],
+            'check_p6' => $survey['check_p6'],
+            'P6' => $survey['P6'],
+            'check_p7' => $survey['check_p7'],
+            'P7' => $survey['P7'],
+            'check_p8' => $survey['check_p8'],
+            'P8' => $survey['P8'],
+            'check_p9' => $survey['check_p9'],
+            'P9' => $survey['P9'],
+        ]);
+        $input_survey = SurveyUnitUsaha::create([
+            'idForm14' => $input_ceklis->id,
+            'catatan' => $catatan['catatan'],
+            'rekomendasi' => $catatan['rekomendasi'],
+            'idPengawas' => $catatan['idPengawas'],
+            'idPengawas2' => $catatan['idPengawas2'],
+            'idPengawas3' => $catatan['idPengawas3'],
+            'pjUnitUsaha' => $catatan['pjAlatAngkut'], // Ini bener ga dimasukkin kesini?
+        ]);
+        // Input ke Daftar NKV
+        // Input ke Daftar Sertifikat Halal
+        // Input ke Daftar Sertifikat Veteriner
+        // Input ke Daftar Rekomendasi
 
         // Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');

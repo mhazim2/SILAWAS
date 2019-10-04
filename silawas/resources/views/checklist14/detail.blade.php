@@ -8,8 +8,8 @@
             <div class="container-fluid">
                 <div class="row justify-content-between mb-2">
                     <div class="col-md-8">
-                        <h1 class="m-0 text-dark">{{ $data->NamaUnitUsaha }}</h1>
-                        <small>Ceklis Pengangkutan Produk Hewan</small>
+                        <h1 class="m-0 text-dark">{{ $data->unitUsaha->NamaUnitUsaha }}</h1>
+                        <small>Ceklis Pengawasan Pengangkutan Produk Hewan</small>
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">
                         <a href="#" class="d-inline-block" data-toggle="modal" data-target="#upload-pengesahan">
@@ -28,7 +28,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/blank/formulir14/{{ $data->id }}">Ceklis Kosong</a>
-                                <a class="dropdown-item" href="/export/formulir14/{{ $surveyID }}">Ceklis Hasil Survey</a>
+                                <a class="dropdown-item" href="/export/formulir14/{{ $data->id }}">Ceklis Hasil Survey</a>
                                 <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                     <div class="modal fade" id="upload-pengesahan" tabindex="-1" role="dialog">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
-                                <form action="/uploadBukti/{{$surveyID}}" method="POST" enctype="multipart/form-data">
+                                <form action="/uploadBukti/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="modal-header">
                                         <h5 class="modal-title">Unggah Bukti Pengesahan</h5>
@@ -78,7 +78,72 @@
                                     <table class="table table-borderless table-sm umum">
                                         <tr>
                                             <td>Nama Pemilik Produk Hewan</td><td>:</td>
-                                            <td>{{ $data->NamaPemilikProduk ? $data->NamaPemilikProduk : '-' }}</td>
+                                            <td>{{ $data->form14->namaPemilikProduk ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alamat Pemilik Produk Hewan</td><td>:</td>
+                                            <td>{{ $data->form14->alamatPemilikProduk ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No. Telp / Fax / Email Pusat</td><td>:</td>
+                                            <td>
+                                                <table class="table-inner">
+                                                    <tr><td>No. Telp</td><td>=</td><td>{{ $data->form14->telpPusat ?: '-' }}</td></tr>
+                                                    <tr><td>Fax</td><td>=</td><td>{{ $data->form14->faxPusat ?: '-' }}</td></tr>
+                                                    <tr><td>Email</td><td>=</td><td>{{ $data->form14->emailPusat ?: '-' }}</td></tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jenis Alat Angkut</td><td>:</td>
+                                            <td>{{ $data->form14->jenisAlatAngkut ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Status Kepemilikan Alat Angkut</td><td>:</td>
+                                            <td>{{ $data->form14->statusKepemilikan ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nomor Polisi Kendaraan</td><td>:</td>
+                                            <td>{{ $data->form14->nomorPolisi ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nama Pengemudi</td><td>:</td>
+                                            <td>{{ $data->form14->namaPengemudi ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No. Telp Pengemudi</td><td>:</td>
+                                            <td>{{ $data->form14->telpPengemudi ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kapasitas Alat Angkut</td><td>:</td>
+                                            <td>{{ $data->form14->kapasitasAlatAngkut ? $data->form14->kapasitasAlatAngkut.' Kg' : '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jumlah Produk Hewan Yang Diangkut</td><td>:</td>
+                                            <td>{{ $data->form14->jumlahProdukAngkut ? $data->form14->jumlahProdukAngkut.' Kg' : '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jenis Produk Hewan Yang Diangkut</td><td>:</td>
+                                            <td>{{ $data->form14->jenisProduk ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Asal Produk Hewan</td><td>:</td>
+                                            <td>
+                                                @if ($data->form14->check_sumber_lokal || $data->form14->check_sumber_impor)
+                                                    @if ($data->form14->check_sumber_lokal)
+                                                        <div>Lokal {{ $data->form14->sumber_lokal ? '( '.$data->form14->sumber_lokal.' )' : '' }}</div>
+                                                    @endif
+                                                    @if ($data->form14->check_sumber_impor)
+                                                        <div>Ex-impor {{ $data->form14->sumber_impor ? '( '.$data->form14->sumber_impor.' )' : '' }}</div>
+                                                    @endif
+                                                @else
+                                                    -
+                                                @endif
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tujuan Pengiriman</td><td>:</td>
+                                            <td>{{ $data->form14->tujuanPengiriman ?: '-' }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -97,16 +162,154 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    Aspek
+                                                    1. Apakah pangan segar asal hewan berasal dari unit usaha yang bersertifikat NKV?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->check_p1 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form14->check_p1 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->check_p1 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form14->check_p1 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->P1 ? $data->P1 : '-' }}
+                                                    @if ($data->form14->check_p1)
+                                                        <ul>
+                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                        </ul>
+                                                    @else
+                                                        {{ $data->form14->P1_2 ?: '-' }}
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2. Apakah pangan segar asal hewan berasal dari unit usaha yang memiliki sertifikat 
+                                                    halal (bagi yang dipersyaratkan)?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    @if ($data->form14->check_p2)
+                                                        <ul>
+                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                        </ul>
+                                                    @else
+                                                        {{ $data->form14->P2_2 ?: '-' }}
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    3. Apakah produk hewan disertai Sertifikat Veteriner?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! ($data->form14->check_p3) ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! ($data->form14->check_p3) ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    @if ($data->form14->check_p3)
+                                                        <ul>
+                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                        </ul>
+                                                    @else
+                                                        {{ $data->form14->P3_2 ?: '-' }}
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    4. Apakah produk hewan disertai dengan rekomendasi pengeluaran dari Dinas yang 
+                                                    membidangi fungsi Kesmavet Provinsi asal?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    @if ($data->form14->check_p4)
+                                                        <ul>
+                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                        </ul>
+                                                    @else
+                                                        {{ $data->form14->P4_2 ?: '-' }}
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    5. Apakah produk hewan di dalam alat angkut disusun dengan baik?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    {{ $data->form14->P5 ?: '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    6. Apakah suhu box penyimpanan pada alat angkut telah sesuai dengan persyaratan teknis?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p6 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p6 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    {{ $data->form14->P6 ?: '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    7. Apakah ada pemisahan produk hewan halal dengan non halal atau produk lainnya?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p7 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p7 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    {{ $data->form14->P7 ?: '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    8. Apakah produk hewan yang diangkut sesuai dengan kapasitas alat angkut?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p8 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p8 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    {{ $data->form14->P8 ?: '-' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    9. Apakah dilakukan program pemeliharaan kebersihan alat angkut?
+                                                </td>
+                                                <td class="text-center text-success">
+                                                    {!! $data->form14->check_p9 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                </td>
+                                                <td class="text-center text-danger">
+                                                    {!! $data->form14->check_p9 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                </td>
+                                                <td>
+                                                    {{ $data->form14->P9 ?: '-' }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -119,32 +322,32 @@
                                         <tr>
                                             <td>Catatan</td>
                                             <td>:</td>
-                                            <td>{{ $data->catatan ? $data->catatan : '-' }}</td>
+                                            <td>{{ $data->catatan ?: '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Rekomendasi/Tindak Lanjut</td>
                                             <td>:</td>
-                                            <td>{{ $data->rekomendasi ? $data->rekomendasi : '-' }}</td>
+                                            <td>{{ $data->rekomendasi ?: '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 1</td>
                                             <td>:</td>
-                                            <td>{{ $data->idPengawas ? $pengawas1->NamaLengkap : '-' }}</td>
+                                            <td>{{ $pengawas['1'] ? $pengawas['1']->user->orang->NamaLengkap ?: '-' : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 2</td>
                                             <td>:</td>
-                                            <td>{{ $data->idPengawas2 ? $pengawas2->NamaLengkap : '-' }}</td>
+                                            <td>{{ $pengawas['2'] ? $pengawas['2']->user->orang->NamaLengkap ?: '-' : '-' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Pengawas 3</td>
                                             <td>:</td>
-                                            <td>{{ $data->idPengawas3 ? $pengawas3->NamaLengkap : '-' }}</td>
+                                            <td>{{ $pengawas['3'] ? $pengawas['3']->user->orang->NamaLengkap ?: '-' : '-' }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Penangung Jawab Alat Angkut/Pengemudi</td>
+                                            <td>Penanggung Jawab Unit Usaha</td>
                                             <td>:</td>
-                                            <td>{{ $data->pjAlatAngkut ? $data->pjAlatAngkut : '-' }}</td>
+                                            <td>{{ $data->pjUnitUsaha ?: '-' }}</td>
                                         </tr>
                                     </table>
                                 </div>

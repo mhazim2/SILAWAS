@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Ceklis Pengangkutan Produk Hewan')
+@section('title', 'Ceklis Pengawasan Pengangkutan Produk Hewan')
 @section('content')
     <div class="content-wrapper">
         <!-- Page Header -->
@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-12">
-                        <h1 class="m-0 text-dark">Ceklis Pengangkutan Produk Hewan</h1>
+                        <h1 class="m-0 text-dark">Ceklis Pengawasan Pengangkutan Produk Hewan</h1>
                     </div>
                 </div>
             </div>
@@ -27,55 +27,66 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="catatan">
-                                <form action="{{ route('checklist14.store') }}" method="POST">
+                                <form action="{{ route('checklist14.catatan') }}" method="POST">
                                     @csrf
-                                    <div class="row form-group mb-5">
+                                    <div class="row">
                                         <div class="col-md-12">
+                                            @if(count($errors)>0)
+                                                @foreach($errors->all() as $error)
+                                                    <div class="alert alert-dismissible alert-danger mb-3">
+                                                        {{$error}}
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row form-group mb-5">
+                                        <div class="col-lg-12">
                                             <label for="catatan">1. Catatan</label>
                                             <textarea class="form-control" rows="3" name="catatan"></textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-12">
+                                        <div class="col-lg-12">
                                             <label for="rekomendasi">2. Rekomendasi/Tindak Lanjut</label>
                                             <textarea class="form-control" rows="3" name="rekomendasi"></textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="idPengawas">3. Dokter Hewan Pengawas</label>
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
-                                                <option disabled selected>-- Pilih --</option>
-                                                @foreach($list_dokter as $pengawas1)
-                                                    <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->user->orang->NamaLengkap }}</option>
+                                                <option value="" selected>-- Pilih --</option>
+                                                @foreach($list_dokter as $pengawas)
+                                                    <option value="{{ $pengawas->idPengawasKesmavet }}">{{ $pengawas->user->orang->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="idPengawas2">4. Dokter Hewan Pengawas/Asisten 1</label>
                                             <select class="form-control select2" id="idPengawas2" name="idPengawas2">
-                                                <option value="">Tidak Ada</option>
-                                                @foreach($list_pengawas as $pengawas2)
-                                                    <option value="{{ $pengawas2->idPengawasKesmavet }}">{{ $pengawas2->user->orang->NamaLengkap }}</option>
+                                                <option value="" selected>Tidak Ada</option>
+                                                @foreach($list_pengawas as $pengawas)
+                                                    <option value="{{ $pengawas->idPengawasKesmavet }}">{{ $pengawas->user->orang->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="idPengawas3">5. Dokter Hewan Pengawas/Asisten 2</label>
                                             <select class="form-control select2" id="idPengawas3" name="idPengawas3">
-                                                <option value="">Tidak Ada</option>
-                                                @foreach($list_pengawas as $pengawas3)
-                                                    <option value="{{ $pengawas3->idPengawasKesmavet }}">{{ $pengawas3->user->orang->NamaLengkap }}</option>
+                                                <option value="" selected>Tidak Ada</option>
+                                                @foreach($list_pengawas as $pengawas)
+                                                    <option value="{{ $pengawas->idPengawasKesmavet }}">{{ $pengawas->user->orang->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-md-6">
+                                        <div class="col-lg-6">
                                             <label for="pjAlatAngkut">6. Penangung Jawab Alat Angkut/Pengemudi</label>
                                             <input type="text" class="form-control" id="pjAlatAngkut" name="pjAlatAngkut">
                                         </div>

@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-kesmavet">Buat Laporan</button>
+                                                <button type="submit" class="btn btn-kesmavet">Tampilkan Laporan</button>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-kesmavet">Buat Laporan</button>
+                                                <button type="submit" class="btn btn-kesmavet">Tampilkan Laporan</button>
                                             </div>
                                         </div>
                                     </div>

@@ -180,7 +180,6 @@
                                                         <li>NPWP</li>
                                                         <li>SIUP</li>
                                                         <li>NIB</li>
-                                                        <li>Perjanjian Kerja sama (jika Sewa RPH-U)</li>
                                                     </ul>
                                                 </td>
                                                 <td class="text-center text-success">
@@ -190,7 +189,6 @@
                                                         <tr><td>{!! $data->form1->check_p1_2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->form1->check_p1_3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->form1->check_p1_4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form1->check_p1_5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td class="text-center text-danger">
@@ -200,7 +198,6 @@
                                                         <tr><td>{!! $data->form1->check_p1_2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->form1->check_p1_3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->form1->check_p1_4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form1->check_p1_5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td>
@@ -230,13 +227,6 @@
                                                         <tr>
                                                             @if ($data->form1->P1_4_1)
                                                                 <td><b>No:</b> {{ $data->form1->P1_4_1 }}{!! $data->form1->P1_4_2 ? ', <b>Tanggal:</b> '.$data->form1->P1_4_2 !!}</td>
-                                                            @else
-                                                                <td>-</td>
-                                                            @endif
-                                                        </tr>
-                                                        <tr>
-                                                            @if ($data->form1->P1_5_1)
-                                                                <td><b>No:</b> {{ $data->form1->P1_5_1 }}{!! $data->form1->P1_5_2 ? ', <b>Tanggal:</b> '.$data->form1->P1_5_2 !!}</td>
                                                             @else
                                                                 <td>-</td>
                                                             @endif

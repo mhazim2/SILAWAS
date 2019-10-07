@@ -170,7 +170,6 @@
                                                         <li>NPWP</li>
                                                         <li>SIUP</li>
                                                         <li>NIB</li>
-                                                        <li>Perjanjian Kerja sama (jika Sewa RPH-U)</li>
                                                     </ul>
                                                 </td>
                                                 <td class="text-center text-success">
@@ -180,7 +179,6 @@
                                                         <tr><td>{!! $data->form2->check_p1_2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td class="text-center text-danger">
@@ -190,7 +188,6 @@
                                                         <tr><td>{!! $data->form2->check_p1_2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td>
@@ -220,13 +217,6 @@
                                                         <tr>
                                                             @if ($data->form2->P1_4_1)
                                                                 <td><b>No:</b> {{ $data->form2->P1_4_1 }}{!! $data->form2->P1_4_2 ? ', <b>Tanggal:</b> '.$data->form2->P1_4_2 !!}</td>
-                                                            @else
-                                                                <td>-</td>
-                                                            @endif
-                                                        </tr>
-                                                        <tr>
-                                                            @if ($data->form2->P1_5_1)
-                                                                <td><b>No:</b> {{ $data->form2->P1_5_1 }}{!! $data->form2->P1_5_2 ? ', <b>Tanggal:</b> '.$data->form2->P1_5_2 !!}</td>
                                                             @else
                                                                 <td>-</td>
                                                             @endif
@@ -350,7 +340,7 @@
                                                     <div><b>Sarana Yang Digunakan:</b></div>
                                                     <div>{{ $data->form2->P6_1 ?: '-' }}</div>
                                                     <div><b>Rata-Rata Jumlah Susu yang Masuk dan Keluar:</b> {{ $data->form2->P6_2.' Liter/hari' ?: '-' }}</div>
-                                                    <div><b>Kapasitas Penampungan:</b> {{ $data->form2->P6_3.' Liter' ?: '-' }}</div>
+                                                    <div><b>Kesesuaian Jumlah dan Kapasitas Penampungan:</b> {{ $data->form2->P6_3 ?: '-' }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -428,7 +418,7 @@
                                                     {!! $data->form2->check_p10 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                     @if ($data->form2->check_p10)
+                                                    @if ($data->form2->check_p10)
                                                         <div><b>SOP Pemeliharaan Kebersihan Sarana dan Prasarana:</b> {{ $data->form2->P10_1 ?: '-' }}</div>
                                                         <div><b>Frekuensi Pemeliharaan Kebersihan:</b> {{ $data->form2->P10_2 ?: '-' }}</div>
                                                         <div><b>Metode:</b> {{ $data->form2->P10_3 ?: '-' }}</div>

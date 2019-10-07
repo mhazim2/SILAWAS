@@ -82,16 +82,6 @@ function check_p1_4() {
     }
 }
 
-function check_p1_5() {
-    if(document.getElementById('check_p1_5').checked) {
-        document.getElementById('hidden_p1_5').style.display="block";
-    } else {
-        document.getElementById('hidden_p1_5').style.display="none";
-        document.getElementById('hidden_p1_5').getElementsByTagName('input')[0].value=null;
-        document.getElementById('hidden_p1_5').getElementsByTagName('input')[1].value=null;
-    }
-}
-
 // ==============
 // Form Survey P2
 // ==============

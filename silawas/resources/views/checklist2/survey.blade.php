@@ -156,34 +156,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-block" onclick="check_p1_5()">
-                                                    <input id="check_p1_5" type="checkbox" name="check_p1_5" value="1">
-                                                    <label class="font-weight-normal" for="check_p1_5">Perjanjian Kerja Sama (jika Sewa Unit Usaha)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div id="hidden_p1_5" class="bg-kesmavet p-2 mb-5" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group mb-lg-0">
-                                                            <label>Nama Perjanjian</label>
-                                                            <input type="text" class="form-control" name="P1_5_1">
-                                                            <small class="form-text"><b>Contoh:</b> Perjanjian Sewa</small>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group mb-0">
-                                                            <label>Tanggal Perjanjian</label>
-                                                            <input type="text" class="form-control" name="P1_5_2">
-                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
@@ -493,17 +465,8 @@
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Kapasitas penampungan maksimal</label>
-                                                            <div class="row">
-                                                                <div class="col-lg-8">
-                                                                    <div class="input-group">
-                                                                        <input type="text" class="form-control" name="P6_3">
-                                                                        <div class="input-group-append">
-                                                                            <span class="input-group-text">Liter</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                            <label>Kesesuaian jumlah dan kapasitas penampungan</label>
+                                                            <input type="text" class="form-control" name="P6_3">
                                                         </div>
                                                     </div>
                                                 </div>

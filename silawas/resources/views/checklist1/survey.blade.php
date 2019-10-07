@@ -764,7 +764,7 @@
                                                                     <div class="input-group">
                                                                         <input type="text" class="form-control" name="P11_3">
                                                                         <div class="input-group-append">
-                                                                            <span class="input-group-text">Liter/hari</span>
+                                                                            <span class="input-group-text">Liter</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -1018,7 +1018,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-7">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p15_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">

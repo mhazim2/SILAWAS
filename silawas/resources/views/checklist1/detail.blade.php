@@ -452,7 +452,7 @@
                                                     <div><b>Sarana Yang Digunakan:</b></div>
                                                     <div>{{ $data->form1->P11_1 ?: '-' }}</div>
                                                     <div><b>Rata-Rata Produksi Susu:</b> {{ $data->form1->P11_2.' Liter/hari' ?: '-' }}</div>
-                                                    <div><b>Kapasitas Penyimpanan:</b> {{ $data->form1->P11_3.' Liter/hari' ?: '-' }}</div>
+                                                    <div><b>Kapasitas Penyimpanan:</b> {{ $data->form1->P11_3.' Liter' ?: '-' }}</div>
                                                 </td>
                                             </tr>
                                             <tr>

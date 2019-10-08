@@ -1,3 +1,43 @@
+// ===========================
+// Form Umum Wilayah Peredaran
+// ===========================
+
+function check_wilayahPeredaran_1() {
+    if(document.getElementById('wilayahPeredaran_1').checked) {
+        document.getElementById('hidden_wilayahPeredaran_1').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_1').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_1').getElementsByTagName('input')[0].value=null;
+    }
+}
+
+function check_wilayahPeredaran_2() {
+    if(document.getElementById('wilayahPeredaran_2').checked) {
+        document.getElementById('hidden_wilayahPeredaran_2').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_2').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_2').getElementsByTagName('input')[0].value=null;
+    }
+}
+
+function check_wilayahPeredaran_3() {
+    if(document.getElementById('wilayahPeredaran_3').checked) {
+        document.getElementById('hidden_wilayahPeredaran_3').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_3').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_3').getElementsByTagName('input')[0].value=null;
+    }
+}
+
+function check_wilayahPeredaran_4() {
+    if(document.getElementById('wilayahPeredaran_4').checked) {
+        document.getElementById('hidden_wilayahPeredaran_4').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_4').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_4').getElementsByTagName('input')[0].value=null;
+    }
+}
+
 // =======================
 // Form Umum Sumber Bahan
 // =======================
@@ -60,15 +100,6 @@ function check_p1_4() {
     }
 }
 
-function check_p1_5() {
-    if(document.getElementById('check_p1_5').checked) {
-        document.getElementById('hidden_p1_5').style.display="block";
-    } else {
-        document.getElementById('hidden_p1_5').style.display="none";
-        document.getElementById('hidden_p1_5').getElementsByTagName('input')[0].value=null;
-    }
-}
-
 // ==============
 // Form Survey P2
 // ==============
@@ -76,16 +107,24 @@ function check_p1_5() {
 function check_p2() {
     if(document.getElementById('p2_1').checked) {
         document.getElementById('hidden_p2_2').style.display="none";
-        document.getElementById('hidden_p2_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('p2_6_1').checked=false;
+        document.getElementById('p2_6_2').checked=false;
         document.getElementById('hidden_p2_1').style.display="block";
     } else if(document.getElementById('p2_2').checked) {
         document.getElementById('hidden_p2_1').style.display="none";
         var count_input = document.getElementById('hidden_p2_1').getElementsByTagName('input').length;
         for (var i=0; i<count_input; i++) document.getElementById('hidden_p2_1').getElementsByTagName('input')[i].value=null;
         document.getElementById('hidden_p2_1').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('p2_5_label').innerHTML="Pilih file...";
         document.getElementById('hidden_p2_2').style.display="block";
     }
 }
+
+document.getElementById('p2_5_file').addEventListener('change', function(event) {
+    event.preventDefault();
+    var fileName = this.files[0].name;
+    document.getElementById('p2_5_label').innerHTML=fileName;
+});
 
 // ==============
 // Form Survey P3

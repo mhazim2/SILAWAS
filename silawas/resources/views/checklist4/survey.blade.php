@@ -52,14 +52,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_1" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_1">
+                                                            <input type="text" class="form-control" name="P1_1_1">
                                                             <small class="form-text"><b>Contoh:</b> 999/XXX/9999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_1_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -73,14 +80,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_2" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_2">
+                                                            <input type="text" class="form-control" name="P1_2_1">
                                                             <small class="form-text"><b>Contoh:</b> 99.999.999.9-999.999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_2_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -94,14 +108,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_3" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_3">
+                                                            <input type="text" class="form-control" name="P1_3_1">
                                                             <small class="form-text"><b>Contoh:</b> 999/XXX/9999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_3_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -115,35 +136,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_4" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_4">
+                                                            <input type="text" class="form-control" name="P1_4_1">
                                                             <small class="form-text"><b>Contoh:</b> 9999999999999</small>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-block" onclick="check_p1_5()">
-                                                    <input id="check_p1_5" type="checkbox" name="check_p1_5" value="1">
-                                                    <label class="font-weight-normal" for="check_p1_5">Perjanjian Kerja Sama (jika Sewa Unit Usaha)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p1_5" class="bg-kesmavet p-2 mb-5" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group mb-0">
-                                                            <label>Nama Perjanjian</label>
-                                                            <input type="text" class="form-control" name="P1_5">
-                                                            <small class="form-text"><b>Contoh:</b> Perjanjian Sewa</small>
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_4_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -170,37 +177,58 @@
                                             <div id="hidden_p2_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-4">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Nomor</label>
                                                             <input type="text" class="form-control" name="P2_1">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Tanggal Penerbitan</label>
                                                             <input type="text" class="form-control" name="P2_2">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Tanggal Surveilans Terakhir</label>
                                                             <input type="text" class="form-control" name="P2_3">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Tindak Lanjut Temuan</label>
                                                             <textarea class="form-control" rows="2" name="P2_4"></textarea>
                                                         </div>
                                                     </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Scan Sertifikat NKV</label>
+                                                            <div class="input-group">
+                                                                <div class="custom-file">
+                                                                    <input type="file" id="p2_5_file" name="P2_5" class="custom-file-input">
+                                                                    <label id="p2_5_label" class="custom-file-label" for="file">Pilih file...</label>
+                                                                </div>
+                                                            </div>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div id="hidden_p2_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div id="hidden_p2_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P2_5"></textarea>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p2_6_1" type="radio" name="P2_6" value="Dalam Proses">
+                                                                    <label class="font-weight-normal" for="p2_6_1">Dalam Proses</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p2_6_2" type="radio" name="P2_6" value="Belum Diproses">
+                                                                    <label class="font-weight-normal" for="p2_6_2">Belum Diproses</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

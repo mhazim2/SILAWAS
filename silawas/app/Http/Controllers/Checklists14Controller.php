@@ -42,6 +42,7 @@ class Checklists14Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            
             // Validate and Parsing Data
             request()->validate([
                 'namaPemilikProduk' => 'required',
@@ -80,6 +81,7 @@ class Checklists14Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            return dd($request);
             // Parsing Data
             $data_survey = $request->all();
             if (!isset($data_survey['check_p1'])) $data_survey['check_p1'] = '0';
@@ -132,7 +134,7 @@ class Checklists14Controller extends Controller
         // Get All Data
         $umum = session('umum');
         $survey = session('survey');
-        $catatan = session('catatan');
+       
 
         // Insert to Database
         $input_ceklis = Form14::create([
@@ -179,12 +181,12 @@ class Checklists14Controller extends Controller
         ]);
         $input_survey = SurveyUnitUsaha::create([
             'idForm14' => $input_ceklis->id,
-            'catatan' => $catatan['catatan'],
-            'rekomendasi' => $catatan['rekomendasi'],
-            'idPengawas' => $catatan['idPengawas'],
-            'idPengawas2' => $catatan['idPengawas2'],
-            'idPengawas3' => $catatan['idPengawas3'],
-            'pjUnitUsaha' => $catatan['pjAlatAngkut'], // Ini bener ga dimasukkin kesini?
+            'catatan' => $request['re$request'],
+            'rekomendasi' => $request['rekomendasi'],
+            'idPengawas' => $request['idPengawas'],
+            'idPengawas2' => $request['idPengawas2'],
+            'idPengawas3' => $request['idPengawas3'],
+            'pjUnitUsaha' => $request['pjAlatAngkut'], 
         ]);
         // Input ke Daftar NKV
         // Input ke Daftar Sertifikat Halal

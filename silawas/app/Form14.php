@@ -11,6 +11,7 @@ class Form14 extends Model
     protected $table = 'form14';
 
     protected $fillable = [
+        
         'namaPemilikProduk',
         'alamatPemilikProduk',
         'telpPusat',

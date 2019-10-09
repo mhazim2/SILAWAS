@@ -249,6 +249,7 @@ Route::get('/export/formulir10/{id}', 'ExportController@cetakForm10');
 Route::get('/export/formulir11/{id}', 'ExportController@cetakForm11');
 Route::get('/export/formulir12/{id}', 'ExportController@cetakForm12');
 Route::get('/export/formulir13/{id}', 'ExportController@cetakForm13');
+Route::get('/export/formulir14/{id}', 'ExportController@cetakForm14');
 
 //export blank
 Route::get('/export/blank/formulir1/{id}', 'ExportController@cetakBlank1');
@@ -264,6 +265,7 @@ Route::get('/export/blank/formulir10/{id}', 'ExportController@cetakBlank10');
 Route::get('/export/blank/formulir11/{id}', 'ExportController@cetakBlank11');
 Route::get('/export/blank/formulir12/{id}', 'ExportController@cetakBlank12');
 Route::get('/export/blank/formulir13/{id}', 'ExportController@cetakBlank13');
+Route::get('/export/blank/formulir14/{id}', 'ExportController@cetakBlank14');
 
 
 // SIKOLAM

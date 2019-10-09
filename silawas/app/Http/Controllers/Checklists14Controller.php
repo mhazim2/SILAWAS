@@ -7,6 +7,10 @@ use App\UnitUsaha;
 use App\PengawasKesmavet;
 use App\SurveyUnitUsaha;
 use App\Form14;
+use App\catatanNKV;
+use App\rekomendasi;
+use App\catatanSerti;
+use App\sertiVet;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -23,16 +27,44 @@ class Checklists14Controller extends Controller
     
     public function detail($id)
     {
-        $survey = SurveyUnitUsaha::with(['unitUsaha', 'form14'])->where('id', $id)->firstOrFail();
+        $survey = SurveyUnitUsaha::with(['form14'])->where('id', $id)->firstOrFail();
         $pengawas = [
             '1' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas)->first(),
             '2' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas2)->first(),
             '3' => PengawasKesmavet::with(['user', 'user.orang'])->where('idPengawasKesmavet', $survey->idPengawas3)->first()
         ];
 
+        $nkv = DB::table('surveyunitusaha')
+            ->leftJoin('catatan_nkv','surveyunitusaha.id', '=', 'catatan_nkv.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('catatan_nkv.*')
+            ->get();
+        
+        $halal = DB::table('surveyunitusaha')
+            ->leftJoin('catatan_serti','surveyunitusaha.id', '=', 'catatan_serti.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('catatan_serti.*')
+            ->get();
+
+        $vet = DB::table('surveyunitusaha')
+            ->leftJoin('serti_vet','surveyunitusaha.id', '=', 'serti_vet.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('serti_vet.*')
+            ->get();
+
+        $rekomendasi = DB::table('surveyunitusaha')
+            ->leftJoin('rekomendasi','surveyunitusaha.id', '=', 'rekomendasi.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('rekomendasi.*')
+            ->get();
+
         return view('checklist14.detail', [
             'data' => $survey,
             'pengawas' => $pengawas,
+            'nkv' =>$nkv,
+            'halal' =>$halal,
+            'vet'=>$vet,
+            'rekomendasi'=>$rekomendasi,
         ]);
     }
 
@@ -80,6 +112,7 @@ class Checklists14Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+          
             // Parsing Data
             $data_survey = $request->all();
             if (!isset($data_survey['check_p1'])) $data_survey['check_p1'] = '0';
@@ -186,10 +219,54 @@ class Checklists14Controller extends Controller
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjAlatAngkut'], // Ini bener ga dimasukkin kesini?
         ]);
+
+
         // Input ke Daftar NKV
+        if (isset($survey['P1_1'])){
+            for($i=0;$i<$survey['P1_1'];$i++){
+                catatanNKV::create([
+                    'namaUnitUsaha'=>$survey['P1_1_1'][$i],
+                    'NKV'=>$survey['P1_1_2'][$i],
+                    'tanggal'=>$survey['P1_1_3'][$i],
+                    'surveyUnitUsaha_idsurveyUnitusaha'=>$input_survey->id,
+                ]);
+            }
+        };           
         // Input ke Daftar Sertifikat Halal
+        if (isset($survey['P2_1'])){
+            for($i=0;$i<$survey['P2_1'];$i++){
+                catatanSerti::create([
+                    'namaUnitUsaha'=>$survey['P2_1_1'][$i],
+                    'nomorSerti'=>$survey['P2_1_2'][$i],
+                    'tanggalSerti'=>$survey['P2_1_3'][$i],
+                    'masaBerlaku'=>$survey['P2_1_4'][$i],
+                    'surveyUnitUsaha_idsurveyUnitusaha'=>$input_survey->id,
+                ]);
+            }
+        };           
         // Input ke Daftar Sertifikat Veteriner
+        if (isset($survey['P3_1'])){
+            for($i=0;$i<$survey['P3_1'];$i++){
+                sertiVet::create([
+                    'nomorSerti'=>$survey['P3_1_1'][$i],
+                    'namaInstansi'=>$survey['P3_1_2'][$i],
+                    'tanggalSerti'=>$survey['P3_1_3'][$i],
+                    'surveyUnitUsaha_idsurveyUnitusaha'=>$input_survey->id,
+                ]);
+            }
+        };         
+
         // Input ke Daftar Rekomendasi
+        if (isset($survey['P4_1'])){
+            for($i=0;$i<$survey['P4_1'];$i++){
+                rekomendasi::create([
+                    'nomorRekomendasi'=>$survey['P4_1_1'][$i],
+                    'tanggalRekomendasi'=>$survey['P4_1_2'][$i],
+                    'namaInstansi'=>$survey['P4_1_3'][$i],
+                    'surveyUnitUsaha_idsurveyUnitusaha'=>$input_survey->id,
+                ]);
+            }
+        };       
 
         // Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');

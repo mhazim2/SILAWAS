@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-between mb-2">
                     <div class="col-md-8">
-                        <h1 class="m-0 text-dark">{{ $data->unitUsaha->NamaUnitUsaha }}</h1>
+                        
                         <small>Ceklis Pengawasan Pengangkutan Produk Hewan</small>
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">
@@ -173,7 +173,13 @@
                                                 <td>
                                                     @if ($data->form14->check_p1)
                                                         <ul>
-                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                            @foreach($nkv as $nkv)
+                                                            <li>
+                                                                {{ $nkv->namaUnitUsaha ? $nkv->namaUnitUsaha.', ' : '' }}
+                                                                {{ $nkv->NKV ? $nkv->NKV.', ' : '' }}
+                                                                {{ $nkv->tanggal ? $nkv->tanggal.', ' : '' }}
+                                                            </li>
+                                                        @endforeach
                                                         </ul>
                                                     @else
                                                         {{ $data->form14->P1_2 ?: '-' }}
@@ -194,7 +200,14 @@
                                                 <td>
                                                     @if ($data->form14->check_p2)
                                                         <ul>
-                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                            @foreach($halal as $halal)
+                                                            <li>
+                                                                {{ $halal->namaUnitUsaha ? $halal->namaUnitUsaha.', ' : '' }}
+                                                                {{ $halal->nomorSerti ? $halal->nomorSerti.', ' : '' }}
+                                                                {{ $halal->tanggalSerti ? $halal->tanggalSerti.', ' : '' }}
+                                                                {{ $halal->masaBerlaku ? $halal->masaBerlaku.', ' : '' }}
+                                                            </li>
+                                                        @endforeach
                                                         </ul>
                                                     @else
                                                         {{ $data->form14->P2_2 ?: '-' }}
@@ -214,7 +227,14 @@
                                                 <td>
                                                     @if ($data->form14->check_p3)
                                                         <ul>
-                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                            @foreach($vet as $vet)
+                                                            <li>
+                                                                {{ $vet->nomorSerti ? $vet->nomorSerti.', ' : '' }}
+                                                                {{ $vet->namaInstansi ? $vet->namaInstansi.', ' : '' }}
+                                                                {{ $vet->tanggalSerti ? $vet->tanggalSerti.', ' : '' }}
+                                                                {{ $vet->tanggalSerti ? $vet->tanggalSerti.', ' : '' }}
+                                                            </li>
+                                                        @endforeach
                                                         </ul>
                                                     @else
                                                         {{ $data->form14->P3_2 ?: '-' }}
@@ -235,7 +255,13 @@
                                                 <td>
                                                     @if ($data->form14->check_p4)
                                                         <ul>
-                                                            <!-- Foreach disini, gua gatau nama atributnya -->
+                                                            @foreach($rekomendasi as $rekomendasi)
+                                                            <li>
+                                                                {{ $rekomendasi->nomorRekomendasi ? $rekomendasi->nomorRekomendasi.', ' : '' }}
+                                                                {{ $rekomendasi->tanggalRekomendasi ? $rekomendasi->tanggalRekomendasi.', ' : '' }}
+                                                                {{ $rekomendasi->namaInstansi ? $rekomendasi->namaInstansi.', ' : '' }}
+                                                            </li>
+                                                        @endforeach
                                                         </ul>
                                                     @else
                                                         {{ $data->form14->P4_2 ?: '-' }}

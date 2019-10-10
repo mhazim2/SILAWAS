@@ -25,7 +25,7 @@ class FormsController extends Controller
     public function getAllForm(){
         
         $forms = DB::table('surveyunitusaha')
-            ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->leftjoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
             ->select('surveyunitusaha.*','unitusaha.*')
             ->get();
         $idSurvey = DB::table('surveyunitusaha')->select('surveyunitusaha.id')->first();
@@ -40,7 +40,7 @@ class FormsController extends Controller
         $user = User::findorFail($id);
         $petugas = PengawasKesmavet::where('idUser', $id)->get();
         $forms = DB::table('surveyunitusaha')
-                ->join('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+                ->leftjoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
                 ->where('idPengawas', '=', $petugas->idPengawasKesmavet)
                 ->orWhere('idPengawas2', '=', $petugas->idPengawasKesmavet)
                 ->orWhere('idPengawas3', '=', $petugas->idPengawasKesmavet)

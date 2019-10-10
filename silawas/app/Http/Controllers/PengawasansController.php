@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Alert;
 use App\UnitUsaha;
 use App\SurveyUnitUsaha;
 use App\PengawasKesmavet;
@@ -89,5 +90,22 @@ class PengawasansController extends Controller
     public function delete($id)
     {
         return view('pengawasan.index');
+    }
+
+    public function uploadBuktiForm($id){
+        $survey = SurveyUnitUsaha::find($id);
+
+        if ($request->hasFile('bukti')) {
+            $path = Storage::putFile('files', $request->file('bukti'));
+            $data_survey['bukti'] = $path;
+        } else {
+            $data_survey['bukti'] = $request['bukti'];
+        }
+
+        $survey->buktiFile = $data_survey;
+        $survey->save();
+        if($survey){
+            Alert::success('Data Berhasil Disimpan');
+        }
     }
 }

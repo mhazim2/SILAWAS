@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Alert;
+use App\UnitUsaha;
+use App\SurveyUnitUsaha;
+use App\PengawasKesmavet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class LaporansController extends Controller
 {
@@ -13,18 +21,43 @@ class LaporansController extends Controller
 
     public function index()
     {
-        return view('laporan.index');
+        return view('laporan.index', [
+            'content' => false,
+        ]);
     }
 
-    public function content()
+    public function content(Request $request)
     {
-        return redirect('/laporan')->with('content', 'true');
-    }
+        if ($request['input_jangkawaktu']) {
+            $start = $request['start_date'];
+            $end = $request['end_date'];
+        }
+        else {
+            if ($request['input_periode'] == '1') {
+                $start = date('Y-m-d');
+                $end = date('Y-m-d');
+            } 
+            else if ($request['input_periode'] == '2') {
+                $start = date('Y-m-d', strtotime('-1 week'));
+                $end = date('Y-m-d');
+            }
+            else if ($request['input_periode'] == '3') {
+                $start = date('Y-m-d', strtotime('-1 month'));
+                $end = date('Y-m-d');
+            }
+            else if ($request['input_periode'] == '4') {
+                $start = date('Y-m-d', strtotime('-3 month'));
+                $end = date('Y-m-d');
+            }
+            else if ($request['input_periode'] == '5') {
+                $start = date('Y-m-d', strtotime('-1 year'));
+                $end = date('Y-m-d');
+            }
+            else {
+                return redirect()->action('LaporansController@index');
+            }
+        }
 
-    public function laporan(){
-        $start = Input::get ( 'time_start' );
-        $end = Input::get ( 'time_end' );      
-    
         if (Auth::user()->accessRoleId == 1) {
             $listForms = SurveyUnitUsaha::with('unitUsaha')->whereBetween('created_at', [$start, $end])->get();
         } 
@@ -81,12 +114,11 @@ class LaporansController extends Controller
                 $listForms[$key]->tipeForm = 'Pengangkutan Produk Hewan';
             }
         }
-
+        
         return view('laporan.index', [
+            'content' => true,
             'listForms' => $listForms,
         ]);
-    
     }
-
     
-    }
+}

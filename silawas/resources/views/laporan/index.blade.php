@@ -38,12 +38,17 @@
                                                             <i class="far fa-calendar-alt"></i>
                                                         </span>
                                                     </div>
-                                                    <input type="text" class="form-control" id="input_jangkawaktu">
+                                                    <input type="text" class="form-control" name="input_jangkawaktu" id="input_jangkawaktu">
+                                                    <input type="hidden" name="start_date" id="start_date" value="{{ date('Y-m-d') }}">
+                                                    <input type="hidden" name="end_date" id="end_date" value="{{ date('Y-m-d') }}">
                                                 </div>
                                                 @push('scripts')
                                                     <script>
                                                         $(function () {
-                                                            $('#input_jangkawaktu').daterangepicker();
+                                                            $('#input_jangkawaktu').daterangepicker({}, function(start, end, label) {
+                                                                $('#start_date').val(start.format('YYYY-MM-DD')); 
+                                                                $('#end_date').val(end.format('YYYY-MM-DD')); 
+                                                            });
                                                         });
                                                     </script>
                                                 @endpush
@@ -63,12 +68,12 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <select class="form-control select2" id="input_periode" name="input_periode">
+                                                <select class="form-control select2" name="input_periode" id="input_periode">
                                                     <option value="1">Hari Ini</option>
                                                     <option value="2">1 Minggu Terakhir</option>
-                                                    <option value="2">1 Bulan Terakhir</option>
-                                                    <option value="2">3 Bulan Terakhir</option>
-                                                    <option value="2">1 Tahun Terakhir</option>
+                                                    <option value="3">1 Bulan Terakhir</option>
+                                                    <option value="4">3 Bulan Terakhir</option>
+                                                    <option value="5">1 Tahun Terakhir</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -83,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                @if (session('content'))
+                @if ($content)
                     @include('laporan.content')
                 @endif
             </div>

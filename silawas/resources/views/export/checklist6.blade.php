@@ -209,7 +209,7 @@
                             @foreach ($dokter as $dokter)
                             <ol style="margin:0px; padding-left:18px">
 
-                                <li>{{$dokter->namaLengkap}} ({{$dokter->status}})  {{$dokter->notlp}}</li>
+                                <li>{{$dokter->namaLengkap}}, ({{$dokter->status}}) , {{$dokter->notlp}}</li>
                             </ol>
                             @endforeach
                         @else

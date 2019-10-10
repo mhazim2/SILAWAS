@@ -219,7 +219,7 @@
                                 <b>Jumlah:</b> {{ $dokter_pj->count() }} Orang
                                 <ol>
                                 @foreach($dokter_pj as $dokter)
-                                <li>{{ $dokter->namaLengkap }} ({{ $dokter->status }}) {{ $dokter->notlp }}</li>
+                                <li>{{ $dokter->namaLengkap }} ,({{ $dokter->status }}), {{ $dokter->notlp }}</li>
                                 @endforeach
                                 </ol>
                             @else

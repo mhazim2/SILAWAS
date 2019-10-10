@@ -225,9 +225,9 @@
                             <ul>
                                 @foreach($suplier as $suplier)
                                     <li>
-                                        {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
-                                        {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
-                                        {{ $suplier->jumlah ? $suplier->jumlah.' liter' : '' }}
+                                        {{ $suplier->namaSuplier ? 'Nama Suplier:'.$suplier->namaSuplier.', ' : '' }}
+                                        {{ $suplier->tanggal ? 'Tanggal:'.$suplier->tanggal.', ' : '' }}
+                                        {{ $suplier->jumlah ? 'Jumlah:'.$suplier->jumlah.' liter' : '' }}
                                     </li>
                                 @endforeach
                             </ul>

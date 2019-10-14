@@ -159,7 +159,8 @@ class LaporansController extends Controller
                 return redirect()->action('LaporansController@index');
             }
         }
-        return (new Report($start,$end))->download('report.xlsx');
+        $nama_file = 'laporan'.date('Y-m-d_H-i-s').'.xlsx';
+        return (new Report($start,$end))->download($nama_file);
     }
 
 

@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
+
+use Excel;
+use App\Exports\Report;
+
+
 class LaporansController extends Controller
 {
     public function __construct()
@@ -115,10 +120,48 @@ class LaporansController extends Controller
             }
         }
         
+       
+        //return (new Report($start,$end))->download('report.xlsx');
+
         return view('laporan.index', [
             'content' => true,
             'listForms' => $listForms,
         ]);
     }
+
+    public function downloadExcel(Request $request){
+        if ($request['input_jangkawaktu']) {
+            $start = $request['start_date'];
+            $end = $request['end_date'];
+        }
+        else {
+            if ($request['input_periode'] == '1') {
+                $start = date('Y-m-d');
+                $end = date('Y-m-d');
+            } 
+            else if ($request['input_periode'] == '2') {
+                $start = date('Y-m-d', strtotime('-1 week'));
+                $end = date('Y-m-d');
+            }
+            else if ($request['input_periode'] == '3') {
+                $start = date('Y-m-d', strtotime('-1 month'));
+                $end = date('Y-m-d');
+            }
+            else if ($request['input_periode'] == '4') {
+                $start = date('Y-m-d', strtotime('-3 month'));
+                $end = date('Y-m-d');
+            }
+            else if ($request['input_periode'] == '5') {
+                $start = date('Y-m-d', strtotime('-1 year'));
+                $end = date('Y-m-d');
+            }
+            else {
+                return redirect()->action('LaporansController@index');
+            }
+        }
+        return (new Report($start,$end))->download('report.xlsx');
+    }
+
+
     
 }

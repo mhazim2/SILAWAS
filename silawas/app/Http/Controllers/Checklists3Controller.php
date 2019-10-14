@@ -243,6 +243,7 @@ class Checklists3Controller extends Controller
             'idPengawas2' => $catatan['idPengawas2'],
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
+            'tipeForm' => 'Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi',
         ]);
         
         // Redirect to Pengawasan Index

@@ -6,7 +6,7 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right">
                 {{-- <a class="dropdown-item" href="#"><i class="far fa-file-pdf text-red mr-1"></i> PDF</a> --}}
-                <a class="dropdown-item" href="#"><i class="far fa-file-excel text-green mr-1"></i> Excel</a>
+                <a class="dropdown-item" href="/export/excel"><i class="far fa-file-excel text-green mr-1"></i> Excel</a>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
                             <td>{{ date('Y-m-d', strtotime($form->created_at)) }}</td>
                             <td>{{ $form->unitUsaha ? $form->unitUsaha->NamaUnitUsaha ?: '-' : '-' }}</td>
                             <td>{{ $form->tipeForm }}</td>
-                            <td>-</td>
+                            <td>{{ $form->catatan }}</td>
                             <td>{{ $form->rekomendasi ?: '-' }}</td>
                             <td>-</td>
                             <td class="text-center">

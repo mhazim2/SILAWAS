@@ -218,6 +218,7 @@ class Checklists14Controller extends Controller
             'idPengawas2' => $catatan['idPengawas2'],
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjAlatAngkut'], // Ini bener ga dimasukkin kesini?
+            'tipeForm' => 'Pengangkutan Produk Hewan',
         ]);
 
 

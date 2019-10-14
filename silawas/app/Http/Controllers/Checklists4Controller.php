@@ -217,6 +217,7 @@ class Checklists4Controller extends Controller
             'idPengawas2' => $catatan['idPengawas2'],
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
+            'tipeForm' => 'Tempat Pengepul Telur',
         ]);
         
         // Redirect to Pengawasan Index

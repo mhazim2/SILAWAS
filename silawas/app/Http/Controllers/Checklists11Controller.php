@@ -291,6 +291,7 @@ class Checklists11Controller extends Controller
             'idPengawas2' => $request['idPengawas2'],
             'idPengawas3' => $request['idPengawas3'],
             'pjUnitUsaha' => $request['pjUnitUsaha'],
+            'tipeForm' => 'Gudang Penyimpanan Kering',
         ]);
         
         if (isset($survey['p3_count'])){

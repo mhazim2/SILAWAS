@@ -19,6 +19,7 @@ class SurveyUnitUsaha extends Model
         'catatan',
         'rekomendasi',
         'buktiFile',
+        'tipeForm',
         'idForm1',
         'idForm2',
         'idForm3',

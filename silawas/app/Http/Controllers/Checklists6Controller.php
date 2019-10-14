@@ -411,6 +411,7 @@ class Checklists6Controller extends Controller
             'idPengawas2' => $request['pengawas2'],
             'idPengawas3' => $request['pengawas3'],
             'pjUnitUsaha' => $request['pjUnitUsaha'],
+            'tipeForm' => 'Rumah Potong Hewan Unggas',
             ]);
         
             

@@ -250,6 +250,7 @@ Route::get('/export/formulir11/{id}', 'ExportController@cetakForm11');
 Route::get('/export/formulir12/{id}', 'ExportController@cetakForm12');
 Route::get('/export/formulir13/{id}', 'ExportController@cetakForm13');
 Route::get('/export/formulir14/{id}', 'ExportController@cetakForm14');
+Route::get('/export/excel', 'ExportController@export_excel');
 
 //export blank
 Route::get('/export/blank/formulir1/{id}', 'ExportController@cetakBlank1');

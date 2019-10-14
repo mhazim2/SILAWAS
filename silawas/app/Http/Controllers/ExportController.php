@@ -9,6 +9,9 @@ use App\form6;
 use App\form10;
 use App\SurveyUnitUsaha;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +22,8 @@ class ExportController extends Controller
         $this->middleware('auth');
     }
     
+
+   
     public function cetakBlank1($id){
         
         set_time_limit(300);

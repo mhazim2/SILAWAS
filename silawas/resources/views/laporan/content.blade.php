@@ -1,14 +1,17 @@
 <div class="card card-primary card-outline">
     <div class="card-header text-md-right">
-        <div class="btn-group" role="group">
+        <a href="/laporan/download/excel/{{$start_date}}/{{$end_date}}" class="btn btn-primary">
+            <i class="fas fa-file-download mr-1"></i> Ekspor
+        </a>
+        <!-- <div class="btn-group" role="group">
             <button id="btnGroupExport" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <i class="fas fa-file-download mr-1"></i> Ekspor
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                {{-- <a class="dropdown-item" href="#"><i class="far fa-file-pdf text-red mr-1"></i> PDF</a> --}}
-                <a class="dropdown-item" href="/export/excel"><i class="far fa-file-excel text-green mr-1"></i> Excel</a>
+                <a class="dropdown-item" href="#"><i class="far fa-file-pdf text-red mr-1"></i> PDF</a>
+                <a class="dropdown-item" href="#"><i class="far fa-file-excel text-green mr-1"></i> Excel</a>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="card-body">
         <div class="laporan-header">

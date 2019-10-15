@@ -126,41 +126,14 @@ class LaporansController extends Controller
         return view('laporan.index', [
             'content' => true,
             'listForms' => $listForms,
+            'start_date' => $start,
+            'end_date' => $end,
         ]);
     }
 
-    public function downloadExcel(Request $request){
-        if ($request['input_jangkawaktu']) {
-            $start = $request['start_date'];
-            $end = $request['end_date'];
-        }
-        else {
-            if ($request['input_periode'] == '1') {
-                $start = date('Y-m-d');
-                $end = date('Y-m-d');
-            } 
-            else if ($request['input_periode'] == '2') {
-                $start = date('Y-m-d', strtotime('-1 week'));
-                $end = date('Y-m-d');
-            }
-            else if ($request['input_periode'] == '3') {
-                $start = date('Y-m-d', strtotime('-1 month'));
-                $end = date('Y-m-d');
-            }
-            else if ($request['input_periode'] == '4') {
-                $start = date('Y-m-d', strtotime('-3 month'));
-                $end = date('Y-m-d');
-            }
-            else if ($request['input_periode'] == '5') {
-                $start = date('Y-m-d', strtotime('-1 year'));
-                $end = date('Y-m-d');
-            }
-            else {
-                return redirect()->action('LaporansController@index');
-            }
-        }
+    public function downloadExcel($start_date, $end_date){
         $nama_file = 'laporan'.date('Y-m-d_H-i-s').'.xlsx';
-        return (new Report($start,$end))->download($nama_file);
+        return (new Report($start_date, $end_date))->download($nama_file);
     }
 
 

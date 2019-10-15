@@ -226,6 +226,7 @@ Route::get('/pengawasan/checklist/14/detail/{id}', 'Checklists14Controller@detai
 // Halaman Laporan
 Route::get('/laporan', 'LaporansController@index')->name('laporan.show');
 Route::post('/laporan', 'LaporansController@content')->name('laporan.content');
+Route::get('/laporan/download/excel/{start_date}/{end_date}', 'LaporansController@downloadExcel')->name('laporan.downloadexcel');
 
 // Halaman Export
 Route::get('/export/checklist6/{unitusaha_id}', 'ExportsController@checklist6')->name('export.checklist6');

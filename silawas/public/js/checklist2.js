@@ -1,3 +1,43 @@
+// ===========================
+// Form Umum Wilayah Peredaran
+// ===========================
+
+function check_wilayahPeredaran_1() {
+    if(document.getElementById('wilayahPeredaran_1').checked) {
+        document.getElementById('hidden_wilayahPeredaran_1').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_1').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_1').getElementsByTagName('input')[0].value=null;
+    }
+}
+
+function check_wilayahPeredaran_2() {
+    if(document.getElementById('wilayahPeredaran_2').checked) {
+        document.getElementById('hidden_wilayahPeredaran_2').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_2').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_2').getElementsByTagName('input')[0].value=null;
+    }
+}
+
+function check_wilayahPeredaran_3() {
+    if(document.getElementById('wilayahPeredaran_3').checked) {
+        document.getElementById('hidden_wilayahPeredaran_3').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_3').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_3').getElementsByTagName('input')[0].value=null;
+    }
+}
+
+function check_wilayahPeredaran_4() {
+    if(document.getElementById('wilayahPeredaran_4').checked) {
+        document.getElementById('hidden_wilayahPeredaran_4').style.display="block";
+    } else {
+        document.getElementById('hidden_wilayahPeredaran_4').style.display="none";
+        document.getElementById('hidden_wilayahPeredaran_4').getElementsByTagName('input')[0].value=null;
+    }
+}
+
 // ==============
 // Form Survey P1
 // ==============
@@ -8,6 +48,7 @@ function check_p1_1() {
     } else {
         document.getElementById('hidden_p1_1').style.display="none";
         document.getElementById('hidden_p1_1').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_1').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -17,6 +58,7 @@ function check_p1_2() {
     } else {
         document.getElementById('hidden_p1_2').style.display="none";
         document.getElementById('hidden_p1_2').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_2').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -26,6 +68,7 @@ function check_p1_3() {
     } else {
         document.getElementById('hidden_p1_3').style.display="none";
         document.getElementById('hidden_p1_3').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_3').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -35,15 +78,7 @@ function check_p1_4() {
     } else {
         document.getElementById('hidden_p1_4').style.display="none";
         document.getElementById('hidden_p1_4').getElementsByTagName('input')[0].value=null;
-    }
-}
-
-function check_p1_5() {
-    if(document.getElementById('check_p1_5').checked) {
-        document.getElementById('hidden_p1_5').style.display="block";
-    } else {
-        document.getElementById('hidden_p1_5').style.display="none";
-        document.getElementById('hidden_p1_5').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_4').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -54,16 +89,24 @@ function check_p1_5() {
 function check_p2() {
     if(document.getElementById('p2_1').checked) {
         document.getElementById('hidden_p2_2').style.display="none";
-        document.getElementById('hidden_p2_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('p2_6_1').checked=false;
+        document.getElementById('p2_6_2').checked=false;
         document.getElementById('hidden_p2_1').style.display="block";
     } else if(document.getElementById('p2_2').checked) {
         document.getElementById('hidden_p2_1').style.display="none";
         var count_input = document.getElementById('hidden_p2_1').getElementsByTagName('input').length;
         for (var i=0; i<count_input; i++) document.getElementById('hidden_p2_1').getElementsByTagName('input')[i].value=null;
         document.getElementById('hidden_p2_1').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('p2_5_label').innerHTML="Pilih file...";
         document.getElementById('hidden_p2_2').style.display="block";
     }
 }
+
+document.getElementById('p2_5_file').addEventListener('change', function(event) {
+    event.preventDefault();
+    var fileName = this.files[0].name;
+    document.getElementById('p2_5_label').innerHTML=fileName;
+});
 
 // ==============
 // Form Survey P3
@@ -78,9 +121,16 @@ function check_p3() {
         document.getElementById('hidden_p3_1').style.display="none";
         var count_input = document.getElementById('hidden_p3_1').getElementsByTagName('input').length;
         for (var i=0; i<count_input; i++) document.getElementById('hidden_p3_1').getElementsByTagName('input')[i].value=null;
+        document.getElementById('p3_4_label').innerHTML="Pilih file...";
         document.getElementById('hidden_p3_2').style.display="block";
     }
 }
+
+document.getElementById('p3_4_file').addEventListener('change', function(event) {
+    event.preventDefault();
+    var fileName = this.files[0].name;
+    document.getElementById('p3_4_label').innerHTML=fileName;
+});
 
 // ==============
 // Form Survey P4
@@ -128,25 +178,31 @@ function p4_minus(){
 
 var p4_1_detail_html = '\
     <div class="row bg-light p-2 mb-2">\
-        <div class="col-lg-4">\
+        <div class="col-lg-3">\
             <div class="form-group">\
                 <label>Nama Suplier</label>\
                 <input type="text" class="form-control" name="P4_1_1[]">\
             </div>\
         </div>\
-        <div class="col-lg-4">\
+        <div class="col-lg-3">\
             <div class="form-group">\
-                <label>Tanggal</label>\
+                <label>Asal</label>\
                 <input type="text" class="form-control" name="P4_1_2[]">\
             </div>\
         </div>\
-        <div class="col-lg-4">\
+        <div class="col-lg-3">\
+            <div class="form-group">\
+                <label>Tanggal</label>\
+                <input type="text" class="form-control" name="P4_1_3[]">\
+            </div>\
+        </div>\
+        <div class="col-lg-3">\
             <div class="form-group">\
                 <label>Jumlah</label>\
                 <div class="input-group mb-3">\
-                    <input type="text" class="form-control" name="P4_1_3[]">\
+                    <input type="text" class="form-control" name="P4_1_4[]">\
                     <div class="input-group-append">\
-                        <span class="input-group-text">liter</span>\
+                        <span class="input-group-text">Liter</span>\
                     </div>\
                 </div>\
             </div>\
@@ -182,7 +238,19 @@ function p4_1_detail_init(val){
 // ==============
 
 function check_p5() {
-    document.getElementById('hidden_p5').style.display="block";
+    if(document.getElementById('p5_1').checked) {
+        document.getElementById('hidden_p5_2').style.display="none";
+        document.getElementById('hidden_p5_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p5_1').style.display="block";
+    } else if(document.getElementById('p5_2').checked) {
+        document.getElementById('hidden_p5_1').style.display="none";
+        document.getElementById('p5_1_1').checked=false;
+        document.getElementById('p5_1_2').checked=false;
+        document.getElementById('hidden_p5_1').getElementsByTagName('input')[2].value=null;
+        document.getElementById('p5_3_1').checked=false;
+        document.getElementById('p5_3_2').checked=false;
+        document.getElementById('hidden_p5_2').style.display="block";
+    }
 }
 
 // ==============
@@ -198,7 +266,21 @@ function check_p6() {
 // ==============
 
 function check_p7() {
-    document.getElementById('hidden_p7').style.display="block";
+    if(document.getElementById('p7_1').checked) {
+        document.getElementById('hidden_p7_2').style.display="none";
+        document.getElementById('hidden_p7_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p7_1').style.display="block";
+    } else if(document.getElementById('p7_2').checked) {
+        document.getElementById('hidden_p7_1').style.display="none";
+        document.getElementById('p7_1_1').checked=false;
+        document.getElementById('p7_1_2').checked=false;
+        document.getElementById('p7_2_1').checked=false;
+        document.getElementById('p7_2_2').checked=false;
+        document.getElementById('hidden_p7_1').getElementsByTagName('input')[4].value=null;
+        document.getElementById('p7_4_1').checked=false;
+        document.getElementById('p7_4_2').checked=false;
+        document.getElementById('hidden_p7_2').style.display="block";
+    }
 }
 
 // ==============
@@ -206,7 +288,21 @@ function check_p7() {
 // ==============
 
 function check_p8() {
-    document.getElementById('hidden_p8').style.display="block";
+    if(document.getElementById('p8_1').checked) {
+        document.getElementById('hidden_p8_2').style.display="none";
+        document.getElementById('hidden_p8_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p8_1').style.display="block";
+    } else if(document.getElementById('p8_2').checked) {
+        document.getElementById('hidden_p8_1').style.display="none";
+        document.getElementById('p8_1_1').checked=false;
+        document.getElementById('p8_1_2').checked=false;
+        document.getElementById('hidden_p8_1').getElementsByTagName('input')[2].value=null;
+        document.getElementById('hidden_p8_1').getElementsByTagName('input')[3].value=null;
+        document.getElementById('hidden_p8_1').getElementsByTagName('input')[4].value=null;
+        document.getElementById('hidden_p8_1').getElementsByTagName('input')[5].value=null;
+        document.getElementById('hidden_p8_1').getElementsByTagName('input')[6].value=null;
+        document.getElementById('hidden_p8_2').style.display="block";
+    }
 }
 
 // ==============
@@ -214,7 +310,18 @@ function check_p8() {
 // ==============
 
 function check_p9() {
-    document.getElementById('hidden_p9').style.display="block";
+    if(document.getElementById('p9_1').checked) {
+        document.getElementById('hidden_p9_2').style.display="none";
+        document.getElementById('hidden_p9_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p9_1').style.display="block";
+    } else if(document.getElementById('p9_2').checked) {
+        document.getElementById('hidden_p9_1').style.display="none";
+        document.getElementById('p9_1_1').checked=false;
+        document.getElementById('p9_1_2').checked=false;
+        document.getElementById('hidden_p9_1').getElementsByTagName('input')[2].value=null;
+        document.getElementById('hidden_p9_1').getElementsByTagName('input')[3].value=null;
+        document.getElementById('hidden_p9_2').style.display="block";
+    }
 }
 
 // ==============
@@ -222,7 +329,20 @@ function check_p9() {
 // ==============
 
 function check_p10() {
-    document.getElementById('hidden_p10').style.display="block";
+    if(document.getElementById('p10_1').checked) {
+        document.getElementById('hidden_p10_2').style.display="none";
+        document.getElementById('hidden_p10_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p10_1').style.display="block";
+    } else if(document.getElementById('p10_2').checked) {
+        document.getElementById('hidden_p10_1').style.display="none";
+        document.getElementById('p10_1_1').checked=false;
+        document.getElementById('p10_1_2').checked=false;
+        document.getElementById('hidden_p10_1').getElementsByTagName('input')[2].value=null;
+        document.getElementById('hidden_p10_1').getElementsByTagName('input')[3].value=null;
+        document.getElementById('p10_4_1').checked=false;
+        document.getElementById('p10_4_2').checked=false;
+        document.getElementById('hidden_p10_2').style.display="block";
+    }
 }
 
 // ==============
@@ -230,7 +350,20 @@ function check_p10() {
 // ==============
 
 function check_p11() {
-    document.getElementById('hidden_p11').style.display="block";
+    if(document.getElementById('p11_1').checked) {
+        document.getElementById('hidden_p11_2').style.display="none";
+        document.getElementById('hidden_p11_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p11_1').style.display="block";
+    } else if(document.getElementById('p11_2').checked) {
+        document.getElementById('hidden_p11_1').style.display="none";
+        document.getElementById('p11_1_1').checked=false;
+        document.getElementById('p11_1_2').checked=false;
+        document.getElementById('p11_2_1').checked=false;
+        document.getElementById('p11_2_2').checked=false;
+        document.getElementById('p11_3_1').checked=false;
+        document.getElementById('p11_3_2').checked=false;
+        document.getElementById('hidden_p11_2').style.display="block";
+    }
 }
 
 // ==============
@@ -238,7 +371,24 @@ function check_p11() {
 // ==============
 
 function check_p12() {
-    document.getElementById('hidden_p12').style.display="block";
+    if(document.getElementById('p12_1').checked) {
+        document.getElementById('hidden_p12_2').style.display="none";
+        document.getElementById('hidden_p12_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p12_1').style.display="block";
+    } else if(document.getElementById('p12_2').checked) {
+        document.getElementById('hidden_p12_1').style.display="none";
+        document.getElementById('p12_1_1').checked=false;
+        document.getElementById('p12_1_2').checked=false;
+        document.getElementById('p12_2_1').checked=false;
+        document.getElementById('p12_2_2').checked=false;
+        document.getElementById('p12_3_1').checked=false;
+        document.getElementById('p12_3_2').checked=false;
+        document.getElementById('hidden_p12_1').getElementsByTagName('input')[6].value=null;
+        document.getElementById('hidden_p12_1').getElementsByTagName('input')[7].value=null;
+        document.getElementById('p12_6_1').checked=false;
+        document.getElementById('p12_6_2').checked=false;
+        document.getElementById('hidden_p12_2').style.display="block";
+    }
 }
 
 // ==============
@@ -246,5 +396,15 @@ function check_p12() {
 // ==============
 
 function check_p13() {
-    document.getElementById('hidden_p13').style.display="block";
+    if(document.getElementById('p13_1').checked) {
+        document.getElementById('hidden_p13_2').style.display="none";
+        document.getElementById('hidden_p13_2').getElementsByTagName('textarea')[0].value=null;
+        document.getElementById('hidden_p13_1').style.display="block";
+    } else if(document.getElementById('p13_2').checked) {
+        document.getElementById('hidden_p13_1').style.display="none";
+        document.getElementById('p13_1_1').checked=false;
+        document.getElementById('p13_1_2').checked=false;
+        document.getElementById('hidden_p13_1').getElementsByTagName('input')[2].value=null;
+        document.getElementById('hidden_p13_2').style.display="block";
+    }
 }

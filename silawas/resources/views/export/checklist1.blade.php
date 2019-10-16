@@ -74,10 +74,7 @@
             <td colspan="2">
                 
                 <table class="umum" width="100%">
-                    <tr>
-                        <td>Jenis Unit Usaha</td><td>:</td>
-                        <td>{{ $data->jenisUnitUsaha ?: '-' }}</td>
-                    </tr>
+    
                     <tr>
                         <td>Nama Unit Usaha</td><td>:</td>
                         <td>{{ $data->NamaUnitUsaha ?: '-' }}</td>
@@ -114,12 +111,18 @@
                     </tr>
                     <tr>
                         <td>Kapasitas Pemeliharaan</td><td>:</td>
-                        td>{{ $data->kapasitasPemeliharaan ? $data->kapasitasPemeliharaan.' ekor' : '-' }}</td>
+                        <td>{{ $data->kapasitasPemeliharaan ? $data->kapasitasPemeliharaan.' ekor' : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Populasi Ternak</td><td>:</td>
                         <td>{{ $data->populasiTernak ? $data->populasiTernak.' ekor' : '-' }}</td>
                     </tr>
+                    @if ($data->sapiLaktasi)
+                        <tr>
+                            <td>&nbsp;</td><td>&nbsp;</td>
+                            <td>(Sapi Laktasi: {{ $data->sapiLaktasi }} ekor)</td>
+                        </tr>
+                    @endif
                     <tr>
                         <td>Kategori usaha</td><td>:</td>
                         <td>{{ $data->kategoriUsaha ?: '-' }}</td>
@@ -130,7 +133,20 @@
                     </tr>
                     <tr>
                         <td>Wilayah Peredaran</td><td>:</td>
-                        <td>{{ $data->wilayahPeredaran ?: '-' }}</td>
+                        <td>
+                            @if ($data->check_wilayahPeredaran_1)
+                                <div>Lokal {{ $data->wilayahPeredaran_1 ? '('.$data->wilayahPeredaran_1.')' : '' }}</div>
+                            @endif
+                            @if ($data->check_wilayahPeredaran_2)
+                                <div>Lokal {{ $data->wilayahPeredaran_2 ? '('.$data->wilayahPeredaran_2.')' : '' }}</div>
+                            @endif
+                            @if ($data->check_wilayahPeredaran_3)
+                                <div>Lokal {{ $data->wilayahPeredaran_3 ? '('.$data->wilayahPeredaran_3.')' : '' }}</div>
+                            @endif
+                            @if ($data->check_wilayahPeredaran_4)
+                                <div>Lokal {{ $data->wilayahPeredaran_4 ? '('.$data->wilayahPeredaran_4.')' : '' }}</div>
+                            @endif
+                        </td>
                     </tr>
                     <tr>
                         <td>Jumlah Karyawan</td><td>:</td>
@@ -159,23 +175,19 @@
                             <span style="margin-left:18px">• NPWP</span><br>
                             <span style="margin-left:18px">• SIUP</span><br>
                             <span style="margin-left:18px">• NIB</span><br>
-                            <span style="margin-left:18px">• Perjanjian Kerja sama</span><br>
-                            <span style="margin-left:27px">(jika Sewa RPH-U)</span>
                         </td>
                         <td align="center">
-                            <br>{{$data->P1_1  ? 'V':' '}}
-                            <br>{{$data->P1_2  ? 'V':' '}}
-                            <br>{{$data->P1_3  ? 'V':' '}}
-                            <br>{{$data->P1_4  ? 'V':' '}}
-                            <br>{{$data->P1_5  ? 'V':' '}}
+                            <br>{{$data->P1_1_1  ? 'V':' '}}
+                            <br>{{$data->P1_2_1  ? 'V':' '}}
+                            <br>{{$data->P1_3_1  ? 'V':' '}}
+                            <br>{{$data->P1_4_1  ? 'V':' '}}
                         </td>
                         <td align="center"></td>
                         <td>
-                            <br>No: {{$data->P1_1 ? $data->P1_1 : '-'}}
-                            <br>No: {{$data->P1_2 ? $data->P1_2 : '-'}}
-                            <br>No: {{$data->P1_3 ? $data->P1_3 : '-'}}
-                            <br>No: {{$data->P1_4 ? $data->P1_4 : '-'}}
-                            <br>{{$data->P1_5 ? $data->P1_5 : '-'}}
+                            <br>{!! $data->P1_1_1 ? '<b>No:</b> '.$data->P1_1_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_1_2 : '-' !!}<br>
+                            <br>{!! $data->P1_2_1 ? '<b>No:</b> '.$data->P1_2_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_2_2 : '-' !!}<br>
+                            <br>{!! $data->P1_3_1 ? '<b>No:</b> '.$data->P1_3_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_3_2 : '-' !!}<br>
+                            <br>{!! $data->P1_4_1 ? '<b>No:</b> '.$data->P1_4_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_4_2 : '-' !!}<br>
                         </td>
                     </tr>
                     <tr>
@@ -183,10 +195,10 @@
                             2.	Apakah lalu lintas hewan (masuk dan keluar peternakan) dilengkapi dengan Sertifikat Veteriner?
                         </td>
                         <td align="center">
-                            {{$data->check_p2  ? 'V':' '}}
+                            {{$data->P2  ? 'V':' '}}
                         </td>
                         <td align="center">
-                            {{$data->check_p2 ? ' ':"V"}}
+                            {{$data->P2 ? ' ':"V"}}
                         </td>
                         <td>
             
@@ -203,7 +215,20 @@
                             {{$data->check_p3 ? ' ':"V"}}
                         </td>
                         <td>
-                            {{ $data->P3 ?: '-' }}
+                            @if ($data->check_p3)
+                            <b>Jumlah:</b> {{ $data->P3_1 ?: '0' }} Orang
+                            <ol>
+                                @foreach($dokterPJ as $dokterPJ)
+                                    <li>
+                                        {{ $dokterPJ->namaLengkap }} 
+                                        {{ $dokterPJ->status ? '('.$dokterPJ->status.')' : '' }} 
+                                        {{ $dokterPJ->notlp }}
+                                    </li>
+                                @endforeach
+                            </ol>
+                        @else
+                            <b>Penanggung Jawab:</b> {{ $data->P3_2 ?: '-' }}
+                        @endif
                         </td>
                     </tr>
                     <tr>
@@ -217,7 +242,13 @@
                             {{$data->check_p4 ? ' ':"V"}}
                         </td>
                         <td>
-                            {{ $data->P4 ?: '-' }}
+                            @if ($data->check_p4)
+                                <div><b>Pencatatan Program Pengobatan:</b> {{ $data->P4_1 ?: '-' }}</div>
+                                <div><b>Pengobatan Yang Dilakukan:</b></div>
+                                <div>{{ $data->P4_2 ?: '-' }}</div>
+                            @else
+                                <b>Penanggung Jawab:</b> {{ $data->P4_3 ?: '-' }}
+                            @endif
                         </td>
                     </tr>
                     <tr>
@@ -234,10 +265,12 @@
                             @if ($data->check_p5)
                             <div><b>No:</b> {{ $data->P5_1 ?: '-' }}</div>
                             <div><b>Tanggal Penerbitan:</b> {{ $data->P5_2 ?: '-' }}</div>
-                            <div><b>Surveilans terakhir:</b> {{ $data->P5_3 ?: '-' }}</div>
-                            <div><b>Tindak lanjut temuan:</b> {{ $data->P5_4 ?: '-' }}</div>
+                            <div><b>Surveilans Terakhir:</b> {{ $data->P5_3 ?: '-' }}</div>
+                            <div><b>Tindak Lanjut Temuan:</b></div>
+                            <div>{{ $data->P5_4 ?: '-' }}</div>
+                            
                         @else
-                            {{ $data->P5_5 ?: '-' }}
+                            {{ $data->P5_6 ?: '-' }}
                         @endif
                         </td>
                     </tr>
@@ -252,70 +285,106 @@
                             {{$data->check_p6 ? ' ':"V"}}
                         </td>
                         <td>
-                            {{ $data->P6 ?: '-' }}
+                            @if ($data->check_p6)
+                            <div><b>Pagar Atau Fasilitas Pembatas Lain:</b> {{ $data->P6_1 ?: '-' }}</div>
+                            <div><b>Jenis:</b> {{ $data->P6_2 ?: '-' }}</div>
+                            <div><b>Berhasil Dibatasi:</b> {{ $data->P6_3 ?: '-' }}</div>
+                        @else
+                            {{ $data->P6_4 ?: '-' }}
+                        @endif
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            7.	Apakah area peternakan memiliki pagar untuk membatasi akses?
-                        </td>
-                        <td align="center">
-                            {{$data->check_p7  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$data->check_p7 ? ' ':"V"}}
-                        </td>
-                        <td>
-                            {{ $data->P7 ?: '-' }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            8.	Apakah dilakukan pemisahan hewan baru dan hewan lama?
-                        </td>
-                        <td align="center">
-                            {{$data->check_p8 ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$data->check_p8? ' ':"V"}}
-                        </td>
-                        <td>
-                            {{ $data->P8 ?: '-' }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            9.	Apakah ada kandang isolasi untuk hewan yang sakit?
-                        </td>
-                        <td align="center">
-                            {{$data->check_p9  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$data->check_p9 ? ' ':"V"}}
-                        </td>
-                        <td>
-                            {{ $data->P9 ?: '-' }}
-                        </td>
-                    </tr>
-                   
-                    <tr>
-                        <td>
-                            10.	Apakah sarana dan prasarana pemeliharaan memenuhi/ memadai sesuai jumlah ternak?
-                        </td>
-                        <td align="center">
-                            {{$data->check_p10  ? 'V':' '}}
-                        </td>
-                        <td align="center">
-                            {{$data->check_p10 ? ' ':"V"}}
-                        </td>
-                        <td>
-                            {{ $data->P10 ?: '-' }}
-                        </td>
-                    </tr>
+                    
                 </table>
             </td>
         </tr>
-
+        <tr>
+            <td colspan="2">
+                <table class="survey" width="100%" border="1" >
+                     <tr>
+                        <td align="center"><strong>Aspek parameter</strong></td>
+                         <td align="center"><strong>Ya</strong></td>
+                        <td align="center"><strong>Tidak</strong></td>
+                        <td align="center"><strong>Keterangan</strong></td>
+                    </tr>
+                    <tr>
+                            <td>
+                                7.	Apakah area peternakan memiliki pagar untuk membatasi akses?
+                            </td>
+                            <td align="center">
+                                {{$data->check_p7  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$data->check_p7 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($data->check_p7)
+                                <div><b>Dilakukan Prosedur Biosekuriti:</b> {{ $data->P7_1 ?: '-' }}</div>
+                                <div><b>SOP Biosekuriti:</b> {{ $data->P7_2 ?: '-' }}</div>
+                            @else
+                                {{ $data->P7_3 ?: '-' }}
+                            @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                8.	Apakah dilakukan pemisahan hewan baru dan hewan lama?
+                            </td>
+                            <td align="center">
+                                {{$data->check_p8 ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$data->check_p8? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($data->check_p8)
+                                <div><b>Terdapat Sarana Tempat Penampungan Sementara:</b> {{ $data->P8_1 ?: '-' }}</div>
+                                <div><b>Kapasitas Penampungan:</b> {{ $data->P8_2.' ekor' ?: '-' }}</div>
+                            @else
+                                {{ $data->P8_3 ?: '-' }}
+                            @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                9.	Apakah ada kandang isolasi untuk hewan yang sakit?
+                            </td>
+                            <td align="center">
+                                {{$data->check_p9  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$data->check_p9 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($data->check_p9)
+                                    <div><b>Prosedur Perawatan Hewan pada Kandang Isolasi:</b></div>
+                                    <div>{{ $data->P9_1 ?: '-' }}</div>
+                                @else
+                                    {{ $data->P9_2 ?: '-' }}
+                               @endif
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td>
+                                10.	Apakah sarana dan prasarana pemeliharaan memenuhi/ memadai sesuai jumlah ternak?
+                            </td>
+                            <td align="center">
+                                {{$data->check_p10  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$data->check_p10 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                <div><b>Jenis Kandang:</b> {{ $data->P10_1 ?: '-' }}</div>
+                                <div><b>Jumlah Kandang:</b> {{ $data->P10_2.' unit' ?: '-' }}</div>
+                                <div><b>Kapasitas:</b> {{ $data->P10_3.' ekor' ?: '-' }}</div>
+                            </td>
+                        </tr>
+                       
+                </table>
+            </td>
+        </tr>
         <tr>
             <td colspan="2">
                 <table class="survey" width="100%" border="1" >
@@ -340,7 +409,10 @@
                                 {{$data->check_p11 ? ' ':"V"}}
                             </td>
                             <td>
-                                {{ $data->P11 ?: '-' }}
+                                <div><b>Sarana Yang Digunakan:</b></div>
+                                <div>{{ $data->P11_1 ?: '-' }}</div>
+                                <div><b>Rata-Rata Produksi Susu:</b> {{ $data->P11_2.' Liter/hari' ?: '-' }}</div>
+                                <div><b>Kapasitas Penyimpanan:</b> {{ $data->P11_3.' Liter' ?: '-' }}</div>
                             </td>
                         </tr>
                         <tr>
@@ -354,7 +426,13 @@
                                 {{$data->check_p12 ? ' ':"V"}}
                             </td>
                             <td>
-                                {{ $data->P12 ?: '-' }}
+                                @if ($data->check_p12)
+                                    <div><b>Kepadatan Hewan:</b> {{ $data->P12_1 ?: '-' }}</div>
+                                    <div><b>Pemberian Makan Minum Sesuai Kebutuhan:</b> {{ $data->P12_2 ?: '-' }}</div>
+                                    <div><b>Ketersediaan Pakan dan Kondisi Ternak:</b> {{ $data->P12_3 ?: '-' }}</div>
+                                @else
+                                    {{ $data->P12_4 ?: '-' }}
+                                @endif
                             </td>
                         </tr>
                         <tr>
@@ -368,7 +446,16 @@
                                 {{$data->check_p6 ? ' ':"V"}}
                             </td>
                             <td>
-                                {{ $data->P13 ?: '-' }}
+                                @if ($data->check_p13)
+                                <div><b>Pemerah Membesihkan Tangan Sebelum Memerah:</b> {{ $data->P13_1 ?: '-' }}</div>
+                                <div><b>Metode Pemerahan:</b> {{ $data->P13_2 ?: '-' }}</div>
+                                <div><b>Kebersihan Personal:</b> {{ $data->P13_3 ?: '-' }}</div>
+                                <div><b>Ambing Dibersihkan Sebelum dan Setelah Pemerahan:</b> {{ $data->P13_4 ?: '-' }}</div>
+                                <div><b>Metode Pembersihan Ambing:</b> {{ $data->P13_5 ?: '-' }}</div>
+                                <div><b>Dilakukan <i>Teat Dipping</i>:</b> {{ $data->P13_6 ?: '-' }}</div>
+                            @else
+                                {{ $data->P13_7 ?: '-' }}
+                            @endif
                             </td>
                         </tr>
                         <tr>
@@ -382,42 +469,16 @@
                                 {{$data->check_p14 ? ' ':"V"}}
                             </td>
                             <td>
-                                {{ $data->P14 ?: '-' }} 
+                                @if ($data->check_p14)
+                                <div><b>Penanganan Susu:</b></div>
+                                <div>{{ $data->P14_1 ?: '-' }}</div>
+                                <div><b>Tempat Penampungan dan Peralatan Dibedakan:</b> {{ $data->P14_2 ?: '-' }}</div>
+                                <div><b>Sapi Mastitis Diperah Terkahir:</b> {{ $data->P14_3 ?: '-' }}</div>
+                            @else
+                                {{ $data->P14_4 ?: '-' }}
+                            @endif
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                15.	Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi):
-                                <div>a)	unit usaha budidaya perah </div>
-                                <br>
-                                <div>b)	unit pemerahan susu</div>
-                            </td>
-                            <td align="center">
-                                {{$data->check_p15  ? 'V':' '}}
-                            </td>
-                            <td align="center">
-                                {{$data->check_p15 ? ' ':"V"}}
-                            </td>
-                            <td>
-                                {{ $data->P15 ?: '-' }} 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                16.	Apakah sarana dan prasarana untuk kebersihan personal (higiene) memadai?
-                            </td>
-                            <td align="center">
-                                {{$data->check_p16  ? 'V':' '}}
-                            </td>
-                            <td align="center">
-                                {{$data->check_p16 ? ' ':"V"}}
-                            </td>
-                            <td>
-                                {{ $data->P16 ?: '-' }}
-                            </td>
-                        </tr>
-                        
-                    
                 </table>
                 </td>
             </tr>
@@ -435,6 +496,52 @@
                         <td align="center"><strong>Keterangan</strong></td>
                     </tr>
                     <tr>
+                            <td>
+                                15.	Apakah dilakukan program pemeliharaan kebersihan sarana dan prasarana (sanitasi):
+                                <div>a)	unit usaha budidaya perah </div>
+                                <br>
+                                <div>b)	unit pemerahan susu</div>
+                            </td>
+                            <td align="center">
+                                {{$data->check_p15  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$data->check_p15 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($data->check_p15)
+                                <div><b>SOP Pemeliharaan Kebersihan Sarana dan Prasarana:</b> {{ $data->P15_1 ?: '-' }}</div>
+                                <div><b>Frekuensi Pemeliharaan Kebersihan:</b> {{ $data->P15_2 ?: '-' }}</div>
+                                <div><b>Metode:</b> {{ $data->P15_3 ?: '-' }}</div>
+                                <div><b>Laporan hasil sanitasi (<i>QC Record</i>):</b> {{ $data->P15_4 ?: '-' }}</div>
+                            @else
+                                <div><b>Kondisi Kebersihan Unit Usaha:</b></div>
+                                <div>{{ $data->P15_5 ?: '-' }}</div>
+                            @endif
+                            </td>
+                        </tr>
+                    <tr>
+                            <td>
+                                16.	Apakah sarana dan prasarana untuk kebersihan personal (higiene) memadai?
+                            </td>
+                            <td align="center">
+                                {{$data->check_p16  ? 'V':' '}}
+                            </td>
+                            <td align="center">
+                                {{$data->check_p16 ? ' ':"V"}}
+                            </td>
+                            <td>
+                                @if ($data->check_p16)
+                                <div><b>Terdapat Sarpras Untuk Cuci Tangan:</b> {{ $data->P16_1 ?: '-' }}</div>
+                                <div><b>Dilengkapi Sabun:</b> {{ $data->P16_2 ?: '-' }}</div>
+                                <div><b>Dilengkapi Pelindung Diri (APD):</b> {{ $data->P16_3 ?: '-' }}</div>
+                            @else
+                                {{ $data->P16_4 ?: '-' }}
+                            @endif
+                            </td>
+                        </tr>
+                        
+                    <tr>
                         <td>
                             17.	Apakah dilakukan program pengendalian hama dan serangga?
                         </td>
@@ -445,7 +552,16 @@
                             {{$data->check_p17 ? ' ':"V"}}
                         </td>
                         <td>
-                            {{ $data->P17 ?: '-' }}
+                            @if ($data->check_p17)
+                                                        <div><b>Dilakukan Secara Subkontrak:</b> {{ $data->P17_1 ?: '-' }}</div>
+                                                        <div><b>SOP Pengendalian Hama dan Seranga:</b> {{ $data->P17_2 ?: '-' }}</div>
+                                                        <div><b>Bukti Kontrak:</b> {{ $data->P17_3 ?: '-' }}</div>
+                                                        <div><b>Jadwal Inspeksi:</b> {{ $data->P17_4 ?: '-' }}</div>
+                                                        <div><b>Jenis Hama dan Metode:</b> {{ $data->P17_5 ?: '-' }}</div>
+                                                        <div><b>Jadwal dan Catatan Pelaksanaan Pengendalian Hama:</b> {{ $data->P17_6 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->P17_7 ?: '-' }}
+                                                    @endif
                         </td>
                     </tr>
                     <tr>
@@ -459,7 +575,11 @@
                             {{$data->check_p18 ? ' ':"V"}}
                         </td>
                         <td>
-                            {{ $data->P18 ?: '-' }}
+                            @if ($data->check_p18)
+                                                        <div><b>SOP Penanganan Hewan yang Mati:</b> {{ $data->P18_1 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->P18_2 ?: '-' }}
+                                                    @endif}
                         </td>
                     </tr>
                      <tr>
@@ -473,7 +593,12 @@
                             {{$data->check_p19 ? ' ':"V"}}
                         </td>
                         <td>
-                            {{ $data->P19 ?: '-' }}
+                            @if ($data->check_p19)
+                            <div><b>SOP Pengolahan Limbah:</b> {{ $data->P19_1 ?: '-' }}</div>
+                            <div><b>Metode:</b> {{ $data->P19_2 ?: '-' }}</div>
+                        @else
+                            {{ $data->P19_3 ?: '-' }}
+                        @endif
                         </td>
                     </tr>
                 </table>

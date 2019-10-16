@@ -214,7 +214,7 @@ class ExportController extends Controller
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
             
         $pdf = PDF::loadView('export.checklist1', ['form'=>$formDetail,
-                'dokter'=>$dokterPJ,
+                'dokterPJ'=>$dokterPJ,
                 'pengawas1'=>$pengawas1,
                 'pengawas2'=>$pengawas2,
                 'pengawas3'=>$pengawas3,

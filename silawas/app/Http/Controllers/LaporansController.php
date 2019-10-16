@@ -132,7 +132,7 @@ class LaporansController extends Controller
     }
 
     public function downloadExcel($start_date, $end_date){
-        $nama_file = 'laporan'.date('Y-m-d_H-i-s').'.xlsx';
+        $nama_file = 'LAPORAN_REKAPITULASI_HASIL_PENGAWASANKESMAVET'.date('Y-m-d_H-i-s').'.xlsx';
         return (new Report($start_date, $end_date))->download($nama_file);
     }
 

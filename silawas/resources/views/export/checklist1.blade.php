@@ -184,10 +184,10 @@
                         </td>
                         <td align="center"></td>
                         <td>
-                            <br>{!! $data->P1_1_1 ? '<b>No:</b> '.$data->P1_1_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_1_2 : '-' !!}<br>
-                            <br>{!! $data->P1_2_1 ? '<b>No:</b> '.$data->P1_2_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_2_2 : '-' !!}<br>
-                            <br>{!! $data->P1_3_1 ? '<b>No:</b> '.$data->P1_3_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_3_2 : '-' !!}<br>
-                            <br>{!! $data->P1_4_1 ? '<b>No:</b> '.$data->P1_4_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_4_2 : '-' !!}<br>
+                            <br>{!! $data->P1_1_1 ? '<b>Nomor izin usaha:</b> '.$data->P1_1_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_1_2 : '-' !!}<br>
+                            <br>{!! $data->P1_2_1 ? '<b>No NPWP:</b> '.$data->P1_2_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_2_2 : '-' !!}<br>
+                            <br>{!! $data->P1_3_1 ? '<b>No SIUP:</b> '.$data->P1_3_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_3_2 : '-' !!}<br>
+                            <br>{!! $data->P1_4_1 ? '<b>No NIB:</b> '.$data->P1_4_2.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->P1_4_2 : '-' !!}<br>
                         </td>
                     </tr>
                     <tr>
@@ -576,10 +576,10 @@
                         </td>
                         <td>
                             @if ($data->check_p18)
-                                                        <div><b>SOP Penanganan Hewan yang Mati:</b> {{ $data->P18_1 ?: '-' }}</div>
-                                                    @else
-                                                        {{ $data->P18_2 ?: '-' }}
-                                                    @endif}
+                                <div><b>SOP Penanganan Hewan yang Mati:</b> {{ $data->P18_1 ?: '-' }}</div>
+                            @else
+                                {{ $data->P18_2 ?: '-' }}
+                            @endif
                         </td>
                     </tr>
                      <tr>

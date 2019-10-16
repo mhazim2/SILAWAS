@@ -125,6 +125,85 @@ class Checklists2Controller extends Controller
             if (!isset($data_survey['check_p11'])) $data_survey['check_p11'] = '0';
             if (!isset($data_survey['check_p12'])) $data_survey['check_p12'] = '0';
             if (!isset($data_survey['check_p13'])) $data_survey['check_p13'] = '0';
+
+            //cek kosong
+            if (!isset($data_survey['P1_1_1'])) $data_survey['P1_1_1'] = null; 
+            if (!isset($data_survey['P1_1_2'])) $data_survey['P1_1_2'] = null; 
+            
+            if (!isset($data_survey['P1_2_1'])) $data_survey['P1_2_1'] = null; 
+            if (!isset($data_survey['P1_2_2'])) $data_survey['P1_2_2'] = null; 
+            
+            if (!isset($data_survey['P1_3_1'])) $data_survey['P1_3_1'] = null; 
+            if (!isset($data_survey['P1_3_2'])) $data_survey['P1_3_2'] = null; 
+            
+            if (!isset($data_survey['P1_4_1'])) $data_survey['P1_4_1'] = null; 
+            if (!isset($data_survey['P1_4_2'])) $data_survey['P1_4_2'] = null; 
+            
+            if (!isset($data_survey['P2_1'])) $data_survey['P2_1'] = null; 
+            if (!isset($data_survey['P2_2'])) $data_survey['P2_2'] = null; 
+            if (!isset($data_survey['P2_3'])) $data_survey['P2_3'] = null; 
+            if (!isset($data_survey['P2_4'])) $data_survey['P2_4'] = null; 
+            if (!isset($data_survey['P2_5'])) $data_survey['P2_5'] = null; 
+            
+            if (!isset($data_survey['P3_1'])) $data_survey['P3_1'] = null; 
+            if (!isset($data_survey['P3_2'])) $data_survey['P3_2'] = null; 
+            if (!isset($data_survey['P3_3'])) $data_survey['P3_3'] = null; 
+            if (!isset($data_survey['P3_4'])) $data_survey['P3_4'] = null; 
+            if (!isset($data_survey['P3_5'])) $data_survey['P3_5'] = null; 
+            
+            if (!isset($data_survey['P4_1'])) $data_survey['P4_1'] = null; 
+            if (!isset($data_survey['P4_2'])) $data_survey['P4_2'] = null;
+            
+            if (!isset($data_survey['P5_1'])) $data_survey['P5_1'] = null; 
+            if (!isset($data_survey['P5_2'])) $data_survey['P5_2'] = null; 
+            if (!isset($data_survey['P5_3'])) $data_survey['P5_3'] = null; 
+            if (!isset($data_survey['P5_4'])) $data_survey['P5_4'] = null; 
+             
+            if (!isset($data_survey['P6_1'])) $data_survey['P6_1'] = null; 
+            if (!isset($data_survey['P6_2'])) $data_survey['P6_2'] = null; 
+            if (!isset($data_survey['P6_3'])) $data_survey['P6_3'] = null; 
+            
+            if (!isset($data_survey['P7_1'])) $data_survey['P7_1'] = null; 
+            if (!isset($data_survey['P7_2'])) $data_survey['P7_2'] = null; 
+            if (!isset($data_survey['P7_3'])) $data_survey['P7_3'] = null; 
+            if (!isset($data_survey['P7_4'])) $data_survey['P7_4'] = null; 
+            if (!isset($data_survey['P7_5'])) $data_survey['P7_5'] = null; 
+            
+            if (!isset($data_survey['P8_1'])) $data_survey['P8_1'] = null; 
+            if (!isset($data_survey['P8_2'])) $data_survey['P8_2'] = null; 
+            if (!isset($data_survey['P8_3'])) $data_survey['P8_3'] = null; 
+            if (!isset($data_survey['P8_4'])) $data_survey['P8_4'] = null; 
+            if (!isset($data_survey['P8_5'])) $data_survey['P8_5'] = null; 
+            if (!isset($data_survey['P8_6'])) $data_survey['P8_6'] = null; 
+            if (!isset($data_survey['P8_7'])) $data_survey['P8_7'] = null;
+            
+            if (!isset($data_survey['P9_1'])) $data_survey['P9_1'] = null; 
+            if (!isset($data_survey['P9_2'])) $data_survey['P9_2'] = null; 
+            if (!isset($data_survey['P9_3'])) $data_survey['P9_3'] = null; 
+            if (!isset($data_survey['P9_4'])) $data_survey['P9_4'] = null; 
+            
+            if (!isset($data_survey['P10_1'])) $data_survey['P10_1'] = null; 
+            if (!isset($data_survey['P10_2'])) $data_survey['P10_2'] = null; 
+            if (!isset($data_survey['P10_3'])) $data_survey['P10_3'] = null; 
+            if (!isset($data_survey['P10_4'])) $data_survey['P10_4'] = null; 
+            if (!isset($data_survey['P10_5'])) $data_survey['P10_5'] = null; 
+            
+            if (!isset($data_survey['P11_1'])) $data_survey['P11_1'] = null; 
+            if (!isset($data_survey['P11_2'])) $data_survey['P11_2'] = null; 
+            if (!isset($data_survey['P11_3'])) $data_survey['P11_3'] = null; 
+            if (!isset($data_survey['P11_4'])) $data_survey['P11_4'] = null; 
+            
+            if (!isset($data_survey['P12_1'])) $data_survey['P12_1'] = null; 
+            if (!isset($data_survey['P12_2'])) $data_survey['P12_2'] = null; 
+            if (!isset($data_survey['P12_3'])) $data_survey['P12_3'] = null; 
+            if (!isset($data_survey['P12_4'])) $data_survey['P12_4'] = null; 
+            if (!isset($data_survey['P12_5'])) $data_survey['P12_5'] = null; 
+            if (!isset($data_survey['P12_6'])) $data_survey['P12_6'] = null; 
+            if (!isset($data_survey['P12_7'])) $data_survey['P12_7'] = null; 
+             
+            if (!isset($data_survey['P13_1'])) $data_survey['P13_1'] = null; 
+            if (!isset($data_survey['P13_2'])) $data_survey['P13_2'] = null; 
+            if (!isset($data_survey['P13_3'])) $data_survey['P13_3'] = null;
             
             // Save Data in Session
             session()->put('survey', $data_survey);

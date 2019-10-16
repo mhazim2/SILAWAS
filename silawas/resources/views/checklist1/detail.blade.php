@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-between mb-2">
                     <div class="col-md-8">
-                        <h1 class="m-0 text-dark">{{ $data->unitUsaha->NamaUnitUsaha }}</h1>
+                        <h1 class="m-0 text-dark">{{ $data->unitUsaha->NamaUnitUsaha ?: '-' }}</h1>
                         <small>Ceklis Pengawasan Tempat Budidaya Hewan Perah dan Pemerahan Susu</small>
                     </div>
                     <div class="col-md-4 text-md-right pt-3 pt-md-2">

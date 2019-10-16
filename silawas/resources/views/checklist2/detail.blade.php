@@ -77,10 +77,6 @@
                                 <div class="table-responsive">
                                     <table class="table table-borderless table-sm umum">
                                         <tr>
-                                            <td>Jenis Unit Usaha</td><td>:</td>
-                                            <td>{{ $data->form2->jenisUnitUsaha ?: '-' }}</td>
-                                        </tr>
-                                        <tr>
                                             <td>Nama Unit Usaha</td><td>:</td>
                                             <td>{{ $data->unitUsaha->NamaUnitUsaha ?: '-' }}</td>
                                         </tr>
@@ -127,8 +123,25 @@
                                             <td>{{ $data->form2->realisasiPemanfaatan ? $data->form2->realisasiPemanfaatan.' liter' : '-' }}</td>
                                         </tr>
                                         <tr>
+                                            <td>Skala Usaha</td><td>:</td>
+                                            <td>{{ $data->form2->skalaUsaha ?: '-' }}</td>
+                                        </tr>
+                                        <tr>
                                             <td>Wilayah Peredaran</td><td>:</td>
-                                            <td>{{ $data->form2->wilayahPeredaran ?: '-' }}</td>
+                                            <td>
+                                                @if ($data->form2->check_wilayahPeredaran_1)
+                                                    <div>Lokal {{ $data->form2->wilayahPeredaran_1 ? '('.$data->form2->wilayahPeredaran_1.')' : '' }}</div>
+                                                @endif
+                                                @if ($data->form2->check_wilayahPeredaran_2)
+                                                    <div>Lokal {{ $data->form2->wilayahPeredaran_2 ? '('.$data->form2->wilayahPeredaran_2.')' : '' }}</div>
+                                                @endif
+                                                @if ($data->form2->check_wilayahPeredaran_3)
+                                                    <div>Lokal {{ $data->form2->wilayahPeredaran_3 ? '('.$data->form2->wilayahPeredaran_3.')' : '' }}</div>
+                                                @endif
+                                                @if ($data->form2->check_wilayahPeredaran_4)
+                                                    <div>Lokal {{ $data->form2->wilayahPeredaran_4 ? '('.$data->form2->wilayahPeredaran_4.')' : '' }}</div>
+                                                @endif
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Jumlah Karyawan</td><td>:</td>
@@ -157,7 +170,6 @@
                                                         <li>NPWP</li>
                                                         <li>SIUP</li>
                                                         <li>NIB</li>
-                                                        <li>Perjanjian Kerja sama (jika Sewa RPH-U)</li>
                                                     </ul>
                                                 </td>
                                                 <td class="text-center text-success">
@@ -167,7 +179,6 @@
                                                         <tr><td>{!! $data->form2->check_p1_2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_3 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_4 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_5 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td class="text-center text-danger">
@@ -177,17 +188,15 @@
                                                         <tr><td>{!! $data->form2->check_p1_2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_3 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                         <tr><td>{!! $data->form2->check_p1_4 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
-                                                        <tr><td>{!! $data->form2->check_p1_5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}</td></tr>
                                                     </table>
                                                 </td>
                                                 <td>
                                                     <br>
                                                     <table class="table table-inner table-borderless table-sm mb-0">
-                                                        <tr>{!! $data->form2->P1_1 ? '<td><b>No:</b> '.$data->form2->P1_1.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_2 ? '<td><b>No:</b> '.$data->form2->P1_2.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_3 ? '<td><b>No:</b> '.$data->form2->P1_3.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_4 ? '<td><b>No:</b> '.$data->form2->P1_4.'</td>' : '<td>-</td>' !!}</tr>
-                                                        <tr>{!! $data->form2->P1_5 ? '<td><b>No:</b> '.$data->form2->P1_5.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form2->P1_1_1 ? '<td><b>No:</b> '.$data->form2->P1_1_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->form2->P1_1_2.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form2->P1_2_1 ? '<td><b>No:</b> '.$data->form2->P1_2_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->form2->P1_2_2.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form2->P1_3_1 ? '<td><b>No:</b> '.$data->form2->P1_3_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->form2->P1_3_2.'</td>' : '<td>-</td>' !!}</tr>
+                                                        <tr>{!! $data->form2->P1_4_1 ? '<td><b>No:</b> '.$data->form2->P1_4_1.'&nbsp <b>Tanggal Sertifikat:</b>'.$data->form2->P1_4_2.'</td>' : '<td>-</td>' !!}</tr>
                                                     </table>
                                                 </td>
                                             </tr>
@@ -205,10 +214,17 @@
                                                     @if ($data->form2->check_p2)
                                                         <div><b>No:</b> {{ $data->form2->P2_1 ?: '-' }}</div>
                                                         <div><b>Tanggal Penerbitan:</b> {{ $data->form2->P2_2 ?: '-' }}</div>
-                                                        <div><b>Surveilans terakhir:</b> {{ $data->form2->P2_3 ?: '-' }}</div>
-                                                        <div><b>Tindak lanjut temuan:</b> {{ $data->form2->P2_4 ?: '-' }}</div>
+                                                        <div><b>Surveilans Terakhir:</b> {{ $data->form2->P2_3 ?: '-' }}</div>
+                                                        <div><b>Tindak Lanjut Temuan:</b></div>
+                                                        <div>{{ $data->form2->P2_4 ?: '-' }}</div>
+                                                        <div><b>Scan Sertifikat NKV:</b></div>
+                                                        <div>
+                                                            <a href="{{ asset($data->form2->P2_5) }}">
+                                                                <img src="{{ asset($data->form2->P2_5) }}" alt="Scan Sertifikat NKV">
+                                                            </a>
+                                                        </div>
                                                     @else
-                                                        {{ $data->form2->P2_5 ?: '-' }}
+                                                        {{ $data->form2->P2_6 ?: '-' }}
                                                     @endif
                                                 </td>
                                             </tr>
@@ -227,8 +243,14 @@
                                                         <div><b>No:</b> {{ $data->form2->P3_1 ?: '-' }}</div>
                                                         <div><b>Tanggal Penerbitan:</b> {{ $data->form2->P3_2 ?: '-' }}</div>
                                                         <div><b>Masa Berlaku:</b> {{ $data->form2->P3_3 ? $data->form2->P3_3.' tahun' : '-' }}</div>
+                                                        <div><b>Scan Sertifikat Halal:</b></div>
+                                                        <div>
+                                                            <a href="{{ asset($data->form2->P3_4) }}">
+                                                                <img src="{{ asset($data->form2->P3_4) }}" alt="Scan Sertifikat Halal">
+                                                            </a>
+                                                        </div>
                                                     @else
-                                                        {{ $data->form2->P3_4 ?: '-' }}
+                                                        {{ $data->form2->P3_5 ?: '-' }}
                                                     @endif
                                                 </td>
                                             </tr>
@@ -248,8 +270,9 @@
                                                             @foreach($supliers as $suplier)
                                                                 <li>
                                                                     {{ $suplier->namaSuplier ? $suplier->namaSuplier.', ' : '' }}
+                                                                    {{ $suplier->negara ? $suplier->negara.', ' : '' }}
                                                                     {{ $suplier->tanggal ? $suplier->tanggal.', ' : '' }}
-                                                                    {{ $suplier->jumlah ? $suplier->jumlah.' liter' : '' }}
+                                                                    {{ $suplier->jumlah ? $suplier->jumlah.' Liter' : '' }}
                                                                 </li>
                                                             @endforeach
                                                         </ul>
@@ -270,7 +293,13 @@
                                                     {!! $data->form2->check_p5 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P5 ?: '-' }}
+                                                    @if ($data->form2->check_p5)
+                                                        <div><b>Pagar Atau Fasilitas Pembatas Lain:</b> {{ $data->form2->P5_1 ?: '-' }}</div>
+                                                        <div><b>Jenis:</b> {{ $data->form2->P5_2 ?: '-' }}</div>
+                                                        <div><b>Berhasil Dibatasi:</b> {{ $data->form2->P5_3 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P5_4 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -284,7 +313,10 @@
                                                     {!! $data->form2->check_p6 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P6 ?: '-' }}
+                                                    <div><b>Sarana Yang Digunakan:</b></div>
+                                                    <div>{{ $data->form2->P6_1 ?: '-' }}</div>
+                                                    <div><b>Rata-Rata Jumlah Susu yang Masuk dan Keluar:</b> {{ $data->form2->P6_2.' Liter/hari' ?: '-' }}</div>
+                                                    <div><b>Kesesuaian Jumlah dan Kapasitas Penampungan:</b> {{ $data->form2->P6_3 ?: '-' }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -298,7 +330,14 @@
                                                     {!! $data->form2->check_p7 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P7 ?: '-' }}
+                                                    @if ($data->form2->check_p7)
+                                                        <div><b>Memiliki Regulator Suhu:</b> {{ $data->form2->P7_1 ?: '-' }}</div>
+                                                        <div><b>Regulator Suhu Rutin Dikalibrasi:</b> {{ $data->form2->P7_2 ?: '-' }}</div>
+                                                        <div><b>Waktu Kalibrasi Terakhir:</b> {{ $data->form2->P7_3 ?: '-' }}</div>
+                                                        <div><b>Pencatatan Suhu Secara Rutin:</b> {{ $data->form2->P7_4 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P7_5 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -312,7 +351,16 @@
                                                     {!! $data->form2->check_p8 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P8 ?: '-' }}
+                                                    @if ($data->form2->check_p8)
+                                                        <div><b>SOP Pengambilan Sampel dan Pengujian:</b> {{ $data->form2->P8_1 ?: '-' }}</div>
+                                                        <div><b>Frekuensi Pengambilan Sampel:</b> {{ $data->form2->P8_2 ?: '-' }}</div>
+                                                        <div><b>Metode Pengambilan Sampel:</b> {{ $data->form2->P8_3 ?: '-' }}</div>
+                                                        <div><b>Jenis Uji:</b> {{ $data->form2->P8_4 ?: '-' }}</div>
+                                                        <div><b>Instansi yang Melakukan Pengujian:</b> {{ $data->form2->P8_5 ?: '-' }}</div>
+                                                        <div><b>Waktu Terakhir Pengujian:</b> {{ $data->form2->P8_6 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P8_7 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -326,7 +374,13 @@
                                                     {!! $data->form2->check_p9 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P9 ?: '-' }}
+                                                    @if ($data->form2->check_p9)
+                                                        <div><b>SOP Kalibrasi Instrumen Uji:</b> {{ $data->form2->P9_1 ?: '-' }}</div>
+                                                        <div><b>Frekuensi Pelaksanaan Kalibrasi:</b> {{ $data->form2->P9_2 ?: '-' }}</div>
+                                                        <div><b>Waktu Terakhir Kalibrasi:</b> {{ $data->form2->P9_3 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P9_4 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -340,7 +394,15 @@
                                                     {!! $data->form2->check_p10 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P10 ?: '-' }}
+                                                    @if ($data->form2->check_p10)
+                                                        <div><b>SOP Pemeliharaan Kebersihan Sarana dan Prasarana:</b> {{ $data->form2->P10_1 ?: '-' }}</div>
+                                                        <div><b>Frekuensi Pemeliharaan Kebersihan:</b> {{ $data->form2->P10_2 ?: '-' }}</div>
+                                                        <div><b>Metode:</b> {{ $data->form2->P10_3 ?: '-' }}</div>
+                                                        <div><b>Laporan hasil sanitasi (<i>QC Record</i>):</b> {{ $data->form2->P10_4 ?: '-' }}</div>
+                                                    @else
+                                                        <div><b>Kondisi Kebersihan Unit Usaha:</b></div>
+                                                        <div>{{ $data->form2->P10_5 ?: '-' }}</div>
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -354,7 +416,13 @@
                                                     {!! $data->form2->check_p11 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P11 ?: '-' }}
+                                                    @if ($data->form2->check_p11)
+                                                        <div><b>Terdapat Sarpras Untuk Cuci Tangan:</b> {{ $data->form2->P11_1 ?: '-' }}</div>
+                                                        <div><b>Dilengkapi Sabun:</b> {{ $data->form2->P11_2 ?: '-' }}</div>
+                                                        <div><b>Dilengkapi Pelindung Diri (APD):</b> {{ $data->form2->P11_3 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P11_4 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -368,7 +436,16 @@
                                                     {!! $data->form2->check_p12 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P12 ?: '-' }}
+                                                    @if ($data->form2->check_p12)
+                                                        <div><b>Dilakukan Secara Subkontrak:</b> {{ $data->form2->P12_1 ?: '-' }}</div>
+                                                        <div><b>SOP Pengendalian Hama dan Seranga:</b> {{ $data->form2->P12_2 ?: '-' }}</div>
+                                                        <div><b>Bukti Kontrak:</b> {{ $data->form2->P12_3 ?: '-' }}</div>
+                                                        <div><b>Jadwal Inspeksi:</b> {{ $data->form2->P12_4 ?: '-' }}</div>
+                                                        <div><b>Jenis Hama dan Metode:</b> {{ $data->form2->P12_5 ?: '-' }}</div>
+                                                        <div><b>Jadwal dan Catatan Pelaksanaan Pengendalian Hama:</b> {{ $data->form2->P12_6 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P12_7 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <tr>
@@ -382,7 +459,12 @@
                                                     {!! $data->form2->check_p13 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    {{ $data->form2->P13 ?: '-' }}
+                                                    @if ($data->form2->check_p13)
+                                                        <div><b>SOP Pengolahan Limbah:</b> {{ $data->form2->P13_1 ?: '-' }}</div>
+                                                        <div><b>Metode:</b> {{ $data->form2->P13_2 ?: '-' }}</div>
+                                                    @else
+                                                        {{ $data->form2->P13_3 ?: '-' }}
+                                                    @endif
                                                 </td>
                                             </tr>
                                         </tbody>

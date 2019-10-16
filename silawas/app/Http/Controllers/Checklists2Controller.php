@@ -55,6 +55,7 @@ class Checklists2Controller extends Controller
         if ($request->isMethod('post')) 
         {   
            
+           
             // Validate and Parsing Data
             request()->validate([
                 'idUnitUsaha' => 'required',
@@ -91,6 +92,22 @@ class Checklists2Controller extends Controller
             
             // Parsing Data
             $data_survey = $request->all();
+
+            // Upload File and Parsing Data
+            $data_survey = $request->all();
+            if ($request->hasFile('P2_5')) {
+                $path = Storage::putFile('files', $request->file('P2_5'));
+                $data_survey['P2_5'] = $path;
+            } else {
+                $data_survey['P2_5'] = $request['P2_5'];
+            }
+            if ($request->hasFile('P3_4')) {
+                $path = Storage::putFile('files', $request->file('P3_4'));
+                $data_survey['P3_4'] = $path;
+            } else {
+                $data_survey['P3_4'] = $request['P3_4'];
+            }
+
             if (!isset($data_survey['check_p1_1'])) $data_survey['check_p1_1'] = '0';
             if (!isset($data_survey['check_p1_2'])) $data_survey['check_p1_2'] = '0';
             if (!isset($data_survey['check_p1_3'])) $data_survey['check_p1_3'] = '0';
@@ -155,54 +172,96 @@ class Checklists2Controller extends Controller
 
         // Insert to Database
         $input_ceklis = Form2::create([
-            'jenisUnitUsaha' => $umum['jenisUnitUsaha'],
-            'kapasitasPenampungan' => $umum['kapasitasPenampungan'],
-            'kategoriUsaha' => $umum['kategoriUsaha'],
-            'realisasiPemanfaatan' => $umum['realisasiPemanfaatan'],
-            'wilayahPeredaran' => $umum['wilayahPeredaran'],
-            'jumlahKaryawan' => $umum['jumlahKaryawan'],
-            'check_p1_1' => $survey['check_p1_1'],
-            'P1_1' => $survey['P1_1'],
-            'check_p1_2' => $survey['check_p1_2'],
-            'P1_2' => $survey['P1_2'],
-            'check_p1_3' => $survey['check_p1_3'],
-            'P1_3' => $survey['P1_3'],
-            'check_p1_4' => $survey['check_p1_4'],
-            'P1_4' => $survey['P1_4'],
-            'check_p1_5' => $survey['check_p1_5'],
-            'P1_5' => $survey['P1_5'],
-            'check_p2' => $survey['check_p2'],
-            'P2_1' => $survey['P2_1'],
-            'P2_2' => $survey['P2_2'],
-            'P2_3' => $survey['P2_3'],
-            'P2_4' => $survey['P2_4'],
-            'P2_5' => $survey['P2_5'],
-            'check_p3' => $survey['check_p3'],
-            'P3_1' => $survey['P3_1'],
-            'P3_2' => $survey['P3_2'],
-            'P3_3' => $survey['P3_3'],
-            'P3_4' => $survey['P3_4'],
-            'check_p4' => $survey['check_p4'],
-            'P4_1' => $survey['P4_1'],
-            'P4_2' => $survey['P4_2'],
-            'check_p5' => $survey['check_p5'],
-            'P5' => $survey['P5'],
-            'check_p6' => $survey['check_p6'],
-            'P6' => $survey['P6'],
-            'check_p7' => $survey['check_p7'],
-            'P7' => $survey['P7'],
-            'check_p8' => $survey['check_p8'],
-            'P8' => $survey['P8'],
-            'check_p9' => $survey['check_p9'],
-            'P9' => $survey['P9'],
-            'check_p10' => $survey['check_p10'],
-            'P10' => $survey['P10'],
-            'check_p11' => $survey['check_p11'],
-            'P11' => $survey['P11'],
-            'check_p12' => $survey['check_p12'],
-            'P12' => $survey['P12'],
-            'check_p13' => $survey['check_p13'],
-            'P13' => $survey['P13'],
+            'kapasitasPenampungan'=> $umum['kapasitasPenampungan'], 
+            'realisasiPemanfaatan'=> $umum['realisasiPemanfaatan'], 
+            'skalaUsaha'=> $umum['skalaUsaha'], 
+            'check_wilayahPeredaran_1'=> $umum['check_wilayahPeredaran_1'],
+            'wilayahPeredaran_1'=> $umum['wilayahPeredaran_1'], 
+            'check_wilayahPeredaran_2'=> $umum['check_wilayahPeredaran_2'], 
+            'wilayahPeredaran_2'=> $umum['wilayahPeredaran_2'], 
+            'check_wilayahPeredaran_3'=> $umum['check_wilayahPeredaran_3'],
+            'wilayahPeredaran_3'=> $umum['wilayahPeredaran_3'], 
+            'check_wilayahPeredaran_4'=> $umum['check_wilayahPeredaran_4'],
+            'wilayahPeredaran_4'=> $umum['wilayahPeredaran_4'], 
+            'jumlahKaryawan'=> $umum['jumlahKaryawan'],
+            'check_p1_1'=> $survey['check_p1_1'], 
+            'P1_1_1'=> $survey['P1_1_1'], 
+            'P1_1_2'=> $survey['P1_1_2'], 
+            'check_p1_2'=> $survey['check_p1_2'], 
+            'P1_2_1'=> $survey['P1_2_1'], 
+            'P1_2_2'=> $survey['P1_2_2'], 
+            'check_p1_3'=> $survey['check_p1_3'], 
+            'P1_3_1'=> $survey['P1_3_1'], 
+            'P1_3_2'=> $survey['P1_3_2'], 
+            'check_p1_4'=> $survey['check_p1_4'], 
+            'P1_4_1'=> $survey['P1_4_1'], 
+            'P1_4_2'=> $survey['P1_4_2'], 
+            'check_p2'=> $survey['check_p2'], 
+            'P2_1'=> $survey['P2_1'], 
+            'P2_2'=> $survey['P2_2'], 
+            'P2_3'=> $survey['P2_3'], 
+            'P2_4'=> $survey['P2_4'], 
+            'P2_5'=> $survey['P2_5'], 
+            'check_p3'=> $survey['check_p3'],
+            'P3_1'=> $survey['P3_1'], 
+            'P3_2'=> $survey['P3_2'], 
+            'P3_3'=> $survey['P3_3'], 
+            'P3_4'=> $survey['P3_4'], 
+            'P3_5'=> $survey['P3_5'], 
+            'check_p4'=> $survey['check_p4'], 
+            'P4_1'=> $survey['P4_1'], 
+            'P4_2'=> $survey['P4_2'],
+            'check_p5'=> $survey['check_p5'], 
+            'P5_1'=> $survey['P5_1'], 
+            'P5_2'=> $survey['P5_2'], 
+            'P5_3'=> $survey['P5_3'], 
+            'P5_4'=> $survey['P5_4'], 
+            'check_p6'=> $survey['check_p6'], 
+            'P6_1'=> $survey['P6_1'], 
+            'P6_2'=> $survey['P6_2'], 
+            'P6_3'=> $survey['P6_3'], 
+            'check_p7'=> $survey['check_p7'], 
+            'P7_1'=> $survey['P7_1'], 
+            'P7_2'=> $survey['P7_2'], 
+            'P7_3'=> $survey['P7_3'], 
+            'P7_4'=> $survey['P7_4'], 
+            'P7_5'=> $survey['P7_5'], 
+            'check_p8'=> $survey['check_p8'], 
+            'P8_1'=> $survey['P8_1'], 
+            'P8_2'=> $survey['P8_2'], 
+            'P8_3'=> $survey['P8_3'], 
+            'P8_4'=> $survey['P8_4'], 
+            'P8_5'=> $survey['P8_5'], 
+            'P8_6'=> $survey['P8_6'], 
+            'P8_7'=> $survey['P8_7'],
+            'check_p9'=> $survey['check_p9'], 
+            'P9_1'=> $survey['P9_1'], 
+            'P9_2'=> $survey['P9_2'], 
+            'P9_3'=> $survey['P9_3'], 
+            'P9_4'=> $survey['P9_4'], 
+            'check_p10'=> $survey['check_p10'], 
+            'P10_1'=> $survey['P10_1'], 
+            'P10_2'=> $survey['P10_2'], 
+            'P10_3'=> $survey['P10_3'], 
+            'P10_4'=> $survey['P10_4'], 
+            'P10_5'=> $survey['P10_5'], 
+            'check_p11'=> $survey['check_p11'], 
+            'P11_1'=> $survey['P11_1'], 
+            'P11_2'=> $survey['P11_2'], 
+            'P11_3'=> $survey['P11_3'], 
+            'P11_4'=> $survey['P11_4'], 
+            'check_p12'=> $survey['check_p12'], 
+            'P12_1'=> $survey['P12_1'], 
+            'P12_2'=> $survey['P12_2'], 
+            'P12_3'=> $survey['P12_3'], 
+            'P12_4'=> $survey['P12_4'], 
+            'P12_5'=> $survey['P12_5'], 
+            'P12_6'=> $survey['P12_6'], 
+            'P12_7'=> $survey['P12_7'], 
+            'check_p13'=> $survey['check_p13'], 
+            'P13_1'=> $survey['P13_1'], 
+            'P13_2'=> $survey['P13_2'], 
+            'P13_3'=> $survey['P13_3'],
         ]);
         $input_survey = SurveyUnitUsaha::create([
             'idUnitUsaha' => $umum['idUnitUsaha'],
@@ -220,8 +279,9 @@ class Checklists2Controller extends Controller
             for($i=0;$i<$survey['P4_1'];$i++){
                 SuplierProduk::create([
                 'namaSuplier'=>$survey['P4_1_1'][$i],
-                'tanggal'=>$survey['P4_1_2'][$i],
-                'jumlah'=>$survey['P4_1_3'][$i],
+                'negara'=>$survey['P4_1_2'][$i],
+                'tanggal'=>$survey['P4_1_3'][$i],
+                'jumlah'=>$survey['P4_1_4'][$i],
                 'surveyUnitUsaha_idsurveyUnitusaha'=>$input_survey->id,
               ]);
             }

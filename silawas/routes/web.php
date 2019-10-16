@@ -274,3 +274,7 @@ Route::get('/export/blank/formulir14/{id}', 'ExportController@cetakBlank14');
 Route::get('/kolam', 'SikolamController@index')->name('sikolam.show');
 Route::get('/kolam/laporan', 'SikolamController@laporan')->name('sikolam.laporan');
 Route::get('/kolam/login', 'SikolamController@login')->name('sikolam.login');
+
+
+// Cuma Test
+Route::get('/testexcel', 'LaporansController@testExcel')->name('testexcel.show');

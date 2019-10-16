@@ -136,6 +136,8 @@ class LaporansController extends Controller
         return (new Report($start_date, $end_date))->download($nama_file);
     }
 
-
+    public function testExcel() {
+        return view('export.report');
+    }
     
 }

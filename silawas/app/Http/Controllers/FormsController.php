@@ -6,8 +6,19 @@ use App\UnitUsaha;
 use App\SurveyUnitUsaha;
 use App\PengawasKesmavet;
 use App\Form1;
+use App\Form2;
+use App\Form3;
+use App\Form4;
+use App\Form5;
 use App\form6;
+use App\Form7;
+use App\Form8;
+use App\Form9;
 use App\Form10;
+use App\Form11;
+use App\Form12;
+use App\Form13;
+use App\Form14;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
@@ -488,6 +499,38 @@ class FormsController extends Controller
                 return redirect()->route('pengawasan.show');
                 }
         }
+        else if (isset($survey['idForm2'])){
+            $f=Form2::where('id',$survey->idForm2)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm3'])){
+            $f=Form3::where('id',$survey->idForm3)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm4'])){
+            $f=Form4::where('id',$survey->idForm4)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm5'])){
+            $f=Form5::where('id',$survey->idForm5)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
         else if (isset($survey['idForm6'])){
             $f=form6::where('id',$survey->idForm6)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
@@ -496,8 +539,64 @@ class FormsController extends Controller
                 return redirect()->route('pengawasan.show');
                 }
         }
+        else if (isset($survey['idForm7'])){
+            $f=Form7::where('id',$survey->idForm7)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm8'])){
+            $f=Form8::where('id',$survey->idForm8)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm9'])){
+            $f=Form9::where('id',$survey->idForm9)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
         else if (isset($survey['idForm10'])){
             $f= Form10::where('id',$survey->idForm10)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm11'])){
+            $f=Form11::where('id',$survey->idForm11)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm12'])){
+            $f=Form12::where('id',$survey->idForm12)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm13'])){
+            $f=Form13::where('id',$survey->idForm13)->delete();
+            $survey = SurveyUnitUsaha::where('id', $id)->delete();
+            if($f && $survey){
+                Alert::success('Data Berhasil Dihapus');
+                return redirect()->route('pengawasan.show');
+                }
+        }
+        else if (isset($survey['idForm14'])){
+            $f=Form14::where('id',$survey->idForm14)->delete();
             $survey = SurveyUnitUsaha::where('id', $id)->delete();
             if($f && $survey){
                 Alert::success('Data Berhasil Dihapus');

@@ -540,21 +540,25 @@ class FormsController extends Controller
 
         Alert::success('Data Berhasil Diupload ');
         
-        return redirect()->route('pengawasan.show');
+        return redirect()->back();
     }
 
-    public function downloadBukti(Request $id){
+    public function downloadBukti( $id){
         //bug return data always null
-        $forms = SurveyUnitUsaha::findorFail($id);
+        $form = SurveyUnitUsaha::findorFail($id);
         
-        return dd($forms);
-        // $path = $form->buktiFile;
+        $path = $form->buktiFile;
 
-        // if (isset($form->buktiFile)){
-        //     Alert::error('Data Tidak Ditemukan');
-        // }
-         
-        // return response()->download(storage_path($path));
+        if (isset($form->buktiFile)){
+            return response()->download(public_path($path));
+            
+        }
+        else {
+            Alert::error('Data Tidak Ditemukan');
+             return redirect()->back();
+        } 
+        
+        
     }
 
 }

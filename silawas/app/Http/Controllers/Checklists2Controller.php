@@ -71,6 +71,21 @@ class Checklists2Controller extends Controller
 
             // Save Data in Session
             $data_umum = $request->all();
+            
+            //cek kosong
+            if (!isset($data_umum['kapasitasPenampungan'])) $data_umum['kapasitasPenampungan'] = null; 
+            if (!isset($data_umum['realisasiPemanfaatan'])) $data_umum['realisasiPemanfaatan'] = null; 
+            if (!isset($data_umum['skalaUsaha'])) $data_umum['skalaUsaha'] = null; 
+            if (!isset($data_umum['check_wilayahPeredaran_1'])) $data_umum['check_wilayahPeredaran_1'] = '0';
+            if (!isset($data_umum['wilayahPeredaran_1'])) $data_umum['wilayahPeredaran_1'] = null; 
+            if (!isset($data_umum['check_wilayahPeredaran_2'])) $data_umum['check_wilayahPeredaran_2'] = '0'; 
+            if (!isset($data_umum['wilayahPeredaran_2'])) $data_umum['wilayahPeredaran_2'] = null; 
+            if (!isset($data_umum['check_wilayahPeredaran_3'])) $data_umum['check_wilayahPeredaran_3'] = '0';
+            if (!isset($data_umum['wilayahPeredaran_3'])) $data_umum['wilayahPeredaran_3'] = null; 
+            if (!isset($data_umum['check_wilayahPeredaran_4'])) $data_umum['check_wilayahPeredaran_4'] = '0';
+            if (!isset($data_umum['wilayahPeredaran_4'])) $data_umum['wilayahPeredaran_4'] = null; 
+            if (!isset($data_umum['jumlahKaryawan'])) $data_umum['jumlahKaryawan'] = null;
+
             session()->put('umum', $data_umum);
             return redirect()->action('Checklists2Controller@survey');
         }

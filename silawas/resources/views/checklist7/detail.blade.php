@@ -17,11 +17,11 @@
                                 <i class="fas fa-file-upload mr-1"></i> Upload File
                             </button>
                         </a>
-                        <a href="#" class="d-inline-block">
+                        {{-- <a href="#" class="d-inline-block">
                             <button type="button" class="btn btn-warning">
                                 <i class="fas fa-edit mr-1"></i> Edit
                             </button>
-                        </a>
+                        </a> --}}
                         <div class="btn-group" role="group">
                             <button id="btnGroupExport" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                 <i class="fas fa-file-download mr-1"></i> Ekspor
@@ -29,7 +29,7 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/blank/formulir7/{{ $data->id }}">Ceklis Kosong</a>
                                 <a class="dropdown-item" href="/export/formulir7/{{$surveyID}}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="#">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/downloadBukti/{{ $data->id }}">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>

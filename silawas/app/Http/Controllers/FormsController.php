@@ -544,7 +544,17 @@ class FormsController extends Controller
     }
 
     public function downloadBukti(Request $id){
-        $form = SurveyUnitUsaha::find($id);
-        $path = $form->buktiFile;
+        //bug return data always null
+        $forms = SurveyUnitUsaha::where('id', $id)->firstOrFail();
+        
+        return dd($forms);
+        // $path = $form->buktiFile;
+
+        // if (isset($form->buktiFile)){
+        //     Alert::error('Data Tidak Ditemukan');
+        // }
+         
+        // return response()->download(storage_path($path));
     }
+
 }

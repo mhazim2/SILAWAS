@@ -68,6 +68,7 @@ Route::get('/pengawasan', 'PengawasansController@index')->name('pengawasan.show'
 Route::get('/pengawasan/ceklis', 'PengawasansController@checklists')->name('pengawasan.ceklis');
 Route::get('/pengawasan/hapus/{pengawasan_id}', 'PengawasansController@delete')->name('pengawasan.delete');
 Route::post('/uploadBukti/{survey_id}', 'FormsController@uploadBukti');
+Route::get('/downloadBukti/{survey_id}', 'FormsController@downloadBukti');
 
 // Halaman Checklist 1
 Route::redirect('/pengawasan/checklist/1', '/pengawasan/checklist/1/umum')->name('checklist1.show');

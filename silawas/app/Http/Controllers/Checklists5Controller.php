@@ -94,9 +94,9 @@ class Checklists5Controller extends Controller
              //validasi
              request()->validate([
 
-                'P6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'P7' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                'P26' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'P6' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+                'P7' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+                'P26' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
     
             ]);
             // Parsing Data

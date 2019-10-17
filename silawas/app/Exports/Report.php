@@ -12,6 +12,8 @@
  use Maatwebsite\Excel\Concerns\ShouldAutoSize;
  use Maatwebsite\Excel\Concerns\WithColumnFormatting;
  use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+ use Maatwebsite\Excel\Concerns\FromView;
+
  
  class Report implements FromQuery,WithHeadings,ShouldAutoSize,WithColumnFormatting
  {
@@ -23,10 +25,12 @@
          $this->end = $end;
      }
 
+     
+
      public function headings(): array
     {
         return [
-            'Tanggal Pelaksanaan', 'Nama Unit Usaha', 'Hasil Temuan' ,'Rekomendasi Tindak Lanjut','Hasil Tindak Lanjut'
+            'Tanggal Pelaksanaan', 'Nama Unit Usaha','Jenis Unit Usaha' ,'Hasil Temuan' ,'Rekomendasi Tindak Lanjut','Hasil Tindak Lanjut'
         ];
     }
 

@@ -483,9 +483,9 @@
                                 </div>
                                 <br> 
                                 <br>
-                                <div style="min-height:150px; padding-left:18px; text-align:center">
+                                {{-- <div style="min-height:150px; padding-left:18px; text-align:center">
                                 Cap Unit Usaha<br><br><br>
-                                </div>
+                                </div> --}}
                                 <div style="min-height:150px; padding-left:18px; text-align:center">
                                     <br>..............., ...................................
                                 </div>

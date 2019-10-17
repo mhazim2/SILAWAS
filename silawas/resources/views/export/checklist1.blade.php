@@ -40,13 +40,13 @@
 <body>
 @foreach($form as $data)
     <table width="100%">
-        <tr>
+        {{-- <tr>
             <td colspan="2" align="center">
                 <h3 style="margin-top:0px"><strong>KEMENTRIAN PERTANIAN</strong></h3>
                 <h3 style="margin-top:0px"><strong>DIREKTORAT JENDRAL PETERNAKAN DAN KESEHATAN HEWAN</strong></h3>
             </td>
         </tr>
-        {{-- <tr>
+        <tr>
             <td rowspan="5" align="center" width="15%">
                
                 <img src="{{ public_path('img/backkesmavet3.png') }}" width="100" height="100" style="margin-top:8px">
@@ -57,12 +57,12 @@
         <tr><td>Fax.</td></tr>
         <tr><td>E-mail:</td></tr>
         <tr><td>Website:</td></tr>
-        <tr><td colspan="2"><hr style="margin:8px 0px"></td></tr> --}} --}}
+        <tr><td colspan="2"><hr style="margin:8px 0px"></td></tr> --}}
         {{-- <tr>
             <td colspan="2" align="center">
                 <h3 style="margin-bottom:0px"><strong>Formulir Ceklis</strong></h3>
             </td>
-        </tr>
+        </tr> --}}
         <tr>
             <td colspan="2" align="center">
                 <h3 style="margin-top:0px"><strong>Laporan Pengawasan Unit Usaha Produk Hewan </strong></h3>
@@ -621,9 +621,9 @@
                             </div>
                             <br> 
                             <br>
-                            <div style="min-height:150px; padding-left:18px; text-align:center">
+                            {{-- <div style="min-height:150px; padding-left:18px; text-align:center">
                             Cap Unit Usaha<br><br><br>
-                            </div>
+                            </div> --}}
                             <div style="min-height:150px; padding-left:18px; text-align:center">
                                 <br>..............., ...................................
                             </div>

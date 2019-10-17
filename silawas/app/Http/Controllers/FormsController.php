@@ -542,4 +542,9 @@ class FormsController extends Controller
         
         return redirect()->route('pengawasan.show');
     }
+
+    public function downloadBukti(Request $id){
+        $form = SurveyUnitUsaha::find($id);
+        $path = $form->buktiFile;
+    }
 }

@@ -209,7 +209,7 @@
                                                                     <label id="p2_5_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
                                                         </div>
                                                     </div>
                                                 </div>

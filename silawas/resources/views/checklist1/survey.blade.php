@@ -186,7 +186,7 @@
                                                                     <label id="p2_1_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -363,7 +363,7 @@
                                                                     <label id="p5_5_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -828,7 +828,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-4">
-                                                            <label>Apakah pemerah membesihkan tangan sebelum memerah?</label>
+                                                            <label>Apakah pemerah membersihkan tangan sebelum memerah?</label>
                                                             <div class="d-block">
                                                                 <div class="icheck-white d-inline mr-3">
                                                                     <input id="p13_1_1" type="radio" name="P13_1" value="Ya">

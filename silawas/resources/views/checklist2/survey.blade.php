@@ -209,7 +209,7 @@
                                                                     <label id="p2_5_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -292,7 +292,7 @@
                                                                     <label id="p3_4_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -884,7 +884,7 @@
                                                     </div>
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-4">
-                                                            <label>SOP pengendalian hama dan seranga</label>
+                                                            <label>SOP pengendalian hama dan serangga</label>
                                                             <div class="d-block">
                                                                 <div class="icheck-white d-inline mr-3">
                                                                     <input id="p12_2_1" type="radio" name="P12_2" value="Ada">

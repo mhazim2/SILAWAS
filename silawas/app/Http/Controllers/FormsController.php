@@ -545,7 +545,7 @@ class FormsController extends Controller
 
     public function downloadBukti(Request $id){
         //bug return data always null
-        $forms = SurveyUnitUsaha::where('id', $id)->firstOrFail();
+        $forms = SurveyUnitUsaha::findorFail($id);
         
         return dd($forms);
         // $path = $form->buktiFile;

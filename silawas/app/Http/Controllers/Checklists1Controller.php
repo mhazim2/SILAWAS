@@ -169,6 +169,11 @@ class Checklists1Controller extends Controller
 
             if (!isset($data_survey['P4_1'])) $data_survey['P4_1'] = null;
             if (!isset($data_survey['P5_1'])) $data_survey['P5_1'] = null;
+            if (!isset($data_survey['P5_2'])) $data_survey['P5_2'] = null;
+            if (!isset($data_survey['P5_3'])) $data_survey['P5_3'] = null;
+            if (!isset($data_survey['P5_4'])) $data_survey['P5_4'] = null;
+            if (!isset($data_survey['P5_5'])) $data_survey['P5_5'] = null;
+            if (!isset($data_survey['P5_6'])) $data_survey['P5_6'] = null;
             if (!isset($data_survey['P6_1'])) $data_survey['P6_1'] = null;
             if (!isset($data_survey['P6_2'])) $data_survey['P6_2'] = null;
             if (!isset($data_survey['P6_3'])) $data_survey['P6_3'] = null;

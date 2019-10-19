@@ -275,6 +275,10 @@ Route::get('/export/blank/formulir14/{id}', 'ExportController@cetakBlank14');
 Route::get('/kolam', 'SikolamController@index')->name('sikolam.show');
 Route::get('/kolam/laporan', 'SikolamController@laporan')->name('sikolam.laporan');
 Route::get('/kolam/login', 'SikolamController@login')->name('sikolam.login');
+Route::get('/kolam/dashboard', 'SikolamController@dashboard')->name('sikolam.dashboard');
+Route::get('/kolam/pengawas', 'SikolamController@pengawas')->name('sikolam.pengawas');
+Route::get('/kolam/aduan', 'SikolamController@aduan')->name('sikolam.aduan');
+Route::get('/kolam/aduan/detail', 'SikolamController@detailAduan')->name('sikolam.detailaduan');
 
 
 // Cuma Test

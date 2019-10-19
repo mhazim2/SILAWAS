@@ -10,7 +10,7 @@
         <div class="card-body login-card-body">
             <p class="login-box-msg">Silahkan masuk untuk melanjutkan</p>
 
-            <form class="mb-4" action="{{ route('login') }}" method="POST">
+            <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="input-group mb-3">
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" required autocomplete="email" autofocus>

@@ -75,7 +75,12 @@
                 </div>
                 <div class="tab-pane fade" id="edukasi" role="tabpanel" aria-labelledby="edukasi-tab">
                     <div class="row edumat-list">
-                        <div class="col-md-3">
+                        <div class="col-12">
+                            <div class="text-center">
+                                Tidak ada material edukasi.
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3">
                             <div class="card" title="Buku Pedoman Pengawasan Kesehatan Masyarakat Veteriner v4" data-toggle="tooltip" data-placement="right">
                                 <div class="card-img-container">
                                     <img src="{{ asset('files/panduan/Buku_Pedoman_VTRNR_V4.png') }}" class="card-img-top">
@@ -88,19 +93,16 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pengawas" role="tabpanel" aria-labelledby="pengawas-tab">
                     <div class="table-responsive">
                         <table id="pengawas-datatable" class="table table-sm table-bordered table-striped">
-                            <thead>
+                            <thead class="font-weight-bold">
                                 <td class="text-center">No</td>
                                 <td>Nama Pengawas</td>
-                                <td>NIP</td>
-                                <td>Nomor Registrasi</td>
-                                <td>Jabatan</td>
-                                <td>Unit Kerja</td>
+                                <td>Instansi</td>
                                 <td>Alamat Kantor</td>
                                 <td>No. Telp</td>
                                 <td>Email</td>
@@ -109,9 +111,6 @@
                                 <tr>
                                     <td class="text-center">1</td>
                                     <td>Wiradani</td>
-                                    <td>123456789</td>
-                                    <td>257</td>
-                                    <td>Ketua</td>
                                     <td>Kesmavet</td>
                                     <td>DKI Jakarta</td>
                                     <td>08123456789</td>
@@ -120,9 +119,6 @@
                                 <tr>
                                     <td class="text-center">2</td>
                                     <td>Wawan</td>
-                                    <td>987654321</td>
-                                    <td>341</td>
-                                    <td>Wakil</td>
                                     <td>Kesmavet</td>
                                     <td>DKI Jakarta</td>
                                     <td>08987654321</td>
@@ -131,9 +127,6 @@
                                 <tr>
                                     <td class="text-center">3</td>
                                     <td>Feby</td>
-                                    <td>1357924680</td>
-                                    <td>765</td>
-                                    <td>Sekretaris</td>
                                     <td>Kesmavet</td>
                                     <td>DKI Jakarta</td>
                                     <td>08987654321</td>
@@ -145,7 +138,12 @@
                 </div>
                 <div class="tab-pane fade" id="laporan" role="tabpanel" aria-labelledby="laporan-tab">
                     <div class="laporan-item row">
-                        <div class="col-12 mb-3">
+                        <div class="col-12">
+                            <div class="text-center">
+                                Tidak ada laporan.
+                            </div>
+                        </div>
+                        <!-- <div class="col-12 mb-3">
                             <h5 class="font-weight-bold">Judul 1</h5>
                             <img src="https://picsum.photos/150/150" alt="Gambar Laporan" class="float-left img-thumbnail">
                             <p class="text-justify">
@@ -180,7 +178,7 @@
                             </p>
                             <a class="btn btn-kesmavet float-right" href="{{ route('sikolam.laporan') }}">SELENGKAPNYA >></a>
                             <div class="clearfix"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

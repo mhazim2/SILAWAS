@@ -52,14 +52,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_1" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_1">
+                                                            <input type="text" class="form-control" name="P1_1_1">
                                                             <small class="form-text"><b>Contoh:</b> 999/XXX/9999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_1_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -73,14 +80,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_2" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_2">
+                                                            <input type="text" class="form-control" name="P1_2_1">
                                                             <small class="form-text"><b>Contoh:</b> 99.999.999.9-999.999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_2_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -94,14 +108,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_3" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_3">
+                                                            <input type="text" class="form-control" name="P1_3_1">
                                                             <small class="form-text"><b>Contoh:</b> 999/XXX/9999</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_3_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -115,35 +136,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div id="hidden_p1_4" class="bg-kesmavet p-2 mb-5" style="display:none">
                                                 <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="form-group mb-0">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-lg-0">
                                                             <label>Nomor</label>
-                                                            <input type="text" class="form-control" name="P1_4">
+                                                            <input type="text" class="form-control" name="P1_4_1">
                                                             <small class="form-text"><b>Contoh:</b> 9999999999999</small>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="d-block">
-                                                <div class="icheck-wisteria d-block" onclick="check_p1_5()">
-                                                    <input id="check_p1_5" type="checkbox" name="check_p1_5" value="1">
-                                                    <label class="font-weight-normal" for="check_p1_5">Perjanjian Kerja Sama (jika Sewa Unit Usaha)</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p1_5" class="bg-kesmavet p-2 mb-5" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
+                                                    <div class="col-lg-6">
                                                         <div class="form-group mb-0">
-                                                            <label>Nama Perjanjian</label>
-                                                            <input type="text" class="form-control" name="P1_5">
-                                                            <small class="form-text"><b>Contoh:</b> Perjanjian Sewa</small>
+                                                            <label>Tanggal Penerbitan</label>
+                                                            <input type="text" class="form-control" name="P1_4_2">
+                                                            <small class="form-text"><b>Contoh:</b> 12 Juli 2018</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -170,37 +177,58 @@
                                             <div id="hidden_p2_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-4">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Nomor</label>
                                                             <input type="text" class="form-control" name="P2_1">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Tanggal Penerbitan</label>
                                                             <input type="text" class="form-control" name="P2_2">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Tanggal Surveilans Terakhir</label>
                                                             <input type="text" class="form-control" name="P2_3">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-12">
-                                                        <div class="form-group">
+                                                        <div class="form-group mb-4">
                                                             <label>Tindak Lanjut Temuan</label>
                                                             <textarea class="form-control" rows="2" name="P2_4"></textarea>
                                                         </div>
                                                     </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group mb-0">
+                                                            <label>Scan Sertifikat NKV</label>
+                                                            <div class="input-group">
+                                                                <div class="custom-file">
+                                                                    <input type="file" id="p2_5_file" name="P2_5" class="custom-file-input">
+                                                                    <label id="p2_5_label" class="custom-file-label" for="file">Pilih file...</label>
+                                                                </div>
+                                                            </div>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div id="hidden_p2_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div id="hidden_p2_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P2_5"></textarea>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p2_6_1" type="radio" name="P2_6" value="Dalam Proses">
+                                                                    <label class="font-weight-normal" for="p2_6_1">Dalam Proses</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p2_6_2" type="radio" name="P2_6" value="Belum Diproses">
+                                                                    <label class="font-weight-normal" for="p2_6_2">Belum Diproses</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -271,12 +299,43 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
-                                            <div id="hidden_p4" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                            <div id="hidden_p4_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Kesesuaian Asal</label>
+                                                            <input type="text" class="form-control" name="P4_1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Jumlah Produk</label>
+                                                            <div class="row">
+                                                                <div class="col-lg-8">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" name="P4_2">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text">Ton</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Tujuan</label>
+                                                            <input type="text" class="form-control" name="P4_3">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p4_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P4"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P4_4"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -299,13 +358,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p5" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-12">
+                                            <div id="hidden_p5_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <label>Catatan Suplier</label>
+                                                        <input type="hidden" id="p5_count" name="P5_1" value="0">
+                                                        <div id="hidden_p5_1_detail" class="px-2"></div>
+                                                        <button type="button" class="btn btn-primary my-2 mr-1" onclick="p5_plus()">Tambah</button>
+                                                        <button type="button" class="btn btn-danger my-2" onclick="p5_minus()">Kurangi</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p5_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P5"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P5_2"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -329,13 +399,57 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p6" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p6_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Adakah pagar atau fasilitas lain pencegah keluar masuknya hewan dan manusia?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p6_1_1" type="radio" name="P6_1" value="Ya">
+                                                                    <label class="font-weight-normal" for="p6_1_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p6_1_2" type="radio" name="P6_1" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p6_1_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Jenis pagar atau fasilitas lain yang mendukung pencegahan keluar masuknya hewan dan manusia</label>
+                                                            <div class="row">
+                                                                <div class="col-lg-8">
+                                                                    <input type="text" class="form-control" name="P6_2">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Apakah akses masuknya hewan atau orang berhasil dibatasi dengan adanya fasilitas tersebut?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p6_3_1" type="radio" name="P6_3" value="Ya">
+                                                                    <label class="font-weight-normal" for="p6_3_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p6_3_2" type="radio" name="P6_3" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p6_3_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p6_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P6"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P6_4"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -362,9 +476,30 @@
                                             <div id="hidden_p7" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Deskripsi sarana yang digunakan</label>
+                                                            <textarea class="form-control" rows="2" name="P7_1"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Rata-rata jumlah susu yang masuk dan keluar tempat penampungan</label>
+                                                            <div class="row">
+                                                                <div class="col-lg-8">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control" name="P7_2">
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text">Liter/hari</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P7"></textarea>
+                                                            <label>Kesesuaian jumlah dan kapasitas penampungan</label>
+                                                            <input type="text" class="form-control" name="P7_3">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -387,13 +522,97 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-8">
                                             <div id="hidden_p8" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Apakah telur dalam kondisi baik?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_1_1" type="radio" name="P8_1" value="Ya">
+                                                                    <label class="font-weight-normal" for="p8_1_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_1_2" type="radio" name="P8_1" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p8_1_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>SOP penanganan produk hewan</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_2_1" type="radio" name="P8_2" value="Ada">
+                                                                    <label class="font-weight-normal" for="p8_2_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_2_2" type="radio" name="P8_2" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p8_2_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Sorting telur</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_3_1" type="radio" name="P8_3" value="Ada">
+                                                                    <label class="font-weight-normal" for="p8_3_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_3_2" type="radio" name="P8_3" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p8_3_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Pembersihan telur</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_4_1" type="radio" name="P8_4" value="Ada">
+                                                                    <label class="font-weight-normal" for="p8_4_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_4_2" type="radio" name="P8_4" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p8_4_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Penerapan FIFO</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_5_1" type="radio" name="P8_5" value="Ada">
+                                                                    <label class="font-weight-normal" for="p8_5_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_5_2" type="radio" name="P8_5" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p8_5_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P8"></textarea>
+                                                            <label>Terdapat rak/pallet/sejenisnya sehingga tidak bersentuhan dengan lantai</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p8_6_1" type="radio" name="P8_6" value="Ya">
+                                                                    <label class="font-weight-normal" for="p8_6_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p8_6_2" type="radio" name="P8_6" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p8_6_2">Tidak</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -421,7 +640,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
+                                                            <label>Bagaimana perlakuan terhadap telur yang retak/pecah?</label>
                                                             <textarea class="form-control" rows="2" name="P9"></textarea>
                                                         </div>
                                                     </div>
@@ -445,13 +664,59 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p10" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p10_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>SOP pemeliharaan kebersihan sarana dan prasarana?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p10_1_1" type="radio" name="P10_1" value="Ada">
+                                                                    <label class="font-weight-normal" for="p10_1_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p10_1_2" type="radio" name="P10_1" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p10_1_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Frekuensi pemeliharaan kebersihan</label>
+                                                            <input type="text" class="form-control" name="P10_2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Metode yang digunakan</label>
+                                                            <input type="text" class="form-control" name="P10_3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Laporan hasil sanitasi (<i>QC Record</i>)</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p10_4_1" type="radio" name="P10_4" value="Ada">
+                                                                    <label class="font-weight-normal" for="p10_4_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p10_4_2" type="radio" name="P10_4" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p10_4_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p10_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
-                                                            <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P10"></textarea>
+                                                            <label>Kondisi kebersihan unit usaha</label>
+                                                            <textarea class="form-control" rows="2" name="P10_5"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -474,13 +739,62 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p11" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p11_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Apakah ada sarpras untuk cuci tangan yang mudah diakses?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p11_1_1" type="radio" name="P11_1" value="Ya">
+                                                                    <label class="font-weight-normal" for="p11_1_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p11_1_2" type="radio" name="P11_1" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p11_1_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Apakah dilengkapi dengan sabun?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p11_2_1" type="radio" name="P11_2" value="Ya">
+                                                                    <label class="font-weight-normal" for="p11_2_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p11_2_2" type="radio" name="P11_2" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p11_2_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Apakah dilengkapi dengan pelindung Diri (APD)?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p11_3_1" type="radio" name="P11_3" value="Ya">
+                                                                    <label class="font-weight-normal" for="p11_3_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p11_3_2" type="radio" name="P11_3" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p11_3_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p11_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P11"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P11_4"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -503,13 +817,89 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p12" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p12_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Apakah program pengendalian hama dan serangga dilakukan secara subkontrak dengan perusahaan lain?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p12_1_1" type="radio" name="P12_1" value="Ya">
+                                                                    <label class="font-weight-normal" for="p12_1_1">Ya</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p12_1_2" type="radio" name="P12_1" value="Tidak">
+                                                                    <label class="font-weight-normal" for="p12_1_2">Tidak</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>SOP pengendalian hama dan serangga</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p12_2_1" type="radio" name="P12_2" value="Ada">
+                                                                    <label class="font-weight-normal" for="p12_2_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p12_2_2" type="radio" name="P12_2" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p12_2_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Bukti kontrak</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p12_3_1" type="radio" name="P12_3" value="Ada">
+                                                                    <label class="font-weight-normal" for="p12_3_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p12_3_2" type="radio" name="P12_3" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p12_3_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Jadwal inspeksi</label>
+                                                            <input type="text" class="form-control" name="P12_4">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>Jenis hama dan Metode</label>
+                                                            <input type="text" class="form-control" name="P12_5">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Jadwal dan catatan pelaksanaan pengendalian hama</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p12_6_1" type="radio" name="P12_6" value="Ada">
+                                                                    <label class="font-weight-normal" for="p12_6_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p12_6_2" type="radio" name="P12_6" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p12_6_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p12_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P12"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P12_7"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -532,13 +922,38 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6">
-                                            <div id="hidden_p13" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                        <div class="col-lg-8">
+                                            <div id="hidden_p13_1" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-4">
+                                                            <label>SOP pengolahan limbah?</label>
+                                                            <div class="d-block">
+                                                                <div class="icheck-white d-inline mr-3">
+                                                                    <input id="p13_1_1" type="radio" name="P13_1" value="Ada">
+                                                                    <label class="font-weight-normal" for="p13_1_1">Ada</label>
+                                                                </div>
+                                                                <div class="icheck-white d-inline">
+                                                                    <input id="p13_1_2" type="radio" name="P13_1" value="Tidak Ada">
+                                                                    <label class="font-weight-normal" for="p13_1_2">Tidak Ada</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-group mb-2">
+                                                            <label>Metode pelaksanaan pengolahan limbah</label>
+                                                            <input type="text" class="form-control" name="P13_2">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="hidden_p13_2" class="bg-kesmavet p-2 mt-2 mb-4" style="display:none">
                                                 <div class="row">
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P13"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P13_3"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

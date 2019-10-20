@@ -48,6 +48,7 @@ function check_p1_1() {
     } else {
         document.getElementById('hidden_p1_1').style.display="none";
         document.getElementById('hidden_p1_1').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_1').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -57,6 +58,7 @@ function check_p1_2() {
     } else {
         document.getElementById('hidden_p1_2').style.display="none";
         document.getElementById('hidden_p1_2').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_2').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -66,6 +68,7 @@ function check_p1_3() {
     } else {
         document.getElementById('hidden_p1_3').style.display="none";
         document.getElementById('hidden_p1_3').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_3').getElementsByTagName('input')[1].value=null;
     }
 }
 
@@ -75,6 +78,7 @@ function check_p1_4() {
     } else {
         document.getElementById('hidden_p1_4').style.display="none";
         document.getElementById('hidden_p1_4').getElementsByTagName('input')[0].value=null;
+        document.getElementById('hidden_p1_4').getElementsByTagName('input')[1].value=null;
     }
 }
 

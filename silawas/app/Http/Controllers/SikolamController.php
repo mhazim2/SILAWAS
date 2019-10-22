@@ -68,7 +68,8 @@ class SikolamController extends Controller
         ->get();
        $listpetugas = $petugas->toArray();
         return view('sikolam.index', [
-            'listpetugas' => $listpetugas
+            'listlaporan' => $laporan,
+            'listpetugas' => $listpetugas,
         ]);
     }    
 

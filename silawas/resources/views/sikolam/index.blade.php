@@ -124,48 +124,25 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="laporan" role="tabpanel" aria-labelledby="laporan-tab">
-                    <div class="laporan-item row">
-                        <div class="col-12">
-                            <div class="text-center">
-                                Tidak ada laporan.
-                            </div>
-                        </div>
-                        <!-- <div class="col-12 mb-3">
-                            <h5 class="font-weight-bold">Judul 1</h5>
-                            <img src="https://picsum.photos/150/150" alt="Gambar Laporan" class="float-left img-thumbnail">
-                            <p class="text-justify">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-                                took a galley of type and scrambled it to make a type specimen book. It has survived not only 
-                                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            </p>
-                            <a class="btn btn-kesmavet float-right" href="{{ route('sikolam.laporan') }}">SELENGKAPNYA >></a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <h5 class="font-weight-bold">Judul 2</h5>
-                            <img src="https://picsum.photos/200/300" alt="Gambar Laporan" class="float-left img-thumbnail">
-                            <p class="text-justify">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-                                took a galley of type and scrambled it to make a type specimen book. It has survived not only 
-                                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            </p>
-                            <a class="btn btn-kesmavet float-right" href="{{ route('sikolam.laporan') }}">SELENGKAPNYA >></a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-12 mb-3">
-                            <h5 class="font-weight-bold">Judul 3</h5>
-                            <img src="https://picsum.photos/300/200" alt="Gambar Laporan" class="float-left img-thumbnail">
-                            <p class="text-justify">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum 
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown printer 
-                                took a galley of type and scrambled it to make a type specimen book. It has survived not only 
-                                five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            </p>
-                            <a class="btn btn-kesmavet float-right" href="{{ route('sikolam.laporan') }}">SELENGKAPNYA >></a>
-                            <div class="clearfix"></div>
-                        </div> -->
+                    <div class="table-responsive">
+                        <table id="laporan-datatable" class="table table-sm table-bordered table-striped">
+                            <thead class="font-weight-bold">
+                                <td class="text-center">No</td>
+                                <td>kategori</td>
+                                <td>Nama</td>
+                                <td>Aduan</td>
+                            </thead>
+                            <tbody>
+                                @foreach ($listlaporan as $key=>$laporan)
+                                        <tr>
+                                            <td class="text-center">{{ $key+1 }}</td>
+                                            <td>{{ $laporan->kategori ?: '-' }}</td>
+                                            <td>{{ $laporan->nama ?: '-' }}</td>
+                                            <td>{{ $laporan->aduan ?: '-' }}</td>
+                                        </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

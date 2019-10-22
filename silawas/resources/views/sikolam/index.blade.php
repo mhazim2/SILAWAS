@@ -36,7 +36,8 @@
             </ul>
             <div class="tab-content" id="sikolamTabContent">
                 <div class="tab-pane fade show active" id="aduan" role="tabpanel" aria-labelledby="aduan-tab">
-                    <form action="#" method="POST" enctype="multipart/form-data">
+                    <form action="/kolam/laporan/store" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
                             <label for="nama">Nama Lengkap</label>
                             <input type="text" class="form-control" id="nama" name="nama">

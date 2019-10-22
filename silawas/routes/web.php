@@ -279,6 +279,7 @@ Route::get('/kolam/dashboard', 'SikolamController@dashboard')->name('sikolam.das
 Route::get('/kolam/pengawas', 'SikolamController@pengawas')->name('sikolam.pengawas');
 Route::get('/kolam/aduan', 'SikolamController@aduan')->name('sikolam.aduan');
 Route::get('/kolam/aduan/detail', 'SikolamController@detailAduan')->name('sikolam.detailaduan');
+Route::post('/kolam/laporan/store', 'SikolamController@storeLaporan')->name('sikolam.storeLaporan');
 
 
 // Cuma Test

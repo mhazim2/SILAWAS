@@ -35,10 +35,13 @@ class SikolamController extends Controller
         ]);
     }
 
-    public function detailAduan()
+    public function detailAduan($id)
     {
+        $laporan = Aduan::findOrFail($id);
+
         return view('sikolam.detail-aduan', [
-            'sikolam' => true
+            'sikolam' => true,
+            'detailAduan' => $aduan,
         ]);
     }
         
@@ -53,7 +56,20 @@ class SikolamController extends Controller
 
     public function index()
     {
-        return view('sikolam.index');
+
+        $laporan = Aduan::all();
+
+        $petugas = DB::table('pengawaskesmavet')
+        ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+        ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+        ->join('wilayahkerja', 'pengawaskesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
+        ->select('*')
+        ->where('user.accessRoleId', '=', 7)
+        ->get();
+       $listpetugas = $petugas->toArray();
+        return view('sikolam.index', [
+            'listpetugas' => $listpetugas
+        ]);
     }    
 
     public function login()

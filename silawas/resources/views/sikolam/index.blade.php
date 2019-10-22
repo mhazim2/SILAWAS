@@ -109,30 +109,16 @@
                                 <td>Email</td>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td>Wiradani</td>
-                                    <td>Kesmavet</td>
-                                    <td>DKI Jakarta</td>
-                                    <td>08123456789</td>
-                                    <td>wiradani@kesmavet.com</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td>Wawan</td>
-                                    <td>Kesmavet</td>
-                                    <td>DKI Jakarta</td>
-                                    <td>08987654321</td>
-                                    <td>wawan@kesmavet.com</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td>Feby</td>
-                                    <td>Kesmavet</td>
-                                    <td>DKI Jakarta</td>
-                                    <td>08987654321</td>
-                                    <td>feby@kesmavet.com</td>
-                                </tr>
+                                @foreach ($listpetugas as $key=>$petugas)
+                                        <tr>
+                                            <td class="text-center">{{ $key+1 }}</td>
+                                            <td>{{ $petugas->NamaLengkap ?: '-' }}</td>
+                                            <td>{{ $petugas->unitKerja ?: '-' }}</td>
+                                            <td>{{ $petugas->alamatKantor ?: '-' }}</td>
+                                            <td>{{ $petugas->NomorHandphone ?: '-' }}</td>
+                                            <td>{{ $petugas->email ?: '-' }}</td>
+                                        </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

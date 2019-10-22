@@ -24,145 +24,131 @@ class ExportController extends Controller
     
 
    
-    public function cetakBlank1($id){
+    public function cetakBlank1(){
         
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist1');
 
         return $pdf->stream('blank.checklist1');
     }
 
-    public function cetakBlank2($id){
+    public function cetakBlank2(){
         
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist2');
 
         return $pdf->stream('blank.checklist2');
     }
 
-    public function cetakBlank3($id){
+    public function cetakBlank3(){
         
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist3');
 
         return $pdf->stream('blank.checklist3');
     }
 
-    public function cetakBlank4($id){
+    public function cetakBlank4(){
         
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist4');
 
         return $pdf->stream('blank.checklist4');
     }
 
-    public function cetakBlank5($id){
+    public function cetakBlank5(){
         
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist5');
 
         return $pdf->stream('blank.checklist5');
     }
 
-    public function cetakBlank6($id){
+    public function cetakBlank6(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist6');
 
         return $pdf->stream('blank.checklist6');
     }
 
-    public function cetakBlank7($id){
+    public function cetakBlank7(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist7');
 
         return $pdf->stream('blank.checklist7');
     }
 
-    public function cetakBlank8($id){
+    public function cetakBlank8(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist8');
 
         return $pdf->stream('blank.checklist8');
     }
 
-    public function cetakBlank9($id){
+    public function cetakBlank9(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist9');
 
         return $pdf->stream('blank.checklist9');
     }
 
-    public function cetakBlank10($id){
+    public function cetakBlank10(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist10');
 
         return $pdf->stream('blank.checklist10');
     }
 
-    public function cetakBlank11($id){
+    public function cetakBlank11(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist11');
 
         return $pdf->stream('blank.checklist11');
     }
 
-    public function cetakBlank12($id){
+    public function cetakBlank12(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist12');
 
         return $pdf->stream('blank.checklist12');
     }
 
-    public function cetakBlank13($id){
+    public function cetakBlank13(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist13');
 
         return $pdf->stream('blank.checklist13');
     }
 
-    public function cetakBlank14($id){
+    public function cetakBlank14(){
         set_time_limit(300);
         
-        $survey = SurveyUnitUsaha::findorFail($id);
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
         $pdf = PDF::loadView('blank.checklist14');
 

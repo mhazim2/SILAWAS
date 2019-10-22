@@ -27,7 +27,7 @@
                                 <i class="fas fa-file-download mr-1"></i> Ekspor
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="/export/blank/formulir7/{{ $data->id }}">Ceklis Kosong</a>
+                                <a class="dropdown-item" href="/export/blank/formulir7">Ceklis Kosong</a>
                                 <a class="dropdown-item" href="/export/formulir7/{{$surveyID}}">Ceklis Hasil Survey</a>
                                 <a class="dropdown-item" href="/downloadBukti/{{ $data->id }}">Ceklis yang Sudah Dicap</a>
                             </div>

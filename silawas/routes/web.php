@@ -255,20 +255,20 @@ Route::get('/export/formulir14/{id}', 'ExportController@cetakForm14');
 Route::get('/export/excel', 'ExportController@export_excel');
 
 //export blank
-Route::get('/export/blank/formulir1/{id}', 'ExportController@cetakBlank1');
-Route::get('/export/blank/formulir2/{id}', 'ExportController@cetakBlank2');
-Route::get('/export/blank/formulir3/{id}', 'ExportController@cetakBlank3');
-Route::get('/export/blank/formulir4/{id}', 'ExportController@cetakBlank4');
-Route::get('/export/blank/formulir5/{id}', 'ExportController@cetakBlank5');
-Route::get('/export/blank/formulir6/{id}', 'ExportController@cetakBlank6');
-Route::get('/export/blank/formulir7/{id}', 'ExportController@cetakBlank7');
-Route::get('/export/blank/formulir8/{id}', 'ExportController@cetakBlank8');
-Route::get('/export/blank/formulir9/{id}', 'ExportController@cetakBlank9');
-Route::get('/export/blank/formulir10/{id}', 'ExportController@cetakBlank10');
-Route::get('/export/blank/formulir11/{id}', 'ExportController@cetakBlank11');
-Route::get('/export/blank/formulir12/{id}', 'ExportController@cetakBlank12');
-Route::get('/export/blank/formulir13/{id}', 'ExportController@cetakBlank13');
-Route::get('/export/blank/formulir14/{id}', 'ExportController@cetakBlank14');
+Route::get('/export/blank/formulir1', 'ExportController@cetakBlank1');
+Route::get('/export/blank/formulir2', 'ExportController@cetakBlank2');
+Route::get('/export/blank/formulir3', 'ExportController@cetakBlank3');
+Route::get('/export/blank/formulir4', 'ExportController@cetakBlank4');
+Route::get('/export/blank/formulir5', 'ExportController@cetakBlank5');
+Route::get('/export/blank/formulir6', 'ExportController@cetakBlank6');
+Route::get('/export/blank/formulir7', 'ExportController@cetakBlank7');
+Route::get('/export/blank/formulir8', 'ExportController@cetakBlank8');
+Route::get('/export/blank/formulir9', 'ExportController@cetakBlank9');
+Route::get('/export/blank/formulir10', 'ExportController@cetakBlank10');
+Route::get('/export/blank/formulir11', 'ExportController@cetakBlank11');
+Route::get('/export/blank/formulir12', 'ExportController@cetakBlank12');
+Route::get('/export/blank/formulir13', 'ExportController@cetakBlank13');
+Route::get('/export/blank/formulir14', 'ExportController@cetakBlank14');
 
 
 // SIKOLAM

@@ -3,6 +3,7 @@
  namespace App\Exports;
  use App\SurveyUnitUsaha;
  use Illuminate\Support\Facades\DB;
+ use Illuminate\Contracts\View\View;
 
 
  use Maatwebsite\Excel\Concerns\FromQuery;
@@ -12,7 +13,7 @@
  use Maatwebsite\Excel\Concerns\ShouldAutoSize;
  use Maatwebsite\Excel\Concerns\WithColumnFormatting;
  use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
- use Maatwebsite\Excel\Concerns\FromView;
+ 
 
  
  class Report implements FromQuery,WithHeadings,ShouldAutoSize,WithColumnFormatting

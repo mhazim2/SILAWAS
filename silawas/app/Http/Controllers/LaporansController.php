@@ -40,7 +40,7 @@ class LaporansController extends Controller
         else {
             if ($request['input_periode'] == '1') {
                 $start = date('Y-m-d');
-                $end = date('Y-m-d');
+                $end = date('Y-m-d', strtotime('+1 day'));
             } 
             else if ($request['input_periode'] == '2') {
                 $start = date('Y-m-d', strtotime('-1 week'));
@@ -132,6 +132,8 @@ class LaporansController extends Controller
     }
 
     public function downloadExcel($start_date, $end_date){
+
+        
         $nama_file = 'LAPORAN_REKAPITULASI_HASIL_PENGAWASANKESMAVET'.date('Y-m-d_H-i-s').'.xlsx';
         return (new Report($start_date, $end_date))->download($nama_file);
     }

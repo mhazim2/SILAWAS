@@ -1,9 +1,5 @@
-<?php
-    $file="testexcel.xls";
-    header("Content-type: application/vnd.ms-excel");
-    header("Content-Disposition: attachment; filename=$file");
-    echo 
-    "<table>
+
+    <table>
         <tr><td colspan='7' align='center'><b>FORMULIR LAPORAN REKAPITULASI</b></td></tr>
         <tr><td colspan='7' align='center'><b>HASIL PENGAWASAN KESMAVET</b></td></tr>
         <tr><td colspan='7' align='center'><b>PERIODE ... TAHUN ...</b></td></tr>
@@ -63,5 +59,4 @@
         <tr>
             <td>...</td>
         </tr>
-    </table>";
-?>
+    </table>

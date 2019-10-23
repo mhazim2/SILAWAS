@@ -195,13 +195,18 @@
                             2.	Apakah lalu lintas hewan (masuk dan keluar peternakan) dilengkapi dengan Sertifikat Veteriner?
                         </td>
                         <td align="center">
-                            {{$data->P2  ? 'V':' '}}
+                            {{$data->check_p2  ? 'V':' '}}
                         </td>
                         <td align="center">
-                            {{$data->P2 ? ' ':"V"}}
+                            {{$data->check_p2 ? ' ':"V"}}
                         </td>
                         <td>
-            
+                            @if ($data->P2_1)
+                                <div><b>Scan Sertifikat Veteriner:</b></div>
+                                    
+                            @else
+                                {{ $data->P2_2 ?: '-' }}
+                            @endif
                         </td>
                     </tr>
                     <tr>

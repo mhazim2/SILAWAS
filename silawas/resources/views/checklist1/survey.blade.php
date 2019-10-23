@@ -182,7 +182,7 @@
                                                             <label>Scan Sertifikat Veteriner</label>
                                                             <div class="input-group">
                                                                 <div class="custom-file">
-                                                                    <input type="file" id="p2_1_file" name="P2" class="custom-file-input">
+                                                                    <input type="file" id="p2_1_file" name="sertifikat" class="custom-file-input">
                                                                     <label id="p2_1_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
@@ -196,7 +196,7 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P2"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P2_2"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

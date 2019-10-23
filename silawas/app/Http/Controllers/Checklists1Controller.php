@@ -103,21 +103,22 @@ class Checklists1Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {   
+            
             //validasi
             request()->validate([
 
-                'P2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
+                'sertifikat' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
                 'P5_5' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,pdf|max:2048',
     
             ]);
-
+                
             // Upload File and Parsing Data
             $data_survey = $request->all();
-            if ($request->hasFile('P2')) {
-                $path = Storage::putFile('files', $request->file('P2'));
-                $data_survey['P2'] = $path;
+            if ($request->hasFile('sertifikat')) {
+                $path = Storage::putFile('files', $request->file('sertifikat'));
+                $data_survey['sertifikat'] = $path;
             } else {
-                $data_survey['P2'] = $request['P2'];
+                $data_survey['sertifikat'] = $request['sertifikat'];
             }
             if ($request->hasFile('P5_5')) {
                 $path = Storage::putFile('files', $request->file('P5_5'));
@@ -162,7 +163,9 @@ class Checklists1Controller extends Controller
             
             if (!isset($data_survey['P1_4_1'])) $data_survey['P1_4_1'] = null; 
             if (!isset($data_survey['P1_4_2'])) $data_survey['P1_4_2'] = null; 
-            if (!isset($data_survey['P2'])) $data_survey['P2'] = null; 
+
+            if (!isset($data_survey['sertifikat'])) $data_survey['sertifikat'] = null; 
+            if (!isset($data_survey['P2_2'])) $data_survey['P2_2'] = null;
             
             if (!isset($data_survey['P3_1'])) $data_survey['P3_1'] = null; 
             if (!isset($data_survey['P3_2'])) $data_survey['P3_2'] = null;
@@ -230,7 +233,8 @@ class Checklists1Controller extends Controller
             if (!isset($data_survey['P19_3'])) $data_survey['P19_3'] = null;
             
             // Save Data in Session
-            session()->put('survey', $data_survey);
+             session()->put('survey', $data_survey);
+           
             return redirect()->action('Checklists1Controller@catatan');
         }
 
@@ -300,8 +304,10 @@ class Checklists1Controller extends Controller
             'P1_3_2'=> $survey['P1_3_2'], 
             'check_p1_4'=> $survey['check_p1_4'], 
             'P1_4_1'=> $survey['P1_4_1'], 
-            'P1_4_2'=> $survey['P1_4_2'], 
-            'P2'=> $survey['P2'], 
+            'P1_4_2'=> $survey['P1_4_2'],
+            'check_p2'=> $survey['check_p2'],
+            'P2_1'=> $survey['sertifikat'],
+            'P2_2'=> $survey['P2_2'],  
             'check_p3'=> $survey['check_p3'], 
             'P3_1'=> $survey['P3_1'], 
             'P3_2'=> $survey['P3_2'], 
@@ -385,6 +391,7 @@ class Checklists1Controller extends Controller
             'P19_2'=> $survey['P19_2'], 
             'P19_3'=> $survey['P19_3'], 
         ]);
+        
         $input_survey = SurveyUnitUsaha::create([
             'idUnitUsaha' => $umum['idUnitUsaha'],
             'idForm1' => $input_ceklis->id,

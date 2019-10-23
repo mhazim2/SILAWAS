@@ -244,21 +244,21 @@
                                                     Sertifikat Veteriner?
                                                 </td>
                                                 <td class="text-center text-success">
-                                                    {!! $data->form1->P2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
+                                                    {!! $data->form1->check_p2 ? '<i class="fas fa-check"></i>' : '&nbsp;' !!}
                                                 </td>
                                                 <td class="text-center text-danger">
-                                                    {!! $data->form1->P2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
+                                                    {!! $data->form1->check_p2 ? '&nbsp;' : '<i class="fas fa-times"></i>' !!}
                                                 </td>
                                                 <td>
-                                                    @if ($data->form1->P2)
+                                                    @if ($data->form1->P2_1)
                                                         <div><b>Scan Sertifikat Veteriner:</b></div>
                                                         <div>
-                                                            <a href="{{ asset($data->form1->P2) }}">
-                                                                <img src="{{ asset($data->form1->P2) }}" alt="Scan Sertifikat Veteriner">
+                                                            <a href="{{ asset($data->form1->P2_1) }}">
+                                                                <img src="{{ asset($data->form1->P2_1) }}" alt="Scan Sertifikat Veteriner">
                                                             </a>
                                                         </div>
                                                     @else
-                                                        {{ $data->form1->P2 ?: '-' }}
+                                                        {{ $data->form1->P2_2 ?: '-' }}
                                                     @endif
                                                 </td>
                                             </tr>

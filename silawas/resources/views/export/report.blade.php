@@ -4,18 +4,20 @@
         <tr><td colspan='7' align='center'><b>HASIL PENGAWASAN KESMAVET</b></td></tr>
         <tr><td colspan='7' align='center'><b>PERIODE ... TAHUN ...</b></td></tr>
         <tr><td colspan='7'></td></tr>
+        @foreach ($data as $data)
         <tr>
-            <td colspan='2'>No. Registrasi Pengawas</td>
-            <td>...</td>
+            <td>No. Registrasi Pengawas :</td>
+        <td>{{ $data->NoRegistrasi ? $data->NoRegistrasi : '-'  }}</td>
         </tr>
         <tr>
-            <td colspan='2'>Nama Petugas</td>
-            <td>...</td>
+            <td>Nama Petugas :</td>
+            <td>{{ $data->NamaLengkap ? $data->NamaLengkap : '-' }}</td>
         </tr>
         <tr>
-            <td colspan='2'>Nama Instansi</td>
-            <td>...</td>
+            <td>Nama Instansi: </td>
+            <td>{{ $data->unitKerja ? $data->unitKerja : '-' }}</td>
         </tr>
+        @endforeach
         <tr><td colspan='7'></td></tr>
     </table>
     <table border='1'>
@@ -30,15 +32,13 @@
         </tr>
         @foreach ($forms as $key=>$form)
         <tr>
-            
-                            <td class="text-center">{{ ++$key }}</td>
-                            <td>{{ date('Y-m-d', strtotime($form->created_at)) }}</td>
-                            <td>{{ $form->NamaUnitUsaha ? $form->NamaUnitUsaha ?: '-' : '-' }}</td>
-                            <td>{{ $form->tipeForm }}</td>
-                            <td>{{ $form->catatan }}</td>
-                            <td>{{ $form->rekomendasi ?: '-' }}</td>
-                            <td>-</td>
-           
+            <td class="text-center">{{ ++$key }}</td>
+            <td>{{ date('Y-m-d', strtotime($form->created_at)) }}</td>
+            <td>{{ $form->NamaUnitUsaha ? $form->NamaUnitUsaha : '-' }}</td>
+            <td>{{ $form->tipeForm }}</td>
+            <td>{{ $form->catatan }}</td>
+            <td>{{ $form->rekomendasi ?: '-' }}</td>
+            <td>-</td>
         </tr>
         @endforeach
     </table>
@@ -54,7 +54,7 @@
         <tr><td colspan='7'></td></tr>
         <tr>
             <td colspan='6'></td>
-            <td align='right'>(Nama Petugas)</td>
+            <td align='right'>{{ $data->NamaLengkap ? "(". $data->NamaLengkap .")" : '-' }}</td>
         </tr>
         <tr><td colspan='7'></td></tr>
         <tr>

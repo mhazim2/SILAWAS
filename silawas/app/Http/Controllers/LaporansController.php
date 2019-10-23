@@ -32,7 +32,16 @@ class LaporansController extends Controller
     }
 
     public function content(Request $request)
-    {
+    {   
+        $petugas =  DB::table('user')
+        ->where('user.id', '=', Auth::user()->id )
+        ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+        ->join('pengawaskesmavet', 'user.id', '=', 'pengawaskesmavet.idUser')
+        ->select('orang.NamaLengkap', 'pengawaskesmavet.unitKerja','pengawaskesmavet.NoRegistrasi')
+        ->get();
+
+        //return dd($petugas);
+        
         if ($request['input_jangkawaktu']) {
             $start = $request['start_date'];
             $end = $request['end_date'];
@@ -125,6 +134,7 @@ class LaporansController extends Controller
 
         return view('laporan.index', [
             'content' => true,
+            'data' => $petugas,
             'listForms' => $listForms,
             'start_date' => $start,
             'end_date' => $end,
@@ -132,9 +142,10 @@ class LaporansController extends Controller
     }
 
     public function downloadExcel($start_date, $end_date){
-
+        
         
         $nama_file = 'LAPORAN_REKAPITULASI_HASIL_PENGAWASANKESMAVET'.date('Y-m-d_H-i-s').'.xlsx';
+        
         return (new Report($start_date, $end_date))->download($nama_file);
     }
 

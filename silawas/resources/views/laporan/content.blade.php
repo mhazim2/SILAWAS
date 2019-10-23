@@ -21,18 +21,20 @@
                 <div>PERIODE ... TAHUN ...</div>
             </div>
             <table class="mb-3">
+                @foreach ($data as $data)
                 <tr>
                     <td>No. Registrasi Pengawas</td><td class="px-1">:</td>
-                    <td>...</td>
+                <td>{{ $data->NoRegistrasi ? $data->NoRegistrasi : '-'  }}</td>
                 </tr>
                 <tr>
                     <td>Nama Petugas</td><td class="px-1">:</td>
-                    <td>...</td>
+                    <td>{{ $data->NamaLengkap ? $data->NamaLengkap : '-'  }}</td>
                 </tr>
                 <tr>
                     <td>Nama Instansi</td><td class="px-1">:</td>
-                    <td>...</td>
+                    <td>{{ $data->unitKerja ? $data->unitKerja : '-'  }}</td>
                 </tr>
+                @endforeach
             </table>
         </div>
         <div class="table-responsive mb-3">
@@ -52,7 +54,7 @@
                         <tr>
                             <td class="text-center">{{ ++$key }}</td>
                             <td>{{ date('Y-m-d', strtotime($form->created_at)) }}</td>
-                            <td>{{ $form->unitUsaha ? $form->unitUsaha->NamaUnitUsaha ?: '-' : '-' }}</td>
+                            <td>{{ $form->unitUsaha ? $form->unitUsaha->NamaUnitUsaha : '-' }}</td>
                             <td>{{ $form->tipeForm }}</td>
                             <td>{{ $form->catatan }}</td>
                             <td>{{ $form->rekomendasi ?: '-' }}</td>
@@ -154,7 +156,7 @@
                 <div class="col-4 offset-8 text-center">
                     <div class="mb-4">......, ....................</div>
                     <div>ttd</div>
-                    <div class="mt-4">(Nama Petugas)</div>
+                    <div class="mt-4">{{ $data->NamaLengkap ? "(". $data->NamaLengkap .")" : '-' }}</div>
                 </div>
             </div>
             <div class="row">

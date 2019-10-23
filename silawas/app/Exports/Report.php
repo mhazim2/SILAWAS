@@ -1,6 +1,7 @@
 <?php
  
  namespace App\Exports;
+ use Auth;
  use App\SurveyUnitUsaha;
  use Illuminate\Support\Facades\DB;
  use Illuminate\Contracts\View\View;
@@ -28,7 +29,14 @@
      }
 
      public function view(): View
-    {
+    {   
+        $petugas =  DB::table('user')
+        ->where('user.id', '=', Auth::user()->id )
+        ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+        ->join('pengawaskesmavet', 'user.id', '=', 'pengawaskesmavet.idUser')
+        ->select('orang.NamaLengkap', 'pengawaskesmavet.unitKerja','pengawaskesmavet.NoRegistrasi')
+        ->get();
+
         $forms = DB::table('surveyunitusaha')
         ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
         ->whereBetween('created_at', [ $this->start, $this->end])
@@ -37,6 +45,7 @@
 
         return view('export.report', [
             'forms' => $forms,
+            'data' => $petugas,
         ]);
     }
 

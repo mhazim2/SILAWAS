@@ -28,15 +28,19 @@
             <td valign='middle'><b>Rekomendasi Tindak Lanjut</b></td>
             <td valign='middle'><b>Hasil Tindak Lanjut</b></td>
         </tr>
+        @foreach ($forms as $key=>$form)
         <tr>
-            <td valign='top' align='center'>1</td>
-            <td valign='top'>2019-09-24</td>
-            <td valign='top'>PT. Lentera Dunia</td>
-            <td valign='top'>Tempat Budidaya Hewan Perah dan Pemerahan Susu 	</td>
-            <td valign='top'>-</td>
-            <td valign='top'>-</td>
-            <td valign='top'>-</td>
+            
+                            <td class="text-center">{{ ++$key }}</td>
+                            <td>{{ date('Y-m-d', strtotime($form->created_at)) }}</td>
+                            <td>{{ $form->NamaUnitUsaha ? $form->NamaUnitUsaha ?: '-' : '-' }}</td>
+                            <td>{{ $form->tipeForm }}</td>
+                            <td>{{ $form->catatan }}</td>
+                            <td>{{ $form->rekomendasi ?: '-' }}</td>
+                            <td>-</td>
+           
         </tr>
+        @endforeach
     </table>
     <table>
         <tr><td colspan='7'></td></tr>

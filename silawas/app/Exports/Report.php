@@ -13,10 +13,10 @@
  use Maatwebsite\Excel\Concerns\ShouldAutoSize;
  use Maatwebsite\Excel\Concerns\WithColumnFormatting;
  use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
- 
+ use Maatwebsite\Excel\Concerns\FromView;
 
  
- class Report implements FromQuery,WithHeadings,ShouldAutoSize,WithColumnFormatting
+ class Report implements FromView,ShouldAutoSize
  {
      use Exportable;
  
@@ -24,35 +24,21 @@
      {
          $this->start = $start;
          $this->end = $end;
+
      }
 
-     
-
-     public function headings(): array
+     public function view(): View
     {
-        return [
-            'Tanggal Pelaksanaan', 'Nama Unit Usaha','Jenis Unit Usaha' ,'Hasil Temuan' ,'Rekomendasi Tindak Lanjut','Hasil Tindak Lanjut'
-        ];
-    }
-
-    public function columnFormats(): array
-    {
-        return [
-            'A' => NumberFormat::FORMAT_DATE_DDMMYYYY,
-        ];
-    }
- 
-     public function query()
-     {
-    
-        // $listForms =  SurveyUnitUsaha::with('unitUsaha')->whereBetween('created_at', [ $this->start, $this->end]);
-        
-        $listForms = DB::table('surveyunitusaha')
+        $forms = DB::table('surveyunitusaha')
         ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
         ->whereBetween('created_at', [ $this->start, $this->end])
         ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
-        ->orderBy('created_at');
+        ->orderBy('created_at')->get();
+
+        return view('export.report', [
+            'forms' => $forms,
+        ]);
+    }
+
     
-        return $listForms;
-     }
  }

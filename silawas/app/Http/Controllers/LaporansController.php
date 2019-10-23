@@ -39,8 +39,6 @@ class LaporansController extends Controller
         ->join('pengawaskesmavet', 'user.id', '=', 'pengawaskesmavet.idUser')
         ->select('orang.NamaLengkap', 'pengawaskesmavet.unitKerja','pengawaskesmavet.NoRegistrasi')
         ->get();
-
-        //return dd($petugas);
         
         if ($request['input_jangkawaktu']) {
             $start = $request['start_date'];

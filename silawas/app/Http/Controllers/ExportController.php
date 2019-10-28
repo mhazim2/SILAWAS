@@ -337,6 +337,13 @@ class ExportController extends Controller
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('dokterhewanpenanggungjawab.*')
             ->get();
+
+            $supliers = DB::table('surveyunitusaha')
+            ->join('form4','surveyunitusaha.idform4', '=', 'form4.id')
+            ->leftJoin('suplierproduk','surveyunitusaha.id', '=', 'suplierproduk.surveyUnitUsaha_idsurveyUnitusaha')
+            ->where('surveyunitusaha.id', '=', $survey->id)
+            ->select('suplierproduk.*')
+            ->get();
         
         $pengawas1 =  DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
@@ -364,6 +371,7 @@ class ExportController extends Controller
             
         $pdf = PDF::loadView('export.checklist4', ['form'=>$formDetail,
                 'dokter'=>$dokterPJ,
+                'supliers'=>$supliers,
                 'pengawas1'=>$pengawas1,
                 'pengawas2'=>$pengawas2,
                 'pengawas3'=>$pengawas3,

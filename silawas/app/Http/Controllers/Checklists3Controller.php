@@ -239,7 +239,7 @@ class Checklists3Controller extends Controller
             if (!isset($data_survey['P21_2'])) $data_survey['P21_2'] = null; 
             if (!isset($data_survey['P22_1'])) $data_survey['P22_1'] = null; 
             if (!isset($data_survey['P22_2'])) $data_survey['P22_2'] = null; 
-            if (!isset($data_survey[ 'P22_3'])) $data_survey['P22_3'] = null; 
+            if (!isset($data_survey['P22_3'])) $data_survey['P22_3'] = null; 
             
             // Save Data in Session
             session()->put('survey', $data_survey);

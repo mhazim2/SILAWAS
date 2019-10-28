@@ -260,11 +260,11 @@
                                                             <label>Scan Sertifikat Veteriner</label>
                                                             <div class="input-group">
                                                                 <div class="custom-file">
-                                                                    <input type="file" id="p3_1_file" name="P3" class="custom-file-input">
+                                                                    <input type="file" id="p3_1_file" name="P3_1" class="custom-file-input">
                                                                     <label id="p3_1_label" class="custom-file-label" for="file">Pilih file...</label>
                                                                 </div>
                                                             </div>
-                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png, *.pdf)</small>
+                                                            <small class="form-text"><b>Hint:</b> Maksimum 2MB (*.jpg, *.jpeg, *.png)</small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -274,7 +274,7 @@
                                                     <div class="col-lg-12">
                                                         <div class="form-group mb-2">
                                                             <label>Keterangan</label>
-                                                            <textarea class="form-control" rows="2" name="P3"></textarea>
+                                                            <textarea class="form-control" rows="2" name="P3_2"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -28,14 +28,18 @@ class UnitUsahasController extends Controller
             ->join('pelakuusaha', 'pelakuusaha.idPemilikUsaha', '=', 'pemilikusaha.idOrang')
             ->select('pemilikusaha.idPemilikUsaha','pelakuusaha.Nama')
             ->get();
+        $provinsi = DB::table('province')
+            ->select('province.*')
+            ->get();
         $result = $pemilikusaha->toArray();
-        return view('unit-usaha.create', ['listPemilikUsaha' => $result]);
+        return view('unit-usaha.create', ['listPemilikUsaha' => $result, 'data' => $provinsi]);
     }
 
     public function store(Request $data)
     {
         $uu = UnitUsaha::create([
             'PelakuUsaha_idPemilikUsaha' => $data['PelakuUsaha_idPemilikUsaha'],
+            'Provinsi' => $data['provinsi'],
             'NamaUnitUsaha' => $data['NamaUnitUsaha'],
             'NamaKantorPusat' => $data['NamaKantorPusat'],
             'AlamatUnitUsaha'=> $data['AlamatUnitUsaha'],

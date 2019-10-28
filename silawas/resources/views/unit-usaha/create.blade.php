@@ -193,6 +193,17 @@
                                             </div>
                                         </div>
                                     </div>
+                                <div class="row form-group mb-5">
+                                        <div class="col-lg-6">
+                                            <label for="provinsi">Provinsi</label>
+                                            <select class="form-control select2" id="provinsi" name="provinsi">
+                                                <option disabled selected>-- Pilih --</option>
+                                                @foreach($data as $data)
+                                                    <option value="{{ $data->idProvince }}">{{ $data->ProvinceNameID }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                </div>
                                 <div class="form-group mb-5">
                                     <label>Kontak Kantor Pusat</label>
                                     <div class="bg-kesmavet p-2 mt-2 mb-4">

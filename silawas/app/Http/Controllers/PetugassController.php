@@ -39,9 +39,13 @@ class PetugassController extends Controller
         $listwilayahkerja = $wilayahkerja->toArray();
         $regencycity = DB::table('regencycity')->select('idRegencyCity','RegencyCityNameID')->get();
         $listregencycity = $regencycity->toArray();
+        $provinsi = DB::table('province')
+        ->select('province.*')
+        ->get();
         return view('petugas.create', [
             'listwilayahkerja' => $listwilayahkerja,
             'listregencycity' => $listregencycity,
+            'data'=>$provinsi,
         ]);
     }
 
@@ -83,6 +87,7 @@ class PetugassController extends Controller
             'kewenangan' => $data['kewenangan'],
             'NoRegistrasi'=> $data['NoRegistrasi'],
             'alamatKantor'=> $data['alamatKantor'],
+            'Provinsi'=> $data['provinsi'],
         ]);
 
        
@@ -135,6 +140,7 @@ class PetugassController extends Controller
             'kewenangan' => $request['kewenangan'],
             'NoRegistrasi'=> $request['NoRegistrasi'],
             'alamatKantor'=> $request['alamatKantor'],
+           'Provinsi'=> $request['Provinsi'],
 		]);
         if($pengawas ){
             Alert::success('Data berhasil diubah');

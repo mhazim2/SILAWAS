@@ -135,6 +135,17 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <div class="row form-group mb-5">
+                                    <div class="col-lg-6">
+                                        <label for="provinsi">Provinsi</label>
+                                        <select class="form-control select2" id="provinsi" name="provinsi">
+                                            <option disabled selected>-- Pilih --</option>
+                                            @foreach($data as $data)
+                                                <option value="{{ $data->idProvince }}">{{ $data->ProvinceNameID }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                            </div>
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-kesmavet btn-kesmavet-block float-right mb-5">

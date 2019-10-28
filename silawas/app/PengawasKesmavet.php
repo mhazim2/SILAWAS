@@ -25,6 +25,7 @@ class PengawasKesmavet extends Model
 		'kewenangan',
 		'NoRegistrasi',
 		'alamatKantor',
+		'Provinsi',
 	];
 	
 	public function user()

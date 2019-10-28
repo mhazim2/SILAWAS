@@ -16,6 +16,7 @@ class UnitUsaha extends Model
 		'PelakuUsaha_idPemilikUsaha',
 		'NamaUnitUsaha',
 		'namaPemilikUsaha',
+		'Provinsi',
 		'AlamatUnitUsaha',
 		'AlamatKantorPusat',
 		'Telepon',

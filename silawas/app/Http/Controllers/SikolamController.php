@@ -61,7 +61,7 @@ class SikolamController extends Controller
 
         $petugas = DB::table('pengawaskesmavet')
         ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-        ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+        ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
         ->join('wilayahkerja', 'pengawaskesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
         ->select('*')
         ->where('user.accessRoleId', '=', 7)

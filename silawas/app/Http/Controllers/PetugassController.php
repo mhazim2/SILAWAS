@@ -24,7 +24,7 @@ class PetugassController extends Controller
         $listwilayahkerja = $wilayahkerja->toArray();
         $petugas = DB::table('pengawaskesmavet')
             ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
             ->join('wilayahkerja', 'pengawaskesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
             ->select('*')
             ->where('user.accessRoleId', '=', 7)
@@ -106,7 +106,7 @@ class PetugassController extends Controller
         $orang = Orang::where('idOrang', $user['Orang_idOrang'])->first();
         
         $petugas->delete();
-        $orang=DB::table('orang')->where('idOrang', '=', $user['Orang_idOrang'])->delete();
+        $orang=DB::table('Orang')->where('idOrang', '=', $user['Orang_idOrang'])->delete();
         $user->delete();
     
 

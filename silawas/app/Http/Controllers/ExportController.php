@@ -175,25 +175,25 @@ class ExportController extends Controller
             ->select('dokterhewanpenanggungjawab.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
     
@@ -227,25 +227,25 @@ class ExportController extends Controller
             ->select('suplierproduk.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
        
         
@@ -283,25 +283,25 @@ class ExportController extends Controller
             ->select('dokterhewanpenanggungjawab.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
        
@@ -345,25 +345,25 @@ class ExportController extends Controller
             ->select('suplierproduk.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
     
@@ -408,25 +408,25 @@ class ExportController extends Controller
             ->select('penerimaprodukdistribusi.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
         
@@ -473,25 +473,25 @@ class ExportController extends Controller
             ->select('penerimaprodukdistribusi.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
         
@@ -537,26 +537,25 @@ class ExportController extends Controller
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('penerimaprodukdistribusi.*')
             ->get();
-        
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
         
@@ -595,27 +594,26 @@ class ExportController extends Controller
             ->select('dokterhewanpenanggungjawab.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
-
     
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
             
@@ -657,27 +655,26 @@ class ExportController extends Controller
                 ->select('suplierproduk.*')
                 ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
-            ->get()->toArray();
-
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
-            ->get()->toArray();
-
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
-            ->get()->toArray();
-
+                $pengawas1 =  DB::table('PengawasKesmavet')
+                ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+                ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+                ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+                ->select('Orang.NamaLengkap')
+                ->get()->toArray();
+    
+            $pengawas2 =  DB::table('PengawasKesmavet')
+                ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+                ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+                ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+                ->select('Orang.NamaLengkap')
+                ->get()->toArray();
+    
+            $pengawas3 =  DB::table('PengawasKesmavet')
+                ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+                ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+                ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+                ->select('Orang.NamaLengkap')
+                ->get()->toArray();
     
         PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true]);
             
@@ -711,25 +708,25 @@ class ExportController extends Controller
             ->select('suplierproduk.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
        
         
@@ -766,25 +763,25 @@ class ExportController extends Controller
             ->select('suplierproduk.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
        
         
@@ -821,25 +818,25 @@ class ExportController extends Controller
             ->select('suplierproduk.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
        
         
@@ -876,25 +873,25 @@ class ExportController extends Controller
             ->select('suplierproduk.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
        
         
@@ -922,31 +919,26 @@ class ExportController extends Controller
             ->select('surveyunitusaha.*','form14.*')
             ->get();
         
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
 
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->get()->toArray();
-            $nkv = DB::table('surveyunitusaha')
-            ->leftJoin('catatan_nkv','surveyunitusaha.id', '=', 'catatan_nkv.surveyUnitUsaha_idsurveyUnitusaha')
-            ->where('surveyunitusaha.id', '=', $survey->id)
-            ->select('catatan_nkv.*')
-            ->get();
         
         $halal = DB::table('surveyunitusaha')
             ->leftJoin('catatan_serti','surveyunitusaha.id', '=', 'catatan_serti.surveyUnitUsaha_idsurveyUnitusaha')

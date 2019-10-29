@@ -18,7 +18,7 @@ class ProfilesController extends Controller
     {
         $user = User::findorFail($id);
         if ($user->id != auth()->user()->id) abort(403);
-        $orang = DB::table('orang')->where('idOrang', $user->Orang_idOrang)->get();
+        $orang = DB::table('Orang')->where('idOrang', $user->Orang_idOrang)->get();
         
         return view('profile.index', [
             'user' => $user,
@@ -30,7 +30,7 @@ class ProfilesController extends Controller
     {
         $user = User::findorFail($id);
         if ($user->id != auth()->user()->id) abort(403);
-        $orang = DB::table('orang')->where('idOrang', $user->Orang_idOrang)->get();
+        $orang = DB::table('Orang')->where('idOrang', $user->Orang_idOrang)->get();
 
         return view('profile.edit', [
             'user' => $user,
@@ -41,11 +41,11 @@ class ProfilesController extends Controller
     public function update($id, Request $request) 
     {
         $user = User::findorFail($id);
-        $orang = DB::table('orang')->where('idOrang', $user->Orang_idOrang)->get();
+        $orang = DB::table('Orang')->where('idOrang', $user->Orang_idOrang)->get();
         $tanggal_lahir = date('Y-m-d', strtotime($request->input('TanggalLahir')));
 
         if($orang != null){
-            DB::table('orang')->where('idOrang', $user->Orang_idOrang)->update([
+            DB::table('Orang')->where('idOrang', $user->Orang_idOrang)->update([
                 'NamaLengkap' => $request->input('NamaLengkap'),
                 'TempatLahir' => $request->input('TempatLahir'),
                 'TanggalLahir' => $tanggal_lahir,

@@ -20,12 +20,12 @@ class PetugassController extends Controller
 
     public function index()
     {   
-        $wilayahkerja = DB::table('wilayahkerja')->select('idWilayahKerja','Nama')->get();
+        $wilayahkerja = DB::table('WilayahKerja')->select('idWilayahKerja','Nama')->get();
         $listwilayahkerja = $wilayahkerja->toArray();
         $petugas = DB::table('PengawasKesmavet')
             ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
             ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
-            ->join('wilayahkerja', 'PengawasKesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
+            ->join('WilayahKerja', 'PengawasKesmavet.idWilayahKerja', '=', 'WilayahKerja.idWilayahKerja')
             ->select('*')
             ->where('user.accessRoleId', '=', 7)
             ->get();
@@ -35,7 +35,7 @@ class PetugassController extends Controller
 
     public function create()
     {
-        $wilayahkerja = DB::table('wilayahkerja')->select('idWilayahKerja','Nama')->get();
+        $wilayahkerja = DB::table('WilayahKerja')->select('idWilayahKerja','Nama')->get();
         $listwilayahkerja = $wilayahkerja->toArray();
         $regencycity = DB::table('regencycity')->select('idRegencyCity','RegencyCityNameID')->get();
         $listregencycity = $regencycity->toArray();

@@ -28,8 +28,8 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/export/blank/formulir10">Ceklis Kosong</a>
-                                <a class="dropdown-item" href="/export/formulir10/{{ $data->id }}">Ceklis Hasil Survey</a>
-                                <a class="dropdown-item" href="/downloadBukti/{{ $data->id }}">Ceklis yang Sudah Dicap</a>
+                                <a class="dropdown-item" href="/export/formulir10/{{ $surveyID->id }}">Ceklis Hasil Survey</a>
+                                <a class="dropdown-item" href="/downloadBukti/{{ $surveyID->id }}">Ceklis yang Sudah Dicap</a>
                             </div>
                         </div>
                     </div>

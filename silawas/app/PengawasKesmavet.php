@@ -8,7 +8,7 @@ class PengawasKesmavet extends Model
 {
 	public $timestamps = false;
 	
-	protected $table = 'pengawaskesmavet';
+	protected $table = 'PengawasKesmavet';
 	protected $primaryKey = 'idPengawasKesmavet';
 	
     protected $fillable = [

@@ -24,9 +24,9 @@ class UnitUsahasController extends Controller
 
     public function create()
     {   
-        $pemilikusaha = DB::table('pemilikusaha')
-            ->join('pelakuusaha', 'pelakuusaha.idPemilikUsaha', '=', 'pemilikusaha.idOrang')
-            ->select('pemilikusaha.idPemilikUsaha','pelakuusaha.Nama')
+        $pemilikusaha = DB::table('PemilikUsaha')
+            ->join('PelakuUsaha', 'PelakuUsaha.idPemilikUsaha', '=', 'PemilikUsaha.idOrang')
+            ->select('PemilikUsaha.idPemilikUsaha','PelakuUsaha.Nama')
             ->get();
         $provinsi = DB::table('province')
             ->select('province.*')

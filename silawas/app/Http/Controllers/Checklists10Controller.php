@@ -40,24 +40,27 @@ class Checklists10Controller extends Controller
             ->where('surveyunitusaha.id', '=', $survey->id)
             ->select('suplierproduk.*')
             ->get();
-        $pengawas1 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
-            ->select('orang.NamaLengkap')
+            $pengawas1 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas)
+            ->select('Orang.NamaLengkap')
             ->first();
-        $pengawas2 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
-            ->select('orang.NamaLengkap')
+
+        $pengawas2 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas2)
+            ->select('Orang.NamaLengkap')
             ->first();
-        $pengawas3 =  DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('pengawaskesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
-            ->select('orang.NamaLengkap')
+
+        $pengawas3 =  DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->where('PengawasKesmavet.idPengawasKesmavet', '=', $survey->idPengawas3)
+            ->select('Orang.NamaLengkap')
             ->first();
+        
         
         return view('checklist10.detail', [
             'data' => $formDetail,

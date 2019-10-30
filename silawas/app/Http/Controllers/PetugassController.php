@@ -20,12 +20,12 @@ class PetugassController extends Controller
 
     public function index()
     {   
-        $wilayahkerja = DB::table('wilayahkerja')->select('idWilayahKerja','Nama')->get();
+        $wilayahkerja = DB::table('WilayahKerja')->select('idWilayahKerja','Nama')->get();
         $listwilayahkerja = $wilayahkerja->toArray();
-        $petugas = DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->join('wilayahkerja', 'pengawaskesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
+        $petugas = DB::table('PengawasKesmavet')
+            ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
+            ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
+            ->join('WilayahKerja', 'PengawasKesmavet.idWilayahKerja', '=', 'WilayahKerja.idWilayahKerja')
             ->select('*')
             ->where('user.accessRoleId', '=', 7)
             ->get();
@@ -35,7 +35,7 @@ class PetugassController extends Controller
 
     public function create()
     {
-        $wilayahkerja = DB::table('wilayahkerja')->select('idWilayahKerja','Nama')->get();
+        $wilayahkerja = DB::table('WilayahKerja')->select('idWilayahKerja','Nama')->get();
         $listwilayahkerja = $wilayahkerja->toArray();
         $regencycity = DB::table('regencycity')->select('idRegencyCity','RegencyCityNameID')->get();
         $listregencycity = $regencycity->toArray();
@@ -106,7 +106,7 @@ class PetugassController extends Controller
         $orang = Orang::where('idOrang', $user['Orang_idOrang'])->first();
         
         $petugas->delete();
-        $orang=DB::table('orang')->where('idOrang', '=', $user['Orang_idOrang'])->delete();
+        $orang=DB::table('Orang')->where('idOrang', '=', $user['Orang_idOrang'])->delete();
         $user->delete();
     
 
@@ -121,14 +121,14 @@ class PetugassController extends Controller
     
     public function editPetugas($id){
             
-		$pengawas = DB::table('pengawaskesmavet')->where('idUser',$id)->get();
+		$pengawas = DB::table('PengawasKesmavet')->where('idUser',$id)->get();
 
-		return view('edit',['pengawaskesmavet' => $pengawas]);
+		return view('edit',['PengawasKesmavet' => $pengawas]);
     }
     public function update(Request $request,$id)
 	{
 		
-		$pengawas = DB::table('pengawaskesmavet')->where('idPengawasKesmavet',$id)->update([
+		$pengawas = DB::table('PengawasKesmavet')->where('idPengawasKesmavet',$id)->update([
 			'NoSK' => $request['NoSK'],
             'PNS_idPegawai' => $request['NIP'],
             'idWilayahKerja' => $request['WilayahKerja'],

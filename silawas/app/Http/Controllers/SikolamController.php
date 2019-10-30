@@ -59,10 +59,10 @@ class SikolamController extends Controller
 
         $laporan = Aduan::all();
 
-        $petugas = DB::table('pengawaskesmavet')
-        ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+        $petugas = DB::table('PengawasKesmavet')
+        ->join('user', 'PengawasKesmavet.idUser', '=', 'user.id')
         ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
-        ->join('wilayahkerja', 'pengawaskesmavet.idWilayahKerja', '=', 'wilayahkerja.idWilayahKerja')
+        ->join('WilayahKerja', 'PengawasKesmavet.idWilayahKerja', '=', 'WilayahKerja.idWilayahKerja')
         ->select('*')
         ->where('user.accessRoleId', '=', 7)
         ->get();

@@ -8,7 +8,7 @@ class Orang extends Model
 {
     public $timestamps = false;
 
-    protected $table = 'orang';
+    protected $table = 'Orang';
 
     protected $fillable = [
         'idOrang',

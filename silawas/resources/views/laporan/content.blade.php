@@ -1,6 +1,6 @@
 <div class="card card-primary card-outline">
     <div class="card-header text-md-right">
-        <a href="/laporan/download/excel/{{$start_date}}/{{$end_date}}" class="btn btn-primary">
+        <a href="/silawas/laporan/download/excel/{{$start_date}}/{{$end_date}}" class="btn btn-primary">
             <i class="fas fa-file-download mr-1"></i> Ekspor
         </a>
         <!-- <div class="btn-group" role="group">

@@ -230,7 +230,7 @@
                             @if ($data->check_p3)
                                                         
                                                     @else
-                                                        {{ $data->P3 ?: '-' }}
+                                                        {{ $data->P3_2 ?: '-' }}
                                                     @endif
                         </td>
                     </tr>

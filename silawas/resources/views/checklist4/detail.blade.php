@@ -257,12 +257,12 @@
                                                 <td>
                                                     @if ($data->form4->check_p3)
                                                         <div>
-                                                            <a href="{{ asset($data->form4->P3) }}">
-                                                                <img src="{{ asset($data->form4->P3) }}" alt="Scan Sertifikat Veteriner">
+                                                            <a href="{{ asset($data->form4->P3_1) }}">
+                                                                <img src="{{ asset($data->form4->P3_1) }}" alt="Scan Sertifikat Veteriner">
                                                             </a>
                                                         </div>
                                                     @else
-                                                        {{ $data->form4->P3 ?: '-' }}
+                                                        {{ $data->form4->P3_2 ?: '-' }}
                                                     @endif
                                                 </td>
                                             </tr>

@@ -78,7 +78,26 @@
                     <div class="row edumat-list">
                         <div class="col-12">
                             <div class="text-center">
-                                Tidak ada material edukasi.
+                                    <div class="col-12">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/AYvX8tnCM9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                    </div>
+                                    <div class="col-12">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/e5URRn1uRz8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                    </div>
+                                    <div class="col-12">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2xYH_70Jt0A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                    </div>
+                                    <div class="col-12">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RD5f5lef8fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                    </div>
                             </div>
                         </div>
                         <!-- <div class="col-md-3">

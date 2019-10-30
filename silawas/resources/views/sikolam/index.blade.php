@@ -55,9 +55,11 @@
                             <label for="kategori">Kategori</label>
                             <select class="form-control" id="kategori" name="kategori">
                                 <option disabled selected>-- Pilih Kategori --</option>
-                                <option>Kategori 1</option>
-                                <option>Kategori 2</option>
-                                <option>Kategori 3</option>
+                                <option>Hewan</option>
+                                <option>Gudang</option>
+                                <option>Dokter Hewan</option>
+                                <option>Rumah Potong</option>
+                                <option>Lainnya</option>
                             </select>
                         </div>
                         <div class="form-group">

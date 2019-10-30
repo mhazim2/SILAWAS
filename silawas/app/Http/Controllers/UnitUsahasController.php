@@ -28,8 +28,8 @@ class UnitUsahasController extends Controller
             ->join('PelakuUsaha', 'PelakuUsaha.idPemilikUsaha', '=', 'PemilikUsaha.idOrang')
             ->select('PemilikUsaha.idPemilikUsaha','PelakuUsaha.Nama')
             ->get();
-        $provinsi = DB::table('province')
-            ->select('province.*')
+        $provinsi = DB::table('Province')
+            ->select('Province.*')
             ->get();
         $result = $pemilikusaha->toArray();
         return view('unit-usaha.create', ['listPemilikUsaha' => $result, 'data' => $provinsi]);

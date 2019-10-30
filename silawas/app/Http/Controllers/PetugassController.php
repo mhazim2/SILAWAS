@@ -39,8 +39,8 @@ class PetugassController extends Controller
         $listwilayahkerja = $wilayahkerja->toArray();
         $regencycity = DB::table('regencycity')->select('idRegencyCity','RegencyCityNameID')->get();
         $listregencycity = $regencycity->toArray();
-        $provinsi = DB::table('province')
-        ->select('province.*')
+        $provinsi = DB::table('Province')
+        ->select('Province.*')
         ->get();
         return view('petugas.create', [
             'listwilayahkerja' => $listwilayahkerja,

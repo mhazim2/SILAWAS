@@ -64,13 +64,31 @@ class Checklists4Controller extends Controller
                 'realisasiPemanfaatan'=> 'nullable|numeric',
                 'jumlahKaryawan'=> 'nullable|numeric',
             ]);
-            if (!isset($request['check_sumber_lokal'])) $request['check_sumber_lokal'] = '0';
-            if (!isset($request['check_sumber_impor'])) $request['check_sumber_impor'] = '0';
-            if (isset($request['wilayahPeredaran'])) {
-                $request['wilayahPeredaran'] = implode(', ', $request['wilayahPeredaran']);
-            } else {
-                $request['wilayahPeredaran'] = '';
-            }
+      
+            
+            if (!isset($request['check_sumber_lokal'])) $request['check_sumber_lokal'] = '0'; 
+            if (!isset($request['check_sumber_impor'])) $request['check_sumber_impor'] = '0'; 
+            if (!isset($request['check_wilayahPeredaran_1'])) $request['check_wilayahPeredaran_1'] = '0'; 
+            if (!isset($request['check_wilayahPeredaran_2'])) $request['check_wilayahPeredaran_2'] = '0'; 
+            if (!isset($request['check_wilayahPeredaran_3'])) $request['check_wilayahPeredaran_3'] = '0'; 
+            if (!isset($request['check_wilayahPeredaran_4'])) $request['check_wilayahPeredaran_4'] = '0';
+
+            if (!isset($request['wilayahPeredaran_4'])) $request['wilayahPeredaran_4'] = NULL;
+            if (!isset($request['jumlahKaryawan'])) $request['jumlahKaryawan'] = NULL; 
+            if (!isset($request['skalaUsaha'])) $request['skalaUsaha'] = NULL; 
+            if (!isset($request['kapasitasGudang'])) $request['kapasitasGudang'] = NULL; 
+            if (!isset($request['realisasiPemanfaatan'])) $request['realisasiPemanfaatan'] = NULL; 
+            if (!isset($request['wilayahPeredaran_1'])) $request['wilayahPeredaran_1'] = NULL;
+            if (!isset($request['sumber_impor'])) $request['sumber_impor'] = NULL;
+            if (!isset($request['sumber_lokal'])) $request['sumber_lokal'] = NULL; 
+            if (!isset($request['wilayahPeredaran_2'])) $request['wilayahPeredaran_2'] = NULL; 
+            if (!isset($request['wilayahPeredaran_3'])) $request['wilayahPeredaran_3'] = NULL; 
+
+            // if (isset($request['wilayahPeredaran'])) {
+            //     $request['wilayahPeredaran'] = implode(', ', $request['wilayahPeredaran']);
+            // } else {
+            //     $request['wilayahPeredaran'] = '';
+            // }
 
             // Save Data in Session
             $data_umum = $request->all();

@@ -70,7 +70,7 @@
                     </p>
                 </li>
                 <li class="user-footer">
-                    <a href="/profile/{{ Auth::user()->id }}" class="btn btn-default btn-flat">Profile</a>
+                    <a href="/silawas/profile/{{ Auth::user()->id }}" class="btn btn-default btn-flat">Profile</a>
                     <a href="{{ route('logout') }}" class="btn btn-default btn-flat float-right" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Logout
                     </a>

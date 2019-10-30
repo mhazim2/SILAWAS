@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/profile/{{ Auth::user()->id }}" class="nav-link @yield('Profile')">
+                        <a href="/silawas/profile/{{ Auth::user()->id }}" class="nav-link @yield('Profile')">
                             <i class="nav-icon fas fa-user"></i>
                             <p>Profile</p>
                         </a>
@@ -72,12 +72,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/petugas" class="nav-link @yield('Daftar Petugas')">
+                                    <a href="/silawas/petugas" class="nav-link @yield('Daftar Petugas')">
                                         <p>Daftar Petugas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/petugas/create" class="nav-link @yield('Tambah Petugas')">
+                                    <a href="/silawas/petugas/create" class="nav-link @yield('Tambah Petugas')">
                                         <p>Tambah Petugas</p>
                                     </a>
                                 </li>
@@ -102,12 +102,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/unit-usaha" class="nav-link @yield('Daftar Unit Usaha')">
+                                    <a href="/silawas/unit-usaha" class="nav-link @yield('Daftar Unit Usaha')">
                                         <p>Daftar Unit Usaha</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/unit-usaha/create" class="nav-link @yield('Tambah Unit Usaha')">
+                                    <a href="/silawas/unit-usaha/create" class="nav-link @yield('Tambah Unit Usaha')">
                                         <p>Tambah Unit Usaha</p>
                                     </a>
                                 </li>
@@ -133,12 +133,12 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/pengawasan" class="nav-link @yield('Daftar Ceklis')">
+                                <a href="/silawas/pengawasan" class="nav-link @yield('Daftar Ceklis')">
                                     <p>Daftar Ceklis</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/pengawasan/ceklis" class="nav-link @yield('Ceklis Pengawasan')">
+                                <a href="/silawas/pengawasan/ceklis" class="nav-link @yield('Ceklis Pengawasan')">
                                     <p>Ceklis Pengawasan</p>
                                 </a>
                             </li>
@@ -146,7 +146,7 @@
                     </li>
                     @if (Auth::user()->accessRoleId == 1)
                         <li class="nav-item">
-                            <a href="/laporan" class="nav-link @yield('Laporan')">
+                            <a href="/silawas/laporan" class="nav-link @yield('Laporan')">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>Laporan</p>
                             </a>

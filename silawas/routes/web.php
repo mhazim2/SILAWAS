@@ -15,7 +15,7 @@
 Auth::routes();
 
 // Halaman Utama
-Route::get('/{name}', 'HomeController@index')->name('home')->where('name', '|home');
+Route::get('/silawas/{name}', 'HomeController@index')->name('home')->where('name', '|home');
 
 // Halaman Profile
 Route::get('/silawas/profile/{user}', 'ProfilesController@index')->name('profile.show');

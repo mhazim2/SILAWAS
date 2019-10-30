@@ -33,8 +33,8 @@
         $petugas =  DB::table('user')
         ->where('user.id', '=', Auth::user()->id )
         ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
-        ->join('Pengawaskesmavet', 'user.id', '=', 'Pengawaskesmavet.idUser')
-        ->select('Orang.NamaLengkap', 'Pengawaskesmavet.unitKerja','Pengawaskesmavet.NoRegistrasi')
+        ->join('PengawasKesmavet', 'user.id', '=', 'PengawasKesmavet.idUser')
+        ->select('Orang.NamaLengkap', 'PengawasKesmavet.unitKerja','PengawasKesmavet.NoRegistrasi')
         ->get();
 
         $forms = DB::table('surveyunitusaha')

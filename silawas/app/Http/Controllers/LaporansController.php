@@ -36,8 +36,8 @@ class LaporansController extends Controller
         $petugas =  DB::table('user')
         ->where('user.id', '=', Auth::user()->id )
         ->join('Orang', 'user.Orang_idOrang', '=', 'Orang.idOrang')
-        ->join('pengawaskesmavet', 'user.id', '=', 'pengawaskesmavet.idUser')
-        ->select('Orang.NamaLengkap', 'pengawaskesmavet.unitKerja','pengawaskesmavet.NoRegistrasi')
+        ->join('PengawasKesmavet', 'user.id', '=', 'PengawasKesmavet.idUser')
+        ->select('Orang.NamaLengkap', 'PengawasKesmavet.unitKerja','PengawasKesmavet.NoRegistrasi')
         ->get();
         
         if ($request['input_jangkawaktu']) {

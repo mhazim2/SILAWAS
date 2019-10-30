@@ -26,8 +26,8 @@
                                     <img class="profile-user-img img-fluid img-circle" src="{{ asset('dist/img/user.png') }}" alt="User profile picture">
                                 </div>
                                 <h3 class="profile-username text-center">{{ $user->username }}</h3>
-                                <p class="text-muted text-center">Admin</p>
-                                <a href= '{{"/profile/".$user->id."/edit"}}'class="btn btn-kesmavet btn-block mt-4">
+                                {{-- <p class="text-muted text-center">Admin</p> --}}
+                                <a href= '{{"/silawas/profile/".$user->id."/edit"}}'class="btn btn-kesmavet btn-block mt-4">
                                     <b>Edit Profil</b>
                                 </a>
                             </div>

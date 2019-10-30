@@ -24,7 +24,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Petugas</h3>
                         </div>
-                        <form class="mb-3" action="/petugas/store" method="POST">
+                        <form class="mb-3" action="/silawas/petugas/store" method="POST">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group mb-5">

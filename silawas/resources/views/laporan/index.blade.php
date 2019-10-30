@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="jangkawaktu">
-                                <form action="/laporan" method="POST">
+                                <form action="/silawas/laporan" method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-3">
@@ -63,7 +63,7 @@
                                 </form>
                             </div>
                             <div class="tab-pane" id="periode">
-                                <form action="/laporan" method="POST">
+                                <form action="/silawas/laporan" method="POST">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-3">

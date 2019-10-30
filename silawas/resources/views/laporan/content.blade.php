@@ -61,85 +61,85 @@
                             <td>-</td>
                             <td class="text-center">
                                 @if ($form->idForm1)
-                                    <a href="/pengawasan/checklist/1/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/1/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm2)
-                                    <a href="/pengawasan/checklist/2/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/2/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm3)
-                                    <a href="/pengawasan/checklist/3/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/3/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm4)
-                                    <a href="/pengawasan/checklist/4/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/4/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm5)
-                                    <a href="/pengawasan/checklist/5/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/5/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm6)
-                                    <a href="/pengawasan/checklist/6/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/6/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm7)
-                                    <a href="/pengawasan/checklist/7/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/7/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm8)
-                                    <a href="/pengawasan/checklist/8/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/8/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm9)
-                                    <a href="/pengawasan/checklist/9/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/9/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm10)
-                                    <a href="/pengawasan/checklist/10/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/10/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm11)
-                                    <a href="/pengawasan/checklist/11/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/11/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm12)
-                                    <a href="/pengawasan/checklist/12/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/12/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm13)
-                                    <a href="/pengawasan/checklist/13/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/13/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>
                                     </a>
                                 @elseif ($form->idForm14)
-                                    <a href="/pengawasan/checklist/14/detail/{{ $form->id }}" target="_blank">
+                                    <a href="/silawas/pengawasan/checklist/14/detail/{{ $form->id }}" target="_blank">
                                         <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Formulir">
                                             <small><i class="fas fa-eye"></i></small>
                                         </button>

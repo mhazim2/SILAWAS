@@ -115,7 +115,7 @@
                                                 <div class="modal fade" id="editPetugas-{{ $key }}" tabindex="-1" role="dialog">
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
-                                                            <form class="mb-3" action="/petugas/update/{{ $petugas->idPengawasKesmavet }}" enctype="multipart/form-data" method="POST">
+                                                            <form class="mb-3" action="/silawas/petugas/update/{{ $petugas->idPengawasKesmavet }}" enctype="multipart/form-data" method="POST">
                                                                 @csrf
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title">Edit Petugas</h5>
@@ -195,7 +195,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <a href="/petugas/hapus/{{ $petugas->idPengawasKesmavet }}" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
+                                                <a href="/silawas/petugas/hapus/{{ $petugas->idPengawasKesmavet }}" onclick="return confirm('Apakah Anda yakin ingin menghapus petugas ini?')">
                                                     <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Petugas">
                                                         <small><i class="fas fa-trash"></i></small>
                                                     </button>

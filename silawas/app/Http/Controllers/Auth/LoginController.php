@@ -29,7 +29,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {    
         if ($user->accessRoleId == 2) {
-            return redirect('/kolam/dashboard');
+            return redirect()->route('sikolam.dashboard');
         } else {
             return redirect('/silawas');
         }

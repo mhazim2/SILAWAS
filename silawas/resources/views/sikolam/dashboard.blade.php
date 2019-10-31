@@ -22,7 +22,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>15</h3>
+                                <h3>{{ $jumlah }}</h3>
                                 <p>Jumlah Aduan</p>
                             </div>
                             <div class="icon">
@@ -33,7 +33,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-6">
+                    {{-- <div class="col-lg-3 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
                                 <h3>5</h3>
@@ -46,7 +46,7 @@
                                 Lihat semua <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

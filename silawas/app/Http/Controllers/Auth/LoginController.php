@@ -28,7 +28,14 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {    
-        return redirect('/silawas');
+        if ($user->accessRoleId == 2) {
+            return redirect('/kolam/dashboard');
+        } else {
+            return redirect('/silawas');
+        }
+
+        // return redirect('/silawas');
+        
         
     }
     // protected $redirectTo = '/silawas';

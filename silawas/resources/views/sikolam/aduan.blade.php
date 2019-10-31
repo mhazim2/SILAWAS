@@ -33,37 +33,29 @@
                                     <td>Operasi</td>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="text-center">1</td>
-                                        <td>Feby Tri Saputra</td>
-                                        <td>08123456789</td>
-                                        <td>Bogor</td>
-                                        <td>Kategori 1</td>
-                                        <td>
-                                            {{ substr("
-                                                Lorem ipsum dolor sit amet, consectetur adidas adipiscing elit, sed do eiusmod tempor 
-                                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                                                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                                                deserunt mollit anim id est laborum.
-                                            ", 0, 150)."..." }}
-                                        </td>
-                                        <td>18 Oktober 2019</td>
-                                        <td class="text-center text-nowrap">
-                                            <a href="/kolam/aduan/detail">
-                                                <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Aduan">
-                                                    <small><i class="fas fa-eye"></i></small>
-                                                </button>
-                                            </a>
-                                            <a href="#" onclick="return confirm('Apakah Anda yakin ingin menghapus aduan ini?')">
-                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Aduan">
-                                                    <small><i class="fas fa-trash"></i></small>
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                    @foreach ($listlaporan as $key=>$laporan)
+                                        <tr>
+                                            <td class="text-center">{{ $key+1 }}</td>
+                                            <td>{{ $laporan->nama ?: '-' }}</td>
+                                            <td>{{ $laporan->kontak ?: '-' }}</td>
+                                            <td>{{ $laporan->alamat ?: '-' }}</td>
+                                            <td>{{ $laporan->kategori ?: '-' }}</td>
+                                            <td>{{ $laporan->aduan ?: '-' }}</td>
+                                            <td>{{ $laporan->created_at ?: '-' }}</td>
+                                            <td class="text-center text-nowrap">
+                                            <a href="/kolam/aduan/detail/{{$laporan->id}}">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary" title="Lihat Aduan">
+                                                        <small><i class="fas fa-eye"></i></small>
+                                                    </button>
+                                                </a>
+                                                {{-- <a href="#" onclick="return confirm('Apakah Anda yakin ingin menghapus aduan ini?')">
+                                                    <button type="button" class="btn btn-sm btn-outline-danger" title="Hapus Aduan">
+                                                        <small><i class="fas fa-trash"></i></small>
+                                                    </button>
+                                                </a> --}}
+                                            </td>
+                                        </tr>
+                                @endforeach
                             </table>
                             @push('scripts')
                                 <script>

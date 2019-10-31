@@ -295,7 +295,7 @@ Route::get('/kolam/login', 'SikolamController@login')->name('sikolam.login');
 Route::get('/kolam/dashboard', 'SikolamController@dashboard')->name('sikolam.dashboard');
 Route::get('/kolam/pengawas', 'SikolamController@pengawas')->name('sikolam.pengawas');
 Route::get('/kolam/aduan', 'SikolamController@aduan')->name('sikolam.aduan');
-Route::get('/kolam/aduan/detail', 'SikolamController@detailAduan')->name('sikolam.detailaduan');
+Route::get('/kolam/aduan/detail/{id}', 'SikolamController@detailAduan')->name('sikolam.detailaduan');
 Route::post('/kolam/laporan/store', 'SikolamController@storeLaporan')->name('sikolam.storeLaporan');
 
 

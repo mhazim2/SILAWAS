@@ -165,12 +165,12 @@
                             <p>Aduan Masyarakat</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="/kolam/pengawas" class="nav-link @yield('Pengawas')">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Daftar Pengawas</p>
                         </a>
-                    </li>
+                    </li> --}}
                 @endif
                 <li class="nav-header">SISTEM</li>
                 <li class="nav-item">

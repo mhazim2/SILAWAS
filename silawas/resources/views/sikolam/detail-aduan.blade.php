@@ -15,10 +15,12 @@
                 </div>
             </div>
         </div>
+        @foreach ($laporan as $laporan)
         <!-- Page Content -->
         <section class="content">
             <div class="container-fluid">
                 <div class="card card-primary card-outline">
+                
                     <div class="card-header">
                         <h5 class="card-title">Detail Aduan</h5>
                     </div>
@@ -26,23 +28,23 @@
                         <table>
                             <tr>
                                 <td class="pr-1"><b>Nama Lengkap</b></td>
-                                <td>: Feby Tri Saputra</td>
+                                <td>{{ $laporan->nama ?  $laporan->nama  : '-' }}</td>
                             </tr>
                             <tr>
                                 <td class="pr-1"><b>Kontak</b></td>
-                                <td>: 08123456789</td>
+                                <td>{{ $laporan->kontak ?  $laporan->kontak  : '-' }}</td>
                             </tr>
                             <tr>
                                 <td class="pr-1"><b>Alamat</b></td>
-                                <td>: Bogor</td>
+                                <td>{{ $laporan->alamat ?  $laporan->alamat  : '-' }}</td>
                             </tr>
                             <tr>
                                 <td class="pr-1"><b>Kategori</b></td>
-                                <td>: Kategori 1</td>
+                                <td>{{ $laporan->kategori ?  $laporan->kategori  : '-' }}</td>
                             </tr>
                             <tr>
                                 <td class="pr-1"><b>Tanggal</b></td>
-                                <td>: 18 Oktober 2019</td>
+                                <td>{{ $laporan->created_at ?  $laporan->created_at  : '-' }}</td>
                             </tr>
                         </table>
                     </div>
@@ -52,12 +54,7 @@
                         <h5 class="card-title">Deskripsi Aduan</h5>
                     </div>
                     <div class="card-body">
-                        Lorem ipsum dolor sit amet, consectetur adidas adipiscing elit, sed do eiusmod tempor 
-                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-                        deserunt mollit anim id est laborum.
+                            {{ $laporan->aduan ?  $laporan->aduan  : '-' }}
                     </div>
                 </div>
                 <div class="card card-primary card-outline">
@@ -66,11 +63,22 @@
                     </div>
                     <div class="card-body">
                         <div class="text-center">
-                            <img src="{{ asset('files/panduan/Buku_Pedoman_VTRNR_V4.png') }}" class="img-fluid">
+                                @if ($laporan->bukti_fisik)
+                                <div><b>Bukti Fisik:</b></div>
+                                <div>
+                                    <a href="{{ asset($laporan->bukti_fisik) }}">
+                                        <img src="{{ asset($laporan->bukti_fisik) }}" alt="Bukti Fisik">
+                                    </a>
+                                </div>
+                            @else
+                               -
+                            @endif
                         </div>
                     </div>
                 </div>
+            
             </div>
         </section>
+        @endforeach
     </div>
 @endsection

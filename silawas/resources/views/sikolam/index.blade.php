@@ -80,22 +80,22 @@
                     <div class="row edumat-list">
                         <div class="col-12">
                             <div class="text-center">
-                                    <div class="col-12">
+                                    <div class="col-12 mt-4">
                                             <div class="embed-responsive embed-responsive-16by9">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/AYvX8tnCM9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-4">
                                             <div class="embed-responsive embed-responsive-16by9">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/e5URRn1uRz8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-4">
                                             <div class="embed-responsive embed-responsive-16by9">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/2xYH_70Jt0A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-4">
                                             <div class="embed-responsive embed-responsive-16by9">
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/RD5f5lef8fk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                             </div>
@@ -145,25 +145,12 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="laporan" role="tabpanel" aria-labelledby="laporan-tab">
-                    <div class="table-responsive">
-                        <table id="laporan-datatable" class="table table-sm table-bordered table-striped">
-                            <thead class="font-weight-bold">
-                                <td class="text-center">No</td>
-                                <td>kategori</td>
-                                <td>Nama</td>
-                                <td>Aduan</td>
-                            </thead>
-                            <tbody>
-                                @foreach ($listlaporan as $key=>$laporan)
-                                        <tr>
-                                            <td class="text-center">{{ $key+1 }}</td>
-                                            <td>{{ $laporan->kategori ?: '-' }}</td>
-                                            <td>{{ $laporan->nama ?: '-' }}</td>
-                                            <td>{{ $laporan->aduan ?: '-' }}</td>
-                                        </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    <div class="laporan-item row">
+                        <div class="col-12">
+                            <div class="text-center">
+                                Tidak ada laporan.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

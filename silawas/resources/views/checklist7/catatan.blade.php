@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
-                                            <label for="pengawas1">3. Dokter Hewan Pengawas</label>
+                                            <label for="pengawas1">3. Dokter Hewan Pengawas *</label>
                                             <select class="form-control select2" id="pengawas1" name="pengawas1">
                                                 @foreach($list_dokter as $pengawas1)
                                                     <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->NamaLengkap }}</option>

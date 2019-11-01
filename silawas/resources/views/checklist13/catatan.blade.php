@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="idPengawas">3. Dokter Hewan Pengawas</label>
+                                            <label for="idPengawas">3. Dokter Hewan Pengawas *</label>
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_dokter as $pengawas1)

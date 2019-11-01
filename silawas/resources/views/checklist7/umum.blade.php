@@ -31,7 +31,7 @@
                                     @csrf
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="NamaUnitUsaha">1. Nama Unit Usaha</label>
+                                            <label for="NamaUnitUsaha">1. Nama Unit Usaha *</label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="NamaUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_uu as $uu)

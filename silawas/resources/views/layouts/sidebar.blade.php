@@ -134,7 +134,7 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/silawas/pengawasan" class="nav-link @yield('Daftar Ceklis')">
-                                    <p>Daftar Ceklis Pengawasan</p>
+                                    <p>Riwayat Pengawasan</p>
                                 </a>
                             </li>
                             <li class="nav-item">

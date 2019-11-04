@@ -165,7 +165,12 @@ class Checklists8Controller extends Controller
 
     // Save Ceklis Data
     public function store(Request $request)
-    {
+    {   
+
+        request()->validate([
+            'idPengawas' => 'required',
+        ]);
+        
         // Get All Data
         $umum = session('umum');
         $survey = session('survey');

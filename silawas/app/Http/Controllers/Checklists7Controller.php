@@ -270,6 +270,11 @@ class Checklists7Controller extends Controller
 
     public function store(Request $request)
     {   
+
+        request()->validate([
+            'idPengawas' => 'required',
+        ]);
+        
         $umum = session('umum');
         $survey = session('survey');
 

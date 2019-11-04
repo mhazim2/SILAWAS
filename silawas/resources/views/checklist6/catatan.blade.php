@@ -54,6 +54,7 @@
                                         <div class="col-md-6">
                                             <label for="pengawas1">3. Dokter Hewan Pengawas *</label>
                                             <select class="form-control select2" id="pengawas1" name="pengawas1">
+                                                    <option value="" selected>-- Pilih --</option>
                                                 @foreach($list_dokter as $pengawas1)
                                                     <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->NamaLengkap }}</option>
                                                 @endforeach

@@ -29,7 +29,17 @@
                             <div class="active tab-pane" id="umum">
                                 <form action="{{ route('checklist6.umum') }}" method="POST">
                                     @csrf
-                                   
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @if(count($errors)>0)
+                                                @foreach($errors->all() as $error)
+                                                    <div class="alert alert-dismissible alert-danger mb-3">
+                                                        {{$error}}
+                                                    </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-md-6">
                                             <label for="NamaUnitUsaha">1. Nama Unit Usaha *</label>

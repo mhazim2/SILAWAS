@@ -182,7 +182,12 @@ class Checklists12Controller extends Controller
     }
 
     public function store(Request $request)
-    {
+    {   
+
+        request()->validate([
+            'idPengawas' => 'required',
+        ]);
+        
         // Get All Data
          $umum = session('umum');
          $survey = session('survey');

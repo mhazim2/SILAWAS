@@ -272,6 +272,9 @@ class Checklists1Controller extends Controller
     // Save Ceklis Data
     public function store(Request $request)
     {
+
+       
+        
         // Get All Data
         $umum = session('umum');
         $survey = session('survey');

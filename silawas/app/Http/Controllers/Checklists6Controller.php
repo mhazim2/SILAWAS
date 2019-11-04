@@ -104,10 +104,21 @@ class Checklists6Controller extends Controller
                 'KaryawanStunning'=> 'nullable|numeric',
     
             ]);
-
             $temp1 = $request->all();
-            session()->put('umum', $temp1);
            
+            if (!isset($temp1['tipeUnitUsaha'])) $temp1['tipeUnitUsaha'] = null;
+            if (!isset($temp1['jenisProduk'])) $temp1['jenisProduk'] = null;
+            if (!isset($temp1['karyawanProduksi_L'])) $temp1['karyawanProduksi_L'] = null;
+            if (!isset($temp1['karyawanProduksi_P'])) $temp1['karyawanProduksi_P'] = null;
+            if (!isset($temp1['karyawanAdm_L'])) $temp1['karyawanAdm_L'] = null;
+            if (!isset($temp1['karyawanAdm_P'])) $temp1['karyawanAdm_P'] = null;
+            if (!isset($temp1['karyawanAMPM'])) $temp1['karyawanAMPM'] = null;
+            if (!isset($temp1['karyawanAWO'])) $temp1['karyawanAWO'] = null;
+            if (!isset($temp1['juruSembelih'])) $temp1['juruSembelih'] = null;
+            if (!isset($temp1['operatorStunning'])) $temp1['operatorStunning'] = null;
+      
+            
+            session()->put('umum', $temp1);
             return redirect()->action('Checklists6Controller@survey');
         }
 
@@ -266,42 +277,68 @@ class Checklists6Controller extends Controller
 
     public function catatan(Request $request)
     {
-        $list_dokter = DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->where('isDokter', '=', 1)
-            ->select('orang.NamaLengkap','pengawaskesmavet.*')
-            ->get();
-        $list_pengawas = DB::table('pengawaskesmavet')
-            ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-            ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-            ->select('orang.NamaLengkap','pengawaskesmavet.*')
-            ->get();
+        // POST Request
+        $method = $request->method();
+        if ($request->isMethod('post')) 
+        {
+            // Validate and Parsing Data
+            request()->validate([
+                'idPengawas' => 'required',
+            ]);
+            
+            // Save Data in Session
+            $data_catatan = $request->all();
+            session()->put('catatan', $data_catatan);
+            return redirect()->action('checklist6Controller@store');
+        }
+            
+        // $list_dokter = DB::table('pengawaskesmavet')
+        //     ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+        //     ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+        //     ->where('isDokter', '=', 1)
+        //     ->select('orang.NamaLengkap','pengawaskesmavet.*')
+        //     ->get();
+        // $list_pengawas = DB::table('pengawaskesmavet')
+        //     ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+        //     ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+        //     ->select('orang.NamaLengkap','pengawaskesmavet.*')
+        //     ->get();
         
-        return view('checklist6.catatan', [
-            'list_dokter' => $list_dokter,
-            'list_pengawas' => $list_pengawas
-        ]);
+        // return view('checklist6.catatan', [
+        //     'list_dokter' => $list_dokter,
+        //     'list_pengawas' => $list_pengawas
+        // ]);
+
+          // GET Request
+          $list_dokter = PengawasKesmavet::with(['user', 'user.orang'])->where('isDokter', '=', 1)->get();
+          $list_pengawas = PengawasKesmavet::with(['user', 'user.orang'])->get();
+          return view('checklist6.catatan', [
+              'list_dokter' => $list_dokter,
+              'list_pengawas' => $list_pengawas
+          ]);
     }
 
     public function store(Request $request)
     {   
+
+       
+       
         $umum = session('umum');
         $survey = session('survey');
-
+        $catatan = session('catatan');
         
-
+        
         $form = form6::create([
-            'tipeUnitUsaha'=> $umum['TipeUnitUsaha'],
-            'jenisProduk'=> $umum['JenisProduk'],
-            'karyawanProduksi_L'=> $umum['KaryawanProdL'],
-            'karyawanProduksi_P'=> $umum['KaryawanProdP'],
-            'karyawanAdm_L'=> $umum['KaryawanAdminL'],
-            'karyawanAdm_P'=> $umum['KaryawanAdminP'],
-            'karyawanAMPM'=> $umum['KaryawanAMPM'],
-            'karyawanAWO'=> $umum['KaryawanAWO'],
-            'juruSembelih'=> $umum['KaryawanHalal'],
-            'operatorStunning'=> $umum['KaryawanStunning'],
+            'tipeUnitUsaha'=> $umum['tipeUnitUsaha'],
+            'jenisProduk'=> $umum['jenisProduk'],
+            'karyawanProduksi_L'=> $umum['karyawanProduksi_L'],
+            'karyawanProduksi_P'=> $umum['karyawanProduksi_P'],
+            'karyawanAdm_L'=> $umum['karyawanAdm_L'],
+            'karyawanAdm_P'=> $umum['karyawanAdm_P'],
+            'karyawanAMPM'=> $umum['karyawanAMPM'],
+            'karyawanAWO'=> $umum['karyawanAWO'],
+            'juruSembelih'=> $umum['juruSembelih'],
+            'operatorStunning'=> $umum['operatorStunning'],
             "b1_niu_id" => $survey['b1_niu_id'],
             "b1_niu_date" => $survey['b1_niu_date'],
             "b1_npwp_id" => $survey['b1_npwp_id'],
@@ -405,12 +442,12 @@ class Checklists6Controller extends Controller
         $survey1 = SurveyUnitUsaha::create([
             'idUnitUsaha'=>$umum['NamaUnitUsaha'],
             'idForm6'=> $form->id,
-            'catatan'=>$request['catatan'],
-            'rekomendasi'=> $request['rekomendasi'],
-            'idPengawas' => $request['pengawas1'],
-            'idPengawas2' => $request['pengawas2'],
-            'idPengawas3' => $request['pengawas3'],
-            'pjUnitUsaha' => $request['pjUnitUsaha'],
+            'catatan'=>$catatan['catatan'],
+            'rekomendasi'=> $catatan['rekomendasi'],
+            'idPengawas' => $catatan['idPengawas'],
+            'idPengawas2' => $catatan['idPengawas2'],
+            'idPengawas3' => $catatan['idPengawas3'],
+            'pjUnitUsaha' => $catatan['pjUnitUsaha'],
             'tipeForm' => 'Rumah Potong Hewan Unggas',
             ]);
         
@@ -440,7 +477,7 @@ class Checklists6Controller extends Controller
 
        
         Alert::success('Ceklis Berhasil Disimpan');
-        return redirect()->action('PengajuansController@formulir');
+        return redirect()->route('pengawasan.show');
     }
 
     public function update(Request $request, $id){

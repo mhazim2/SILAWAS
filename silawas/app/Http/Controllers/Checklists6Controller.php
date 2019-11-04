@@ -275,48 +275,32 @@ class Checklists6Controller extends Controller
         return view('checklist6.survey');
     }
 
-    public function catatan(Request $request)
-    {
-        // POST Request
-        $method = $request->method();
-        if ($request->isMethod('post')) 
-        {
-            // Validate and Parsing Data
-            request()->validate([
-                'idPengawas' => 'required',
-            ]);
-            
-            // Save Data in Session
-            $data_catatan = $request->all();
-            session()->put('catatan', $data_catatan);
-            return redirect()->action('checklist6Controller@store');
-        }
-            
-        // $list_dokter = DB::table('pengawaskesmavet')
-        //     ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-        //     ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-        //     ->where('isDokter', '=', 1)
-        //     ->select('orang.NamaLengkap','pengawaskesmavet.*')
-        //     ->get();
-        // $list_pengawas = DB::table('pengawaskesmavet')
-        //     ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
-        //     ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
-        //     ->select('orang.NamaLengkap','pengawaskesmavet.*')
-        //     ->get();
-        
-        // return view('checklist6.catatan', [
-        //     'list_dokter' => $list_dokter,
-        //     'list_pengawas' => $list_pengawas
-        // ]);
+   // Open Tab Catatan in Ceklis 6
+   public function catatan(Request $request)
+   {   
+       // POST Request
+       $method = $request->method();
+       if ($request->isMethod('post')) 
+       {
+           // Validate and Parsing Data
+           request()->validate([
+               'idPengawas' => 'required',
+           ]);
+           
+           // Save Data in Session
+           $data_catatan = $request->all();
+           session()->put('catatan', $data_catatan);
+           return redirect()->action('Checklists6Controller@store');
+       }
 
-          // GET Request
-          $list_dokter = PengawasKesmavet::with(['user', 'user.orang'])->where('isDokter', '=', 1)->get();
-          $list_pengawas = PengawasKesmavet::with(['user', 'user.orang'])->get();
-          return view('checklist6.catatan', [
-              'list_dokter' => $list_dokter,
-              'list_pengawas' => $list_pengawas
-          ]);
-    }
+       // GET Request
+       $list_dokter = PengawasKesmavet::with(['user', 'user.orang'])->where('isDokter', '=', 1)->get();
+       $list_pengawas = PengawasKesmavet::with(['user', 'user.orang'])->get();
+       return view('checklist6.catatan', [
+           'list_dokter' => $list_dokter,
+           'list_pengawas' => $list_pengawas
+       ]);
+   }
 
     public function store(Request $request)
     {   

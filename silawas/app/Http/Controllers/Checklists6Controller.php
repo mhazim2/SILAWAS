@@ -277,25 +277,20 @@ class Checklists6Controller extends Controller
 
    // Open Tab Catatan in Ceklis 6
    public function catatan(Request $request)
-   {   
-       // POST Request
-       $method = $request->method();
-       if ($request->isMethod('post')) 
-       {
-           // Validate and Parsing Data
-           request()->validate([
-               'idPengawas' => 'required',
-           ]);
-           
-           // Save Data in Session
-           $data_catatan = $request->all();
-           session()->put('catatan', $data_catatan);
-           return redirect()->action('Checklists6Controller@store');
-       }
+   {
 
-       // GET Request
-       $list_dokter = PengawasKesmavet::with(['user', 'user.orang'])->where('isDokter', '=', 1)->get();
-       $list_pengawas = PengawasKesmavet::with(['user', 'user.orang'])->get();
+       $list_dokter = DB::table('pengawaskesmavet')
+           ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+           ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+           ->where('isDokter', '=', 1)
+           ->select('orang.NamaLengkap','pengawaskesmavet.*')
+           ->get();
+       $list_pengawas = DB::table('pengawaskesmavet')
+           ->join('user', 'pengawaskesmavet.idUser', '=', 'user.id')
+           ->join('orang', 'user.Orang_idOrang', '=', 'orang.idOrang')
+           ->select('orang.NamaLengkap','pengawaskesmavet.*')
+           ->get();
+       
        return view('checklist6.catatan', [
            'list_dokter' => $list_dokter,
            'list_pengawas' => $list_pengawas
@@ -304,13 +299,12 @@ class Checklists6Controller extends Controller
 
     public function store(Request $request)
     {   
-
+       
        
        
         $umum = session('umum');
         $survey = session('survey');
-        $catatan = session('catatan');
-        
+       
         
         $form = form6::create([
             'tipeUnitUsaha'=> $umum['tipeUnitUsaha'],
@@ -426,12 +420,12 @@ class Checklists6Controller extends Controller
         $survey1 = SurveyUnitUsaha::create([
             'idUnitUsaha'=>$umum['NamaUnitUsaha'],
             'idForm6'=> $form->id,
-            'catatan'=>$catatan['catatan'],
-            'rekomendasi'=> $catatan['rekomendasi'],
-            'idPengawas' => $catatan['idPengawas'],
-            'idPengawas2' => $catatan['idPengawas2'],
-            'idPengawas3' => $catatan['idPengawas3'],
-            'pjUnitUsaha' => $catatan['pjUnitUsaha'],
+            'catatan'=>$request['catatan'],
+            'rekomendasi'=> $request['rekomendasi'],
+            'idPengawas' => $request['idPengawas'],
+            'idPengawas2' => $request['idPengawas2'],
+            'idPengawas3' => $request['idPengawas3'],
+            'pjUnitUsaha' => $request['pjUnitUsaha'],
             'tipeForm' => 'Rumah Potong Hewan Unggas',
             ]);
         

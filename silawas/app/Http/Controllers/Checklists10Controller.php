@@ -81,8 +81,8 @@ class Checklists10Controller extends Controller
             request()->validate([
                 
                 'idUnitUsaha' => 'required',
-                'jenisUsaha'=> 'required',
-                'wilayahPeredaran'=> 'required',
+                // 'jenisUsaha'=> 'required',
+                // 'wilayahPeredaran'=> 'required',
                 'kapasitasGudang'=> 'nullable|numeric',
                 'realisasiPenyimpanan'=> 'nullable|numeric',
                 'jumlahKaryawan'=> 'nullable|numeric',
@@ -93,6 +93,14 @@ class Checklists10Controller extends Controller
             }
     
             $temp1 = $request->all();
+        
+            if (!isset($temp1['jenisUnitUsaha'])) $temp1['jenisUnitUsaha'] = null;
+            if (!isset($temp1['komoditas'])) $temp1['komoditas'] = null;
+            if (!isset($temp1['kapasitasGudang'])) $temp1['kapasitasGudang'] = null;
+            if (!isset($temp1['realisasiPenyimpanan'])) $temp1['realisasiPenyimpanan'] = null;
+            if (!isset($temp1['wilayahPeredaran'])) $temp1['wilayahPeredaran'] = null;
+            if (!isset($temp1['jumlahKaryawan'])) $temp1['jumlahKaryawan'] = null;
+
             session()->put('umum', $temp1);
             
             return redirect()->action('Checklists10Controller@survey');
@@ -199,6 +207,10 @@ class Checklists10Controller extends Controller
         $method = $request->method();
         if ($request->isMethod('post')) 
         {
+            request()->validate([
+                'idPengawas' => 'required',
+            ]);
+
             //dd($request);
             $data_catatan = $request->all();
              session()->put('catatan', $data_catatan);
@@ -217,9 +229,7 @@ class Checklists10Controller extends Controller
     public function store(Request $request)
     {   
 
-        request()->validate([
-            'idPengawas' => 'required',
-        ]);
+        
         
         // Get All Data
         $umum = session('umum');
@@ -228,7 +238,7 @@ class Checklists10Controller extends Controller
 
         // Insert to Database
         $formff = Form10::create([
-                'jenisUnitUsaha'=> $umum['jenisUsaha'],
+                'jenisUnitUsaha'=> $umum['jenisUnitUsaha'],
                 'komoditas'=> $umum['komoditas'],
                 'kapasitasGudang'=> $umum['kapasitasGudang'],
                 'realisasiPenyimpanan'=> $umum['realisasiPenyimpanan'],

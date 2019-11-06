@@ -80,7 +80,7 @@ class Checklists11Controller extends Controller
             
             request()->validate([
                 'idUnitUsaha' => 'required',
-                'wilayahPeredaran'=> 'required',
+                // 'wilayahPeredaran'=> 'required',
                 'kapasitasGudang'=> 'nullable|numeric',
                 'realisasiPenyimpanan'=> 'nullable|numeric',
                 'jumlahKaryawan'=> 'nullable|numeric',
@@ -96,6 +96,13 @@ class Checklists11Controller extends Controller
                 $request['wilayahPeredaran']= implode( ", ", $request['wilayahPeredaran'] );
             }
             $temp = $request->all();
+            
+            if (!isset($temp['komoditas'])) $temp['komoditas'] = null;
+            if (!isset($temp['kapasitasGudang'])) $temp['kapasitasGudang'] = null;
+            if (!isset($temp['realisasiPenyimpanan'])) $temp['realisasiPenyimpanan'] = null;
+            if (!isset($temp['wilayahPeredaran'])) $temp['wilayahPeredaran'] = null;
+            if (!isset($temp['jumlahKaryawan'])) $temp['jumlahKaryawan'] = null;
+
             session()->put('umum', $temp);
             
             return redirect()->action('Checklists11Controller@survey');

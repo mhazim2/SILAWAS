@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="namaPemilikProduk">1. Nama Pemilik Produk Hewan</label>
+                                            <label for="namaPemilikProduk">1. Nama Pemilik Produk Hewan <font color="red">*</font></label>
                                             <input type="text" class="form-control" id="namaPemilikProduk" name="namaPemilikProduk">
                                         </div>
                                     </div>

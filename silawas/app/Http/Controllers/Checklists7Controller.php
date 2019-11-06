@@ -94,8 +94,8 @@ class Checklists7Controller extends Controller
             request()->validate([
                 
                 'NamaUnitUsaha' => 'required',
-                'check_sumber_impor' => 'required',
-                'check_sumber_lokal' => 'required',
+                // 'check_sumber_impor' => 'required',
+                // 'check_sumber_lokal' => 'required',
     
             ]);
 
@@ -271,9 +271,7 @@ class Checklists7Controller extends Controller
     public function store(Request $request)
     {   
 
-        request()->validate([
-            'idPengawas' => 'required',
-        ]);
+        
         
         $umum = session('umum');
         $survey = session('survey');

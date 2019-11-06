@@ -79,7 +79,7 @@ class Checklists13Controller extends Controller
             request()->validate([
                 'idUnitUsaha' => 'required',
                 'jenisPengolahan'=> 'required',
-                'wilayahPeredaran'=> 'required',
+                // 'wilayahPeredaran'=> 'required',
             ]);
 
             if( isset($request['jenisPengolahan'])){
@@ -91,6 +91,16 @@ class Checklists13Controller extends Controller
             }
            
             $temp = $request->all();
+
+            if (!isset($temp['jenisPengolahan'])) $temp['jenisPengolahan'] = null; 
+            if (!isset($temp['kapasitasProduksi'])) $temp['kapasitasProduksi'] = null; 
+            if (!isset($temp['realisasi'])) $temp['realisasi'] = null; 
+            if (!isset($temp['check_sumber_lokal'])) $temp['check_sumber_lokal'] = '0'; 
+            if (!isset($temp['sumber_lokal'])) $temp['sumber_lokal'] = null; 
+            if (!isset($temp['check_sumber_impor'])) $temp['check_sumber_impor'] = '0'; 
+            if (!isset($temp['sumber_impor'])) $temp['sumber_impor'] = null; 
+            if (!isset($temp['wilayahPeredaran'])) $temp['wilayahPeredaran'] = null; 
+
             session()->put('umum', $temp);
             
             return redirect()->action('Checklists13Controller@survey');

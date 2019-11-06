@@ -167,9 +167,7 @@ class Checklists8Controller extends Controller
     public function store(Request $request)
     {   
 
-        request()->validate([
-            'idPengawas' => 'required',
-        ]);
+       
         
         // Get All Data
         $umum = session('umum');

@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-5">
-                                            <label for="NamaUnitUsaha">1. Nama Unit Usaha *</label>
+                                            <label for="NamaUnitUsaha">1. Nama Unit Usaha <font color="red">*</font></label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option value="" selected>-- Pilih --</option>
                                                 @foreach($list_uu as $uu)

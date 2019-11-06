@@ -29,6 +29,17 @@
                             <div class="active tab-pane" id="catatan">
                                 <form action="{{ route('checklist11.store') }}" method="POST">
                                     @csrf
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                @if(count($errors)>0)
+                                                    @foreach($errors->all() as $error)
+                                                        <div class="alert alert-dismissible alert-danger mb-3">
+                                                            {{$error}}
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div> 
                                     <div class="row form-group mb-5">
                                         <div class="col-md-12">
                                             <label for="catatan">1. Catatan</label>
@@ -43,7 +54,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="idPengawas">3. Dokter Hewan Pengawas *</label>
+                                            <label for="idPengawas">3. Dokter Hewan Pengawas <font color="red">*</font></label>
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_dokter as $pengawas1)

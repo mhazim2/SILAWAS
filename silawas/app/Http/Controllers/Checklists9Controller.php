@@ -178,9 +178,6 @@ class Checklists9Controller extends Controller
     // Save Ceklis Data
     public function store(Request $request)
     {
-        request()->validate([
-            'idPengawas' => 'required',
-        ]);
         
         // Get All Data
         $umum = session('umum');

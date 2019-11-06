@@ -29,9 +29,20 @@
                             <div class="active tab-pane" id="umum">
                                 <form action="{{ route('checklist11.umum') }}" method="POST">
                                     @csrf
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                @if(count($errors)>0)
+                                                    @foreach($errors->all() as $error)
+                                                        <div class="alert alert-dismissible alert-danger mb-3">
+                                                            {{$error}}
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div> 
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="NamaUnitUsaha">1. Nama Unit Usaha *</label>
+                                            <label for="NamaUnitUsaha">1. Nama Unit Usaha <font color="red">*</font></label>
                                             <select class="form-control select2" id="NamaUnitUsaha" name="idUnitUsaha">
                                                 <option disabled selected>-- Pilih --</option>
                                                 @foreach($list_uu as $uu)

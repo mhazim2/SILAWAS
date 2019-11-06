@@ -198,14 +198,14 @@ Route::post('/silawas/pengawasan/checklist/10/catatan', 'Checklists10Controller@
 Route::get('/silawas/pengawasan/checklist/10/detail/{id}', 'Checklists10Controller@detail')->name('checklist10.detail');
 
 // Halaman Checklist 11
-Route::redirect('/pengawasan/checklist/11', '/silawas/pengawasan/checklist/11/umum')->name('checklist11.show');
-Route::get('/pengawasan/checklist/11/umum', 'Checklists11Controller@umum')->name('checklist11.umum');
-Route::get('/pengawasan/checklist/11/survey', 'Checklists11Controller@survey')->name('checklist11.survey');
-Route::get('/pengawasan/checklist/11/catatan', 'Checklists11Controller@catatan')->name('checklist11.catatan');
-Route::post('/pengawasan/checklist/11/store', 'Checklists11Controller@store')->name('checklist11.store');
-Route::post('/pengawasan/checklist/11/umum', 'Checklists11Controller@umum')->name('checklist11.umum');
-Route::post('/pengawasan/checklist/11/survey', 'Checklists11Controller@survey')->name('checklist11.survey');
-Route::post('/pengawasan/checklist/11/catatan', 'Checklists11Controller@catatan')->name('checklist11.catatan');
+Route::redirect('/silawas/pengawasan/checklist/11', '/silawas/pengawasan/checklist/11/umum')->name('checklist11.show');
+Route::get('/silawas/pengawasan/checklist/11/umum', 'Checklists11Controller@umum')->name('checklist11.umum');
+Route::get('/silawas/pengawasan/checklist/11/survey', 'Checklists11Controller@survey')->name('checklist11.survey');
+Route::get('/silawas/pengawasan/checklist/11/catatan', 'Checklists11Controller@catatan')->name('checklist11.catatan');
+Route::post('/silawas/pengawasan/checklist/11/store', 'Checklists11Controller@store')->name('checklist11.store');
+Route::post('/silawas/pengawasan/checklist/11/umum', 'Checklists11Controller@umum')->name('checklist11.umum');
+Route::post('/silawas/pengawasan/checklist/11/survey', 'Checklists11Controller@survey')->name('checklist11.survey');
+Route::post('/silawas/pengawasan/checklist/11/catatan', 'Checklists11Controller@catatan')->name('checklist11.catatan');
 Route::get('/silawas/pengawasan/checklist/11/detail/{id}', 'Checklists11Controller@detail')->name('checklist11.detail');
 
 // Halaman Checklist 12

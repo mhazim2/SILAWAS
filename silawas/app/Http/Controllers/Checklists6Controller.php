@@ -453,6 +453,9 @@ class Checklists6Controller extends Controller
             };
         };
 
+        session()->forget('umum');
+        session()->forget('survey');
+       
        
         Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->route('pengawasan.show');

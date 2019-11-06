@@ -413,7 +413,10 @@ class Checklists7Controller extends Controller
             };
         };
 
-       
+        session()->forget('umum');
+        session()->forget('survey');
+        
+
         Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->action('PengajuansController@formulir');
     }

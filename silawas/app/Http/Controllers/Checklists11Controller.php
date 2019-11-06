@@ -321,6 +321,10 @@ class Checklists11Controller extends Controller
             }
         };
 
+        session()->forget('umum');
+        session()->forget('survey');
+       
+
         //Form Complete Redirect
         Alert::success('Ceklis Berhasil Disimpan');
         return redirect()->route('pengawasan.show');

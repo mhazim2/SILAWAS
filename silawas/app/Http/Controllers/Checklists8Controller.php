@@ -283,6 +283,10 @@ class Checklists8Controller extends Controller
               ]);
             }
         };
+
+        session()->forget('umum');
+        session()->forget('survey');
+       
         
         // Redirect to Pengawasan Index
         Alert::success('Ceklis Berhasil Disimpan');

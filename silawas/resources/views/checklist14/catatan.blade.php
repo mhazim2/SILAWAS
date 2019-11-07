@@ -41,20 +41,38 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
+                                        <div class="col-lg-6">
+                                            <label for="tanggalPengawasan">1. Tanggal Dilakukan Pengawasan <font color="red">*</font></label>
+                                            <input type="text" class="form-control" id="tanggalPengawasan" name="tanggalPengawasan">
+                                            <input type="hidden" name="tanggalPengawasan_date" id="tanggalPengawasan_date" value="{{ date('Y-m-d') }}">
+                                        </div>
+                                        @push('scripts')
+                                            <script>
+                                                $(function () {
+                                                    $('#tanggalPengawasan').daterangepicker({
+                                                        singleDatePicker: true,
+                                                    }, function(start, end, label) {
+                                                        $('#tanggalPengawasan_date').val(start.format('YYYY-MM-DD'));
+                                                    });
+                                                });
+                                            </script>
+                                        @endpush
+                                    </div>
+                                    <div class="row form-group mb-5">
                                         <div class="col-lg-12">
-                                            <label for="catatan">1. Catatan</label>
+                                            <label for="catatan">2. Catatan</label>
                                             <textarea class="form-control" rows="3" name="catatan"></textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-12">
-                                            <label for="rekomendasi">2. Rekomendasi/Tindak Lanjut</label>
+                                            <label for="rekomendasi">3. Rekomendasi/Tindak Lanjut</label>
                                             <textarea class="form-control" rows="3" name="rekomendasi"></textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="idPengawas">3. Dokter Hewan Pengawas <font color="red">*</font></label>
+                                            <label for="idPengawas">4. Dokter Hewan Pengawas <font color="red">*</font></label>
                                             <select class="form-control select2" id="idPengawas" name="idPengawas">
                                                 <option value="" selected>-- Pilih --</option>
                                                 @foreach($list_dokter as $pengawas)
@@ -65,7 +83,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="idPengawas2">4. Dokter Hewan Pengawas/Asisten 1</label>
+                                            <label for="idPengawas2">5. Dokter Hewan Pengawas/Asisten 1</label>
                                             <select class="form-control select2" id="idPengawas2" name="idPengawas2">
                                                 <option value="" selected>Tidak Ada</option>
                                                 @foreach($list_pengawas as $pengawas)
@@ -76,7 +94,7 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="idPengawas3">5. Dokter Hewan Pengawas/Asisten 2</label>
+                                            <label for="idPengawas3">6. Dokter Hewan Pengawas/Asisten 2</label>
                                             <select class="form-control select2" id="idPengawas3" name="idPengawas3">
                                                 <option value="" selected>Tidak Ada</option>
                                                 @foreach($list_pengawas as $pengawas)
@@ -87,8 +105,8 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="pjAlatAngkut">6. Penangung Jawab Alat Angkut/Pengemudi</label>
-                                            <input type="text" class="form-control" id="pjAlatAngkut" name="pjAlatAngkut">
+                                            <label for="pjUnitUsaha">7. Penangung Jawab Unit Usaha</label>
+                                            <input type="text" class="form-control" id="pjUnitUsaha" name="pjUnitUsaha">
                                         </div>
                                     </div>
                                     <div class="form-group mb-5">

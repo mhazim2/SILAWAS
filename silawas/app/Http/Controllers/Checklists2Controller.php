@@ -376,6 +376,7 @@ class Checklists2Controller extends Controller
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
             'tipeForm' => 'Tempat Penampungan Susu',
+            'created_at' => $catatan['tanggalPengawasan_date'],
         ]);
         // Input ke Tabel Suplier
         if (isset($survey['P4_1'])){

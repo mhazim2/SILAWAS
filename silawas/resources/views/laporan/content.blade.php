@@ -54,7 +54,13 @@
                         <tr>
                             <td class="text-center">{{ ++$key }}</td>
                             <td>{{ date('Y-m-d', strtotime($form->created_at)) }}</td>
-                            <td>{{ $form->unitUsaha ? $form->unitUsaha->NamaUnitUsaha : '-' }}</td>
+                            <td> 
+                                @if ($form->idForm14)
+                                    {{ $form->namaPemilik ?  $form->namaPemilik : '-' }}
+                                @else
+                                    {{ $form->unitUsaha ? $form->unitUsaha->NamaUnitUsaha : '-' }}
+                                @endif
+                            </td>
                             <td>{{ $form->tipeForm }}</td>
                             <td>{{ $form->catatan }}</td>
                             <td>{{ $form->rekomendasi ?: '-' }}</td>

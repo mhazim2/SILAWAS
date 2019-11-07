@@ -7,6 +7,7 @@ use Alert;
 use App\UnitUsaha;
 use App\SurveyUnitUsaha;
 use App\PengawasKesmavet;
+use App\Form14;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -124,9 +125,13 @@ class LaporansController extends Controller
             }
             else if ($form->idForm14) {
                 $listForms[$key]->tipeForm = 'Pengangkutan Produk Hewan';
+                 $temp = Form14::where('id', $listForms[$key]->idForm14)->first();
+                 $listForms[$key]->namaPemilik = $temp->namaPemilikProduk;
+                
+           
             }
         }
-        
+       
        
         //return (new Report($start,$end))->download('report.xlsx');
 

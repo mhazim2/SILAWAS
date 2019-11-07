@@ -429,6 +429,7 @@ class Checklists3Controller extends Controller
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
             'tipeForm' => 'Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi',
+            'created_at' => $catatan['tanggalPengawasan_date'],
         ]);
 
         if (isset($survey['P6_1'])){

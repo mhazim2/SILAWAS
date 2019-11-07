@@ -281,6 +281,7 @@ class Checklists13Controller extends Controller
         'idPengawas3' => $request['idPengawas3'],
         'pjUnitUsaha' => $request['pjUnitUsaha'],
         'tipeForm' => 'Hotel, Restoran dan Katering',
+        'created_at' => $request['tanggalPengawasan_date'],
     ]);
 
     if (isset($survey['p5_count'])){

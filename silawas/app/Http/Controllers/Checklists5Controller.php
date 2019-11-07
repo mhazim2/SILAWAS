@@ -324,6 +324,7 @@ class Checklists5Controller extends Controller
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
             'tipeForm' => 'Rumah Potong Hewan Ruminansia',
+            'created_at' => $catatan['tanggalPengawasan_date'],
         ]);
         // Input ke Tabel PenerimaProdukDistribusi
         if (isset($survey['P32'])){

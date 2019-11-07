@@ -320,6 +320,7 @@ class Checklists10Controller extends Controller
             'idPengawas3' => $request['idPengawas3'],
             'pjUnitUsaha' => $request['pjUnitUsaha'],
             'tipeForm' => 'Gudang Penyimpanan Dingin/Beku',
+            'created_at' => $request['tanggalPengawasan_date'],
         ]);
         
         if (isset($survey['p3_count'])){

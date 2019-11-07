@@ -387,6 +387,7 @@ class Checklists7Controller extends Controller
             'idPengawas3' => $request['pengawas3'],
             'pjUnitUsaha' => $request['pjUnitUsaha'],
             'tipeForm' => 'Rumah Potong Hewan Babi',
+            'created_at' => $request['tanggalPengawasan_date'],
             ]);
         
             

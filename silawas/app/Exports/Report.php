@@ -3,6 +3,7 @@
  namespace App\Exports;
  use Auth;
  use App\SurveyUnitUsaha;
+ use App\Form14;
  use Illuminate\Support\Facades\DB;
  use Illuminate\Contracts\View\View;
 
@@ -42,7 +43,7 @@
             $forms = DB::table('surveyunitusaha')
             ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
             ->whereBetween('created_at', [ $this->start, $this->end])
-            ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
+            // ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
             ->orderBy('created_at')->get();
         } 
         else if (Auth::user()->accessRoleId == 7) {
@@ -52,9 +53,58 @@
                 ->orWhere('idPengawas', $idpetugas->idPengawasKesmavet)
                 ->orWhere('idPengawas2', $idpetugas->idPengawasKesmavet)
                 ->orWhere('idPengawas3', $idpetugas->idPengawasKesmavet)
-                ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
+                // ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
                 ->get();
             }
+            foreach ($forms as $key=>$form) {
+                if ($form->idForm1) {
+                    $forms[$key]->tipeForm = 'Tempat Budidaya Hewan Perah dan Pemerahan Susu';
+                }
+                else if ($form->idForm2) {
+                    $forms[$key]->tipeForm = 'Tempat Penampungan Susu';
+                }
+                else if ($form->idForm3) {
+                    $forms[$key]->tipeForm = 'Tempat Budidaya Unggas Petelur dan Produksi Telur Konsumsi';
+                }
+                else if ($form->idForm4) {
+                    $forms[$key]->tipeForm = 'Tempat Pengepul Telur';
+                }
+                else if ($form->idForm5) {
+                    $forms[$key]->tipeForm = 'Rumah Potong Hewan Ruminansia';
+                }
+                else if ($form->idForm6) {
+                    $forms[$key]->tipeForm = 'Rumah Potong Hewan Unggas';
+                }
+                else if ($form->idForm7) {
+                    $forms[$key]->tipeForm = 'Rumah Potong Hewan Babi';
+                }
+                else if ($form->idForm8) {
+                    $forms[$key]->tipeForm = 'Tempat Pengolahan Pangan Asal Hewan';
+                }
+                else if ($form->idForm9) {
+                    $forms[$key]->tipeForm = 'Tempat Produksi Produk Hewan Non Pangan';
+                }
+                else if ($form->idForm10) {
+                    $forms[$key]->tipeForm = 'Gudang Penyimpanan Dingin/Beku';
+                }
+                else if ($form->idForm11) {
+                    $forms[$key]->tipeForm = 'Gudang Penyimpanan Kering';
+                }
+                else if ($form->idForm12) {
+                    $forms[$key]->tipeForm = 'Tempat Penjualan';
+                }
+                else if ($form->idForm13) {
+                    $forms[$key]->tipeForm = 'Hotel, Restoran dan Katering';
+                }
+                else if ($form->idForm14) {
+                    $forms[$key]->tipeForm = 'Pengangkutan Produk Hewan';
+                     $temp = Form14::where('id', $forms[$key]->idForm14)->first();
+                     $forms[$key]->namaPemilik = $temp->namaPemilikProduk;
+                    
+               
+                }
+            }
+           
 
         // $forms = DB::table('surveyunitusaha')
         // ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')

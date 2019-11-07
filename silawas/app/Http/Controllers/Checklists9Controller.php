@@ -279,6 +279,8 @@ class Checklists9Controller extends Controller
             'idPengawas3' => $catatan['idPengawas3'],
             'pjUnitUsaha' => $catatan['pjUnitUsaha'],
             'tipeForm' => 'Tempat Produksi Produk Hewan Non Pangan',
+            'created_at' => $catatan['tanggalPengawasan_date'],
+            
         ]);
         // Input ke Tabel DokterHewanPJ
         if (isset($survey['P3_1'])) {

@@ -105,8 +105,8 @@
                                     </div>
                                     <div class="row form-group mb-5">
                                         <div class="col-lg-6">
-                                            <label for="pjUnitUsaha">7. Penangung Jawab Unit Usaha</label>
-                                            <input type="text" class="form-control" id="pjUnitUsaha" name="pjUnitUsaha">
+                                            <label for="pjAlatAngkut">7. Penangung Jawab Alat Angkut/Pengemudi</label>
+                                            <input type="text" class="form-control" id="pjAlatAngkut" name="pjAlatAngkut">
                                         </div>
                                     </div>
                                     <div class="form-group mb-5">

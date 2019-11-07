@@ -71,34 +71,34 @@
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
-                                            <label for="idPengawas">4. Dokter Hewan Pengawas <font color="red">*</font></label>
-                                            <select class="form-control select2" id="idPengawas" name="idPengawas">
-                                                <option value="" selected>-- Pilih --</option>
-                                                @foreach($list_dokter as $pengawas)
-                                                    <option value="{{ $pengawas->idPengawasKesmavet }}">{{ $pengawas->user->orang->NamaLengkap }}</option>
+                                        <div class="col-md-6">
+                                            <label for="pengawas1">4. Dokter Hewan Pengawas <font color="red">*</font></label>
+                                            <select class="form-control select2" id="pengawas1" name="pengawas1">
+                                                    <option value="" selected>-- Pilih --</option>
+                                                @foreach($list_dokter as $pengawas1)
+                                                    <option value="{{ $pengawas1->idPengawasKesmavet }}">{{ $pengawas1->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
-                                            <label for="idPengawas2">5. Dokter Hewan Pengawas/Asisten 1</label>
-                                            <select class="form-control select2" id="idPengawas2" name="idPengawas2">
-                                                <option value="" selected>Tidak Ada</option>
-                                                @foreach($list_pengawas as $pengawas)
-                                                    <option value="{{ $pengawas->idPengawasKesmavet }}">{{ $pengawas->user->orang->NamaLengkap }}</option>
+                                        <div class="col-md-6">
+                                            <label for="pengawas2">5. Dokter Hewan Pengawas/Asisten 1</label>
+                                            <select class="form-control select2" id="pengawas2" name="pengawas2">
+                                                <option value="">Tidak Ada</option>
+                                                @foreach($list_pengawas as $pengawas2)
+                                                    <option value="{{ $pengawas2->idPengawasKesmavet }}">{{ $pengawas2->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row form-group mb-5">
-                                        <div class="col-lg-6">
-                                            <label for="idPengawas3">6. Dokter Hewan Pengawas/Asisten 2</label>
-                                            <select class="form-control select2" id="idPengawas3" name="idPengawas3">
-                                                <option value="" selected>Tidak Ada</option>
-                                                @foreach($list_pengawas as $pengawas)
-                                                    <option value="{{ $pengawas->idPengawasKesmavet }}">{{ $pengawas->user->orang->NamaLengkap }}</option>
+                                        <div class="col-md-6">
+                                            <label for="pengawas3">6. Dokter Hewan Pengawas/Asisten 2</label>
+                                            <select class="form-control select2" id="pengawas3" name="pengawas3">
+                                                <option value="">Tidak Ada</option>
+                                                @foreach($list_pengawas as $pengawas3)
+                                                    <option value="{{ $pengawas3->idPengawasKesmavet }}">{{ $pengawas3->NamaLengkap }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -25,6 +25,7 @@
      {
          $this->start = $start;
          $this->end = $end;
+        
 
      }
 
@@ -37,11 +38,29 @@
         ->select('Orang.NamaLengkap', 'PengawasKesmavet.unitKerja','PengawasKesmavet.NoRegistrasi')
         ->get();
 
-        $forms = DB::table('surveyunitusaha')
-        ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
-        ->whereBetween('created_at', [ $this->start, $this->end])
-        ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
-        ->orderBy('created_at')->get();
+        if (Auth::user()->accessRoleId == 1){
+            $forms = DB::table('surveyunitusaha')
+            ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+            ->whereBetween('created_at', [ $this->start, $this->end])
+            ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
+            ->orderBy('created_at')->get();
+        } 
+        else if (Auth::user()->accessRoleId == 7) {
+            
+            $forms = SurveyUnitUsaha::with('unitUsaha')
+                ->whereBetween('created_at', [$start, $end])
+                ->orWhere('idPengawas', $idpetugas->idPengawasKesmavet)
+                ->orWhere('idPengawas2', $idpetugas->idPengawasKesmavet)
+                ->orWhere('idPengawas3', $idpetugas->idPengawasKesmavet)
+                ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
+                ->get();
+            }
+
+        // $forms = DB::table('surveyunitusaha')
+        // ->leftJoin('unitusaha', 'surveyunitusaha.idUnitUsaha', '=', 'unitusaha.id')
+        // ->whereBetween('created_at', [ $this->start, $this->end])
+        // ->select('surveyunitusaha.created_at','unitusaha.NamaUnitUsaha','surveyunitusaha.tipeForm','surveyunitusaha.catatan','surveyunitusaha.rekomendasi')
+        // ->orderBy('created_at')->get();
 
         return view('export.report', [
             'forms' => $forms,

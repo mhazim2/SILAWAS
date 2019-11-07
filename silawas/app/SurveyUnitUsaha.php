@@ -35,6 +35,7 @@ class SurveyUnitUsaha extends Model
         'idForm13',
         'idForm14',
         'idForm15',
+        'created_at',
     ];
 
     public function unitUsaha()
